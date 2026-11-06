@@ -62,7 +62,7 @@ test('bypass needs proven boundaries and valid departure; later Friday does not 
  assert.equal(matrixDzokComponent(evidence,'2026-10-15T23:59:00+03:00',120).tolls?.amount,matrixDzokComponent(evidence,'2026-10-15T23:59:00+03:00',0).tolls?.amount);
 });
 
-test('M4, A289 and bypass compose three independent ready fares exactly once',()=>{
+test('M4, A289 and bypass compose three independent components exactly once',()=>{
  const production={candidate:true,exact:true,tolls:{amount:1,weekdayAmount:1,weekendAmount:1,
   confidence:'matched',period:'monThu',segments:[]},m4PvpPreview:{confirmedPvps:['m4-1046','m4-1093','m4-1184','m4-1223']}} as unknown as ProductionM4Result;
  const matrix=matrixM4Component(production,date,3600) as Parameters<typeof composeSelectedM4A289>[2];

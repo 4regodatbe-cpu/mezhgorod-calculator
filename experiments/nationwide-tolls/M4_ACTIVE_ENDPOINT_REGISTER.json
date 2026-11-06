@@ -19500,8 +19500,10 @@
       "observationId": "620-71-friSun",
       "verification": "candidate Yandex actual UI endpoint control; approximate, not operator receipt",
       "effectiveFrom": null,
-      "priceConfirmation": "unconfirmed",
-      "runtimeEligible": true
+      "priceConfirmation": "unknown",
+      "runtimeEligible": false,
+      "disposition": "audit-only-external-control-unreconciled",
+      "currentTariffReason": "No directed official product vector; external total is not an operator fare."
     },
     {
       "road": "m4-candidate",
@@ -19513,8 +19515,10 @@
       "observationId": "620-71-monThu",
       "verification": "candidate Yandex actual UI endpoint control; approximate, not operator receipt",
       "effectiveFrom": null,
-      "priceConfirmation": "unconfirmed",
-      "runtimeEligible": true
+      "priceConfirmation": "unknown",
+      "runtimeEligible": false,
+      "disposition": "audit-only-external-control-unreconciled",
+      "currentTariffReason": "No directed official product vector; external total is not an operator fare."
     },
     {
       "road": "m4-candidate",
@@ -20656,8 +20660,10 @@
       "observationId": "636-71-friSun",
       "verification": "candidate Yandex actual UI endpoint control; approximate, not operator receipt",
       "effectiveFrom": null,
-      "priceConfirmation": "unconfirmed",
-      "runtimeEligible": true
+      "priceConfirmation": "unknown",
+      "runtimeEligible": false,
+      "disposition": "audit-only-external-control-unreconciled",
+      "currentTariffReason": "No directed official product vector; external total is not an operator fare."
     },
     {
       "road": "m4-candidate",
@@ -20669,8 +20675,10 @@
       "observationId": "636-71-monThu",
       "verification": "candidate Yandex actual UI endpoint control; approximate, not operator receipt",
       "effectiveFrom": null,
-      "priceConfirmation": "unconfirmed",
-      "runtimeEligible": true
+      "priceConfirmation": "unknown",
+      "runtimeEligible": false,
+      "disposition": "audit-only-external-control-unreconciled",
+      "currentTariffReason": "No directed official product vector; external total is not an operator fare."
     },
     {
       "road": "m4-candidate",

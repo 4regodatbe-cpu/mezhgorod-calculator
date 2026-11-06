@@ -35,7 +35,7 @@ test('M12 rejects missing/impossible date, direction conflict and unbound Octobe
  assert.equal(matrixM12Component({...production(184,764),blockedByMixedRoadEvidence:true},'2026-10-14T12:00:00+03:00').tolls,null);
  assert.equal(m12PairFromBoundary({status:'unknown',firstRvpKm:184,lastRvpKm:764,direction:'forward'}),null);
 });
-test('M4 and its separate western bypass add once, but two M4 representations stay rejected',()=>{
+test('M4 and separate western bypass compose once without duplicate component charging',()=>{
  const m4=component('m4-south','1046','1223','monThu');
  const bypass={...component('m4-dzok','0','51','monThu'),productId:'krasnodar-west-bypass'};
  const a289=component('a289','Maryanskaya','Temryuk');

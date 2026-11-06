@@ -24,7 +24,7 @@ test('M11 head respects exact 01:00 and 06:00 Moscow night boundaries and its ow
  assert.equal(section15Amount(new Date('2026-11-03T12:00:00+03:00')).profile,'friday');
  assert.equal(section15Amount(new Date('2026-11-04T12:00:00+03:00')).profile,'saturday');
 });
-test('M4 and known A289 retain Thursday fares; missing M4, invalid dates and durations still block',()=>{
+test('M4 Thursday fare and known A289 retain the departure tariff window; incomplete inputs block',()=>{
  const p:ProductionM4Result={candidate:true,exact:true,validation:null,reason:'saved calendar fixture',
   tolls:{amount:850,weekdayAmount:850,weekendAmount:1000,period:'понедельник–четверг',confidence:'matched',segments:['М-4: test']},
   m4PvpPreview:{status:'matched',reason:null,priceRub:850,verifiedPriceCells:3,candidateCount:3,confirmedPvps:['m4-1223','m4-1184','m4-1093'],diagnosticOnly:false}};

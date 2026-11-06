@@ -13,6 +13,7 @@ function m4TariffPeriodAt(instant){
   const piece=k=>parts.find(p=>p.type===k)?.value;
   const date=[piece("year"),piece("month"),piece("day")].join("-");
   if(!/^2026-\d\d-\d\d$/.test(date))return unknown("calendar_year_not_verified");
+  if(date<"2026-03-02")return unknown("tariff_not_effective_on_travel_date");
   const day=new Date(date+"T12:00:00Z").getUTCDay();
   if(!Number.isInteger(day))return unknown("date_invalid");
   const month=Number(date.slice(5,7)),monthDay=date.slice(5);

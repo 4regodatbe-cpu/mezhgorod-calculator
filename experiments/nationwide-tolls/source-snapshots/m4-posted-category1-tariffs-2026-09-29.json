@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-29",
+  "sourceUrl": "https://avtodor-tr.ru/road/tariffs/",
+  "sourceAccess": "Project M4_DATA verification dated 2026-09-29; the same official Avtodor table was retrieved via official-domain web search on 2026-11-06. Direct page fetch was HTTP 403.",
+  "tariffEffectiveFrom": null,
+  "tariffEffectiveDateNote": "The page states that tariff validity begins on the date in its detailed tariff PDF. That current PDF could not be fetched in this environment, so no legal effective date is asserted.",
+  "vehicleCategory": 1,
+  "currency": "RUB",
+  "paymentColumns": {
+    "monThu": ["with-transponder", "without-transponder"],
+    "friSun": ["with-transponder", "without-transponder"]
+  },
+  "periodRules": "Mon–Thu excludes weekends, non-working public holidays and the preceding special days. Fri–Sun includes weekends, non-working public holidays and preceding special days. Other days follow the operator's published calendar.",
+  "products": {
+    "m4-62": {"sectionKm": "21-62", "monThu": {"withTransponder": 220, "withoutTransponder": 220}, "friSun": {"withTransponder": 240, "withoutTransponder": 260}},
+    "m4-71": {"sectionKm": "21-93", "monThu": {"withTransponder": 310, "withoutTransponder": 400}, "friSun": {"withTransponder": 450, "withoutTransponder": 500}},
+    "m4-133": {"sectionKm": "93-211", "monThu": {"withTransponder": 400, "withoutTransponder": 500}, "friSun": {"withTransponder": 550, "withoutTransponder": 600}},
+    "m4-228": {"sectionKm": "211-266", "monThu": {"withTransponder": 260, "withoutTransponder": 320}, "friSun": {"withTransponder": 360, "withoutTransponder": 470}},
+    "m4-322": {"sectionKm": "266-322", "monThu": {"withTransponder": 260, "withoutTransponder": 320}, "friSun": {"withTransponder": 360, "withoutTransponder": 470}},
+    "m4-339": {"sectionKm": "322-401", "monThu": {"withTransponder": 370, "withoutTransponder": 400}, "friSun": {"withTransponder": 470, "withoutTransponder": 540}},
+    "m4-355": {"sectionKm": "322-401", "monThu": {"withTransponder": 220, "withoutTransponder": 220}, "friSun": {"withTransponder": 250, "withoutTransponder": 350}},
+    "m4-416+m4-460": {"sectionKm": "401-464", "monThu": {"withTransponder": 230, "withoutTransponder": 360}, "friSun": {"withTransponder": 380, "withoutTransponder": 480}, "productRule": "The combined tariff is one mixed-zone product; never sum the two named PVP cells."},
+    "m4-515": {"sectionKm": "492-517", "monThu": {"withTransponder": 150, "withoutTransponder": 170}, "friSun": {"withTransponder": 200, "withoutTransponder": 250}},
+    "m4-545-a": {"sectionKm": "517-544", "monThu": {"withTransponder": 140, "withoutTransponder": 160}, "friSun": {"withTransponder": 200, "withoutTransponder": 220}},
+    "m4-545-b": {"sectionKm": "544-589", "monThu": {"withTransponder": 180, "withoutTransponder": 250}, "friSun": {"withTransponder": 270, "withoutTransponder": 300}},
+    "m4-620": {"sectionKm": "589-633", "monThu": {"withTransponder": 180, "withoutTransponder": 250}, "friSun": {"withTransponder": 270, "withoutTransponder": 300}},
+    "m4-636": {"sectionKm": "633-741", "monThu": {"withTransponder": 570, "withoutTransponder": 640}, "friSun": {"withTransponder": 700, "withoutTransponder": 770}, "productRule": "Full mixed-zone product."},
+    "m4-672": {"sectionKm": "633-741", "monThu": {"withTransponder": 350, "withoutTransponder": 440}, "friSun": {"withTransponder": 470, "withoutTransponder": 500}, "productRule": "Separate published partial 633-672 tariff; not additive to a full-zone charge without proven separate traversal."},
+    "m4-803": {"sectionKm": "741-893", "monThu": {"withTransponder": 560, "withoutTransponder": 620}, "friSun": {"withTransponder": 780, "withoutTransponder": 950}},
+    "m4-911": {"sectionKm": "893-933", "monThu": {"withTransponder": 200, "withoutTransponder": 250}, "friSun": {"withTransponder": 300, "withoutTransponder": 350}},
+    "m4-1046": {"sectionKm": "1024-1091", "monThu": {"withTransponder": 380, "withoutTransponder": 450}, "friSun": {"withTransponder": 600, "withoutTransponder": 770}},
+    "m4-1093": {"sectionKm": "1091-1119", "monThu": {"withTransponder": 150, "withoutTransponder": 150}, "friSun": {"withTransponder": 210, "withoutTransponder": 270}},
+    "m4-1184": {"sectionKm": "1119-1195", "monThu": {"withTransponder": 300, "withoutTransponder": 350}, "friSun": {"withTransponder": 380, "withoutTransponder": 470}},
+    "m4-1223": {"sectionKm": "1195-1319", "monThu": {"withTransponder": 400, "withoutTransponder": 500}, "friSun": {"withTransponder": 530, "withoutTransponder": 690}},
+    "m4-dzok-46": {"sectionKm": "0-51", "monThu": {"withTransponder": 410, "withoutTransponder": 410}, "friSun": {"withTransponder": 600, "withoutTransponder": 770}}
+  },
+  "limitations": [
+    "Transcribed official page values establish the published payment columns, not their exact legal effective date; the linked detailed current PDF is unavailable.",
+    "A tariff row alone does not prove a selected route traverses that product.",
+    "M4 endpoint estimates stay priceConfirmation=unconfirmed. Unsupported route-specific/Yandex estimates without a reproducible product vector are quarantined as unknown."
+  ]
+}
