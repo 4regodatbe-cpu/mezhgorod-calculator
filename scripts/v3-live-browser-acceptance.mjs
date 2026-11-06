@@ -5,6 +5,8 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { classifyAnalyticsCheck, classifyApiAndDom, summarizeCalculationResponse } from './v3-live-browser-acceptance-contract.mjs';
+import { confirmV3ClientReady } from './v3-live-browser-readiness.mjs';
+import { classifyAddressSearchDiagnostic } from './v3-live-browser-readiness-contract.mjs';
 
 const base = new URL(process.env.V3_ACCEPTANCE_URL ?? 'https://mezhgorod-calculator.vercel.app/v3');
 assert.equal(base.protocol, 'https:', 'Use an HTTPS deployment');
@@ -25,6 +27,7 @@ const report = {
   deployedSha: null,
   deployedVersionHttpStatus: null,
   browser: null,
+  diagnostics:{independentAddressReplacement:{status:'NOT_RUN'}},
   results: [],
 };
 const save = () => writeFileSync(path.join(output, 'results.json'), JSON.stringify(report, null, 2) + '\n');
@@ -39,8 +42,9 @@ const cases = [
   ['06', 'Донецк (ДНР) → Мелитополь'],
   ['07', 'Краснодар → Ростов-на-Дону (mobile)'],
   ['08', 'Отказ необязательной аналитики не блокирует результат'],
+  ['R1', 'Independent diagnostic: replace addresses after a confirmed working pair'],
 ];
-for (const [id, name] of cases) report.results.push({ id, name, status: 'NOT_RUN' });
+for (const [id, name] of cases) report.results.push({ id, name, group:id === 'R1' ? 'diagnostic' : 'acceptance', status: 'NOT_RUN' });
 const item = id => report.results.find(x => x.id === id);
 const routeHeading = /^Выбран маршрут (?:с минимальным временем|по новым территориям|через материк|через Крым|с учётом особых территорий)$/u;
 
@@ -64,6 +68,7 @@ const browser = await chromium.launch({
 report.browser = browser.version();
 
 async function newSession(mobile = false) {
+  const navigationStartedAt = Date.now();
   const context = await browser.newContext({
     viewport: mobile ? {width: 390, height: 844} : {width: 1280, height: 900},
     isMobile: mobile,
@@ -81,10 +86,31 @@ async function newSession(mobile = false) {
   const page = await context.newPage();
   const pageErrors = [];
   const searches = [];
+  const searchAttempts = [];
+  const navigations = [];
+  const clientResourceErrors = [];
+  const scriptRequests = new Map();
   const requests = new Map();
+  await context.addInitScript(() => {
+    window.__v3AcceptanceInputEvents = [];
+    document.addEventListener('input', event => {
+      const input = event.target;
+      if (!(input instanceof HTMLInputElement) || !['Откуда','Куда'].includes(input.placeholder)) return;
+      window.__v3AcceptanceInputEvents.push({placeholder:input.placeholder,value:input.value,timeMs:Math.round(performance.now())});
+    }, true);
+  });
   page.on('pageerror', error => pageErrors.push(error.message));
+  page.on('framenavigated', frame => {
+    if (frame !== page.mainFrame()) return;
+    try { navigations.push(new URL(frame.url()).pathname); } catch { navigations.push('INVALID_URL'); }
+  });
   page.on('request', request => {
     try {
+      if (['script','stylesheet'].includes(request.resourceType())) {
+        const url = new URL(request.url());
+        const entry = {path:url.pathname.slice(0,160),startedAt:Date.now(),httpStatus:null,error:null};
+        scriptRequests.set(request,entry);
+      }
       const url = new URL(request.url());
       if (url.pathname !== '/r' || request.method() !== 'POST') return;
       let query = null;
@@ -95,6 +121,12 @@ async function newSession(mobile = false) {
     } catch { /* no raw URL/body is persisted */ }
   });
   page.on('response', response => {
+    const resource = scriptRequests.get(response.request());
+    if (resource) {
+      resource.httpStatus = response.status();
+      resource.elapsedMs = Math.max(0,Date.now()-resource.startedAt);
+      if (response.status() >= 400) clientResourceErrors.push({path:resource.path,httpStatus:response.status()});
+    }
     const entry = requests.get(response.request());
     if (!entry) return;
     entry.httpStatus = response.status();
@@ -107,47 +139,134 @@ async function newSession(mobile = false) {
     }).catch(() => { entry.responseJsonValid = false; });
   });
   page.on('requestfailed', request => {
+    const resource = scriptRequests.get(request);
+    if (resource) {
+      const failure = request.failure()?.errorText ?? '';
+      resource.error = /^net::ERR_[A-Z_]+$/u.test(failure) ? failure : 'RESOURCE_FAILED';
+      clientResourceErrors.push({path:resource.path,error:resource.error});
+    }
     const entry = requests.get(request);
     if (!entry) return;
     const failure = request.failure()?.errorText ?? '';
     entry.requestError = /^net::ERR_[A-Z_]+$/u.test(failure) ? failure : 'REQUEST_FAILED';
   });
   page.__v3AcceptanceSearches = searches;
+  page.__v3AcceptanceSearchAttempts = searchAttempts;
+  page.__v3AcceptanceNavigations = navigations;
+  page.__v3AcceptanceClientResourceErrors = clientResourceErrors;
   page.__v3AcceptanceAnalytics = analytics;
   page.__v3AcceptancePageErrors = pageErrors;
   page.setDefaultTimeout(25000);
-  await page.goto(base.href, {waitUntil: 'domcontentloaded', timeout: 60000});
+  const navigationResponse = await page.goto(base.href, {waitUntil: 'domcontentloaded', timeout: 60000});
+  const domContentLoadedAt = Date.now();
   await page.locator('input[placeholder="Откуда"]').waitFor({state:'visible'});
-  return {context, page, pageErrors};
+  const fieldVisibleAt = Date.now();
+  let readiness;
+  try { readiness = await confirmV3ClientReady(page); }
+  catch (error) {
+    error.observation = {
+      pageLoad:{navigationElapsedMs:domContentLoadedAt-navigationStartedAt,documentHttpStatus:navigationResponse?.status() ?? null,inputVisibleElapsedMs:fieldVisibleAt-navigationStartedAt},
+      navigations:navigations.slice(0,10),
+      clientResourceErrors:clientResourceErrors.slice(0,20),
+      javaScriptErrors:pageErrors.slice(0,10),
+    };
+    try { await page.screenshot({path:path.join(output,'client-readiness-failure.png'),fullPage:true}); } catch { /* preserve primary failure */ }
+    await context.close().catch(()=>{});
+    throw error;
+  }
+  const pageLoad = {
+    navigationElapsedMs:domContentLoadedAt-navigationStartedAt,
+    documentHttpStatus:navigationResponse?.status() ?? null,
+    inputVisibleElapsedMs:fieldVisibleAt-navigationStartedAt,
+    readinessElapsedMs:Date.now()-fieldVisibleAt,
+    readiness,
+  };
+  page.__v3AcceptanceLoad = pageLoad;
+  return {context, page, pageErrors, pageLoad};
 }
 const origin = page => page.locator('input[placeholder="Откуда"]');
 const dest = page => page.locator('input[placeholder="Куда"]');
 const parent = field => field.locator('xpath=ancestor::label[1]');
 
-async function searchDiagnostic(page, field, query) {
+async function searchDiagnostic(page, field, query, {matchingOptionFound = null} = {}) {
   const search = [...(page.__v3AcceptanceSearches ?? [])].reverse().find(entry => entry.searchText === query);
+  const attempt = [...(page.__v3AcceptanceSearchAttempts ?? [])].reverse().find(entry => entry.searchText === query);
   if (search?.responseRead) await Promise.race([search.responseRead, new Promise(resolve => setTimeout(resolve, 100))]);
   const statusRegion = parent(field).locator('[role="status"]');
   const state = await statusRegion.innerText().catch(() => '');
   const visibleButtons = await statusRegion.locator('button').count().catch(() => 0);
+  const fieldValue = await field.inputValue().catch(() => null);
   const searchUiState = /Ищем/u.test(state) ? 'loading'
     : /Сервис поиска временно недоступен/u.test(state) ? 'error'
       : /Ничего не найдено/u.test(state) ? 'empty'
         : visibleButtons > 0 ? 'results'
           : state ? 'other' : 'none';
+  const diagnosis = classifyAddressSearchDiagnostic({
+    query,
+    fieldValue,
+    valueChangedWithoutAction:attempt?.valueChangedWithoutAction ?? false,
+    inputEventObserved:attempt?.inputEventObserved ?? false,
+    inputEventValue:attempt?.inputEventValue ?? null,
+    requestSent:Boolean(search?.requestSent),
+    httpStatus:search?.httpStatus ?? null,
+    responseJsonValid:search?.responseJsonValid ?? null,
+    itemCount:search?.itemCount ?? null,
+    visibleButtons,
+    matchingOptionFound,
+  });
+  const browserInputEvents = await page.evaluate(() => window.__v3AcceptanceInputEvents ?? []).catch(() => []);
   return {
+    diagnosis,
+    input:{valueImmediatelyAfterFill:attempt?.valueImmediatelyAfterFill ?? null,valueAfterDebounce:attempt?.valueAfterDebounce ?? fieldValue,inputEventObserved:attempt?.inputEventObserved ?? false,inputEventValue:attempt?.inputEventValue ?? null,inputEventCount:browserInputEvents.length,valueChangedWithoutAction:attempt?.valueChangedWithoutAction ?? false},
     search:{searchText:query,requestSent:Boolean(search),httpStatus:search?.httpStatus ?? null,elapsedMs:search?.elapsedMs ?? null,itemCount:search?.itemCount ?? null,partial:search?.partial ?? null,fallback:search?.fallback ?? null,requestError:search?.requestError ?? null,responseJsonValid:search?.responseJsonValid ?? null},
     searchUiState,
     searchStateVisible:Boolean(state),
+    pageLoad:page.__v3AcceptanceLoad ?? null,
+    navigationEvents:(page.__v3AcceptanceNavigations ?? []).slice(0,10),
+    clientResourceErrors:(page.__v3AcceptanceClientResourceErrors ?? []).slice(0,20),
     javaScriptErrors:(page.__v3AcceptancePageErrors ?? []).slice(0,10),
   };
 }
 async function selectCity(page, field, query, labelFilter = '') {
+  const fillStartedAt = Date.now();
+  const beforeEvents = await page.evaluate(() => (window.__v3AcceptanceInputEvents ?? []).length).catch(() => 0);
   await field.fill(query);
+  const valueImmediatelyAfterFill = await field.inputValue();
+  const immediateEvents = await page.evaluate(() => window.__v3AcceptanceInputEvents ?? []).catch(() => []);
+  const attempt = {
+    searchText:query,
+    fillElapsedMs:Date.now()-fillStartedAt,
+    valueImmediatelyAfterFill,
+    inputEventObserved:immediateEvents.length > beforeEvents,
+  inputEventValue:immediateEvents.length > beforeEvents ? immediateEvents.at(-1)?.value ?? null : null,
+    valueAfterDebounce:null,
+    valueChangedWithoutAction:false,
+    requestObservedAfterDebounce:false,
+  };
+  page.__v3AcceptanceSearchAttempts.push(attempt);
+  // AddressField's documented/local debounce is 350 ms. Observe state after
+  // that interval; it is not used as the client-readiness mechanism.
+  await page.waitForTimeout(400);
+  attempt.valueAfterDebounce = await field.inputValue().catch(() => null);
+  const eventsAfterDebounce = await page.evaluate(() => window.__v3AcceptanceInputEvents ?? []).catch(() => []);
+  attempt.inputEventsAfterDebounce = eventsAfterDebounce.length;
+  attempt.valueChangedWithoutAction = attempt.valueAfterDebounce !== valueImmediatelyAfterFill
+    && eventsAfterDebounce.length === immediateEvents.length;
+  attempt.requestObservedAfterDebounce = page.__v3AcceptanceSearches.some(entry => entry.searchText === query && entry.startedAt >= fillStartedAt);
+  if (attempt.valueAfterDebounce !== query || !attempt.inputEventObserved || attempt.inputEventValue !== query) {
+    const phase = attempt.valueAfterDebounce !== query ? 'INPUT_VALUE_NOT_RETAINED'
+      : !attempt.inputEventObserved ? 'INPUT_EVENT_NOT_OBSERVED'
+        : 'INPUT_EVENT_VALUE_MISMATCH';
+    const error = new Error(`Address input verification failed after the debounce observation interval: ${phase}`);
+    error.failurePhase = phase;
+    error.observation = await searchDiagnostic(page,field,query);
+    throw error;
+  }
   const options = parent(field).locator('[role="status"] button');
   try { await options.first().waitFor({state:'visible', timeout: 30000}); }
   catch (error) {
     error.observation = await searchDiagnostic(page,field,query);
+    error.failurePhase = error.observation.diagnosis;
     throw error;
   }
   const total = await options.count();
@@ -159,7 +278,8 @@ async function selectCity(page, field, query, labelFilter = '') {
   }
   if (!chosen) {
     const error = new Error(`Live suggestions did not contain ${query} / ${labelFilter}; ${total} option(s)`);
-    error.observation = {...await searchDiagnostic(page,field,query),optionCount:total};
+    error.observation = {...await searchDiagnostic(page,field,query,{matchingOptionFound:false}),optionCount:total};
+    error.failurePhase = error.observation.diagnosis;
     throw error;
   }
   const selectedLabel = await chosen.innerText();
@@ -167,7 +287,7 @@ async function selectCity(page, field, query, labelFilter = '') {
   assert.ok((await field.inputValue()).trim().length > 0, 'Selection did not set field');
   return {query, selectedLabel, selectedValue:await field.inputValue()};
 }
-async function calculate(page, caseId) {
+async function calculate(page, caseId, resultKey = caseId) {
   const started = Date.now();
   const target = item(caseId);
   target.api = {apiStatus:'WAITING',httpStatus:null,elapsedMs:null,jsonValid:false,distanceMeters:null,durationSeconds:null,tollPricingStatus:null,deployedSha:report.deployedSha};
@@ -241,14 +361,14 @@ async function calculate(page, caseId) {
     target.api.durationMin = Math.round(trip.seconds / 60);
     target.api.tollPricingStatus = tollStatus;
     target.api.vehiclePricingAvailable = Boolean(trip.pricingByVehicle);
-    await page.screenshot({path:path.join(output, `${caseId}-result.png`), fullPage:true});
+    await page.screenshot({path:path.join(output, `${resultKey}-result.png`), fullPage:true});
   } catch (error) {
     dom.status = 'FAIL';
     dom.error = normalize(error).slice(0,500);
     target.status = 'FAIL';
     target.classification = classifyApiAndDom(target.api,dom);
     save();
-    try { await page.screenshot({path:path.join(output,`${caseId}-failure.png`),fullPage:true}); } catch { /* preserve diagnostic */ }
+    try { await page.screenshot({path:path.join(output,`${resultKey}-failure.png`),fullPage:true}); } catch { /* preserve diagnostic */ }
     error.observation = {api:target.api,dom};
     throw error;
   }
@@ -259,12 +379,14 @@ async function calculate(page, caseId) {
 }
 async function run(id, session, execute) {
   const target = item(id);
+  target.clientReadiness = session?.pageLoad ?? null;
   target.status = 'RUNNING'; save();
   try {
     const data = await execute();
     target.status = 'PASS'; target.observation = data;
   } catch (e) {
     target.status = 'FAIL'; target.error = normalize(e).slice(0,800);
+    target.failurePhase = e?.failurePhase ?? null;
     if (e?.observation) target.observation = e.observation;
     if (session?.page && !session.page.isClosed()) {
       try { await session.page.screenshot({path:path.join(output,`${id}-failure.png`),fullPage:true}); }
@@ -273,6 +395,9 @@ async function run(id, session, execute) {
   } finally {
     target.pageErrors = session?.pageErrors?.slice(0,10) ?? [];
     target.searchDiagnostics = (session?.page?.__v3AcceptanceSearches ?? []).map(({responseRead,startedAt,...entry})=>entry);
+    target.searchAttempts = (session?.page?.__v3AcceptanceSearchAttempts ?? []).slice(0,20);
+    target.navigationEvents = (session?.page?.__v3AcceptanceNavigations ?? []).slice(0,10);
+    target.clientResourceErrors = (session?.page?.__v3AcceptanceClientResourceErrors ?? []).slice(0,20);
     target.analytics = {...(session?.page?.__v3AcceptanceAnalytics ?? {})};
     if (target.status === 'PASS' && target.pageErrors.length) {
       target.status = 'FAIL'; target.error = `Uncaught page errors: ${target.pageErrors.join('; ')}`;
@@ -291,7 +416,7 @@ let analyticsProof = null;
 try {
   try { main = await newSession(); }
   catch (e) {
-    for (const id of ['01','02','03','04']) {item(id).status='BLOCKED';item(id).error=`Browser navigation: ${normalize(e)}`;}
+    for (const id of ['01','02','03','04']) {item(id).status='BLOCKED';item(id).error=`Browser navigation/readiness: ${normalize(e)}`;item(id).observation=e?.observation ?? null;}
     save();
   }
   if (main) {
@@ -334,7 +459,7 @@ try {
   for (const [id,a,b,mobile] of independent) {
     let session;
     try { session=await newSession(mobile); }
-    catch (e) {item(id).status='BLOCKED';item(id).error=`Browser navigation: ${normalize(e)}`;save();continue;}
+    catch (e) {item(id).status='BLOCKED';item(id).error=`Browser navigation/readiness: ${normalize(e)}`;item(id).observation=e?.observation ?? null;save();continue;}
     const ok=await run(id,session,async()=>({
       a:await selectCity(session.page,origin(session.page),...a),
       b:await selectCity(session.page,dest(session.page),...b),
@@ -342,6 +467,43 @@ try {
     }));
     if (ok) analyticsProof = {api:item(id).api,dom:item(id).dom,analytics:item(id).analytics,sourceScenario:id};
     await session.context.close();
+  }
+  // Independent address-replacement diagnostic. This is deliberately separate
+  // from core cases 01–04 and starts from the previously confirmed Donetsk →
+  // Volnovakha pair so a Yalta failure cannot mask the replacement flow.
+  let replacementSession;
+  try { replacementSession = await newSession(); }
+  catch (e) {
+    item('R1').status='BLOCKED';
+    item('R1').error=`Browser navigation/readiness: ${normalize(e)}`;
+    item('R1').observation=e?.observation ?? null;
+    save();
+  }
+  if (replacementSession) {
+    const replaced = await run('R1',replacementSession,async()=>{
+      const page = replacementSession.page;
+      const initialA = await selectCity(page,origin(page),'Донецк','ДНР');
+      const initialB = await selectCity(page,dest(page),'Волноваха','ДНР');
+      const initialCalculation = await calculate(page,'R1','R1-initial');
+      const oldHeading = page.getByRole('heading',{level:3,name:routeHeading}).first();
+      await parent(origin(page)).getByRole('button',{name:/Очистить поле/}).click();
+      await assert.equal(await origin(page).inputValue(),'');
+      await oldHeading.waitFor({state:'hidden',timeout:5000});
+      const replacedA = await selectCity(page,origin(page),'Краснодар');
+      await parent(dest(page)).getByRole('button',{name:/Очистить поле/}).click();
+      await assert.equal(await dest(page).inputValue(),'');
+      const replacedB = await selectCity(page,dest(page),'Ростов-на-Дону');
+      const replacementCalculation = await calculate(page,'R1','R1-replaced');
+      return {
+        independentOfCoreYaltaChain:true,
+        pageReloaded:false,
+        initialPair:{a:initialA,b:initialB,calculation:initialCalculation},
+        replacementPair:{a:replacedA,b:replacedB,calculation:replacementCalculation},
+      };
+    });
+    if (replaced) analyticsProof = {api:item('R1').api,dom:item('R1').dom,analytics:item('R1').analytics,sourceScenario:'R1'};
+    report.diagnostics.independentAddressReplacement={status:item('R1').status,failurePhase:item('R1').failurePhase ?? null,observation:item('R1').observation ?? null};
+    await replacementSession.context.close();
   }
   const eighth=item('08');
   const analyticsStatus = classifyAnalyticsCheck({
@@ -368,14 +530,15 @@ try {
   report.finishedAt=new Date().toISOString();
   report.summary={
     deployedVersionIdentified: Boolean(report.deployedSha),
-    pass:report.results.filter(x=>x.status==='PASS').length,
-    fail:report.results.filter(x=>x.status==='FAIL').length,
-    blocked:report.results.filter(x=>x.status==='BLOCKED').length,
-    apiPassUiFail:report.results.filter(x=>x.classification==='API_PASS / UI_FAIL').length,
-    notVerified:report.results.filter(x=>x.status==='NOT_VERIFIED'||x.status==='NOT_RUN').length,
+    pass:report.results.filter(x=>x.group==='acceptance'&&x.status==='PASS').length,
+    fail:report.results.filter(x=>x.group==='acceptance'&&x.status==='FAIL').length,
+    blocked:report.results.filter(x=>x.group==='acceptance'&&x.status==='BLOCKED').length,
+    apiPassUiFail:report.results.filter(x=>x.group==='acceptance'&&x.classification==='API_PASS / UI_FAIL').length,
+    notVerified:report.results.filter(x=>x.group==='acceptance'&&(x.status==='NOT_VERIFIED'||x.status==='NOT_RUN')).length,
+    independentAddressReplacement:report.diagnostics.independentAddressReplacement?.status ?? item('R1').status,
   };
   save();
-  console.log(JSON.stringify({target:report.target,deployedSha:report.deployedSha,summary:report.summary,output},null,2));
+  console.log(JSON.stringify({target:report.target,deployedSha:report.deployedSha,summary:report.summary,diagnostics:report.diagnostics,output},null,2));
   // A provider outage and a code failure both require honest inspection, not a green test run.
-  if (!report.summary.deployedVersionIdentified || report.summary.fail || report.summary.blocked || report.summary.notVerified) process.exitCode=1;
+  if (!report.summary.deployedVersionIdentified || report.summary.fail || report.summary.blocked || report.summary.notVerified || report.summary.independentAddressReplacement !== 'PASS') process.exitCode=1;
 }

@@ -7,7 +7,10 @@ on:
       - .github/workflows/v3-live-browser-acceptance.yml
       - scripts/v3-live-browser-acceptance.mjs
       - scripts/v3-live-browser-acceptance-contract.mjs
+      - scripts/v3-live-browser-readiness.mjs
+      - scripts/v3-live-browser-readiness-contract.mjs
       - scripts/v3-live-browser-workflow.test.mjs
+      - scripts/v3-live-browser-hydration.test.mjs
   workflow_dispatch:
 
 permissions:
@@ -41,7 +44,10 @@ jobs:
       - name: Validate runner script syntax
         run: node --check scripts/v3-live-browser-acceptance.mjs
       - name: Run workflow and live-acceptance contract tests
-        run: node --test scripts/v3-live-browser-workflow.test.mjs
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+          PLAYWRIGHT_MODULE: ${{ runner.temp }}/v3-playwright/node_modules/playwright/index.mjs
+        run: node --test scripts/v3-live-browser-workflow.test.mjs scripts/v3-live-browser-hydration.test.mjs
       - name: Run live production acceptance; /r and /api/v3/calculate are not mocked
         env:
           CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
