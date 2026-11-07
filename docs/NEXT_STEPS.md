@@ -3,7 +3,7 @@
 ## Stage AF — next evidence step
 
 1. Recover the official M‑1 Order54 PDF from its already recorded URL `https://avtodor-tr.ru/upload/iblock/8c4/835txjvncev45htfd0x1ws6fjq1wjckl.pdf`, or preserve a byte-exact original official tariff-page response. Verify the M‑1 33–66 category-I fare, payment basis and effective clause; do not alter the observation date just because it is old.
-2. Prepare reviewed M‑11 and M‑12 rows from retained official files. The proposed strict contract needs exactly one evidence record per all four registry IDs; the two other-roads records cannot make it pass alone.
+2. Prepare reviewed M‑11 and M‑12 rows from retained official files. M‑11 source: `experiments/nationwide-tolls/source-snapshots/m11/2026-09-04-avtodor-order274-current.pdf` plus `experiments/nationwide-tolls/source-snapshots/m11/2026-10-12-58-679-category1-a1-current.json`; M‑12 source: `experiments/nationwide-tolls/source-documents/m12-order302-effective-2026-10-08.pdf` plus `experiments/nationwide-tolls/source-snapshots/m12-order302-2026-10-08-category1-direct-pair-matrix.json`. The proposed strict contract needs exactly one evidence record per all four registry IDs; the two other-roads records cannot make it pass alone.
 3. Keep the two aggregate records blocked until primary-source coverage is complete. Then present `experiments/tariff-gate-proposal/approval.patch` and the reviewed evidence package for owner approval. Do not apply it to mandatory CI before approval.
 
 ## Stage AE — superseded by Stage AF (historical next-step record)
