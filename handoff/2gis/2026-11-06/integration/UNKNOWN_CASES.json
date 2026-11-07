@@ -1,0 +1,12 @@
+{
+  "cases": [
+    {"road":"M4","id":"pvp545-lane-to-product","status":"UNKNOWN","forbiddenFallback":"nearest gate, toll flag, 320/410 legacy amount, aggregate 2GIS payments"},
+    {"road":"M4","id":"pvp545-product-additivity","status":"UNKNOWN","forbiddenFallback":"sum 517-544 plus 544-589 without operator rule"},
+    {"road":"M12","id":"physical-287-to-tariff-281","status":"UNKNOWN","forbiddenFallback":"kilometre proximity"},
+    {"road":"M12","id":"physical-318-to-tariff-314","status":"UNKNOWN","forbiddenFallback":"kilometre proximity"},
+    {"road":"M12","id":"physical-395-to-tariff-392","status":"UNKNOWN","forbiddenFallback":"kilometre proximity"},
+    {"road":"M12","id":"physical-442-to-tariff-420","status":"UNKNOWN","forbiddenFallback":"kilometre proximity"},
+    {"road":"CKAD","id":"m11-m12-prior-2gis-call","status":"OUTCOME_UNKNOWN_NO_REPLAY","forbiddenFallback":"retry or infer result from zero quota delta"},
+    {"road":"ZSD","id":"rvp64-separate-charge","status":"UNKNOWN","forbiddenFallback":"assume gantry is a separate PVP or absent payment fields mean free"}
+  ]
+}

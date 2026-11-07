@@ -1,0 +1,3 @@
+# Preserve generated CSV records with CRLF and byte-exact historical patch context.
+*.csv whitespace=cr-at-eol
+*.patch -whitespace

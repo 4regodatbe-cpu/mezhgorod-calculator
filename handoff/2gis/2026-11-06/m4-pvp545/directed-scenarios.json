@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "road": "M-4 Don",
+  "facility": "PVP545",
+  "tariffProducts": [
+    "517-544",
+    "544-589"
+  ],
+  "sourceLimits": [
+    "The 2016 Avtodor notice supports two route-conditioned products but is historical evidence, not a 2026 lane-to-product rule.",
+    "The 2023 plans and 2026 OSM subset establish branches and gate banks, not product additivity or current fare.",
+    "No exact surveyed OSM overlay exists in retained evidence."
+  ],
+  "osmSource": {
+    "path": "geometry/osm-directed-subset.json",
+    "sha256": "afe6dc37b1e22fd410fac7d199436646770ff46c0b7abffaceea6ce7d43e066a",
+    "license": "OpenStreetMap contributors / ODbL",
+    "forkNode": "4522140254",
+    "forkCoordinateLonLat": [
+      39.554631,
+      51.4679181
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "m4-545-first-only-517-544",
+      "direction": "to-Rostov route-family; exact approach direction/lane is not mapped",
+      "physicalSequence": [],
+      "operatorSourceFact": "Historical notice differentiates a trip charged only on 544-589 from a trip continuing over 517-589.",
+      "physicalPassageFact": "No retained endpoint/way chain proves entry at 517 and exit at 544 for a specific lane.",
+      "productBinding": "UNKNOWN",
+      "doubleChargeRisk": "UNKNOWN",
+      "status": "PARTIAL",
+      "requiredEvidence": [
+        "dated operator lane-to-product rule",
+        "complete directed entry-to-exit witness",
+        "current effective tariff"
+      ]
+    },
+    {
+      "id": "m4-545-second-only-544-589",
+      "direction": "to-Rostov route-family; route-specific product described historically",
+      "physicalSequence": [],
+      "operatorSourceFact": "Historical notice separately identifies entry onto 544-589 without 517-544.",
+      "physicalPassageFact": "Exact modern entry lane and full downstream path to 589 are not proven by retained subset.",
+      "productBinding": "PARTIAL_HISTORICAL_ONLY",
+      "doubleChargeRisk": "UNKNOWN",
+      "status": "PARTIAL",
+      "requiredEvidence": [
+        "current diagram binding entry branch to 544-589",
+        "full 544-to-589 directed geometry",
+        "current effective tariff"
+      ]
+    },
+    {
+      "id": "m4-545-through-both-517-589",
+      "direction": "to-Rostov",
+      "physicalSequence": [],
+      "operatorSourceFact": "Historical notice distinguishes continuing through 517-589 from entering only 544-589.",
+      "physicalPassageFact": "Neither the 517 entry nor complete 589 exit is contained in the local PVP545 geometry crop.",
+      "productBinding": "PARTIAL_HISTORICAL_ONLY",
+      "doubleChargeRisk": "UNKNOWN_NO_ADDITIVITY_RULE",
+      "status": "PARTIAL",
+      "requiredEvidence": [
+        "full route endpoints and all one-way links",
+        "operator billing combination rule",
+        "2026 tariff edition"
+      ]
+    },
+    {
+      "id": "m4-545-reverse-direction",
+      "direction": "southbound / toward-Rostov at PVP545 (opposite direction from the northbound diagnostic branch)",
+      "physicalSequence": [
+        "way:467980112",
+        "node:365274796"
+      ],
+      "gateCoordinateLonLat": [
+        39.5539863,
+        51.4702443
+      ],
+      "operatorSourceFact": "2016 notice describes a symmetric route-conditioned product principle toward Moscow.",
+      "physicalPassageFact": "OSM node 365274796 is the opposing southbound booth on a one-way way; it is not the target northbound gate 5818209495.",
+      "productBinding": "UNKNOWN",
+      "doubleChargeRisk": "UNKNOWN",
+      "status": "PARTIAL",
+      "requiredEvidence": [
+        "modern directed lane to product crosswalk",
+        "full route boundaries",
+        "billing rule"
+      ]
+    },
+    {
+      "id": "m4-545-neighbor-old-road-branch",
+      "direction": "northbound from fork toward old straight corridor",
+      "physicalSequence": [
+        "way:522875739",
+        "way:799492316",
+        "way:467980114",
+        "node:9620416636",
+        "way:467980113",
+        "way:1043769286",
+        "way:432522383",
+        "way:1043769285"
+      ],
+      "gateCoordinateLonLat": [
+        39.5543533,
+        51.4702571
+      ],
+      "operatorSourceFact": "Plan shows free-route direction signs in vicinity; no toll-product assignment is inferred from signs alone.",
+      "physicalPassageFact": "Distinct booth node/chain and exit node 4512436102 differ from bypass merge 4513805004.",
+      "productBinding": "UNKNOWN",
+      "doubleChargeRisk": "UNKNOWN",
+      "status": "PARTIAL",
+      "requiredEvidence": [
+        "current open-road charging rule for this gate",
+        "source-backed entire path",
+        "effective tariff"
+      ]
+    },
+    {
+      "id": "m4-545-nearby-without-proven-booth",
+      "direction": "any; short path near plaza without a matched one-way booth chain",
+      "physicalSequence": [],
+      "operatorSourceFact": "Open-system rules can permit some paths without crossing a PVP; location proximity is insufficient.",
+      "physicalPassageFact": "No route geometry or PVP crossing has been proven for this negative control.",
+      "productBinding": "UNKNOWN",
+      "doubleChargeRisk": "UNKNOWN",
+      "status": "UNKNOWN",
+      "requiredEvidence": [
+        "directed path outside all booth branches",
+        "operator charge/no-charge boundary definition"
+      ]
+    },
+    {
+      "id": "m4-545-northbound-south-cash-bypass",
+      "direction": "northbound from fork through southern booth bank to bypass-side corridor",
+      "physicalSequence": [
+        "way:799492317",
+        "way:615270676",
+        "way:615270691",
+        "node:5818209495",
+        "way:615270694",
+        "way:1043769287",
+        "way:799492323"
+      ],
+      "gateCoordinateLonLat": [
+        39.554704,
+        51.4702718
+      ],
+      "operatorSourceFact": "Plan pages 242-244 and route signage support a distinct southern cash approach; no product link follows from this alone.",
+      "physicalPassageFact": "Ordered one-way OSM chain crosses named booth; distinct from north gate 3504914294 and neighboring old-road gate 9620416636.",
+      "productBinding": "UNKNOWN",
+      "doubleChargeRisk": "UNKNOWN",
+      "status": "PARTIAL",
+      "requiredEvidence": [
+        "dated operator rule mapping this directed lane to one or both products",
+        "full section endpoint geometry",
+        "current fare and no-double-charge/additivity rule"
+      ]
+    },
+    {
+      "id": "m4-545-northbound-central-north-gate",
+      "direction": "northbound from fork via central approach to northern gate bank",
+      "physicalSequence": [
+        "way:799492326",
+        "way:799492325",
+        "way:606838738",
+        "way:799492324",
+        "way:1043769289",
+        "way:702218809",
+        "way:787089819"
+      ],
+      "gateNode": "3504914294",
+      "gateCoordinateLonLat": [
+        39.5548118,
+        51.4736578
+      ],
+      "productBinding": "UNKNOWN",
+      "doubleChargeRisk": "UNKNOWN",
+      "status": "PARTIAL",
+      "requiredEvidence": [
+        "current operator lane/product map",
+        "full charged-boundary traversal",
+        "current tariff"
+      ]
+    }
+  ],
+  "runtimeInvariant": "Never assign either product from nearest PVP, chainage label, booth name, toll flag, or 2GIS aggregate. Unknown route/product/additivity stays null/unknown.",
+  "operatorSources": [
+    {
+      "url": "https://avtodor-tr.ru/press-center/news/rezhim-platnosti-vveden-na-uchastke-avtomobilnoy-dorogi-m-4-don-v-obkhod-sela-novaya-usman-i-sela-ro/",
+      "published": "2016-12-26",
+      "basis": "direct browser source reviewed in retained M4_545_ROUTE_COLLECTION_SOURCES.md; direct HTTP fetch was challenged; accepted under latest-available source policy in B05 review",
+      "scope": "route-dependent choice between 517-544 and 544-589; not numbered-lane map or date-valid fare"
+    },
+    {
+      "url": "https://avtodor-tr.ru/upload/iblock/a2d/9ig1ywvudpmvi8i0v2icgc64eqbwzn5x.pdf",
+      "document": "Avtodor Order 58, category I cash/card, effective 2026-03-02",
+      "sha256": "25fdb9a430934f47617c8cc1563f95e49c6ebe41c6303e9bd67465b3c568662d",
+      "scope": "published product amounts only; current retained fare basis accepted under latest-available policy; not a route-specific combined total"
+    },
+    {
+      "url": "https://mintrans.gov.ru/documents/2/12842",
+      "document": "Government directive 2266-r, 2014-11-14, attachment 1",
+      "scope": "physical bypass endpoints 517+808 and 544+996; not a nearest-OSM-edge license"
+    }
+  ],
+  "observedRouteCase": {
+    "caseId": "pair-m4-a289-taman-to-voronezh",
+    "captureSha256": "db7ce8f0d256d7e2583644611c3a00adae58c5367735a146a4f9005867b9404a",
+    "provider": "OSRM saved trace; not a new call",
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "routeMeters": 1026560,
+    "coordinates": 6540,
+    "traceChunks": {
+      "complete": 8,
+      "failed": 0
+    },
+    "directedWitness": [
+      "way:1043769291",
+      "node:4522140254",
+      "way:799492317",
+      "way:615270676",
+      "way:615270691",
+      "node:5818209495",
+      "way:615270694",
+      "way:1043769287",
+      "way:799492323",
+      "node:4513805004",
+      "way:702218808",
+      "... reviewed uninterrupted bypass sequence ...",
+      "way:301694367",
+      "node:3057885104",
+      "way:705714822",
+      "road:R-298"
+    ],
+    "gateEdgeIndex": 38,
+    "exitConnectorEdgeIndex": 70,
+    "firstR298EdgeIndex": 71,
+    "adjacentGatesTraversed": [],
+    "candidateProducts": [
+      "517-544",
+      "544-589"
+    ],
+    "confirmedProducts": [],
+    "routeFareRub": null,
+    "pricingStatus": "UNKNOWN",
+    "missing": [
+      "operator mapping for this exact branch and exit to one/both products",
+      "complete physical chainage tie to official 517+808/544+996 tariff boundaries",
+      "prior payment / no-double-charge applicability"
+    ]
+  }
+}

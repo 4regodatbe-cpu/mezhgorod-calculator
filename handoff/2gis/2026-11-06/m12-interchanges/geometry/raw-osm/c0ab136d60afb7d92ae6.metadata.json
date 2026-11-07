@@ -1,0 +1,19 @@
+{
+  "url": "https://api.openstreetmap.org/api/0.6/way/1550561305/full",
+  "startedAt": "2026-10-17T21:09:42.035Z",
+  "durableStartedCommit": "1a8df19a22af70b8ebccda0160f805ab6e677cdc",
+  "bodyFile": "c0ab136d60afb7d92ae6.osm",
+  "status": 200,
+  "finalUrl": "https://api.openstreetmap.org/api/0.6/way/1550561305/full",
+  "contentType": "application/xml; charset=utf-8",
+  "sourceResponseSha256": "8137333900213085db615cafc7e9a1ebb1eb6da4a0a15b37535528c58acda5fa",
+  "sanitizedFileSha256": "05a1d70e7ac9eecb13cd4643d2572e91306aeb4abe5db023a157b363b6d6820e",
+  "redactedAttributes": [
+    "user",
+    "uid",
+    "changeset",
+    "timestamp"
+  ],
+  "redactionReason": "Remove OSM contributor identity/history fields from the published copy; preserve geometry, object IDs, tags, source URL and original response hash.",
+  "sanitizedBytes": 850
+}

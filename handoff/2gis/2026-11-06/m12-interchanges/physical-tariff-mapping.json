@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "road": "M-12 Vostok",
+  "sourceSnapshot": "sources-2026-10-08-matrix.json",
+  "matrixOrder": {
+    "number": "302",
+    "date": "2026-10-02",
+    "effectiveFrom": "2026-10-08T00:00:00+03:00",
+    "basis": "operator category-I direct pair matrix"
+  },
+  "comparisonCaution": "The calibrated RVP anchors at 281/314/392/420 are tariff-associated toll-frame crossings (with source-backed coordinates/OSM IDs). Physical highway interchange kilometrages are distinct: 442 is the legally listed R-158 interchange; 421 was a 2022 22Н-0239 crossing and is omitted from the reviewed 2026 inventory. The task-provided 287/318/395 labels have no retained primary tie point. Never bind an exit to an RVP merely by proximity.",
+  "tariffRows": [
+    {
+      "from": "gus_khrustalny_p132",
+      "to": "melenki",
+      "tariffRvpKm": 281,
+      "rub": 522,
+      "physicalCalibratedAnchor": {
+        "coordinateLonLat": [
+          41.490508,
+          55.663391
+        ],
+        "osmIds": [
+          "12202115855",
+          "12202115856"
+        ],
+        "controlMaxLateralKm": 0.01
+      },
+      "meaning": "Operator matrix transition with separately calibrated RVP crossing anchor; not a nearby interchange exit ID."
+    },
+    {
+      "from": "melenki",
+      "to": "murom",
+      "tariffRvpKm": 314,
+      "rub": 205,
+      "physicalCalibratedAnchor": {
+        "coordinateLonLat": [
+          41.963751,
+          55.642127
+        ],
+        "osmIds": [
+          "11218919163",
+          "11583833201"
+        ],
+        "controlMaxLateralKm": 0.01
+      },
+      "meaning": "Operator matrix transition with separately calibrated RVP crossing anchor; not a nearby interchange exit ID."
+    },
+    {
+      "from": "murom",
+      "to": "diveevo",
+      "tariffRvpKm": 392,
+      "rub": 510,
+      "physicalCalibratedAnchor": {
+        "coordinateLonLat": [
+          43.12553,
+          55.526935
+        ],
+        "osmIds": [
+          "8996000050",
+          "8996000053"
+        ],
+        "controlMaxLateralKm": 0.012
+      },
+      "meaning": "Operator matrix transition with separately calibrated RVP crossing anchor; not a nearby interchange exit ID."
+    },
+    {
+      "from": "diveevo",
+      "to": "arzamas_p158",
+      "tariffRvpKm": 420,
+      "rub": 311,
+      "physicalCalibratedAnchor": {
+        "coordinateLonLat": [
+          43.563511,
+          55.500932
+        ],
+        "osmIds": [
+          "10090995832",
+          "10090995833"
+        ],
+        "controlMaxLateralKm": 0.021
+      },
+      "meaning": "Operator matrix transition with separately calibrated RVP crossing anchor; not the separately listed 442-km R-158 physical interchange."
+    }
+  ],
+  "physicalEvidence": [
+    {
+      "caseId": "m12-west-exit-arzamas",
+      "exitRoad": "22Н-0239",
+      "exitCoordinateLonLat": [
+        43.566959,
+        55.50064
+      ],
+      "wayChain": [
+        "1550135076",
+        "1550561305",
+        "1206479738"
+      ],
+      "sharedNodes": [
+        "14102954884",
+        "10090995838"
+      ],
+      "candidateTariffPoint": "arzamas_p158",
+      "bindingStatus": "UNKNOWN",
+      "status": "PARTIAL"
+    },
+    {
+      "caseId": "m12-west-exit-m7-cheboksary",
+      "exitRoad": "M-7",
+      "exitCoordinateLonLat": [
+        40.195649,
+        56.07956
+      ],
+      "wayChain": [
+        "972809728",
+        "972809720",
+        "292501171"
+      ],
+      "sharedNodes": [
+        "10026978937",
+        "14216395535"
+      ],
+      "candidateTariffPoint": "vladimir",
+      "bindingStatus": "UNKNOWN",
+      "status": "PARTIAL"
+    }
+  ],
+  "unverifiedPhysicalLabels": [
+    {
+      "km": 287,
+      "claimedRelation": "compared against tariff RVP 281",
+      "evidenceStatus": "UNKNOWN",
+      "reason": "no retained normative/as-built source in inspected files provides exact OSM tie point"
+    },
+    {
+      "km": 318,
+      "claimedRelation": "compared against tariff RVP 314",
+      "evidenceStatus": "UNKNOWN",
+      "reason": "no retained normative/as-built source in inspected files provides exact OSM tie point"
+    },
+    {
+      "km": 395,
+      "claimedRelation": "compared against tariff RVP 392",
+      "evidenceStatus": "UNKNOWN",
+      "reason": "no retained normative/as-built source in inspected files provides exact OSM tie point"
+    }
+  ],
+  "prohibitedUse": [
+    "Do not select tariff row by nearest kilometre number.",
+    "Do not treat toll_gantry alone as a named RVP/product.",
+    "Do not sum adjacent rows to create an OD price unless the operator matrix explicitly confirms that OD pair.",
+    "Do not conflate legal km442 R-158 interchange with operator matrix RVP420/Arzamas (P158) without explicit directed crosswalk.",
+    "Do not label the 22Н-0239 exit as the R-158/442 interchange.",
+    "Do not conflate legal km442 R-158 interchange with operator matrix RVP420/Arzamas (P158) without explicit directed crosswalk.",
+    "Do not label the 22Н-0239 exit as the R-158/442 interchange."
+  ],
+  "regressionInvariants": [
+    "Unbound physical exit yields unknown/null.",
+    "Changing only route destination text does not change boundary ID.",
+    "Explicit directed operator crosswalk is required before any tariff row is selected."
+  ],
+  "physicalInterchanges": [
+    {
+      "physicalKm": 287,
+      "roadOrJunction": "not recovered from retained primary legal documents",
+      "sourceStatus": "UNKNOWN",
+      "tariffMapping": "UNKNOWN"
+    },
+    {
+      "physicalKm": 318,
+      "roadOrJunction": "not recovered from retained primary legal documents",
+      "sourceStatus": "UNKNOWN",
+      "tariffMapping": "UNKNOWN"
+    },
+    {
+      "physicalKm": 395,
+      "roadOrJunction": "not recovered from retained primary legal documents",
+      "sourceStatus": "UNKNOWN",
+      "tariffMapping": "UNKNOWN"
+    },
+    {
+      "physicalKm": 421,
+      "roadOrJunction": "22ОПМЗ22Н-0239 crossing / Arzamas-1–Maryevka–Kovaksa–Piyavochnoe; 2022 inventory only",
+      "sourceStatus": "OFFICIAL_2022_LISTED_OMITTED_IN_REVISED_2026_INVENTORY",
+      "tariffMapping": "UNKNOWN"
+    },
+    {
+      "physicalKm": 442,
+      "roadOrJunction": "Federal R-158 interchange with exit possibility; listed in 2022 and retained in revised 2026 inventory",
+      "sourceStatus": "OFFICIAL_PHYSICAL_INVENTORY",
+      "tariffMapping": "UNKNOWN_NOT_EQUAL_TO_TARIFF_RVP420_WITHOUT_CROSSWALK"
+    }
+  ],
+  "sourceReviews": [
+    {
+      "path": "M12_2624_SOURCE_COMPARISON.md",
+      "basis": "retained review of official Mintrans Orders2580-р and2624-р; original PDF bytes/hash not retained"
+    },
+    {
+      "path": "M12_DIRECTIONAL_REGISTRATION_REVIEW.md",
+      "basis": "saved provider trace extracts and official tariff matrix registration review; no new route replay"
+    },
+    {
+      "path": "sources/rvp-calibrated-anchors-2026-09-30.json",
+      "basis": "explicitly partial calibrated physical toll-frame anchors for tariff RVPs 281/314/392/420"
+    }
+  ]
+}

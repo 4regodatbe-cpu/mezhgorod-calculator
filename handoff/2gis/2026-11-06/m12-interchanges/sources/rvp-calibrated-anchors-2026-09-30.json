@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "road": "M-12 Восток",
+  "evidenceDate": "2026-09-30",
+  "scope": "CALIBRATED_PARTIAL_RVP_EVIDENCE",
+  "warning": "This is traversal evidence, not the tariff source and not a complete M-12 RVP inventory. Only explicitly calibrated high-confidence anchors may be used as direct crossing evidence.",
+  "provenance": {
+    "segment5a3RunId": 36756667549,
+    "segment5b2aRunId": 36762043739,
+    "segment5b2aArtifactId": 11118378338,
+    "tariffSnapshot": "data/tolls/m12-2026-03-02-category1.json"
+  },
+  "directCrossingRadiusKm": 0.08,
+  "anchors": [
+    { "rvpKm": 184, "center": [40.225090, 56.070982], "osmIds": [8712957062, 8712957334], "controlMaxLateralKm": 0.013 },
+    { "rvpKm": 281, "center": [41.490508, 55.663391], "osmIds": [12202115855, 12202115856], "controlMaxLateralKm": 0.010 },
+    { "rvpKm": 314, "center": [41.963751, 55.642127], "osmIds": [11218919163, 11583833201], "controlMaxLateralKm": 0.010 },
+    { "rvpKm": 392, "center": [43.125530, 55.526935], "osmIds": [8996000050, 8996000053], "controlMaxLateralKm": 0.012 },
+    { "rvpKm": 420, "center": [43.563511, 55.500932], "osmIds": [10090995832, 10090995833], "controlMaxLateralKm": 0.021 },
+    { "rvpKm": 485, "center": [44.555097, 55.479678], "osmIds": [8996210635, 8996210860], "controlMaxLateralKm": 0.020 },
+    { "rvpKm": 591, "center": [46.171704, 55.436774], "osmIds": [8955730753, 8955739583], "controlMaxLateralKm": 0.015 },
+    { "rvpKm": 635, "center": [46.814728, 55.384292], "osmIds": [8955200885, 11954128268], "controlMaxLateralKm": 0.035 },
+    { "rvpKm": 764, "center": [48.701127, 55.524590], "osmIds": [12690034181, 12690034139], "controlMaxLateralKm": 0.011 }
+  ],
+  "excludedPhysicalEvents": [
+    {
+      "reason": "physical gantry does not align to an official tariff RVP in Segment 5B2A",
+      "center": [47.568270, 55.326182],
+      "osmIds": [8955193082, 10769631018],
+      "controlMaxLateralKm": 0.016
+    }
+  ],
+  "rejectedControlCandidates": [
+    {
+      "rvpKm": 769,
+      "center": [48.717484, 55.545972],
+      "osmIds": [8851915757, 8851915759],
+      "controlMaxLateralKm": 0.526,
+      "reason": "inside the old exploratory 1 km radius but not an exact crossing of the Moscow-Kazan control; do not promote without stronger evidence"
+    }
+  ]
+}

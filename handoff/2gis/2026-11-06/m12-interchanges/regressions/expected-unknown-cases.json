@@ -1,0 +1,10 @@
+{
+  "cases": [
+    {"caseId":"m12-287-is-not-auto-281", "physicalKm":287,"tariffRvpKm":281,"expect":"unknown-until-crosswalk"},
+    {"caseId":"m12-318-is-not-auto-314", "physicalKm":318,"tariffRvpKm":314,"expect":"unknown-until-crosswalk"},
+    {"caseId":"m12-395-is-not-auto-392", "physicalKm":395,"tariffRvpKm":392,"expect":"unknown-until-crosswalk"},
+    {"caseId":"m12-442-is-not-auto-420", "physicalKm":442,"tariffRvpKm":420,"expect":"unknown-until-crosswalk"},
+    {"caseId":"m12-arzamas-exit-22n0239", "wayChain":["1550135076","1550561305","1206479738"],"expect":"physical-exit-only; tariff-binding-unknown"},
+    {"caseId":"m12-cheboksary-exit-m7", "wayChain":["972809728","972809720","292501171"],"expect":"physical-exit-only; tariff-binding-unknown"}
+  ]
+}
