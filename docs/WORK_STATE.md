@@ -1,4 +1,10 @@
-# Текущий handoff — Stage AE DONE LOCAL / gate patch awaiting approval (07.11.2026)
+# Текущий handoff — Stage AF DONE LOCAL / evidence incomplete (07.11.2026)
+
+Изолированный `/workspace/stage-ae-gate-proposal`, branch `codex/stage-ae-gate-proposal`, продолжение AE от `e2949a98d59651aaaab8e70e3c1802b64dd98a2d`. Для М‑3/ЦКАД/А‑289 сохранены и визуально проверены официальные приложения №53/56/55: категория I, платёжное условие и effective date 02.03.2026; хеши записаны. Для М‑1 отсутствует первичный PDF приказа №54 и исходные байты страницы 01.10.2026. Две агрегированные записи остаются `coverageComplete:false`, суммы и даты не менялись. Возраст наблюдения — warning, не expiry.
+
+Targeted suites3/3 PASS; Stage AF approval tests8/8; JS syntax, PDF hashes, `git apply --check` PASS. Временная копия с `approval.patch` и prepared evidence завершилась expected strict exit2; также нет evidence для M‑11/M‑12 по схеме всех четырёх registry IDs. Это не CI PASS. Mandatory gate, runtime, registry и workflow не изменялись; no push/merge/Production, PR14 unchanged. См. [checkpoint](checkpoints/2026-11-07-stage-af-tariff-evidence-DONE-LOCAL.md), [evidence](../experiments/tariff-gate-proposal/avtodor-other-roads-evidence-2026-11-07.json), [patch](../experiments/tariff-gate-proposal/approval.patch).
+
+# Предыдущий handoff — Stage AE DONE LOCAL / gate patch awaiting approval (07.11.2026)
 
 Изолированный `/workspace/stage-ae-gate-proposal`, branch `codex/stage-ae-gate-proposal`, база AD8d67d215. Подготовлены isolated evaluator, reviewed-evidence schema, regression tests и `experiments/tariff-gate-proposal/approval.patch`. Активный mandatory gate, workflow, суммы, даты и runtime не менялись. Возраст наблюдения предлагается предупреждением; проверенный источник/денежная ячейка, период применения и существенные противоречия — отдельными blockers. Unknown legal effectiveFrom допускает принятую рабочую модель с обоснованием, согласно28октября.
 

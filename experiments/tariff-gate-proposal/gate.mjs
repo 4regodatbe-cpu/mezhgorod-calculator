@@ -35,6 +35,8 @@ export function assessTariffGate(report, evidence, verifySource = verifySavedOff
     const entry = matches[0];
     if (!verifySource(entry.source)) error(row.id, 'official_source_missing_or_unverified');
     if (entry.fareKnown !== true || entry.versionBasis !== 'latest_available_official_document') error(row.id, 'official_fare_unproven');
+    // Aggregated snapshots must account for every road/system in their declared scope.
+    if (entry.coverageComplete !== true) error(row.id, 'official_source_coverage_incomplete');
     // Unknown legal effectiveFrom is not an automatic refusal of an accepted working model.
     if (!['verified','accepted_working_calculation'].includes(entry.applicability?.status) || !entry.applicability?.basis?.trim()) error(row.id, 'application_date_unproven_or_wrong');
     if (entry.contradiction !== 'none') error(row.id, 'material_or_unresolved_contradiction');
