@@ -31,6 +31,8 @@ Stage AB должен был закрыть оставшиеся блокеры 
 | Тверь → Адлер | HTTP 502 | — | Сохранённый route failure |
 | Голубицкая → Санкт-Петербург | HTTP 502 | — | Сохранённый route failure |
 
+Это ровно ранее сохранённое состояние до Stage AB regression; поскольку application runtime и тарифы не изменялись, новый route replay «после» не выполнялся и не подменяется предположением о пост-change runtime. В таблице сохранены измеренные route outcomes и отдельно явно неизвестные тарифы/ошибки; полей геометрии или provider payloads в manifest нет.
+
 Для двух 502 известны агрегатный `ROUTE_UNAVAILABLE`, ошибки на каждом из трёх provider stages и общий API mapping в HTTP 502. Точные per-provider HTTP статусы, exception type, timeout/transport/parse category не записаны и не восстанавливаются из таймингов. Нельзя заключить, что виноват конкретный provider либо код/геометрия. `app/api/v3/calculate/route.ts` вызывает три кандидата (Valhalla, OSRM, BRouter) с 25-секундными сигналами, не включает bypass fallback при `fastestOnly`, и при отсутствии usable route завершает запрос без результата; нет искусственного route или нулевого toll.
 
 Из сохранённого control script `scripts/v3-live-route-audit.mjs` установлены точные request inputs: `standard` mode/vehicle, `departureAt=2026-10-02T09:00:00+03:00`, POST `/api/v3/calculate`; Тверь `[lng 35.9176, lat 56.8587]` → Адлер `[39.9180, 43.4382]`, Голубицкая `[37.2761, 45.3258]` → Санкт-Петербург `[30.3351, 59.9343]`. Сценарии использовали до шести sequential cases в одном bounded runner, но per-provider response/transport details в итоговом sanitised report отсутствуют. Источник control coordinates — сам сохранённый test fixture, не утверждение о точных адресных входах пользователя.
