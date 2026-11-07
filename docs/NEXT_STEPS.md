@@ -1,6 +1,16 @@
 # Next steps
 
-## FINAL V3 release — blocked after exact-SHA CI/Preview checks
+## Stage AJ — B03 and exact-Preview browser acceptance in progress
+
+1. Confirm the four current GeoNames city records against the preserved daily dump SHA and capture per-record original ID, language name, coordinates, admin codes, `modificationDate`, archive retrieval date and display-normalization rules. Do not treat old local GeoNames sourceDate as fresh.
+2. If all four rows match and license/provenance tests pass, update the limited snapshot/license metadata only; preserve the seven-day maximum and strict expiry behavior. Otherwise leave snapshot unchanged and keep B03 blocked.
+3. Run focused address snapshot tests, full mandatory gate, then ordinary fast-forward push/readback so B03 executes all 8+10 real Playwright scenarios. Do not treat skipped scenarios or setup steps as PASS.
+4. Run an independent Playwright acceptance against the exact READY Preview SHA. Use existing Vercel protection only; test desktop/mobile, address selection, calculations, duration display, honest toll status, clear/retype/A↔B, and V2. Keep authenticated URLs/tokens out of logs.
+5. Do not change Production unless B03, all other required GitHub Actions and exact-Preview route acceptance pass with no P0/P1. PR #14 stays Draft; main/Android/backup refs remain untouched.
+
+See [Stage AJ STARTED checkpoint](checkpoints/2026-11-07-stage-aj-preview-and-snapshot-STARTED.md). The prior release blocker record is preserved below.
+
+## Historical — FINAL V3 release blocked after exact-SHA CI/Preview checks
 
 1. Do not publish Production now: B03 run `42422534580` failed pre-browser because the 7-day address snapshot expired at `2026-11-07T14:50:17.541Z`; live browser steps never ran. Do not edit `expiresAt` or weaken its gate.
 2. Obtain genuine refreshed captures for the existing four address-snapshot rows with preserved source responses, capture times, exact result IDs/positions and SHA256; renew validity only from the earliest verified capture, maximum seven days. If any exact ID cannot be re-established, keep that row unavailable and keep B03 blocked.

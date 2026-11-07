@@ -1,4 +1,12 @@
-# Текущий handoff — FINAL V3: hosted/Preview acceptance blocked (07.11.2026)
+# Текущий handoff — Stage AJ: bounded B03/Preview closeout in progress (07.11.2026)
+
+**IN PROGRESS.** Current isolated worktree `/workspace/stage-ae-gate-proposal`, branch `codex/stage-ae-gate-proposal`, local start HEAD `f87428824ed15f46336474891dcfe16cbbc56d88`; published branch still verified at `76a39da28a5fefa7aa7ec0f2c954114297d84b06`; PR #14 OPEN/Draft. Production remains `a6bea89dd4b481a1352dc492969004e6cd1e6e38` and is unchanged.
+
+Stage AJ is limited to valid address snapshot evidence, B03’s 8+10 real browser scenarios, and Playwright on the exact Vercel Preview SHA. The old snapshot expired; no dates or freshness guards were changed. GeoNames Web Service public demo was blocked by official quota error 18; a current official GeoNames daily city archive was retrieved and hashed, with four target IDs found. Source bytes/metadata and exact initial evidence are in [Stage AJ STARTED checkpoint](checkpoints/2026-11-07-stage-aj-preview-and-snapshot-STARTED.md). Do not accept those records into runtime until source-row/test validation is complete.
+
+Previous release-candidate state and outcomes remain in [Stage AJ start checkpoint](checkpoints/2026-11-07-stage-aj-preview-and-snapshot-STARTED.md) and [previous hosted blocker checkpoint](checkpoints/2026-11-07-final-v3-release-BLOCKED-AFTER-PREVIEW.md). Product gate/tariff work is complete and out of scope.
+
+## Previous handoff — awaiting Stage AJ
 
 **Кандидат опубликован в рабочую ветку, но Production не выпущен.** Проверенный remote/Preview SHA: `76a39da28a5fefa7aa7ec0f2c954114297d84b06`; GitHub PR #14 остаётся `OPEN / Draft`. Production readback по-прежнему `a6bea89dd4b481a1352dc492969004e6cd1e6e38`. Основная локальная история из 91 коммита не менялась; `main`, Android и резервные refs не менялись.
 

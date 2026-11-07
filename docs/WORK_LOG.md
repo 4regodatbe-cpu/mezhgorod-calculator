@@ -90,6 +90,13 @@ Full offline on implementation: 1148 PASS/0 FAIL/1 SKIP plus subsequent expanded
 
 Append-only summary of substantial project work. Detailed evidence remains in stage checkpoints.
 
+## 2026-11-07 — Stage AJ started: B03 freshness and exact Preview browser acceptance
+
+- Starting local HEAD `f87428824ed15f46336474891dcfe16cbbc56d88`; published feature head verified as `76a39da28a5fefa7aa7ec0f2c954114297d84b06`; PR #14 OPEN/Draft. Production `a6bea89dd4b481a1352dc492969004e6cd1e6e38` untouched.
+- B03's old four-city snapshot was expired. A bounded GeoNames public demo batch returned official quota error 18; no retry. Retrieved official GeoNames daily `cities15000.zip` (HTTP 200, Last-Modified 2026-11-07 02:54:40Z, SHA-256 `37d3b39e88167155539dc4aaf93886527c5037b6a822087e48fe530baf8436b7`) and validated ZIP integrity. Target records 709717, 565348, 542420, 501175 present, localized names included, city modification dates retained separately. This is source inspection only, not yet an accepted runtime snapshot update.
+- Raw daily archive and retrieval headers saved at `experiments/address-search/stage-i-2026-11-07/source/`; detailed STARTED/recovery plan: [Stage AJ checkpoint](../docs/checkpoints/2026-11-07-stage-aj-preview-and-snapshot-STARTED.md).
+- Current step: verify each source row/license/region normalization and design regression before altering the four-item snapshot. No route/tariff/2GIS/Production changes.
+
 ## 2026-11-07 — FINAL V3 gate push; Production blocked after hosted checks
 
 - Ordinary fast-forward push of the reviewed product-evidence-gate candidate succeeded to `fix/v3-missing-route-prices-2026-10-15`; GitHub readback and Preview SHA are `76a39da28a5fefa7aa7ec0f2c954114297d84b06`. PR #14 remains OPEN/Draft. The prior 91-commit primary local history was not merged or rewritten.
