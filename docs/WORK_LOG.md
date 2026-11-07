@@ -90,6 +90,15 @@ Full offline on implementation: 1148 PASS/0 FAIL/1 SKIP plus subsequent expanded
 
 Append-only summary of substantial project work. Detailed evidence remains in stage checkpoints.
 
+## 2026-11-07 — FINAL V3 gate push; Production blocked after hosted checks
+
+- Ordinary fast-forward push of the reviewed product-evidence-gate candidate succeeded to `fix/v3-missing-route-prices-2026-10-15`; GitHub readback and Preview SHA are `76a39da28a5fefa7aa7ec0f2c954114297d84b06`. PR #14 remains OPEN/Draft. The prior 91-commit primary local history was not merged or rewritten.
+- Actions final-gate push run `42422534603` SUCCESS; PR run `42422528950` SUCCESS; route-quality/offline run `42422528855` SUCCESS. B03 run `42422534580` FAILURE before browser startup, exact error `BLOCKED_BY_EXPIRED_SNAPSHOT expiresAt=2026-11-07T14:50:17.541Z`; route scenario step skipped, no scenario artifacts. Snapshot date/policy unchanged.
+- Special-territory workflow `42422534610` completed with `live_probe` FAILURE: Rostov and Krasnodar searches passed with intermittent Photon HTTP 503/cooldowns; Donetsk returned SOURCE_UNAVAILABLE, 4 HTTP 503, 3 cooldown, 0 features. This is external-source unavailability, not evidence that every application provider is broken. Route calculation timing passed. Hosted runtime smoke Donetsk→Moscow returned HTTP 200, 1123.249 km, 58,337 sec, toll status `unknown`, amount `null`.
+- Vercel Preview deployment `dpl_AsqF7RmhBU6kU7TBjpjYQmjhvR2w` READY for exact SHA. `/api/version` exact SHA/environment preview; `/v3`, `/v2` 200. Preview autocomplete GET returned 200 for Yalta, Volnovakha, Donetsk, Melitopol, Krasnodar, Rostov; Ростов-на-Дону first, Rostov Veliky still present. Browser accessibility tree confirmed form/buttons, but available browser tool cannot type/click; no full Preview route submission verified.
+- Production was not changed: current deployment still READY on `a6bea89dd4b481a1352dc492969004e6cd1e6e38`. Reason: B03 required acceptance did not run and the live Donetsk search probe was unavailable; no P0/P1 was proven, but required conditions for release are not all satisfied. Do not promote the Preview.
+- Exact results and next step: [FINAL V3 blocked checkpoint](checkpoints/2026-11-07-final-v3-release-BLOCKED-AFTER-PREVIEW.md).
+
 ## 2026-11-07 — Stage AB: offline all-provider failure contract; hosted release remains blocked
 
 - Source base: `8fae15c7e5b81ef55492f2b009cbe665e5fdc0fb`; isolated local branch `codex/final-gate-v3-repair`; implementation/test SHA `9ac745c35500e4bfcb04cf3411806be8a4887d44` (docs closure follows locally). Main developer worktree and its 91-commit history were not modified.

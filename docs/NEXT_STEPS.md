@@ -1,14 +1,14 @@
 # Next steps
 
-## Final V3 release — owner authorization active; local gates PASS, hosted checks pending
+## FINAL V3 release — blocked after exact-SHA CI/Preview checks
 
-1. Create the final local commit and verified bundle from the current isolated candidate. Confirm clean diff scope: product gate/evidence tests/docs/workflow only; no tariff runtime, main, Android, V2, or production files.
-2. Immediately before publication re-read GitHub feature-branch HEAD and confirm it equals `8fae15c7e5b81ef55492f2b009cbe665e5fdc0fb` and is the direct ancestor of candidate. Push once normally (non-force); stop if ancestry differs or branch protection rejects it.
-3. Verify GitHub readback and PR #14 remains Draft. Wait for all Actions on exact SHA; inspect the final-gate tariff step, offline tests, TS/lint/build/API smoke and V3 live-route report/artifact. Local live provider 502/network-null is not a substitute for hosted diagnostics.
-4. Inspect exact-SHA Vercel Preview readiness and run address, representative route, duration, toll/unknown and V2-preservation checks. A P0/P1 or failed required CI blocks Production.
-5. If exact-SHA Actions and Preview are successful, no P0/P1 is found, and V2 remains intact, use the already authorized standard Production release mechanism. Then confirm `/api/version`, `/v3`, API smoke/read-only route behavior, and retain Production SHA/deployment ID. Do not touch main/Android/reserve refs or merge PR #14.
+1. Do not publish Production now: B03 run `42422534580` failed pre-browser because the 7-day address snapshot expired at `2026-11-07T14:50:17.541Z`; live browser steps never ran. Do not edit `expiresAt` or weaken its gate.
+2. Obtain genuine refreshed captures for the existing four address-snapshot rows with preserved source responses, capture times, exact result IDs/positions and SHA256; renew validity only from the earliest verified capture, maximum seven days. If any exact ID cannot be re-established, keep that row unavailable and keep B03 blocked.
+3. The exact-SHA Preview is READY and serves `/v3`, `/v2` (both 200), and `/api/version` with SHA `76a39da28a5fefa7aa7ec0f2c954114297d84b06`. Read-only autocomplete returned 200 for the targeted settlements, but this does not replace selecting addresses and submitting a route. Use a browser driver that supports actual input/clicks or wait for the B03 workflow after valid captures.
+4. External live probe run `42422534610` reports Photon HTTP 503/cooldown for Donetsk; do not make repeated blind retries. The hosted calculation smoke did return Donetsk→Moscow 200 with 1123.249 km, 58,337 s and `unknown/null` tolls.
+5. After B03 and remaining required hosted checks pass and Preview calculation is verified without P0/P1, recheck remote ancestry/current SHA and Production version before using the already-granted release authorization. Keep PR #14 Draft; do not touch main, Android or reserve refs.
 
-Gate behavior and evidence are recorded in [Stage AI checkpoint](checkpoints/2026-11-07-stage-ai-product-gate-applied-DONE-LOCAL.md). Historical Stage AH/AA–AD entries below are preserved, not active blockers.
+The push/readback and blocking results are recorded in [FINAL V3 blocked checkpoint](checkpoints/2026-11-07-final-v3-release-BLOCKED-AFTER-PREVIEW.md). Historical Stage AI and earlier handoffs below remain preserved.
 
 See the current [WORK_STATE](WORK_STATE.md) and [Final V3 release BLOCKED checkpoint](checkpoints/2026-11-07-final-v3-release-BLOCKED-LOCAL.md).
 

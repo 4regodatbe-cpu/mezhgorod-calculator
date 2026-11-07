@@ -1,4 +1,18 @@
-# Текущий handoff — FINAL V3 product-evidence gate applied, local gates PASS (07.11.2026)
+# Текущий handoff — FINAL V3: hosted/Preview acceptance blocked (07.11.2026)
+
+**Кандидат опубликован в рабочую ветку, но Production не выпущен.** Проверенный remote/Preview SHA: `76a39da28a5fefa7aa7ec0f2c954114297d84b06`; GitHub PR #14 остаётся `OPEN / Draft`. Production readback по-прежнему `a6bea89dd4b481a1352dc492969004e6cd1e6e38`. Основная локальная история из 91 коммита не менялась; `main`, Android и резервные refs не менялись.
+
+Обязательный `Calculator final gate` на exact SHA прошёл (Actions runs `42422534603` push и `42422528950` PR; success). Route-quality/offline benchmark run `42422528855` прошёл. `Special territory geometry and pricing` run `42422534610` завершился failure только на ограниченном live address probe: Ростов PASS (103 features; 1 HTTP 503), Краснодар PASS (20 features; 2 HTTP 503, 4 cooldown), Донецк `SOURCE_UNAVAILABLE` (4 HTTP 503, 3 cooldown, 0 features). Это реальный внешний отказ Photon/origin для Донецка в этом запуске; live route portions и calculation timing завершились, включая Donetsk→Moscow HTTP 200, 1123.249 км, 58,337 с, tariff `unknown/null` (честный результат).
+
+Exact-SHA Vercel Preview deployment `dpl_AsqF7RmhBU6kU7TBjpjYQmjhvR2w` получил READY; `/api/version` вернул `76a39da…`, `environment=preview`; `/v3` и `/v2` — HTTP 200. Read-only `/api/suggest` на Preview: Ялта, Волноваха, Донецк, Мелитополь, Краснодар и Ростов найдены (HTTP 200); «Ростов» выдаёт Ростов-на-Дону первым, Ростов Великий также доступен. Доступный браузер показал интерактивные поля/кнопки V3, но инструмент не поддерживает ввод/нажатие. Полный пользовательский расчёт непосредственно в Preview поэтому не подтверждён.
+
+Workflow B03 `42422534580` завершился failure до запуска браузера: `BLOCKED_BY_EXPIRED_SNAPSHOT expiresAt=2026-11-07T14:50:17.541Z`, exit 2. Артефактов сценариев нет, шаг браузера skipped. Не продлевали snapshot, не подменяли даты и не ослабляли freshness. Условия текущего задания для Production не выполнены: один обязательный CI workflow красный, live route acceptance на Preview отсутствует, кроме того внешний Donetsk live search недоступен в отдельном probe. Production не изменять.
+
+Точный незакрытый путь: получить новые подлинные независимые captures только для тех четырёх записей snapshot, проверить исходные ID/координаты/provenance, сформировать новый ограниченный срок не более 7 дней; затем новый ordinary push согласованного descendant, повторно пройти B03 и обеспечить управляемую browser-приёмку полного расчёта на точном Preview SHA. Дату истёкшего snapshot не менять вручную. Документационный closeout сохранён отдельным локальным коммитом после release SHA; он не опубликован.
+
+Подробно: [FINAL-V3 blocked checkpoint](checkpoints/2026-11-07-final-v3-release-BLOCKED-AFTER-PREVIEW.md), [WORK_LOG](WORK_LOG.md), [NEXT_STEPS](NEXT_STEPS.md). Предыдущая локальная проверка и обоснование продуктового gate — [Stage AI checkpoint](checkpoints/2026-11-07-stage-ai-product-gate-applied-DONE-LOCAL.md).
+
+## Historical Stage AI handoff — local checks passed, hosted acceptance pending
 
 **DONE LOCAL / HOSTED ACCEPTANCE PENDING.** Изолированный кандидат `/workspace/stage-ae-gate-proposal`, branch `codex/stage-ae-gate-proposal`, исходный HEAD `0bfb15a96575cec810c0eb5786cf447799c389e9`; GitHub PR #14 по свежему readback `OPEN / Draft`, опубликованный head `8fae15c7e5b81ef55492f2b009cbe665e5fdc0fb`, локальная история fast-forward continuation. Implementation commit `0611c2096bc0f7368b5dea4892aadbed6baa4d5a`; финальная payment-identity regression и актуализация результатов сохранены следующим локальным checkpoint-коммитом. Основная local history из 91 коммита не менялась. Владелец прямо разрешил применять продуктовый доказательный gate к обязательному CI и продолжить release sequence после успешных проверок.
 
