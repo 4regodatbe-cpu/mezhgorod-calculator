@@ -31,12 +31,13 @@ test("real GET and /r use optional snapshot only for full outage, respecting par
   try {
     const failed = await get("Донецк"); assert.equal(failed.status, 200); assert.equal(failed.data.items.length, 2);
     assert.equal(failed.data.fallback.source, "reviewed_city_snapshot");
+    assert.deepEqual({ name: failed.data.fallback.licenseName, url: failed.data.fallback.licenseUrl, attribution: failed.data.fallback.attribution }, snapshot.license);
     const log = diagnostics.find(row => row[0] === "address_search_city_snapshot")?.[1] as { failures: Record<string, number>; sourceCount: number };
     assert.ok(log.failures.http_503 > 0); assert.ok(log.sourceCount > 0);
     assert.equal(JSON.stringify(log).includes("Донецк"), false);
     assert.deepEqual(failed.data.items, snapshot.records.slice(0, 2).map(x => x.suggestion));
     const proxy = await POST(new NextRequest("https://test/r", { method: "POST", body: JSON.stringify({ query: "Краснодар" }) }));
-    const proxyBody = await proxy.json(); assert.equal(proxy.status, 200); assert.equal(proxyBody.items[0].id, "R-7373058");
+    const proxyBody = await proxy.json(); assert.equal(proxy.status, 200); assert.equal(proxyBody.items[0].id, "geonames-542420");
     rows.push({ scenario: "full-outage-GET-and-r", statuses: [failed.status, proxy.status] });
     assert.equal((await get("Тарасовка")).status, 502);
     assert.equal((await get("Краснодар улица Ленина 1")).status, 502);

@@ -113,13 +113,13 @@ test('rubles per kilometre amount and unit are enlarged and centered',()=>{
 
 // SSR contract only: browser event handlers/effects are intentionally not exercised here.
 const citySnapshot=JSON.parse(readFileSync(resolve(root,'data/address-city-snapshot.json'),'utf8'));
-const fallbackPlace={...citySnapshot.records[0].suggestion,addressSource:'reviewed_city_snapshot'};
+const fallbackPlace={...citySnapshot.records[0].suggestion,addressSource:'reviewed_city_snapshot',addressAttribution:citySnapshot.license.attribution,addressLicenseUrl:citySnapshot.license.url,addressLicenseName:citySnapshot.license.name};
 const ordinaryPlace=citySnapshot.records[2].suggestion;
 const notice='Резервный поиск: только сохранённые города.';
 function assertSnapshotCredit(html,count){
  assert.equal(html.split(notice).length-1,count);
- assert.equal((html.match(/href="https:\/\/www\.openstreetmap\.org\/copyright"/g)||[]).length,count);
- if(count) assert.match(html,/© OpenStreetMap contributors · ODbL/);
+ assert.equal((html.match(/href="https:\/\/creativecommons\.org\/licenses\/by\/4\.0\//g)||[]).length,count);
+ if(count) assert.match(html,/GeoNames geographical database; filtered and indexed by Mezhgorod Calculator · CC BY 4\.0/);
 }
 test('selected snapshot city renders limited coverage and licensed credit in either address field',()=>{
  const before=render(fallbackPlace,ordinaryPlace);
@@ -131,11 +131,12 @@ test('selected snapshot city renders limited coverage and licensed credit in eit
  assert.ok(after.indexOf(notice)>after.indexOf('Точка B'));
 });
 test('two selected snapshot cities retain a separate notice and credit for each field',()=>{
- const second={...citySnapshot.records[1].suggestion,addressSource:'reviewed_city_snapshot'};
+const second={...citySnapshot.records[1].suggestion,addressSource:'reviewed_city_snapshot',addressAttribution:citySnapshot.license.attribution,addressLicenseUrl:citySnapshot.license.url,addressLicenseName:citySnapshot.license.name};
  assertSnapshotCredit(render(fallbackPlace,second),2);
 });
 test('cleared, edited and ordinary places do not display a stale snapshot notice',()=>{
  for(const replacement of [{label:''},{label:'Новое название'},ordinaryPlace]){
   assertSnapshotCredit(render(replacement,ordinaryPlace),0);
  }
+ assertSnapshotCredit(render({...citySnapshot.records[0].suggestion,addressSource:'reviewed_city_snapshot'},ordinaryPlace),0);
 });

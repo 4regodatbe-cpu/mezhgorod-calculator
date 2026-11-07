@@ -29,7 +29,7 @@ const environment = {
 writeFileSync(path.join(outputDir, "environment.json"), JSON.stringify(environment, null, 2) + "\n");
 
 const caseSpecs = [
-  ["01-donetsk-disambiguation", "Two distinct Donetsk results in A; no auto-selection, notice and OSM attribution"],
+  ["01-donetsk-disambiguation", "Two distinct Donetsk results in A; no auto-selection, notice and GeoNames attribution"],
   ["02-select-a-and-b", "Select exact fallback items in both fields and retain source metadata/positions"],
   ["03-swap-and-reset", "Swap selected A/B values and source metadata; reset existing calculation result"],
   ["04-clear-and-replace-b", "Clear B and replace its city without stale items or source state"],
@@ -66,7 +66,8 @@ if (!Number.isFinite(expiry) || Date.now() >= expiry) {
 
   const fallbackResponse = items => ({
     status: 200,
-    body: { items, fallback: { source: "reviewed_city_snapshot", scope: snapshot.scope, snapshotId: snapshot.snapshotId } },
+    body: { items, fallback: { source: "reviewed_city_snapshot", scope: snapshot.scope, snapshotId: snapshot.snapshotId,
+      expiresAt: snapshot.expiresAt, attribution: snapshot.license.attribution, licenseUrl: snapshot.license.url, licenseName: snapshot.license.name } },
   });
   const standardSuggestion = {
     id: "QA-NORMAL-001",
@@ -248,14 +249,15 @@ if (!Number.isFinite(expiry) || Date.now() >= expiry) {
     const texts = await menu.allTextContents();
     const value = await a.inputValue();
     const notice = await h.noticeFor(a).count();
-    const credit = page.locator('input[placeholder="Откуда"]').locator("xpath=ancestor::label[1]").locator('a[href="https://www.openstreetmap.org/copyright"]');
+    const credit = page.locator('input[placeholder="Откуда"]').locator("xpath=ancestor::label[1]").locator(`a[href="${snapshot.license.url}"]`);
     const creditCount = await credit.count();
     record.actual = { suggestionCount: await menu.count(), suggestionTexts: texts, inputValue: value, noticeCount: notice, creditHref: await credit.getAttribute("href"), creditCount };
     assert.equal(await menu.count(), 2, "A must show exactly the two distinct Donetsk records");
     assert.equal(value, "Донецк", "query must remain unselected until the user chooses an item");
     assert.equal(notice, 1, "limited-snapshot notice must be visible");
-    assert.equal(creditCount, 1, "OSM/ODbL credit link must be visible");
-    assert.equal(await credit.getAttribute("href"), "https://www.openstreetmap.org/copyright");
+    assert.equal(creditCount, 1, "source license credit link must be visible");
+    assert.equal(await credit.getAttribute("href"), snapshot.license.url);
+    assert.ok((await credit.innerText()).includes(snapshot.license.attribution));
     assert.ok(texts.some(text => text.includes(donetsk[0].label)) && texts.some(text => text.includes(donetsk[1].label)), "both reviewed labels must be present");
   });
 
@@ -393,7 +395,7 @@ if (!Number.isFinite(expiry) || Date.now() >= expiry) {
     const a = h.inputA(page);
     await h.search(page, a, "Донецк");
     const field = h.fieldFor(a);
-    const credit = field.locator('a[href="https://www.openstreetmap.org/copyright"]');
+    const credit = field.locator(`a[href="${snapshot.license.url}"]`);
     const swap = page.getByRole("button", { name: "Поменять точки A и B местами" });
     const clear = page.getByRole("button", { name: "Очистить поле «Точка A»" });
     const menu = field.locator('[role="status"]');

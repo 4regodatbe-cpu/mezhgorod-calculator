@@ -1,14 +1,14 @@
 # Next steps
 
-## Stage AJ — B03 and exact-Preview browser acceptance in progress
+## Stage AJ — local source-backed candidate ready; hosted acceptance pending
 
-1. Confirm the four current GeoNames city records against the preserved daily dump SHA and capture per-record original ID, language name, coordinates, admin codes, `modificationDate`, archive retrieval date and display-normalization rules. Do not treat old local GeoNames sourceDate as fresh.
-2. If all four rows match and license/provenance tests pass, update the limited snapshot/license metadata only; preserve the seven-day maximum and strict expiry behavior. Otherwise leave snapshot unchanged and keep B03 blocked.
-3. Run focused address snapshot tests, full mandatory gate, then ordinary fast-forward push/readback so B03 executes all 8+10 real Playwright scenarios. Do not treat skipped scenarios or setup steps as PASS.
-4. Run an independent Playwright acceptance against the exact READY Preview SHA. Use existing Vercel protection only; test desktop/mobile, address selection, calculations, duration display, honest toll status, clear/retype/A↔B, and V2. Keep authenticated URLs/tokens out of logs.
-5. Do not change Production unless B03, all other required GitHub Actions and exact-Preview route acceptance pass with no P0/P1. PR #14 stays Draft; main/Android/backup refs remain untouched.
+1. Reconfirm feature branch head is `89eca232…` and PR #14 remains Draft; require ancestry `89eca232…` → local candidate only. Stop on any divergence.
+2. Push the checked candidate with one ordinary non-force fast-forward and verify exact remote commit/file readback.
+3. Wait for all required Actions on the pushed SHA. For B03, inspect both jobs and artifact: freshness pass is not acceptance; require all eight legacy and all ten current browser scenarios actually executed and PASS, with no skipped browser job.
+4. Verify exact-SHA Vercel Preview is READY and Playwright-test desktop/mobile, city selection, actual route result, distance/time, toll/unknown state, clear/retype, swap, and V2. Use only the project-approved protected access method; do not expose any temporary auth URL/token.
+5. Keep Production unchanged unless every required Actions and Preview acceptance condition passes with no P0/P1. Then follow the previously authorized V3 release path; PR #14 remains Draft, main/Android/backup refs untouched.
 
-See [Stage AJ STARTED checkpoint](checkpoints/2026-11-07-stage-aj-preview-and-snapshot-STARTED.md). The prior release blocker record is preserved below.
+Source rows, archive SHA, expiry, exact local checks and runtime changes: [Stage AJ candidate checkpoint](checkpoints/2026-11-07-stage-aj-snapshot-candidate.md). Starting investigation and recovery inputs: [Stage AJ STARTED checkpoint](checkpoints/2026-11-07-stage-aj-preview-and-snapshot-STARTED.md). Previous release blockers remain historical below.
 
 ## Historical — FINAL V3 release blocked after exact-SHA CI/Preview checks
 

@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "snapshotId": "positive-cities-2026-10-31",
-  "reviewedAt": "2026-10-31T14:54:49.000Z",
-  "expiresAt": "2026-11-07T14:50:17.541Z",
+  "snapshotId": "geonames-cities15000-2026-11-07",
+  "reviewedAt": "2026-11-07T23:33:29.752Z",
+  "expiresAt": "2026-11-14T23:18:22.000Z",
   "scope": "limited_settlements_only",
   "license": {
-    "name": "ODbL-1.0",
-    "url": "https://www.openstreetmap.org/copyright",
-    "attribution": "© OpenStreetMap contributors"
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "GeoNames geographical database; filtered and indexed by Mezhgorod Calculator"
   },
   "records": [
     {
@@ -16,21 +16,21 @@
         "Донецк ДНР"
       ],
       "suggestion": {
-        "id": "R-1413957",
+        "id": "geonames-709717",
         "title": "Донецк — ДНР",
         "label": "Донецк — ДНР",
         "region": "ДНР",
         "position": {
-          "lat": 48.0158753,
-          "lng": 37.8013407
+          "lat": 48.023,
+          "lng": 37.80224
         }
       },
       "source": {
-        "capturePath": "experiments/address-search/stage-i-2026-10-31/capture-donetsk.json",
-        "sha256": "c60683d225c67e3f805f1d8fcbe21c6d004ad46b7d82ce345fdc8d09690898f6",
-        "capturedAt": "2026-10-31T14:50:17.541Z",
-        "sourceCommit": "5600384e90d632f3f3bd0bf3e465013bb4fb87f9",
-        "sourceId": "R-1413957"
+        "capturePath": "experiments/address-search/stage-i-2026-11-07/captures/capture-geonames-709717.json",
+        "sha256": "d6bf419b0267147ffe1e707445af4416bf92641ec4d9e1750b3186aa72c2782a",
+        "capturedAt": "2026-11-07T23:18:22.000Z",
+        "sourceCommit": "89eca232d8787788153daf5b2356f7f7fe76e822",
+        "sourceId": "geonames-709717"
       }
     },
     {
@@ -39,21 +39,21 @@
         "Донецк Ростовская область"
       ],
       "suggestion": {
-        "id": "R-1517207",
+        "id": "geonames-565348",
         "title": "Донецк",
         "label": "Донецк, Ростовская область, Россия",
         "region": "Ростовская область, Россия",
         "position": {
-          "lat": 48.3382864,
-          "lng": 39.9509488
+          "lat": 48.33711,
+          "lng": 39.95229
         }
       },
       "source": {
-        "capturePath": "experiments/address-search/stage-i-2026-10-31/capture-donetsk.json",
-        "sha256": "c60683d225c67e3f805f1d8fcbe21c6d004ad46b7d82ce345fdc8d09690898f6",
-        "capturedAt": "2026-10-31T14:50:17.541Z",
-        "sourceCommit": "5600384e90d632f3f3bd0bf3e465013bb4fb87f9",
-        "sourceId": "R-1517207"
+        "capturePath": "experiments/address-search/stage-i-2026-11-07/captures/capture-geonames-565348.json",
+        "sha256": "0eb0c5e661197f52f3a69551fb8d522b1ae408b98df4d326caf57f229a710224",
+        "capturedAt": "2026-11-07T23:18:22.000Z",
+        "sourceCommit": "89eca232d8787788153daf5b2356f7f7fe76e822",
+        "sourceId": "geonames-565348"
       }
     },
     {
@@ -61,21 +61,21 @@
         "Краснодар"
       ],
       "suggestion": {
-        "id": "R-7373058",
+        "id": "geonames-542420",
         "title": "Краснодар",
         "label": "Краснодар, городской округ Краснодар, Краснодарский край, Россия",
         "region": "городской округ Краснодар, Краснодарский край, Россия",
         "position": {
-          "lat": 45.0351532,
-          "lng": 38.9772396
+          "lat": 45.04534,
+          "lng": 38.98178
         }
       },
       "source": {
-        "capturePath": "experiments/address-search/stage-i-2026-10-31/capture-krasnodar-exact.json",
-        "sha256": "243733a1d1be12567b3c9d62ec14265206a2ab268a19ec7ce43cb7c8543749c4",
-        "capturedAt": "2026-10-31T14:54:05.129Z",
-        "sourceCommit": "da0e545c5ec2038097230b7dc77723897af006ad",
-        "sourceId": "R-7373058"
+        "capturePath": "experiments/address-search/stage-i-2026-11-07/captures/capture-geonames-542420.json",
+        "sha256": "0f7f306d4f1f80d1570d6565101a5be493d5c05ed5246d6c456c2f2bd9059b7a",
+        "capturedAt": "2026-11-07T23:18:22.000Z",
+        "sourceCommit": "89eca232d8787788153daf5b2356f7f7fe76e822",
+        "sourceId": "geonames-542420"
       }
     },
     {
@@ -84,23 +84,23 @@
         "Ростов"
       ],
       "suggestion": {
-        "id": "R-1285772",
+        "id": "geonames-501175",
         "title": "Ростов-на-Дону",
         "label": "Ростов-на-Дону, городской округ Ростов-на-Дону, Ростовская область, Россия",
         "region": "городской округ Ростов-на-Дону, Ростовская область, Россия",
         "position": {
-          "lat": 47.2222596,
-          "lng": 39.7198736
+          "lat": 47.21997,
+          "lng": 39.70769
         }
       },
       "source": {
-        "capturePath": "experiments/address-search/stage-i-2026-10-31/capture-rostov-exact.json",
-        "sha256": "ff0642769c22412e52f7c7177f8b931e764f040b4b7568dc4e92f16d09962549",
-        "capturedAt": "2026-10-31T14:54:06.046Z",
-        "sourceCommit": "da0e545c5ec2038097230b7dc77723897af006ad",
-        "sourceId": "R-1285772"
+        "capturePath": "experiments/address-search/stage-i-2026-11-07/captures/capture-geonames-501175.json",
+        "sha256": "adb3b0d15bd05f436068f51499fca277304c99c0ad7e18dae1458dd68dc8abb0",
+        "capturedAt": "2026-11-07T23:18:22.000Z",
+        "sourceCommit": "89eca232d8787788153daf5b2356f7f7fe76e822",
+        "sourceId": "geonames-501175"
       }
     }
   ],
-  "recordsSha256": "c72b3e2bf9be57e774a245c2f10ff6f69dd4d043258579dff60e46da65afa0a4"
+  "recordsSha256": "fc628fa043c257a4a0d7e7eb3a3fe6f3db773a6d89ba7e06acc46b97a9dfe038"
 }

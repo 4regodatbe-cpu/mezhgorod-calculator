@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 const workflow=readFileSync(new URL('../.github/workflows/b03-address-ui-browser.yml',import.meta.url),'utf8');
 const runner=readFileSync(new URL('../experiments/road-ref-boundaries/scripts/b03-current-input-flow.mjs',import.meta.url),'utf8');
+const legacyRunner=readFileSync(new URL('../experiments/road-ref-boundaries/scripts/b03-address-ui-scenarios.mjs',import.meta.url),'utf8');
 function eventPaths(event) {
   const lines=workflow.split('\n');
   const start=lines.indexOf(`  ${event}:`);
@@ -36,6 +37,13 @@ test('CI executes new swap/refocus regression and preserves old suite failures',
   assert.ok(workflow.includes('"$legacy_code" -ne 0')&&workflow.includes('"$current_code" -ne 0'));
   assert.ok(!workflow.includes('b03-live-replacement.mjs'));
   assert.ok(workflow.includes('actions/upload-artifact@v4'));
+});
+test('legacy browser harness carries the snapshot source license metadata through its fallback response',()=>{
+  assert.match(legacyRunner,/attribution: snapshot\.license\.attribution/);
+  assert.match(legacyRunner,/licenseUrl: snapshot\.license\.url/);
+  assert.match(legacyRunner,/licenseName: snapshot\.license\.name/);
+  assert.match(legacyRunner,/GeoNames attribution/);
+  assert.doesNotMatch(legacyRunner,/OSM\/ODbL/u);
 });
 test('push-only B03 runs retain the original mandatory offline verify commands',()=>{
   assert.match(workflow,/\n  verify:\n/);

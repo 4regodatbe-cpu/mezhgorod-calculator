@@ -6,13 +6,16 @@ import type { Suggestion } from "../app/v2/components/types";
 const MAX_RECORDS = 4;
 const MAX_BYTES = 16_384;
 const MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
-const LICENSE_URL = "https://www.openstreetmap.org/copyright";
+const LICENSES = {
+  "ODbL-1.0": { url: "https://www.openstreetmap.org/copyright", attribution: "© OpenStreetMap contributors" },
+  "CC BY 4.0": { url: "https://creativecommons.org/licenses/by/4.0/", attribution: "GeoNames geographical database; filtered and indexed by Mezhgorod Calculator" },
+} as const;
 type CityRecord = { searchNames: string[]; suggestion: Suggestion; source: { capturePath: string; sha256: string; capturedAt: string; sourceCommit: string; sourceId: string } };
 type Snapshot = { schemaVersion: 1; snapshotId: string; reviewedAt: string; expiresAt: string; scope: "limited_settlements_only";
-  recordsSha256: string; license: { name: "ODbL-1.0"; url: string; attribution: string }; records: CityRecord[] };
+  recordsSha256: string; license: { name: keyof typeof LICENSES; url: string; attribution: string }; records: CityRecord[] };
 type Reason = "disabled" | "cancelled" | "budget" | "invalid_snapshot" | "expired" | "no_match";
 export type CitySnapshotResult = { status: "ready"; items: Suggestion[]; meta: { source: "reviewed_city_snapshot"; snapshotId: string;
-  scope: "limited_settlements_only"; expiresAt: string; attribution: string; licenseUrl: string } } | { status: Reason };
+  scope: "limited_settlements_only"; expiresAt: string; attribution: string; licenseUrl: string; licenseName: string } } | { status: Reason };
 
 function normalize(value: string) {
   return value.toLocaleLowerCase("ru-RU").replace(/ё/g, "е").replace(/[—–-]/g, " ").replace(/\s+/g, " ").trim();
@@ -23,7 +26,9 @@ function validSnapshot(value: unknown, now: number): value is Snapshot {
     if (!value || typeof value !== "object" || Buffer.byteLength(JSON.stringify(value)) > MAX_BYTES) return false;
     const s = value as Snapshot;
     if (s.schemaVersion !== 1 || !nonempty(s.snapshotId) || s.scope !== "limited_settlements_only" ||
-        s.license?.name !== "ODbL-1.0" || s.license.url !== LICENSE_URL || s.license.attribution !== "© OpenStreetMap contributors" ||
+        !(s.license?.name in LICENSES) ||
+        s.license.url !== LICENSES[s.license.name as keyof typeof LICENSES].url ||
+        s.license.attribution !== LICENSES[s.license.name as keyof typeof LICENSES].attribution ||
         !Array.isArray(s.records) || s.records.length < 1 || s.records.length > MAX_RECORDS ||
         !/^[a-f0-9]{64}$/.test(s.recordsSha256) || createHash("sha256").update(JSON.stringify(s.records)).digest("hex") !== s.recordsSha256) return false;
     const reviewed = Date.parse(s.reviewedAt), expires = Date.parse(s.expiresAt);
@@ -31,7 +36,7 @@ function validSnapshot(value: unknown, now: number): value is Snapshot {
     const ids = new Set<string>();
     for (const record of s.records) {
       const item = record.suggestion, source = record.source, captured = Date.parse(source?.capturedAt);
-      if (!item || !/^R-\d+$/.test(item.id) || ids.has(item.id) || !nonempty(item.title) || !nonempty(item.label) || !nonempty(item.region) ||
+      if (!item || !/^(?:R-\d+|geonames-\d+)$/.test(item.id) || ids.has(item.id) || !nonempty(item.title) || !nonempty(item.label) || !nonempty(item.region) ||
           !item.position || !Number.isFinite(item.position.lat) || !Number.isFinite(item.position.lng) ||
           Math.abs(item.position.lat) > 90 || Math.abs(item.position.lng) > 180 ||
           !Array.isArray(record.searchNames) || record.searchNames.length < 1 || record.searchNames.length > 3 ||
@@ -59,5 +64,6 @@ export function searchCitySnapshot(query: string, { enabled = switches.addressCi
     .map(record => ({ ...record.suggestion, position: { ...record.suggestion.position! } }));
   if (!items.length) return { status: "no_match" };
   return { status: "ready", items, meta: { source: "reviewed_city_snapshot", snapshotId: snapshot.snapshotId,
-    scope: snapshot.scope, expiresAt: snapshot.expiresAt, attribution: snapshot.license.attribution, licenseUrl: snapshot.license.url } };
+    scope: snapshot.scope, expiresAt: snapshot.expiresAt, attribution: snapshot.license.attribution, licenseUrl: snapshot.license.url,
+    licenseName: snapshot.license.name } };
 }
