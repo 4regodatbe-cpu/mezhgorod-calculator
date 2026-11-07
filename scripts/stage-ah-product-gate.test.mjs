@@ -80,6 +80,7 @@ test('invalid and source-mismatched dates, category or fare, missing source, con
     [{effectiveFrom:'2026-12-01'}, 'tariff_not_yet_effective'],
     [{effectiveFrom:'2026-03-01'}, 'effective_date_source_mismatch'],
     [{category:'II'}, 'vehicle_category_source_mismatch'],
+    [{paymentMode:'transponder'}, 'product_identity_source_mismatch'],
     [{fareRub:250}, 'official_fare_source_mismatch'],
     [{source:null}, 'official_source_missing_or_unverified'],
     [{contradiction:'material'}, 'material_or_unresolved_contradiction'],

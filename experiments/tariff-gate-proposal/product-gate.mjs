@@ -64,6 +64,8 @@ export function assessTariffProducts(report, evidence, verifySource = verifyProd
     const key = [row.id,row.edition,row.category,row.paymentMode].join('|');
     if (!row.id || !row.edition || !row.category || !row.paymentMode || productKeys.has(key)) fail('product_identity_missing_or_duplicate');
     productKeys.add(key);
+    const identityParts = typeof row.id === 'string' ? row.id.split('|') : [];
+    if (identityParts.length !== 4 || identityParts[2] !== row.category || identityParts[3] !== row.paymentMode) fail('product_identity_source_mismatch');
     if (!registryIds.has(row.registryId)) fail('product_registry_binding_unknown');
     else seenRegistry.add(row.registryId);
     const observed = day(row.observedAt);
