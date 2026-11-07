@@ -1,4 +1,10 @@
-# Текущий handoff — Stage AA V3 final-gate: исправлен локально, release blocked (2026-11-07)
+# Текущий handoff — Stage AB V3 blockers: IN PROGRESS (2026-11-07)
+
+Основа Stage AB: локальный `ccfacff95ad58d3f39dac192421298988dfcefeb`; изолированная ветка `/workspace/final-gate-v3` (`codex/final-gate-v3-repair`). PR #14 остаётся Draft; push/merge/Production запрещены. Stage AA final-gate и шесть V3 route captures сохранены; не повторялись. Тарифная страница Автодора из live source ответила 403 DDoS-Guard; web index имеет возраст crawl ~2 месяца, поэтому две даты `observedAt` не обновлялись и свежесть не засчитана. Реестр этих строк покрывает общий snapshot M‑1/M‑3/ЦКАД/А‑289; helper сейчас вызывается runtime только из CKAD production pricing для восточной дуги в режиме без транспондера. Сохранённые V3 результаты и code-path analysis подтверждают общий upstream `ROUTE_UNAVAILABLE` для двух 502, но конкретные HTTP/transport ответы каждого провайдера не сохранены; точный триггер пока неизвестен. См. [Stage AB STARTED](checkpoints/2026-11-07-stage-ab-blocker-closure-STARTED.md). Следующее: добавить offline регрессию all-provider-failure без fake route, затем выполнить проверки и финально закрыть A–E.
+
+---
+
+# Предыдущий handoff — Stage AA V3 final-gate: исправлен локально, release blocked (2026-11-07)
 
 **LOCAL ONLY / PUSH ЗАПРЕЩЁН.** Основа — опубликованный `8fae15c7e5b81ef55492f2b009cbe665e5fdc0fb`; отдельный worktree `/workspace/final-gate-v3`, branch `codex/final-gate-v3-repair`. Код final-gate и отчёты завершены локально; runtime, тарифы и геометрия не менялись. Основная локальная история из 91 коммита не затронута. GitHub branch HEAD проверен: `8fae15c7…`; PR #14 открыт и Draft. Полный отчёт: [Stage AA DONE-LOCAL](checkpoints/2026-11-07-stage-aa-v3-final-gate-DONE-LOCAL.md), краткие журналы: [WORK_LOG](WORK_LOG.md) и [NEXT_STEPS](NEXT_STEPS.md).
 
