@@ -1,0 +1,4552 @@
+{
+  "attempts": [
+    {
+      "id": "ckad-m11-m12",
+      "status": "outcome_unknown",
+      "startedAt": "2026-11-05T21:27:31.022Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 991,
+      "observedQuotaDelta": 0,
+      "completedAt": "2026-11-05T21:27:31.126Z",
+      "quotaRemainingAfter": 991,
+      "quotaCheckedAt": "2026-11-05T21:30:30.000Z",
+      "quotaCheckReference": "Owner-reported after-attempt Platform Manager counter readback, 2026-11-06"
+    },
+    {
+      "id": "m11-15-58",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 37.2144063,
+            "lat": 56.0917554
+          },
+          {
+            "type": "stop",
+            "lon": 37.2004102,
+            "lat": 56.0897492
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 2
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-06T08:52:01.028Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 990,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-06T08:52:02.836Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 6369,
+      "durationS": 514,
+      "geometryLineCount": 13,
+      "geometryPointCount": 252,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": null,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null
+    },
+    {
+      "id": "zsd-rvp64-exit",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 30.2234101,
+            "lat": 59.9617618
+          },
+          {
+            "type": "stop",
+            "lon": 30.2204329,
+            "lat": 59.9612328
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-06T08:56:13.066Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 989,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-06T08:56:15.020Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 176,
+      "durationS": 17,
+      "geometryLineCount": 3,
+      "geometryPointCount": 9,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 26,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null
+    },
+    {
+      "id": "m11-pulkovo-airport-access",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 30.3392171,
+            "lat": 59.7903025
+          },
+          {
+            "type": "stop",
+            "lon": 30.3260124,
+            "lat": 59.79012
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-06T09:07:29.119Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 988,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-06T09:07:30.174Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 741,
+      "durationS": 48,
+      "geometryLineCount": 3,
+      "geometryPointCount": 7,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 266,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null
+    },
+    {
+      "id": "pulkovo-m11-airport-access-reverse",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 30.3259779,
+            "lat": 59.7900004
+          },
+          {
+            "type": "stop",
+            "lon": 30.3407729,
+            "lat": 59.7901549
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-06T09:10:24.948Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 987,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-06T09:10:26.415Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 830,
+      "durationS": 51,
+      "geometryLineCount": 4,
+      "geometryPointCount": 10,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 240,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null
+    },
+    {
+      "id": "sprint-m12-22h0239-exit",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 43.5592535,
+            "lat": 55.5010349
+          },
+          {
+            "type": "stop",
+            "lon": 43.5710408,
+            "lat": 55.497983
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T12:51:59.828Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 987,
+      "observedQuotaDelta": 1,
+      "completedAt": "2026-11-07T12:52:02.198Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 1075,
+      "durationS": 112,
+      "geometryLineCount": 5,
+      "geometryPointCount": 22,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 4,
+      "nearestAnchorSegmentM": 4,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "witnessComparisons": [
+        {
+          "id": "22H0239-connector-node10090995838",
+          "nearestSegmentM": 4
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 311,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained",
+      "quotaRemainingAfter": 986
+    },
+    {
+      "id": "sprint-m4-545-northbound-approach-exit",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 39.554631,
+            "lat": 51.4679181
+          },
+          {
+            "type": "stop",
+            "lon": 39.5543378,
+            "lat": 51.4728672
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T12:53:05.290Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 986,
+      "observedQuotaDelta": 1,
+      "completedAt": "2026-11-07T12:53:06.480Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 550,
+      "durationS": 54,
+      "geometryLineCount": 4,
+      "geometryPointCount": 13,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 17,
+      "nearestAnchorSegmentM": 17,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "witnessComparisons": [
+        {
+          "id": "gate5818209495",
+          "nearestSegmentM": 17
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 250,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained",
+      "quotaRemainingAfter": 985
+    },
+    {
+      "id": "MASS-081",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 40.1954394,
+            "lat": 56.0796577
+          },
+          {
+            "type": "stop",
+            "lon": 40.1953167,
+            "lat": 56.0798533
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T13:24:46.539Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 985,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T13:24:48.578Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 6548,
+      "durationS": 482,
+      "geometryLineCount": 14,
+      "geometryPointCount": 172,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 2,
+      "nearestAnchorSegmentM": 2,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "witnessComparisons": [
+        {
+          "id": "boundary:M12-M7-exit",
+          "nearestSegmentM": 2
+        },
+        {
+          "id": "source:9003577536",
+          "nearestSegmentM": 0
+        },
+        {
+          "id": "source:10026978937",
+          "nearestSegmentM": 1
+        },
+        {
+          "id": "source:9003577429",
+          "nearestSegmentM": 2
+        },
+        {
+          "id": "source:9003577434",
+          "nearestSegmentM": 1
+        },
+        {
+          "id": "source:9003577450",
+          "nearestSegmentM": 1
+        },
+        {
+          "id": "source:9003577435",
+          "nearestSegmentM": 1
+        },
+        {
+          "id": "source:9003577439",
+          "nearestSegmentM": 0
+        },
+        {
+          "id": "source:9003577440",
+          "nearestSegmentM": 1
+        },
+        {
+          "id": "source:9003577441",
+          "nearestSegmentM": 1
+        },
+        {
+          "id": "source:9003577442",
+          "nearestSegmentM": 2
+        },
+        {
+          "id": "source:9003577443",
+          "nearestSegmentM": 2
+        },
+        {
+          "id": "source:9003577444",
+          "nearestSegmentM": 1
+        },
+        {
+          "id": "source:9003577445",
+          "nearestSegmentM": 2
+        },
+        {
+          "id": "source:9003577446",
+          "nearestSegmentM": 3
+        },
+        {
+          "id": "source:9003577447",
+          "nearestSegmentM": 1
+        },
+        {
+          "id": "source:9003577448",
+          "nearestSegmentM": 1
+        },
+        {
+          "id": "source:9003577449",
+          "nearestSegmentM": 2
+        },
+        {
+          "id": "source:9003577430",
+          "nearestSegmentM": 2
+        },
+        {
+          "id": "source:9003577431",
+          "nearestSegmentM": 2
+        },
+        {
+          "id": "source:9003577432",
+          "nearestSegmentM": 3
+        },
+        {
+          "id": "source:9003577433",
+          "nearestSegmentM": 3
+        },
+        {
+          "id": "source:9003577427",
+          "nearestSegmentM": 2
+        },
+        {
+          "id": "source:9003577426",
+          "nearestSegmentM": 2
+        },
+        {
+          "id": "source:14216395535",
+          "nearestSegmentM": 3
+        },
+        {
+          "id": "source:76480898",
+          "nearestSegmentM": 0
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-121",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 39.554631,
+            "lat": 51.4679181
+          },
+          {
+            "type": "stop",
+            "lon": 39.5547146,
+            "lat": 51.4701519
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T13:25:03.581Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 984,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T13:25:04.403Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 252,
+      "durationS": 26,
+      "geometryLineCount": 4,
+      "geometryPointCount": 12,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 13,
+      "nearestAnchorSegmentM": 13,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "witnessComparisons": [
+        {
+          "id": "boundary:5818209495",
+          "nearestSegmentM": 13
+        },
+        {
+          "id": "source:4522140254",
+          "nearestSegmentM": 0
+        },
+        {
+          "id": "source:2350820444",
+          "nearestSegmentM": 1
+        },
+        {
+          "id": "source:5818209500",
+          "nearestSegmentM": 0
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-122",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 39.5546944,
+            "lat": 51.470384
+          },
+          {
+            "type": "stop",
+            "lon": 39.5543378,
+            "lat": 51.4728672
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T13:25:19.405Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 983,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T13:25:20.682Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 26631,
+      "durationS": 1415,
+      "geometryLineCount": 17,
+      "geometryPointCount": 242,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 12,
+      "nearestAnchorSegmentM": 12,
+      "paymentEventCount": 4,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "witnessComparisons": [
+        {
+          "id": "boundary:5818209495",
+          "nearestSegmentM": 12
+        },
+        {
+          "id": "source:5818209499",
+          "nearestSegmentM": 0
+        },
+        {
+          "id": "source:9605783251",
+          "nearestSegmentM": 13
+        },
+        {
+          "id": "source:13644813578",
+          "nearestSegmentM": 6
+        },
+        {
+          "id": "source:13644813580",
+          "nearestSegmentM": 4
+        },
+        {
+          "id": "source:5818209497",
+          "nearestSegmentM": 0
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 660,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-123",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 39.5546495,
+            "lat": 51.4722186
+          },
+          {
+            "type": "stop",
+            "lon": 39.5547766,
+            "lat": 51.473575
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T13:25:35.686Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 982,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T13:25:36.361Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 152,
+      "durationS": 15,
+      "geometryLineCount": 3,
+      "geometryPointCount": 10,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 10,
+      "nearestAnchorSegmentM": 10,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "witnessComparisons": [
+        {
+          "id": "boundary:3504914294",
+          "nearestSegmentM": 10
+        },
+        {
+          "id": "source:3504914297",
+          "nearestSegmentM": 0
+        },
+        {
+          "id": "source:4904703533",
+          "nearestSegmentM": 2
+        },
+        {
+          "id": "source:3504914296",
+          "nearestSegmentM": 3
+        },
+        {
+          "id": "source:13644823408",
+          "nearestSegmentM": 1
+        },
+        {
+          "id": "source:13644823417",
+          "nearestSegmentM": 2
+        },
+        {
+          "id": "source:6594393973",
+          "nearestSegmentM": 0
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 160,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-124",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 39.5548468,
+            "lat": 51.4737765
+          },
+          {
+            "type": "stop",
+            "lon": 39.5552709,
+            "lat": 51.4754439
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T13:25:51.364Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 981,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T13:25:52.952Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 188,
+      "durationS": 18,
+      "geometryLineCount": 3,
+      "geometryPointCount": 11,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 13,
+      "nearestAnchorSegmentM": 13,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "witnessComparisons": [
+        {
+          "id": "boundary:3504914294",
+          "nearestSegmentM": 13
+        },
+        {
+          "id": "source:6594393974",
+          "nearestSegmentM": 0
+        },
+        {
+          "id": "source:9605783252",
+          "nearestSegmentM": 2
+        },
+        {
+          "id": "source:13644823422",
+          "nearestSegmentM": 1
+        },
+        {
+          "id": "source:13644823423",
+          "nearestSegmentM": 3
+        },
+        {
+          "id": "source:13644823428",
+          "nearestSegmentM": 4
+        },
+        {
+          "id": "source:13644823424",
+          "nearestSegmentM": 5
+        },
+        {
+          "id": "source:13645658532",
+          "nearestSegmentM": 6
+        },
+        {
+          "id": "source:13644823427",
+          "nearestSegmentM": 0
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 160,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-125",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 39.5546172,
+            "lat": 51.4725588
+          },
+          {
+            "type": "stop",
+            "lon": 39.5552519,
+            "lat": 51.4751743
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T13:26:07.955Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 980,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T13:26:09.305Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 294,
+      "durationS": 27,
+      "geometryLineCount": 3,
+      "geometryPointCount": 13,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 40,
+      "nearestAnchorSegmentM": 1,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "witnessComparisons": [
+        {
+          "id": "boundary:3504914294",
+          "nearestSegmentM": 1
+        },
+        {
+          "id": "source:4904703533",
+          "nearestSegmentM": 0
+        },
+        {
+          "id": "source:3504914296",
+          "nearestSegmentM": 3
+        },
+        {
+          "id": "source:13644823408",
+          "nearestSegmentM": 1
+        },
+        {
+          "id": "source:13644823417",
+          "nearestSegmentM": 2
+        },
+        {
+          "id": "source:6594393973",
+          "nearestSegmentM": 2
+        },
+        {
+          "id": "source:3504914294",
+          "nearestSegmentM": 1
+        },
+        {
+          "id": "source:6594393974",
+          "nearestSegmentM": 1
+        },
+        {
+          "id": "source:9605783252",
+          "nearestSegmentM": 2
+        },
+        {
+          "id": "source:13644823422",
+          "nearestSegmentM": 1
+        },
+        {
+          "id": "source:13644823423",
+          "nearestSegmentM": 3
+        },
+        {
+          "id": "source:13644823428",
+          "nearestSegmentM": 0
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 160,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-126",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 39.554631,
+            "lat": 51.4679181
+          },
+          {
+            "type": "stop",
+            "lon": 39.5543652,
+            "lat": 51.4701372
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T13:26:24.307Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 979,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T13:26:25.298Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 246,
+      "durationS": 22,
+      "geometryLineCount": 4,
+      "geometryPointCount": 9,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 13,
+      "nearestAnchorSegmentM": 13,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "witnessComparisons": [
+        {
+          "id": "boundary:9620416636",
+          "nearestSegmentM": 13
+        },
+        {
+          "id": "source:4522140254",
+          "nearestSegmentM": 0
+        },
+        {
+          "id": "source:3504914299",
+          "nearestSegmentM": 3
+        },
+        {
+          "id": "source:4625394253",
+          "nearestSegmentM": 0
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-127",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 39.5543375,
+            "lat": 51.470369
+          },
+          {
+            "type": "stop",
+            "lon": 39.5541728,
+            "lat": 51.4718315
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T13:26:40.301Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 978,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T13:26:41.528Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 163,
+      "durationS": 14,
+      "geometryLineCount": 3,
+      "geometryPointCount": 8,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 12,
+      "nearestAnchorSegmentM": 12,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "witnessComparisons": [
+        {
+          "id": "boundary:9620416636",
+          "nearestSegmentM": 12
+        },
+        {
+          "id": "source:4625394254",
+          "nearestSegmentM": 0
+        },
+        {
+          "id": "source:2194734415",
+          "nearestSegmentM": 7
+        },
+        {
+          "id": "source:3504914298",
+          "nearestSegmentM": 6
+        },
+        {
+          "id": "source:2096920539",
+          "nearestSegmentM": 5
+        },
+        {
+          "id": "source:4904703532",
+          "nearestSegmentM": 0
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 250,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-128",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 39.554631,
+            "lat": 51.4679181
+          },
+          {
+            "type": "stop",
+            "lon": 39.5541728,
+            "lat": 51.4718315
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T13:26:56.531Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 977,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T13:26:57.906Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 435,
+      "durationS": 39,
+      "geometryLineCount": 4,
+      "geometryPointCount": 12,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 6,
+      "nearestAnchorSegmentM": 6,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "witnessComparisons": [
+        {
+          "id": "boundary:9620416636",
+          "nearestSegmentM": 6
+        },
+        {
+          "id": "source:4522140254",
+          "nearestSegmentM": 0
+        },
+        {
+          "id": "source:3504914299",
+          "nearestSegmentM": 3
+        },
+        {
+          "id": "source:4625394253",
+          "nearestSegmentM": 5
+        },
+        {
+          "id": "source:9620416636",
+          "nearestSegmentM": 6
+        },
+        {
+          "id": "source:4625394254",
+          "nearestSegmentM": 6
+        },
+        {
+          "id": "source:2194734415",
+          "nearestSegmentM": 7
+        },
+        {
+          "id": "source:3504914298",
+          "nearestSegmentM": 6
+        },
+        {
+          "id": "source:2096920539",
+          "nearestSegmentM": 5
+        },
+        {
+          "id": "source:4904703532",
+          "nearestSegmentM": 0
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 250,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-241",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 30.3498709,
+            "lat": 59.7898794
+          },
+          {
+            "type": "stop",
+            "lon": 30.3392171,
+            "lat": 59.7903025
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T13:27:12.907Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 976,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T13:27:13.617Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 16671,
+      "durationS": 874,
+      "geometryLineCount": 22,
+      "geometryPointCount": 404,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 266,
+      "nearestAnchorSegmentM": 266,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "witnessComparisons": [
+        {
+          "id": "boundary:13377945035",
+          "nearestSegmentM": 266
+        },
+        {
+          "id": "source:12597059629",
+          "nearestSegmentM": 0
+        },
+        {
+          "id": "source:12597059620",
+          "nearestSegmentM": 32
+        },
+        {
+          "id": "source:13047772225",
+          "nearestSegmentM": 70
+        },
+        {
+          "id": "source:12686624910",
+          "nearestSegmentM": 62
+        },
+        {
+          "id": "source:12597059619",
+          "nearestSegmentM": 33
+        },
+        {
+          "id": "source:12686574344",
+          "nearestSegmentM": 57
+        },
+        {
+          "id": "source:13047772212",
+          "nearestSegmentM": 8
+        },
+        {
+          "id": "source:13047772226",
+          "nearestSegmentM": 0
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 94,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-242",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 30.3392231,
+            "lat": 59.7901961
+          },
+          {
+            "type": "stop",
+            "lon": 30.3473335,
+            "lat": 59.7890185
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T13:27:28.619Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 975,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T13:27:29.512Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 489,
+      "durationS": 36,
+      "geometryLineCount": 3,
+      "geometryPointCount": 18,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 266,
+      "nearestAnchorSegmentM": 266,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "witnessComparisons": [
+        {
+          "id": "boundary:13377945036",
+          "nearestSegmentM": 266
+        },
+        {
+          "id": "source:12597059610",
+          "nearestSegmentM": 0
+        },
+        {
+          "id": "source:13047772227",
+          "nearestSegmentM": 2
+        },
+        {
+          "id": "source:12597059625",
+          "nearestSegmentM": 0
+        },
+        {
+          "id": "source:12597059626",
+          "nearestSegmentM": 4
+        },
+        {
+          "id": "source:13047772228",
+          "nearestSegmentM": 4
+        },
+        {
+          "id": "source:13047772229",
+          "nearestSegmentM": 5
+        },
+        {
+          "id": "source:13047772230",
+          "nearestSegmentM": 5
+        },
+        {
+          "id": "source:13047772231",
+          "nearestSegmentM": 0
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-399305a44919",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 43.56807105,
+            "lat": 55.501408350000005
+          },
+          {
+            "type": "stop",
+            "lon": 43.55808665,
+            "lat": 55.50130465
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:25:43.102Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 974,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:25:44.482Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 704,
+      "durationS": 33,
+      "geometryLineCount": 5,
+      "geometryPointCount": 14,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 15,
+      "nearestAnchorSegmentM": 13,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 8,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 0,
+        "endOffsetM": 15,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 687,
+        "geometryLengthM": 704,
+        "lengthRatio": 1.025,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:10090995832",
+          "nearestSegmentM": 13
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 311,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-b20ac1168794",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 43.560700100000005,
+            "lat": 55.501179300000004
+          },
+          {
+            "type": "stop",
+            "lon": 43.55808665,
+            "lat": 55.50130465
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:25:58.396Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 973,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:25:59.504Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 166,
+      "durationS": 7,
+      "geometryLineCount": 3,
+      "geometryPointCount": 7,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 179,
+      "nearestAnchorSegmentM": 179,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 3,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 15,
+        "endOffsetM": 15,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 165,
+        "geometryLengthM": 165,
+        "lengthRatio": 1.005,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:10090995832",
+          "nearestSegmentM": 179
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 311,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-956b5c39aa50",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 39.196782850000005,
+            "lat": 52.12838895
+          },
+          {
+            "type": "stop",
+            "lon": 39.1925966,
+            "lat": 52.12222815
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:26:13.651Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 972,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:26:14.740Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 743,
+      "durationS": 66,
+      "geometryLineCount": 3,
+      "geometryPointCount": 14,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 66,
+      "nearestAnchorSegmentM": 7,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 13,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 2,
+        "endOffsetM": 0,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 744,
+        "geometryLengthM": 743,
+        "lengthRatio": 0.999,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:1051205779",
+          "nearestSegmentM": 7
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 360,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-49e62068c516",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 39.196782850000005,
+            "lat": 52.12838895
+          },
+          {
+            "type": "stop",
+            "lon": 39.1958744,
+            "lat": 52.1268273
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:26:28.920Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 971,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:26:30.108Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 184,
+      "durationS": 15,
+      "geometryLineCount": 3,
+      "geometryPointCount": 8,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 160,
+      "nearestAnchorSegmentM": 160,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 5,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 2,
+        "endOffsetM": 0,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 185,
+        "geometryLengthM": 184,
+        "lengthRatio": 0.996,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:1051205779",
+          "nearestSegmentM": 160
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-7695ef87ba86",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 39.1944632,
+            "lat": 52.1248502
+          },
+          {
+            "type": "stop",
+            "lon": 39.1925966,
+            "lat": 52.12222815
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:26:44.182Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 970,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:26:44.685Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 318,
+      "durationS": 25,
+      "geometryLineCount": 3,
+      "geometryPointCount": 10,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 80,
+      "nearestAnchorSegmentM": 80,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 7,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 7,
+        "endOffsetM": 0,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 319,
+        "geometryLengthM": 318,
+        "lengthRatio": 0.998,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:1051205779",
+          "nearestSegmentM": 80
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 360,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-6ad9117e199f",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 35.42736895,
+            "lat": 56.983194600000004
+          },
+          {
+            "type": "stop",
+            "lon": 35.43569635,
+            "lat": 56.983979149999996
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:26:59.447Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 969,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:27:00.229Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 529,
+      "durationS": 52,
+      "geometryLineCount": 3,
+      "geometryPointCount": 27,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 38,
+      "nearestAnchorSegmentM": 25,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 19,
+        "within25mFraction": 0.895,
+        "outsideExpectedCorridorFraction": 0.188,
+        "backtrackViolations": 0,
+        "startOffsetM": 4,
+        "endOffsetM": 2,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 522,
+        "geometryLengthM": 530,
+        "lengthRatio": 1.014,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:11188803093",
+          "nearestSegmentM": 25
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-6f4d651aa25b",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 35.42736895,
+            "lat": 56.983194600000004
+          },
+          {
+            "type": "stop",
+            "lon": 35.429219849999996,
+            "lat": 56.9834396
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:27:14.699Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 968,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:27:15.360Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 1052,
+      "durationS": 115,
+      "geometryLineCount": 4,
+      "geometryPointCount": 52,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 29,
+      "nearestAnchorSegmentM": 23,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "ROUTE_SCOPE_MISMATCH",
+        "sourceWitnessCount": 4,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0.895,
+        "backtrackViolations": 0,
+        "startOffsetM": 4,
+        "endOffsetM": 19,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 115,
+        "geometryLengthM": 1054,
+        "lengthRatio": 9.115,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:11188803093",
+          "nearestSegmentM": 23
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-a37ae95b7eb6",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 35.4306018,
+            "lat": 56.983629
+          },
+          {
+            "type": "stop",
+            "lon": 35.43569635,
+            "lat": 56.983979149999996
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:27:29.965Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 967,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:27:30.563Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 1600,
+      "durationS": 142,
+      "geometryLineCount": 5,
+      "geometryPointCount": 70,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 22,
+      "nearestAnchorSegmentM": 22,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "ROUTE_SCOPE_MISMATCH",
+        "sourceWitnessCount": 14,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0.801,
+        "backtrackViolations": 0,
+        "startOffsetM": 24,
+        "endOffsetM": 2,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 320,
+        "geometryLengthM": 1601,
+        "lengthRatio": 4.999,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:11188803093",
+          "nearestSegmentM": 22
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-9d96f07785ac",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 38.54102565,
+            "lat": 55.835707299999996
+          },
+          {
+            "type": "stop",
+            "lon": 38.540829650000006,
+            "lat": 55.84205635
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:27:45.222Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 966,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:27:45.610Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 40010,
+      "durationS": 1634,
+      "geometryLineCount": 51,
+      "geometryPointCount": 552,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 25,
+      "nearestAnchorSegmentM": 6,
+      "paymentEventCount": 4,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": true,
+      "routeScope": {
+        "status": "ROUTE_SCOPE_MISMATCH",
+        "sourceWitnessCount": 6,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0.98,
+        "backtrackViolations": 0,
+        "startOffsetM": 6,
+        "endOffsetM": 1,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 709,
+        "geometryLengthM": 40005,
+        "lengthRatio": 56.4,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:11066737758",
+          "nearestSegmentM": 6
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 352,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-8e7c09a6a780",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 38.54102565,
+            "lat": 55.835707299999996
+          },
+          {
+            "type": "stop",
+            "lon": 38.5406622,
+            "lat": 55.836983950000004
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:28:00.477Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 965,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:28:01.306Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 44679,
+      "durationS": 2170,
+      "geometryLineCount": 57,
+      "geometryPointCount": 665,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 25,
+      "nearestAnchorSegmentM": 6,
+      "paymentEventCount": 6,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": true,
+      "routeScope": {
+        "status": "ROUTE_SCOPE_MISMATCH",
+        "sourceWitnessCount": 3,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0.994,
+        "backtrackViolations": 0,
+        "startOffsetM": 6,
+        "endOffsetM": 2,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 144,
+        "geometryLengthM": 44681,
+        "lengthRatio": 310.712,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:11066737758",
+          "nearestSegmentM": 6
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 392,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-dc5f3f04eaaf",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 30.2284966,
+            "lat": 59.9618835
+          },
+          {
+            "type": "stop",
+            "lon": 30.22370585,
+            "lat": 59.96180775
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:28:15.736Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 964,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:28:16.857Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 271,
+      "durationS": 25,
+      "geometryLineCount": 4,
+      "geometryPointCount": 31,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 74,
+      "nearestAnchorSegmentM": 74,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 10,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 2,
+        "endOffsetM": 2,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 272,
+        "geometryLengthM": 271,
+        "lengthRatio": 0.995,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:13020687195",
+          "nearestSegmentM": 74
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-703a8617c443",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 30.2200362,
+            "lat": 59.9611775
+          },
+          {
+            "type": "stop",
+            "lon": 30.21643305,
+            "lat": 59.9607013
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:28:30.993Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 963,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:28:32.138Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 208,
+      "durationS": 22,
+      "geometryLineCount": 4,
+      "geometryPointCount": 12,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 142,
+      "nearestAnchorSegmentM": 142,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 10,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 2,
+        "endOffsetM": 2,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 208,
+        "geometryLengthM": 208,
+        "lengthRatio": 1.001,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:13020687195",
+          "nearestSegmentM": 142
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-5b039557d6e5",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 37.8386936,
+            "lat": 45.196207650000005
+          },
+          {
+            "type": "stop",
+            "lon": 37.8305007,
+            "lat": 45.19606375
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:28:46.253Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 962,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:28:47.331Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 643,
+      "durationS": 27,
+      "geometryLineCount": 3,
+      "geometryPointCount": 7,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 37,
+      "nearestAnchorSegmentM": 0,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 4,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 1,
+        "endOffsetM": 0,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 642,
+        "geometryLengthM": 642,
+        "lengthRatio": 1.001,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:12439881648",
+          "nearestSegmentM": 0
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-69384ab60722",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 37.8397478,
+            "lat": 45.19622617500001
+          },
+          {
+            "type": "stop",
+            "lon": 37.8376394,
+            "lat": 45.196189125
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:29:01.515Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 961,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:29:02.629Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 165,
+      "durationS": 16,
+      "geometryLineCount": 3,
+      "geometryPointCount": 7,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 362,
+      "nearestAnchorSegmentM": 362,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 2,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 1,
+        "endOffsetM": 1,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 165,
+        "geometryLengthM": 165,
+        "lengthRatio": 0.998,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:12439881648",
+          "nearestSegmentM": 362
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-b3c289063a08",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 36.6920176,
+            "lat": 55.26698585
+          },
+          {
+            "type": "stop",
+            "lon": 36.689748949999995,
+            "lat": 55.25764755
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:30:24.227Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 960,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:30:24.815Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 1047,
+      "durationS": 89,
+      "geometryLineCount": 3,
+      "geometryPointCount": 26,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 13,
+      "nearestAnchorSegmentM": 5,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 6,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 8,
+        "endOffsetM": 4,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 1048,
+        "geometryLengthM": 1050,
+        "lengthRatio": 0.999,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:13294157951",
+          "nearestSegmentM": 5
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 100,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-750c84386aae",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 36.692395000000005,
+            "lat": 55.268411125
+          },
+          {
+            "type": "stop",
+            "lon": 36.691640199999995,
+            "lat": 55.265560575
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:30:39.487Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 959,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:30:39.874Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 321,
+      "durationS": 31,
+      "geometryLineCount": 3,
+      "geometryPointCount": 12,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 202,
+      "nearestAnchorSegmentM": 202,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 2,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 13,
+        "endOffsetM": 7,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 321,
+        "geometryLengthM": 322,
+        "lengthRatio": 1.001,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:13294157951",
+          "nearestSegmentM": 202
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-c6fb1a78427f",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 36.69074655,
+            "lat": 55.26190735
+          },
+          {
+            "type": "stop",
+            "lon": 36.689748949999995,
+            "lat": 55.25764755
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:30:54.739Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 958,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:30:55.636Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 477,
+      "durationS": 36,
+      "geometryLineCount": 3,
+      "geometryPointCount": 8,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 208,
+      "nearestAnchorSegmentM": 208,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 3,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 6,
+        "endOffsetM": 4,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 478,
+        "geometryLengthM": 478,
+        "lengthRatio": 0.998,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:13294157951",
+          "nearestSegmentM": 208
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-d3c663a76683",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 37.177679999999995,
+            "lat": 55.639097
+          },
+          {
+            "type": "stop",
+            "lon": 37.17905105,
+            "lat": 55.64513095
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:31:09.998Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 957,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:31:10.519Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 674,
+      "durationS": 54,
+      "geometryLineCount": 3,
+      "geometryPointCount": 20,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 12,
+      "nearestAnchorSegmentM": 10,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 14,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 4,
+        "endOffsetM": 0,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 679,
+        "geometryLengthM": 678,
+        "lengthRatio": 0.993,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:3109177688",
+          "nearestSegmentM": 10
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 250,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-79b8815f27aa",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 37.177679999999995,
+            "lat": 55.639097
+          },
+          {
+            "type": "stop",
+            "lon": 37.178011850000004,
+            "lat": 55.641505949999996
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:31:25.254Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 956,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:31:26.267Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 268,
+      "durationS": 26,
+      "geometryLineCount": 3,
+      "geometryPointCount": 10,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 34,
+      "nearestAnchorSegmentM": 34,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 6,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 4,
+        "endOffsetM": 11,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 269,
+        "geometryLengthM": 269,
+        "lengthRatio": 0.997,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:3109177688",
+          "nearestSegmentM": 34
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 250,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-540eec98022a",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 37.17808205,
+            "lat": 55.64201365
+          },
+          {
+            "type": "stop",
+            "lon": 37.17905105,
+            "lat": 55.64513095
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:31:40.513Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 955,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:31:40.889Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 350,
+      "durationS": 35,
+      "geometryLineCount": 3,
+      "geometryPointCount": 15,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 23,
+      "nearestAnchorSegmentM": 23,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 7,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 9,
+        "endOffsetM": 0,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 353,
+        "geometryLengthM": 352,
+        "lengthRatio": 0.991,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:3109177688",
+          "nearestSegmentM": 23
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-5028bda4acee",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 38.737109149999995,
+            "lat": 45.125168849999994
+          },
+          {
+            "type": "stop",
+            "lon": 38.74457515,
+            "lat": 45.130374599999996
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:31:55.766Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 954,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:31:56.261Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 824,
+      "durationS": 73,
+      "geometryLineCount": 3,
+      "geometryPointCount": 9,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 98,
+      "nearestAnchorSegmentM": 15,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 11,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 4,
+        "endOffsetM": 1,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 824,
+        "geometryLengthM": 823,
+        "lengthRatio": 1,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:10979205243",
+          "nearestSegmentM": 15
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 410,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-ba88db5ffe38",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 38.737109149999995,
+            "lat": 45.125168849999994
+          },
+          {
+            "type": "stop",
+            "lon": 38.739513900000006,
+            "lat": 45.12680435
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:32:11.025Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 953,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:32:12.237Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 262,
+      "durationS": 25,
+      "geometryLineCount": 3,
+      "geometryPointCount": 7,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 145,
+      "nearestAnchorSegmentM": 145,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 4,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 4,
+        "endOffsetM": 5,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 262,
+        "geometryLengthM": 262,
+        "lengthRatio": 1,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:10979205243",
+          "nearestSegmentM": 145
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-c4593f0961bb",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 38.742009949999996,
+            "lat": 45.128519299999994
+          },
+          {
+            "type": "stop",
+            "lon": 38.74457515,
+            "lat": 45.130374599999996
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:32:26.283Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 952,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:32:27.014Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 288,
+      "durationS": 28,
+      "geometryLineCount": 3,
+      "geometryPointCount": 6,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 129,
+      "nearestAnchorSegmentM": 129,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 6,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 7,
+        "endOffsetM": 1,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 288,
+        "geometryLengthM": 288,
+        "lengthRatio": 0.999,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:10979205243",
+          "nearestSegmentM": 129
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 410,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-04e9dd10f3e1",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 43.5561603,
+            "lat": 55.5011778
+          },
+          {
+            "type": "stop",
+            "lon": 43.56643845,
+            "lat": 55.499389699999995
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:32:41.539Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 951,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:32:42.830Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 804,
+      "durationS": 63,
+      "geometryLineCount": 4,
+      "geometryPointCount": 14,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 11,
+      "nearestAnchorSegmentM": 8,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 7,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 8,
+        "endOffsetM": 1,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 826,
+        "geometryLengthM": 804,
+        "lengthRatio": 0.974,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:10090995833",
+          "nearestSegmentM": 8
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 311,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-2bed717fe1d3",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 43.554613700000004,
+            "lat": 55.50124925
+          },
+          {
+            "type": "stop",
+            "lon": 43.55770689999999,
+            "lat": 55.50110635
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:32:56.793Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 950,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:32:57.497Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 196,
+      "durationS": 9,
+      "geometryLineCount": 3,
+      "geometryPointCount": 6,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 366,
+      "nearestAnchorSegmentM": 366,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 2,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 8,
+        "endOffsetM": 7,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 195,
+        "geometryLengthM": 195,
+        "lengthRatio": 1.003,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:10090995833",
+          "nearestSegmentM": 366
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-2cbbf542a08a",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 38.8271955,
+            "lat": 52.4281938
+          },
+          {
+            "type": "stop",
+            "lon": 38.82188825,
+            "lat": 52.43249305
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:33:12.055Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 949,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:33:12.854Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 600,
+      "durationS": 53,
+      "geometryLineCount": 4,
+      "geometryPointCount": 13,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 139,
+      "nearestAnchorSegmentM": 2,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 15,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 0,
+        "endOffsetM": 2,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 602,
+        "geometryLengthM": 599,
+        "lengthRatio": 0.996,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:1051218389",
+          "nearestSegmentM": 2
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 360,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-00899c51b2af",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 38.8271955,
+            "lat": 52.4281938
+          },
+          {
+            "type": "stop",
+            "lon": 38.825118450000005,
+            "lat": 52.4298187
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:33:27.313Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 948,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:33:27.575Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 229,
+      "durationS": 19,
+      "geometryLineCount": 4,
+      "geometryPointCount": 8,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 49,
+      "nearestAnchorSegmentM": 49,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 6,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 0,
+        "endOffsetM": 2,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 229,
+        "geometryLengthM": 229,
+        "lengthRatio": 1,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:1051218389",
+          "nearestSegmentM": 49
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 360,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-471992013413",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 38.824071149999995,
+            "lat": 52.43064715
+          },
+          {
+            "type": "stop",
+            "lon": 38.82188825,
+            "lat": 52.43249305
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:33:42.568Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 947,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:33:43.275Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 254,
+      "durationS": 25,
+      "geometryLineCount": 4,
+      "geometryPointCount": 12,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 68,
+      "nearestAnchorSegmentM": 68,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 8,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 2,
+        "endOffsetM": 2,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 257,
+        "geometryLengthM": 254,
+        "lengthRatio": 0.989,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:1051218389",
+          "nearestSegmentM": 68
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 360,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-725d7d3f778e",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 35.42736895,
+            "lat": 56.983194600000004
+          },
+          {
+            "type": "stop",
+            "lon": 35.4296606,
+            "lat": 56.983244299999996
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:33:57.824Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 946,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:33:59.477Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 138,
+      "durationS": 13,
+      "geometryLineCount": 3,
+      "geometryPointCount": 11,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 45,
+      "nearestAnchorSegmentM": 45,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 6,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 4,
+        "endOffsetM": 1,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 145,
+        "geometryLengthM": 139,
+        "lengthRatio": 0.952,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:11188803094",
+          "nearestSegmentM": 45
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-53b037b76ece",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 35.430941950000005,
+            "lat": 56.983421250000006
+          },
+          {
+            "type": "stop",
+            "lon": 35.4282606,
+            "lat": 56.98318020000001
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:34:13.083Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 945,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:34:13.501Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 1873,
+      "durationS": 179,
+      "geometryLineCount": 6,
+      "geometryPointCount": 89,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 35,
+      "nearestAnchorSegmentM": 35,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "ROUTE_SCOPE_MISMATCH",
+        "sourceWitnessCount": 7,
+        "within25mFraction": 0.429,
+        "outsideExpectedCorridorFraction": 0.954,
+        "backtrackViolations": 0,
+        "startOffsetM": 3,
+        "endOffsetM": 1,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 297,
+        "geometryLengthM": 1873,
+        "lengthRatio": 6.313,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:11188803094",
+          "nearestSegmentM": 35
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-b0502698ed69",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 30.2941288,
+            "lat": 59.8788254
+          },
+          {
+            "type": "stop",
+            "lon": 30.29326945,
+            "lat": 59.8732356
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:34:28.337Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 944,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:34:29.213Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 633,
+      "durationS": 45,
+      "geometryLineCount": 3,
+      "geometryPointCount": 29,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 16,
+      "nearestAnchorSegmentM": 2,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 29,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 5,
+        "endOffsetM": 2,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 634,
+        "geometryLengthM": 633,
+        "lengthRatio": 0.998,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:13020800285",
+          "nearestSegmentM": 2
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-2824b601808d",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 30.2940651,
+            "lat": 59.87556435
+          },
+          {
+            "type": "stop",
+            "lon": 30.29326945,
+            "lat": 59.8732356
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:34:43.596Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 943,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:34:44.331Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 263,
+      "durationS": 23,
+      "geometryLineCount": 3,
+      "geometryPointCount": 18,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 79,
+      "nearestAnchorSegmentM": 79,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 17,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 2,
+        "endOffsetM": 2,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 267,
+        "geometryLengthM": 263,
+        "lengthRatio": 0.987,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:13020800285",
+          "nearestSegmentM": 79
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-9b3f537382f7",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 37.592259,
+            "lat": 45.16804354999999
+          },
+          {
+            "type": "stop",
+            "lon": 37.58357325,
+            "lat": 45.1688518
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:34:58.850Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 942,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:34:59.128Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 688,
+      "durationS": 26,
+      "geometryLineCount": 3,
+      "geometryPointCount": 7,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 127,
+      "nearestAnchorSegmentM": 2,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 3,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 1,
+        "endOffsetM": 2,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 687,
+        "geometryLengthM": 687,
+        "lengthRatio": 1.002,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:12439892927",
+          "nearestSegmentM": 2
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-413336d82b75",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 36.69093435,
+            "lat": 55.2611281
+          },
+          {
+            "type": "stop",
+            "lon": 36.69234165,
+            "lat": 55.2670128
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:35:14.108Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 941,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:35:14.698Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 5494,
+      "durationS": 331,
+      "geometryLineCount": 8,
+      "geometryPointCount": 92,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 30,
+      "nearestAnchorSegmentM": 30,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "ROUTE_SCOPE_MISMATCH",
+        "sourceWitnessCount": 7,
+        "within25mFraction": 0.429,
+        "outsideExpectedCorridorFraction": 0.937,
+        "backtrackViolations": 0,
+        "startOffsetM": 16,
+        "endOffsetM": 9,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 661,
+        "geometryLengthM": 5502,
+        "lengthRatio": 8.316,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:13310936104",
+          "nearestSegmentM": 30
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 100,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-1bcfd9940a4f",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 36.69093435,
+            "lat": 55.2611281
+          },
+          {
+            "type": "stop",
+            "lon": 36.691299099999995,
+            "lat": 55.2624598
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:35:29.371Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 940,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:35:29.640Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 4980,
+      "durationS": 287,
+      "geometryLineCount": 8,
+      "geometryPointCount": 79,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 154,
+      "nearestAnchorSegmentM": 154,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "ROUTE_SCOPE_MISMATCH",
+        "sourceWitnessCount": 3,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0.987,
+        "backtrackViolations": 0,
+        "startOffsetM": 16,
+        "endOffsetM": 24,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 150,
+        "geometryLengthM": 4988,
+        "lengthRatio": 33.228,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:13310936104",
+          "nearestSegmentM": 154
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-4726e01596d4",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 36.69168405,
+            "lat": 55.264335149999994
+          },
+          {
+            "type": "stop",
+            "lon": 36.69234165,
+            "lat": 55.2670128
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:35:44.626Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 939,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:35:44.956Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 5853,
+      "durationS": 361,
+      "geometryLineCount": 6,
+      "geometryPointCount": 99,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 30,
+      "nearestAnchorSegmentM": 30,
+      "paymentEventCount": 4,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "ROUTE_SCOPE_MISMATCH",
+        "sourceWitnessCount": 3,
+        "within25mFraction": 0.333,
+        "outsideExpectedCorridorFraction": 0.958,
+        "backtrackViolations": 0,
+        "startOffsetM": 27,
+        "endOffsetM": 9,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 301,
+        "geometryLengthM": 5862,
+        "lengthRatio": 19.468,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:13310936104",
+          "nearestSegmentM": 30
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 200,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-4af1555c4850",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 37.17851565,
+            "lat": 55.6449213
+          },
+          {
+            "type": "stop",
+            "lon": 37.177272599999995,
+            "lat": 55.6383015
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:35:59.889Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 938,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:36:00.233Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 744,
+      "durationS": 71,
+      "geometryLineCount": 3,
+      "geometryPointCount": 19,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 10,
+      "nearestAnchorSegmentM": 6,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 18,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 5,
+        "endOffsetM": 4,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 743,
+        "geometryLengthM": 744,
+        "lengthRatio": 1.001,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:3109177690",
+          "nearestSegmentM": 6
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 300,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-2ce6873be914",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 37.17851565,
+            "lat": 55.6449213
+          },
+          {
+            "type": "stop",
+            "lon": 37.1774628,
+            "lat": 55.6419331
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:36:15.150Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 937,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:36:16.286Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 339,
+      "durationS": 29,
+      "geometryLineCount": 3,
+      "geometryPointCount": 15,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 24,
+      "nearestAnchorSegmentM": 24,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 10,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 5,
+        "endOffsetM": 4,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 339,
+        "geometryLengthM": 339,
+        "lengthRatio": 0.999,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:3109177690",
+          "nearestSegmentM": 24
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-aa9df55d723c",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 37.17742585,
+            "lat": 55.64139405
+          },
+          {
+            "type": "stop",
+            "lon": 37.177272599999995,
+            "lat": 55.6383015
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:36:30.419Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 936,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:36:31.564Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 344,
+      "durationS": 41,
+      "geometryLineCount": 3,
+      "geometryPointCount": 8,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 36,
+      "nearestAnchorSegmentM": 36,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 7,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 6,
+        "endOffsetM": 4,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 344,
+        "geometryLengthM": 345,
+        "lengthRatio": 1,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:3109177690",
+          "nearestSegmentM": 36
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 300,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-346bd3227837",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 38.74352005,
+            "lat": 45.12976085
+          },
+          {
+            "type": "stop",
+            "lon": 38.741918850000005,
+            "lat": 45.12871125
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:38:15.336Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 935,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:38:16.983Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 171,
+      "durationS": 9,
+      "geometryLineCount": 3,
+      "geometryPointCount": 6,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 140,
+      "nearestAnchorSegmentM": 140,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 4,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 7,
+        "endOffsetM": 2,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 171,
+        "geometryLengthM": 171,
+        "lengthRatio": 0.997,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:6761599487",
+          "nearestSegmentM": 140
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-c1cf8ad481af",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 38.739304,
+            "lat": 45.127103399999996
+          },
+          {
+            "type": "stop",
+            "lon": 38.7397986,
+            "lat": 45.12811645
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:38:30.591Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 934,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:38:31.448Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 126,
+      "durationS": 34,
+      "geometryLineCount": 3,
+      "geometryPointCount": 9,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 68,
+      "nearestAnchorSegmentM": 68,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 4,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 6,
+        "endOffsetM": 2,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 127,
+        "geometryLengthM": 126,
+        "lengthRatio": 0.995,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:6761599487",
+          "nearestSegmentM": 68
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-3af36974b88f",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 38.7463357,
+            "lat": 55.82627335
+          },
+          {
+            "type": "stop",
+            "lon": 38.73461375,
+            "lat": 55.8261033
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:38:45.851Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 933,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:38:46.516Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 735,
+      "durationS": 31,
+      "geometryLineCount": 3,
+      "geometryPointCount": 12,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 37,
+      "nearestAnchorSegmentM": 5,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 6,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 8,
+        "endOffsetM": 3,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 733,
+        "geometryLengthM": 733,
+        "lengthRatio": 1.003,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:10782165527",
+          "nearestSegmentM": 5
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 244,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-f9f31ef92968",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 38.737072,
+            "lat": 55.8260936
+          },
+          {
+            "type": "stop",
+            "lon": 38.73461375,
+            "lat": 55.8261033
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:39:01.115Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 932,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:39:01.888Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 154,
+      "durationS": 6,
+      "geometryLineCount": 3,
+      "geometryPointCount": 6,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 199,
+      "nearestAnchorSegmentM": 199,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "SOURCE_CORRIDOR_SUPPORTED",
+        "sourceWitnessCount": 3,
+        "within25mFraction": 1,
+        "outsideExpectedCorridorFraction": 0,
+        "backtrackViolations": 0,
+        "startOffsetM": 1,
+        "endOffsetM": 3,
+        "maxGeometryGapM": 0,
+        "expectedLengthM": 154,
+        "geometryLengthM": 154,
+        "lengthRatio": 1.003,
+        "laneIdentityCertified": false,
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:10782165527",
+          "nearestSegmentM": 199
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 244,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    },
+    {
+      "id": "MASS-CONT-748f1bd38810",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 38.82105465,
+            "lat": 52.43279995
+          },
+          {
+            "type": "stop",
+            "lon": 38.8276297,
+            "lat": 52.4276447
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T18:39:16.376Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 931,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-07T18:39:16.737Z",
+      "httpStatus": 429,
+      "routeBuildStatus": "NO_ROUTE",
+      "routeCount": 0,
+      "distanceM": null,
+      "durationS": null,
+      "geometryLineCount": 0,
+      "geometryPointCount": 0,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": null,
+      "nearestAnchorSegmentM": null,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "demoDistanceLimitExceeded": false,
+      "windowDistanceLimitExceeded": false,
+      "routeScope": {
+        "status": "INCONCLUSIVE",
+        "reason": "No usable detailed geometry",
+        "rawGeometryRetained": false
+      },
+      "witnessComparisons": [
+        {
+          "id": "boundary:1051218390",
+          "nearestSegmentM": null
+        }
+      ],
+      "aggregatePaymentSchema": null,
+      "aggregatePaymentValues": null,
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+    }
+  ]
+}

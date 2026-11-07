@@ -1,0 +1,70 @@
+[
+  {
+    "group": "C",
+    "object": "365274796",
+    "type": "before",
+    "reason": "Insufficient separate approach/departure nodes"
+  },
+  {
+    "group": "C",
+    "object": "365274796",
+    "type": "after",
+    "reason": "Insufficient separate approach/departure nodes"
+  },
+  {
+    "group": "C",
+    "object": "365274796",
+    "type": "cross",
+    "reason": "Too short for meaningful independent control, >35km margin, or repeated exact endpoints"
+  },
+  {
+    "group": "F",
+    "object": "13377945035",
+    "type": "after",
+    "reason": "Insufficient separate approach/departure nodes"
+  },
+  {
+    "group": "F",
+    "object": "13377945036",
+    "type": "before",
+    "reason": "Insufficient separate approach/departure nodes"
+  },
+  {
+    "group": "E",
+    "object": "8120716330",
+    "reason": "No retained directed one-way chain containing gate"
+  },
+  {
+    "group": "E",
+    "object": "8120716327",
+    "reason": "No retained directed one-way chain containing gate"
+  },
+  {
+    "group": "E",
+    "object": "8120716326",
+    "reason": "No retained directed one-way chain containing gate"
+  },
+  {
+    "group": "E",
+    "object": "11072845296",
+    "reason": "No retained directed one-way chain containing gate"
+  },
+  {
+    "group": "G",
+    "object": "7171624764",
+    "type": "before",
+    "reason": "Insufficient separate approach/departure nodes"
+  },
+  {
+    "group": "G",
+    "object": "7171624764",
+    "type": "after",
+    "reason": "Insufficient separate approach/departure nodes"
+  },
+  {
+    "group": "G",
+    "object": "7171624764",
+    "type": "cross",
+    "reason": "Too short for meaningful independent control, >35km margin, or repeated exact endpoints"
+  }
+]

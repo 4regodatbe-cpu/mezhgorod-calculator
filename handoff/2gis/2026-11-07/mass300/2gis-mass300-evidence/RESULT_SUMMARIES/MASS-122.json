@@ -1,0 +1,92 @@
+{
+  "id": "MASS-122",
+  "group": "C",
+  "object": "M4-PVP545:5818209495",
+  "type": "after",
+  "status": "response_received",
+  "reservedUnits": 1,
+  "httpAttempts": 1,
+  "summary": {
+    "id": "MASS-122",
+    "at": "2026-11-07T13:25:20.682Z",
+    "expectedUnits": 1,
+    "quotaDeltaObserved": null,
+    "httpStatus": 200,
+    "routeBuildStatus": "OK",
+    "routeCount": 1,
+    "distanceM": 26631,
+    "durationS": 1415,
+    "geometryLineCount": 17,
+    "geometryPointCount": 242,
+    "invalidGeometryCount": 0,
+    "nearestAnchorM": 12,
+    "nearestAnchorSegmentM": 12,
+    "paymentEventCount": 4,
+    "totalPaymentsEntryCount": 1,
+    "routeAggregate": null,
+    "perPvpPrice": null,
+    "witnessComparisons": [
+      {
+        "id": "boundary:5818209495",
+        "nearestSegmentM": 12
+      },
+      {
+        "id": "source:5818209499",
+        "nearestSegmentM": 0
+      },
+      {
+        "id": "source:9605783251",
+        "nearestSegmentM": 13
+      },
+      {
+        "id": "source:13644813578",
+        "nearestSegmentM": 6
+      },
+      {
+        "id": "source:13644813580",
+        "nearestSegmentM": 4
+      },
+      {
+        "id": "source:5818209497",
+        "nearestSegmentM": 0
+      }
+    ],
+    "aggregatePaymentSchema": [
+      [
+        "cost",
+        "currency"
+      ]
+    ],
+    "aggregatePaymentValues": [
+      {
+        "cost": 660,
+        "currency": "RUB"
+      }
+    ],
+    "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+  },
+  "error": null,
+  "requestParameters": {
+    "points": [
+      {
+        "type": "stop",
+        "lon": 39.5546944,
+        "lat": 51.470384
+      },
+      {
+        "type": "stop",
+        "lon": 39.5543378,
+        "lat": 51.4728672
+      }
+    ],
+    "transport": "driving",
+    "route_mode": "fastest",
+    "output": "detailed",
+    "need_payment_info": true,
+    "locale": "ru",
+    "alternative": 0
+  },
+  "startedAt": "2026-11-07T13:25:19.405Z",
+  "completedAt": "2026-11-07T13:25:20.682Z",
+  "rawDataRetained": false
+}

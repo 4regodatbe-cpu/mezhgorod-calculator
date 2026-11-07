@@ -1,0 +1,162 @@
+{
+  "id": "MASS-081",
+  "group": "B",
+  "object": "M12-M7-exit",
+  "type": "exit",
+  "status": "response_received",
+  "reservedUnits": 1,
+  "httpAttempts": 1,
+  "summary": {
+    "id": "MASS-081",
+    "at": "2026-11-07T13:24:48.578Z",
+    "expectedUnits": 1,
+    "quotaDeltaObserved": null,
+    "httpStatus": 200,
+    "routeBuildStatus": "OK",
+    "routeCount": 1,
+    "distanceM": 6548,
+    "durationS": 482,
+    "geometryLineCount": 14,
+    "geometryPointCount": 172,
+    "invalidGeometryCount": 0,
+    "nearestAnchorM": 2,
+    "nearestAnchorSegmentM": 2,
+    "paymentEventCount": null,
+    "totalPaymentsEntryCount": null,
+    "routeAggregate": null,
+    "perPvpPrice": null,
+    "witnessComparisons": [
+      {
+        "id": "boundary:M12-M7-exit",
+        "nearestSegmentM": 2
+      },
+      {
+        "id": "source:9003577536",
+        "nearestSegmentM": 0
+      },
+      {
+        "id": "source:10026978937",
+        "nearestSegmentM": 1
+      },
+      {
+        "id": "source:9003577429",
+        "nearestSegmentM": 2
+      },
+      {
+        "id": "source:9003577434",
+        "nearestSegmentM": 1
+      },
+      {
+        "id": "source:9003577450",
+        "nearestSegmentM": 1
+      },
+      {
+        "id": "source:9003577435",
+        "nearestSegmentM": 1
+      },
+      {
+        "id": "source:9003577439",
+        "nearestSegmentM": 0
+      },
+      {
+        "id": "source:9003577440",
+        "nearestSegmentM": 1
+      },
+      {
+        "id": "source:9003577441",
+        "nearestSegmentM": 1
+      },
+      {
+        "id": "source:9003577442",
+        "nearestSegmentM": 2
+      },
+      {
+        "id": "source:9003577443",
+        "nearestSegmentM": 2
+      },
+      {
+        "id": "source:9003577444",
+        "nearestSegmentM": 1
+      },
+      {
+        "id": "source:9003577445",
+        "nearestSegmentM": 2
+      },
+      {
+        "id": "source:9003577446",
+        "nearestSegmentM": 3
+      },
+      {
+        "id": "source:9003577447",
+        "nearestSegmentM": 1
+      },
+      {
+        "id": "source:9003577448",
+        "nearestSegmentM": 1
+      },
+      {
+        "id": "source:9003577449",
+        "nearestSegmentM": 2
+      },
+      {
+        "id": "source:9003577430",
+        "nearestSegmentM": 2
+      },
+      {
+        "id": "source:9003577431",
+        "nearestSegmentM": 2
+      },
+      {
+        "id": "source:9003577432",
+        "nearestSegmentM": 3
+      },
+      {
+        "id": "source:9003577433",
+        "nearestSegmentM": 3
+      },
+      {
+        "id": "source:9003577427",
+        "nearestSegmentM": 2
+      },
+      {
+        "id": "source:9003577426",
+        "nearestSegmentM": 2
+      },
+      {
+        "id": "source:14216395535",
+        "nearestSegmentM": 3
+      },
+      {
+        "id": "source:76480898",
+        "nearestSegmentM": 0
+      }
+    ],
+    "aggregatePaymentSchema": null,
+    "aggregatePaymentValues": null,
+    "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+  },
+  "error": null,
+  "requestParameters": {
+    "points": [
+      {
+        "type": "stop",
+        "lon": 40.1954394,
+        "lat": 56.0796577
+      },
+      {
+        "type": "stop",
+        "lon": 40.1953167,
+        "lat": 56.0798533
+      }
+    ],
+    "transport": "driving",
+    "route_mode": "fastest",
+    "output": "detailed",
+    "need_payment_info": true,
+    "locale": "ru",
+    "alternative": 0
+  },
+  "startedAt": "2026-11-07T13:24:46.539Z",
+  "completedAt": "2026-11-07T13:24:48.578Z",
+  "rawDataRetained": false
+}

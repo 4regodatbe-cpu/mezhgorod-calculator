@@ -1,0 +1,39 @@
+{
+  "batch": 10,
+  "status": "APPROVED_SUBSET_COMPLETE",
+  "ids": [
+    "MASS-226",
+    "MASS-227",
+    "MASS-228",
+    "MASS-229",
+    "MASS-230",
+    "MASS-231",
+    "MASS-232",
+    "MASS-233",
+    "MASS-234",
+    "MASS-235",
+    "MASS-236",
+    "MASS-237",
+    "MASS-238",
+    "MASS-239",
+    "MASS-240",
+    "MASS-241",
+    "MASS-242",
+    "MASS-243",
+    "MASS-244",
+    "MASS-245",
+    "MASS-246",
+    "MASS-247",
+    "MASS-248",
+    "MASS-249",
+    "MASS-250"
+  ],
+  "executedIds": [
+    "MASS-241",
+    "MASS-242"
+  ],
+  "httpAttempts": 2,
+  "reservedUnits": 2,
+  "observedDebit": "campaign aggregate only",
+  "note": "25budgetslots,not25validatedcalls. Exact11subset complete;25-unit adaptive threshold not reached."
+}

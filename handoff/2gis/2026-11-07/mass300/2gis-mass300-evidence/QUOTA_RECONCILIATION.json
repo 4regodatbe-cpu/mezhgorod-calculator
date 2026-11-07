@@ -1,0 +1,13 @@
+{
+  "initialUsed": 15,
+  "initialRemaining": 985,
+  "lastObservedUsed": 24,
+  "lastObservedRemaining": 976,
+  "observedIncrease": 9,
+  "httpAttempts": 11,
+  "reservedUnits": 11,
+  "pendingUnreflectedUnits": 2,
+  "conservativeRemaining": 974,
+  "at": "2026-11-07T13:31:09.570893+00:00",
+  "interpretation": "PM can lag;do not infer per-call debit fromHTTP200 or attribute discrepancy to a tariff/discount. No extra Routingcalls to test billing."
+}

@@ -1,0 +1,354 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.1 (1625864 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/"><bounds minlat="45.1216582" minlon="38.7349074" maxlat="45.1336582" maxlon="38.7469074" />
+ <node id="6761599487" visible="true" version="6" lat="45.1278631" lon="38.7405898">
+  <tag k="barrier" v="toll_booth" />
+  <tag k="name" v="ПВП 46км" />
+  <tag k="ref" v="пункт оплаты" />
+ </node>
+ <node id="6761599496" visible="true" version="3" lat="45.1524118" lon="38.7734788" />
+ <node id="6761599518" visible="true" version="4" lat="45.1208160" lon="38.7306289" />
+ <node id="6761599519" visible="true" version="2" lat="45.1300923" lon="38.7439970" />
+ <node id="6761599520" visible="true" version="4" lat="45.1429652" lon="38.7625174" />
+ <node id="6761599521" visible="true" version="4" lat="45.1471628" lon="38.7683874" />
+ <node id="6761599522" visible="true" version="3" lat="45.1505510" lon="38.7719687" />
+ <node id="6761599523" visible="true" version="4" lat="45.1545469" lon="38.7748950" />
+ <node id="6761599524" visible="true" version="4" lat="45.1587705" lon="38.7768017" />
+ <node id="6761599525" visible="true" version="4" lat="45.1606973" lon="38.7773381" />
+ <node id="8111367146" visible="true" version="2" lat="45.1564100" lon="38.7758746" />
+ <node id="8111367147" visible="true" version="2" lat="45.1484340" lon="38.7698779" />
+ <node id="10979205242" visible="true" version="2" lat="45.1207272" lon="38.7306871" />
+ <node id="10979205243" visible="true" version="6" lat="45.1276582" lon="38.7409074">
+  <tag k="barrier" v="toll_booth" />
+  <tag k="name" v="ПВП 46км" />
+  <tag k="ref" v="пункт оплаты" />
+ </node>
+ <node id="10979205244" visible="true" version="3" lat="45.1299342" lon="38.7439558" />
+ <node id="10979205245" visible="true" version="2" lat="45.1422239" lon="38.7616598" />
+ <node id="10979205246" visible="true" version="1" lat="45.1466883" lon="38.7679970" />
+ <node id="10979205247" visible="true" version="2" lat="45.1482925" lon="38.7699125" />
+ <node id="10979205248" visible="true" version="1" lat="45.1499572" lon="38.7716019" />
+ <node id="10979205249" visible="true" version="2" lat="45.1514100" lon="38.7728681" />
+ <node id="10979205250" visible="true" version="2" lat="45.1532948" lon="38.7742541" />
+ <node id="10979205251" visible="true" version="2" lat="45.1563208" lon="38.7759834" />
+ <node id="10979205252" visible="true" version="2" lat="45.1579591" lon="38.7766650" />
+ <node id="10979205253" visible="true" version="2" lat="45.1607264" lon="38.7774885" />
+ <node id="12057576365" visible="true" version="4" lat="45.1319792" lon="38.7468528" />
+ <node id="12057576368" visible="true" version="4" lat="45.1331468" lon="38.7485377" />
+ <node id="12057609448" visible="true" version="4" lat="45.1332032" lon="38.7484555" />
+ <node id="12057609449" visible="true" version="5" lat="45.1320497" lon="38.7467507" />
+ <node id="12057609451" visible="true" version="2" lat="45.1322890" lon="38.7469311" />
+ <node id="12057611670" visible="true" version="2" lat="45.1321174" lon="38.7472638" />
+ <node id="12778971074" visible="true" version="2" lat="45.1262926" lon="38.7385191" />
+ <node id="12778971076" visible="true" version="2" lat="45.1241871" lon="38.7354792" />
+ <node id="12778971077" visible="true" version="1" lat="45.1241272" lon="38.7355953" />
+ <node id="12778971078" visible="true" version="1" lat="45.1178267" lon="38.7262652" />
+ <node id="12778971079" visible="true" version="1" lat="45.1170040" lon="38.7252825" />
+ <node id="12778971080" visible="true" version="1" lat="45.1147094" lon="38.7219466" />
+ <node id="12778971081" visible="true" version="1" lat="45.1146778" lon="38.7216926" />
+ <node id="12778986421" visible="true" version="1" lat="45.1627902" lon="38.7777458" />
+ <node id="12778986422" visible="true" version="1" lat="45.1628529" lon="38.7778991" />
+ <node id="12778986423" visible="true" version="1" lat="45.1617255" lon="38.7776787" />
+ <node id="12778986424" visible="true" version="1" lat="45.1618083" lon="38.7775525" />
+ <node id="12778986425" visible="true" version="1" lat="45.1597894" lon="38.7772580" />
+ <node id="12778986426" visible="true" version="1" lat="45.1595189" lon="38.7770345" />
+ <node id="12778986427" visible="true" version="1" lat="45.1590367" lon="38.7770429" />
+ <node id="12778986428" visible="true" version="1" lat="45.1579534" lon="38.7765152" />
+ <node id="12778986429" visible="true" version="1" lat="45.1573500" lon="38.7762838" />
+ <node id="12778986430" visible="true" version="1" lat="45.1553979" lon="38.7753593" />
+ <node id="12778986431" visible="true" version="1" lat="45.1537613" lon="38.7744023" />
+ <node id="12778986432" visible="true" version="1" lat="45.1531655" lon="38.7740100" />
+ <node id="12778986433" visible="true" version="1" lat="45.1518520" lon="38.7730465" />
+ <node id="12778986434" visible="true" version="1" lat="45.1513788" lon="38.7726681" />
+ <node id="12778986435" visible="true" version="1" lat="45.1497795" lon="38.7712489" />
+ <node id="12778986436" visible="true" version="1" lat="45.1491398" lon="38.7706167" />
+ <node id="12778986437" visible="true" version="1" lat="45.1476630" lon="38.7689889" />
+ <node id="12778986438" visible="true" version="1" lat="45.1464461" lon="38.7674661" />
+ <node id="12778986439" visible="true" version="1" lat="45.1459155" lon="38.7667658" />
+ <node id="12778986440" visible="true" version="1" lat="45.1450915" lon="38.7655928" />
+ <node id="12778986441" visible="true" version="1" lat="45.1442812" lon="38.7644120" />
+ <node id="12778986442" visible="true" version="1" lat="45.1436558" lon="38.7635080" />
+ <node id="12778986443" visible="true" version="1" lat="45.1412838" lon="38.7600867" />
+ <node id="12778986444" visible="true" version="1" lat="45.1382444" lon="38.7557069" />
+ <node id="12778986445" visible="true" version="2" lat="45.1294294" lon="38.7430431" />
+ <node id="12778986446" visible="true" version="2" lat="45.1293736" lon="38.7431507" />
+ <node id="12778986447" visible="true" version="3" lat="45.1308150" lon="38.7451945" />
+ <node id="12778986448" visible="true" version="3" lat="45.1312951" lon="38.7458840" />
+ <node id="12778986449" visible="true" version="2" lat="45.1344810" lon="38.7504703" />
+ <node id="12778986450" visible="true" version="1" lat="45.1356648" lon="38.7522047" />
+ <node id="12778986451" visible="true" version="1" lat="45.1364947" lon="38.7533991" />
+ <node id="12778986452" visible="true" version="1" lat="45.1375832" lon="38.7549698" />
+ <node id="12778986453" visible="true" version="1" lat="45.1383286" lon="38.7560418" />
+ <node id="12778986454" visible="true" version="1" lat="45.1391917" lon="38.7572891" />
+ <node id="12778986455" visible="true" version="1" lat="45.1402490" lon="38.7588144" />
+ <node id="12778986456" visible="true" version="1" lat="45.1412109" lon="38.7601887" />
+ <node id="12778986457" visible="true" version="1" lat="45.1436071" lon="38.7636426" />
+ <node id="12778986458" visible="true" version="1" lat="45.1444632" lon="38.7648831" />
+ <node id="12778986459" visible="true" version="1" lat="45.1453897" lon="38.7662157" />
+ <node id="12778986460" visible="true" version="1" lat="45.1460662" lon="38.7671931" />
+ <node id="12778986461" visible="true" version="1" lat="45.1474588" lon="38.7689484" />
+ <node id="12778986462" visible="true" version="1" lat="45.1491694" lon="38.7708249" />
+ <node id="12778986463" visible="true" version="1" lat="45.1508019" lon="38.7723568" />
+ <node id="12778986464" visible="true" version="1" lat="45.1521036" lon="38.7734035" />
+ <node id="12778986465" visible="true" version="1" lat="45.1526611" lon="38.7738180" />
+ <node id="12778986466" visible="true" version="1" lat="45.1539861" lon="38.7746866" />
+ <node id="12778986467" visible="true" version="1" lat="45.1547100" lon="38.7751331" />
+ <node id="12778986468" visible="true" version="1" lat="45.1554231" lon="38.7755251" />
+ <node id="12778986469" visible="true" version="1" lat="45.1571649" lon="38.7763676" />
+ <node id="12779058732" visible="true" version="2" lat="45.1314729" lon="38.7459510" />
+ <node id="12779058734" visible="true" version="1" lat="45.1266292" lon="38.7392314" />
+ <node id="12779058758" visible="true" version="2" lat="45.1268240" lon="38.7392146" />
+ <node id="12779058776" visible="true" version="1" lat="45.1269795" lon="38.7397964" />
+ <node id="12779058777" visible="true" version="2" lat="45.1283098" lon="38.7417339" />
+ <node id="12779058783" visible="true" version="1" lat="45.1285353" lon="38.7416466" />
+ <node id="12779281849" visible="true" version="1" lat="45.1287288" lon="38.7422860" />
+ <node id="12779281850" visible="true" version="1" lat="45.1289559" lon="38.7425933" />
+ <node id="12779281851" visible="true" version="1" lat="45.1288872" lon="38.7421911" />
+ <node id="12779399835" visible="true" version="1" lat="45.1636468" lon="38.7780504" />
+ <node id="12779399836" visible="true" version="1" lat="45.1636452" lon="38.7779005" />
+ <node id="12779399871" visible="true" version="1" lat="45.1131297" lon="38.7196466" />
+ <node id="12779399872" visible="true" version="1" lat="45.1132102" lon="38.7195483" />
+ <node id="12779849616" visible="true" version="1" lat="45.1262105" lon="38.7386230" />
+ <node id="13608262610" visible="true" version="1" lat="45.1286870" lon="38.7413807" />
+ <node id="13608262611" visible="true" version="1" lat="45.1285327" lon="38.7408138" />
+ <node id="13608262612" visible="true" version="1" lat="45.1283610" lon="38.7401791" />
+ <node id="13608262613" visible="true" version="1" lat="45.1278719" lon="38.7394181" />
+ <node id="13608262614" visible="true" version="1" lat="45.1273828" lon="38.7393934" />
+ <way id="1380335421" visible="true" version="5">
+  <nd ref="12778986446" />
+  <nd ref="10979205244" />
+  <nd ref="12778986447" />
+  <nd ref="12778986448" />
+  <nd ref="12057576365" />
+  <nd ref="12057576368" />
+  <nd ref="12778986449" />
+  <nd ref="12778986450" />
+  <nd ref="12778986451" />
+  <nd ref="12778986452" />
+  <nd ref="12778986453" />
+  <nd ref="12778986454" />
+  <nd ref="12778986455" />
+  <nd ref="12778986456" />
+  <nd ref="10979205245" />
+  <nd ref="12778986457" />
+  <nd ref="12778986458" />
+  <nd ref="12778986459" />
+  <nd ref="12778986460" />
+  <nd ref="10979205246" />
+  <nd ref="12778986461" />
+  <nd ref="10979205247" />
+  <nd ref="12778986462" />
+  <nd ref="10979205248" />
+  <nd ref="12778986463" />
+  <nd ref="10979205249" />
+  <nd ref="12778986464" />
+  <nd ref="12778986465" />
+  <nd ref="10979205250" />
+  <nd ref="12778986466" />
+  <nd ref="12778986467" />
+  <nd ref="12778986468" />
+  <nd ref="10979205251" />
+  <nd ref="12778986469" />
+  <nd ref="10979205252" />
+  <nd ref="12778986427" />
+  <nd ref="12778986425" />
+  <nd ref="10979205253" />
+  <nd ref="12778986423" />
+  <nd ref="12778986422" />
+  <nd ref="12779399835" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="2" />
+  <tag k="maxspeed" v="110" />
+  <tag k="name" v="Дальний западный обход г. Краснодара" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-4" />
+  <tag k="short_name" v="ДЗОК" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="1380335422" visible="true" version="4">
+  <nd ref="12779058734" />
+  <nd ref="12779058776" />
+  <nd ref="10979205243" />
+  <nd ref="12779058777" />
+  <nd ref="12779281849" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="6" />
+  <tag k="maxspeed" v="30" />
+  <tag k="name" v="Дальний западный обход г. Краснодара" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-4" />
+  <tag k="short_name" v="ДЗОК" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="1380335424" visible="true" version="5">
+  <nd ref="12779399836" />
+  <nd ref="12778986421" />
+  <nd ref="12778986424" />
+  <nd ref="6761599525" />
+  <nd ref="12778986426" />
+  <nd ref="6761599524" />
+  <nd ref="12778986428" />
+  <nd ref="12778986429" />
+  <nd ref="8111367146" />
+  <nd ref="12778986430" />
+  <nd ref="6761599523" />
+  <nd ref="12778986431" />
+  <nd ref="12778986432" />
+  <nd ref="6761599496" />
+  <nd ref="12778986433" />
+  <nd ref="12778986434" />
+  <nd ref="6761599522" />
+  <nd ref="12778986435" />
+  <nd ref="12778986436" />
+  <nd ref="8111367147" />
+  <nd ref="12778986437" />
+  <nd ref="6761599521" />
+  <nd ref="12778986438" />
+  <nd ref="12778986439" />
+  <nd ref="12778986440" />
+  <nd ref="12778986441" />
+  <nd ref="12778986442" />
+  <nd ref="6761599520" />
+  <nd ref="12778986443" />
+  <nd ref="12778986444" />
+  <nd ref="12057609448" />
+  <nd ref="12057609449" />
+  <nd ref="12779058732" />
+  <nd ref="6761599519" />
+  <nd ref="12778986445" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="2" />
+  <tag k="maxspeed" v="110" />
+  <tag k="name" v="Дальний западный обход г. Краснодара" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-4" />
+  <tag k="short_name" v="ДЗОК" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="1380335425" visible="true" version="4">
+  <nd ref="12779281851" />
+  <nd ref="12779058783" />
+  <nd ref="6761599487" />
+  <nd ref="12779058758" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="6" />
+  <tag k="maxspeed" v="30" />
+  <tag k="name" v="Дальний западный обход г. Краснодара" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-4" />
+  <tag k="short_name" v="ДЗОК" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="1380370304" visible="true" version="3">
+  <nd ref="12779399871" />
+  <nd ref="12778971080" />
+  <nd ref="12778971079" />
+  <nd ref="10979205242" />
+  <nd ref="12778971077" />
+  <nd ref="12779849616" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="2" />
+  <tag k="maxspeed" v="110" />
+  <tag k="name" v="Дальний западный обход г. Краснодара" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-4" />
+  <tag k="short_name" v="ДЗОК" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="1380370305" visible="true" version="3">
+  <nd ref="12778971074" />
+  <nd ref="12778971076" />
+  <nd ref="6761599518" />
+  <nd ref="12778971078" />
+  <nd ref="12778971081" />
+  <nd ref="12779399872" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="2" />
+  <tag k="maxspeed" v="110" />
+  <tag k="name" v="Дальний западный обход г. Краснодара" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-4" />
+  <tag k="short_name" v="ДЗОК" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="1380434725" visible="true" version="2">
+  <nd ref="12778986445" />
+  <nd ref="12779281851" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="2" />
+  <tag k="maxspeed" v="50" />
+  <tag k="name" v="Дальний западный обход г. Краснодара" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-4" />
+  <tag k="short_name" v="ДЗОК" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="1380434726" visible="true" version="2">
+  <nd ref="12779058758" />
+  <nd ref="12778971074" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="2" />
+  <tag k="maxspeed" v="50" />
+  <tag k="name" v="Дальний западный обход г. Краснодара" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-4" />
+  <tag k="short_name" v="ДЗОК" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="1380434727" visible="true" version="2">
+  <nd ref="12779849616" />
+  <nd ref="12779058734" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="2" />
+  <tag k="maxspeed" v="50" />
+  <tag k="name" v="Дальний западный обход г. Краснодара" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-4" />
+  <tag k="short_name" v="ДЗОК" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="1380434728" visible="true" version="2">
+  <nd ref="12779281849" />
+  <nd ref="12779281850" />
+  <nd ref="12778986446" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="2" />
+  <tag k="maxspeed" v="50" />
+  <tag k="name" v="Дальний западный обход г. Краснодара" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-4" />
+  <tag k="short_name" v="ДЗОК" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="1380436957" visible="true" version="2">
+  <nd ref="12057576365" />
+  <nd ref="12057611670" />
+  <tag k="highway" v="trunk_link" />
+  <tag k="oneway" v="yes" />
+ </way>
+ <way id="1380436959" visible="true" version="2">
+  <nd ref="12057609451" />
+  <nd ref="12057609449" />
+  <tag k="highway" v="trunk_link" />
+  <tag k="oneway" v="yes" />
+ </way>
+ <way id="1484135208" visible="true" version="1">
+  <nd ref="12778986445" />
+  <nd ref="13608262610" />
+  <nd ref="13608262611" />
+  <nd ref="13608262612" />
+  <nd ref="13608262613" />
+  <nd ref="13608262614" />
+  <nd ref="12779058758" />
+  <tag k="highway" v="service" />
+ </way>
+</osm>

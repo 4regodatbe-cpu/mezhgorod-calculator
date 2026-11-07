@@ -1,0 +1,14 @@
+{
+  "url": "https://api.openstreetmap.org/api/0.6/way/1550135076/full",
+  "startedAt": "2026-10-17T21:09:41.619Z",
+  "durableStartedCommit": "1a8df19a22af70b8ebccda0160f805ab6e677cdc",
+  "bodyFile": "2aa50600164a08549851.osm",
+  "status": 200,
+  "finalUrl": "https://api.openstreetmap.org/api/0.6/way/1550135076/full",
+  "contentType": "application/xml; charset=utf-8",
+  "bytes": 3984,
+  "sha256": "fe56f0bfa07a2fbefa03c1545c09360a2cc42018791786b0d392d4f014edbb73",
+  "elapsedMs": 415,
+  "originalSourceSha256": "5fd35082ff16b56af5eb277cf19cbf7114b0d683f32f2d746fbd191025c467d6",
+  "sanitizedContributorMetadata": true
+}

@@ -1,0 +1,1190 @@
+[
+  {
+    "id": "MASS-081",
+    "batch": 4,
+    "group": "B",
+    "slotBudget": 1,
+    "status": "HTTP200_ROUTE_OK",
+    "object": "M12-M7-exit",
+    "type": "exit",
+    "fromPoint": [
+      40.1954394,
+      56.0796577
+    ],
+    "toPoint": [
+      40.1953167,
+      56.0798533
+    ],
+    "orderedNodeIds": [
+      "9003577536",
+      "10026978937",
+      "9003577429",
+      "9003577434",
+      "9003577450",
+      "9003577435",
+      "9003577439",
+      "9003577440",
+      "9003577441",
+      "9003577442",
+      "9003577443",
+      "9003577444",
+      "9003577445",
+      "9003577446",
+      "9003577447",
+      "9003577448",
+      "9003577449",
+      "9003577430",
+      "9003577431",
+      "9003577432",
+      "9003577433",
+      "9003577427",
+      "9003577426",
+      "14216395535",
+      "76480898"
+    ],
+    "sourcePolylineLonLat": [
+      [
+        40.1954394,
+        56.0796577
+      ],
+      [
+        40.1956488,
+        56.0795595
+      ],
+      [
+        40.1958309,
+        56.0793567
+      ],
+      [
+        40.1959435,
+        56.0792128
+      ],
+      [
+        40.1959797,
+        56.0790881
+      ],
+      [
+        40.1959609,
+        56.0789544
+      ],
+      [
+        40.1958446,
+        56.0787748
+      ],
+      [
+        40.1957125,
+        56.0786833
+      ],
+      [
+        40.1955233,
+        56.0785995
+      ],
+      [
+        40.195341,
+        56.0785511
+      ],
+      [
+        40.1950653,
+        56.0785131
+      ],
+      [
+        40.1948614,
+        56.0785057
+      ],
+      [
+        40.1946565,
+        56.0785324
+      ],
+      [
+        40.1944496,
+        56.078596
+      ],
+      [
+        40.1942576,
+        56.078652
+      ],
+      [
+        40.1941413,
+        56.0787268
+      ],
+      [
+        40.1940226,
+        56.0788465
+      ],
+      [
+        40.1939588,
+        56.0789802
+      ],
+      [
+        40.1939596,
+        56.0791581
+      ],
+      [
+        40.194069,
+        56.0793291
+      ],
+      [
+        40.1942468,
+        56.0794625
+      ],
+      [
+        40.1944442,
+        56.0795595
+      ],
+      [
+        40.194906,
+        56.0796987
+      ],
+      [
+        40.1952024,
+        56.079824
+      ],
+      [
+        40.1953167,
+        56.0798533
+      ]
+    ],
+    "sourceWayIds": [
+      "972809728",
+      "972809720",
+      "292501171"
+    ],
+    "direction": "stored oneway mainline→link→M7",
+    "sourceLengthKm": 0.40172,
+    "maxResponseKm": 45,
+    "hypothesis": "Selected route exitsM12 ontoM7 via retained directed link, rather than another interchange",
+    "expectedGeometry": "Source junction sequence preserved",
+    "confirm": "Selected directed geometry follows source chain",
+    "refute": "Other exit/direction chosen",
+    "ambiguous": "Link cannot be disambiguated;1239 remains unknown",
+    "v3Effect": "Physical exit recognition fixture; no fare by destination name",
+    "requestParameters": {
+      "transport": "driving",
+      "route_mode": "fastest",
+      "output": "detailed",
+      "need_payment_info": true,
+      "locale": "ru",
+      "alternative": 0
+    },
+    "expectedUnits": 1,
+    "result": {
+      "id": "MASS-081",
+      "group": "B",
+      "object": "M12-M7-exit",
+      "type": "exit",
+      "sourceLengthM": 401.72,
+      "routeLengthM": 6548,
+      "lengthRatio": 16.3,
+      "tariffInference": "none; source-backed geometry and operator rules remain separate",
+      "receiptVerified": false,
+      "sourceWitnessFractionWithin25m": 1.0,
+      "boundaryMinDistanceM": 2,
+      "aggregate": null,
+      "paymentStatus": "UNAVAILABLE_NOT_FREE",
+      "geometryStatus": "EXTRA_ROUTING_SCOPE_NOT_COMPARABLE",
+      "compareAsSameShortScope": false
+    },
+    "designScopeRefuted": true
+  },
+  {
+    "id": "MASS-121",
+    "batch": 5,
+    "group": "C",
+    "slotBudget": 1,
+    "status": "HTTP200_ROUTE_OK",
+    "object": "M4-PVP545:5818209495",
+    "type": "before",
+    "fromPoint": [
+      39.554631,
+      51.4679181
+    ],
+    "toPoint": [
+      39.5547146,
+      51.4701519
+    ],
+    "orderedNodeIds": [
+      "4522140254",
+      "2350820444",
+      "5818209500"
+    ],
+    "sourcePolylineLonLat": [
+      [
+        39.554631,
+        51.4679181
+      ],
+      [
+        39.5547059,
+        51.4691249
+      ],
+      [
+        39.5547146,
+        51.4701519
+      ]
+    ],
+    "sourceWayIds": [
+      "799492317",
+      "615270676",
+      "615270691",
+      "615270694",
+      "1043769287"
+    ],
+    "direction": "ordered one-way source nodes; no reversal assumed",
+    "sourceLengthKm": 0.24849,
+    "maxResponseKm": 45,
+    "hypothesis": "Selected route stays on the before side without crossing target boundary",
+    "expectedGeometry": "Follow retained directed chain; compare target witness and source segment order in memory",
+    "confirm": "Directed chain and target crossing/absence match this control; record payment schema and aggregate independently",
+    "refute": "Route crosses a different boundary, reverses direction or selects another road",
+    "ambiguous": "Sparse geometry, snapping or nearby carriageway unresolved; no tariff inference",
+    "v3Effect": "Boundary/event recognition regression candidate only; no automatic tariff replacement",
+    "requestParameters": {
+      "transport": "driving",
+      "route_mode": "fastest",
+      "output": "detailed",
+      "need_payment_info": true,
+      "locale": "ru",
+      "alternative": 0
+    },
+    "expectedUnits": 1,
+    "result": {
+      "id": "MASS-121",
+      "group": "C",
+      "object": "M4-PVP545:5818209495",
+      "type": "before",
+      "sourceLengthM": 248.49,
+      "routeLengthM": 252,
+      "lengthRatio": 1.014,
+      "tariffInference": "none; source-backed geometry and operator rules remain separate",
+      "receiptVerified": false,
+      "sourceWitnessFractionWithin25m": 1.0,
+      "boundaryMinDistanceM": 13,
+      "aggregate": null,
+      "paymentStatus": "UNAVAILABLE_NOT_FREE",
+      "geometryStatus": "SOURCE_CORRIDOR_CONSISTENT_BOUNDARY_NOT_CERTIFIED",
+      "compareAsSameShortScope": true
+    },
+    "designScopeRefuted": false
+  },
+  {
+    "id": "MASS-122",
+    "batch": 5,
+    "group": "C",
+    "slotBudget": 1,
+    "status": "HTTP200_ROUTE_OK",
+    "object": "M4-PVP545:5818209495",
+    "type": "after",
+    "fromPoint": [
+      39.5546944,
+      51.470384
+    ],
+    "toPoint": [
+      39.5543378,
+      51.4728672
+    ],
+    "orderedNodeIds": [
+      "5818209499",
+      "9605783251",
+      "13644813578",
+      "13644813580",
+      "5818209497"
+    ],
+    "sourcePolylineLonLat": [
+      [
+        39.5546944,
+        51.470384
+      ],
+      [
+        39.5544825,
+        51.4718597
+      ],
+      [
+        39.5543524,
+        51.472483
+      ],
+      [
+        39.5543283,
+        51.4726954
+      ],
+      [
+        39.5543378,
+        51.4728672
+      ]
+    ],
+    "sourceWayIds": [
+      "799492317",
+      "615270676",
+      "615270691",
+      "615270694",
+      "1043769287"
+    ],
+    "direction": "ordered one-way source nodes; no reversal assumed",
+    "sourceLengthKm": 0.27743,
+    "maxResponseKm": 45,
+    "hypothesis": "Selected route stays on the after side without crossing target boundary",
+    "expectedGeometry": "Follow retained directed chain; compare target witness and source segment order in memory",
+    "confirm": "Directed chain and target crossing/absence match this control; record payment schema and aggregate independently",
+    "refute": "Route crosses a different boundary, reverses direction or selects another road",
+    "ambiguous": "Sparse geometry, snapping or nearby carriageway unresolved; no tariff inference",
+    "v3Effect": "Boundary/event recognition regression candidate only; no automatic tariff replacement",
+    "requestParameters": {
+      "transport": "driving",
+      "route_mode": "fastest",
+      "output": "detailed",
+      "need_payment_info": true,
+      "locale": "ru",
+      "alternative": 0
+    },
+    "expectedUnits": 1,
+    "result": {
+      "id": "MASS-122",
+      "group": "C",
+      "object": "M4-PVP545:5818209495",
+      "type": "after",
+      "sourceLengthM": 277.43,
+      "routeLengthM": 26631,
+      "lengthRatio": 95.992,
+      "tariffInference": "none; source-backed geometry and operator rules remain separate",
+      "receiptVerified": false,
+      "sourceWitnessFractionWithin25m": 1.0,
+      "boundaryMinDistanceM": 12,
+      "aggregate": [
+        {
+          "cost": 660,
+          "currency": "RUB"
+        }
+      ],
+      "paymentStatus": "OBSERVED_AGGREGATE",
+      "geometryStatus": "EXTRA_ROUTING_SCOPE_NOT_COMPARABLE",
+      "compareAsSameShortScope": false
+    },
+    "designScopeRefuted": true
+  },
+  {
+    "id": "MASS-123",
+    "batch": 5,
+    "group": "C",
+    "slotBudget": 1,
+    "status": "HTTP200_ROUTE_OK",
+    "object": "M4-PVP545:3504914294",
+    "type": "before",
+    "fromPoint": [
+      39.5546495,
+      51.4722186
+    ],
+    "toPoint": [
+      39.5547766,
+      51.473575
+    ],
+    "orderedNodeIds": [
+      "3504914297",
+      "4904703533",
+      "3504914296",
+      "13644823408",
+      "13644823417",
+      "6594393973"
+    ],
+    "sourcePolylineLonLat": [
+      [
+        39.5546495,
+        51.4722186
+      ],
+      [
+        39.5546172,
+        51.4725588
+      ],
+      [
+        39.5546401,
+        51.4728745
+      ],
+      [
+        39.5546847,
+        51.473224
+      ],
+      [
+        39.5547456,
+        51.4734906
+      ],
+      [
+        39.5547766,
+        51.473575
+      ]
+    ],
+    "sourceWayIds": [
+      "799492324",
+      "1043769289",
+      "702218809",
+      "787089819",
+      "1043769288"
+    ],
+    "direction": "ordered one-way source nodes; no reversal assumed",
+    "sourceLengthKm": 0.15159,
+    "maxResponseKm": 45,
+    "hypothesis": "Selected route stays on the before side without crossing target boundary",
+    "expectedGeometry": "Follow retained directed chain; compare target witness and source segment order in memory",
+    "confirm": "Directed chain and target crossing/absence match this control; record payment schema and aggregate independently",
+    "refute": "Route crosses a different boundary, reverses direction or selects another road",
+    "ambiguous": "Sparse geometry, snapping or nearby carriageway unresolved; no tariff inference",
+    "v3Effect": "Boundary/event recognition regression candidate only; no automatic tariff replacement",
+    "requestParameters": {
+      "transport": "driving",
+      "route_mode": "fastest",
+      "output": "detailed",
+      "need_payment_info": true,
+      "locale": "ru",
+      "alternative": 0
+    },
+    "expectedUnits": 1,
+    "result": {
+      "id": "MASS-123",
+      "group": "C",
+      "object": "M4-PVP545:3504914294",
+      "type": "before",
+      "sourceLengthM": 151.59,
+      "routeLengthM": 152,
+      "lengthRatio": 1.003,
+      "tariffInference": "none; source-backed geometry and operator rules remain separate",
+      "receiptVerified": false,
+      "sourceWitnessFractionWithin25m": 1.0,
+      "boundaryMinDistanceM": 10,
+      "aggregate": [
+        {
+          "cost": 160,
+          "currency": "RUB"
+        }
+      ],
+      "paymentStatus": "OBSERVED_AGGREGATE",
+      "geometryStatus": "SOURCE_CORRIDOR_CONSISTENT_BOUNDARY_NOT_CERTIFIED",
+      "compareAsSameShortScope": true
+    },
+    "designScopeRefuted": false
+  },
+  {
+    "id": "MASS-124",
+    "batch": 5,
+    "group": "C",
+    "slotBudget": 1,
+    "status": "HTTP200_ROUTE_OK",
+    "object": "M4-PVP545:3504914294",
+    "type": "after",
+    "fromPoint": [
+      39.5548468,
+      51.4737765
+    ],
+    "toPoint": [
+      39.5552709,
+      51.4754439
+    ],
+    "orderedNodeIds": [
+      "6594393974",
+      "9605783252",
+      "13644823422",
+      "13644823423",
+      "13644823428",
+      "13644823424",
+      "13645658532",
+      "13644823427"
+    ],
+    "sourcePolylineLonLat": [
+      [
+        39.5548468,
+        51.4737765
+      ],
+      [
+        39.555092,
+        51.4746657
+      ],
+      [
+        39.5552025,
+        51.4749859
+      ],
+      [
+        39.5552348,
+        51.4750933
+      ],
+      [
+        39.5552519,
+        51.4751743
+      ],
+      [
+        39.555272,
+        51.475302
+      ],
+      [
+        39.5552769,
+        51.4753674
+      ],
+      [
+        39.5552709,
+        51.4754439
+      ]
+    ],
+    "sourceWayIds": [
+      "799492324",
+      "1043769289",
+      "702218809",
+      "787089819",
+      "1043769288"
+    ],
+    "direction": "ordered one-way source nodes; no reversal assumed",
+    "sourceLengthKm": 0.18804,
+    "maxResponseKm": 45,
+    "hypothesis": "Selected route stays on the after side without crossing target boundary",
+    "expectedGeometry": "Follow retained directed chain; compare target witness and source segment order in memory",
+    "confirm": "Directed chain and target crossing/absence match this control; record payment schema and aggregate independently",
+    "refute": "Route crosses a different boundary, reverses direction or selects another road",
+    "ambiguous": "Sparse geometry, snapping or nearby carriageway unresolved; no tariff inference",
+    "v3Effect": "Boundary/event recognition regression candidate only; no automatic tariff replacement",
+    "requestParameters": {
+      "transport": "driving",
+      "route_mode": "fastest",
+      "output": "detailed",
+      "need_payment_info": true,
+      "locale": "ru",
+      "alternative": 0
+    },
+    "expectedUnits": 1,
+    "result": {
+      "id": "MASS-124",
+      "group": "C",
+      "object": "M4-PVP545:3504914294",
+      "type": "after",
+      "sourceLengthM": 188.04,
+      "routeLengthM": 188,
+      "lengthRatio": 1.0,
+      "tariffInference": "none; source-backed geometry and operator rules remain separate",
+      "receiptVerified": false,
+      "sourceWitnessFractionWithin25m": 1.0,
+      "boundaryMinDistanceM": 13,
+      "aggregate": [
+        {
+          "cost": 160,
+          "currency": "RUB"
+        }
+      ],
+      "paymentStatus": "OBSERVED_AGGREGATE",
+      "geometryStatus": "SOURCE_CORRIDOR_CONSISTENT_BOUNDARY_NOT_CERTIFIED",
+      "compareAsSameShortScope": true
+    },
+    "designScopeRefuted": false
+  },
+  {
+    "id": "MASS-125",
+    "batch": 5,
+    "group": "C",
+    "slotBudget": 1,
+    "status": "HTTP200_ROUTE_OK",
+    "object": "M4-PVP545:3504914294",
+    "type": "cross",
+    "fromPoint": [
+      39.5546172,
+      51.4725588
+    ],
+    "toPoint": [
+      39.5552519,
+      51.4751743
+    ],
+    "orderedNodeIds": [
+      "4904703533",
+      "3504914296",
+      "13644823408",
+      "13644823417",
+      "6594393973",
+      "3504914294",
+      "6594393974",
+      "9605783252",
+      "13644823422",
+      "13644823423",
+      "13644823428"
+    ],
+    "sourcePolylineLonLat": [
+      [
+        39.5546172,
+        51.4725588
+      ],
+      [
+        39.5546401,
+        51.4728745
+      ],
+      [
+        39.5546847,
+        51.473224
+      ],
+      [
+        39.5547456,
+        51.4734906
+      ],
+      [
+        39.5547766,
+        51.473575
+      ],
+      [
+        39.5548118,
+        51.4736578
+      ],
+      [
+        39.5548468,
+        51.4737765
+      ],
+      [
+        39.555092,
+        51.4746657
+      ],
+      [
+        39.5552025,
+        51.4749859
+      ],
+      [
+        39.5552348,
+        51.4750933
+      ],
+      [
+        39.5552519,
+        51.4751743
+      ]
+    ],
+    "sourceWayIds": [
+      "799492324",
+      "1043769289",
+      "702218809",
+      "787089819",
+      "1043769288"
+    ],
+    "direction": "ordered one-way source nodes; no reversal assumed",
+    "sourceLengthKm": 0.29461,
+    "maxResponseKm": 45,
+    "hypothesis": "Selected route crosses source boundary vicinity",
+    "expectedGeometry": "Follow retained directed chain; compare target witness and source segment order in memory",
+    "confirm": "Directed chain and target crossing/absence match this control; record payment schema and aggregate independently",
+    "refute": "Route crosses a different boundary, reverses direction or selects another road",
+    "ambiguous": "Sparse geometry, snapping or nearby carriageway unresolved; no tariff inference",
+    "v3Effect": "Boundary/event recognition regression candidate only; no automatic tariff replacement",
+    "requestParameters": {
+      "transport": "driving",
+      "route_mode": "fastest",
+      "output": "detailed",
+      "need_payment_info": true,
+      "locale": "ru",
+      "alternative": 0
+    },
+    "expectedUnits": 1,
+    "result": {
+      "id": "MASS-125",
+      "group": "C",
+      "object": "M4-PVP545:3504914294",
+      "type": "cross",
+      "sourceLengthM": 294.61,
+      "routeLengthM": 294,
+      "lengthRatio": 0.998,
+      "tariffInference": "none; source-backed geometry and operator rules remain separate",
+      "receiptVerified": false,
+      "sourceWitnessFractionWithin25m": 1.0,
+      "boundaryMinDistanceM": 1,
+      "aggregate": [
+        {
+          "cost": 160,
+          "currency": "RUB"
+        }
+      ],
+      "paymentStatus": "OBSERVED_AGGREGATE",
+      "geometryStatus": "SOURCE_SUPPORTED_DIRECTED_BOUNDARY",
+      "compareAsSameShortScope": true
+    },
+    "designScopeRefuted": false
+  },
+  {
+    "id": "MASS-126",
+    "batch": 6,
+    "group": "C",
+    "slotBudget": 1,
+    "status": "HTTP200_ROUTE_OK",
+    "object": "M4-PVP545:9620416636",
+    "type": "before",
+    "fromPoint": [
+      39.554631,
+      51.4679181
+    ],
+    "toPoint": [
+      39.5543652,
+      51.4701372
+    ],
+    "orderedNodeIds": [
+      "4522140254",
+      "3504914299",
+      "4625394253"
+    ],
+    "sourcePolylineLonLat": [
+      [
+        39.554631,
+        51.4679181
+      ],
+      [
+        39.5544979,
+        51.4691132
+      ],
+      [
+        39.5543652,
+        51.4701372
+      ]
+    ],
+    "sourceWayIds": [
+      "522875739",
+      "799492316",
+      "467980114",
+      "467980113",
+      "1043769286"
+    ],
+    "direction": "ordered one-way source nodes; no reversal assumed",
+    "sourceLengthKm": 0.24744,
+    "maxResponseKm": 45,
+    "hypothesis": "Selected route stays on the before side without crossing target boundary",
+    "expectedGeometry": "Follow retained directed chain; compare target witness and source segment order in memory",
+    "confirm": "Directed chain and target crossing/absence match this control; record payment schema and aggregate independently",
+    "refute": "Route crosses a different boundary, reverses direction or selects another road",
+    "ambiguous": "Sparse geometry, snapping or nearby carriageway unresolved; no tariff inference",
+    "v3Effect": "Boundary/event recognition regression candidate only; no automatic tariff replacement",
+    "requestParameters": {
+      "transport": "driving",
+      "route_mode": "fastest",
+      "output": "detailed",
+      "need_payment_info": true,
+      "locale": "ru",
+      "alternative": 0
+    },
+    "expectedUnits": 1,
+    "result": {
+      "id": "MASS-126",
+      "group": "C",
+      "object": "M4-PVP545:9620416636",
+      "type": "before",
+      "sourceLengthM": 247.44,
+      "routeLengthM": 246,
+      "lengthRatio": 0.994,
+      "tariffInference": "none; source-backed geometry and operator rules remain separate",
+      "receiptVerified": false,
+      "sourceWitnessFractionWithin25m": 1.0,
+      "boundaryMinDistanceM": 13,
+      "aggregate": null,
+      "paymentStatus": "UNAVAILABLE_NOT_FREE",
+      "geometryStatus": "SOURCE_CORRIDOR_CONSISTENT_BOUNDARY_NOT_CERTIFIED",
+      "compareAsSameShortScope": true
+    },
+    "designScopeRefuted": false
+  },
+  {
+    "id": "MASS-127",
+    "batch": 6,
+    "group": "C",
+    "slotBudget": 1,
+    "status": "HTTP200_ROUTE_OK",
+    "object": "M4-PVP545:9620416636",
+    "type": "after",
+    "fromPoint": [
+      39.5543375,
+      51.470369
+    ],
+    "toPoint": [
+      39.5541728,
+      51.4718315
+    ],
+    "orderedNodeIds": [
+      "4625394254",
+      "2194734415",
+      "3504914298",
+      "2096920539",
+      "4904703532"
+    ],
+    "sourcePolylineLonLat": [
+      [
+        39.5543375,
+        51.470369
+      ],
+      [
+        39.5542594,
+        51.4710871
+      ],
+      [
+        39.5542272,
+        51.4713209
+      ],
+      [
+        39.5542001,
+        51.4715793
+      ],
+      [
+        39.5541728,
+        51.4718315
+      ]
+    ],
+    "sourceWayIds": [
+      "522875739",
+      "799492316",
+      "467980114",
+      "467980113",
+      "1043769286"
+    ],
+    "direction": "ordered one-way source nodes; no reversal assumed",
+    "sourceLengthKm": 0.16303,
+    "maxResponseKm": 45,
+    "hypothesis": "Selected route stays on the after side without crossing target boundary",
+    "expectedGeometry": "Follow retained directed chain; compare target witness and source segment order in memory",
+    "confirm": "Directed chain and target crossing/absence match this control; record payment schema and aggregate independently",
+    "refute": "Route crosses a different boundary, reverses direction or selects another road",
+    "ambiguous": "Sparse geometry, snapping or nearby carriageway unresolved; no tariff inference",
+    "v3Effect": "Boundary/event recognition regression candidate only; no automatic tariff replacement",
+    "requestParameters": {
+      "transport": "driving",
+      "route_mode": "fastest",
+      "output": "detailed",
+      "need_payment_info": true,
+      "locale": "ru",
+      "alternative": 0
+    },
+    "expectedUnits": 1,
+    "result": {
+      "id": "MASS-127",
+      "group": "C",
+      "object": "M4-PVP545:9620416636",
+      "type": "after",
+      "sourceLengthM": 163.03,
+      "routeLengthM": 163,
+      "lengthRatio": 1.0,
+      "tariffInference": "none; source-backed geometry and operator rules remain separate",
+      "receiptVerified": false,
+      "sourceWitnessFractionWithin25m": 1.0,
+      "boundaryMinDistanceM": 12,
+      "aggregate": [
+        {
+          "cost": 250,
+          "currency": "RUB"
+        }
+      ],
+      "paymentStatus": "OBSERVED_AGGREGATE",
+      "geometryStatus": "SOURCE_CORRIDOR_CONSISTENT_BOUNDARY_NOT_CERTIFIED",
+      "compareAsSameShortScope": true
+    },
+    "designScopeRefuted": false
+  },
+  {
+    "id": "MASS-128",
+    "batch": 6,
+    "group": "C",
+    "slotBudget": 1,
+    "status": "HTTP200_ROUTE_OK",
+    "object": "M4-PVP545:9620416636",
+    "type": "cross",
+    "fromPoint": [
+      39.554631,
+      51.4679181
+    ],
+    "toPoint": [
+      39.5541728,
+      51.4718315
+    ],
+    "orderedNodeIds": [
+      "4522140254",
+      "3504914299",
+      "4625394253",
+      "9620416636",
+      "4625394254",
+      "2194734415",
+      "3504914298",
+      "2096920539",
+      "4904703532"
+    ],
+    "sourcePolylineLonLat": [
+      [
+        39.554631,
+        51.4679181
+      ],
+      [
+        39.5544979,
+        51.4691132
+      ],
+      [
+        39.5543652,
+        51.4701372
+      ],
+      [
+        39.5543533,
+        51.4702571
+      ],
+      [
+        39.5543375,
+        51.470369
+      ],
+      [
+        39.5542594,
+        51.4710871
+      ],
+      [
+        39.5542272,
+        51.4713209
+      ],
+      [
+        39.5542001,
+        51.4715793
+      ],
+      [
+        39.5541728,
+        51.4718315
+      ]
+    ],
+    "sourceWayIds": [
+      "522875739",
+      "799492316",
+      "467980114",
+      "467980113",
+      "1043769286"
+    ],
+    "direction": "ordered one-way source nodes; no reversal assumed",
+    "sourceLengthKm": 0.43632,
+    "maxResponseKm": 45,
+    "hypothesis": "Selected route crosses source boundary vicinity",
+    "expectedGeometry": "Follow retained directed chain; compare target witness and source segment order in memory",
+    "confirm": "Directed chain and target crossing/absence match this control; record payment schema and aggregate independently",
+    "refute": "Route crosses a different boundary, reverses direction or selects another road",
+    "ambiguous": "Sparse geometry, snapping or nearby carriageway unresolved; no tariff inference",
+    "v3Effect": "Boundary/event recognition regression candidate only; no automatic tariff replacement",
+    "requestParameters": {
+      "transport": "driving",
+      "route_mode": "fastest",
+      "output": "detailed",
+      "need_payment_info": true,
+      "locale": "ru",
+      "alternative": 0
+    },
+    "expectedUnits": 1,
+    "result": {
+      "id": "MASS-128",
+      "group": "C",
+      "object": "M4-PVP545:9620416636",
+      "type": "cross",
+      "sourceLengthM": 436.32,
+      "routeLengthM": 435,
+      "lengthRatio": 0.997,
+      "tariffInference": "none; source-backed geometry and operator rules remain separate",
+      "receiptVerified": false,
+      "sourceWitnessFractionWithin25m": 1.0,
+      "boundaryMinDistanceM": 6,
+      "aggregate": [
+        {
+          "cost": 250,
+          "currency": "RUB"
+        }
+      ],
+      "paymentStatus": "OBSERVED_AGGREGATE",
+      "geometryStatus": "SOURCE_SUPPORTED_DIRECTED_BOUNDARY",
+      "compareAsSameShortScope": true
+    },
+    "designScopeRefuted": false
+  },
+  {
+    "id": "MASS-241",
+    "batch": 10,
+    "group": "F",
+    "slotBudget": 1,
+    "status": "HTTP200_ROUTE_OK",
+    "object": "Pulkovo:13377945035",
+    "type": "before",
+    "fromPoint": [
+      30.3498709,
+      59.7898794
+    ],
+    "toPoint": [
+      30.3392171,
+      59.7903025
+    ],
+    "orderedNodeIds": [
+      "12597059629",
+      "12597059620",
+      "13047772225",
+      "12686624910",
+      "12597059619",
+      "12686574344",
+      "13047772212",
+      "13047772226"
+    ],
+    "sourcePolylineLonLat": [
+      [
+        30.3498709,
+        59.7898794
+      ],
+      [
+        30.3494887,
+        59.7900876
+      ],
+      [
+        30.348857,
+        59.7902521
+      ],
+      [
+        30.3483415,
+        59.7903393
+      ],
+      [
+        30.3477952,
+        59.7903454
+      ],
+      [
+        30.3457386,
+        59.7903358
+      ],
+      [
+        30.3430877,
+        59.7903223
+      ],
+      [
+        30.3392171,
+        59.7903025
+      ]
+    ],
+    "sourceWayIds": [
+      "1360759954",
+      "1419907506",
+      "1369893169",
+      "1524320371"
+    ],
+    "direction": "ordered one-way source nodes; no reversal assumed",
+    "sourceLengthKm": 0.61228,
+    "maxResponseKm": 45,
+    "hypothesis": "Selected route stays on the before side without crossing target boundary",
+    "expectedGeometry": "Follow retained directed chain; compare target witness and source segment order in memory",
+    "confirm": "Directed chain and target crossing/absence match this control; record payment schema and aggregate independently",
+    "refute": "Route crosses a different boundary, reverses direction or selects another road",
+    "ambiguous": "Sparse geometry, snapping or nearby carriageway unresolved; no tariff inference",
+    "v3Effect": "Boundary/event recognition regression candidate only; no automatic tariff replacement",
+    "requestParameters": {
+      "transport": "driving",
+      "route_mode": "fastest",
+      "output": "detailed",
+      "need_payment_info": true,
+      "locale": "ru",
+      "alternative": 0
+    },
+    "expectedUnits": 1,
+    "result": {
+      "id": "MASS-241",
+      "group": "F",
+      "object": "Pulkovo:13377945035",
+      "type": "before",
+      "sourceLengthM": 612.28,
+      "routeLengthM": 16671,
+      "lengthRatio": 27.228,
+      "tariffInference": "none; source-backed geometry and operator rules remain separate",
+      "receiptVerified": false,
+      "sourceWitnessFractionWithin25m": 0.375,
+      "boundaryMinDistanceM": 266,
+      "aggregate": [
+        {
+          "cost": 94,
+          "currency": "RUB"
+        }
+      ],
+      "paymentStatus": "OBSERVED_AGGREGATE",
+      "geometryStatus": "EXTRA_ROUTING_SCOPE_NOT_COMPARABLE",
+      "compareAsSameShortScope": false
+    },
+    "designScopeRefuted": true
+  },
+  {
+    "id": "MASS-242",
+    "batch": 10,
+    "group": "F",
+    "slotBudget": 1,
+    "status": "HTTP200_ROUTE_OK",
+    "object": "Pulkovo:13377945036",
+    "type": "after",
+    "fromPoint": [
+      30.3392231,
+      59.7901961
+    ],
+    "toPoint": [
+      30.3473335,
+      59.7890185
+    ],
+    "orderedNodeIds": [
+      "12597059610",
+      "13047772227",
+      "12597059625",
+      "12597059626",
+      "13047772228",
+      "13047772229",
+      "13047772230",
+      "13047772231"
+    ],
+    "sourcePolylineLonLat": [
+      [
+        30.3392231,
+        59.7901961
+      ],
+      [
+        30.3407729,
+        59.7901549
+      ],
+      [
+        30.3421552,
+        59.7900631
+      ],
+      [
+        30.3453849,
+        59.7896468
+      ],
+      [
+        30.3461105,
+        59.789526
+      ],
+      [
+        30.3467274,
+        59.7893478
+      ],
+      [
+        30.3470546,
+        59.7891967
+      ],
+      [
+        30.3473335,
+        59.7890185
+      ]
+    ],
+    "sourceWayIds": [
+      "1524320372",
+      "1360759955"
+    ],
+    "direction": "ordered one-way source nodes; no reversal assumed",
+    "sourceLengthKm": 0.48401,
+    "maxResponseKm": 45,
+    "hypothesis": "Selected route stays on the after side without crossing target boundary",
+    "expectedGeometry": "Follow retained directed chain; compare target witness and source segment order in memory",
+    "confirm": "Directed chain and target crossing/absence match this control; record payment schema and aggregate independently",
+    "refute": "Route crosses a different boundary, reverses direction or selects another road",
+    "ambiguous": "Sparse geometry, snapping or nearby carriageway unresolved; no tariff inference",
+    "v3Effect": "Boundary/event recognition regression candidate only; no automatic tariff replacement",
+    "requestParameters": {
+      "transport": "driving",
+      "route_mode": "fastest",
+      "output": "detailed",
+      "need_payment_info": true,
+      "locale": "ru",
+      "alternative": 0
+    },
+    "expectedUnits": 1,
+    "result": {
+      "id": "MASS-242",
+      "group": "F",
+      "object": "Pulkovo:13377945036",
+      "type": "after",
+      "sourceLengthM": 484.01,
+      "routeLengthM": 489,
+      "lengthRatio": 1.01,
+      "tariffInference": "none; source-backed geometry and operator rules remain separate",
+      "receiptVerified": false,
+      "sourceWitnessFractionWithin25m": 1.0,
+      "boundaryMinDistanceM": 266,
+      "aggregate": null,
+      "paymentStatus": "UNAVAILABLE_NOT_FREE",
+      "geometryStatus": "SOURCE_CORRIDOR_CONSISTENT_BOUNDARY_NOT_CERTIFIED",
+      "compareAsSameShortScope": true
+    },
+    "designScopeRefuted": false
+  }
+]

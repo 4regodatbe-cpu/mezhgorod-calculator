@@ -1,0 +1,74 @@
+{
+  "id": "MASS-121",
+  "group": "C",
+  "object": "M4-PVP545:5818209495",
+  "type": "before",
+  "status": "response_received",
+  "reservedUnits": 1,
+  "httpAttempts": 1,
+  "summary": {
+    "id": "MASS-121",
+    "at": "2026-11-07T13:25:04.403Z",
+    "expectedUnits": 1,
+    "quotaDeltaObserved": null,
+    "httpStatus": 200,
+    "routeBuildStatus": "OK",
+    "routeCount": 1,
+    "distanceM": 252,
+    "durationS": 26,
+    "geometryLineCount": 4,
+    "geometryPointCount": 12,
+    "invalidGeometryCount": 0,
+    "nearestAnchorM": 13,
+    "nearestAnchorSegmentM": 13,
+    "paymentEventCount": null,
+    "totalPaymentsEntryCount": null,
+    "routeAggregate": null,
+    "perPvpPrice": null,
+    "witnessComparisons": [
+      {
+        "id": "boundary:5818209495",
+        "nearestSegmentM": 13
+      },
+      {
+        "id": "source:4522140254",
+        "nearestSegmentM": 0
+      },
+      {
+        "id": "source:2350820444",
+        "nearestSegmentM": 1
+      },
+      {
+        "id": "source:5818209500",
+        "nearestSegmentM": 0
+      }
+    ],
+    "aggregatePaymentSchema": null,
+    "aggregatePaymentValues": null,
+    "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+  },
+  "error": null,
+  "requestParameters": {
+    "points": [
+      {
+        "type": "stop",
+        "lon": 39.554631,
+        "lat": 51.4679181
+      },
+      {
+        "type": "stop",
+        "lon": 39.5547146,
+        "lat": 51.4701519
+      }
+    ],
+    "transport": "driving",
+    "route_mode": "fastest",
+    "output": "detailed",
+    "need_payment_info": true,
+    "locale": "ru",
+    "alternative": 0
+  },
+  "startedAt": "2026-11-07T13:25:03.581Z",
+  "completedAt": "2026-11-07T13:25:04.403Z",
+  "rawDataRetained": false
+}

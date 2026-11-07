@@ -1,0 +1,108 @@
+{
+  "id": "MASS-128",
+  "group": "C",
+  "object": "M4-PVP545:9620416636",
+  "type": "cross",
+  "status": "response_received",
+  "reservedUnits": 1,
+  "httpAttempts": 1,
+  "summary": {
+    "id": "MASS-128",
+    "at": "2026-11-07T13:26:57.906Z",
+    "expectedUnits": 1,
+    "quotaDeltaObserved": null,
+    "httpStatus": 200,
+    "routeBuildStatus": "OK",
+    "routeCount": 1,
+    "distanceM": 435,
+    "durationS": 39,
+    "geometryLineCount": 4,
+    "geometryPointCount": 12,
+    "invalidGeometryCount": 0,
+    "nearestAnchorM": 6,
+    "nearestAnchorSegmentM": 6,
+    "paymentEventCount": 2,
+    "totalPaymentsEntryCount": 1,
+    "routeAggregate": null,
+    "perPvpPrice": null,
+    "witnessComparisons": [
+      {
+        "id": "boundary:9620416636",
+        "nearestSegmentM": 6
+      },
+      {
+        "id": "source:4522140254",
+        "nearestSegmentM": 0
+      },
+      {
+        "id": "source:3504914299",
+        "nearestSegmentM": 3
+      },
+      {
+        "id": "source:4625394253",
+        "nearestSegmentM": 5
+      },
+      {
+        "id": "source:9620416636",
+        "nearestSegmentM": 6
+      },
+      {
+        "id": "source:4625394254",
+        "nearestSegmentM": 6
+      },
+      {
+        "id": "source:2194734415",
+        "nearestSegmentM": 7
+      },
+      {
+        "id": "source:3504914298",
+        "nearestSegmentM": 6
+      },
+      {
+        "id": "source:2096920539",
+        "nearestSegmentM": 5
+      },
+      {
+        "id": "source:4904703532",
+        "nearestSegmentM": 0
+      }
+    ],
+    "aggregatePaymentSchema": [
+      [
+        "cost",
+        "currency"
+      ]
+    ],
+    "aggregatePaymentValues": [
+      {
+        "cost": 250,
+        "currency": "RUB"
+      }
+    ],
+    "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+  },
+  "error": null,
+  "requestParameters": {
+    "points": [
+      {
+        "type": "stop",
+        "lon": 39.554631,
+        "lat": 51.4679181
+      },
+      {
+        "type": "stop",
+        "lon": 39.5541728,
+        "lat": 51.4718315
+      }
+    ],
+    "transport": "driving",
+    "route_mode": "fastest",
+    "output": "detailed",
+    "need_payment_info": true,
+    "locale": "ru",
+    "alternative": 0
+  },
+  "startedAt": "2026-11-07T13:26:56.531Z",
+  "completedAt": "2026-11-07T13:26:57.906Z",
+  "rawDataRetained": false
+}

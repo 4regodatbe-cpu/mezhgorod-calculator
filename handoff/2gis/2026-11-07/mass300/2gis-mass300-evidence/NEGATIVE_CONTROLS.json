@@ -1,0 +1,107 @@
+[
+  {
+    "id": "MASS-121",
+    "object": "M4-PVP545:5818209495",
+    "type": "before",
+    "geometryStatus": "SOURCE_CORRIDOR_CONSISTENT_BOUNDARY_NOT_CERTIFIED",
+    "usableShortControl": true,
+    "observedAggregate": null,
+    "notAFreeRouteProof": true,
+    "limitation": "Source-before/after context,not exact gate event certification; exclude detours from paired fare subtraction."
+  },
+  {
+    "id": "MASS-122",
+    "object": "M4-PVP545:5818209495",
+    "type": "after",
+    "geometryStatus": "EXTRA_ROUTING_SCOPE_NOT_COMPARABLE",
+    "usableShortControl": false,
+    "observedAggregate": [
+      {
+        "cost": 660,
+        "currency": "RUB"
+      }
+    ],
+    "notAFreeRouteProof": true,
+    "limitation": "Source-before/after context,not exact gate event certification; exclude detours from paired fare subtraction."
+  },
+  {
+    "id": "MASS-123",
+    "object": "M4-PVP545:3504914294",
+    "type": "before",
+    "geometryStatus": "SOURCE_CORRIDOR_CONSISTENT_BOUNDARY_NOT_CERTIFIED",
+    "usableShortControl": true,
+    "observedAggregate": [
+      {
+        "cost": 160,
+        "currency": "RUB"
+      }
+    ],
+    "notAFreeRouteProof": true,
+    "limitation": "Source-before/after context,not exact gate event certification; exclude detours from paired fare subtraction."
+  },
+  {
+    "id": "MASS-124",
+    "object": "M4-PVP545:3504914294",
+    "type": "after",
+    "geometryStatus": "SOURCE_CORRIDOR_CONSISTENT_BOUNDARY_NOT_CERTIFIED",
+    "usableShortControl": true,
+    "observedAggregate": [
+      {
+        "cost": 160,
+        "currency": "RUB"
+      }
+    ],
+    "notAFreeRouteProof": true,
+    "limitation": "Source-before/after context,not exact gate event certification; exclude detours from paired fare subtraction."
+  },
+  {
+    "id": "MASS-126",
+    "object": "M4-PVP545:9620416636",
+    "type": "before",
+    "geometryStatus": "SOURCE_CORRIDOR_CONSISTENT_BOUNDARY_NOT_CERTIFIED",
+    "usableShortControl": true,
+    "observedAggregate": null,
+    "notAFreeRouteProof": true,
+    "limitation": "Source-before/after context,not exact gate event certification; exclude detours from paired fare subtraction."
+  },
+  {
+    "id": "MASS-127",
+    "object": "M4-PVP545:9620416636",
+    "type": "after",
+    "geometryStatus": "SOURCE_CORRIDOR_CONSISTENT_BOUNDARY_NOT_CERTIFIED",
+    "usableShortControl": true,
+    "observedAggregate": [
+      {
+        "cost": 250,
+        "currency": "RUB"
+      }
+    ],
+    "notAFreeRouteProof": true,
+    "limitation": "Source-before/after context,not exact gate event certification; exclude detours from paired fare subtraction."
+  },
+  {
+    "id": "MASS-241",
+    "object": "Pulkovo:13377945035",
+    "type": "before",
+    "geometryStatus": "EXTRA_ROUTING_SCOPE_NOT_COMPARABLE",
+    "usableShortControl": false,
+    "observedAggregate": [
+      {
+        "cost": 94,
+        "currency": "RUB"
+      }
+    ],
+    "notAFreeRouteProof": true,
+    "limitation": "Source-before/after context,not exact gate event certification; exclude detours from paired fare subtraction."
+  },
+  {
+    "id": "MASS-242",
+    "object": "Pulkovo:13377945036",
+    "type": "after",
+    "geometryStatus": "SOURCE_CORRIDOR_CONSISTENT_BOUNDARY_NOT_CERTIFIED",
+    "usableShortControl": true,
+    "observedAggregate": null,
+    "notAFreeRouteProof": true,
+    "limitation": "Source-before/after context,not exact gate event certification; exclude detours from paired fare subtraction."
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "cases": [
+    {"caseId":"m4-545-short-window-south-bypass", "inputWitness":["5818209500","5818209495","5818209499"], "expectGeometry":"branch-supported", "expectTariff":"unknown"},
+    {"caseId":"m4-545-neighbor-old-road", "inputWitness":["522875739","799492316","467980114","9620416636","467980113","1043769286"], "expectGeometry":"distinct-chain", "expectTariff":"unknown"},
+    {"caseId":"m4-545-no-booth-crossing", "inputWitness":[], "expectGeometry":"unproven", "expectTariff":"unknown-not-free"},
+    {"caseId":"m4-545-through-two-products", "inputWitness":[], "expectGeometry":"incomplete-endpoints", "expectTariff":"unknown-no-additivity-inference"}
+  ]
+}

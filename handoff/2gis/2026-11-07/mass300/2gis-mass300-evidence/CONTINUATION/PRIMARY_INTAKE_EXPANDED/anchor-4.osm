@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.1 (1085011 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/"><bounds minlat="45.1624570" minlon="37.5818131" maxlat="45.1744570" maxlon="37.5938131" />
+ <node id="9516280711" visible="true" version="4" lat="45.1649198" lon="37.6244358">
+  <tag k="highway" v="toll_gantry" />
+ </node>
+ <node id="9516280712" visible="true" version="3" lat="45.1646940" lon="37.6282374" />
+ <node id="9516280713" visible="true" version="3" lat="45.1647361" lon="37.6321022" />
+ <node id="9516280714" visible="true" version="3" lat="45.1649768" lon="37.6354266" />
+ <node id="9516280715" visible="true" version="3" lat="45.1655170" lon="37.6392819" />
+ <node id="9516280716" visible="true" version="3" lat="45.1659036" lon="37.6412601" />
+ <node id="12439892924" visible="true" version="2" lat="45.1721821" lon="37.5478512" />
+ <node id="12439892925" visible="true" version="2" lat="45.1705807" lon="37.5650765" />
+ <node id="12439892926" visible="true" version="2" lat="45.1696404" lon="37.5752370" />
+ <node id="12439892927" visible="true" version="3" lat="45.1684570" lon="37.5878131">
+  <tag k="highway" v="toll_gantry" />
+  <tag k="ref" v="РВП 103км" />
+ </node>
+ <node id="12439892928" visible="true" version="2" lat="45.1670528" lon="37.6028586" />
+ <node id="12439892929" visible="true" version="2" lat="45.1651178" lon="37.6234514" />
+ <node id="12439892930" visible="true" version="3" lat="45.1649217" lon="37.6258327" />
+ <node id="12439892931" visible="true" version="2" lat="45.1647977" lon="37.6282636" />
+ <node id="12439892932" visible="true" version="3" lat="45.1648430" lon="37.6322628" />
+ <node id="12439892933" visible="true" version="3" lat="45.1652109" lon="37.6364783" />
+ <node id="12439892934" visible="true" version="3" lat="45.1657408" lon="37.6398397" />
+ <node id="12786742595" visible="true" version="2" lat="45.1675592" lon="37.6475049" />
+ <node id="12786742596" visible="true" version="2" lat="45.1673113" lon="37.6465248" />
+ <node id="12786742597" visible="true" version="2" lat="45.1661384" lon="37.6417324" />
+ <node id="12786742598" visible="true" version="1" lat="45.1666955" lon="37.6440581" />
+ <node id="12786743901" visible="true" version="2" lat="45.1655028" lon="37.6384829" />
+ <node id="12786743902" visible="true" version="2" lat="45.1649770" lon="37.6341763" />
+ <node id="12786743903" visible="true" version="2" lat="45.1647958" lon="37.6304835" />
+ <node id="12786743904" visible="true" version="1" lat="45.1661165" lon="37.6128995" />
+ <node id="12786743905" visible="true" version="1" lat="45.1676301" lon="37.5967049" />
+ <node id="12786743906" visible="true" version="1" lat="45.1692466" lon="37.5793334" />
+ <node id="12787971942" visible="true" version="1" lat="45.1720958" lon="37.5478437" />
+ <node id="12787971943" visible="true" version="1" lat="45.1692080" lon="37.5785978" />
+ <node id="12787971944" visible="true" version="1" lat="45.1675256" lon="37.5966938" />
+ <node id="12787971945" visible="true" version="1" lat="45.1661154" lon="37.6117276" />
+ <node id="12787971946" visible="true" version="2" lat="45.1650058" lon="37.6246064">
+  <tag k="highway" v="toll_gantry" />
+ </node>
+ <node id="12787971947" visible="true" version="1" lat="45.1648533" lon="37.6269818" />
+ <node id="12787971948" visible="true" version="1" lat="45.1648430" lon="37.6253832" />
+ <node id="12787971949" visible="true" version="1" lat="45.1647848" lon="37.6262288" />
+ <node id="12787971950" visible="true" version="1" lat="45.1647241" lon="37.6272331" />
+ <node id="12787971951" visible="true" version="1" lat="45.1647924" lon="37.6294623" />
+ <node id="12787971952" visible="true" version="1" lat="45.1648189" lon="37.6313816" />
+ <node id="12787971953" visible="true" version="1" lat="45.1648967" lon="37.6331169" />
+ <node id="12787971954" visible="true" version="1" lat="45.1646854" lon="37.6292303" />
+ <node id="12787971955" visible="true" version="1" lat="45.1646829" lon="37.6303328" />
+ <node id="12787971956" visible="true" version="1" lat="45.1646961" lon="37.6311607" />
+ <node id="12787971957" visible="true" version="1" lat="45.1650806" lon="37.6352814" />
+ <node id="12787971958" visible="true" version="1" lat="45.1647934" lon="37.6331697" />
+ <node id="12787971959" visible="true" version="1" lat="45.1648737" lon="37.6343306" />
+ <node id="12787971960" visible="true" version="1" lat="45.1651044" lon="37.6365599" />
+ <node id="12787971961" visible="true" version="1" lat="45.1653531" lon="37.6374941" />
+ <node id="12787971962" visible="true" version="1" lat="45.1652512" lon="37.6375765" />
+ <node id="12787971963" visible="true" version="1" lat="45.1653942" lon="37.6385091" />
+ <node id="12787971964" visible="true" version="1" lat="45.1659311" lon="37.6407845" />
+ <node id="12787971965" visible="true" version="1" lat="45.1657160" lon="37.6403386" />
+ <node id="12787971966" visible="true" version="1" lat="45.1674410" lon="37.6475662" />
+ <node id="12787971967" visible="true" version="1" lat="45.1666662" lon="37.6444554" />
+ <node id="12806246303" visible="true" version="1" lat="45.1683514" lon="37.5877882">
+  <tag k="highway" v="toll_gantry" />
+  <tag k="ref" v="РВП 103км" />
+ </node>
+ <way id="1354743715" visible="true" version="3">
+  <nd ref="12786742595" />
+  <nd ref="12786742596" />
+  <nd ref="12786742598" />
+  <nd ref="12786742597" />
+  <nd ref="12787971964" />
+  <nd ref="12439892934" />
+  <nd ref="12786743901" />
+  <nd ref="12787971961" />
+  <nd ref="12439892933" />
+  <nd ref="12787971957" />
+  <nd ref="12786743902" />
+  <nd ref="12787971953" />
+  <nd ref="12439892932" />
+  <nd ref="12787971952" />
+  <nd ref="12786743903" />
+  <nd ref="12787971951" />
+  <nd ref="12439892931" />
+  <nd ref="12787971947" />
+  <nd ref="12439892930" />
+  <nd ref="12787971946" />
+  <nd ref="12439892929" />
+  <nd ref="12786743904" />
+  <nd ref="12439892928" />
+  <nd ref="12786743905" />
+  <nd ref="12439892927" />
+  <nd ref="12786743906" />
+  <nd ref="12439892926" />
+  <nd ref="12439892925" />
+  <nd ref="12439892924" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="А-289" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="1354743716" visible="true" version="3">
+  <nd ref="12787971942" />
+  <nd ref="12787971943" />
+  <nd ref="12806246303" />
+  <nd ref="12787971944" />
+  <nd ref="12787971945" />
+  <nd ref="9516280711" />
+  <nd ref="12787971948" />
+  <nd ref="12787971949" />
+  <nd ref="12787971950" />
+  <nd ref="9516280712" />
+  <nd ref="12787971954" />
+  <nd ref="12787971955" />
+  <nd ref="12787971956" />
+  <nd ref="9516280713" />
+  <nd ref="12787971958" />
+  <nd ref="12787971959" />
+  <nd ref="9516280714" />
+  <nd ref="12787971960" />
+  <nd ref="12787971962" />
+  <nd ref="12787971963" />
+  <nd ref="9516280715" />
+  <nd ref="12787971965" />
+  <nd ref="9516280716" />
+  <nd ref="12787971967" />
+  <nd ref="12787971966" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="А-289" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ </osm>

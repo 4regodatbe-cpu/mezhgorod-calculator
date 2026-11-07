@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "m11-pulkovo-airport-access",
+  "direction": "M-11 to Pulkovo airport only",
+  "from": {
+    "osmNodeId": "13047772226",
+    "coordinate": [30.3392171, 59.7903025],
+    "roadWayId": "1369893169",
+    "oneway": "yes"
+  },
+  "gate": {
+    "osmNodeId": "13377945035",
+    "coordinate": [30.3344595, 59.7902367],
+    "tags": {
+      "highway": "toll_gantry",
+      "name": "М-11 - Аэр. Пулково"
+    }
+  },
+  "to": {
+    "osmNodeId": "12597059607",
+    "coordinate": [30.3260124, 59.79012],
+    "roadWayId": "1524320371",
+    "oneway": "yes"
+  },
+  "directedJoin": [
+    {
+      "wayId": "1369893169",
+      "orderedNodes": ["13047772226", "13377945035"],
+      "oneway": "yes"
+    },
+    {
+      "wayId": "1524320371",
+      "orderedNodes": ["13377945035", "12597059607"],
+      "oneway": "yes"
+    }
+  ],
+  "sources": [
+    {
+      "path": "../nationwide-tolls/source-snapshots/m11/2026-10-14-osm-tail-corridor.osm.gz",
+      "sha256": "b5181ef4e570733c8801b851cc5e3e2f7bc21e17d860d568fac7485afa9008e1",
+      "license": "OpenStreetMap contributors / ODbL"
+    },
+    {
+      "path": "../nationwide-tolls/source-snapshots/m11/2026-10-14-pulkovo-physical-gates.json",
+      "facts": "Current source snapshot identifies both one-way gates with named direction; node 13377945035 is M-11 to airport."
+    },
+    {
+      "path": "../nationwide-tolls/source-snapshots/m11/2026-09-04-679-684-category1.json",
+      "facts": "Official Order 274: airport access 38 RUB; combined airport+mainline 94 RUB only under the stated airport-access fixation condition."
+    }
+  ],
+  "queryHypothesis": "2GIS should choose the source-backed one-way M-11-to-airport connection through the named toll gantry. The response can confirm route geometry and whether payment fields are present; it cannot alone assign the official 38 RUB product or 94 RUB combined fare.",
+  "maxRouteKm": 5,
+  "expectedUnits": 1,
+  "repeatPolicy": "one attempt only; never retry outcome_unknown"
+}

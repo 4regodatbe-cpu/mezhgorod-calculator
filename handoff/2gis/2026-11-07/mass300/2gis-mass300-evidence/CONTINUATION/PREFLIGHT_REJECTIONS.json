@@ -1,0 +1,343 @@
+[
+  {
+    "id": "MASS-CONT-0002",
+    "object": "10090995832",
+    "reasons": [
+      "Verified network window too short or over3km margin"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0006",
+    "object": "10090995833",
+    "reasons": [
+      "Verified network window too short or over3km margin"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0017",
+    "object": "10782165527",
+    "reasons": [
+      "Verified network window too short or over3km margin"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0020",
+    "object": "10782165529",
+    "reasons": [
+      "Verified network window too short or over3km margin"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0021",
+    "object": "10782165529",
+    "reasons": [
+      "Verified network window too short or over3km margin"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0027",
+    "object": "11066737758",
+    "reasons": [
+      "Verified network window too short or over3km margin"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0029",
+    "object": "11072845296",
+    "reasons": [
+      "Verified network window too short or over3km margin"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0031",
+    "object": "11078819010",
+    "reasons": [
+      "Conditional access/direction needs temporal review"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0032",
+    "object": "11078819010",
+    "reasons": [
+      "Conditional access/direction needs temporal review"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0042",
+    "object": "11188803094",
+    "reasons": [
+      "Planned walk repeats nodes; possible loop"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0046",
+    "object": "11214930528",
+    "reasons": [
+      "Verified network window too short or over3km margin"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0078",
+    "object": "12202115855",
+    "reasons": [
+      "Verified network window too short or over3km margin"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0080",
+    "object": "12202115856",
+    "reasons": [
+      "Verified network window too short or over3km margin"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0096",
+    "object": "13020687195",
+    "reasons": [
+      "Protected previous crossing family (success or outcome_unknown); endpoint shift does not justify repeat"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0100",
+    "object": "13020800285",
+    "reasons": [
+      "Verified network window too short or over3km margin"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0112",
+    "object": "13377945035",
+    "reasons": [
+      "Protected previous crossing family (success or outcome_unknown); endpoint shift does not justify repeat"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0114",
+    "object": "13377945036",
+    "reasons": [
+      "Protected previous crossing family (success or outcome_unknown); endpoint shift does not justify repeat"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0124",
+    "object": "2492861243",
+    "reasons": [
+      "Vehicle access restricted"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0125",
+    "object": "2492861243",
+    "reasons": [
+      "Vehicle access restricted"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0141",
+    "object": "318102347",
+    "reasons": [
+      "Node access/barrier prohibits car passage"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0143",
+    "object": "318102347",
+    "reasons": [
+      "Node access/barrier prohibits car passage"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0156",
+    "object": "3257030196",
+    "reasons": [
+      "Selected graph path has access/conditional constraint"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0171",
+    "object": "3504914294",
+    "reasons": [
+      "Already successfully tested same boundary/control family; point shift is low value"
+    ],
+    "priorIds": [
+      "MASS-125"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0172",
+    "object": "3504914294",
+    "reasons": [
+      "Already successfully tested same boundary/control family; point shift is low value"
+    ],
+    "priorIds": [
+      "MASS-123"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0173",
+    "object": "3504914294",
+    "reasons": [
+      "Already successfully tested same boundary/control family; point shift is low value"
+    ],
+    "priorIds": [
+      "MASS-124"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0240",
+    "object": "5818209495",
+    "reasons": [
+      "Already successfully tested same boundary/control family; point shift is low value"
+    ],
+    "priorIds": [
+      "MASS-128"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0241",
+    "object": "5818209495",
+    "reasons": [
+      "Already successfully tested same boundary/control family; point shift is low value"
+    ],
+    "priorIds": [
+      "MASS-121",
+      "MASS-126"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0242",
+    "object": "5818209495",
+    "reasons": [
+      "Already successfully tested same boundary/control family; point shift is low value"
+    ],
+    "priorIds": [
+      "MASS-127"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0246",
+    "object": "6761599487",
+    "reasons": [
+      "Known substantially shorter alternative changes intended boundary scope"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0249",
+    "object": "7014845614",
+    "reasons": [
+      "Vehicle access restricted"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0251",
+    "object": "7014845614",
+    "reasons": [
+      "Vehicle access restricted"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0252",
+    "object": "7171624750",
+    "reasons": [
+      "Planned walk repeats nodes; possible loop"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0276",
+    "object": "8087316064",
+    "reasons": [
+      "Protected previous crossing family (success or outcome_unknown); endpoint shift does not justify repeat"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0285",
+    "object": "8120716327",
+    "reasons": [
+      "Conditional access/direction needs temporal review"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0286",
+    "object": "8120716327",
+    "reasons": [
+      "Conditional access/direction needs temporal review"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0287",
+    "object": "8120716327",
+    "reasons": [
+      "Conditional access/direction needs temporal review"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0288",
+    "object": "8120716328",
+    "reasons": [
+      "Conditional access/direction needs temporal review"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0289",
+    "object": "8120716328",
+    "reasons": [
+      "Conditional access/direction needs temporal review"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0290",
+    "object": "8120716328",
+    "reasons": [
+      "Conditional access/direction needs temporal review"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0291",
+    "object": "8120716329",
+    "reasons": [
+      "Conditional access/direction needs temporal review"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0292",
+    "object": "8120716329",
+    "reasons": [
+      "Conditional access/direction needs temporal review"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0293",
+    "object": "8120716329",
+    "reasons": [
+      "Conditional access/direction needs temporal review"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0294",
+    "object": "8120716330",
+    "reasons": [
+      "Conditional access/direction needs temporal review"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0295",
+    "object": "8120716330",
+    "reasons": [
+      "Conditional access/direction needs temporal review"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0296",
+    "object": "8120716330",
+    "reasons": [
+      "Conditional access/direction needs temporal review"
+    ]
+  },
+  {
+    "id": "MASS-CONT-0326",
+    "object": "9620386263",
+    "reasons": [
+      "Verified network window too short or over3km margin"
+    ]
+  }
+]

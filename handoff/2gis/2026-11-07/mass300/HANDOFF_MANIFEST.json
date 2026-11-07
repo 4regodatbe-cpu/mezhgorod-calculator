@@ -1,0 +1,1893 @@
+{
+  "sourceCommit": "4af5c9c6da12102c8ebbed737df2c4cec74b8d6f",
+  "approvalBaseCommit": "6c2280e11d83fa58d85d192a605964d108f25951",
+  "approvedManifestSha256": "eaeccffd2a4a0e9515026f5a8e9e552fa7014f2176994caa3a317c87c6fa499f",
+  "status": "PARTIAL/PAUSED_HTTP_429",
+  "fileCount": 314,
+  "files": [
+    {
+      "path": "2gis-mass300-evidence/00_START_HERE.md",
+      "sizeBytes": 779,
+      "sha256": "bbf1eb50fe19ec344af34d25319d7d67811c71dfb7f8547a6c84e84fa579a6c2",
+      "gitBlobSha": "39fa8625f159da290350bc80868ff706d8479d2e"
+    },
+    {
+      "path": "2gis-mass300-evidence/API_LIMITS_AND_USAGE.md",
+      "sizeBytes": 1769,
+      "sha256": "844b6bbb415b1c37f03a9bec9c1328c57ceb8672f2adf463dbe3b5c044aef430",
+      "gitBlobSha": "93fbbf3c6ee83bd39bbe9572603b9c8e1abd9362"
+    },
+    {
+      "path": "2gis-mass300-evidence/APPROVAL_MANIFEST.json",
+      "sizeBytes": 6580,
+      "sha256": "a7297e8c95b2e9d55f0f13fa9be309f669248cf4d3957073c3561300d7736373",
+      "gitBlobSha": "384b8fe90a2d048c7f57f6abb3410ca6d8762692"
+    },
+    {
+      "path": "2gis-mass300-evidence/BATCH_RESULTS/01.json",
+      "sizeBytes": 688,
+      "sha256": "c9d11935911d9123d04fe5e94f453e31b05003e955acc990d7e7a0f014224366",
+      "gitBlobSha": "3ed5f4b0c701aad6e6c47fe20064c15b1ec423b5"
+    },
+    {
+      "path": "2gis-mass300-evidence/BATCH_RESULTS/02.json",
+      "sizeBytes": 688,
+      "sha256": "c3ff182103ac735f6357cddea3698fdda99eb8f71e7cf64a2683ef8f27308495",
+      "gitBlobSha": "ca6e777f50b432344abe780fb6ef3af001548d0d"
+    },
+    {
+      "path": "2gis-mass300-evidence/BATCH_RESULTS/03.json",
+      "sizeBytes": 688,
+      "sha256": "cc3e7cfc30ae584185f820a064e09cf1e7fd8b1139c6ada4f0e1c617632190e9",
+      "gitBlobSha": "33e89e9970c49c61aa81cd3152e9778bfde16202"
+    },
+    {
+      "path": "2gis-mass300-evidence/BATCH_RESULTS/04.json",
+      "sizeBytes": 711,
+      "sha256": "2d05d76e6d77aebdd16ada1e81c9daab52499f0191ebce4a58501761226024a7",
+      "gitBlobSha": "a61db10c78ea8a984e3803d700999599cb95d3a2"
+    },
+    {
+      "path": "2gis-mass300-evidence/BATCH_RESULTS/05.json",
+      "sizeBytes": 775,
+      "sha256": "02bef7bdd7db8bc147f38343a390a1ce97eda501e59b8832c933a6d691cadf80",
+      "gitBlobSha": "3fa12a765e5f1cbae26e1655104fbc31953a9c46"
+    },
+    {
+      "path": "2gis-mass300-evidence/BATCH_RESULTS/06.json",
+      "sizeBytes": 743,
+      "sha256": "762788e098d72dbcef01d17857cfbd133e318fd17b994bb13bee967f411cfd95",
+      "gitBlobSha": "5f9d87e16eaa7705c9c5d9a6ee62cacd2c187a05"
+    },
+    {
+      "path": "2gis-mass300-evidence/BATCH_RESULTS/07.json",
+      "sizeBytes": 688,
+      "sha256": "c7148cf27a0fea5daf49f8ebe327bffd680affe7d84c4a10940c918f4bb5f4c3",
+      "gitBlobSha": "02a0bd0d02dd4ab1c86c4bd00198bab60ed120af"
+    },
+    {
+      "path": "2gis-mass300-evidence/BATCH_RESULTS/08.json",
+      "sizeBytes": 688,
+      "sha256": "2d313cb7db39b9daa106bf1d47a356312a4ed13d4d825b1eeda90182216df3e3",
+      "gitBlobSha": "fc603b221c3308eb6dc394366732928daec78898"
+    },
+    {
+      "path": "2gis-mass300-evidence/BATCH_RESULTS/09.json",
+      "sizeBytes": 688,
+      "sha256": "1a4114f14855aa8546d1eeaee32973afaff52abaab406da71aa4d9479602fed9",
+      "gitBlobSha": "f06d6db8f124da07ad8960562f1f2b7877f5b668"
+    },
+    {
+      "path": "2gis-mass300-evidence/BATCH_RESULTS/10.json",
+      "sizeBytes": 728,
+      "sha256": "96191c90696e6fa53924b0281f1097125d64b7dd4cf2657f4f506713d3950697",
+      "gitBlobSha": "32a04c157d1577e928208d9d87a78402cad984a4"
+    },
+    {
+      "path": "2gis-mass300-evidence/BATCH_RESULTS/11.json",
+      "sizeBytes": 689,
+      "sha256": "0ecb1f99474628a813a5097f55d0b314896045ddfb289abec3f9402286d20d22",
+      "gitBlobSha": "9f3de018c6051a17a311fee855ecfd10acdd98ad"
+    },
+    {
+      "path": "2gis-mass300-evidence/BATCH_RESULTS/12.json",
+      "sizeBytes": 689,
+      "sha256": "837fabbbbf86f10f06db1b348d6aaf0c527b5a09c0de4690f236980b33296e03",
+      "gitBlobSha": "b3dff06a986634b1b33f2dee1ceb2c53b6316ca2"
+    },
+    {
+      "path": "2gis-mass300-evidence/BILLING_DISCREPANCY.md",
+      "sizeBytes": 717,
+      "sha256": "a7b15cca19f03bedfb6d9c48bdde71f7696536d768fc57b6fcf7d5309bf3ae68",
+      "gitBlobSha": "130c590439d6ce060b07c009dba7b569d940e7f7"
+    },
+    {
+      "path": "2gis-mass300-evidence/CAMPAIGN_PLAN.json",
+      "sizeBytes": 113375,
+      "sha256": "785c26edbeb8bacee260bc88e7b5f61f9f82ab96b797103a3b80aa000e78af98",
+      "gitBlobSha": "bd2448164120022a6468134c854893ab2feeeeb1"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/ALL_SOURCES_SCANNED.json",
+      "sizeBytes": 26498,
+      "sha256": "1342a4bad89ce854a056c907f68938c239cc4e1769d0fc4a071998a0146a03cb",
+      "gitBlobSha": "14317d599663bda141619ccd8b83530bdf7a7a3a"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/BATCH_RESULTS/01.json",
+      "sizeBytes": 603,
+      "sha256": "5df62a9c2a95d6e96e180d9e73273a15d9e682a58bc84cb96c654a7ccb5d03b1",
+      "gitBlobSha": "b8c44dce41993a2ef0e63b2ed21c5d01bc4fb6ac"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/BATCH_RESULTS/02.json",
+      "sizeBytes": 932,
+      "sha256": "7146cd1d6f8385d57df3594e9ffbe03ffce1535237b1d131d5e59ac9fd87bac4",
+      "gitBlobSha": "d9979dfa39890bf8d6d33d60c1525067e76a568e"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/BATCH_RESULTS/03.json",
+      "sizeBytes": 932,
+      "sha256": "19cecbb57ef36fd4081e6532aee6f1f7c13b2c25ba75d33bbf9e985aec8f7799",
+      "gitBlobSha": "55cdc974e59ab26ac6a385410d1390195fff435c"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/BATCH_RESULTS/04.json",
+      "sizeBytes": 933,
+      "sha256": "85a78e1c78724d16dca8076cb08968030bfc76b084692f0c066338dde84a27fc",
+      "gitBlobSha": "9e81bd4bd65559934508d01f88f998aa44e41881"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/BATCH_RESULTS/05.json",
+      "sizeBytes": 933,
+      "sha256": "8ee4323253c92c9ca54efae2680c9c7ed0bd77ed555940454fab51bfb377723f",
+      "gitBlobSha": "46d36743132615b5e76448762ec5b314b984a313"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/BATCH_RESULTS/06.json",
+      "sizeBytes": 933,
+      "sha256": "d9712b720b0fa3f2f4870cbad556284be1b3af3fc9416e35d3152bee4b5d39d0",
+      "gitBlobSha": "a113993860517ffca0c7c7eaae3858aa23f6d6ad"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/BATCH_RESULTS/07.json",
+      "sizeBytes": 933,
+      "sha256": "bf69b83e7743b86a4cd301d4b0494bb99021727e05072c126d8cdfb4cf135605",
+      "gitBlobSha": "0c6cf72aa9a556bfe085b87d46c201d384178576"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/BATCH_RESULTS/08.json",
+      "sizeBytes": 933,
+      "sha256": "cc55e0d5b6ce61f5aff48a53835aa20a3eaa3094f4f44c4e4bc7431d17a61379",
+      "gitBlobSha": "f5023abf01cd57bab52d1d533e36188a17782745"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/BATCH_RESULTS/09.json",
+      "sizeBytes": 933,
+      "sha256": "f25bf27d6b8b863e703d6d3b884e186374d8014de73d7b51261dc245903e137c",
+      "gitBlobSha": "64b1d54130233fe3708afc01a3d6605a1cbb5fa7"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/BATCH_RESULTS/10.json",
+      "sizeBytes": 934,
+      "sha256": "338b626c01f9d565ec34e06dafd2b485b4cbfb0b72af8a34afbe025a8c6c5205",
+      "gitBlobSha": "167c83579a709b0a31bd59ccbaa309d025bebd1d"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/BATCH_RESULTS/11.json",
+      "sizeBytes": 934,
+      "sha256": "fe87bfca4089c8a88aab883b88512e3153c34d6a09bcc7af394db0d9b62203d4",
+      "gitBlobSha": "59a30b8d57f20361673ce27fbd2e9288f0b84ae3"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/BATCH_RESULTS/12.json",
+      "sizeBytes": 934,
+      "sha256": "09692e4fab4a6445a963ff394c138d47d6c498a06a1d8d341b46643860c7974d",
+      "gitBlobSha": "2a2171f99d0d38c2d344d69547bac55ca2899fa8"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/CAMPAIGN_PLAN.json",
+      "sizeBytes": 1754009,
+      "sha256": "351f207bb05a5c93b26efd25acd85597b9decf5901d6555cfb1fb845bf81b8ea",
+      "gitBlobSha": "4861f69914901968b57bd58e1252f74d520b0021"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/CLIENT_READINESS.md",
+      "sizeBytes": 1359,
+      "sha256": "701c8a1682a29e0e15acdcac33691a495823ca0cf118292598f1de97ca1d7bb1",
+      "gitBlobSha": "ddfcaadb5fc2f3267800e75a6decf5ea94f46449"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/ANALYSIS_SOURCE.py",
+      "sizeBytes": 4809,
+      "sha256": "fcdab2cc20c504605b87fc5d518b84d64e1b0fa69b87c6e316146d59e3b1f7d1",
+      "gitBlobSha": "37b85de807bfba1a77b79a723db6e44335104e30"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/ANALYSIS_SUMMARY.json",
+      "sizeBytes": 542,
+      "sha256": "ae20ea0939445f596fee1e388f3a321f706f031da3b9231e0599d9c27b20898a",
+      "gitBlobSha": "968a6dfd1dc5c19291192012d60eee4d5e68e86a"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/BATCH_ORCHESTRATION_SOURCE.py",
+      "sizeBytes": 4654,
+      "sha256": "29b4c6f22f43c677dd4dc5f0c3fb9404f71f84a9b8fcd34e3af06aaaafb880b3",
+      "gitBlobSha": "3d8e77ee84ce8a9f15a150c0aaae9666433b797f"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/CAMPAIGN_HISTORY.json",
+      "sizeBytes": 125931,
+      "sha256": "842838fa52016b572032a119cd007db7a00f21c93da09486fcb2be9a8fe9354a",
+      "gitBlobSha": "fbb3b9fdedc93d15a0afb9e9b54fb503071e9b0d"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/CHECKPOINT_SOURCE.py",
+      "sizeBytes": 3775,
+      "sha256": "086f899006a5e017db78ecec0ef3f35dcfe0007ab5c5c9bdd6851319e0e10847",
+      "gitBlobSha": "9fb7a79b1fb85c7d0c0cd78fed3ba187f9fa810f"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/CROSS_CONTROL_COMPARISONS.json",
+      "sizeBytes": 4320,
+      "sha256": "d381cf4010a9c5d8fe3163da441630eb85c83a7333069a5d668f0049e33c7fa1",
+      "gitBlobSha": "e22cdba78a3c715776e8ff2ecd9191a263f61ca7"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/LIVE_BATCH_01.json",
+      "sizeBytes": 683,
+      "sha256": "dae03d06051b7c6397616c0041edeac9db002b8b6f2ad29ab403213e3faf6bf1",
+      "gitBlobSha": "8f0d7514eec7f1e7d4073a8015f577d6b7b07398"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/LIVE_BATCH_02.json",
+      "sizeBytes": 683,
+      "sha256": "e8f910af3b8fb42b9e87c47c0c22aef077ceb435650e21d820beba53b30897dc",
+      "gitBlobSha": "994d8a16494725255098950090b0d5e052a5fff1"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/LIVE_BATCH_03.json",
+      "sizeBytes": 706,
+      "sha256": "1c5bbb558ec9473fa21b631a5d2914a8ae81c2dd415de80023e005e821b43a3a",
+      "gitBlobSha": "9ba27fc9de6bfbeb4bf1d53d3b1f2922231b4f57"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/LIVE_RESULTS.jsonl",
+      "sizeBytes": 72584,
+      "sha256": "7fc934720ea48c5f31390fc20c5269a13c81b7abdf45b31d70954dfe5b6e9b70",
+      "gitBlobSha": "d251ec45428feb706ec4b74b3eee6b6b5ef92464"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/LIVE_STATE.json",
+      "sizeBytes": 2073,
+      "sha256": "712a5019a9860e58dc76dbc9b94381eda380ca6494d1eb56c58d627df2299772",
+      "gitBlobSha": "bef6d98ff0884c16b3a0e999e049721f36c13290"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/MAIN_CODEX_LIVE_RECOMMENDATIONS.md",
+      "sizeBytes": 2521,
+      "sha256": "bd54f25acd82fcbefeac401435c9e3c7fc84badf04db5b6e7cdcff3d3ee4abf5",
+      "gitBlobSha": "ac020aff41c5057bfb480bb4f98d1aace1689465"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/NEXT_APPROVED_QUEUE.json",
+      "sizeBytes": 6499,
+      "sha256": "85036f80d3dbbc5277766ef55b60a7d016ebd2b093ad2a67d40b906533e018cf",
+      "gitBlobSha": "01d828cdfc01de8561bbb6bfa49ee98d32869bf1"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/OWNER_APPROVALS.json",
+      "sizeBytes": 201294,
+      "sha256": "2bb6c75eec7909919b19b391f3cf86f58aa74815d63f4551b1d87044a06f7c48",
+      "gitBlobSha": "08d03415accce81ad4742fb56c1d56ab336095e5"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/OWNER_AUTHORIZATION.json",
+      "sizeBytes": 10140,
+      "sha256": "83b2423bc9236a550133c665229ed0369059b2d581f06184be3b384087a82db2",
+      "gitBlobSha": "fc60e16f60da20ffb6ebbf6b216421a8429ca73f"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/PM_PREFLIGHT_LIVE.json",
+      "sizeBytes": 980,
+      "sha256": "e61d2565171cd923c054905abcc5aeae1971baa24fc1c4755011099075edaf41",
+      "gitBlobSha": "85dfb6e275782767a0b7733bbf5eb795b51a151c"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/PREFLIGHT_RESULT.json",
+      "sizeBytes": 1967,
+      "sha256": "16b6aa8f612e0bdc7ae43a35fe6567dca4b4622b93f8833cd7daff30faf44bed",
+      "gitBlobSha": "70af412b845acd23f87114f47304206d146bde01"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/README.md",
+      "sizeBytes": 633,
+      "sha256": "4d51b49a53f2f07a64818d34d7d970121e1cff839e507bba461e6ceec330856f",
+      "gitBlobSha": "13d65d237655e7a3725cb56fbe6672d1c40ce9d4"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/REQUEST_LEDGER.csv",
+      "sizeBytes": 37981,
+      "sha256": "5da25a64eb3ad97a35dea198bf556a5c9dbf3c5fe7c6fd425a15c235ed7b85db",
+      "gitBlobSha": "4c2fde6b31358e5f2021167ff6a4c2f094923800"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/RESULTS_FINAL.md",
+      "sizeBytes": 14483,
+      "sha256": "79654e0392d6dae3eef58fdb0855ee793a0abdb1c57ab1cdc664d3ff80f835c5",
+      "gitBlobSha": "2bbe421637d5d5e4c5d04f49dbc7c8dcdda7ffc9"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/ROAD_RESULTS.json",
+      "sizeBytes": 2508,
+      "sha256": "a7e3267e014d9361fb4fde60ed5bcf83014fc3683bc57b9001ca467bf60449e9",
+      "gitBlobSha": "0f9efe4924cc93e90794b9025f36e13b9af5a76b"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/SKIPPED_WINDOWS.json",
+      "sizeBytes": 5411,
+      "sha256": "73bf22442d6f2f39416e5c2b909f93f6285265947581750f1686b5ea6c045516",
+      "gitBlobSha": "6c1af4ea2eefecf65da72188f3e34adc49f6b660"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/verify_execution.mjs",
+      "sizeBytes": 2810,
+      "sha256": "3f4d942a17fe4bc25e132d5449f6986acf6c6c07c7f84500435ff111a47b16bd",
+      "gitBlobSha": "d492717a60ca740d24d0c1a3526395331d26a398"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/EXECUTION/verify_live_results.py",
+      "sizeBytes": 3193,
+      "sha256": "b2acb52bd19397e8b4f6e31eca395b080cf3921b9923289d248daf1fa5981e6b",
+      "gitBlobSha": "35d43bb7265160e363ebc19d8a9878f310bd63fa"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/GENERATED_DRAFTS.json",
+      "sizeBytes": 670891,
+      "sha256": "34bf2ef005f962271117c53768cad8bd088029f3ff563624af4ae29e17ea3175",
+      "gitBlobSha": "389dfe0f701d1a26a977b93b650f98edb83172bb"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/MAIN_CODEX_INTEGRATION.md",
+      "sizeBytes": 1260,
+      "sha256": "a1497cafa85be00532cf2ec9292486315bf586894801dd7a978d968c6e0b36ea",
+      "gitBlobSha": "4cb9805ada5d30926f16d9785028faf6cf0a23ed"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/MANIFEST.json",
+      "sizeBytes": 34430,
+      "sha256": "7cdd349fc7a645956a80cfadc476a5f639df874386a65d63c70e4ca30c00852c",
+      "gitBlobSha": "9529a356c8b81c8e4ecf1ae2ddf6589cc940dc6f"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/MANIFEST_APPROVAL_REFERENCE.txt",
+      "sizeBytes": 65,
+      "sha256": "f30149f8e4c03836322ce43fca5d489357a8a60e36c82d7e5f9fa818adc223c3",
+      "gitBlobSha": "b39018390e66e24c13b52cc21799b7c9c07f5b07"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/MASS300_APPROVAL_MANIFEST.json",
+      "sizeBytes": 354216,
+      "sha256": "eaeccffd2a4a0e9515026f5a8e9e552fa7014f2176994caa3a317c87c6fa499f",
+      "gitBlobSha": "74cb233319144003fe3bf47a52a967e51fa060d3"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/MASS300_APPROVED_WINDOWS.json",
+      "sizeBytes": 9225,
+      "sha256": "2f64f7ecd5803121e99629ac556fb8efbe3da23a7aaff98e2bec9e97b714b8cc",
+      "gitBlobSha": "840679964ff40d8cd38ba1781324317bcd10ccb7"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/MASS300_CANDIDATES.json",
+      "sizeBytes": 1615105,
+      "sha256": "9f1046c9ff069c7f16b8920f6f0b51056f47a5453e0e79f7e529629196853454",
+      "gitBlobSha": "88333bdf6cb6781a1a86fb5b03b46db77fa8d803"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/MASS300_PREFLIGHT_REPORT.md",
+      "sizeBytes": 2599,
+      "sha256": "979a1d00700491ad6555575c1b0f2f0ba345a16c1de73229420211aa067c3098",
+      "gitBlobSha": "c90cef155c08b48e46c42f8110f0a1f91d9fc587"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/MASS300_PRIORITY_MATRIX.csv",
+      "sizeBytes": 43308,
+      "sha256": "6208f1720ea7bfcb2178df19169da897559f84243dc915a5458c95350fb594ec",
+      "gitBlobSha": "2c1c8f9072d2dae686189409b617f1ccc8fd88b4"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/MASS300_REQUESTS.json",
+      "sizeBytes": 139299,
+      "sha256": "2c279531caa8640654bb58bf142c9f91d248797e17c700a1fa7dc9f5519860b5",
+      "gitBlobSha": "a3a99fbfd7e7eb94fd27051871162f23116fd9ef"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/MASS300_SELECTED_WINDOWS.json",
+      "sizeBytes": 1594648,
+      "sha256": "1ac2d466080660c300cff5c75aa28772a5e7f972e3415241bc9109f73e7bc2cc",
+      "gitBlobSha": "e41af8ea2f2a39d9a39a94666bc991c85a087b07"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/MASS300_WINDOWS_REVIEW.md",
+      "sizeBytes": 44358,
+      "sha256": "40b7f256ecd569f3962b9c2fd1af9c72ef6719c4d1fcaa33e8e012737b267773",
+      "gitBlobSha": "630d246139c3cadda0e71acb913f06aaab96fe93"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/NETWORK_INVENTORY.json",
+      "sizeBytes": 12621,
+      "sha256": "d0f5148a1fed03d62b122c6eae1ef8bc764b488c932095092d69dbbba06375e5",
+      "gitBlobSha": "8d8cf3a77019fc849b8e8af1978cb288dae72164"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PREFLIGHT_GRAPH_PROOF.json",
+      "sizeBytes": 712761,
+      "sha256": "15ad286ccf4462a2eb22c427c37f9f5a1a8f517f89b91fc8ec0227606e876fa6",
+      "gitBlobSha": "70bfc729654a97698851de272df6fdf46b769145"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PREFLIGHT_REJECTIONS.json",
+      "sizeBytes": 7354,
+      "sha256": "a4641443d0fae631b4d17488e760d79f19e49ad1f58db7a63deb057dc6ae6c41",
+      "gitBlobSha": "b872f602899048c12c161a9ca7a5b52c1359abb0"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PREPARATION_STATS.json",
+      "sizeBytes": 523,
+      "sha256": "625939c02e741f2d8fdc330e8fa5159394f289c9d05db40b4a68a46791d75505",
+      "gitBlobSha": "3c1a2b7d32ea4a24ed995a532c0ced2994f0dd0b"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-1093.metadata.json",
+      "sizeBytes": 747,
+      "sha256": "197bcd875fcf2c4ab81586f042df50c6570f2f08a368b4ab3b8bf65426fe44c8",
+      "gitBlobSha": "e75b9dd42f8bf89727cde8e60d6244b13fd4872e"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-1093.osm",
+      "sizeBytes": 12743,
+      "sha256": "b3ce38ad4df3203496827245b7c3655b2576925fb463d46a4f1a753f5f046399",
+      "gitBlobSha": "78eb3643a734f7ea816b76fa2ca2a6097b038ad4"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-1184.metadata.json",
+      "sizeBytes": 747,
+      "sha256": "d1a8f2cd2beb764afd96150b3ed1413b36fa0c544bf4d906919388ad2a972f39",
+      "gitBlobSha": "bff97290f0aa3956d78f0dfff2af7863c2c69e70"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-1184.osm",
+      "sizeBytes": 12812,
+      "sha256": "1b0ca9a1d05cb0ed3adc789f5a953b24f339a54aa4d4d7b3a8877929a9e3931d",
+      "gitBlobSha": "4b17419f3647baaaa0a7fd188d0953d04a6b34a3"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-1223.metadata.json",
+      "sizeBytes": 747,
+      "sha256": "5c764ef7b30afcdd65b2a7e16fa56b3dfcf4fda2195371c274e8fca242fc4652",
+      "gitBlobSha": "a679b54cbe2f1b77ad61d362bf22360685cb3484"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-1223.osm",
+      "sizeBytes": 14264,
+      "sha256": "d5f3b40463961a263a7b2482338298a1d2f19b6c76d998c35fba0746ab6abc62",
+      "gitBlobSha": "2f05c63d9e586793bce30c45c9bdd27711b8efd2"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-228.metadata.json",
+      "sizeBytes": 746,
+      "sha256": "288da086ae059e56c4cbad45b22a73fb5964325234da515e6e95e9824c0a4df5",
+      "gitBlobSha": "8ddfb32eff133693c00cb75ea918d5fdd90c4fd1"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-228.osm",
+      "sizeBytes": 27665,
+      "sha256": "5807352572a5669e4f4b16c0d18b4f168e6c3852afbe7815ffd9715ba348ec2d",
+      "gitBlobSha": "42299c046c6ee5a9071ef1e38eeb5756d751fe8b"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-322.metadata.json",
+      "sizeBytes": 747,
+      "sha256": "e8364cab145d157b0f02b331cf477cda367820e83a19206bffa46172025ee89d",
+      "gitBlobSha": "8f3d274c82a7b95808f4f9be514c40b5a50b4e42"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-322.osm",
+      "sizeBytes": 25049,
+      "sha256": "867289292933be29b533d1cb7c34fb9a750fe5ae3da87eb4f9c49113a12da301",
+      "gitBlobSha": "0de96e4e7f6df0019a3be8b86d1d82d80860d2fb"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-339.metadata.json",
+      "sizeBytes": 745,
+      "sha256": "fc4a5534517765d35bb576e119c6ccf1ac5fc397d07ca8fa96ef2c5cbf1cfe98",
+      "gitBlobSha": "62e0fb8bda9d0532cc340888045e2afb3b31ca3e"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-339.osm",
+      "sizeBytes": 24951,
+      "sha256": "f18110e160dfefc8e08565c90cc6491d2e0ee6cc864ceb2754107a009711bb4e",
+      "gitBlobSha": "6815de58238639f34ed95d8130a0509f2f3e5286"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-355.metadata.json",
+      "sizeBytes": 746,
+      "sha256": "1bb7e59f5a33e8a6254d312a96321c2f0157010aba67797a9c3af90e0d00bd71",
+      "gitBlobSha": "521ff067944c3fd5b1d794262a81bb58b37283a4"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-355.osm",
+      "sizeBytes": 27980,
+      "sha256": "77ef597f92d674c885853674459006500a5f4d17c27eca0938f98eaa577238e0",
+      "gitBlobSha": "d9b5e4d296521dc72a7264431b1555180db7a3e8"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-416.metadata.json",
+      "sizeBytes": 746,
+      "sha256": "f9e9b39955852fd5fda24736f3c88c4ad56eadd87f70f98f63d4070effad5a36",
+      "gitBlobSha": "15c2dfcd9a2335e2d1279824387112f2897c19db"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-416.osm",
+      "sizeBytes": 44075,
+      "sha256": "09ddace141d7a49dddd99f902c5c8b6ff7ed67be09cd152a0cbc50064fff1ff6",
+      "gitBlobSha": "9dfe786f00595e261565607afd72fbdd49d639e7"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-460.metadata.json",
+      "sizeBytes": 213,
+      "sha256": "505ea9489fe2c4acc27e3b376a1771c8049a239f4937415616201293009b3f03",
+      "gitBlobSha": "4c60010c32c8f8a809e505f794a2815a92b5d722"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-62.metadata.json",
+      "sizeBytes": 746,
+      "sha256": "823e3031828e41e16b47f00842559d09d9415e6f45a4a6b5d829648bcca301c9",
+      "gitBlobSha": "4802269ba99a8a6901570ffab1472f3a3f31816f"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-62.osm",
+      "sizeBytes": 45895,
+      "sha256": "5703701dc49e4efcaa7746b7cdf3c1c01eee6d1492ccdc4bdb61a3e595101b60",
+      "gitBlobSha": "10aa6038f442a604344924f43dc263f4ec0958ba"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-620.metadata.json",
+      "sizeBytes": 746,
+      "sha256": "dfe3df83b5355a64521d7f3acdc52dbdb58e6bde5ba8f841e87b99d5f51a9b54",
+      "gitBlobSha": "9a7dbf826fb6c29a7564ed59c9ac23361588f94b"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-620.osm",
+      "sizeBytes": 17495,
+      "sha256": "4131eac264febd6c343fa087acc4d178d79ed7ee353f3f6116c1e9ca405ed3f6",
+      "gitBlobSha": "4809d20631e62ea61e56aa4b52281887f893b4e4"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-636.metadata.json",
+      "sizeBytes": 746,
+      "sha256": "0ed35758657f368ece977924066ccad95c8b7568f13267b0697c95b51fe6aeb5",
+      "gitBlobSha": "5b6716cb49b63c4cc1424488d105dda8a1487ff8"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-636.osm",
+      "sizeBytes": 22740,
+      "sha256": "ba135b37f25fd6a1910430789b2f509640110ef4bdfdd60a3abccac1ac8414e6",
+      "gitBlobSha": "b1729e84146d46593c2ccda6f868a0135240b716"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-672.metadata.json",
+      "sizeBytes": 746,
+      "sha256": "f2f4e391759cf85ed931f98f5757df5ab015f5317be62d11ba746f0aa40a170e",
+      "gitBlobSha": "8fdc44f57fdb83943d5c2d5b5a8f2198dfbd2099"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-672.osm",
+      "sizeBytes": 30118,
+      "sha256": "e0c1260cd226c215334e868ee15c0a132bba5614396e4c7501cdfeda74e15ac4",
+      "gitBlobSha": "0055a26a5181937706201649372b827f562d3e96"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-71.metadata.json",
+      "sizeBytes": 746,
+      "sha256": "6bfa537c81ba28c0d2536a979277be66540a6927ab678d8d16456c9d76d5b534",
+      "gitBlobSha": "b3d563705059532d032bfc6d11cd6a561b427370"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/m4-71.osm",
+      "sizeBytes": 58515,
+      "sha256": "2ec4f2c260d5cecbf6e23b66cbad7fa350598abd8c44cf9ab38d55fa9426ce39",
+      "gitBlobSha": "10e76583005a083b9abeebedd3804ee6a28fa9ef"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE/summary.json",
+      "sizeBytes": 6060,
+      "sha256": "1f35e705fbf65d12b91647e7fc953caf8d869957bfb3fbf47bdda58a706a57bd",
+      "gitBlobSha": "abf3e78abe285bf292a5c781c76bf0f57084ef11"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-1.metadata.json",
+      "sizeBytes": 697,
+      "sha256": "0fb83c2713230a7ee46e8bc941588ba435ff62a54c5f15945dc9f4cb1cf4de2c",
+      "gitBlobSha": "5e1fbf2ff98e46d9b6d2cacb5f4365edf47b69dc"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-1.osm",
+      "sizeBytes": 2015,
+      "sha256": "908137543da895b1f7ee720d4ef97ae9a23426605bbb35323d355e498897b4a2",
+      "gitBlobSha": "b1427e1589db36000d577c176f033348630a951e"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-10.metadata.json",
+      "sizeBytes": 700,
+      "sha256": "6cf6c27434214dd053f12175fe8b9938fef1244b84975f8bc949f85a1172fb35",
+      "gitBlobSha": "f595d2248b96504b03e5b192d15f4f4ad64be512"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-10.osm",
+      "sizeBytes": 27946,
+      "sha256": "a471854edff39b2804bdb9942a3997622766d65169e01fd7031bf521e4aaacf9",
+      "gitBlobSha": "4da10f847b1246c7c63bc5d70bf01a929410619f"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-2.metadata.json",
+      "sizeBytes": 699,
+      "sha256": "81a261956b270c7ab6d28e174f571f84ea63f20d754045cd811a6f239fa553f9",
+      "gitBlobSha": "687e4139c8ad1c111addee0cc1b5052d3447be81"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-2.osm",
+      "sizeBytes": 10486,
+      "sha256": "6f54b3e26c93e4d2ecd52c0cae3054e65b72a5f455f47e937532d0ab46e2deb7",
+      "gitBlobSha": "fe1e8bb57c49cba4ab406e69242ca944d7c7174d"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-3.metadata.json",
+      "sizeBytes": 698,
+      "sha256": "71a4ec2d37fbcdaeb6162624c728428157cd38aafbd60625cbbb0f10e950aec6",
+      "gitBlobSha": "4418914170f1ce47e5de9cb0bc976b7c062a84f9"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-3.osm",
+      "sizeBytes": 21319,
+      "sha256": "a79d2db5e4c540e6819dccde41d342c48107021cc43bd5d430c0a9c9c7a12c0f",
+      "gitBlobSha": "76b6dff684f3e1aab5e091b1aed0ecebd802b3db"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-4.metadata.json",
+      "sizeBytes": 695,
+      "sha256": "5529482af78ea94588b6c5681d71706e541b5191f9b83dcb3d7458b5f8bbf568",
+      "gitBlobSha": "a5f8270873db79592cf110bc89b2bb268682dd33"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-4.osm",
+      "sizeBytes": 7358,
+      "sha256": "6171a13d6a3a7a331ec3c33d32de0c4d96d6fabeb0a82d73dd4cdf5b454890a2",
+      "gitBlobSha": "200b1d19903b81f60e76a737f259717edf045944"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-5.metadata.json",
+      "sizeBytes": 699,
+      "sha256": "35271906668f80994aea26348f5fd06a1d17273222e0cfeee5e32fb84d948d44",
+      "gitBlobSha": "5f88a34d32ed3722325cd2bc05b5cbb44e66a92f"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-5.osm",
+      "sizeBytes": 20132,
+      "sha256": "9857f2fac5510e17f966179c75ef31938ac905fc553cd40cdcdfdc507a0575ee",
+      "gitBlobSha": "8844423a2d72cc604599455935ac80e1b054966c"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-6.metadata.json",
+      "sizeBytes": 699,
+      "sha256": "a72a33e3e8f0289fdc10c30fb7051d51dd2081d1ffb9ddb7026d9dce13108d89",
+      "gitBlobSha": "73c525a5341c32b2b284943fd9a921641a94a14f"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-6.osm",
+      "sizeBytes": 28626,
+      "sha256": "703d86688016abeb16753c9a14946bff9014216f7ec575fb15a9fbd8b0698852",
+      "gitBlobSha": "8f1946427525e6eeb29e5fb77a9304b550a93b87"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-7.metadata.json",
+      "sizeBytes": 699,
+      "sha256": "815a4406df0686c1c1a657c90649470a2e959baa2e82b74baebeb704bc4b357d",
+      "gitBlobSha": "08dae8fcf67961016926270081d50e6988763359"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-7.osm",
+      "sizeBytes": 50112,
+      "sha256": "ea900781190a45aaab7e04b33e88d169c1e8df20c8256012f83fa32d5710a7d0",
+      "gitBlobSha": "3405c718951ffc87c14dec97ac2726771048d232"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-8.metadata.json",
+      "sizeBytes": 699,
+      "sha256": "bd80489380ad330ca57e5456927a38ec6f06fd43759d0952e441ac12b407784c",
+      "gitBlobSha": "08d2607ad566b25790a6b2764927c87921cf50ea"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-8.osm",
+      "sizeBytes": 11208,
+      "sha256": "db7de5c91c34ddd8ccc32772bc5f4faa49ac4ae80d23f6aee9799536d6d02a45",
+      "gitBlobSha": "ba0324a82d8b923bffda0e003dd6f5f770597713"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-9.metadata.json",
+      "sizeBytes": 698,
+      "sha256": "89a206159d2ee250e969da1133650c131a82e10a83018978642b29f69c956ecc",
+      "gitBlobSha": "65b6854dd1852009784032b12c5768a91e400627"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/anchor-9.osm",
+      "sizeBytes": 8774,
+      "sha256": "7e7ac26f4a819201850b94fccda5313924489a9cced27556741b275b15b39f5d",
+      "gitBlobSha": "2537ad1b6725b4beba58b19bc96d7ed60bc7011d"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/intake-plan.json",
+      "sizeBytes": 981,
+      "sha256": "7f9ff0388818d4c90bbcb933ee572feabb65fcf8a305f414f68f34ade3bdf715",
+      "gitBlobSha": "8788c8a5433abb7785538afe3ab450091996bd73"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/m12-184.metadata.json",
+      "sizeBytes": 697,
+      "sha256": "50d9401490f1ee0fe21726196db566fa0b24644fda0054e5e54789d14676045b",
+      "gitBlobSha": "cc81e6ff19ceb05cfbd7382fca0a839a05218d60"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/m12-184.osm",
+      "sizeBytes": 23803,
+      "sha256": "4dec9f357bf0cb7a17a514dc0c9a082d9da2dc59e2003af9810a751ec0f14679",
+      "gitBlobSha": "6596ae4b1aa75965957dfff2f4f6aedc667865eb"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/m12-281.metadata.json",
+      "sizeBytes": 698,
+      "sha256": "2979427a7789f02ae68fc9f1b69aa259a9a78aea6878c7b8ea662ed6c99d7840",
+      "gitBlobSha": "ccbee69d7e0425e507f095cb580823572de299e0"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/m12-281.osm",
+      "sizeBytes": 45423,
+      "sha256": "0680499a70dda7abd0cd0fdfd5e18c18ac82cede3d19983709cf08c121ab64f5",
+      "gitBlobSha": "a8fdbc2f10dc151965198c7f368732b2167191d0"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/m12-314.metadata.json",
+      "sizeBytes": 698,
+      "sha256": "ab7134eea635b626fa0aa8b79e5c345bc81e4795edd4f11be1f155805e6762f1",
+      "gitBlobSha": "0719f10db969e51f8e2869b01120266b0fadaa71"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/m12-314.osm",
+      "sizeBytes": 41186,
+      "sha256": "73fed6ef3be5805cd21c7081a7799962cbac7d8139935c1429c5378713a4c760",
+      "gitBlobSha": "9bffa43d22fb10c41da39dac4e411de30d62dd84"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/m12-392.metadata.json",
+      "sizeBytes": 697,
+      "sha256": "c0eea6c5c6920029f1f71fb2ad1764870a732452749c8249cf23f7acdcf31416",
+      "gitBlobSha": "629f59889a3137e75a423458dc8a58912c89583c"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/m12-392.osm",
+      "sizeBytes": 7651,
+      "sha256": "b6fe66017df90e8abd8fad0fa9bea2f44cfbd36983519d090c6b4aedf240d9f8",
+      "gitBlobSha": "62149629c05c435d39c571c0a929735e8cec3072"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/m12-485.metadata.json",
+      "sizeBytes": 698,
+      "sha256": "5f3cea61060b175df022b45c99367eada03cd7d66a39df97b116033ee047685e",
+      "gitBlobSha": "b75c6548316b5dd61157d606995f66291cf4eb8d"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/m12-485.osm",
+      "sizeBytes": 26436,
+      "sha256": "a426181bc32bbd3135e76d1cc89c05fb279386a684c966f505410ad8b0344814",
+      "gitBlobSha": "ba0d263e05fc825f73af0a12158dd167a9dd8641"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/m12-591.metadata.json",
+      "sizeBytes": 696,
+      "sha256": "a1f06905d950f3ce68fd838c77739e28929373ba496057c02bf539605961ecc8",
+      "gitBlobSha": "a1b44986348b24ba521b2c1b3e3e9f3da7af9661"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/m12-591.osm",
+      "sizeBytes": 4286,
+      "sha256": "74e4e0eeb1e9048b92b4a655df77badcd2b7d069e97137454349691b87fdb41d",
+      "gitBlobSha": "65fe9b9f2571797083c57ca23b0b877ada5935aa"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/m12-635.metadata.json",
+      "sizeBytes": 696,
+      "sha256": "760b74ef50b60378a76df552e038dae4d964bb20628dbb630aa15996b6f6f1a6",
+      "gitBlobSha": "26421ad6031d895fb8fa05e04056dd29f2b7c679"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/m12-635.osm",
+      "sizeBytes": 2623,
+      "sha256": "b4eb627daae9ff704f00ebf0f5a3908d52ee82e48b7174dd03c4c7dcc8176abd",
+      "gitBlobSha": "0e4c73766b3cc8ca45680ec3945ced6578f4dcc8"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/m12-764.metadata.json",
+      "sizeBytes": 698,
+      "sha256": "c7423bf0faacb81f035a2523f2fe57d8b2b1f5616368dfc0e723db26e5617506",
+      "gitBlobSha": "40c39bfe99ca74e603f372658a4b80c132aeda29"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/m12-764.osm",
+      "sizeBytes": 33498,
+      "sha256": "79091115d8dfa8f4d9af8a80da1db7a2b8ce54b13076049669a88f327ddc8416",
+      "gitBlobSha": "ca2f4793b95d8cb6ddbf5f00cef24c6707129621"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_EXPANDED/summary.json",
+      "sizeBytes": 7134,
+      "sha256": "cec6879026c958af54b6efc94e37eb8dc13d30470c79fe6e3098ee8eee8559b1",
+      "gitBlobSha": "97e876370df74120ff2b5bc898a51bdd15bd1daf"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/10090995833.metadata.json",
+      "sizeBytes": 702,
+      "sha256": "da95f85c58a72381c8d3a244f45ffbc6eba57d17e98068e5b15f988c03f92dc4",
+      "gitBlobSha": "bf750d18737ba741e96ec3ed1f0ae5daae4a96ec"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/10090995833.osm",
+      "sizeBytes": 17824,
+      "sha256": "493f61329bba4c1b669efd5172c18f4a59f21eca295f123a79c9d0fc25ba5cd1",
+      "gitBlobSha": "274434eaaf685ee4e68577700387fe4ee8bd480b"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/10782165529.metadata.json",
+      "sizeBytes": 701,
+      "sha256": "4d480607dbf591ade1073db82d006ec13f8896f36c8831e7e235bc66d114740a",
+      "gitBlobSha": "c0c49683a20378a1a26977e1bdf037222f904930"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/10782165529.osm",
+      "sizeBytes": 11008,
+      "sha256": "fcf662b617cf30522aa5cfd91ba8ce5b3ce55d355a714f0c8d1d2a4e3c4fc373",
+      "gitBlobSha": "94e3ed67bf6bc91830c7305d7df8af5271200803"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/10979205243.metadata.json",
+      "sizeBytes": 701,
+      "sha256": "95fdcba08fa1fad2152aec07be3a9ca99f70bb386968dd30f4d59df5bb704027",
+      "gitBlobSha": "4e51daf0fc6c4f5f5d479b9581108b234463ed40"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/10979205243.osm",
+      "sizeBytes": 17276,
+      "sha256": "0123ffee025127216d812e69ded72e5b8b58eb96c37adee2626c1cff1e56bf63",
+      "gitBlobSha": "7aaed1c4c661a516fdc1578accb97c274ebad769"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/11072845296.metadata.json",
+      "sizeBytes": 701,
+      "sha256": "e4a386aed21eef403fc1cac131f50bf16a0674a33ba53b393181be8048b49967",
+      "gitBlobSha": "f6d4b3189b3ef7f3a0eeddf96aae0e818bc4ed2c"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/11072845296.osm",
+      "sizeBytes": 12901,
+      "sha256": "7ad993a5fe86861d2b6e6bea558396d897886801bb9f7e39ed82ceaaf8fefd1e",
+      "gitBlobSha": "5f7a3ac22a7d2831b7b2c47fc20d9ed52e925d45"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/11078819010.metadata.json",
+      "sizeBytes": 702,
+      "sha256": "1b35486bb88e1a6200a27738dac3839ba59dd616f0183af31d3121df112b6203",
+      "gitBlobSha": "05dd76fee16d553cd3f17103847d311b13d17e4d"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/11078819010.osm",
+      "sizeBytes": 13383,
+      "sha256": "d0a9442ebf147d36dcd5c95d1e8002cea53d2acad2db65561c7ecfd57c142cea",
+      "gitBlobSha": "8b8c7d6e05411e90b1abfcb7082268d0e5006f0a"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/11157985901.metadata.json",
+      "sizeBytes": 701,
+      "sha256": "cdc0f52fc8ee19a87fe20a9bccb3a64b4177b1219e490a0404fe66f7b35b0023",
+      "gitBlobSha": "807707ca4ef4857d00983802af9d51b9054f48f2"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/11157985901.osm",
+      "sizeBytes": 14298,
+      "sha256": "eb09dfe46c9dbfcc40503351e3d8a6ed26fe59c1b0d5f708210816c847219a70",
+      "gitBlobSha": "9a5c54b301f65a8f0ddb96093c1b6bf62ebc6eb5"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/11188803093.metadata.json",
+      "sizeBytes": 702,
+      "sha256": "25b276870a219f76fe86cc5176e4f7d53213dd7a475fe3adda1f381f006d2638",
+      "gitBlobSha": "53260938c78decf6620a1f2f4e41501ec4a04366"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/11188803093.osm",
+      "sizeBytes": 52880,
+      "sha256": "090f8ad77e96286e56bf84c851cdfd1c5498945b691b10a77a307279e7a016cb",
+      "gitBlobSha": "e2f788edf4b3ca414379ffc20a85b431073fee9b"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/11214930528.metadata.json",
+      "sizeBytes": 702,
+      "sha256": "75d69dd880b57c38b65875e69ee210bd9d43570f953e686afdb4faf334090108",
+      "gitBlobSha": "339490beb99ccd50a35f75ff253c94c4797e8aa3"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/11214930528.osm",
+      "sizeBytes": 8563,
+      "sha256": "0437317a6349e9082030019811a38763fdf698b0c545680a1e6a046844f8f8e0",
+      "gitBlobSha": "667b359bd8bee1f0a59f69531425e848ddcd0bf9"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/13020687195.metadata.json",
+      "sizeBytes": 704,
+      "sha256": "d7ed5d25ae4b746f341273b944f49f7831de77299de29e073c6d460ce7ba746f",
+      "gitBlobSha": "3cfee6fcea2f7f83feac25c699b2b48f5089cfd7"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/13020687195.osm",
+      "sizeBytes": 192179,
+      "sha256": "e460c0aa14ea817ede3e474e1a93649793d25316a1c50cdcd4d53159f24e6d48",
+      "gitBlobSha": "576027215a916be99184a3238d364435bd6acfb2"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/13377945035.metadata.json",
+      "sizeBytes": 701,
+      "sha256": "6b8604677ad816969db4e1f87f5ee3499f3dc3afedee24b9c17d3c672d7ee03c",
+      "gitBlobSha": "a00bab6e752e5dbc6325227fc5d54b905749c471"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/13377945035.osm",
+      "sizeBytes": 29423,
+      "sha256": "869728d3ed1a51792717b90b4050d430e99412915328dc9a0d76c0c48158f76c",
+      "gitBlobSha": "10e50df9f799fbe8e374003120d89dccf0632a3e"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/2492861243.metadata.json",
+      "sizeBytes": 700,
+      "sha256": "b9d45a598105ed8e851ac4b026b82ad2471ac297e03c49e9d633b7e1f4dcbd4f",
+      "gitBlobSha": "8b80fd4f54b8d34f28a970a0dd4eda67c692fa7c"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/2492861243.osm",
+      "sizeBytes": 49861,
+      "sha256": "4b1e63d17ce64a4c9e5324d124475b020ce738955354b730537534b33163de7d",
+      "gitBlobSha": "b48989e5e08d6e9d5cdf2ca505e177aa14c7ed8f"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/3109177688.metadata.json",
+      "sizeBytes": 701,
+      "sha256": "0af80414afbaec6400ee8934551d72c93bfaf085d93ecefb2421312858859c9c",
+      "gitBlobSha": "0b43e7506d12eb10de15b14e65d58635dd0618d2"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/3109177688.osm",
+      "sizeBytes": 39957,
+      "sha256": "c743eac8514f71fc7bc756ca970cdddfb81da9f201ab5f38a8713117d87ab883",
+      "gitBlobSha": "24ecea4e8d023180be0a472e8b20dc9e6232abfd"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/318102347.metadata.json",
+      "sizeBytes": 702,
+      "sha256": "e7b00fb6a2b7337936272dfdef85ce3cfcd08044136c0644fc9ed4a8cc0b6f76",
+      "gitBlobSha": "e69c2cba1afab48e0b45cab3e4c654d9f2b35a9b"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/318102347.osm",
+      "sizeBytes": 126571,
+      "sha256": "074b393f669580c00b32ff4d423d59172177c7cffa1c997b76526a55ea658e74",
+      "gitBlobSha": "886b46e5b93727df0e56923901e7c6def3971f60"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/3183012434.metadata.json",
+      "sizeBytes": 701,
+      "sha256": "82226cf7969a617022fbbd02a6d78aeea76ba93b091063fcca4cf86260ff23c3",
+      "gitBlobSha": "ec5d83ba12ebc2516d4cbbe1b93bd10b6e531eba"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/3183012434.osm",
+      "sizeBytes": 46119,
+      "sha256": "0360f5090172df6b200e37d5e0a301a668435b0bd84d40bbccf307b41ac2f634",
+      "gitBlobSha": "0be3136a97befc01d6ceb8acfa37ce12547b207b"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/3499155969.metadata.json",
+      "sizeBytes": 701,
+      "sha256": "a54ec7cb8a9f9b119f9671be8ebf6b56ef04d40b4f51bfb59efb21eb6728be84",
+      "gitBlobSha": "647cce71b463bc0226bee167df7b608ec05f6e45"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/3499155969.osm",
+      "sizeBytes": 34197,
+      "sha256": "2ea9876626c4350d6447882552f9b8a57ddc9da50c9a2e96a75a9d61983213b2",
+      "gitBlobSha": "884a7c4364fcba1ea06e85b8a22fd7752e788f16"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/3499155978.metadata.json",
+      "sizeBytes": 700,
+      "sha256": "2767fe0202765351fd35944d4d17504c9cc3bd6c63129fef6cc4530582094e46",
+      "gitBlobSha": "e3707723ad3801c6e88278d2e611c0f4b111e1fe"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/3499155978.osm",
+      "sizeBytes": 27110,
+      "sha256": "640d5286608dcc9c3d7582b3419c06e638205806d3068cb253ddb1ef6a4cffbd",
+      "gitBlobSha": "b923873d10241e9a43952dda36203903943e9494"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/361520161.metadata.json",
+      "sizeBytes": 699,
+      "sha256": "51f8aa5ce3c534da2bf49b95c2071e355a478c9561d9f413ea21a3f3ab7931d2",
+      "gitBlobSha": "1fb9e2594ab388e2be23d867b55346a2807d747e"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/361520161.osm",
+      "sizeBytes": 17623,
+      "sha256": "c9344a94bfac1ce97526913754f7a696903d88cc6e38d246eed2f1c60e058f74",
+      "gitBlobSha": "92f2467d68a30d7579c7565a0acf30005031e1d7"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/3783549013.metadata.json",
+      "sizeBytes": 701,
+      "sha256": "590d42f761c0ab142eb6f815c1beb072bc2103627caea61c7de944120472f4ee",
+      "gitBlobSha": "333a87560347b2bb0025c0a52fdaeb2688bf8542"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/3783549013.osm",
+      "sizeBytes": 54212,
+      "sha256": "d2b21e35a972eb3a35d49453f974eada1bd728601566254efb5306e7c2d5509a",
+      "gitBlobSha": "e4f5024e672a79c7cadeb1119e10cf2def75535c"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/5818209495.metadata.json",
+      "sizeBytes": 702,
+      "sha256": "b6b0d2fc89971d934cc31e3ef67c3fa46bd943739091d4977361362ff7824a4e",
+      "gitBlobSha": "284b174a1e5d1e597c0cc4989515bce3a25bfcc9"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/5818209495.osm",
+      "sizeBytes": 47716,
+      "sha256": "9990340d4b4e96fb77a5d9dabbbf81e4ed01876451e9636a196117f79b2bff7c",
+      "gitBlobSha": "85b5a33448d203f6559223a317569440b7ebbc39"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/6257559336.metadata.json",
+      "sizeBytes": 702,
+      "sha256": "e868def1deced8a4cfea722d31dc8f3c48f0a92f07b65568532514b44f1c5e73",
+      "gitBlobSha": "af2e966eb2078ef04c4b5857782d2d884638198c"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/6257559336.osm",
+      "sizeBytes": 168909,
+      "sha256": "2a13f3816ddb78ccc630234011a45ccc5cc32db01d9296f86a2d459fcdd0481f",
+      "gitBlobSha": "046a89a04b811bc195233d824d4783cde7122967"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/7171624764.metadata.json",
+      "sizeBytes": 701,
+      "sha256": "eddd9eec93116ae06957b7575d0bf8f45dc21745510f5e43cd6b0cf3bfde705f",
+      "gitBlobSha": "cddda1e20ebb2e290e5c1af74e6b68f383515523"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/7171624764.osm",
+      "sizeBytes": 95297,
+      "sha256": "173b6cd1bd8fb68dec2e5574761b9eedf2f3defa3127f80a41be3709552f3cba",
+      "gitBlobSha": "fc7db1c61a18ba755beb9455a6fc58b33dd23112"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/8087316054.metadata.json",
+      "sizeBytes": 701,
+      "sha256": "dbff1f064d95aaee2678873e09b5ebdbd2cfa0a449078cdbdcac4f711723912b",
+      "gitBlobSha": "74221bfca19bc62e5d0394b8078ba8a50e1f7363"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/8087316054.osm",
+      "sizeBytes": 30160,
+      "sha256": "aa9797721b7aa06a6372f0100b90a86ad666b046d4932c796658313fe770ab9d",
+      "gitBlobSha": "f11ac649227d4f6223bfa1143927aa1ca93c301b"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/8120716326.metadata.json",
+      "sizeBytes": 700,
+      "sha256": "23aa3cd8bbbbfefda2915ad94c768a08a4155f61464febf7045f13cacf77289e",
+      "gitBlobSha": "38c9739fd278eff2d45b2a65058b2ff34f72ef07"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/8120716326.osm",
+      "sizeBytes": 6141,
+      "sha256": "1aa8023245376a6aec3b33b3281c08e4082cc51a942e217dcc92b927fb1ca3a4",
+      "gitBlobSha": "a842da88a500ea8fb275d5789a2a4c32367eb5fa"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/8120716327.metadata.json",
+      "sizeBytes": 701,
+      "sha256": "e9c80e4f0b7f0553dbd9e38f561695a142d098067db414e8a0e6efee0dde0953",
+      "gitBlobSha": "e993448256a34474863f319fb530743d59e5da45"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/8120716327.osm",
+      "sizeBytes": 21635,
+      "sha256": "effab94cb162be25b0847c1b915d2cdb43095eb8dcd9fd1fc549c552e3a78aae",
+      "gitBlobSha": "d56da864a2c762785a0d170b3a0d6b9e85750fcc"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/8120716330.metadata.json",
+      "sizeBytes": 700,
+      "sha256": "076e9a77958e998957279f0afd53482762f076e09b999943506de47895d6963e",
+      "gitBlobSha": "fd7bc3983f8af41aebcc9f6eb531990c4e2da3af"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/8120716330.osm",
+      "sizeBytes": 7460,
+      "sha256": "5a9fc3eab24d31b644aacb5d14daebc60dc58187c5ade6199fe275633b281cad",
+      "gitBlobSha": "e1187db6681cfaa0dc2471d3fa33530e5c95d3b1"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/intake-plan.json",
+      "sizeBytes": 1830,
+      "sha256": "9bea2830bb7a45760ea3fdff49982cd887dfb00a6d85b24b2289eb7f0782a0c3",
+      "gitBlobSha": "ec2f649ccbe49a8b5c1021b7ff4c5ca85ce4a778"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/m3-pvp-136.metadata.json",
+      "sizeBytes": 699,
+      "sha256": "42893dde03c01c60425900f16d11ad7db61fb48aa37f387c885f0849d841e51e",
+      "gitBlobSha": "1aa48ffa80bd951ec9e603ca5b150c42419c7ade"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/m3-pvp-136.osm",
+      "sizeBytes": 36127,
+      "sha256": "b02391850d085fa773da5ffc6e6e49b3cac804ffc66d4d37b310d257e30f6870",
+      "gitBlobSha": "5bdb31acdd9e4e18980d9183f0436f2d91bd8678"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/m3-pvp-168.metadata.json",
+      "sizeBytes": 700,
+      "sha256": "9b7d6333a21b74626979abc36fea1b4628b6a97fb5d82e281860943c4cdbbcb2",
+      "gitBlobSha": "b7f8f37ef8402c1b2965613a01b6b0c976340e15"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/m3-pvp-168.osm",
+      "sizeBytes": 20625,
+      "sha256": "42498c3a0703c1753ea0f46cbce9181e797154e0db4d2c3bc374cda3b4bf49df",
+      "gitBlobSha": "1592069700c89b37eef8e354df591dd484c1f173"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/m3-pvp-86.metadata.json",
+      "sizeBytes": 699,
+      "sha256": "2044d641203c3720ce2380c9bc0a5f9f4c89b93df797340ef3d7fb0e1ccdc8e3",
+      "gitBlobSha": "0a29b6abd461bad8540bf3105923f000fcf543a6"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/m3-pvp-86.osm",
+      "sizeBytes": 15667,
+      "sha256": "205f34ac81745c7fe2ce80bce891f034299d09bfe6637c3dd2e8b85833611e09",
+      "gitBlobSha": "9fbe1ed20e6c83666e17ea5f4bf1efa6de86ae80"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/osm-node-13249401006.metadata.json",
+      "sizeBytes": 711,
+      "sha256": "8c0ff4323f2df5461d1f3f6f2ae8419a2de8b82f9f1965df5d461d3eec56fb8a",
+      "gitBlobSha": "2e522a760a9b2ede28f3878da4af75ef7f640cb9"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/osm-node-13249401006.osm",
+      "sizeBytes": 16123,
+      "sha256": "68658c8f2910b99e2551859e8f537b0a7a27d4c2ec1c41bedb1bfc27fc43293c",
+      "gitBlobSha": "11099323626b43b354037266a606baffb99d5fbc"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/osm-node-3243217926.metadata.json",
+      "sizeBytes": 709,
+      "sha256": "3a33004e0cf3f857f380a07ca6315a4a0d843d1ba4cffcaad999e2ce124f7ac0",
+      "gitBlobSha": "954bba0c04a571ade9e7818dfdc0878ac71aacff"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/osm-node-3243217926.osm",
+      "sizeBytes": 44333,
+      "sha256": "f22b5c698749ca0271a34671e0f97995960feedc90bf0b444c307d85520e47ff",
+      "gitBlobSha": "496319dbf331d385188c108e5a53fe74bbd12eff"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/osm-node-4215723024.metadata.json",
+      "sizeBytes": 711,
+      "sha256": "343819930fa06b6827039702d94a7bbaece2c58744ac4434a05977c907f1e2b2",
+      "gitBlobSha": "cf9f0f8f8f339eae4d3c90032a579c7f9cdbaf7f"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/osm-node-4215723024.osm",
+      "sizeBytes": 28530,
+      "sha256": "f60e2310516c107ecfe144c54e561fde2e3657c9cbd67c4cdbc7120226b7483b",
+      "gitBlobSha": "19a2fa24b451736c0061b12b543f6584895c7ade"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/PRIMARY_INTAKE_OTHER/summary.json",
+      "sizeBytes": 12399,
+      "sha256": "cda6feee887f4dc530e885a6e47ae13d1a015af719e0c520c060388e74e036da",
+      "gitBlobSha": "cf6a59fb4d492b0a143aeeb7c67d927b07325823"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/QUOTA_STATE.json",
+      "sizeBytes": 393,
+      "sha256": "04a965e0d3c3824c284d922e62ecb4a797189e2c34130694b445138f146307c0",
+      "gitBlobSha": "e5b3efaed0f09e9995084d084501b6302654e073"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/README.md",
+      "sizeBytes": 5418,
+      "sha256": "df90baa6f65efbfa9ea01c5631b79c36308567b180c6d5e8741c5d72ddd2b79d",
+      "gitBlobSha": "6de57aae85d39c55680349d053cfe506e23dd807"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REGISTRIES/TARIFFS/2026-09-04-679-684-category1.json",
+      "sizeBytes": 1711,
+      "sha256": "641888da96cd1e300573c5f5aab7532a4fa3384902960cec06e62964a960a739",
+      "gitBlobSha": "b1e110d7c1aa344948ff5702c6f6899a2afa3212"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REGISTRIES/TARIFFS/2026-10-01-58-679-category1-a1-current.json",
+      "sizeBytes": 5814,
+      "sha256": "61628b9052b90a8a77c9b49277a0e17851490f7b00399806fb4c278314287bed",
+      "gitBlobSha": "d9bf1bdad70dfa84efcc1f5870a827eb51d8959a"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REGISTRIES/TARIFFS/2026-10-01-avtodor-other-roads-category1.json",
+      "sizeBytes": 14709,
+      "sha256": "0be176e80a089c6aca618b3b8f417ff64c92b1bda905a14c7e7a404620432618",
+      "gitBlobSha": "13cc545b39919130ff46b23f65551b1270d897c1"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REGISTRIES/TARIFFS/2026-11-02-section15-58-category1-no-transponder.json",
+      "sizeBytes": 1117,
+      "sha256": "fca10c87890bd0406528630c3af8fd26315e39d69cc9beb76718848efc6920b0",
+      "gitBlobSha": "393e761782169c1315ab917157ea33afe33ebb7b"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REGISTRIES/TARIFFS/a289-category-columns-2026-10-13.json",
+      "sizeBytes": 1481,
+      "sha256": "ba97523e1d10e2cf908535bad906c5aa6b33aee44fbded58b4d39d82b2309ce0",
+      "gitBlobSha": "9c26f75d5792e3fc3b076b295b2b73a894e98fec"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REGISTRIES/TARIFFS/ckad-2026-03-02-category1-direct-pair-matrix.json",
+      "sizeBytes": 21462,
+      "sha256": "e6b2178c2448f071de92556d1d72237bd0281da9628f4855cb11b2cd32e6f9ca",
+      "gitBlobSha": "865ba8bd2a00fa82ad842bd1f2d53dda9f016862"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REGISTRIES/TARIFFS/m12-order302-2026-10-08-category1-direct-pair-matrix.json",
+      "sizeBytes": 8368,
+      "sha256": "46beac44bd56e8493665134fdaf328a8ff2951d36ccf9743cbf2d2cf98687dda",
+      "gitBlobSha": "6d999cea649b14c91ed9d5b0b8b241160b8a90ed"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REGISTRIES/TARIFFS/m4-order58-2026-03-02-category1-verified.json",
+      "sizeBytes": 5894,
+      "sha256": "78ec266ef8bc2e1e8d9cb188e275d9b7fc29c63d07934088f00729227ee17159",
+      "gitBlobSha": "d4412b14fc1c6036f02a1f5f986acbf184ce0055"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REGISTRIES/TARIFF_SOURCE_POLICY.md",
+      "sizeBytes": 18235,
+      "sha256": "228fcafc1420b3c5b98eeba4d4c77ea857e3c35c826be13d2f82ae56cfcec18a",
+      "gitBlobSha": "0de358497ffe8b8d72e126d7ce9c0b13f9298372"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REGISTRIES/m1-m3-official-gates.json",
+      "sizeBytes": 4930,
+      "sha256": "4dcb5d28aede19d1dd44ac678c757d626251207412b201cfe1e402e2733531b7",
+      "gitBlobSha": "5ebfaea59e5380c642c80d0b6b1bfc1c34c6b85a"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REGISTRIES/m4-pvp-osm-partial.json",
+      "sizeBytes": 14055,
+      "sha256": "0a3ffad2ed62edcf1b44482a6b61abb6b89be4be41ff048614cd155e4a0176b9",
+      "gitBlobSha": "7707d9fcb53abf8241ab10193e1f4e9883c540c4"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REGISTRIES/national-registry.json",
+      "sizeBytes": 16754,
+      "sha256": "4363bcd40aa2b03e4f1ecf4abd9fd215077ab05c694f8e89e1f3de01a3b6ca54",
+      "gitBlobSha": "a66a8acb1540d15423603cb090fe82bc4c9de116"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REGISTRIES/physical-road-inventory.json",
+      "sizeBytes": 12802,
+      "sha256": "2805fdf35d59c93803ad8b1d2cb94aaf3cab6cc27bda00bd768e995b1fcc6194",
+      "gitBlobSha": "a22f19ad6fc4bbaff4ffb33e7416049035224ee8"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REGRESSION_TESTS/VERIFICATION.md",
+      "sizeBytes": 1636,
+      "sha256": "68b7f0b23c3442897b32c9a35e2f0c4975974ab3306b1c6b273f046b812a72d0",
+      "gitBlobSha": "0718bbe7218cdac11fa1451084f332a78d8876ec"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REGRESSION_TESTS/campaign-budget.test.mjs",
+      "sizeBytes": 1187,
+      "sha256": "c3165fc3046a71a2940d22a90e3a6ca269509522768762207f85f5db353452a0",
+      "gitBlobSha": "ca8cfb9effd9cc25a10aef106f5d19946e6153c6"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REGRESSION_TESTS/gate_budget.mjs",
+      "sizeBytes": 1406,
+      "sha256": "ccf9e451a4655aa54780d542a2b4ee1c2c5e5ec17f94cf0f2ec0dadd3f537233",
+      "gitBlobSha": "6b7321fcaa7909de0ceee9b4952b89c4eb964bc8"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REGRESSION_TESTS/route-scope.test.mjs",
+      "sizeBytes": 1781,
+      "sha256": "388bbeed15c4761c71d560326817d33745357c0f88df835fa9f11ceb850a45d0",
+      "gitBlobSha": "ed171bca874b9a384d418f7cb96296cbe5719882"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REGRESSION_TESTS/verify_continuation.py",
+      "sizeBytes": 7570,
+      "sha256": "4d9227c55db41c235e39de7e7458c0e010363915b43c581114b3ce2cf5703a73",
+      "gitBlobSha": "a2a7781ab4218f6ec1bcd9b91feebe772757eca9"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REGRESSION_TESTS/verify_package.py",
+      "sizeBytes": 792,
+      "sha256": "03ee3909ad27bf5b85df9e39ab542e8ad9d51c0a24b19a10090c6ecdbbe4855c",
+      "gitBlobSha": "0bd7e3bf288ea18b2e36a668cd10807d2411ba6a"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REJECTED_PREFLIGHT.json",
+      "sizeBytes": 21390,
+      "sha256": "a10252ad5e7c10bbdd3eab49b8088ac495d448269d9f1a8322ac659543eecd00",
+      "gitBlobSha": "2e7fce53ed63ad5e33c27a4ba8371e87ed409f8a"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REQUEST_LEDGER.csv",
+      "sizeBytes": 28280,
+      "sha256": "169c5c9973680003998e279a19e5c6e47d33ea1cf25b146c94913791767e39f0",
+      "gitBlobSha": "df4aa123909acc3739c0c0ba2d7090cf9742239a"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/REQUIREMENTS_AND_CHECKS.json",
+      "sizeBytes": 402,
+      "sha256": "ab2b69294a1e9f333e4822313d9194034ad5c1dbb99a0c15a9c739369f5f539d",
+      "gitBlobSha": "6b92805d4e8b4edadcc2aee6ffea517f39ac199b"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/ROAD_OBJECT_INVENTORY.json",
+      "sizeBytes": 331237,
+      "sha256": "f3f9baab2365c92af559317b9e7d6f6e5b5b64508f5c9882b7244b13a623e274",
+      "gitBlobSha": "a051b15c6a081ca0b993b147327230f7b4854dfa"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/RUNNER_CANDIDATES.json",
+      "sizeBytes": 267152,
+      "sha256": "0ce826587a85a7c80b78019771f733eff7caa9420a389e1bf791a8cd171570de",
+      "gitBlobSha": "0aaa6b3820a8b7d30315dbf4df9bde3ac55aafa8"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/SHA256SUMS",
+      "sizeBytes": 20195,
+      "sha256": "86a45670674231f0111644875be5ea396c8f45fce34d4d1dafe8f9a0e353a9e8",
+      "gitBlobSha": "86fa67830a11febd3b7833b7972cfba82c6a942e"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/SOURCE_REGISTER.json",
+      "sizeBytes": 27229,
+      "sha256": "b2bdfb2eab66cef36728be69f1b0d20abdae43f0d41fb50fe5342f5b82695f78",
+      "gitBlobSha": "b0294d0fcefd9ca70767f75b98efb49a756e322f"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/SOURCE_SCAN.json",
+      "sizeBytes": 11395,
+      "sha256": "9394bc89deac9fffcfaa73722ba20573ab0e4add7ae709729e4d32bc4be6b618",
+      "gitBlobSha": "1a855e339faa271377393ac4991301a59be01919"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/TOOLS/build_graph_candidates.py",
+      "sizeBytes": 5634,
+      "sha256": "142eb3eecf7fb02f1793a9703a19be85e3fea2d90636566c926c86d442ecbd05",
+      "gitBlobSha": "416db2f25e473303e5ca0a18cba7eb81f4108626"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/TOOLS/diagnose-snapshot.mjs",
+      "sizeBytes": 23175,
+      "sha256": "f0653575a0b46220277adf4f0812012992cfe914a4f0f469162515e6de1efd3a",
+      "gitBlobSha": "91207b15ae969d9bfa06f1bb5c3f216453aabd92"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/TOOLS/intake_expanded.py",
+      "sizeBytes": 2521,
+      "sha256": "ac4e8aa75753f2cbac7f4fb5abb2b13e865c875cd0925b12125acab2e8a68c23",
+      "gitBlobSha": "a0efc0fc67dbfe2628d2923537be1d29e20e472b"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/TOOLS/intake_m4.py",
+      "sizeBytes": 1842,
+      "sha256": "3277fb7be102062953a92584446b29a8a38017c9e7def0ed1b3d5bdcfb43e64c",
+      "gitBlobSha": "7b606b2b499392f7472007c52a614c88c0990c7b"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/TOOLS/intake_other.py",
+      "sizeBytes": 2331,
+      "sha256": "d91df49a8c90663db78ad3104b416cf9724ee7b2d8e6d7e8fea95a83f2d55f73",
+      "gitBlobSha": "34a5c972c9d152b269dc1dcfe408d0ba84397ac5"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/TOOLS/preflight_full.py",
+      "sizeBytes": 10638,
+      "sha256": "43420124dd94c4947d8a94170d579bcf94efc152b47d79797c9d7cb4c4b2a221",
+      "gitBlobSha": "6356b89194d944aaa68add0eb759a400f94daa74"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/TOOLS/scan_primary.py",
+      "sizeBytes": 4752,
+      "sha256": "72df5e57b6b097aaae9ea7f88667fd57e33cd2668a5413c4175668676af3ad6d",
+      "gitBlobSha": "c1ccf389a90618e77d00c2ebe2477531d59d8945"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/UNRESOLVED_AND_NEXT.md",
+      "sizeBytes": 1041,
+      "sha256": "5cba04089d91f76587acc77e00172989c0aa20704762094aeed9545bd155d79a",
+      "gitBlobSha": "e1f1b5fd84311c8e57bfd53e4ecc22b3e6cc7181"
+    },
+    {
+      "path": "2gis-mass300-evidence/CONTINUATION/western-road-toll-nodes.html",
+      "sizeBytes": 156,
+      "sha256": "7cd905d731bc5983f218aa91824747ef52e7b2cef4a2bf4aa2adba91dc3e61e6",
+      "gitBlobSha": "5801bbf401933aa9bd075d226864382a129a9a97"
+    },
+    {
+      "path": "2gis-mass300-evidence/CURRENT_STATE.json",
+      "sizeBytes": 1091,
+      "sha256": "c521e330ac173ecda1f5ad0d4460d42aa3c44c3abbd0cb448726c3706cd361e6",
+      "gitBlobSha": "344f567f2409939a0e666167e3a1bc5b127ced24"
+    },
+    {
+      "path": "2gis-mass300-evidence/DIRECTION_REVIEW.json",
+      "sizeBytes": 2612,
+      "sha256": "e02d9e295294514bda72b3036032b6b659c4a3c265df8b0d52178939c30f1198",
+      "gitBlobSha": "fae8f02df0e6fed67b6f1b4119f9951c09734c24"
+    },
+    {
+      "path": "2gis-mass300-evidence/GATE_REVIEW.md",
+      "sizeBytes": 1648,
+      "sha256": "e62dfb07e81ca56c4bf237afc4b052211d0da30caad69a71af44f98d2cbaa2c1",
+      "gitBlobSha": "5c3cda1aa913f7c1da44b0424d5a49d0a6265674"
+    },
+    {
+      "path": "2gis-mass300-evidence/HYPOTHESES.json",
+      "sizeBytes": 30299,
+      "sha256": "96c80dcff6c941f6d6575866caddd439ec06f98f4c0b7cffb1fafa18267f814d",
+      "gitBlobSha": "499d1c195d304775755f96b284d2d7023b286f33"
+    },
+    {
+      "path": "2gis-mass300-evidence/LIVE_PREFLIGHT.json",
+      "sizeBytes": 485,
+      "sha256": "bb2a6e0465a6bd0e2342f4d25536b77493811a5b44bd1a559b87a8d259057602",
+      "gitBlobSha": "c39dfaafbead06e5ed7a4a6a7fe0a75f0cbb5321"
+    },
+    {
+      "path": "2gis-mass300-evidence/LIVE_PROGRESS.json",
+      "sizeBytes": 286,
+      "sha256": "2cdee6952ed4e34644c5c42f055d865f76ff994aded665c3bac64ff53382ee61",
+      "gitBlobSha": "31f788f82ce7ee1584c205c43cf7f495ef981a81"
+    },
+    {
+      "path": "2gis-mass300-evidence/MAIN_CODEX_INTEGRATION.md",
+      "sizeBytes": 1509,
+      "sha256": "3111ae8f0238d1b0730172ba5feb75a90935498e9ceb0c445c955984f7f7c7d2",
+      "gitBlobSha": "5eb1882a51db234f102a0d7bf4e8a121daf34bd3"
+    },
+    {
+      "path": "2gis-mass300-evidence/MANIFEST.json",
+      "sizeBytes": 11498,
+      "sha256": "9eea6ff1e706d0ca103b1918169b9bde872172efd08a81bfdc9fcba6e616373e",
+      "gitBlobSha": "5584cc22315c9e688d74edbb0a60b27171d3cf06"
+    },
+    {
+      "path": "2gis-mass300-evidence/NEGATIVE_CONTROLS.json",
+      "sizeBytes": 3426,
+      "sha256": "c06afa6738d4cc7d02d71d0e28af829bf1d3214c37a0e6e1caef21c2c6caf748",
+      "gitBlobSha": "4444d12857525cd12445a43622c77b125f57cb39"
+    },
+    {
+      "path": "2gis-mass300-evidence/OWNER_APPROVALS.json",
+      "sizeBytes": 5008,
+      "sha256": "d3fdfdaa019710c5a59dd02b0771f8b8dd920e655c7d4080781f717f4b1d20e9",
+      "gitBlobSha": "6def4e828eead9e3d5b421d00fc70ad5067cf70a"
+    },
+    {
+      "path": "2gis-mass300-evidence/PACKAGE_MANIFEST.json",
+      "sizeBytes": 53775,
+      "sha256": "e7a6b037cf69a6b46bbed33fc96e207d7548de5718ebd89d90664cc3c9e95f98",
+      "gitBlobSha": "b1aa04d18d162bc174b5539cb88965157584f793"
+    },
+    {
+      "path": "2gis-mass300-evidence/PACKAGE_SHA256SUMS",
+      "sizeBytes": 32353,
+      "sha256": "1828691f3b663197f51740b98e332f90e9293522b537fd0003b1141c3e6b5b0f",
+      "gitBlobSha": "741746cbf303954df2dc29f3cdc662d25d82a6f6"
+    },
+    {
+      "path": "2gis-mass300-evidence/PAYMENT_OBSERVATIONS.json",
+      "sizeBytes": 3387,
+      "sha256": "4d602c62ee8dc802e64186cd11e5231368cd46093df1bf92bfed827d4919ebb9",
+      "gitBlobSha": "b61b99a90d76dc47dc9337928e592dcb40b18486"
+    },
+    {
+      "path": "2gis-mass300-evidence/PHYSICAL_BOUNDARIES.json",
+      "sizeBytes": 983,
+      "sha256": "2d19ed873fe18d0ef6a773cc740093aefea956729f848f74b5cfb170f3a9fa7b",
+      "gitBlobSha": "37e5e1301895db26c827656b17fc5f573eaef953"
+    },
+    {
+      "path": "2gis-mass300-evidence/QUOTA_RECONCILIATION.json",
+      "sizeBytes": 447,
+      "sha256": "2d21f0fd898ef13406b0d49d4b61085dfe91fed7b5cd9555938bf74d419b445c",
+      "gitBlobSha": "afeaacff9b1be05f495b9c8e834076d60d18e6c0"
+    },
+    {
+      "path": "2gis-mass300-evidence/README.md",
+      "sizeBytes": 1250,
+      "sha256": "d0734c08dca93d21d8880db93cc1d34a19ac3b0b36f89c13858c6493cb2ab0ac",
+      "gitBlobSha": "14994d9fda11655c0772f02c489981c59fdb0029"
+    },
+    {
+      "path": "2gis-mass300-evidence/RECOVERY.md",
+      "sizeBytes": 1194,
+      "sha256": "47286edcb55b2208150b8c48a69f4b8161fd33565667950d598587b538be97dc",
+      "gitBlobSha": "2424514b21b6d9a7b873ceca8526237766333c7e"
+    },
+    {
+      "path": "2gis-mass300-evidence/REFUTED_DESIGN_ASSUMPTIONS.json",
+      "sizeBytes": 1064,
+      "sha256": "75602f83f63f203c60361ae991994f1fb2947c0dd35f3305eb695828c3db1095",
+      "gitBlobSha": "26cc1066f6efb5c61b9677bcabbe76dc56aae579"
+    },
+    {
+      "path": "2gis-mass300-evidence/REGRESSION_TESTS/VERIFICATION.md",
+      "sizeBytes": 1906,
+      "sha256": "0a736debb8246514632e288b24876373a54195b25e3c6ad1117f9954b2363a19",
+      "gitBlobSha": "1a7a658e93731ed92e5734280595f6c351f2c350"
+    },
+    {
+      "path": "2gis-mass300-evidence/REGRESSION_TESTS/classify_results.py",
+      "sizeBytes": 1887,
+      "sha256": "c897f1bf50dfef38739ec9f16237afc65574caa3e800fd3f67fa4eba3aae9c71",
+      "gitBlobSha": "8fa8e62497d28b9f6ce9091809c258ababf98b6d"
+    },
+    {
+      "path": "2gis-mass300-evidence/REGRESSION_TESTS/gate-check.mjs",
+      "sizeBytes": 1898,
+      "sha256": "b776070298d4d19c6e78807be803a07073ac71ec3d842b47fe11e9952e71f747",
+      "gitBlobSha": "cba3872ef87a916af9d1046e7cade4f40bbce583"
+    },
+    {
+      "path": "2gis-mass300-evidence/REGRESSION_TESTS/test_observations.py",
+      "sizeBytes": 1743,
+      "sha256": "6624206c4e59269842fcc2f4f6c4b1336c306082c352437e4225e93fbcb4107f",
+      "gitBlobSha": "088f55c46f84e4a70afa88ff2cfa5a16bcc219ea"
+    },
+    {
+      "path": "2gis-mass300-evidence/REGRESSION_TESTS/verify_campaign.py",
+      "sizeBytes": 4239,
+      "sha256": "84159441f1104cd52b9054a1ae936951db7221383cb1635201b05c7e547bd9b5",
+      "gitBlobSha": "aa5ae9ed6972c650b540113a5ada47551f795aca"
+    },
+    {
+      "path": "2gis-mass300-evidence/REGRESSION_TESTS/verify_package.py",
+      "sizeBytes": 792,
+      "sha256": "03ee3909ad27bf5b85df9e39ab542e8ad9d51c0a24b19a10090c6ecdbbe4855c",
+      "gitBlobSha": "0bd7e3bf288ea18b2e36a668cd10807d2411ba6a"
+    },
+    {
+      "path": "2gis-mass300-evidence/REJECTED_DESIGNS.json",
+      "sizeBytes": 1688,
+      "sha256": "222de5f3425e9c67a292c50ee369af0abf52bd87c4bcb377459e5eccc469bcf2",
+      "gitBlobSha": "a46bece386310860304d96351a5b30b9a67dbf00"
+    },
+    {
+      "path": "2gis-mass300-evidence/REQUEST_LEDGER.csv",
+      "sizeBytes": 17795,
+      "sha256": "5e3f807a510e2f6e9b274e9c659e08f3967898a2c6382a43588c85211d787338",
+      "gitBlobSha": "3f05ab9445791238be4815705c254b62c0e8a84f"
+    },
+    {
+      "path": "2gis-mass300-evidence/REQUEST_RESULTS.jsonl",
+      "sizeBytes": 17130,
+      "sha256": "8521cfdceac24b1ecb14676fec8af165472622ebe1415816325a1605561cc1ae",
+      "gitBlobSha": "969d405bf213bb619ba71e68499b8a13ae31f35a"
+    },
+    {
+      "path": "2gis-mass300-evidence/RESULTS_FINAL.md",
+      "sizeBytes": 2011,
+      "sha256": "45452c0cbc2d5b4f6e944732e5afee7345feb6107799eb96d9efd6fe313099f9",
+      "gitBlobSha": "2dbb9307c39508c76e595900a03c961a499d0b37"
+    },
+    {
+      "path": "2gis-mass300-evidence/RESULT_COMPARISONS.json",
+      "sizeBytes": 6554,
+      "sha256": "9ad85781418422eb339248177d72a7ed4e6349bcf20a427cc8ef93556f986fb9",
+      "gitBlobSha": "7eb0c9e3a5fdecbdd7bc1aa3d59da9b38a4188ee"
+    },
+    {
+      "path": "2gis-mass300-evidence/RESULT_SUMMARIES/MASS-081.json",
+      "sizeBytes": 3523,
+      "sha256": "5b201d98525cf943062c4a786551efcf680a65c36538a595b1408c7e8e474126",
+      "gitBlobSha": "8937a14923fb22a0ca6230d0ece6da4b23ea1f2a"
+    },
+    {
+      "path": "2gis-mass300-evidence/RESULT_SUMMARIES/MASS-121.json",
+      "sizeBytes": 1749,
+      "sha256": "3b4adb5256cc9518fc05f7820f4af67ba26e22cc74dc9e2f0a60173d6784b8be",
+      "gitBlobSha": "9afa35624ad8f60804ca3d714fd406f8a4e2b04f"
+    },
+    {
+      "path": "2gis-mass300-evidence/RESULT_SUMMARIES/MASS-122.json",
+      "sizeBytes": 2033,
+      "sha256": "ea6c64fc107332402076953f3947ff31dc1019886c9ce710f0933af1c1ce4835",
+      "gitBlobSha": "209163009daace207cde0fe9440dc1652a8e8f59"
+    },
+    {
+      "path": "2gis-mass300-evidence/RESULT_SUMMARIES/MASS-123.json",
+      "sizeBytes": 2108,
+      "sha256": "cff74594d941717ab8d3f2de9eb79404d8e54550cd6256bd459f7af1f5e1d4b3",
+      "gitBlobSha": "55b1a1e04e9ced3be5575ac00c6081689e4815a1"
+    },
+    {
+      "path": "2gis-mass300-evidence/RESULT_SUMMARIES/MASS-124.json",
+      "sizeBytes": 2274,
+      "sha256": "60743a7f530bfc4a21c9a0b09d5882fc1f77663d05c13438d8599590a2098bfd",
+      "gitBlobSha": "25269213b4a8be99c76beab42b8fdd0d96a49ff3"
+    },
+    {
+      "path": "2gis-mass300-evidence/RESULT_SUMMARIES/MASS-125.json",
+      "sizeBytes": 2514,
+      "sha256": "6fce705471b58da11e525383ef0ae880d072e39b609a6d0efaff0347265b7984",
+      "gitBlobSha": "2a83b3fa2e55d3651b395ec019e20bd4e497ebf4"
+    },
+    {
+      "path": "2gis-mass300-evidence/RESULT_SUMMARIES/MASS-126.json",
+      "sizeBytes": 1748,
+      "sha256": "7603e6339c9bcc465102594ee92262308e796e31b7a36bab6f00c7fd4cf07bc6",
+      "gitBlobSha": "36e7beb8bd995de1339ad96963b2de13afc50cfd"
+    },
+    {
+      "path": "2gis-mass300-evidence/RESULT_SUMMARIES/MASS-127.json",
+      "sizeBytes": 2023,
+      "sha256": "210baa7943ed55a6d1cfff989b3cc231773e75205a0f6e7a3bdd76ecdd48f3e6",
+      "gitBlobSha": "ba9e5382dd9f662e0209b1b455dabe9e5ef58575"
+    },
+    {
+      "path": "2gis-mass300-evidence/RESULT_SUMMARIES/MASS-128.json",
+      "sizeBytes": 2345,
+      "sha256": "b66aab4cd30d0bbf989587ee3999def47129043c493c58a98173afc2fa05cc6f",
+      "gitBlobSha": "81a8e67c7e85e53475a7815d8aec371e31af4a53"
+    },
+    {
+      "path": "2gis-mass300-evidence/RESULT_SUMMARIES/MASS-241.json",
+      "sizeBytes": 2289,
+      "sha256": "52668f8dee0d55ab65bcdc78fee8b013967e31a07532bd43d130ad8da61f9543",
+      "gitBlobSha": "3a866a994b2be954385c7038ce009112d62dbabc"
+    },
+    {
+      "path": "2gis-mass300-evidence/RESULT_SUMMARIES/MASS-242.json",
+      "sizeBytes": 2165,
+      "sha256": "b5054ec90169855db4daa2df41465c3e231f85bc5fe87e8e41359d4017322ae2",
+      "gitBlobSha": "b0ec7cf7a3a1b817be920cdc52cfa2315033828b"
+    },
+    {
+      "path": "2gis-mass300-evidence/RUN_APPROVED.mjs",
+      "sizeBytes": 3617,
+      "sha256": "91ce91f66c7ba2be436861462e3329f57695549a2d30bb50331ff3125b22e77e",
+      "gitBlobSha": "e4428b3a017175718a90bfe5a79e87019208989a"
+    },
+    {
+      "path": "2gis-mass300-evidence/SHA256SUMS",
+      "sizeBytes": 6516,
+      "sha256": "d725f958ebf733f8eedffb9a8a8865f62eb8e647590de00eccf621efc4e28a30",
+      "gitBlobSha": "bb614210d85991ab82484efe9060f0929024ee31"
+    },
+    {
+      "path": "2gis-mass300-evidence/SOURCES/039cfde37fa14ee9ffff.osm",
+      "sizeBytes": 426,
+      "sha256": "5894fab4646020b209bcf04b0f03c6f146f8113b3c9214a29f4cf1a8c251b1c0",
+      "gitBlobSha": "a296625a1928911aedaf2f6954831173721e1af2"
+    },
+    {
+      "path": "2gis-mass300-evidence/SOURCES/104baff22d6d3ddb49d9.osm",
+      "sizeBytes": 3705,
+      "sha256": "164a6aa0f1a38f01c7f07987b56d77425191133c7c6f87a781993fc8a385769f",
+      "gitBlobSha": "8fa916a4cfd067e98600729786aeefc02619ec87"
+    },
+    {
+      "path": "2gis-mass300-evidence/SOURCES/1f1c1ebc00b9a06c10ea.osm",
+      "sizeBytes": 426,
+      "sha256": "3f8757d11015b35c6a12969ceb24a077bd0a74fe0e0ea5cc5cefc8ac2b86b097",
+      "gitBlobSha": "a8333ad49b4884b81fdc8e03e41d810e29a23a9f"
+    },
+    {
+      "path": "2gis-mass300-evidence/SOURCES/2aa50600164a08549851.osm",
+      "sizeBytes": 3984,
+      "sha256": "fe56f0bfa07a2fbefa03c1545c09360a2cc42018791786b0d392d4f014edbb73",
+      "gitBlobSha": "92c9a30708be86f58e6a2d5175779918ffe534c0"
+    },
+    {
+      "path": "2gis-mass300-evidence/SOURCES/2fc5f3d1aa94bda63cfe.osm",
+      "sizeBytes": 3005,
+      "sha256": "558be540c8e8c8361fae9aec3e243091bf4feb71250702dc69d5a70d69d1a96d",
+      "gitBlobSha": "8761ccabe267077699dbc3d88de5653170f272ea"
+    },
+    {
+      "path": "2gis-mass300-evidence/SOURCES/54c63c7e7f4a37584cf7.osm",
+      "sizeBytes": 1019,
+      "sha256": "f0397c21ce02b93adbb98c70b1d301307104c594bac615ef17045c73c1010584",
+      "gitBlobSha": "ee01b53cf481d298d4b0693c454e18eef34cbff3"
+    },
+    {
+      "path": "2gis-mass300-evidence/SOURCES/63df72f8e9d8a1276153.osm",
+      "sizeBytes": 1381,
+      "sha256": "515311b65381c0747d28baa874dd17ff87d89f270f87fb29c9ed3c5f4adbda12",
+      "gitBlobSha": "9e3306977d6df96ca91cf1926d788e9b29a748e3"
+    },
+    {
+      "path": "2gis-mass300-evidence/SOURCES/C-directed-index.json",
+      "sizeBytes": 12834,
+      "sha256": "b8b5e13a7c2d00b9611f649694a473ece584559089eb70e33aebc551d456c824",
+      "gitBlobSha": "93da81dcce565f07174ad59524c25c5eab8bc2a1"
+    },
+    {
+      "path": "2gis-mass300-evidence/SOURCES/F-directed-index.json",
+      "sizeBytes": 5909,
+      "sha256": "5f6de11da77ae07ea262a4aa83b9e18f5a4bf7caf0729506e83c3e6dcb1aeac8",
+      "gitBlobSha": "75d44a6f62e97bce8cee6f812af39bf2b751bc57"
+    },
+    {
+      "path": "2gis-mass300-evidence/SOURCES/c0ab136d60afb7d92ae6.osm",
+      "sizeBytes": 842,
+      "sha256": "9170bf863aedf78f9640a7bfce610e80f19ddabb4fa7583fc42b966e624d8ad4",
+      "gitBlobSha": "7ccf7a67cf2c4a22b1422e97f9946fb44cecbdcf"
+    },
+    {
+      "path": "2gis-mass300-evidence/SOURCES/diagnose.mjs",
+      "sizeBytes": 18414,
+      "sha256": "9d1f5da99cf1586f6a12e13e5e7e68eaddf7b1fd58aa2e3656d07125617f876b",
+      "gitBlobSha": "c50bf83725ccb960351bd73302e5f4b39af0af8a"
+    },
+    {
+      "path": "2gis-mass300-evidence/SOURCES/e421784129ac6308b39c.osm",
+      "sizeBytes": 426,
+      "sha256": "89abb5e59e7f52a564181109eff03401dc7e29d20df1eb0ccc5ca0da73439a44",
+      "gitBlobSha": "fad878a57b24fe84b487b381fd7f0dc963fba32b"
+    },
+    {
+      "path": "2gis-mass300-evidence/SOURCES/prior-history.json",
+      "sizeBytes": 8285,
+      "sha256": "bb5753b34e60ad00608ab01f696991e6549ab3840d0e1afafe38266a93f1f9e1",
+      "gitBlobSha": "31a8f6e6fdeb4228ee2f5fa1838c08c2e14f30d3"
+    },
+    {
+      "path": "2gis-mass300-evidence/SOURCE_REGISTER.json",
+      "sizeBytes": 7110,
+      "sha256": "e617aebcbd478b0b2b07aa8ea8ab0dbd2192a79cd8675442906e09dd9b8e5972",
+      "gitBlobSha": "1fd40e940d2b227756a2286df2cb9e5bca4e8de8"
+    },
+    {
+      "path": "2gis-mass300-evidence/UNKNOWN_GAPS.md",
+      "sizeBytes": 911,
+      "sha256": "7c938ab4ca2992c8273c1ac9ca8e50c25e5ef755bdcc863dc1a3cfb3cce87137",
+      "gitBlobSha": "9dbe3f9541fa3e3cc4f358aba42cf7d14b2729b8"
+    },
+    {
+      "path": "2gis-mass300-evidence/V3_DEFECT_CANDIDATES.md",
+      "sizeBytes": 673,
+      "sha256": "e77de2cc3339feeda1e70e31c112c67c7ca877a981f3c71a34aea9cb5a069617",
+      "gitBlobSha": "378045ad22a0eb7a6a822aae093d4d3cb98ca825"
+    },
+    {
+      "path": "2gis-mass300-evidence/WORKING_CALCULATIONS_REVIEW.md",
+      "sizeBytes": 1162,
+      "sha256": "6261ca5d0dc460f0bad781b8946fc560873eae2ad313b4054077a027426a06f1",
+      "gitBlobSha": "53ddcd596d173757589785e7dfceb173db0e8dfc"
+    },
+    {
+      "path": "docs/WORK_STATE.md",
+      "sizeBytes": 246670,
+      "sha256": "1d808de01f5734c7bf0b79ea0c47faef8d15b68a30b7e43fdeabeab7f97ae1fb",
+      "gitBlobSha": "c6d98525fd0c70ed40845c5bfb8523e8b994854a"
+    },
+    {
+      "path": "docs/checkpoints/2026-11-07-MASS-CONT-LIVE-BATCH01.md",
+      "sizeBytes": 1035,
+      "sha256": "cf90ce18caf5e528981a1dac4706048cea160c3c1defb8d8321c13657f1aeb1e",
+      "gitBlobSha": "ae904cb212aaf3077bde4714a003c3f7d792505f"
+    },
+    {
+      "path": "docs/checkpoints/2026-11-07-MASS-CONT-LIVE-BATCH02.md",
+      "sizeBytes": 1035,
+      "sha256": "0798ef8e2211e26fc5e3a827454750db7bb9174a5f59fe2456b3aa15af7a081c",
+      "gitBlobSha": "9ebfa47c53062a728eab48935eb3f7eea824191d"
+    },
+    {
+      "path": "docs/checkpoints/2026-11-07-MASS-CONT-LIVE-BATCH03.md",
+      "sizeBytes": 1058,
+      "sha256": "42609fab76e6064c1b13da4fd933eb6a09a7fe1c25fe04970da5fc60de918606",
+      "gitBlobSha": "50fccf224ad60f57d5caea5420c7b0210cd6fd1f"
+    },
+    {
+      "path": "docs/checkpoints/2026-11-07-MASS-CONT-LIVE-PAUSED429.md",
+      "sizeBytes": 14548,
+      "sha256": "7c513690fd20446f004c92cde451afe35521b21f11a0f69f16de6f5fd8b7c305",
+      "gitBlobSha": "54bcb23a86465821079dea36d9603c4f7fa94d4e"
+    },
+    {
+      "path": "docs/checkpoints/2026-11-07-MASS-CONT-LIVE-STARTED.md",
+      "sizeBytes": 832,
+      "sha256": "a8ba458bf0f9191f821b78c4233437d7bc641f035a5393766e12c27ba70e8ccc",
+      "gitBlobSha": "abc66b4e500b0bf4f277914f1879f60904601a63"
+    },
+    {
+      "path": "experiments/2gis-diagnostics/HANDOFF.md",
+      "sizeBytes": 17233,
+      "sha256": "17e058b6209b5790c20011e4a8d231df082bdc0fd671e31fdcafe26a9aa8a54b",
+      "gitBlobSha": "bd591c3b1af17f931e3838d7784310bbb67a780f"
+    },
+    {
+      "path": "experiments/2gis-diagnostics/NEXT_STEPS.md",
+      "sizeBytes": 14792,
+      "sha256": "6ed9762b5caa482e2fbf29aa8f783d579d7404f0a769f05d1596515257013c66",
+      "gitBlobSha": "98dbaad13fd554037093c7c4a71933ba993e2f8e"
+    },
+    {
+      "path": "experiments/2gis-diagnostics/QUERY_LEDGER.md",
+      "sizeBytes": 21975,
+      "sha256": "c5a30cfce6673d0d03ec9ab45dd66de8f849211d6322e2f33dd48d9a2ca4dbb4",
+      "gitBlobSha": "14bfb4b39a8823ca4b6f2e509a0e48de439111c5"
+    },
+    {
+      "path": "experiments/2gis-diagnostics/WORK_LOG.md",
+      "sizeBytes": 45550,
+      "sha256": "8781b1315aea95d34b0beb47587350c602ce647d1708ad8c87b45b4a1efbf3b4",
+      "gitBlobSha": "acc6dbc2f6b616cab1ad621d7d848274daa7d82d"
+    },
+    {
+      "path": "experiments/2gis-diagnostics/campaign-budget.test.mjs",
+      "sizeBytes": 1171,
+      "sha256": "d9ef7b108e716a23f64ec1c253086a329cdaa39a096fdda091f55b899317da2a",
+      "gitBlobSha": "0170ef5b0e3e1fb301b78b767bbaf3f42a45d182"
+    },
+    {
+      "path": "experiments/2gis-diagnostics/diagnose.mjs",
+      "sizeBytes": 23175,
+      "sha256": "f0653575a0b46220277adf4f0812012992cfe914a4f0f469162515e6de1efd3a",
+      "gitBlobSha": "91207b15ae969d9bfa06f1bb5c3f216453aabd92"
+    },
+    {
+      "path": "experiments/2gis-diagnostics/route-scope.test.mjs",
+      "sizeBytes": 1765,
+      "sha256": "aece271750f0a9af77ffea3bf53818a003fa90cae46f34314cf561a197d72862",
+      "gitBlobSha": "06b1f2a72e5c26d75c9bd1d836ca76906bc0ab6d"
+    },
+    {
+      "path": "experiments/2gis-diagnostics/tool.test.mjs",
+      "sizeBytes": 8400,
+      "sha256": "29a4181b2daf7eea0211523352e2c96d4cdf4a378ec13d182c846b6cb4d1f43e",
+      "gitBlobSha": "85025c7a63203b83d9d5d71f44c7a3fcc20c7e31"
+    },
+    {
+      "path": "experiments/2gis-diagnostics/window-allowlist.json",
+      "sizeBytes": 322917,
+      "sha256": "7458534b6d7256dfaefb27757b9ed3ef87205639638f27c8d9014084b2b22a31",
+      "gitBlobSha": "a4a95f934420016659afaf881cc970797bd11883"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-11-07T18:39:28.606143Z",
+  "source": "Live Opera Platform Manager keys/59886 services, key list and subscription page",
+  "routingUsed": 65,
+  "routingLimit": 1000,
+  "freeRemaining": 935,
+  "conservativeRemaining": 930,
+  "keyStatus": "Active",
+  "keyType": "Demo SDK",
+  "keyBlockDate": "2026-12-03",
+  "paidSubscriptionObserved": false,
+  "subscriptionPage": "Buy subscription; subscription required to create/use subscribed API keys. No active paid plan displayed. Existing key explicitly Demo.",
+  "limitAction": "Blocking at monthly limit; 5/minute stop",
+  "priorCampaignObservedDebit": 10,
+  "priorCampaignReserved": 11,
+  "priorCampaignUnreconciled": 1,
+  "note": "No Routing probe used; delayed prior count24\u219225 reconciles1of2; remaining1reserved conservatively. No full browser tree or personal/key values retained.",
+  "newReservedAtCheck": 44,
+  "observedCampaignDebit": 50,
+  "campaignReserved": 55,
+  "unreconciledCampaignReserved": 5
+}

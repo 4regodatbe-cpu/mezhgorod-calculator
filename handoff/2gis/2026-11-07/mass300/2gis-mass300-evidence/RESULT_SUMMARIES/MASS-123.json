@@ -1,0 +1,96 @@
+{
+  "id": "MASS-123",
+  "group": "C",
+  "object": "M4-PVP545:3504914294",
+  "type": "before",
+  "status": "response_received",
+  "reservedUnits": 1,
+  "httpAttempts": 1,
+  "summary": {
+    "id": "MASS-123",
+    "at": "2026-11-07T13:25:36.361Z",
+    "expectedUnits": 1,
+    "quotaDeltaObserved": null,
+    "httpStatus": 200,
+    "routeBuildStatus": "OK",
+    "routeCount": 1,
+    "distanceM": 152,
+    "durationS": 15,
+    "geometryLineCount": 3,
+    "geometryPointCount": 10,
+    "invalidGeometryCount": 0,
+    "nearestAnchorM": 10,
+    "nearestAnchorSegmentM": 10,
+    "paymentEventCount": 2,
+    "totalPaymentsEntryCount": 1,
+    "routeAggregate": null,
+    "perPvpPrice": null,
+    "witnessComparisons": [
+      {
+        "id": "boundary:3504914294",
+        "nearestSegmentM": 10
+      },
+      {
+        "id": "source:3504914297",
+        "nearestSegmentM": 0
+      },
+      {
+        "id": "source:4904703533",
+        "nearestSegmentM": 2
+      },
+      {
+        "id": "source:3504914296",
+        "nearestSegmentM": 3
+      },
+      {
+        "id": "source:13644823408",
+        "nearestSegmentM": 1
+      },
+      {
+        "id": "source:13644823417",
+        "nearestSegmentM": 2
+      },
+      {
+        "id": "source:6594393973",
+        "nearestSegmentM": 0
+      }
+    ],
+    "aggregatePaymentSchema": [
+      [
+        "cost",
+        "currency"
+      ]
+    ],
+    "aggregatePaymentValues": [
+      {
+        "cost": 160,
+        "currency": "RUB"
+      }
+    ],
+    "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+  },
+  "error": null,
+  "requestParameters": {
+    "points": [
+      {
+        "type": "stop",
+        "lon": 39.5546495,
+        "lat": 51.4722186
+      },
+      {
+        "type": "stop",
+        "lon": 39.5547766,
+        "lat": 51.473575
+      }
+    ],
+    "transport": "driving",
+    "route_mode": "fastest",
+    "output": "detailed",
+    "need_payment_info": true,
+    "locale": "ru",
+    "alternative": 0
+  },
+  "startedAt": "2026-11-07T13:25:35.686Z",
+  "completedAt": "2026-11-07T13:25:36.361Z",
+  "rawDataRetained": false
+}

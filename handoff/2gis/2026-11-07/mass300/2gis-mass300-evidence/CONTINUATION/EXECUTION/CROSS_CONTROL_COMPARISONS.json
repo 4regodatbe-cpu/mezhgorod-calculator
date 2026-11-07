@@ -1,0 +1,130 @@
+[
+  {
+    "object": "10090995832",
+    "roadId": "m12",
+    "crossId": "MASS-CONT-399305a44919",
+    "controlId": "MASS-CONT-b20ac1168794",
+    "controlType": "after",
+    "crossBoundaryDistanceM": 13,
+    "controlBoundaryDistanceM": 179,
+    "sameAggregateValues": [
+      {
+        "cost": 311,
+        "currency": "RUB"
+      }
+    ],
+    "conclusion": "Payment aggregate is not a discrete selected-bank crossing detector. Control is source-scoped, selected boundary absent within25m; other tariff/product properties remain unknown."
+  },
+  {
+    "object": "1051205779",
+    "roadId": "m4",
+    "crossId": "MASS-CONT-956b5c39aa50",
+    "controlId": "MASS-CONT-7695ef87ba86",
+    "controlType": "after",
+    "crossBoundaryDistanceM": 7,
+    "controlBoundaryDistanceM": 80,
+    "sameAggregateValues": [
+      {
+        "cost": 360,
+        "currency": "RUB"
+      }
+    ],
+    "conclusion": "Payment aggregate is not a discrete selected-bank crossing detector. Control is source-scoped, selected boundary absent within25m; other tariff/product properties remain unknown."
+  },
+  {
+    "object": "1051218389",
+    "roadId": "m4",
+    "crossId": "MASS-CONT-2cbbf542a08a",
+    "controlId": "MASS-CONT-00899c51b2af",
+    "controlType": "before",
+    "crossBoundaryDistanceM": 2,
+    "controlBoundaryDistanceM": 49,
+    "sameAggregateValues": [
+      {
+        "cost": 360,
+        "currency": "RUB"
+      }
+    ],
+    "conclusion": "Payment aggregate is not a discrete selected-bank crossing detector. Control is source-scoped, selected boundary absent within25m; other tariff/product properties remain unknown."
+  },
+  {
+    "object": "1051218389",
+    "roadId": "m4",
+    "crossId": "MASS-CONT-2cbbf542a08a",
+    "controlId": "MASS-CONT-471992013413",
+    "controlType": "after",
+    "crossBoundaryDistanceM": 2,
+    "controlBoundaryDistanceM": 68,
+    "sameAggregateValues": [
+      {
+        "cost": 360,
+        "currency": "RUB"
+      }
+    ],
+    "conclusion": "Payment aggregate is not a discrete selected-bank crossing detector. Control is source-scoped, selected boundary absent within25m; other tariff/product properties remain unknown."
+  },
+  {
+    "object": "10782165527",
+    "roadId": "m12",
+    "crossId": "MASS-CONT-3af36974b88f",
+    "controlId": "MASS-CONT-f9f31ef92968",
+    "controlType": "after",
+    "crossBoundaryDistanceM": 5,
+    "controlBoundaryDistanceM": 199,
+    "sameAggregateValues": [
+      {
+        "cost": 244,
+        "currency": "RUB"
+      }
+    ],
+    "conclusion": "Payment aggregate is not a discrete selected-bank crossing detector. Control is source-scoped, selected boundary absent within25m; other tariff/product properties remain unknown."
+  },
+  {
+    "object": "10979205243",
+    "roadId": "dzok",
+    "crossId": "MASS-CONT-5028bda4acee",
+    "controlId": "MASS-CONT-c4593f0961bb",
+    "controlType": "after",
+    "crossBoundaryDistanceM": 15,
+    "controlBoundaryDistanceM": 129,
+    "sameAggregateValues": [
+      {
+        "cost": 410,
+        "currency": "RUB"
+      }
+    ],
+    "conclusion": "Payment aggregate is not a discrete selected-bank crossing detector. Control is source-scoped, selected boundary absent within25m; other tariff/product properties remain unknown."
+  },
+  {
+    "object": "3109177688",
+    "roadId": "odintsovo",
+    "crossId": "MASS-CONT-d3c663a76683",
+    "controlId": "MASS-CONT-79b8815f27aa",
+    "controlType": "before",
+    "crossBoundaryDistanceM": 10,
+    "controlBoundaryDistanceM": 34,
+    "sameAggregateValues": [
+      {
+        "cost": 250,
+        "currency": "RUB"
+      }
+    ],
+    "conclusion": "Payment aggregate is not a discrete selected-bank crossing detector. Control is source-scoped, selected boundary absent within25m; other tariff/product properties remain unknown."
+  },
+  {
+    "object": "3109177690",
+    "roadId": "odintsovo",
+    "crossId": "MASS-CONT-4af1555c4850",
+    "controlId": "MASS-CONT-aa9df55d723c",
+    "controlType": "after",
+    "crossBoundaryDistanceM": 6,
+    "controlBoundaryDistanceM": 36,
+    "sameAggregateValues": [
+      {
+        "cost": 300,
+        "currency": "RUB"
+      }
+    ],
+    "conclusion": "Payment aggregate is not a discrete selected-bank crossing detector. Control is source-scoped, selected boundary absent within25m; other tariff/product properties remain unknown."
+  }
+]

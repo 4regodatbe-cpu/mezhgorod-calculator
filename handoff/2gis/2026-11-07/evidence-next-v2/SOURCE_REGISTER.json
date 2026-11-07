@@ -1,0 +1,153 @@
+[
+  {
+    "id": "m4-order58-2026-03-02",
+    "title": "Avtodor Order 58, tariff appendix, effective 2026-03-02",
+    "kind": "official PDF",
+    "local_path": "HISTORICAL_V1/M4_545/m4-order58-effective-2026-03-02.pdf",
+    "sha256": "25fdb9a430934f47617c8cc1563f95e49c6ebe41c6303e9bd67465b3c568662d",
+    "url": null,
+    "date": "2026-03-02",
+    "scope": "Category I cash/card values in retained Order58; product row 544–589."
+  },
+  {
+    "id": "m4-current-tariffs",
+    "title": "Avtodor current toll tariffs page",
+    "kind": "official web page",
+    "local_path": null,
+    "sha256": null,
+    "url": "https://avtodor-tr.ru/road/tariffs/",
+    "date_accessed": "2026-11-07",
+    "scope": "Current displayed M4 rows 517–544 and 545–589 and rates 140/160, 180/250 for Cat I cash/card; live page not archived locally."
+  },
+  {
+    "id": "m4-2016-pvp545",
+    "title": "Avtodor 2016 PVP545 route-dependent explanation",
+    "kind": "official historical page",
+    "local_path": null,
+    "sha256": null,
+    "url": "https://avtodor-tr.ru/press-center/news/rezhim-platnosti-vveden-na-uchastke-avtomobilnoy-dorogi-m-4-don-v-obkhod-sela-novaya-usman-i-sela-ro/",
+    "date": "2016-12-26",
+    "scope": "Historic product selection and combined tariff for continuing southbound trip; not current lane mapping."
+  },
+  {
+    "id": "m12-order302",
+    "title": "Avtodor M12 Order302 tariff matrix",
+    "kind": "official PDF",
+    "local_path": "HISTORICAL_V1/M12/m12-order302-effective-2026-10-08.pdf",
+    "sha256": "25226467bed5d36691085e03ce706e49bb15b6e67607d0ebd4df420a9b07d213",
+    "url": null,
+    "date": "2026-10-08",
+    "scope": "Official M12 tariff anchors/OD rates."
+  },
+  {
+    "id": "m12-west-current-page",
+    "title": "Avtodor current toll tariff page",
+    "kind": "official web page",
+    "local_path": null,
+    "sha256": null,
+    "url": "https://avtodor-tr.ru/road/tariffs/",
+    "date_accessed": "2026-11-07",
+    "scope": "Displayed 81/118/174 segment labels and tariffs; location crosswalk remains unproven."
+  },
+  {
+    "id": "order57-120m",
+    "title": "Avtodor Order57 Appendix 1, 120-minute cross-network condition",
+    "kind": "official PDF",
+    "local_path": null,
+    "sha256": null,
+    "url": "https://avtodor-tr.ru/upload/iblock/fe5/a2e7y350b1wrbw28x181m10z1eeblnfd.pdf",
+    "date": "2026-02-27",
+    "scope": "Narrow M12–Nosoikhinskoe and CKAD paired-section toll detection rule; verify supersession before runtime use."
+  },
+  {
+    "id": "osm-license",
+    "title": "OpenStreetMap contributors data",
+    "kind": "OSM-derived geometry evidence",
+    "local_path": "HISTORICAL_V1/M4_545/geometry/osm-directed-subset.json; M12/geometry/",
+    "sha256": null,
+    "url": "https://www.openstreetmap.org/copyright",
+    "date_accessed": "2026-11-07",
+    "scope": "ODbL attribution applies; OSM physical evidence does not establish operator tariff product."
+  },
+  {
+    "id": "stage7-saved",
+    "title": "Saved prior Stage 7 summaries",
+    "kind": "project experiment records",
+    "local_path": "HISTORICAL_V1/ZSD_PULKOVO_M11/stage7-results.md",
+    "sha256": null,
+    "url": null,
+    "scope": "Historical outcomes only; no retries; no raw 2GIS responses in package."
+  },
+  {
+    "id": "m11-stage8",
+    "title": "Stage 8 M11 evidence and official data",
+    "kind": "project packet with official sources",
+    "local_path": "HISTORICAL_V1/m11-stage8/",
+    "sha256": null,
+    "url": null,
+    "scope": "Already-integrated official M11 matrix; unchanged by this audit."
+  },
+  {
+    "id": "ckad-2026-03-02-category1-direct-pair-matrix",
+    "local_path": "SOURCES/ckad-2026-03-02-category1-direct-pair-matrix.json",
+    "sha256": "e6b2178c2448f071de92556d1d72237bd0281da9628f4855cb11b2cd32e6f9ca",
+    "original_path": "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+    "retrieved_now": false
+  },
+  {
+    "id": "ckad-order56-effective-2026-03-02",
+    "local_path": "SOURCES/ckad-order56-effective-2026-03-02.pdf",
+    "sha256": "839488fed07f8e611b5304498f22d49626ff0dc7529df67734a2052a49bea3e7",
+    "original_path": "experiments/nationwide-tolls/source-documents/ckad-order56-effective-2026-03-02.pdf",
+    "retrieved_now": false
+  },
+  {
+    "id": "README",
+    "local_path": "SOURCES/README.md",
+    "sha256": "4923c39aa4ecfe6b4efe853a27f7667f3b0020492ea402f08c7032d478c94b8c",
+    "original_path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/README.md",
+    "retrieved_now": false
+  },
+  {
+    "id": "physical-directed",
+    "local_path": "SOURCES/physical-directed.json",
+    "sha256": "950990d1f8ce69bffae5ffff5c5fc8db9c80ddbfb4f2deab1d2e6f238b3fca03",
+    "original_path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/physical-directed.json",
+    "retrieved_now": false
+  },
+  {
+    "id": "2026-09-04-679-684-category1",
+    "local_path": "SOURCES/2026-09-04-679-684-category1.json",
+    "sha256": "641888da96cd1e300573c5f5aab7532a4fa3384902960cec06e62964a960a739",
+    "original_path": "experiments/nationwide-tolls/source-snapshots/m11/2026-09-04-679-684-category1.json",
+    "retrieved_now": false
+  },
+  {
+    "id": "2026-09-04-avtodor-order274-current",
+    "local_path": "SOURCES/2026-09-04-avtodor-order274-current.pdf",
+    "sha256": "6b52ca130ee7e8a7948c2b39982c00d82174e4e45ec5dcd3983355238c403b91",
+    "original_path": "experiments/nationwide-tolls/source-snapshots/m11/2026-09-04-avtodor-order274-current.pdf",
+    "retrieved_now": false
+  },
+  {
+    "id": "2026-10-14-pulkovo-physical-gates",
+    "local_path": "SOURCES/2026-10-14-pulkovo-physical-gates.json",
+    "sha256": "a88c964b28be1d69e10c827337c397ff6df8d6edd3ce2ad34d35f19b694d13e0",
+    "original_path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-14-pulkovo-physical-gates.json",
+    "retrieved_now": false
+  },
+  {
+    "id": "m11-pulkovo-airport-access",
+    "local_path": "SOURCES/m11-pulkovo-airport-access.json",
+    "sha256": "51939adcd06dee1b95d259b87bb4e667caaeb77d6dc15fe18704721891aa54ce",
+    "original_path": "experiments/2gis-diagnostics/candidate-evidence/m11-pulkovo-airport-access.json",
+    "retrieved_now": false
+  },
+  {
+    "id": "pulkovo-m11-airport-access-reverse",
+    "local_path": "SOURCES/pulkovo-m11-airport-access-reverse.json",
+    "sha256": "708270db28a672788a5e661faf687dcbfc3c5d73b4f0f1be63991bc3d97c48b0",
+    "original_path": "experiments/2gis-diagnostics/candidate-evidence/pulkovo-m11-airport-access-reverse.json",
+    "retrieved_now": false
+  }
+]

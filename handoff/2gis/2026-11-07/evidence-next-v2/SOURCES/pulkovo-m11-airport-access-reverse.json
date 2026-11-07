@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "pulkovo-m11-airport-access-reverse",
+  "direction": "Pulkovo airport to M-11 only",
+  "from": {
+    "osmNodeId": "12597059609",
+    "coordinate": [30.3259779, 59.7900004],
+    "roadWayId": "1524320372",
+    "oneway": "yes"
+  },
+  "gate": {
+    "osmNodeId": "13377945036",
+    "coordinate": [30.3344662, 59.790126],
+    "tags": {
+      "highway": "toll_gantry",
+      "name": "Аэр. Пулково - М-11"
+    }
+  },
+  "to": {
+    "osmNodeId": "13047772227",
+    "coordinate": [30.3407729, 59.7901549],
+    "roadWayId": "1360759955",
+    "oneway": "yes"
+  },
+  "directedJoin": [
+    {
+      "wayId": "1524320372",
+      "orderedNodes": ["12597059609", "13377945036"],
+      "oneway": "yes"
+    },
+    {
+      "wayId": "1360759955",
+      "orderedNodes": ["13377945036", "12597059610", "13047772227"],
+      "oneway": "yes"
+    }
+  ],
+  "sources": [
+    {
+      "path": "../nationwide-tolls/source-snapshots/m11/2026-10-14-osm-tail-corridor.osm.gz",
+      "sha256": "b5181ef4e570733c8801b851cc5e3e2f7bc21e17d860d568fac7485afa9008e1",
+      "license": "OpenStreetMap contributors / ODbL"
+    },
+    {
+      "path": "../nationwide-tolls/source-snapshots/m11/2026-10-14-pulkovo-physical-gates.json",
+      "facts": "Current source snapshot labels node13377945036 as airport to M-11 toll gantry; source shows direction-specific one-way approaches."
+    },
+    {
+      "path": "../nationwide-tolls/source-snapshots/m11/2026-09-04-679-684-category1.json",
+      "facts": "Official Order274: category-I airport access38 RUB; combined airport+mainline94 RUB only under specified airport-access fixation condition."
+    }
+  ],
+  "queryHypothesis": "The reverse one-way route should pass through the separately mapped airport-to-M-11 toll gantry. Compare route geometry and payment-field presence with the independent M-11-to-airport window; API aggregate alone cannot identify the fare.",
+  "maxRouteKm": 5,
+  "expectedUnits": 1,
+  "repeatPolicy": "one attempt only; never retry outcome_unknown"
+}

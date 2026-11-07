@@ -1,0 +1,158 @@
+[
+  {
+    "id": "MASS-081",
+    "object": "M12-M7-exit",
+    "type": "exit",
+    "routeLengthM": 6548,
+    "aggregate": null,
+    "status": "UNAVAILABLE_NOT_FREE",
+    "perPvpPrice": null,
+    "compareAsSameShortScope": false,
+    "receiptVerified": false
+  },
+  {
+    "id": "MASS-121",
+    "object": "M4-PVP545:5818209495",
+    "type": "before",
+    "routeLengthM": 252,
+    "aggregate": null,
+    "status": "UNAVAILABLE_NOT_FREE",
+    "perPvpPrice": null,
+    "compareAsSameShortScope": true,
+    "receiptVerified": false
+  },
+  {
+    "id": "MASS-122",
+    "object": "M4-PVP545:5818209495",
+    "type": "after",
+    "routeLengthM": 26631,
+    "aggregate": [
+      {
+        "cost": 660,
+        "currency": "RUB"
+      }
+    ],
+    "status": "OBSERVED_AGGREGATE",
+    "perPvpPrice": null,
+    "compareAsSameShortScope": false,
+    "receiptVerified": false
+  },
+  {
+    "id": "MASS-123",
+    "object": "M4-PVP545:3504914294",
+    "type": "before",
+    "routeLengthM": 152,
+    "aggregate": [
+      {
+        "cost": 160,
+        "currency": "RUB"
+      }
+    ],
+    "status": "OBSERVED_AGGREGATE",
+    "perPvpPrice": null,
+    "compareAsSameShortScope": true,
+    "receiptVerified": false
+  },
+  {
+    "id": "MASS-124",
+    "object": "M4-PVP545:3504914294",
+    "type": "after",
+    "routeLengthM": 188,
+    "aggregate": [
+      {
+        "cost": 160,
+        "currency": "RUB"
+      }
+    ],
+    "status": "OBSERVED_AGGREGATE",
+    "perPvpPrice": null,
+    "compareAsSameShortScope": true,
+    "receiptVerified": false
+  },
+  {
+    "id": "MASS-125",
+    "object": "M4-PVP545:3504914294",
+    "type": "cross",
+    "routeLengthM": 294,
+    "aggregate": [
+      {
+        "cost": 160,
+        "currency": "RUB"
+      }
+    ],
+    "status": "OBSERVED_AGGREGATE",
+    "perPvpPrice": null,
+    "compareAsSameShortScope": true,
+    "receiptVerified": false
+  },
+  {
+    "id": "MASS-126",
+    "object": "M4-PVP545:9620416636",
+    "type": "before",
+    "routeLengthM": 246,
+    "aggregate": null,
+    "status": "UNAVAILABLE_NOT_FREE",
+    "perPvpPrice": null,
+    "compareAsSameShortScope": true,
+    "receiptVerified": false
+  },
+  {
+    "id": "MASS-127",
+    "object": "M4-PVP545:9620416636",
+    "type": "after",
+    "routeLengthM": 163,
+    "aggregate": [
+      {
+        "cost": 250,
+        "currency": "RUB"
+      }
+    ],
+    "status": "OBSERVED_AGGREGATE",
+    "perPvpPrice": null,
+    "compareAsSameShortScope": true,
+    "receiptVerified": false
+  },
+  {
+    "id": "MASS-128",
+    "object": "M4-PVP545:9620416636",
+    "type": "cross",
+    "routeLengthM": 435,
+    "aggregate": [
+      {
+        "cost": 250,
+        "currency": "RUB"
+      }
+    ],
+    "status": "OBSERVED_AGGREGATE",
+    "perPvpPrice": null,
+    "compareAsSameShortScope": true,
+    "receiptVerified": false
+  },
+  {
+    "id": "MASS-241",
+    "object": "Pulkovo:13377945035",
+    "type": "before",
+    "routeLengthM": 16671,
+    "aggregate": [
+      {
+        "cost": 94,
+        "currency": "RUB"
+      }
+    ],
+    "status": "OBSERVED_AGGREGATE",
+    "perPvpPrice": null,
+    "compareAsSameShortScope": false,
+    "receiptVerified": false
+  },
+  {
+    "id": "MASS-242",
+    "object": "Pulkovo:13377945036",
+    "type": "after",
+    "routeLengthM": 489,
+    "aggregate": null,
+    "status": "UNAVAILABLE_NOT_FREE",
+    "perPvpPrice": null,
+    "compareAsSameShortScope": true,
+    "receiptVerified": false
+  }
+]

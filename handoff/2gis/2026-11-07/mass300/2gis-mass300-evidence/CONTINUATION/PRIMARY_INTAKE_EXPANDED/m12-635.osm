@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.1 (1181352 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/"><bounds minlat="55.3782920" minlon="46.8087280" maxlat="55.3902920" maxlon="46.8207280" />
+ <node id="8955200884" visible="true" version="2" lat="55.3839000" lon="46.7889718" />
+ <node id="8955200885" visible="true" version="4" lat="55.3841350" lon="46.8147168">
+  <tag k="highway" v="toll_gantry" />
+ </node>
+ <node id="11954128267" visible="true" version="1" lat="55.3841989" lon="46.7873867" />
+ <node id="11954128268" visible="true" version="3" lat="55.3844493" lon="46.8147387">
+  <tag k="highway" v="toll_gantry" />
+ </node>
+ <node id="11954149069" visible="true" version="1" lat="55.3839562" lon="46.7950502" />
+ <node id="13021549196" visible="true" version="1" lat="55.3842651" lon="46.8338931" />
+ <node id="13021549197" visible="true" version="1" lat="55.3845662" lon="46.8339436" />
+ <node id="13021594403" visible="true" version="1" lat="55.3841784" lon="46.7830668" />
+ <node id="13021594405" visible="true" version="1" lat="55.3838697" lon="46.7830399" />
+ <way id="1417042072" visible="true" version="1">
+  <nd ref="13021594405" />
+  <nd ref="8955200884" />
+  <nd ref="11954149069" />
+  <nd ref="8955200885" />
+  <nd ref="13021549196" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="RU:rural" />
+  <tag k="maxspeed:goods" v="110" />
+  <tag k="maxspeed:motorcar" v="110" />
+  <tag k="maxspeed:variable" v="yes" />
+  <tag k="minspeed" v="40" />
+  <tag k="motorroad" v="yes" />
+  <tag k="name" v="«Восток»" />
+  <tag k="name:ru" v="«Восток»" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-12" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+  </way>
+ <way id="1417042074" visible="true" version="1">
+  <nd ref="13021549197" />
+  <nd ref="11954128268" />
+  <nd ref="11954128267" />
+  <nd ref="13021594403" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="RU:rural" />
+  <tag k="maxspeed:goods" v="110" />
+  <tag k="maxspeed:motorcar" v="110" />
+  <tag k="maxspeed:variable" v="yes" />
+  <tag k="minspeed" v="40" />
+  <tag k="motorroad" v="yes" />
+  <tag k="name" v="«Восток»" />
+  <tag k="name:ru" v="«Восток»" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-12" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+  </way>
+ </osm>

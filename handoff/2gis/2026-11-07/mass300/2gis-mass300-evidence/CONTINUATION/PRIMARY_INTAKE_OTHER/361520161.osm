@@ -1,0 +1,382 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.1 (1680749 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/"><bounds minlat="56.1067047" minlon="37.2043279" maxlat="56.1187047" maxlon="37.2163279" />
+ <node id="60098600" visible="true" version="8" lat="56.1097017" lon="37.1951833" />
+ <node id="60098601" visible="true" version="9" lat="56.1117717" lon="37.2058907" />
+ <node id="361520145" visible="true" version="5" lat="56.1143249" lon="37.2155258" />
+ <node id="361520153" visible="true" version="5" lat="56.1149610" lon="37.2177724" />
+ <node id="361520161" visible="true" version="7" lat="56.1127047" lon="37.2103279">
+  <tag k="highway" v="toll_gantry" />
+  <tag k="operator" v="ООО «РТ-Инвест Транспортные Системы»" />
+  </node>
+ <node id="691905955" visible="true" version="1" lat="56.1102046" lon="37.1978145" />
+ <node id="1875152465" visible="true" version="3" lat="56.1137445" lon="37.2137534" />
+ <node id="1875152467" visible="true" version="3" lat="56.1143152" lon="37.2134190" />
+ <node id="1875152482" visible="true" version="2" lat="56.1150867" lon="37.2183388" />
+ <node id="1875152517" visible="true" version="2" lat="56.1167828" lon="37.2118964" />
+ <node id="1875152542" visible="true" version="1" lat="56.1184742" lon="37.2108520" />
+ <node id="1875152792" visible="true" version="2" lat="56.1239149" lon="37.2074007" />
+ <node id="1875152857" visible="true" version="4" lat="56.1274181" lon="37.2052152" />
+ <node id="1875152867" visible="true" version="2" lat="56.1276053" lon="37.2055079" />
+ <node id="1988472845" visible="true" version="4" lat="56.1105043" lon="37.1993218" />
+ <node id="2242235439" visible="true" version="1" lat="56.1153871" lon="37.2083143" />
+ <node id="2242235446" visible="true" version="2" lat="56.1165221" lon="37.2116424" />
+ <node id="2242235452" visible="true" version="1" lat="56.1156921" lon="37.2079709" />
+ <node id="2456240516" visible="true" version="1" lat="56.1092247" lon="37.1932366" />
+ <node id="2456240517" visible="true" version="1" lat="56.1095451" lon="37.1944386" />
+ <node id="2456240518" visible="true" version="1" lat="56.1099693" lon="37.1964985" />
+ <node id="2456240519" visible="true" version="1" lat="56.1112765" lon="37.2033095" />
+ <node id="2456240520" visible="true" version="1" lat="56.1121970" lon="37.2081286" />
+ <node id="2456240521" visible="true" version="1" lat="56.1124367" lon="37.2092416" />
+ <node id="2456240522" visible="true" version="1" lat="56.1129290" lon="37.2111625" />
+ <node id="2456240523" visible="true" version="1" lat="56.1131821" lon="37.2119842" />
+ <node id="2456240524" visible="true" version="1" lat="56.1146666" lon="37.2166360" />
+ <node id="2456240525" visible="true" version="1" lat="56.1148220" lon="37.2172013" />
+ <node id="2876136570" visible="true" version="2" lat="56.1106104" lon="37.1998716" />
+ <node id="4319585142" visible="true" version="2" lat="56.1281182" lon="37.2077681" />
+ <node id="4320976191" visible="true" version="2" lat="56.1144192" lon="37.2139008">
+  <tag k="barrier" v="gate" />
+ </node>
+ <node id="4320976197" visible="true" version="2" lat="56.1145123" lon="37.2141237" />
+ <node id="4320976205" visible="true" version="1" lat="56.1184214" lon="37.2108846" />
+ <node id="4320976210" visible="true" version="1" lat="56.1189317" lon="37.2114522" />
+ <node id="4320976211" visible="true" version="1" lat="56.1198035" lon="37.2119994" />
+ <node id="4320976212" visible="true" version="1" lat="56.1205227" lon="37.2118840" />
+ <node id="4320976215" visible="true" version="1" lat="56.1219251" lon="37.2116319" />
+ <node id="4320976218" visible="true" version="1" lat="56.1224245" lon="37.2083408" />
+ <node id="4320976233" visible="true" version="3" lat="56.1247999" lon="37.2068654" />
+ <node id="4320976244" visible="true" version="1" lat="56.1255690" lon="37.2063822" />
+ <node id="4320976247" visible="true" version="1" lat="56.1258420" lon="37.2062030" />
+ <node id="4320976250" visible="true" version="2" lat="56.1261136" lon="37.2059739" />
+ <node id="4457180852" visible="true" version="1" lat="56.1088998" lon="37.1919823" />
+ <node id="6769619312" visible="true" version="1" lat="56.1216172" lon="37.2088540" />
+ <node id="6769619323" visible="true" version="1" lat="56.1255462" lon="37.2063966" />
+ <node id="10651154522" visible="true" version="1" lat="56.1168084" lon="37.2155296" />
+ <node id="10651154523" visible="true" version="1" lat="56.1160121" lon="37.2123699" />
+ <node id="10651154524" visible="true" version="1" lat="56.1175010" lon="37.2077009" />
+ <node id="10651154525" visible="true" version="1" lat="56.1208688" lon="37.2087698" />
+ <node id="10651154526" visible="true" version="1" lat="56.1171655" lon="37.2113109" />
+ <node id="10651154527" visible="true" version="2" lat="56.1168205" lon="37.2114347" />
+ <node id="10651154528" visible="true" version="1" lat="56.1180683" lon="37.2106852" />
+ <node id="10651154529" visible="true" version="1" lat="56.1175590" lon="37.2080060">
+  <tag k="highway" v="crossing" />
+ </node>
+ <node id="10651154530" visible="true" version="1" lat="56.1178756" lon="37.2096713">
+  <tag k="highway" v="crossing" />
+ </node>
+ <node id="10651154531" visible="true" version="1" lat="56.1202176" lon="37.2056516" />
+ <node id="10651154532" visible="true" version="1" lat="56.1180118" lon="37.2069584" />
+ <node id="10651154533" visible="true" version="1" lat="56.1178002" lon="37.2072660">
+  <tag k="highway" v="crossing" />
+ </node>
+ <node id="10651154534" visible="true" version="1" lat="56.1178845" lon="37.2071435" />
+ <node id="10651154535" visible="true" version="1" lat="56.1175207" lon="37.2053863" />
+ <node id="10651154551" visible="true" version="1" lat="56.1280351" lon="37.2073798" />
+ <node id="10651154552" visible="true" version="2" lat="56.1275190" lon="37.2053265" />
+ <node id="11394508571" visible="true" version="3" lat="56.1132092" lon="37.2120689">
+  <tag k="name" v="Хоругвино" />
+  </node>
+ <node id="11394508572" visible="true" version="3" lat="56.1145301" lon="37.2132800">
+  <tag k="name" v="Хоругвино" />
+  </node>
+ <node id="11394508573" visible="true" version="3" lat="56.1291698" lon="37.2126667">
+  <tag k="name" v="Городок" />
+  </node>
+ <node id="12485110947" visible="true" version="1" lat="56.1139390" lon="37.2143473" />
+ <node id="12485110948" visible="true" version="1" lat="56.1135100" lon="37.2130156" />
+ <node id="12485110949" visible="true" version="1" lat="56.1135704" lon="37.2131368" />
+ <node id="12485110950" visible="true" version="1" lat="56.1136496" lon="37.2132602" />
+ <node id="12485110951" visible="true" version="1" lat="56.1137498" lon="37.2133729" />
+ <node id="12485110952" visible="true" version="1" lat="56.1138336" lon="37.2134319" />
+ <node id="12485110953" visible="true" version="1" lat="56.1139443" lon="37.2134882" />
+ <node id="12485110954" visible="true" version="1" lat="56.1140878" lon="37.2135070" />
+ <node id="12485110955" visible="true" version="1" lat="56.1141853" lon="37.2134951" />
+ <node id="12485110956" visible="true" version="1" lat="56.1147741" lon="37.2136662" />
+ <node id="12485110957" visible="true" version="1" lat="56.1147557" lon="37.2135708" />
+ <node id="12485110958" visible="true" version="1" lat="56.1150270" lon="37.2134032" />
+ <node id="12485110959" visible="true" version="1" lat="56.1150961" lon="37.2137631" />
+ <node id="12485110989" visible="true" version="1" lat="56.1153154" lon="37.2182680" />
+ <node id="12485146461" visible="true" version="1" lat="56.1144974" lon="37.2160862" />
+ <node id="12485146463" visible="true" version="1" lat="56.1168954" lon="37.2113988" />
+ <node id="12485146464" visible="true" version="1" lat="56.1170292" lon="37.2113706" />
+ <node id="12485146465" visible="true" version="1" lat="56.1167668" lon="37.2115020" />
+ <node id="12485146466" visible="true" version="1" lat="56.1167451" lon="37.2116134" />
+ <node id="12485146467" visible="true" version="1" lat="56.1167496" lon="37.2117233" />
+ <node id="12485146468" visible="true" version="1" lat="56.1165712" lon="37.2120266" />
+ <node id="12485146539" visible="true" version="1" lat="56.1138971" lon="37.2138248" />
+ <node id="12485146550" visible="true" version="1" lat="56.1140940" lon="37.2135486" />
+ <node id="12485146551" visible="true" version="1" lat="56.1140235" lon="37.2136170" />
+ <node id="12485146552" visible="true" version="1" lat="56.1139667" lon="37.2136813" />
+ <node id="12485146553" visible="true" version="1" lat="56.1139211" lon="37.2137484" />
+ <node id="12485146554" visible="true" version="1" lat="56.1138844" lon="37.2139227" />
+ <node id="12485146555" visible="true" version="1" lat="56.1138889" lon="37.2140381" />
+ <node id="12485146556" visible="true" version="1" lat="56.1139099" lon="37.2141990" />
+ <node id="12652333083" visible="true" version="1" lat="56.1152647" lon="37.2162467" />
+ <node id="12652333084" visible="true" version="2" lat="56.1151450" lon="37.2173248">
+  <tag k="barrier" v="lift_gate" />
+ </node>
+ <node id="12652333085" visible="true" version="1" lat="56.1157778" lon="37.2159016" />
+ <way id="156265248" visible="true" version="14">
+  <nd ref="4457180852" />
+  <nd ref="2456240516" />
+  <nd ref="2456240517" />
+  <nd ref="60098600" />
+  <nd ref="2456240518" />
+  <nd ref="691905955" />
+  <nd ref="1988472845" />
+  <nd ref="2876136570" />
+  <nd ref="2456240519" />
+  <nd ref="60098601" />
+  <nd ref="2456240520" />
+  <nd ref="2456240521" />
+  <nd ref="361520161" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="no" />
+  <tag k="maxspeed" v="RU:rural" />
+  <tag k="name" v="«Московское малое кольцо»" />
+  <tag k="ref" v="А-107" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="177051297" visible="true" version="9">
+  <nd ref="12485110955" />
+  <nd ref="1875152467" />
+  <nd ref="11394508572" />
+  <nd ref="10651154523" />
+  <nd ref="12485146468" />
+  <nd ref="1875152517" />
+  <nd ref="4320976205" />
+  <nd ref="1875152542" />
+  <nd ref="6769619312" />
+  <nd ref="4320976218" />
+  <nd ref="1875152792" />
+  <nd ref="4320976233" />
+  <nd ref="6769619323" />
+  <nd ref="4320976244" />
+  <nd ref="4320976247" />
+  <nd ref="4320976250" />
+  <nd ref="1875152857" />
+  <nd ref="10651154552" />
+  <nd ref="1875152867" />
+  <nd ref="10651154551" />
+  <nd ref="4319585142" />
+  <nd ref="11394508573" />
+  <tag k="highway" v="tertiary" />
+  <tag k="ref" v="46Н-11369" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="214747794" visible="true" version="2">
+  <nd ref="2242235452" />
+  <nd ref="2242235439" />
+  <nd ref="2242235446" />
+  <nd ref="12485146468" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="397973368" visible="true" version="8">
+  <nd ref="361520161" />
+  <nd ref="2456240522" />
+  <nd ref="2456240523" />
+  <nd ref="11394508571" />
+  <nd ref="12485110948" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="no" />
+  <tag k="maxspeed:backward" v="RU:rural" />
+  <tag k="maxspeed:forward" v="70" />
+  <tag k="name" v="«Московское малое кольцо»" />
+  <tag k="ref" v="А-107" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="433252711" visible="true" version="3">
+  <nd ref="1875152467" />
+  <nd ref="4320976191" />
+  <nd ref="4320976197" />
+  <nd ref="12485110959" />
+  <nd ref="12485110958" />
+  <nd ref="12485110957" />
+  <nd ref="12485110956" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="433252712" visible="true" version="1">
+  <nd ref="4320976205" />
+  <nd ref="4320976210" />
+  <nd ref="4320976211" />
+  <nd ref="4320976212" />
+  <nd ref="4320976215" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="1144274480" visible="true" version="1">
+  <nd ref="10651154522" />
+  <nd ref="10651154523" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="1144274481" visible="true" version="2">
+  <nd ref="10651154524" />
+  <nd ref="10651154533" />
+  <nd ref="10651154534" />
+  <nd ref="10651154532" />
+  <nd ref="10651154531" />
+  <nd ref="10651154525" />
+  <nd ref="10651154528" />
+  <nd ref="10651154526" />
+  <nd ref="12485146464" />
+  <nd ref="12485146463" />
+  <nd ref="10651154527" />
+  <nd ref="12485146465" />
+  <nd ref="12485146466" />
+  <nd ref="12485146467" />
+  <nd ref="1875152517" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="1144274482" visible="true" version="1">
+  <nd ref="10651154524" />
+  <nd ref="10651154529" />
+  <nd ref="10651154530" />
+  <nd ref="10651154528" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="1144274483" visible="true" version="1">
+  <nd ref="10651154534" />
+  <nd ref="10651154535" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="1192031215" visible="true" version="2">
+  <nd ref="12485146461" />
+  <nd ref="2456240524" />
+  <nd ref="2456240525" />
+  <nd ref="361520153" />
+  <nd ref="1875152482" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="no" />
+  <tag k="maxspeed" v="RU:rural" />
+  <tag k="name" v="«Московское малое кольцо»" />
+  <tag k="ref" v="А-107" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="1349625746" visible="true" version="1">
+  <nd ref="12485110947" />
+  <nd ref="361520145" />
+  <nd ref="12485146461" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="no" />
+  <tag k="maxspeed:backward" v="70" />
+  <tag k="maxspeed:forward" v="RU:rural" />
+  <tag k="name" v="«Московское малое кольцо»" />
+  <tag k="ref" v="А-107" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="1349625752" visible="true" version="1">
+  <nd ref="12485110948" />
+  <nd ref="1875152465" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="no" />
+  <tag k="maxspeed:backward" v="RU:rural" />
+  <tag k="maxspeed:forward" v="70" />
+  <tag k="name" v="«Московское малое кольцо»" />
+  <tag k="ref" v="А-107" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="1349625753" visible="true" version="1">
+  <nd ref="1875152465" />
+  <nd ref="12485110947" />
+  <tag k="highway" v="trunk" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="no" />
+  <tag k="maxspeed:backward" v="70" />
+  <tag k="maxspeed:forward" v="RU:rural" />
+  <tag k="name" v="«Московское малое кольцо»" />
+  <tag k="ref" v="А-107" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="1349625754" visible="true" version="2">
+  <nd ref="12485146550" />
+  <nd ref="12485110955" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lanes" v="1" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="46Н-11369" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="1349625755" visible="true" version="2">
+  <nd ref="1875152465" />
+  <nd ref="12485146550" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lanes" v="1" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="46Н-11369" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="1349625758" visible="true" version="1">
+  <nd ref="12485110947" />
+  <nd ref="12485146556" />
+  <nd ref="12485146555" />
+  <nd ref="12485146554" />
+  <nd ref="12485146539" />
+  <nd ref="12485146553" />
+  <nd ref="12485146552" />
+  <nd ref="12485146551" />
+  <nd ref="12485146550" />
+  <tag k="highway" v="tertiary_link" />
+  <tag k="lanes" v="1" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="1349625759" visible="true" version="1">
+  <nd ref="12485110955" />
+  <nd ref="12485110954" />
+  <nd ref="12485110953" />
+  <nd ref="12485110952" />
+  <nd ref="12485110951" />
+  <nd ref="12485110950" />
+  <nd ref="12485110949" />
+  <nd ref="12485110948" />
+  <tag k="highway" v="tertiary_link" />
+  <tag k="lanes" v="1" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="1366225642" visible="true" version="1">
+  <nd ref="12485110989" />
+  <nd ref="12652333084" />
+  <nd ref="12652333083" />
+  <nd ref="12652333085" />
+  <tag k="highway" v="service" />
+ </way>
+ <relation id="16136428" visible="true" version="1">
+  <member type="way" ref="397973368" role="from" />
+  <member type="way" ref="156265248" role="to" />
+  <member type="node" ref="361520161" role="via" />
+  <tag k="restriction:hgv" v="only_straight_on" />
+  <tag k="type" v="restriction" />
+ </relation>
+ <relation id="18524310" visible="true" version="1">
+  <member type="way" ref="1349625753" role="from" />
+  <member type="node" ref="12485110947" role="via" />
+  <member type="way" ref="1349625746" role="to" />
+  <tag k="restriction" v="only_straight_on" />
+  <tag k="type" v="restriction" />
+ </relation>
+ <relation id="18524311" visible="true" version="1">
+  <member type="way" ref="1349625759" role="from" />
+  <member type="way" ref="397973368" role="to" />
+  <member type="node" ref="12485110948" role="via" />
+  <tag k="restriction" v="only_right_turn" />
+  <tag k="type" v="restriction" />
+ </relation>
+ <relation id="18524313" visible="true" version="1">
+  <member type="way" ref="1349625754" role="from" />
+  <member type="way" ref="177051297" role="to" />
+  <member type="node" ref="12485110955" role="via" />
+  <tag k="restriction" v="only_straight_on" />
+  <tag k="type" v="restriction" />
+ </relation>
+ <relation id="18542043" visible="true" version="1">
+  <member type="way" ref="1349625753" role="from" />
+  <member type="way" ref="1349625755" role="to" />
+  <member type="node" ref="1875152465" role="via" />
+  <tag k="restriction" v="no_right_turn" />
+  <tag k="type" v="restriction" />
+ </relation>
+</osm>

@@ -1,0 +1,65 @@
+[
+  {
+    "key": "M4-PVP545-lane-product",
+    "what": "Другие ветви/маршруты и re-entry; exact B05 accepted320/410",
+    "checked": "Order58, current tariff web table, 2016 operator article, saved OSM/PODD/route geometry",
+    "why_insufficient": "Для других ветвей нет полного route/product выбора; B05 не unknown.",
+    "needed": "effective operator terms/order + signed lane-to-product schematic or anonymized toll receipt",
+    "likely_holder": "Avtodor operator / toll operations",
+    "do_not_charge": "Не переносить B05 bundle на другие пути."
+  },
+  {
+    "key": "M12-west-gantry-operator",
+    "what": "operator identity for nodes 10782165529,11214930528,11157985901",
+    "checked": "saved OSM raw objects/tags",
+    "why_insufficient": "toll_gantry tag lacks operator or tariff ID",
+    "needed": "official gantry inventory, as-built plan or operator registry",
+    "likely_holder": "Avtodor / M12 system operator",
+    "do_not_charge": "no tariff binding by proximity"
+  },
+  {
+    "key": "M12-exits-287-318-395-442",
+    "what": "physical interchange kilometre ↔ tariff row crosswalk",
+    "checked": "OSM selected routes; Mintrans inventory; calibrated tariff anchors",
+    "why_insufficient": "labels/physical roads do not equal tariff RVP event; 442/421 legal km not equivalent to 420 marker",
+    "needed": "as-built km plan + operator toll zone matrix",
+    "likely_holder": "Avtodor / Mintrans / road owner",
+    "do_not_charge": "no nearest-kilometre matching"
+  },
+  {
+    "key": "M4-62-71",
+    "what": "directional PVP62/71 product/charge and combination",
+    "checked": "existing pilot summary/scenarios",
+    "why_insufficient": "raw request/geometry absent",
+    "needed": "original historical record if available and current operator tariff rules",
+    "likely_holder": "Avtodor / first pilot executor",
+    "do_not_charge": "no inferred sum"
+  },
+  {
+    "key": "ZSD-RVP64-event",
+    "what": "whether node13020687195 creates an independent product event",
+    "checked": "OSM IDs and prior 176m result with absent payment fields; narrow 60-minute rule",
+    "why_insufficient": "absence of payment info cannot mean zero or independent event",
+    "needed": "ZSD toll boundary/product event specification and effective rules",
+    "likely_holder": "WHSD operator",
+    "do_not_charge": "no zero or standalone charge inferred"
+  },
+  {
+    "key": "Pulkovo-directions-composition",
+    "what": "Composition94 for full mainline+airport, not standalone38",
+    "checked": "prior calls, gates 13377945035/13377945036, official tariff schedule",
+    "why_insufficient": "Short source corridors do not show required mainline continuation; standalone38 accepted.",
+    "needed": "current operator route eligibility rule + precise gate-crossing evidence",
+    "likely_holder": "Avtodor/operator billing",
+    "do_not_charge": "Не складывать94 с56/38; не превращать38 в полный тариф M11."
+  },
+  {
+    "key": "M11-PVP18-directed-charge",
+    "what": "exact PVP18 northbound payment attribution",
+    "checked": "Stage7 success and Stage8 closed-system matrix",
+    "why_insufficient": "no raw WKT; saved query summary does not establish physical crossing",
+    "needed": "original saved geometry/payment-detail export; do not repeat successful query",
+    "likely_holder": "initial Stage7 executor / operator",
+    "do_not_charge": "matrix remains intact; do not add directional override"
+  }
+]

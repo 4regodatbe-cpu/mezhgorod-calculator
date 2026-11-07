@@ -1,0 +1,11 @@
+# MASS-300 exact11 subset COMPLETE
+
+Ownerexplicitlyapprovedthe11windowmanifest;11newsequentialrequests eachHTTP200/OK,>=15secapart,noretries. Remaining289slots areunallocated,notexecuted. No claimthat300usefulcalls occurred.
+
+Currentresults:RESULT_COMPARISONS.json,PAYMENT_OBSERVATIONS.json,PHYSICAL_BOUNDARIES.json,NEGATIVE_CONTROLS.json,REFUTED_DESIGN_ASSUMPTIONS.json and per-IDRESULT_SUMMARIES.300-IDCSV ledger,11-rowJSONL,12batchfiles. Quotaobservations/reservations inQUOTA_RECONCILIATION.json;PMlagrequiresseparateaccounting.
+
+Twoexistingdirectedcashbanksprovider-supported,nophysicalobjectsnew;threepredictedshortscopes producedlongdetours. Fourpriorworkingcalculationsunchanged,newworking/receipts/V3defects0. Rawresponse/WKT neverpersisted;onlypermissiblederivativewitnessdistances/counts/aggregates. Hypothesis-source geometryisOSM,notretained2GISgeometry.
+
+APPROVAL_MANIFEST.jsonoriginalPENDINGlabelisimmutablepreapprovalartifact withapprovedSHA;OWNER_APPROVALS.jsonrecordsnewexactconsent and supersedes thathistoricalstatus. GATE_REVIEW historyisnotcurrentblocker for11completedIDs. No newautonomousAPIwork afterfinalreport.
+
+RunREGRESSION_TESTS/verify_campaign.py,test_observations.py,gate-check.mjs,verify_package.py. No runtime/push.

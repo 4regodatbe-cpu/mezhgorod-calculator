@@ -1,0 +1,94 @@
+{
+  "id": "MASS-242",
+  "group": "F",
+  "object": "Pulkovo:13377945036",
+  "type": "after",
+  "status": "response_received",
+  "reservedUnits": 1,
+  "httpAttempts": 1,
+  "summary": {
+    "id": "MASS-242",
+    "at": "2026-11-07T13:27:29.512Z",
+    "expectedUnits": 1,
+    "quotaDeltaObserved": null,
+    "httpStatus": 200,
+    "routeBuildStatus": "OK",
+    "routeCount": 1,
+    "distanceM": 489,
+    "durationS": 36,
+    "geometryLineCount": 3,
+    "geometryPointCount": 18,
+    "invalidGeometryCount": 0,
+    "nearestAnchorM": 266,
+    "nearestAnchorSegmentM": 266,
+    "paymentEventCount": null,
+    "totalPaymentsEntryCount": null,
+    "routeAggregate": null,
+    "perPvpPrice": null,
+    "witnessComparisons": [
+      {
+        "id": "boundary:13377945036",
+        "nearestSegmentM": 266
+      },
+      {
+        "id": "source:12597059610",
+        "nearestSegmentM": 0
+      },
+      {
+        "id": "source:13047772227",
+        "nearestSegmentM": 2
+      },
+      {
+        "id": "source:12597059625",
+        "nearestSegmentM": 0
+      },
+      {
+        "id": "source:12597059626",
+        "nearestSegmentM": 4
+      },
+      {
+        "id": "source:13047772228",
+        "nearestSegmentM": 4
+      },
+      {
+        "id": "source:13047772229",
+        "nearestSegmentM": 5
+      },
+      {
+        "id": "source:13047772230",
+        "nearestSegmentM": 5
+      },
+      {
+        "id": "source:13047772231",
+        "nearestSegmentM": 0
+      }
+    ],
+    "aggregatePaymentSchema": null,
+    "aggregatePaymentValues": null,
+    "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+  },
+  "error": null,
+  "requestParameters": {
+    "points": [
+      {
+        "type": "stop",
+        "lon": 30.3392231,
+        "lat": 59.7901961
+      },
+      {
+        "type": "stop",
+        "lon": 30.3473335,
+        "lat": 59.7890185
+      }
+    ],
+    "transport": "driving",
+    "route_mode": "fastest",
+    "output": "detailed",
+    "need_payment_info": true,
+    "locale": "ru",
+    "alternative": 0
+  },
+  "startedAt": "2026-11-07T13:27:28.619Z",
+  "completedAt": "2026-11-07T13:27:29.512Z",
+  "rawDataRetained": false
+}

@@ -1,0 +1,15 @@
+{
+  "road": "M4",
+  "km": 1093,
+  "url": "https://api.openstreetmap.org/api/0.6/map?bbox=39.7297070,47.0091472,39.7382342,47.0172374",
+  "attemptedAt": 1794059518.7983599,
+  "status": 200,
+  "sourceSha256": "e46869137ecfb297ec9ec13d2f36961f610434047d904ca68f041b51a579b042",
+  "sanitizedSha256": "8c2880c046c19c836f6b2127c458d4c133ed3fdfc794aff5f54adbffd4568008",
+  "bytes": 878657,
+  "sourceContributorFieldsRemoved": true,
+  "roadOnlySha256": "b3ce38ad4df3203496827245b7c3655b2576925fb463d46a4f1a753f5f046399",
+  "roadOnlyBytes": 12743,
+  "artifactRole": "Road-only derivative; full contributor-redacted map retained separately outside Git",
+  "originalSanitizedInputSha256": "8c2880c046c19c836f6b2127c458d4c133ed3fdfc794aff5f54adbffd4568008"
+}

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.1 (1260599 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/"><bounds minlat="45.1654080" minlon="38.5267744" maxlat="45.1774080" maxlon="38.5387744" />
+ <node id="12786198712" visible="true" version="1" lat="45.1790769" lon="38.5222232" />
+ <node id="12786198713" visible="true" version="1" lat="45.1780898" lon="38.5235408" />
+ <node id="12786198714" visible="true" version="1" lat="45.1801546" lon="38.5207554" />
+ <node id="12788925945" visible="true" version="1" lat="45.1892386" lon="38.5081536" />
+ <node id="12788925946" visible="true" version="1" lat="45.1891479" lon="38.5080339" />
+ <node id="12788925949" visible="true" version="3" lat="45.1657880" lon="38.5403088" />
+ <node id="12788925950" visible="true" version="3" lat="45.1658783" lon="38.5404134" />
+ <node id="13022464435" visible="true" version="1" lat="45.1714080" lon="38.5327744">
+  <tag k="highway" v="toll_gantry" />
+  <tag k="operator" v="Автодор" />
+  <tag k="ref" v="РВП 23км" />
+ </node>
+ <node id="13022464436" visible="true" version="1" lat="45.1713281" lon="38.5326562">
+  <tag k="highway" v="toll_gantry" />
+  <tag k="operator" v="Автодор" />
+  <tag k="ref" v="РВП 23км" />
+ </node>
+ <way id="1032875650" visible="true" version="9">
+  <nd ref="12788925946" />
+  <nd ref="13022464436" />
+  <nd ref="12788925949" />
+  <tag k="highway" v="trunk" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="А-289" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="1344645869" visible="true" version="7">
+  <nd ref="12788925950" />
+  <nd ref="13022464435" />
+  <nd ref="12786198713" />
+  <nd ref="12786198712" />
+  <nd ref="12786198714" />
+  <nd ref="12788925945" />
+  <tag k="highway" v="trunk" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="А-289" />
+  <tag k="toll" v="yes" />
+ </way>
+ </osm>

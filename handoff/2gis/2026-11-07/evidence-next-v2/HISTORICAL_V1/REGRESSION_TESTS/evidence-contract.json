@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "invariants": [
+    "physical crossing does not imply tariff product",
+    "direction is required for every binding",
+    "missing payment fields are not zero fare",
+    "partial trace cannot confirm a route-wide product",
+    "adjacent tariff rows are not summed without operator rule",
+    "unknown binding yields null/unknown",
+    "outcome_unknown CKAD request is never replayed",
+    "M11 Stage8 matrix remains unchanged"
+  ]
+}

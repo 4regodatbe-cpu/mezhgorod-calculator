@@ -1,0 +1,153 @@
+[
+  {
+    "road": "M4",
+    "km": 62,
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=37.8636659,55.2315419,37.8744964,55.2426828",
+    "attemptedAt": 1794059500.5568094,
+    "status": 200,
+    "sourceSha256": "6a58f3d27596586ca487cf032c4fd70f9135babf2cf9de1a4f240aca5938f4ef",
+    "sanitizedSha256": "714ca6ee593ed3cd363374da8ba9d44e342189bde11c9242cc2956f82fcc9df6",
+    "bytes": 1526575,
+    "sourceContributorFieldsRemoved": true
+  },
+  {
+    "road": "M4",
+    "km": 71,
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=37.9140971,55.1641572,37.9243749,55.1723873",
+    "attemptedAt": 1794059502.6860614,
+    "status": 200,
+    "sourceSha256": "c7357d9e9d2c97df2674e559870033825053476ea5e4d47deb8944355d55f7a4",
+    "sanitizedSha256": "8d93459bded5ecf5476da6c46902fc51e57428dda5a8fb014deab01d1e7cca35",
+    "bytes": 1548569,
+    "sourceContributorFieldsRemoved": true
+  },
+  {
+    "road": "M4",
+    "km": 228,
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=38.0438519,53.8740756,38.0531744,53.8822986",
+    "attemptedAt": 1794059504.1935084,
+    "status": 200,
+    "sourceSha256": "a798167fbfd41e2363dce15aa1b54f12f06dc0eb1fc95113fc7ef33155a024e4",
+    "sanitizedSha256": "b4b595557e8a31c118425f99c8e66c7d2b0f99b28992827089e97d3575282f4e",
+    "bytes": 754434,
+    "sourceContributorFieldsRemoved": true
+  },
+  {
+    "road": "M4",
+    "km": 322,
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=38.1652250,53.0837796,38.1740167,53.0929502",
+    "attemptedAt": 1794059505.4793432,
+    "status": 200,
+    "sourceSha256": "ba434f989b7b8e13511a115c4ae4a5db29c1c9d7377aaab57dba4ebc08304315",
+    "sanitizedSha256": "cf3dabcc63e9fda3ff34b752acc4d3108a01dfb633646b63777eba170f4a253c",
+    "bytes": 3097772,
+    "sourceContributorFieldsRemoved": true
+  },
+  {
+    "road": "M4",
+    "km": 339,
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=38.2103928,52.9270581,38.2189183,52.9351253",
+    "attemptedAt": 1794059507.145105,
+    "status": 200,
+    "sourceSha256": "135700ec545be5efe51f682eda97b9fcec5f16c53f3261d035236ffdcc3a93ba",
+    "sanitizedSha256": "12cf8618c8085ecc8f3fc0c2a598a60b7d397be86e0a8a59ac5ed5c9fd9defb9",
+    "bytes": 745558,
+    "sourceContributorFieldsRemoved": true
+  },
+  {
+    "road": "M4",
+    "km": 355,
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=38.3107948,52.7940213,38.3187948,52.8020213",
+    "attemptedAt": 1794059508.5608506,
+    "status": 200,
+    "sourceSha256": "960539589b7b33f47b439ace0f2ce262dbb0c89b3243ea532aace18b1c678f8b",
+    "sanitizedSha256": "54480ec08d2050b17dbe8e5a4c95b92c39d2dc2e4581d07ec1d0e9236c333fdb",
+    "bytes": 770756,
+    "sourceContributorFieldsRemoved": true
+  },
+  {
+    "road": "M4",
+    "km": 416,
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=38.8202595,52.4260065,38.8289697,52.4342979",
+    "attemptedAt": 1794059509.8606346,
+    "status": 200,
+    "sourceSha256": "b73bcf98849ddae76aa05f0a9f37b441169c3d44525f86da11a684afe1fb124c",
+    "sanitizedSha256": "7bcb936ef86e15d37789c51d7c202a92b4913c10850a3654857a60f54f95bec5",
+    "bytes": 896131,
+    "sourceContributorFieldsRemoved": true
+  },
+  {
+    "road": "M4",
+    "km": 460,
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=38.7141607,52.1215059,39.1994502,52.5544745",
+    "attemptedAt": 1794059511.2148516,
+    "status": 400,
+    "error": "HTTPError"
+  },
+  {
+    "road": "M4",
+    "km": 620,
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=39.9718437,50.8629241,39.9801055,50.8710530",
+    "attemptedAt": 1794059514.3336244,
+    "status": 200,
+    "sourceSha256": "41615dbb43af8d15bcf376ccc763e99708eacef1ff5e3e9643abca2d9c885792",
+    "sanitizedSha256": "520257ba3f48b031f95bfb7609f4054781fc0db2dd6d23bdb677cb58583477cb",
+    "bytes": 856205,
+    "sourceContributorFieldsRemoved": true
+  },
+  {
+    "road": "M4",
+    "km": 636,
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=40.0432869,50.7467474,40.0514738,50.7548690",
+    "attemptedAt": 1794059516.2770488,
+    "status": 200,
+    "sourceSha256": "9cd9f2b129bc6c3cf4fef4ec8da935753fa91739ab51b21318f3c908f6afc95b",
+    "sanitizedSha256": "c07b39df16f8df8997795e7841f3b1af13c7854ba9080825482d7f6189b2d599",
+    "bytes": 428636,
+    "sourceContributorFieldsRemoved": true
+  },
+  {
+    "road": "M4",
+    "km": 672,
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=40.1630320,50.4474748,40.1711912,50.4554782",
+    "attemptedAt": 1794059517.5246563,
+    "status": 200,
+    "sourceSha256": "997da672513a43c887a0cf01221e68bd4e417fd1b5d58dd97f68281a0ebff49c",
+    "sanitizedSha256": "c65ad9ddbd25f3fcea605e853a89b2cb82ad3b3519ccb64e2330d978325765ef",
+    "bytes": 513145,
+    "sourceContributorFieldsRemoved": true
+  },
+  {
+    "road": "M4",
+    "km": 1093,
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=39.7297070,47.0091472,39.7382342,47.0172374",
+    "attemptedAt": 1794059518.7983599,
+    "status": 200,
+    "sourceSha256": "e46869137ecfb297ec9ec13d2f36961f610434047d904ca68f041b51a579b042",
+    "sanitizedSha256": "8c2880c046c19c836f6b2127c458d4c133ed3fdfc794aff5f54adbffd4568008",
+    "bytes": 878657,
+    "sourceContributorFieldsRemoved": true
+  },
+  {
+    "road": "M4",
+    "km": 1184,
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=39.8272353,46.2264483,39.8358266,46.2344505",
+    "attemptedAt": 1794059520.1096706,
+    "status": 200,
+    "sourceSha256": "36e000ca9cf2383f9f8426cb0a45974741bbf68aca57366897fc7cc07f5aff9b",
+    "sanitizedSha256": "fae73440cf2be258706bbdf2ea42c3c6a33f046e693ed9cbb586b20618d9ad84",
+    "bytes": 890806,
+    "sourceContributorFieldsRemoved": true
+  },
+  {
+    "road": "M4",
+    "km": 1223,
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=39.7058448,45.9116303,39.7142311,45.9197016",
+    "attemptedAt": 1794059521.4416537,
+    "status": 200,
+    "sourceSha256": "71f8d78d1654cbb88ce2c8edf22540806540c7609dbd55beea9980296474bdc3",
+    "sanitizedSha256": "7e40be418d8b38768426711b97aef36ad4632222bd903ed7caade17a8f3e9a12",
+    "bytes": 955745,
+    "sourceContributorFieldsRemoved": true
+  }
+]

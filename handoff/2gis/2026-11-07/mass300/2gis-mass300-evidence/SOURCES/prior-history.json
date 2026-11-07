@@ -1,0 +1,310 @@
+{
+  "attempts": [
+    {
+      "id": "ckad-m11-m12",
+      "status": "outcome_unknown",
+      "startedAt": "2026-11-05T21:27:31.022Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 991,
+      "observedQuotaDelta": 0,
+      "completedAt": "2026-11-05T21:27:31.126Z",
+      "quotaRemainingAfter": 991,
+      "quotaCheckedAt": "2026-11-05T21:30:30.000Z",
+      "quotaCheckReference": "Owner-reported after-attempt Platform Manager counter readback, 2026-11-06"
+    },
+    {
+      "id": "m11-15-58",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 37.2144063,
+            "lat": 56.0917554
+          },
+          {
+            "type": "stop",
+            "lon": 37.2004102,
+            "lat": 56.0897492
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 2
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-06T08:52:01.028Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 990,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-06T08:52:02.836Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 6369,
+      "durationS": 514,
+      "geometryLineCount": 13,
+      "geometryPointCount": 252,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": null,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null
+    },
+    {
+      "id": "zsd-rvp64-exit",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 30.2234101,
+            "lat": 59.9617618
+          },
+          {
+            "type": "stop",
+            "lon": 30.2204329,
+            "lat": 59.9612328
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-06T08:56:13.066Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 989,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-06T08:56:15.020Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 176,
+      "durationS": 17,
+      "geometryLineCount": 3,
+      "geometryPointCount": 9,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 26,
+      "paymentEventCount": null,
+      "totalPaymentsEntryCount": null,
+      "routeAggregate": null,
+      "perPvpPrice": null
+    },
+    {
+      "id": "m11-pulkovo-airport-access",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 30.3392171,
+            "lat": 59.7903025
+          },
+          {
+            "type": "stop",
+            "lon": 30.3260124,
+            "lat": 59.79012
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-06T09:07:29.119Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 988,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-06T09:07:30.174Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 741,
+      "durationS": 48,
+      "geometryLineCount": 3,
+      "geometryPointCount": 7,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 266,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null
+    },
+    {
+      "id": "pulkovo-m11-airport-access-reverse",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 30.3259779,
+            "lat": 59.7900004
+          },
+          {
+            "type": "stop",
+            "lon": 30.3407729,
+            "lat": 59.7901549
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-06T09:10:24.948Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 987,
+      "observedQuotaDelta": null,
+      "completedAt": "2026-11-06T09:10:26.415Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 830,
+      "durationS": 51,
+      "geometryLineCount": 4,
+      "geometryPointCount": 10,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 240,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null
+    },
+    {
+      "id": "sprint-m12-22h0239-exit",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 43.5592535,
+            "lat": 55.5010349
+          },
+          {
+            "type": "stop",
+            "lon": 43.5710408,
+            "lat": 55.497983
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T12:51:59.828Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 987,
+      "observedQuotaDelta": 1,
+      "completedAt": "2026-11-07T12:52:02.198Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 1075,
+      "durationS": 112,
+      "geometryLineCount": 5,
+      "geometryPointCount": 22,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 4,
+      "nearestAnchorSegmentM": 4,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "witnessComparisons": [
+        {
+          "id": "22H0239-connector-node10090995838",
+          "nearestSegmentM": 4
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 311,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained",
+      "quotaRemainingAfter": 986
+    },
+    {
+      "id": "sprint-m4-545-northbound-approach-exit",
+      "requestParameters": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": 39.554631,
+            "lat": 51.4679181
+          },
+          {
+            "type": "stop",
+            "lon": 39.5543378,
+            "lat": 51.4728672
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      },
+      "status": "response_received",
+      "startedAt": "2026-11-07T12:53:05.290Z",
+      "expectedUnits": 1,
+      "quotaRemainingBefore": 986,
+      "observedQuotaDelta": 1,
+      "completedAt": "2026-11-07T12:53:06.480Z",
+      "httpStatus": 200,
+      "routeBuildStatus": "OK",
+      "routeCount": 1,
+      "distanceM": 550,
+      "durationS": 54,
+      "geometryLineCount": 4,
+      "geometryPointCount": 13,
+      "invalidGeometryCount": 0,
+      "nearestAnchorM": 17,
+      "nearestAnchorSegmentM": 17,
+      "paymentEventCount": 2,
+      "totalPaymentsEntryCount": 1,
+      "routeAggregate": null,
+      "perPvpPrice": null,
+      "witnessComparisons": [
+        {
+          "id": "gate5818209495",
+          "nearestSegmentM": 17
+        }
+      ],
+      "aggregatePaymentSchema": [
+        [
+          "cost",
+          "currency"
+        ]
+      ],
+      "aggregatePaymentValues": [
+        {
+          "cost": 250,
+          "currency": "RUB"
+        }
+      ],
+      "detailedDataRetention": "transient processing only; no WKT or raw payment events retained",
+      "quotaRemainingAfter": 985
+    }
+  ]
+}

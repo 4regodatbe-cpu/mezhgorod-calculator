@@ -1,0 +1,1029 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.1 (1680748 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/"><bounds minlat="56.1331684" minlon="37.0652818" maxlat="56.1451684" maxlon="37.0772818" />
+ <node id="314817049" visible="true" version="4" lat="56.1306700" lon="37.0682084">
+  </node>
+ <node id="314817051" visible="true" version="3" lat="56.1320383" lon="37.0705165" />
+ <node id="314817055" visible="true" version="5" lat="56.1305700" lon="37.0680172" />
+ <node id="661981981" visible="true" version="4" lat="56.1511897" lon="37.0598460" />
+ <node id="670217537" visible="true" version="3" lat="56.1330895" lon="37.0718256" />
+ <node id="670217539" visible="true" version="3" lat="56.1337218" lon="37.0725968" />
+ <node id="670217550" visible="true" version="2" lat="56.1349317" lon="37.0749319" />
+ <node id="670217551" visible="true" version="3" lat="56.1361542" lon="37.0771375" />
+ <node id="670217552" visible="true" version="2" lat="56.1363573" lon="37.0776047" />
+ <node id="670217554" visible="true" version="2" lat="56.1364528" lon="37.0781380" />
+ <node id="670217555" visible="true" version="3" lat="56.1364792" lon="37.0786915" />
+ <node id="670217556" visible="true" version="2" lat="56.1363020" lon="37.0808247" />
+ <node id="670217557" visible="true" version="2" lat="56.1365589" lon="37.0818611" />
+ <node id="670217558" visible="true" version="3" lat="56.1369470" lon="37.0831814" />
+ <node id="670217559" visible="true" version="3" lat="56.1372607" lon="37.0850551" />
+ <node id="670217561" visible="true" version="3" lat="56.1376789" lon="37.0887579" />
+ <node id="670217663" visible="true" version="5" lat="56.1378217" lon="37.0895733" />
+ <node id="670217664" visible="true" version="5" lat="56.1383187" lon="37.0924417" />
+ <node id="776442089" visible="true" version="3" lat="56.1508299" lon="37.0592637" />
+ <node id="1360231813" visible="true" version="5" lat="56.1391837" lon="37.0662048" />
+ <node id="1831907767" visible="true" version="2" lat="56.1479767" lon="37.0605522" />
+ <node id="1974029693" visible="true" version="4" lat="56.1390232" lon="37.0640566" />
+ <node id="1974029734" visible="true" version="4" lat="56.1385038" lon="37.0640966" />
+ <node id="2244945724" visible="true" version="2" lat="56.1362458" lon="37.0802304" />
+ <node id="2244945743" visible="true" version="2" lat="56.1362643" lon="37.0798573" />
+ <node id="2244945760" visible="true" version="2" lat="56.1370998" lon="37.0839123" />
+ <node id="2244945780" visible="true" version="4" lat="56.1379270" lon="37.0901739" />
+ <node id="2244945874" visible="true" version="2" lat="56.1325148" lon="37.0712291" />
+ <node id="2563798136" visible="true" version="2" lat="56.1458077" lon="37.0622242" />
+ <node id="3103574547" visible="true" version="8" lat="56.1387043" lon="37.0559233" />
+ <node id="3103574550" visible="true" version="2" lat="56.1398073" lon="37.0689067" />
+ <node id="3103574551" visible="true" version="13" lat="56.1405170" lon="37.0783020">
+  <tag k="highway" v="motorway_junction" />
+ </node>
+ <node id="3242874071" visible="true" version="3" lat="56.1384998" lon="37.0930740" />
+ <node id="3242874072" visible="true" version="3" lat="56.1386582" lon="37.0935375" />
+ <node id="3242877471" visible="true" version="10" lat="56.1385739" lon="37.0559359" />
+ <node id="3242877472" visible="true" version="5" lat="56.1395754" lon="37.0737896" />
+ <node id="3242877473" visible="true" version="8" lat="56.1404166" lon="37.0782915" />
+ <node id="3243217921" visible="true" version="6" lat="56.1387064" lon="37.0641248" />
+ <node id="3243217922" visible="true" version="10" lat="56.1388243" lon="37.0678016">
+  <tag k="maxspeed" v="40" />
+  </node>
+ <node id="3243217923" visible="true" version="3" lat="56.1388070" lon="37.0640860" />
+ <node id="3243217924" visible="true" version="5" lat="56.1390497" lon="37.0680577" />
+ <node id="3243217925" visible="true" version="4" lat="56.1391470" lon="37.0680682" />
+ <node id="3243217926" visible="true" version="9" lat="56.1391684" lon="37.0712818">
+  <tag k="barrier" v="toll_booth" />
+  <tag k="maxwidth" v="3.2 m" />
+  </node>
+ <node id="3243217927" visible="true" version="9" lat="56.1394333" lon="37.0679315">
+  <tag k="maxspeed" v="implicit" />
+  </node>
+ <node id="3243217928" visible="true" version="6" lat="56.1400608" lon="37.0709533">
+  <tag k="barrier" v="toll_booth" />
+  <tag k="maxwidth" v="3.2 m" />
+ </node>
+ <node id="3248972180" visible="true" version="4" lat="56.1385752" lon="37.0612370" />
+ <node id="3248972183" visible="true" version="3" lat="56.1386881" lon="37.0612005" />
+ <node id="3282669163" visible="true" version="4" lat="56.1388667" lon="37.0662778" />
+ <node id="3282669164" visible="true" version="2" lat="56.1389659" lon="37.0662623" />
+ <node id="3283566518" visible="true" version="3" lat="56.1387661" lon="37.0691466" />
+ <node id="3283566519" visible="true" version="7" lat="56.1389671" lon="37.0713799">
+  <tag k="barrier" v="toll_booth" />
+  <tag k="maxwidth" v="6 m" />
+  </node>
+ <node id="3283566520" visible="true" version="4" lat="56.1392218" lon="37.0730727" />
+ <node id="3283566521" visible="true" version="1" lat="56.1402473" lon="37.0697616" />
+ <node id="3283566523" visible="true" version="5" lat="56.1403764" lon="37.0708277">
+  <tag k="barrier" v="toll_booth" />
+  <tag k="maxwidth" v="6 m" />
+ </node>
+ <node id="3283566524" visible="true" version="1" lat="56.1405149" lon="37.0720250" />
+ <node id="3285295719" visible="true" version="2" lat="56.1387000" lon="37.0663848" />
+ <node id="3285298692" visible="true" version="1" lat="56.1385342" lon="37.0590229" />
+ <node id="3285298693" visible="true" version="2" lat="56.1386573" lon="37.0590169" />
+ <node id="3287136176" visible="true" version="3" lat="56.1402600" lon="37.0744641" />
+ <node id="3450750207" visible="true" version="1" lat="56.1311546" lon="37.0690296" />
+ <node id="3450750233" visible="true" version="1" lat="56.1314386" lon="37.0695736" />
+ <node id="3450750273" visible="true" version="1" lat="56.1317402" lon="37.0700447" />
+ <node id="3450750769" visible="true" version="1" lat="56.1326038" lon="37.0710915" />
+ <node id="3450750804" visible="true" version="1" lat="56.1327914" lon="37.0707996">
+  </node>
+ <node id="3450750849" visible="true" version="1" lat="56.1330254" lon="37.0719846" />
+ <node id="3450750850" visible="true" version="1" lat="56.1330254" lon="37.0720653" />
+ <node id="3450750868" visible="true" version="1" lat="56.1331403" lon="37.0676170" />
+ <node id="3450750871" visible="true" version="1" lat="56.1331519" lon="37.0677262" />
+ <node id="3450750879" visible="true" version="1" lat="56.1332109" lon="37.0722745" />
+ <node id="3450750885" visible="true" version="1" lat="56.1332670" lon="37.0679537" />
+ <node id="3450750890" visible="true" version="1" lat="56.1332992" lon="37.0714790" />
+ <node id="3450750894" visible="true" version="1" lat="56.1333267" lon="37.0699121" />
+ <node id="3450750896" visible="true" version="1" lat="56.1333345" lon="37.0696742" />
+ <node id="3450750906" visible="true" version="1" lat="56.1334299" lon="37.0716144" />
+ <node id="3450750907" visible="true" version="1" lat="56.1334417" lon="37.0671196" />
+ <node id="3450750910" visible="true" version="1" lat="56.1334938" lon="37.0671386" />
+ <node id="3450750916" visible="true" version="1" lat="56.1335369" lon="37.0689640" />
+ <node id="3450750918" visible="true" version="1" lat="56.1335437" lon="37.0688600" />
+ <node id="3450750919" visible="true" version="1" lat="56.1335437" lon="37.0690204" />
+ <node id="3450750923" visible="true" version="1" lat="56.1335587" lon="37.0687881">
+  <tag k="barrier" v="gate" />
+ </node>
+ <node id="3450750924" visible="true" version="1" lat="56.1335705" lon="37.0691008" />
+ <node id="3450750925" visible="true" version="1" lat="56.1335846" lon="37.0704308" />
+ <node id="3450750926" visible="true" version="1" lat="56.1336046" lon="37.0724376" />
+ <node id="3450750928" visible="true" version="1" lat="56.1336175" lon="37.0686466" />
+ <node id="3450750929" visible="true" version="1" lat="56.1336243" lon="37.0692143" />
+ <node id="3450750930" visible="true" version="1" lat="56.1336281" lon="37.0730308" />
+ <node id="3450750934" visible="true" version="1" lat="56.1336600" lon="37.0686396" />
+ <node id="3450750935" visible="true" version="1" lat="56.1336811" lon="37.0693218" />
+ <node id="3450750936" visible="true" version="1" lat="56.1336898" lon="37.0691958" />
+ <node id="3450750937" visible="true" version="1" lat="56.1336913" lon="37.0730762" />
+ <node id="3450750940" visible="true" version="1" lat="56.1337220" lon="37.0707788" />
+ <node id="3450750941" visible="true" version="1" lat="56.1337362" lon="37.0693463" />
+ <node id="3450750943" visible="true" version="1" lat="56.1337489" lon="37.0753401" />
+ <node id="3450750947" visible="true" version="1" lat="56.1337993" lon="37.0709744" />
+ <node id="3450750948" visible="true" version="1" lat="56.1338007" lon="37.0727362" />
+ <node id="3450750956" visible="true" version="1" lat="56.1339064" lon="37.0729229" />
+ <node id="3450750958" visible="true" version="1" lat="56.1339100" lon="37.0722812" />
+ <node id="3450750960" visible="true" version="1" lat="56.1339233" lon="37.0688418" />
+ <node id="3450750964" visible="true" version="1" lat="56.1339628" lon="37.0680717" />
+ <node id="3450750965" visible="true" version="1" lat="56.1339661" lon="37.0681665" />
+ <node id="3450750967" visible="true" version="2" lat="56.1339921" lon="37.0727793">
+  <tag k="barrier" v="gate" />
+ </node>
+ <node id="3450750968" visible="true" version="1" lat="56.1340214" lon="37.0699157" />
+ <node id="3450750974" visible="true" version="1" lat="56.1340872" lon="37.0685981" />
+ <node id="3450750975" visible="true" version="1" lat="56.1341016" lon="37.0748661" />
+ <node id="3450751195" visible="true" version="2" lat="56.1342550" lon="37.0747172" />
+ <node id="3450751198" visible="true" version="1" lat="56.1342866" lon="37.0695297" />
+ <node id="3450751201" visible="true" version="1" lat="56.1343103" lon="37.0683539" />
+ <node id="3450751204" visible="true" version="1" lat="56.1343458" lon="37.0715505" />
+ <node id="3450751208" visible="true" version="1" lat="56.1343595" lon="37.0742163" />
+ <node id="3450751210" visible="true" version="1" lat="56.1343694" lon="37.0715110" />
+ <node id="3450751215" visible="true" version="1" lat="56.1344204" lon="37.0738905" />
+ <node id="3450751221" visible="true" version="1" lat="56.1344603" lon="37.0707919" />
+ <node id="3450751225" visible="true" version="1" lat="56.1345104" lon="37.0714996" />
+ <node id="3450751238" visible="true" version="1" lat="56.1346094" lon="37.0710893" />
+ <node id="3450751240" visible="true" version="1" lat="56.1346134" lon="37.0717382" />
+ <node id="3450751243" visible="true" version="1" lat="56.1346486" lon="37.0702151" />
+ <node id="3450751245" visible="true" version="1" lat="56.1346710" lon="37.0712124" />
+ <node id="3450751257" visible="true" version="1" lat="56.1347815" lon="37.0708002" />
+ <node id="3450751266" visible="true" version="1" lat="56.1348204" lon="37.0721308" />
+ <node id="3450751273" visible="true" version="1" lat="56.1348540" lon="37.0706785" />
+ <node id="3450751292" visible="true" version="1" lat="56.1351419" lon="37.0703685" />
+ <node id="3450751397" visible="true" version="1" lat="56.1352793" lon="37.0701383" />
+ <node id="3455722953" visible="true" version="2" lat="56.1458923" lon="37.0621222" />
+ <node id="3455722954" visible="true" version="2" lat="56.1477603" lon="37.0606642" />
+ <node id="3455722955" visible="true" version="2" lat="56.1478972" lon="37.0606015" />
+ <node id="3455722958" visible="true" version="2" lat="56.1481947" lon="37.0604170" />
+ <node id="3455722961" visible="true" version="2" lat="56.1490449" lon="37.0600147" />
+ <node id="3455722962" visible="true" version="2" lat="56.1497677" lon="37.0596693" />
+ <node id="3455722963" visible="true" version="2" lat="56.1509279" lon="37.0592467" />
+ <node id="3455722965" visible="true" version="2" lat="56.1510121" lon="37.0592529" />
+ <node id="3455722967" visible="true" version="2" lat="56.1510624" lon="37.0592892" />
+ <node id="3455722968" visible="true" version="2" lat="56.1510989" lon="37.0593500" />
+ <node id="3472270199" visible="true" version="3" lat="56.1417060" lon="37.0655526" />
+ <node id="3472270208" visible="true" version="1" lat="56.1421776" lon="37.0652159" />
+ <node id="3472270209" visible="true" version="2" lat="56.1422792" lon="37.0651744" />
+ <node id="3472270232" visible="true" version="2" lat="56.1427139" lon="37.0647900" />
+ <node id="3472270261" visible="true" version="1" lat="56.1430921" lon="37.0644491" />
+ <node id="3472270267" visible="true" version="1" lat="56.1431581" lon="37.0643963" />
+ <node id="3472270346" visible="true" version="1" lat="56.1436157" lon="37.0640288" />
+ <node id="3472270873" visible="true" version="1" lat="56.1457043" lon="37.0623368" />
+ <node id="3472271112" visible="true" version="1" lat="56.1471860" lon="37.0610941" />
+ <node id="3489304275" visible="true" version="1" lat="56.1342730" lon="37.0736130" />
+ <node id="3489304276" visible="true" version="1" lat="56.1343486" lon="37.0734761">
+  <tag k="barrier" v="gate" />
+ </node>
+ <node id="3489304277" visible="true" version="1" lat="56.1346764" lon="37.0728823" />
+ <node id="3489304278" visible="true" version="1" lat="56.1348074" lon="37.0730589" />
+ <node id="3489304280" visible="true" version="1" lat="56.1348745" lon="37.0725237" />
+ <node id="3489304281" visible="true" version="1" lat="56.1351219" lon="37.0724103" />
+ <node id="3499333357" visible="true" version="4" lat="56.1388800" lon="37.0684002" />
+ <node id="3544452633" visible="true" version="4" lat="56.1403636" lon="37.0755518">
+  <tag k="maxspeed" v="50" />
+  </node>
+ <node id="4099098933" visible="true" version="1" lat="56.1347336" lon="37.0745284" />
+ <node id="4099098935" visible="true" version="1" lat="56.1348711" lon="37.0710254" />
+ <node id="4099098936" visible="true" version="1" lat="56.1353658" lon="37.0736540" />
+ <node id="4099098937" visible="true" version="1" lat="56.1358292" lon="37.0728493" />
+ <node id="4099098945" visible="true" version="1" lat="56.1371747" lon="37.0844443" />
+ <node id="5170196691" visible="true" version="2" lat="56.1390334" lon="37.0713516">
+  <tag k="barrier" v="toll_booth" />
+  <tag k="maxwidth" v="3.2 m" />
+ </node>
+ <node id="5170196692" visible="true" version="2" lat="56.1390866" lon="37.0713247">
+  <tag k="barrier" v="toll_booth" />
+  <tag k="maxwidth" v="3.2 m" />
+ </node>
+ <node id="5170196693" visible="true" version="2" lat="56.1391310" lon="37.0713017">
+  <tag k="barrier" v="toll_booth" />
+  <tag k="maxwidth" v="3.2 m" />
+ </node>
+ <node id="5170196694" visible="true" version="2" lat="56.1392827" lon="37.0731662" />
+ <node id="5170196695" visible="true" version="2" lat="56.1387973" lon="37.0689813" />
+ <node id="5170196696" visible="true" version="2" lat="56.1393578" lon="37.0733249" />
+ <node id="5170196697" visible="true" version="2" lat="56.1388230" lon="37.0688263" />
+ <node id="5170196698" visible="true" version="2" lat="56.1394458" lon="37.0734920" />
+ <node id="5170196699" visible="true" version="2" lat="56.1388580" lon="37.0686635" />
+ <node id="5170196700" visible="true" version="1" lat="56.1403176" lon="37.0708511">
+  <tag k="barrier" v="toll_booth" />
+  <tag k="maxwidth" v="3.2 m" />
+ </node>
+ <node id="5170196701" visible="true" version="1" lat="56.1402522" lon="37.0708771">
+  <tag k="barrier" v="toll_booth" />
+  <tag k="maxwidth" v="3.2 m" />
+ </node>
+ <node id="5170196702" visible="true" version="1" lat="56.1401860" lon="37.0709035">
+  <tag k="barrier" v="toll_booth" />
+  <tag k="maxwidth" v="3.2 m" />
+ </node>
+ <node id="5170196703" visible="true" version="1" lat="56.1401271" lon="37.0709269">
+  <tag k="barrier" v="toll_booth" />
+  <tag k="maxwidth" v="3.2 m" />
+ </node>
+ <node id="5170196704" visible="true" version="1" lat="56.1401643" lon="37.0696003" />
+ <node id="5170196705" visible="true" version="1" lat="56.1404903" lon="37.0722161" />
+ <node id="5170196706" visible="true" version="1" lat="56.1400775" lon="37.0694317" />
+ <node id="5170196707" visible="true" version="1" lat="56.1404540" lon="37.0724977" />
+ <node id="5170196708" visible="true" version="1" lat="56.1399789" lon="37.0692400" />
+ <node id="5170196709" visible="true" version="1" lat="56.1404211" lon="37.0727527" />
+ <node id="5170196710" visible="true" version="1" lat="56.1399035" lon="37.0690936" />
+ <node id="5170196711" visible="true" version="1" lat="56.1403874" lon="37.0730136" />
+ <node id="5557365062" visible="true" version="1" lat="56.1387696" lon="37.0670718" />
+ <node id="5557365063" visible="true" version="1" lat="56.1392658" lon="37.0669296" />
+ <node id="5557372552" visible="true" version="2" lat="56.1404912" lon="37.0735620" />
+ <node id="5557372553" visible="true" version="2" lat="56.1403335" lon="37.0735156" />
+ <node id="5557386256" visible="true" version="1" lat="56.1402536" lon="37.0690647" />
+ <node id="5557386257" visible="true" version="1" lat="56.1405346" lon="37.0698130" />
+ <node id="5557386258" visible="true" version="1" lat="56.1406840" lon="37.0711997" />
+ <node id="5561425989" visible="true" version="1" lat="56.1393428" lon="37.0674178" />
+ <node id="5561464433" visible="true" version="1" lat="56.1413854" lon="37.0637884" />
+ <node id="5561464434" visible="true" version="2" lat="56.1410694" lon="37.0628982" />
+ <node id="5561464435" visible="true" version="2" lat="56.1399179" lon="37.0642916" />
+ <node id="5561464436" visible="true" version="1" lat="56.1414820" lon="37.0656019" />
+ <node id="5561464437" visible="true" version="2" lat="56.1402320" lon="37.0659755" />
+ <node id="5561464439" visible="true" version="2" lat="56.1412615" lon="37.0640252" />
+ <node id="5561464440" visible="true" version="2" lat="56.1397867" lon="37.0647662" />
+ <node id="5561464441" visible="true" version="2" lat="56.1415859" lon="37.0645460" />
+ <node id="5561464442" visible="true" version="2" lat="56.1412922" lon="37.0646703" />
+ <node id="5561464443" visible="true" version="2" lat="56.1410153" lon="37.0648093" />
+ <node id="5561464444" visible="true" version="2" lat="56.1396883" lon="37.0654143" />
+ <node id="5593909454" visible="true" version="2" lat="56.1401247" lon="37.0763091" />
+ <node id="5593909455" visible="true" version="1" lat="56.1399562" lon="37.0752470" />
+ <node id="5593909460" visible="true" version="6" lat="56.1404107" lon="37.0761177" />
+ <node id="5660150419" visible="true" version="3" lat="56.1403779" lon="37.0768023" />
+ <node id="5878067646" visible="true" version="2" lat="56.1402776" lon="37.0767975" />
+ <node id="5878067647" visible="true" version="2" lat="56.1401460" lon="37.0750406" />
+ <node id="5878067648" visible="true" version="2" lat="56.1400444" lon="37.0750782" />
+ <node id="5878067649" visible="true" version="2" lat="56.1397336" lon="37.0723719" />
+ <node id="5878067650" visible="true" version="2" lat="56.1396410" lon="37.0724228" />
+ <node id="7441077272" visible="true" version="1" lat="56.1390210" lon="37.0703225" />
+ <node id="7441077273" visible="true" version="1" lat="56.1392843" lon="37.0720801" />
+ <node id="7441077274" visible="true" version="1" lat="56.1388214" lon="37.0703843" />
+ <node id="7441077275" visible="true" version="1" lat="56.1388826" lon="37.0703673" />
+ <node id="7441077276" visible="true" version="1" lat="56.1389405" lon="37.0703438" />
+ <node id="7441077277" visible="true" version="1" lat="56.1389823" lon="37.0703326" />
+ <node id="7441077278" visible="true" version="1" lat="56.1402608" lon="37.0740625" />
+ <node id="9834446467" visible="true" version="1" lat="56.1345056" lon="37.0777416" />
+ <node id="9834446468" visible="true" version="1" lat="56.1337942" lon="37.0769691" />
+ <node id="9834446469" visible="true" version="1" lat="56.1339556" lon="37.0761806" />
+ <node id="12069818330" visible="true" version="1" lat="56.1404912" lon="37.0772642" />
+ <node id="12069818331" visible="true" version="1" lat="56.1402596" lon="37.0772132" />
+ <node id="12069818332" visible="true" version="1" lat="56.1394018" lon="37.0701376" />
+ <node id="12069818333" visible="true" version="1" lat="56.1393032" lon="37.0701805" />
+ <node id="12104225552" visible="true" version="1" lat="56.1389704" lon="37.0616061">
+  <tag k="maxspeed" v="70" />
+  </node>
+ <node id="12104225553" visible="true" version="1" lat="56.1402491" lon="37.0742682" />
+ <node id="13346664852" visible="true" version="1" lat="56.1436462" lon="37.0640041" />
+ <node id="13346664853" visible="true" version="1" lat="56.1439072" lon="37.0649955" />
+ <node id="13346664854" visible="true" version="1" lat="56.1426907" lon="37.0668854" />
+ <node id="13346664855" visible="true" version="1" lat="56.1430397" lon="37.0659900" />
+ <node id="13346664856" visible="true" version="1" lat="56.1431166" lon="37.0658236" />
+ <node id="13346664857" visible="true" version="1" lat="56.1433552" lon="37.0655193" />
+ <node id="13346664858" visible="true" version="1" lat="56.1439940" lon="37.0649459" />
+ <node id="13346664859" visible="true" version="1" lat="56.1441301" lon="37.0650202" />
+ <node id="13346664860" visible="true" version="1" lat="56.1450863" lon="37.0679436" />
+ <node id="13346664861" visible="true" version="1" lat="56.1435573" lon="37.0653275" />
+ <node id="13346664862" visible="true" version="1" lat="56.1441162" lon="37.0671827" />
+ <node id="13346664863" visible="true" version="1" lat="56.1430890" lon="37.0661103" />
+ <node id="13346664864" visible="true" version="1" lat="56.1433078" lon="37.0667474" />
+ <node id="13346664865" visible="true" version="1" lat="56.1434123" lon="37.0671367" />
+ <node id="13346664866" visible="true" version="1" lat="56.1448891" lon="37.0681807" />
+ <node id="13346664867" visible="true" version="1" lat="56.1405154" lon="37.0650546" />
+ <node id="13346664868" visible="true" version="1" lat="56.1418272" lon="37.0655463" />
+ <node id="13346664869" visible="true" version="1" lat="56.1404677" lon="37.0636232" />
+ <node id="13346664870" visible="true" version="1" lat="56.1409477" lon="37.0628837" />
+ <node id="13346664871" visible="true" version="1" lat="56.1411382" lon="37.0630180" />
+ <node id="13346664872" visible="true" version="1" lat="56.1410074" lon="37.0628686" />
+ <node id="14163660971" visible="true" version="1" lat="56.1362693" lon="37.0804936" />
+ <node id="14163660972" visible="true" version="1" lat="56.1363859" lon="37.0792973" />
+ <way id="28642296" visible="true" version="10">
+  <nd ref="314817055" />
+  <nd ref="314817049" />
+  <nd ref="3450750207" />
+  <nd ref="3450750233" />
+  <nd ref="3450750273" />
+  <nd ref="314817051" />
+  <nd ref="2244945874" />
+  <nd ref="670217537" />
+  <nd ref="3450750926" />
+  <nd ref="670217539" />
+  <nd ref="3450750948" />
+  <nd ref="3450750956" />
+  <nd ref="3489304275" />
+  <nd ref="3450751215" />
+  <nd ref="4099098933" />
+  <nd ref="670217550" />
+  <nd ref="670217551" />
+  <nd ref="670217552" />
+  <nd ref="670217554" />
+  <nd ref="670217555" />
+  <nd ref="14163660972" />
+  <nd ref="2244945743" />
+  <nd ref="2244945724" />
+  <nd ref="14163660971" />
+  <nd ref="670217556" />
+  <nd ref="670217557" />
+  <nd ref="670217558" />
+  <nd ref="2244945760" />
+  <nd ref="4099098945" />
+  <nd ref="670217559" />
+  <nd ref="670217561" />
+  <nd ref="670217663" />
+  <nd ref="2244945780" />
+  <nd ref="670217664" />
+  <nd ref="3242874071" />
+  <nd ref="3242874072" />
+  <tag k="highway" v="unclassified" />
+  <tag k="ref" v="46К-0090" />
+ </way>
+ <way id="169802597" visible="true" version="9">
+  <nd ref="3472270199" />
+  <nd ref="13346664868" />
+  <nd ref="3472270208" />
+  <nd ref="3472270209" />
+  <nd ref="3472270232" />
+  <nd ref="3472270261" />
+  <nd ref="3472270267" />
+  <nd ref="3472270346" />
+  <nd ref="13346664852" />
+  <nd ref="3472270873" />
+  <nd ref="2563798136" />
+  <nd ref="3455722953" />
+  <nd ref="3472271112" />
+  <nd ref="3455722954" />
+  <nd ref="3455722955" />
+  <nd ref="1831907767" />
+  <nd ref="3455722958" />
+  <nd ref="3455722961" />
+  <nd ref="3455722962" />
+  <nd ref="776442089" />
+  <nd ref="3455722963" />
+  <nd ref="3455722965" />
+  <nd ref="3455722967" />
+  <nd ref="3455722968" />
+  <nd ref="661981981" />
+  <tag k="highway" v="residential" />
+  <tag k="maxspeed" v="60" />
+ </way>
+ <way id="305687013" visible="true" version="24">
+  <nd ref="3103574551" />
+  <nd ref="12069818330" />
+  <nd ref="5593909460" />
+  <nd ref="3544452633" />
+  <tag k="highway" v="trunk_link" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="70" />
+  <tag k="name" v="Скоростная автодорога Москва — Санкт-Петербург" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-11" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="317980817" visible="true" version="26">
+  <nd ref="3103574551" />
+  <nd ref="5660150419" />
+  <nd ref="5878067647" />
+  <nd ref="5878067649" />
+  <nd ref="12069818332" />
+  <nd ref="3243217925" />
+  <nd ref="3282669164" />
+  <nd ref="3243217923" />
+  <nd ref="3248972183" />
+  <nd ref="3285298693" />
+  <nd ref="3103574547" />
+  <tag k="highway" v="motorway" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="RU:motorway" />
+  <tag k="maxspeed:designed" v="150" />
+  <tag k="name" v="«Нева»" />
+  <tag k="name:ru" v="«Нева»" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-11" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="318491372" visible="true" version="21">
+  <nd ref="3242877471" />
+  <nd ref="3285298692" />
+  <nd ref="3248972180" />
+  <nd ref="3243217921" />
+  <nd ref="3282669163" />
+  <nd ref="3243217924" />
+  <nd ref="12069818333" />
+  <nd ref="5878067650" />
+  <nd ref="5878067648" />
+  <nd ref="5878067646" />
+  <nd ref="3242877473" />
+  <tag k="highway" v="motorway" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="RU:motorway" />
+  <tag k="maxspeed:designed" v="150" />
+  <tag k="name" v="«Нева»" />
+  <tag k="name:ru" v="«Нева»" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-11" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="321600985" visible="true" version="6">
+  <nd ref="3499333357" />
+  <nd ref="5170196699" />
+  <nd ref="5170196697" />
+  <nd ref="5170196695" />
+  <nd ref="3283566518" />
+  <nd ref="7441077274" />
+  <nd ref="3283566519" />
+  <tag k="highway" v="service" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="40" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="321600986" visible="true" version="5">
+  <nd ref="5557372553" />
+  <nd ref="5170196711" />
+  <nd ref="5170196709" />
+  <nd ref="5170196707" />
+  <nd ref="5170196705" />
+  <nd ref="3283566524" />
+  <nd ref="3283566523" />
+  <tag k="highway" v="service" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="50" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="321762847" visible="true" version="11">
+  <nd ref="1974029734" />
+  <nd ref="3285295719" />
+  <nd ref="5557365062" />
+  <nd ref="3243217922" />
+  <tag k="highway" v="trunk_link" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="RU:rural" />
+  <tag k="name" v="Скоростная автодорога Москва — Санкт-Петербург" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-11" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="321947895" visible="true" version="10">
+  <nd ref="3243217927" />
+  <nd ref="5561425989" />
+  <nd ref="5557365063" />
+  <nd ref="1360231813" />
+  <nd ref="1974029693" />
+  <nd ref="12104225552" />
+  <tag k="highway" v="trunk_link" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="RU:rural" />
+  <tag k="name" v="Скоростная автодорога Москва — Санкт-Петербург" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-11" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="321947896" visible="true" version="11">
+  <nd ref="3243217922" />
+  <nd ref="3499333357" />
+  <tag k="highway" v="trunk_link" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="40" />
+  <tag k="name" v="Скоростная автодорога Москва — Санкт-Петербург" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-11" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="338008176" visible="true" version="1">
+  <nd ref="3450750928" />
+  <nd ref="3450750923" />
+  <tag k="access" v="no" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="338008187" visible="true" version="1">
+  <nd ref="3450750890" />
+  <nd ref="3450750940" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="338008191" visible="true" version="1">
+  <nd ref="3450750937" />
+  <nd ref="3450750948" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="338008204" visible="true" version="1">
+  <nd ref="3450751195" />
+  <nd ref="3450750975" />
+  <nd ref="3450750943" />
+  <tag k="highway" v="service" />
+  </way>
+ <way id="338008205" visible="true" version="1">
+  <nd ref="3450750960" />
+  <nd ref="3450750974" />
+  <nd ref="3450751201" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="338008206" visible="true" version="1">
+  <nd ref="3450751215" />
+  <nd ref="3450751208" />
+  <nd ref="3450751195" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="338008214" visible="true" version="1">
+  <nd ref="3450750894" />
+  <nd ref="3450750896" />
+  <nd ref="3450750929" />
+  <tag k="highway" v="service" />
+  </way>
+ <way id="338008224" visible="true" version="1">
+  <nd ref="3450750956" />
+  <nd ref="3450750967" />
+  <nd ref="3450751240" />
+  <nd ref="3450751266" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="338008228" visible="true" version="1">
+  <nd ref="3450750906" />
+  <nd ref="3450750947" />
+  <nd ref="3450750940" />
+  <nd ref="3450750925" />
+  <nd ref="3450750894" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="338008235" visible="true" version="1">
+  <nd ref="3450751238" />
+  <nd ref="3450751257" />
+  <nd ref="3450751273" />
+  <nd ref="3450751292" />
+  <nd ref="3450751397" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="338008240" visible="true" version="1">
+  <nd ref="2244945874" />
+  <nd ref="3450750769" />
+  <nd ref="3450750804" />
+  <nd ref="3450750894" />
+  <nd ref="3450750935" />
+  <tag k="highway" v="residential" />
+ </way>
+ <way id="338008241" visible="true" version="1">
+  <nd ref="3450750935" />
+  <nd ref="3450750936" />
+  <nd ref="3450750960" />
+  <nd ref="3450751198" />
+  <nd ref="3450751243" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="338008244" visible="true" version="1">
+  <nd ref="670217539" />
+  <nd ref="3450750958" />
+  <nd ref="3450751204" />
+  <nd ref="3450751210" />
+  <nd ref="3450751225" />
+  <nd ref="3450751245" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="338008245" visible="true" version="1">
+  <nd ref="3450750935" />
+  <nd ref="3450750941" />
+  <nd ref="3450750968" />
+  <nd ref="3450751221" />
+  <nd ref="3450751238" />
+  <nd ref="3450751245" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="338008252" visible="true" version="1">
+  <nd ref="3450751208" />
+  <nd ref="3450750937" />
+  <nd ref="3450750930" />
+  <nd ref="3450750879" />
+  <nd ref="3450750850" />
+  <nd ref="3450750849" />
+  <nd ref="670217537" />
+  <tag k="highway" v="service" />
+  </way>
+ <way id="338008257" visible="true" version="1">
+  <nd ref="3450750935" />
+  <nd ref="3450750929" />
+  <nd ref="3450750924" />
+  <nd ref="3450750919" />
+  <nd ref="3450750916" />
+  <nd ref="3450750918" />
+  <nd ref="3450750923" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="338008266" visible="true" version="1">
+  <nd ref="3450750934" />
+  <nd ref="3450750928" />
+  <nd ref="3450750885" />
+  <nd ref="3450750871" />
+  <nd ref="3450750868" />
+  <nd ref="3450750907" />
+  <nd ref="3450750910" />
+  <nd ref="3450750964" />
+  <nd ref="3450750965" />
+  <nd ref="3450750934" />
+  <tag k="access" v="no" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="341862613" visible="true" version="1">
+  <nd ref="3489304277" />
+  <nd ref="3489304278" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="341862614" visible="true" version="1">
+  <nd ref="3489304275" />
+  <nd ref="3489304276" />
+  <nd ref="3489304277" />
+  <nd ref="3489304280" />
+  <nd ref="3489304281" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="348317784" visible="true" version="10">
+  <nd ref="5593909455" />
+  <nd ref="5593909454" />
+  <nd ref="12069818331" />
+  <nd ref="3242877473" />
+  <tag k="highway" v="trunk_link" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="RU:rural" />
+  <tag k="name" v="Скоростная автодорога Москва — Санкт-Петербург" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-11" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="348317785" visible="true" version="9">
+  <nd ref="3499333357" />
+  <nd ref="7441077272" />
+  <nd ref="3243217926" />
+  <tag k="highway" v="trunk_link" />
+  <tag k="lanes" v="4" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="40" />
+  <tag k="name" v="Скоростная автодорога Москва — Санкт-Петербург" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-11" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="348317786" visible="true" version="7">
+  <nd ref="3103574550" />
+  <nd ref="3243217927" />
+  <tag k="highway" v="trunk_link" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="50" />
+  <tag k="name" v="Скоростная автодорога Москва — Санкт-Петербург" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-11" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="348317787" visible="true" version="8">
+  <nd ref="5557372553" />
+  <nd ref="3243217928" />
+  <tag k="highway" v="trunk_link" />
+  <tag k="lanes" v="4" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="50" />
+  <tag k="name" v="Скоростная автодорога Москва — Санкт-Петербург" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-11" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="407886343" visible="true" version="1">
+  <nd ref="4099098933" />
+  <nd ref="4099098936" />
+  <nd ref="4099098937" />
+  <nd ref="4099098935" />
+  <nd ref="3450751245" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="532836032" visible="true" version="5">
+  <nd ref="3243217928" />
+  <nd ref="3103574550" />
+  <tag k="highway" v="trunk_link" />
+  <tag k="lanes" v="4" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="50" />
+  <tag k="name" v="Скоростная автодорога Москва — Санкт-Петербург" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-11" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="532836033" visible="true" version="2">
+  <nd ref="3283566519" />
+  <nd ref="3283566520" />
+  <nd ref="5170196694" />
+  <nd ref="5170196696" />
+  <nd ref="5170196698" />
+  <nd ref="3242877472" />
+  <tag k="highway" v="service" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="40" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="532836034" visible="true" version="2">
+  <nd ref="5170196691" />
+  <nd ref="5170196694" />
+  <tag k="highway" v="service" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="40" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="532836035" visible="true" version="2">
+  <nd ref="5170196692" />
+  <nd ref="5170196696" />
+  <tag k="highway" v="service" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="40" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="532836036" visible="true" version="2">
+  <nd ref="5170196693" />
+  <nd ref="5170196698" />
+  <tag k="highway" v="service" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="40" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="532836037" visible="true" version="6">
+  <nd ref="3243217926" />
+  <nd ref="7441077273" />
+  <nd ref="3242877472" />
+  <tag k="highway" v="trunk_link" />
+  <tag k="lanes" v="4" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="40" />
+  <tag k="name" v="Скоростная автодорога Москва — Санкт-Петербург" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-11" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="532836038" visible="true" version="2">
+  <nd ref="3283566523" />
+  <nd ref="3283566521" />
+  <nd ref="5170196704" />
+  <nd ref="5170196706" />
+  <nd ref="5170196708" />
+  <nd ref="5170196710" />
+  <nd ref="3103574550" />
+  <tag k="highway" v="service" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="50" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="532836039" visible="true" version="2">
+  <nd ref="5170196700" />
+  <nd ref="5170196704" />
+  <tag k="highway" v="service" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="50" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="532836040" visible="true" version="2">
+  <nd ref="5170196701" />
+  <nd ref="5170196706" />
+  <tag k="highway" v="service" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="50" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="532836041" visible="true" version="2">
+  <nd ref="5170196702" />
+  <nd ref="5170196708" />
+  <tag k="highway" v="service" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="50" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="532836042" visible="true" version="2">
+  <nd ref="5170196703" />
+  <nd ref="5170196710" />
+  <tag k="highway" v="service" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="50" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="532836043" visible="true" version="3">
+  <nd ref="5170196695" />
+  <nd ref="7441077275" />
+  <nd ref="5170196691" />
+  <tag k="highway" v="service" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="40" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="532836044" visible="true" version="3">
+  <nd ref="5170196697" />
+  <nd ref="7441077276" />
+  <nd ref="5170196692" />
+  <tag k="highway" v="service" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="40" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="532836045" visible="true" version="3">
+  <nd ref="5170196699" />
+  <nd ref="7441077277" />
+  <nd ref="5170196693" />
+  <tag k="highway" v="service" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="40" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="532836046" visible="true" version="2">
+  <nd ref="5170196705" />
+  <nd ref="5170196700" />
+  <tag k="highway" v="service" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="50" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="532836047" visible="true" version="2">
+  <nd ref="5170196707" />
+  <nd ref="5170196701" />
+  <tag k="highway" v="service" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="50" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="532836048" visible="true" version="2">
+  <nd ref="5170196709" />
+  <nd ref="5170196702" />
+  <tag k="highway" v="service" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="50" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="532836049" visible="true" version="2">
+  <nd ref="5170196711" />
+  <nd ref="5170196703" />
+  <tag k="highway" v="service" />
+  <tag k="lanes" v="1" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="50" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="580572871" visible="true" version="1">
+  <nd ref="5557372553" />
+  <nd ref="5557372552" />
+  <tag k="highway" v="service" />
+  <tag k="lit" v="yes" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="580575022" visible="true" version="1">
+  <nd ref="3283566524" />
+  <nd ref="5557386258" />
+  <nd ref="5557386257" />
+  <nd ref="5557386256" />
+  <nd ref="3103574550" />
+  <tag k="highway" v="service" />
+  <tag k="lit" v="yes" />
+  <tag k="oneway" v="yes" />
+  <tag k="surface" v="asphalt" />
+ </way>
+ <way id="581173046" visible="true" version="2">
+  <nd ref="5561464433" />
+  <nd ref="13346664871" />
+  <nd ref="5561464434" />
+  <nd ref="13346664872" />
+  <nd ref="13346664870" />
+  <nd ref="13346664869" />
+  <nd ref="5561464435" />
+  <nd ref="5561464440" />
+  <nd ref="5561464439" />
+  <nd ref="5561464433" />
+  <nd ref="5561464441" />
+  <nd ref="3472270199" />
+  <tag k="highway" v="service" />
+  </way>
+ <way id="581173047" visible="true" version="2">
+  <nd ref="5561464437" />
+  <nd ref="5561464436" />
+  <nd ref="3472270199" />
+  <tag k="highway" v="service" />
+  </way>
+ <way id="581173048" visible="true" version="2">
+  <nd ref="5561464444" />
+  <nd ref="13346664867" />
+  <nd ref="5561464443" />
+  <nd ref="5561464442" />
+  <nd ref="5561464441" />
+  <tag k="highway" v="service" />
+  </way>
+ <way id="1071738503" visible="true" version="1">
+  <nd ref="3450751195" />
+  <nd ref="9834446469" />
+  <nd ref="9834446468" />
+  <nd ref="9834446467" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="1307036907" visible="true" version="1">
+  <nd ref="3544452633" />
+  <nd ref="3287136176" />
+  <nd ref="12104225553" />
+  <nd ref="7441077278" />
+  <nd ref="5557372553" />
+  <tag k="highway" v="trunk_link" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="50" />
+  <tag k="name" v="Скоростная автодорога Москва — Санкт-Петербург" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-11" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="1307036911" visible="true" version="1">
+  <nd ref="3242877472" />
+  <nd ref="5593909455" />
+  <tag k="highway" v="trunk_link" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="RU:rural" />
+  <tag k="name" v="Скоростная автодорога Москва — Санкт-Петербург" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="М-11" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="1455310415" visible="true" version="1">
+  <nd ref="13346664853" />
+  <nd ref="13346664858" />
+  <nd ref="13346664859" />
+  <nd ref="13346664860" />
+  <nd ref="13346664866" />
+  <tag k="highway" v="service" />
+  </way>
+ <way id="1455310416" visible="true" version="1">
+  <nd ref="13346664861" />
+  <nd ref="13346664862" />
+  <tag k="highway" v="service" />
+  </way>
+ <way id="1455310417" visible="true" version="1">
+  <nd ref="13346664855" />
+  <nd ref="13346664863" />
+  <nd ref="13346664864" />
+  <nd ref="13346664865" />
+  <tag k="highway" v="service" />
+  </way>
+ <way id="1455310418" visible="true" version="1">
+  <nd ref="13346664855" />
+  <nd ref="13346664856" />
+  <nd ref="13346664857" />
+  <nd ref="13346664861" />
+  <nd ref="13346664853" />
+  <tag k="highway" v="service" />
+ </way>
+ <way id="1455310419" visible="true" version="1">
+  <nd ref="13346664854" />
+  <nd ref="13346664855" />
+  <tag k="highway" v="service" />
+  </way>
+ </osm>

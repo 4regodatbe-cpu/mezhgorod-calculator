@@ -1,0 +1,157 @@
+[
+  {
+    "path": "2gis-evidence-next-v2/HISTORICAL_V1/M4_545/geometry/osm-directed-subset.json",
+    "sha256": "2a97e707058e7177d957975013644bef16ef142e1b6cb54ad92e3cdebb8fa2c9",
+    "group": "C",
+    "license": "OSM ODbL"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-14-osm-tail-corridor.osm.gz",
+    "sha256": "cafaf34feca269290cde03d9ec0681c8609a46cdc88114393810044fd040ee51",
+    "group": "F",
+    "license": "OpenStreetMap contributors / ODbL; source contributor metadata not duplicated"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/c4b24dcb8db4743a900f.osm",
+    "sha256": "0ac33202e2e96070fc757cdb940bdaa3df13a0a5fcb6e0849ac73326374d35a7",
+    "group": "E",
+    "license": "OpenStreetMap contributors / ODbL; source contributor metadata not duplicated"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/01ba060f9aefa925fbec.osm",
+    "sha256": "7210bd1b53c660c36fa50935945f790afa844d292e778f9477a765b21511da77",
+    "group": "E",
+    "license": "OpenStreetMap contributors / ODbL; source contributor metadata not duplicated"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/dfdac5ff1ade415d779d.osm",
+    "sha256": "176301f355d8ca3cc8ffe6fc7022609ea6ddb49919ae31557f57d390bf47ab39",
+    "group": "E",
+    "license": "OpenStreetMap contributors / ODbL; source contributor metadata not duplicated"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/3bfb7278c60ffb4a20a3.osm",
+    "sha256": "759095314a5fd89a4e9bda2adb900892ed6641d368ba42d01a8c9c59329a84c5",
+    "group": "E",
+    "license": "OpenStreetMap contributors / ODbL; source contributor metadata not duplicated"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/616dc95325a09bcadbf8.osm",
+    "sha256": "38e7ec698a896151be59a9a9efa44b29c385cd6d91cda49303f9d2d9d76e8b2c",
+    "group": "E",
+    "license": "OpenStreetMap contributors / ODbL; source contributor metadata not duplicated"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/6587d1637ed49b3cbb47.osm",
+    "sha256": "b972214f9aef2abbd4bb7cf7a8b651353fc32dc7c555657408b67178321df56f",
+    "group": "E",
+    "license": "OpenStreetMap contributors / ODbL; source contributor metadata not duplicated"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/64a04cac63bfc59f524d.osm",
+    "sha256": "f847530d927f3666293a6e0667611f0d63a6d81ed774e0cd93228187ff2d41a8",
+    "group": "E",
+    "license": "OpenStreetMap contributors / ODbL; source contributor metadata not duplicated"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/b2d6f4bfb98c3a6535e9.osm",
+    "sha256": "8554a401be399efc923a8a709da8e878224c31194720c55630076a0a21265df6",
+    "group": "E",
+    "license": "OpenStreetMap contributors / ODbL; source contributor metadata not duplicated"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/919bcb82b0adc9391fec.osm",
+    "sha256": "1a8ef5a2227dd95c9263d4297269756c860c532388e75432de97927b4a34cb3e",
+    "group": "E",
+    "license": "OpenStreetMap contributors / ODbL; source contributor metadata not duplicated"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/311dc7698b6a73a2265f.osm",
+    "sha256": "cdd0c9b0e56ec2939041f83eb4d9d5508eb054e80a5483cdca60da05fc207ca0",
+    "group": "E",
+    "license": "OpenStreetMap contributors / ODbL; source contributor metadata not duplicated"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/b2319a830347351be8d7.osm",
+    "sha256": "5893a2bc98c5f83a68bc16190ee8a852ae2ae9ab1030f2fe4c66e241f9f43a30",
+    "group": "E",
+    "license": "OpenStreetMap contributors / ODbL; source contributor metadata not duplicated"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/188b375d0695e2a1c254.osm",
+    "sha256": "b3594fb3d1fde05d3498f805b60fb3ebdce0204b69cb281c19a42268802cc56f",
+    "group": "E",
+    "license": "OpenStreetMap contributors / ODbL; source contributor metadata not duplicated"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-moscow-head7171624764/way502872285-full.osm",
+    "sha256": "3f10db930083c10ca7d232957fc3b1e4d0bd7f713a3706ad83434727220a5b40",
+    "group": "G",
+    "license": "OpenStreetMap contributors / ODbL; source contributor metadata not duplicated"
+  },
+  {
+    "path": "2gis-evidence-next-v2/HISTORICAL_V1/M12/geometry/raw-osm/2fc5f3d1aa94bda63cfe.osm",
+    "sha256": "558be540c8e8c8361fae9aec3e243091bf4feb71250702dc69d5a70d69d1a96d",
+    "group": "B",
+    "license": "OSM ODbL"
+  },
+  {
+    "path": "2gis-evidence-next-v2/HISTORICAL_V1/M12/geometry/raw-osm/c0ab136d60afb7d92ae6.osm",
+    "sha256": "9170bf863aedf78f9640a7bfce610e80f19ddabb4fa7583fc42b966e624d8ad4",
+    "group": "B",
+    "license": "OSM ODbL"
+  },
+  {
+    "path": "2gis-evidence-next-v2/HISTORICAL_V1/M12/geometry/raw-osm/54c63c7e7f4a37584cf7.osm",
+    "sha256": "f0397c21ce02b93adbb98c70b1d301307104c594bac615ef17045c73c1010584",
+    "group": "B",
+    "license": "OSM ODbL"
+  },
+  {
+    "path": "2gis-evidence-next-v2/HISTORICAL_V1/M12/geometry/raw-osm/039cfde37fa14ee9ffff.osm",
+    "sha256": "5894fab4646020b209bcf04b0f03c6f146f8113b3c9214a29f4cf1a8c251b1c0",
+    "group": "B",
+    "license": "OSM ODbL"
+  },
+  {
+    "path": "2gis-evidence-next-v2/HISTORICAL_V1/M12/geometry/raw-osm/e421784129ac6308b39c.osm",
+    "sha256": "89abb5e59e7f52a564181109eff03401dc7e29d20df1eb0ccc5ca0da73439a44",
+    "group": "B",
+    "license": "OSM ODbL"
+  },
+  {
+    "path": "2gis-evidence-next-v2/HISTORICAL_V1/M12/geometry/raw-osm/2aa50600164a08549851.osm",
+    "sha256": "fe56f0bfa07a2fbefa03c1545c09360a2cc42018791786b0d392d4f014edbb73",
+    "group": "B",
+    "license": "OSM ODbL"
+  },
+  {
+    "path": "2gis-evidence-next-v2/HISTORICAL_V1/M12/geometry/raw-osm/63df72f8e9d8a1276153.osm",
+    "sha256": "515311b65381c0747d28baa874dd17ff87d89f270f87fb29c9ed3c5f4adbda12",
+    "group": "B",
+    "license": "OSM ODbL"
+  },
+  {
+    "path": "2gis-evidence-next-v2/HISTORICAL_V1/M12/geometry/raw-osm/1f1c1ebc00b9a06c10ea.osm",
+    "sha256": "3f8757d11015b35c6a12969ceb24a077bd0a74fe0e0ea5cc5cefc8ac2b86b097",
+    "group": "B",
+    "license": "OSM ODbL"
+  },
+  {
+    "path": "2gis-evidence-next-v2/HISTORICAL_V1/M12/geometry/raw-osm/104baff22d6d3ddb49d9.osm",
+    "sha256": "164a6aa0f1a38f01c7f07987b56d77425191133c7c6f87a781993fc8a385769f",
+    "group": "B",
+    "license": "OSM ODbL"
+  },
+  {
+    "kind": "livePMredactedreadback",
+    "url": "https://platform.2gis.ru/ru/keys/59886",
+    "readDate": "2026-11-07 Europe/Moscow",
+    "used": 15,
+    "limit": 1000,
+    "remaining": 985,
+    "status": "ActiveDemo",
+    "keyBlockDate": "2026-12-03",
+    "rawAccountPageRetained": false
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "MASS-125",
+    "object": "M4-PVP545:3504914294",
+    "evidenceLevel": "provider_supported_directed_crossing",
+    "newPhysicalObject": false,
+    "newProviderObservation": true,
+    "boundaryMinDistanceM": 1,
+    "sourceWitnessFractionWithin25m": 1.0,
+    "limitation": "Supports source-mapped directedbank with short matchingroute; not exactlane/operatorproduct/receipt certification. Diagnostic10m boundary tolerance,25m sourcepath tolerance,not official thresholds."
+  },
+  {
+    "id": "MASS-128",
+    "object": "M4-PVP545:9620416636",
+    "evidenceLevel": "provider_supported_directed_crossing",
+    "newPhysicalObject": false,
+    "newProviderObservation": true,
+    "boundaryMinDistanceM": 6,
+    "sourceWitnessFractionWithin25m": 1.0,
+    "limitation": "Supports source-mapped directedbank with short matchingroute; not exactlane/operatorproduct/receipt certification. Diagnostic10m boundary tolerance,25m sourcepath tolerance,not official thresholds."
+  }
+]

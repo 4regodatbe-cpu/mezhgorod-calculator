@@ -1,0 +1,648 @@
+[
+  {
+    "id": "A1",
+    "task": "Действующие правила оплаты ПВП545",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "Текущая тарифная таблица Автодора разделяет строки 517–544 (I кат. cash/card 140 ₽ будни, 160 ₽ выходные) и 545–589 (180/250 ₽). Order58 (02.03.2026) в сохранённой копии обозначает 544–589; официальный сайт использует 545–589. Историческое разъяснение 2016 описывало выбор продукта и комбинирование при продолжении движения. Нет действующего первичного правила, разрешающего расхождение названия 544/545 и актуальные route/entry conditions. Нужны актуальный приказ/правила оператора.",
+    "new_conclusion": "Правило 2016 принято как последнее доступное правило выбора продуктов; давность не блокирует. Разница 544/545 в названии не сопровождается новыми суммами или доказанным изменением scope.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Правило 2016 принято как последнее доступное правило выбора продуктов; давность не блокирует. Разница 544/545 в названии не сопровождается новыми суммами или доказанным изменением scope.",
+    "evidence_level": "accepted_working_calculation",
+    "limitations": "Принятый частный компонент не является чеком или полной стоимостью поездки; другие ветви/даты требуют собственного обоснования.",
+    "working_calculation_possible": true,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "A2",
+    "task": "Физические кассовые полосы ПВП545",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "Сохранённая directed OSM topology и полный OSRM Taman→Voronezh trace связывают северный обход/южную кассу node 5818209495 с way 615270691; трасса идёт через bypass к connector 301694367 и R-298, не через 3504914294 или 9620416636. Другие ветви и актуальная схема ПОДД/полос не имеют доказательной первичной привязки в checkout; исторический trace не доказывает текущее начисление.",
+    "new_conclusion": "Сохранённый trace подтверждает ветвь5818209495 и последующий выход к Р298; отдельная сертификация полосы для принятого B05 не обязательна. Другие ветви отдельно.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Сохранённый trace подтверждает ветвь5818209495 и последующий выход к Р298; отдельная сертификация полосы для принятого B05 не обязательна. Другие ветви отдельно.",
+    "evidence_level": "accepted_working_calculation",
+    "limitations": "Принятый частный компонент не является чеком или полной стоимостью поездки; другие ветви/даты требуют собственного обоснования.",
+    "working_calculation_possible": true,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "A3",
+    "task": "Тарифные продукты по веткам ПВП545",
+    "old_status": "BLOCKED",
+    "status": "PARTIAL",
+    "old_conclusion": "Известны две тарифные строки и доказана одна физическая ветвь; исторический источник связывал продукты с продолжением маршрута, но не пронумерованные современные кассовые ветви. Нужны текущие операторские правила + схема направленного включения каждой полосы. До того продукт unknown.",
+    "new_conclusion": "Для конкретного B05 приняты оба продукта 517–544 и544–589. Остальные кассы/маршруты не получают этот bundle автоматически.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Для конкретного B05 приняты оба продукта 517–544 и544–589. Остальные кассы/маршруты не получают этот bundle автоматически.",
+    "evidence_level": "accepted_working_calculation",
+    "limitations": "Принятый частный компонент не является чеком или полной стоимостью поездки; другие ветви/даты требуют собственного обоснования.",
+    "working_calculation_possible": true,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "A4",
+    "task": "Суммирование и повторная оплата ПВП545",
+    "old_status": "BLOCKED",
+    "status": "PARTIAL",
+    "old_conclusion": "Нет подтверждения, что 140/160 и 180/250 складываются на одном проезде или что одна оплата исключает другую. Нужен операторский порядок применения продуктов/чек на конкретный маршрут; суммы 320/410 не применять.",
+    "new_conclusion": "Для B05 принята сумма140+180=320₽; профиль160+250=410₽. Начислить bundle один раз, не добавлять повторно эти продукты. Общие re-entry правила иных поездок неизвестны.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Для B05 принята сумма140+180=320₽; профиль160+250=410₽. Начислить bundle один раз, не добавлять повторно эти продукты. Общие re-entry правила иных поездок неизвестны.",
+    "evidence_level": "accepted_working_calculation",
+    "limitations": "Принятый частный компонент не является чеком или полной стоимостью поездки; другие ветви/даты требуют собственного обоснования.",
+    "working_calculation_possible": true,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "A5",
+    "task": "Регрессионная модель ПВП545",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "В комплекте 8 направленных сценариев, включая обе кассы, соседнюю дорогу, направления, nearby, partial и подтверждённый Taman→Voronezh; прежний route-history verifier 9/9 PASS. Часть ожидаемых продуктов и статусов остаётся UNKNOWN; полный proof для остальных полос отсутствует.",
+    "new_conclusion": "Исторические null-fixtures сохранены; новый policy-overlay принимает320 только для exact B05, partial/соседний путь остаются unknown.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Исторические null-fixtures сохранены; новый policy-overlay принимает320 только для exact B05, partial/соседний путь остаются unknown.",
+    "evidence_level": "accepted_working_calculation",
+    "limitations": "Принятый частный компонент не является чеком или полной стоимостью поездки; другие ветви/даты требуют собственного обоснования.",
+    "working_calculation_possible": true,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "B1",
+    "task": "Официальные тарифные границы М-12",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "Order302 действует с 08.10.2026 и задаёт tariff matrix для 281/314/392/420. Сохранённые calibrated anchors имеют координаты/OSM IDs. Официальная таблица также именует западные участки 81/118/174 как ЦКАД–Орехово-Зуево, Орехово-Зуево–Петушки, Петушки–Владимир. 81/118/174 не подтверждены как отдельные физические RVP координаты в исследованном комплекте; нужны действующие официальный приказ и геодезические tie points для идентичности.",
+    "new_conclusion": "Order302 действует с 08.10.2026 и задаёт tariff matrix для 281/314/392/420. Сохранённые calibrated anchors имеют координаты/OSM IDs. Официальная таблица также именует западные участки 81/118/174 как ЦКАД–Орехово-Зуево, Орехово-Зуево–Петушки, Петушки–Владимир.",
+    "reason": "М12: официальный тариф известен, но физический выход22Н-0239 не равен опубликованному Арзамас(Р158), а выходМ7 не доказан как тарифный Владимир. Это реальная неопределённость продукта, не требование чека.287/318/395 и западные gantries без идентичности; calibrated anchors281/314/392/420 сохраняются.",
+    "evidence_level": "unknown",
+    "limitations": "81/118/174 не подтверждены как отдельные физические RVP координаты в исследованном комплекте; нужны действующие официальный приказ и геодезические tie points для идентичности.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "B2",
+    "task": "Физические объекты и километраж М-12",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "442-км R-158 interchange присутствует в официальных дорожных inventory; 421/22Н-0239 есть в 2022 inventory, но не найден в просмотренной редакции 2026. Физические exit ways документированы. 287/318/395 без первичных tie points; 442 и 421 не привязаны к tariff endpoints. Дополнительные узлы не приравнивать по километражу.",
+    "new_conclusion": "442-км R-158 interchange присутствует в официальных дорожных inventory; 421/22Н-0239 есть в 2022 inventory, но не найден в просмотренной редакции 2026. Физические exit ways документированы.",
+    "reason": "М12: официальный тариф известен, но физический выход22Н-0239 не равен опубликованному Арзамас(Р158), а выходМ7 не доказан как тарифный Владимир. Это реальная неопределённость продукта, не требование чека.287/318/395 и западные gantries без идентичности; calibrated anchors281/314/392/420 сохраняются.",
+    "evidence_level": "unknown",
+    "limitations": "287/318/395 без первичных tie points; 442 и 421 не привязаны к tariff endpoints. Дополнительные узлы не приравнивать по километражу.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "B3",
+    "task": "Западные рамки М-12",
+    "old_status": "BLOCKED",
+    "status": "BLOCKED",
+    "old_conclusion": "OSM nodes 10782165529, 11214930528, 11157985901 имеют highway=toll_gantry, без доказанной операторской маркировки. Нужен официальный эксплуатационный реестр/схема или подтверждение оператора; сейчас binding 0/3.",
+    "new_conclusion": "OSM nodes 10782165529, 11214930528, 11157985901 имеют highway=toll_gantry, без доказанной операторской маркировки.",
+    "reason": "М12: официальный тариф известен, но физический выход22Н-0239 не равен опубликованному Арзамас(Р158), а выходМ7 не доказан как тарифный Владимир. Это реальная неопределённость продукта, не требование чека.287/318/395 и западные gantries без идентичности; calibrated anchors281/314/392/420 сохраняются.",
+    "evidence_level": "unknown",
+    "limitations": "Нужен официальный эксплуатационный реестр/схема или подтверждение оператора; сейчас binding 0/3.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "B4",
+    "task": "М-12 выход на 22Н-0239",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "Направленная цепь 1550135076→1550561305→1206479738 физически приводит на 22Н-0239 к Арзамасу. Тарифный endpoint не доказан; 2952 ₽ кандидат не применять. Нужны операторская matrix crosswalk/платёжный документ.",
+    "new_conclusion": "Направленная цепь 1550135076→1550561305→1206479738 физически приводит на 22Н-0239 к Арзамасу.",
+    "reason": "М12: официальный тариф известен, но физический выход22Н-0239 не равен опубликованному Арзамас(Р158), а выходМ7 не доказан как тарифный Владимир. Это реальная неопределённость продукта, не требование чека.287/318/395 и западные gantries без идентичности; calibrated anchors281/314/392/420 сохраняются.",
+    "evidence_level": "unknown",
+    "limitations": "Тарифный endpoint не доказан; 2952 ₽ кандидат не применять. Нужны операторская matrix crosswalk/платёжный документ.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "B5",
+    "task": "М-12 выход на М-7",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "Ways 972809728→972809720→292501171 физически ведут к М-7 в районе Чебоксар. Не доказана тарифная граница/операторский продукт; 1239 ₽ не считать.",
+    "new_conclusion": "Ways 972809728→972809720→292501171 физически ведут к М-7 в районе Чебоксар.",
+    "reason": "М12: официальный тариф известен, но физический выход22Н-0239 не равен опубликованному Арзамас(Р158), а выходМ7 не доказан как тарифный Владимир. Это реальная неопределённость продукта, не требование чека.287/318/395 и западные gantries без идентичности; calibrated anchors281/314/392/420 сохраняются.",
+    "evidence_level": "unknown",
+    "limitations": "Не доказана тарифная граница/операторский продукт; 1239 ₽ не считать.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "B6",
+    "task": "Направленные тесты М-12",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "Offline mapping fixtures cover known/unknown anchors, exits and safe null behavior; focused verifiers included. Tests do not establish missing operator bindings; expand once primary ties arrive.",
+    "new_conclusion": "Offline mapping fixtures cover known/unknown anchors, exits and safe null behavior; focused verifiers included.",
+    "reason": "М12: официальный тариф известен, но физический выход22Н-0239 не равен опубликованному Арзамас(Р158), а выходМ7 не доказан как тарифный Владимир. Это реальная неопределённость продукта, не требование чека.287/318/395 и западные gantries без идентичности; calibrated anchors281/314/392/420 сохраняются.",
+    "evidence_level": "unknown",
+    "limitations": "Tests do not establish missing operator bindings; expand once primary ties arrive.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "C1",
+    "task": "Физический проезд ЦКАД M11→M12",
+    "old_status": "SOLVED",
+    "status": "SOLVED",
+    "old_conclusion": "Сохранённые binding-proof и physical-directed evidence устанавливают направленный выход с M11 через connector CKAD к M12. Качество тарифа отдельно не доказывается геометрией.",
+    "new_conclusion": "Сохранённые binding-proof и physical-directed evidence устанавливают направленный выход с M11 через connector CKAD к M12.",
+    "reason": "Физическое доказательство сохранено; денежный уровень отдельно, ограничение исходной геометрии не устранено.",
+    "evidence_level": "accepted_working_calculation",
+    "limitations": "Принятый частный компонент не является чеком или полной стоимостью поездки; другие ветви/даты требуют собственного обоснования.",
+    "working_calculation_possible": true,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "C2",
+    "task": "Тарифный продукт CKAD M11→M12",
+    "old_status": "BLOCKED",
+    "status": "SOLVED",
+    "old_conclusion": "981 ₽ остаётся кандидатом. Старый 2GIS запрос outcome_unknown; quota counter unchanged. Не повторять. Нужны операторский scope matrix либо независимый чек/детализированный расчёт; owner permission alone не снимает запрет replay.",
+    "new_conclusion": "Прямой OD981₽ принят для доказанного полного CKAD M11→M12 по приказу56. Сохранённый binding-proof уже связывает операторскую пару; отсутствие чека не блокирует. Не относится к короткому CKAD API-окну.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Прямой OD981₽ принят для доказанного полного CKAD M11→M12 по приказу56. Сохранённый binding-proof уже связывает операторскую пару; отсутствие чека не блокирует. Не относится к короткому CKAD API-окну.",
+    "evidence_level": "accepted_working_calculation",
+    "limitations": "Принятый частный компонент не является чеком или полной стоимостью поездки; другие ветви/даты требуют собственного обоснования.",
+    "working_calculation_possible": true,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "C3",
+    "task": "Условия совместной тарификации CKAD/M12",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "Официальная сноска Order57 (27.02.2026) подтверждает ограниченное условие 120 минут для M12–Носовихинское как начального/конечного сегмента при заданных фиксациях и отсутствии другой фиксации. Это узкое правило, не общее CKAD–M11–M12 правило. Проверить сохранённый актуальный Order302 на повтор сноски для текущей редакции и не расширять на остальные пары. Нет основания применять её к M11→M12.",
+    "new_conclusion": "OD981 используется один раз для полного CKAD компонента. Рамки не дополнительные платежи; M11/M12 оплачиваются отдельно по собственным правилам. Узкую120-минутную сноску не расширять.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. OD981 используется один раз для полного CKAD компонента. Рамки не дополнительные платежи; M11/M12 оплачиваются отдельно по собственным правилам. Узкую120-минутную сноску не расширять.",
+    "evidence_level": "accepted_working_calculation",
+    "limitations": "Принятый частный компонент не является чеком или полной стоимостью поездки; другие ветви/даты требуют собственного обоснования.",
+    "working_calculation_possible": true,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "C4",
+    "task": "Тестовый комплект CKAD",
+    "old_status": "PARTIAL",
+    "status": "SOLVED",
+    "old_conclusion": "Saved directed evidence supports positive geometry; negative scope scenarios should return unknown; CKAD no-replay marker retained. Tariff expectations remain unknown; no API replay.",
+    "new_conclusion": "Добавлен offline positive981 для полного source-backed OD, negative для короткого окна/partial/reverse и CKAD no-replay сохранён.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Добавлен offline positive981 для полного source-backed OD, negative для короткого окна/partial/reverse и CKAD no-replay сохранён.",
+    "evidence_level": "accepted_working_calculation",
+    "limitations": "Принятый частный компонент не является чеком или полной стоимостью поездки; другие ветви/даты требуют собственного обоснования.",
+    "working_calculation_possible": true,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "D1",
+    "task": "М-4 ПВП62",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "Исторический пилот 03.11.2026 и сохранённый scenario ledger доступны; повтор API не нужен. Полная raw geometry/request отсутствует; нужны исходные артефакты/операторский продукт mapping.",
+    "new_conclusion": "Исторический пилот 03.11.2026 и сохранённый scenario ledger доступны; повтор API не нужен.",
+    "reason": "Сохранённый pilot summary не содержит полного направленного пути: невозможно различить exit62, продолжение71 и обратные варианты. Не отсутствие чека, а неизвестный фактический набор участков; double charge нельзя разрешить арифметикой.",
+    "evidence_level": "unknown",
+    "limitations": "Полная raw geometry/request отсутствует; нужны исходные артефакты/операторский продукт mapping.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "D2",
+    "task": "М-4 ПВП71 непрерывный проезд",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "Сценарии отличают проход через ПВП62 и дальнейшее достижение ПВП71. Точный trace/плата отсутствуют в checkout; нужен исторический response или официальный account proof.",
+    "new_conclusion": "Сценарии отличают проход через ПВП62 и дальнейшее достижение ПВП71.",
+    "reason": "Сохранённый pilot summary не содержит полного направленного пути: невозможно различить exit62, продолжение71 и обратные варианты. Не отсутствие чека, а неизвестный фактический набор участков; double charge нельзя разрешить арифметикой.",
+    "evidence_level": "unknown",
+    "limitations": "Точный trace/плата отсутствуют в checkout; нужен исторический response или официальный account proof.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "D3",
+    "task": "М-4 обратные направления 62/71",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "Наличие отдельных направленных сценариев зафиксировано. Нет направленной физической геометрии и официальных fares для обратного маршрута.",
+    "new_conclusion": "Наличие отдельных направленных сценариев зафиксировано.",
+    "reason": "Сохранённый pilot summary не содержит полного направленного пути: невозможно различить exit62, продолжение71 и обратные варианты. Не отсутствие чека, а неизвестный фактический набор участков; double charge нельзя разрешить арифметикой.",
+    "evidence_level": "unknown",
+    "limitations": "Нет направленной физической геометрии и официальных fares для обратного маршрута.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "D4",
+    "task": "Общий сценарий ПВП62–71",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "Системный вопрос double charge обозначен отдельно от цены/геометрии. Нет официального правила суммирования/исключения.",
+    "new_conclusion": "Системный вопрос double charge обозначен отдельно от цены/геометрии.",
+    "reason": "Сохранённый pilot summary не содержит полного направленного пути: невозможно различить exit62, продолжение71 и обратные варианты. Не отсутствие чека, а неизвестный фактический набор участков; double charge нельзя разрешить арифметикой.",
+    "evidence_level": "unknown",
+    "limitations": "Нет официального правила суммирования/исключения.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "D5",
+    "task": "Регрессии М-4 62–71",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "Offline scenarios included, replay not required. Набор ожидаемых ответов должен оставаться unknown до первичного тарифного источника.",
+    "new_conclusion": "Offline scenarios included, replay not required.",
+    "reason": "Сохранённый pilot summary не содержит полного направленного пути: невозможно различить exit62, продолжение71 и обратные варианты. Не отсутствие чека, а неизвестный фактический набор участков; double charge нельзя разрешить арифметикой.",
+    "evidence_level": "unknown",
+    "limitations": "Набор ожидаемых ответов должен оставаться unknown до первичного тарифного источника.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "E1",
+    "task": "ЗСД РВП64",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "OSM node 13020687195 / way 351741889 — физическая gantry/boundary. Ранее сохранённый 176m query не имел payment fields. Нельзя выводить бесплатность или отдельное тарифное событие; нужен операторский event/product definition.",
+    "new_conclusion": "OSM node 13020687195 / way 351741889 — физическая gantry/boundary. Ранее сохранённый 176m query не имел payment fields.",
+    "reason": "РВП64: highway=toll_gantry и отсутствиеpayment_fields не определяют самостоятельный продукт. Узкое60-минутное исключение не задаёт общий повторный въезд. PVP18: сводка результата не сохраняет полный directed path и пару въезд/выезд закрытой системы. Stage8 не повторять.",
+    "evidence_level": "unknown",
+    "limitations": "Нельзя выводить бесплатность или отдельное тарифное событие; нужен операторский event/product definition.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "E2",
+    "task": "ЗСД повторные въезды",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "Stage 8 official evidence has narrow receipt/60-minute linked-barrier exception. Не обобщать исключение на всю ЗСД; нужна редакция правил и конкретный barrier pair.",
+    "new_conclusion": "Stage 8 official evidence has narrow receipt/60-minute linked-barrier exception.",
+    "reason": "РВП64: highway=toll_gantry и отсутствиеpayment_fields не определяют самостоятельный продукт. Узкое60-минутное исключение не задаёт общий повторный въезд. PVP18: сводка результата не сохраняет полный directed path и пару въезд/выезд закрытой системы. Stage8 не повторять.",
+    "evidence_level": "unknown",
+    "limitations": "Не обобщать исключение на всю ЗСД; нужна редакция правил и конкретный barrier pair.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "E3",
+    "task": "Пулково прямое направление",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "Сохранена цепь 1369893169→13377945035→1524320371; prior 2GIS request returned route OK. Raw geometry отсутствует; product selection between 38₽ access and conditional 94₽ composition not distinguished.",
+    "new_conclusion": "Для сохранённого направленного OSM airport-only коридора к Пулково принят отдельный продукт38₽ приказа274. Это не восстановление точного WKT старого API-ответа.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Для сохранённого направленного OSM airport-only коридора к Пулково принят отдельный продукт38₽ приказа274. Это не восстановление точного WKT старого API-ответа.",
+    "evidence_level": "accepted_working_calculation",
+    "limitations": "Принятый частный компонент не является чеком или полной стоимостью поездки; другие ветви/даты требуют собственного обоснования.",
+    "working_calculation_possible": true,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "E4",
+    "task": "Пулково обратное направление",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "Reverse gate 13377945036 and chain 1524320372→1360759955 independently recorded; previous call not replayed. No raw WKT/official directional tariff proof; do not inherit direct fare.",
+    "new_conclusion": "Обратный самостоятельный airport-only коридор имеет отдельную one-way gate evidence;38₽ принимается по ненаправленному продукту доступа и отдельной геометрии, не по наследованию прямого API-результата.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Обратный самостоятельный airport-only коридор имеет отдельную one-way gate evidence;38₽ принимается по ненаправленному продукту доступа и отдельной геометрии, не по наследованию прямого API-результата.",
+    "evidence_level": "accepted_working_calculation",
+    "limitations": "Принятый частный компонент не является чеком или полной стоимостью поездки; другие ветви/даты требуют собственного обоснования.",
+    "working_calculation_possible": true,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "E5",
+    "task": "Пулково составные маршруты",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "Official schedule includes standalone access and conditional composition; existing aggregate cannot distinguish them. Need official qualifying route conditions and exact gate crossing evidence.",
+    "new_conclusion": "38₽ применим к отдельному airport-only коридору.94₽ заменяет56+38 при доказанном составном проезде; для коротких окон необходимое mainline continuation не доказано,94 не назначается.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. 38₽ применим к отдельному airport-only коридору.94₽ заменяет56+38 при доказанном составном проезде; для коротких окон необходимое mainline continuation не доказано,94 не назначается.",
+    "evidence_level": "accepted_working_calculation",
+    "limitations": "Принятый частный компонент не является чеком или полной стоимостью поездки; другие ветви/даты требуют собственного обоснования.",
+    "working_calculation_possible": true,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "E6",
+    "task": "М-11 ПВП18",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "Stage7 saved successful query and official closed-system entry/exit tariff model retained; Stage8 matrix integration is complete and unchanged. Raw WKT not retained; directional physical ties/charges not proven. No re-query or tariff matrix edits.",
+    "new_conclusion": "Stage7 saved successful query and official closed-system entry/exit tariff model retained; Stage8 matrix integration is complete and unchanged.",
+    "reason": "РВП64: highway=toll_gantry и отсутствиеpayment_fields не определяют самостоятельный продукт. Узкое60-минутное исключение не задаёт общий повторный въезд. PVP18: сводка результата не сохраняет полный directed path и пару въезд/выезд закрытой системы. Stage8 не повторять.",
+    "evidence_level": "unknown",
+    "limitations": "Raw WKT not retained; directional physical ties/charges not proven. No re-query or tariff matrix edits.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "E7",
+    "task": "Общие регрессии",
+    "old_status": "PARTIAL",
+    "status": "SOLVED",
+    "old_conclusion": "Regression kit includes unknown-safe behavior, direction and missing payment event expectations. Cross-road end-to-end tests are offline evidence models; several expected fares correctly unknown.",
+    "new_conclusion": "Новые meaningful offline guards проверяют working/receipt/unknown, completeness, чужую ветвь, double charge и версии, без переписывания historical fixtures.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Новые meaningful offline guards проверяют working/receipt/unknown, completeness, чужую ветвь, double charge и версии, без переписывания historical fixtures.",
+    "evidence_level": "unknown",
+    "limitations": "Cross-road end-to-end tests are offline evidence models; several expected fares correctly unknown.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "F1",
+    "task": "Общий реестр доказательств",
+    "old_status": "SOLVED",
+    "status": "SOLVED",
+    "old_conclusion": "Created machine-readable source registry and common binding model with road, direction, geometry IDs, tariff edition, source, hash, limits and status fields. Some external sources have URL/date but no locally captured content/hash; explicitly null.",
+    "new_conclusion": "Реестр дополнен отдельным evidenceLevel, scope, source hashes и working calculations; task status отделён от уровня стоимости.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Реестр дополнен отдельным evidenceLevel, scope, source hashes и working calculations; task status отделён от уровня стоимости.",
+    "evidence_level": "unknown",
+    "limitations": "Some external sources have URL/date but no locally captured content/hash; explicitly null.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "F2",
+    "task": "Подтверждённые привязки",
+    "old_status": "SOLVED",
+    "status": "SOLVED",
+    "old_conclusion": "Separate confirmed physical bindings include proven geometry only; no unsupported physical→tariff product associations. No newly proven tariff product/geometry pair; physical certainty is not charge certainty.",
+    "new_conclusion": "Физические связи и accepted working расчёты разделены. Новых receipt_verified нет.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Физические связи и accepted working расчёты разделены. Новых receipt_verified нет.",
+    "evidence_level": "unknown",
+    "limitations": "No newly proven tariff product/geometry pair; physical certainty is not charge certainty.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "F3",
+    "task": "Недоказанные привязки",
+    "old_status": "SOLVED",
+    "status": "SOLVED",
+    "old_conclusion": "Unknown register records evidence reviewed, exact missing evidence, potential holder and prohibited fare inference. Resolution depends on operator primary documents/receipts.",
+    "new_conclusion": "Из unknown исключены exact B05 и полный CKAD OD; сохранены реальные unknown других ветвей, M12 exits, ZSD event, PVP18. Pulkovo38 scope отделён от составного94.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Из unknown исключены exact B05 и полный CKAD OD; сохранены реальные unknown других ветвей, M12 exits, ZSD event, PVP18. Pulkovo38 scope отделён от составного94.",
+    "evidence_level": "unknown",
+    "limitations": "Resolution depends on operator primary documents/receipts.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "F4",
+    "task": "Регрессионные тесты",
+    "old_status": "PARTIAL",
+    "status": "SOLVED",
+    "old_conclusion": "Packaged existing offline verifiers and tests for M4-545, M12 mappings and runner safeguards. Prior tests reused; this session verifies package-integrity/focused tests, not historical API behavior.",
+    "new_conclusion": "Исторические tests сохранены; добавлен policy overlay с положительными и отрицательными случаями.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Исторические tests сохранены; добавлен policy overlay с положительными и отрицательными случаями.",
+    "evidence_level": "unknown",
+    "limitations": "Prior tests reused; this session verifies package-integrity/focused tests, not historical API behavior.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "F5",
+    "task": "Интеграционные решения",
+    "old_status": "SOLVED",
+    "status": "SOLVED",
+    "old_conclusion": "Created MAIN_CODEX_INTEGRATION.md: require directed physical events + dated operator crosswalk; unknown/null on missing binding; preserve existing M11 matrix. Main runtime not modified.",
+    "new_conclusion": "Рекомендации заменяют абсолютное требование crosswalk каждого узла достаточностью совокупных официальных правил и directed evidence, без runtime правок.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Рекомендации заменяют абсолютное требование crosswalk каждого узла достаточностью совокупных официальных правил и directed evidence, без runtime правок.",
+    "evidence_level": "unknown",
+    "limitations": "Main runtime not modified.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "F6",
+    "task": "Проверка переносимого пакета",
+    "old_status": "SOLVED",
+    "status": "SOLVED",
+    "old_conclusion": "Package validates JSON, manifest, SHA list, source/test layout and archives; no credentials/raw 2GIS response included. Git bundle includes repository history and may be larger than archive.",
+    "new_conclusion": "v1 неизменён, v2 имеет новый manifest/archive/bundle и проверку переносимости.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. v1 неизменён, v2 имеет новый manifest/archive/bundle и проверку переносимости.",
+    "evidence_level": "unknown",
+    "limitations": "Git bundle includes repository history and may be larger than archive.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "G1",
+    "task": "Остальные registered UNKNOWN",
+    "old_status": "PARTIAL",
+    "status": "PARTIAL",
+    "old_conclusion": "Reviewed existing M4/M12/CKAD/ZSD/M11 open questions and retained their no-replay/unknown decisions; added official current M4 table as new evidence. No primary evidence closes outstanding lane/product/event crosswalks.",
+    "new_conclusion": "Все unknown пересмотрены: сняты лишние причины B05/CKAD/airport-only, реальные M12/ЗСД/PVP18 gaps сохранены.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Все unknown пересмотрены: сняты лишние причины B05/CKAD/airport-only, реальные M12/ЗСД/PVP18 gaps сохранены.",
+    "evidence_level": "unknown",
+    "limitations": "No primary evidence closes outstanding lane/product/event crosswalks.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "G2",
+    "task": "Повторяющиеся пробелы геометрии",
+    "old_status": "SOLVED",
+    "status": "SOLVED",
+    "old_conclusion": "Common pattern: physical crossing, operator RVP identity, tariff product and payment semantics are separate evidence layers; kilometer/name proximity is insufficient. No general route-edge-to-product crosswalk exists for unresolved corridors.",
+    "new_conclusion": "Пробелы классифицируются по существенной альтернативе оплаты, не по отсутствию отдельного документа на полосу.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Пробелы классифицируются по существенной альтернативе оплаты, не по отсутствию отдельного документа на полосу.",
+    "evidence_level": "unknown",
+    "limitations": "No general route-edge-to-product crosswalk exists for unresolved corridors.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "G3",
+    "task": "Общие правила направленных платёжных событий",
+    "old_status": "SOLVED",
+    "status": "SOLVED",
+    "old_conclusion": "Only charge when directed route intersects source-backed boundary/product pair with valid tariff edition; absent payment field is not zero; partial trace stays partial; avoid duplicate sum absent operator rule. Rules constrain inference; they do not provide missing fees.",
+    "new_conclusion": "Рабочий расчёт допускается без чека при одной обоснованной интерпретации; unknown только для существенной неоднозначности/неполноты/двойного начисления.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Рабочий расчёт допускается без чека при одной обоснованной интерпретации; unknown только для существенной неоднозначности/неполноты/двойного начисления.",
+    "evidence_level": "unknown",
+    "limitations": "Rules constrain inference; they do not provide missing fees.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "G4",
+    "task": "Единый evidence format",
+    "old_status": "SOLVED",
+    "status": "SOLVED",
+    "old_conclusion": "Defined common JSON schema fields and registered source path/URL/date/hash/provenance/limits for transfer. External original documents must be reacquired by recipient if not packaged/licensable.",
+    "new_conclusion": "Формат включает старый/новый статус, prior conclusion, rationale, evidence level и ограничения.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Формат включает старый/новый статус, prior conclusion, rationale, evidence level и ограничения.",
+    "evidence_level": "unknown",
+    "limitations": "External original documents must be reacquired by recipient if not packaged/licensable.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  },
+  {
+    "id": "G5",
+    "task": "Итоговый повторный проход",
+    "old_status": "PARTIAL",
+    "status": "SOLVED",
+    "old_conclusion": "One targeted re-review used new official current Avtodor tariff table, revealing current label 545–589 vs retained Order58/2016 material 544–589. Remaining blockers unchanged; no replays. Need resolve current binding via active operator order/terms; no new source resolves remaining unknowns.",
+    "new_conclusion": "Финальный проход по policy и сохранённым CKAD/Pulkovo источникам подтвердил B05,981 и два38; новыми API-запросами не пользовались.",
+    "reason": "Политика28.10 имеет приоритет; отсутствие чека/схемы каждой полосы само по себе не blocker. Финальный проход по policy и сохранённым CKAD/Pulkovo источникам подтвердил B05,981 и два38; новыми API-запросами не пользовались.",
+    "evidence_level": "unknown",
+    "limitations": "Need resolve current binding via active operator order/terms; no new source resolves remaining unknowns.",
+    "working_calculation_possible": false,
+    "sources_reviewed": [
+      "TARIFF_SOURCE_POLICY.md",
+      "HISTORICAL_V1/SOURCE_REGISTER.json"
+    ],
+    "further_research": "Только недостающее существенное условие из регионального REVIEW, без replay."
+  }
+]

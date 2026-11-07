@@ -1,0 +1,116 @@
+{
+  "id": "MASS-125",
+  "group": "C",
+  "object": "M4-PVP545:3504914294",
+  "type": "cross",
+  "status": "response_received",
+  "reservedUnits": 1,
+  "httpAttempts": 1,
+  "summary": {
+    "id": "MASS-125",
+    "at": "2026-11-07T13:26:09.305Z",
+    "expectedUnits": 1,
+    "quotaDeltaObserved": null,
+    "httpStatus": 200,
+    "routeBuildStatus": "OK",
+    "routeCount": 1,
+    "distanceM": 294,
+    "durationS": 27,
+    "geometryLineCount": 3,
+    "geometryPointCount": 13,
+    "invalidGeometryCount": 0,
+    "nearestAnchorM": 40,
+    "nearestAnchorSegmentM": 1,
+    "paymentEventCount": 2,
+    "totalPaymentsEntryCount": 1,
+    "routeAggregate": null,
+    "perPvpPrice": null,
+    "witnessComparisons": [
+      {
+        "id": "boundary:3504914294",
+        "nearestSegmentM": 1
+      },
+      {
+        "id": "source:4904703533",
+        "nearestSegmentM": 0
+      },
+      {
+        "id": "source:3504914296",
+        "nearestSegmentM": 3
+      },
+      {
+        "id": "source:13644823408",
+        "nearestSegmentM": 1
+      },
+      {
+        "id": "source:13644823417",
+        "nearestSegmentM": 2
+      },
+      {
+        "id": "source:6594393973",
+        "nearestSegmentM": 2
+      },
+      {
+        "id": "source:3504914294",
+        "nearestSegmentM": 1
+      },
+      {
+        "id": "source:6594393974",
+        "nearestSegmentM": 1
+      },
+      {
+        "id": "source:9605783252",
+        "nearestSegmentM": 2
+      },
+      {
+        "id": "source:13644823422",
+        "nearestSegmentM": 1
+      },
+      {
+        "id": "source:13644823423",
+        "nearestSegmentM": 3
+      },
+      {
+        "id": "source:13644823428",
+        "nearestSegmentM": 0
+      }
+    ],
+    "aggregatePaymentSchema": [
+      [
+        "cost",
+        "currency"
+      ]
+    ],
+    "aggregatePaymentValues": [
+      {
+        "cost": 160,
+        "currency": "RUB"
+      }
+    ],
+    "detailedDataRetention": "transient processing only; no WKT or raw payment events retained"
+  },
+  "error": null,
+  "requestParameters": {
+    "points": [
+      {
+        "type": "stop",
+        "lon": 39.5546172,
+        "lat": 51.4725588
+      },
+      {
+        "type": "stop",
+        "lon": 39.5552519,
+        "lat": 51.4751743
+      }
+    ],
+    "transport": "driving",
+    "route_mode": "fastest",
+    "output": "detailed",
+    "need_payment_info": true,
+    "locale": "ru",
+    "alternative": 0
+  },
+  "startedAt": "2026-11-07T13:26:07.955Z",
+  "completedAt": "2026-11-07T13:26:09.305Z",
+  "rawDataRetained": false
+}

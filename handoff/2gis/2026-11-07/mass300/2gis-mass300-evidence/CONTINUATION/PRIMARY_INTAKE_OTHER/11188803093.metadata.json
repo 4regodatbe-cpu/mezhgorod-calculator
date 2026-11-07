@@ -1,0 +1,13 @@
+{
+  "object": "11188803093",
+  "url": "https://api.openstreetmap.org/api/0.6/map?bbox=35.4242426,56.9775797,35.4362426,56.9895797",
+  "attemptedAt": 1794067409.5429437,
+  "status": 200,
+  "sourceSha256": "801d5ce190e7d29e67a34301671ef13d13ccbbede42c08b708b299953fa8e911",
+  "sanitizedSha256": "3ec5039fe2ce1d54deca3ee2cc2ec0e61645ac26d679c424554b55af46d84c4d",
+  "bytes": 438036,
+  "roadOnlySha256": "090f8ad77e96286e56bf84c851cdfd1c5498945b691b10a77a307279e7a016cb",
+  "roadOnlyBytes": 52880,
+  "artifactRole": "Road-only derivative; full contributor-redacted map retained separately outside Git",
+  "originalSanitizedInputSha256": "3ec5039fe2ce1d54deca3ee2cc2ec0e61645ac26d679c424554b55af46d84c4d"
+}

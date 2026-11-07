@@ -1,0 +1,24 @@
+{
+  "newReserved": 44,
+  "newHTTP200": 43,
+  "scopeCounts": {
+    "SOURCE_CORRIDOR_SUPPORTED": 35,
+    "ROUTE_SCOPE_MISMATCH": 8,
+    "INCONCLUSIVE": 1
+  },
+  "minRequestIntervalSeconds": 15.252,
+  "roads": 9,
+  "objects": 19,
+  "crossControlSameAggregate": 8,
+  "skippedUnattempted": 13,
+  "remainingPrimary": 232,
+  "reserveUnattempted": 4,
+  "newV3RuntimeDefectsProven": 0,
+  "newTariffModels": 0,
+  "workingModelsUnchanged": [
+    "B05 320/410",
+    "fullCKAD M11-M12 981",
+    "Pulkovo access38/38"
+  ],
+  "rawGeometryRetained": false
+}

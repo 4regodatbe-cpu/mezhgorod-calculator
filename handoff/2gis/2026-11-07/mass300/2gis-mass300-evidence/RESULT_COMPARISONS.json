@@ -1,0 +1,224 @@
+[
+  {
+    "id": "MASS-081",
+    "group": "B",
+    "object": "M12-M7-exit",
+    "type": "exit",
+    "sourceLengthM": 401.72,
+    "routeLengthM": 6548,
+    "lengthRatio": 16.3,
+    "tariffInference": "none; source-backed geometry and operator rules remain separate",
+    "receiptVerified": false,
+    "sourceWitnessFractionWithin25m": 1.0,
+    "boundaryMinDistanceM": 2,
+    "aggregate": null,
+    "paymentStatus": "UNAVAILABLE_NOT_FREE",
+    "geometryStatus": "EXTRA_ROUTING_SCOPE_NOT_COMPARABLE",
+    "compareAsSameShortScope": false
+  },
+  {
+    "id": "MASS-121",
+    "group": "C",
+    "object": "M4-PVP545:5818209495",
+    "type": "before",
+    "sourceLengthM": 248.49,
+    "routeLengthM": 252,
+    "lengthRatio": 1.014,
+    "tariffInference": "none; source-backed geometry and operator rules remain separate",
+    "receiptVerified": false,
+    "sourceWitnessFractionWithin25m": 1.0,
+    "boundaryMinDistanceM": 13,
+    "aggregate": null,
+    "paymentStatus": "UNAVAILABLE_NOT_FREE",
+    "geometryStatus": "SOURCE_CORRIDOR_CONSISTENT_BOUNDARY_NOT_CERTIFIED",
+    "compareAsSameShortScope": true
+  },
+  {
+    "id": "MASS-122",
+    "group": "C",
+    "object": "M4-PVP545:5818209495",
+    "type": "after",
+    "sourceLengthM": 277.43,
+    "routeLengthM": 26631,
+    "lengthRatio": 95.992,
+    "tariffInference": "none; source-backed geometry and operator rules remain separate",
+    "receiptVerified": false,
+    "sourceWitnessFractionWithin25m": 1.0,
+    "boundaryMinDistanceM": 12,
+    "aggregate": [
+      {
+        "cost": 660,
+        "currency": "RUB"
+      }
+    ],
+    "paymentStatus": "OBSERVED_AGGREGATE",
+    "geometryStatus": "EXTRA_ROUTING_SCOPE_NOT_COMPARABLE",
+    "compareAsSameShortScope": false
+  },
+  {
+    "id": "MASS-123",
+    "group": "C",
+    "object": "M4-PVP545:3504914294",
+    "type": "before",
+    "sourceLengthM": 151.59,
+    "routeLengthM": 152,
+    "lengthRatio": 1.003,
+    "tariffInference": "none; source-backed geometry and operator rules remain separate",
+    "receiptVerified": false,
+    "sourceWitnessFractionWithin25m": 1.0,
+    "boundaryMinDistanceM": 10,
+    "aggregate": [
+      {
+        "cost": 160,
+        "currency": "RUB"
+      }
+    ],
+    "paymentStatus": "OBSERVED_AGGREGATE",
+    "geometryStatus": "SOURCE_CORRIDOR_CONSISTENT_BOUNDARY_NOT_CERTIFIED",
+    "compareAsSameShortScope": true
+  },
+  {
+    "id": "MASS-124",
+    "group": "C",
+    "object": "M4-PVP545:3504914294",
+    "type": "after",
+    "sourceLengthM": 188.04,
+    "routeLengthM": 188,
+    "lengthRatio": 1.0,
+    "tariffInference": "none; source-backed geometry and operator rules remain separate",
+    "receiptVerified": false,
+    "sourceWitnessFractionWithin25m": 1.0,
+    "boundaryMinDistanceM": 13,
+    "aggregate": [
+      {
+        "cost": 160,
+        "currency": "RUB"
+      }
+    ],
+    "paymentStatus": "OBSERVED_AGGREGATE",
+    "geometryStatus": "SOURCE_CORRIDOR_CONSISTENT_BOUNDARY_NOT_CERTIFIED",
+    "compareAsSameShortScope": true
+  },
+  {
+    "id": "MASS-125",
+    "group": "C",
+    "object": "M4-PVP545:3504914294",
+    "type": "cross",
+    "sourceLengthM": 294.61,
+    "routeLengthM": 294,
+    "lengthRatio": 0.998,
+    "tariffInference": "none; source-backed geometry and operator rules remain separate",
+    "receiptVerified": false,
+    "sourceWitnessFractionWithin25m": 1.0,
+    "boundaryMinDistanceM": 1,
+    "aggregate": [
+      {
+        "cost": 160,
+        "currency": "RUB"
+      }
+    ],
+    "paymentStatus": "OBSERVED_AGGREGATE",
+    "geometryStatus": "SOURCE_SUPPORTED_DIRECTED_BOUNDARY",
+    "compareAsSameShortScope": true
+  },
+  {
+    "id": "MASS-126",
+    "group": "C",
+    "object": "M4-PVP545:9620416636",
+    "type": "before",
+    "sourceLengthM": 247.44,
+    "routeLengthM": 246,
+    "lengthRatio": 0.994,
+    "tariffInference": "none; source-backed geometry and operator rules remain separate",
+    "receiptVerified": false,
+    "sourceWitnessFractionWithin25m": 1.0,
+    "boundaryMinDistanceM": 13,
+    "aggregate": null,
+    "paymentStatus": "UNAVAILABLE_NOT_FREE",
+    "geometryStatus": "SOURCE_CORRIDOR_CONSISTENT_BOUNDARY_NOT_CERTIFIED",
+    "compareAsSameShortScope": true
+  },
+  {
+    "id": "MASS-127",
+    "group": "C",
+    "object": "M4-PVP545:9620416636",
+    "type": "after",
+    "sourceLengthM": 163.03,
+    "routeLengthM": 163,
+    "lengthRatio": 1.0,
+    "tariffInference": "none; source-backed geometry and operator rules remain separate",
+    "receiptVerified": false,
+    "sourceWitnessFractionWithin25m": 1.0,
+    "boundaryMinDistanceM": 12,
+    "aggregate": [
+      {
+        "cost": 250,
+        "currency": "RUB"
+      }
+    ],
+    "paymentStatus": "OBSERVED_AGGREGATE",
+    "geometryStatus": "SOURCE_CORRIDOR_CONSISTENT_BOUNDARY_NOT_CERTIFIED",
+    "compareAsSameShortScope": true
+  },
+  {
+    "id": "MASS-128",
+    "group": "C",
+    "object": "M4-PVP545:9620416636",
+    "type": "cross",
+    "sourceLengthM": 436.32,
+    "routeLengthM": 435,
+    "lengthRatio": 0.997,
+    "tariffInference": "none; source-backed geometry and operator rules remain separate",
+    "receiptVerified": false,
+    "sourceWitnessFractionWithin25m": 1.0,
+    "boundaryMinDistanceM": 6,
+    "aggregate": [
+      {
+        "cost": 250,
+        "currency": "RUB"
+      }
+    ],
+    "paymentStatus": "OBSERVED_AGGREGATE",
+    "geometryStatus": "SOURCE_SUPPORTED_DIRECTED_BOUNDARY",
+    "compareAsSameShortScope": true
+  },
+  {
+    "id": "MASS-241",
+    "group": "F",
+    "object": "Pulkovo:13377945035",
+    "type": "before",
+    "sourceLengthM": 612.28,
+    "routeLengthM": 16671,
+    "lengthRatio": 27.228,
+    "tariffInference": "none; source-backed geometry and operator rules remain separate",
+    "receiptVerified": false,
+    "sourceWitnessFractionWithin25m": 0.375,
+    "boundaryMinDistanceM": 266,
+    "aggregate": [
+      {
+        "cost": 94,
+        "currency": "RUB"
+      }
+    ],
+    "paymentStatus": "OBSERVED_AGGREGATE",
+    "geometryStatus": "EXTRA_ROUTING_SCOPE_NOT_COMPARABLE",
+    "compareAsSameShortScope": false
+  },
+  {
+    "id": "MASS-242",
+    "group": "F",
+    "object": "Pulkovo:13377945036",
+    "type": "after",
+    "sourceLengthM": 484.01,
+    "routeLengthM": 489,
+    "lengthRatio": 1.01,
+    "tariffInference": "none; source-backed geometry and operator rules remain separate",
+    "receiptVerified": false,
+    "sourceWitnessFractionWithin25m": 1.0,
+    "boundaryMinDistanceM": 266,
+    "aggregate": null,
+    "paymentStatus": "UNAVAILABLE_NOT_FREE",
+    "geometryStatus": "SOURCE_CORRIDOR_CONSISTENT_BOUNDARY_NOT_CERTIFIED",
+    "compareAsSameShortScope": true
+  }
+]

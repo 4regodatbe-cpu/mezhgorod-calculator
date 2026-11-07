@@ -1,0 +1,18 @@
+{
+  "networkRegistryRows": 22,
+  "sourceRoutingPointObjects": 304,
+  "directedCandidateObjects": 115,
+  "generatedHypotheses": 339,
+  "preflightRejected": 46,
+  "preflightPassed": 293,
+  "selected": 289,
+  "reserve": 4,
+  "earlyDesignRejects": 185,
+  "newRoutingCalls": 0,
+  "sourceMapAttempts": 63,
+  "sourceMapSuccesses": 62,
+  "sourceMapErrors": 1,
+  "publicCatalogQueryStatus": 406,
+  "notExhaustiveNationalPhysicalCensus": true,
+  "manifestSha256": "eaeccffd2a4a0e9515026f5a8e9e552fa7014f2176994caa3a317c87c6fa499f"
+}

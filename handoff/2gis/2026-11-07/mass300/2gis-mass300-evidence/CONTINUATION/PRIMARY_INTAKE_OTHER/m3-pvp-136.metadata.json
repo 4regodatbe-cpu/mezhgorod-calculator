@@ -1,0 +1,13 @@
+{
+  "object": "m3-pvp-136",
+  "url": "https://api.openstreetmap.org/api/0.6/map?bbox=36.3419223,54.8612189,36.3539223,54.8732189",
+  "attemptedAt": 1794067438.15944,
+  "status": 200,
+  "sourceSha256": "7340d45ca207405a62440f51eddaae00eccecc8b0905abb137391b1115ab964a",
+  "sanitizedSha256": "6bd57d0bcd6f71d737c6ea5ef4d940cc107c7a855117edb98034f2bf5f085f60",
+  "bytes": 236340,
+  "roadOnlySha256": "b02391850d085fa773da5ffc6e6e49b3cac804ffc66d4d37b310d257e30f6870",
+  "roadOnlyBytes": 36127,
+  "artifactRole": "Road-only derivative; full contributor-redacted map retained separately outside Git",
+  "originalSanitizedInputSha256": "6bd57d0bcd6f71d737c6ea5ef4d940cc107c7a855117edb98034f2bf5f085f60"
+}

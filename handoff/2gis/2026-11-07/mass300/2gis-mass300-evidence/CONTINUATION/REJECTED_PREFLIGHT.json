@@ -1,0 +1,746 @@
+[
+  {
+    "object": "12787972033",
+    "type": "before",
+    "reason": "Repeated/too short/overlong"
+  },
+  {
+    "object": "13249401006",
+    "type": "after",
+    "reason": "Repeated/too short/overlong"
+  },
+  {
+    "object": "13377945036",
+    "type": "after",
+    "reason": "Repeated/too short/overlong"
+  },
+  {
+    "object": "1378698904",
+    "reason": "No350m reachable directed approach or departure in retained graph"
+  },
+  {
+    "object": "1419001745",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "1840647002",
+    "reason": "No350m reachable directed approach or departure in retained graph"
+  },
+  {
+    "object": "1840647131",
+    "reason": "No350m reachable directed approach or departure in retained graph"
+  },
+  {
+    "object": "2401530844",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "2401530849",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "2492861246",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "285903913",
+    "type": "after",
+    "reason": "Repeated/too short/overlong"
+  },
+  {
+    "object": "3036681110",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3283566519",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3283566523",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3598939358",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3598939361",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "361520161",
+    "reason": "Known no/only turn restriction"
+  },
+  {
+    "object": "3717382716",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3717382717",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3717382718",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3717382719",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3717382720",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3717382721",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3717382722",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3717382723",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3783549005",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3783549006",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3783549007",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3783549008",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3783549009",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3783549010",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3783549011",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3783549013",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3783549014",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3783549015",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3783549016",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3783549017",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3783549018",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3783549019",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3783549020",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "3842564088",
+    "reason": "No350m reachable directed approach or departure in retained graph"
+  },
+  {
+    "object": "4215723025",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "4215723029",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "4937117388",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "4937117389",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "4937997946",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "4937997947",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "4997471602",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "4997471603",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "4997471604",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "4997471605",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "4997471606",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "4997471607",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "4997474931",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "4997474932",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "4997474933",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "4997474934",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "4997474935",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "4997474936",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5051960274",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5051960276",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5051960280",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5051960284",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5051960288",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5051960290",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5051960294",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5051960295",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5051960296",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5051960316",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5052113768",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5052113770",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5052113773",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5052113775",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5052113777",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5052113783",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5052113786",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5052113789",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5052113792",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5052113796",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5052113798",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5052113800",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5052114048",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5052114054",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5061776819",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5061777323",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5061777327",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5061777330",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5061777334",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5061777337",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5061777340",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5061777348",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5061777353",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5061777358",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5061777363",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5061777367",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5061777372",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5061777377",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5170196691",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5170196692",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5170196693",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5170196700",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5170196701",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5170196702",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5170196703",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5286168660",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5286168661",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5286168662",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5729484646",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5729484647",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5729484648",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5729484649",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5729484650",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "5729484651",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6101009497",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559198",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559331",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559332",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559333",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559334",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559335",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559336",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559337",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559338",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559339",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559340",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559341",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559342",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559343",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559344",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559345",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559346",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559347",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559348",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559349",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559350",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559351",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559352",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559353",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559354",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559355",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559356",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6257559357",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "6594393968",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7014845615",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7014845616",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7014845619",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7014845620",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7014845621",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7014845622",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7014845623",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7014845624",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7014845625",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171624752",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171624753",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171624754",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171624755",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171624756",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171624757",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171624758",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171624759",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171624760",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171624761",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171624762",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171624763",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171624764",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171624765",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171624766",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171624767",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171624768",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171624769",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171624770",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171625007",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171625008",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171625009",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171625010",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171625011",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171625012",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171625013",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171625014",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "7171625015",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "8087316055",
+    "reason": "No350m reachable directed approach or departure in retained graph"
+  },
+  {
+    "object": "8087316065",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "920071110",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "933975069",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  },
+  {
+    "object": "9620416636",
+    "reason": "Co-located lane, same travel orientation; redundant hypothesis"
+  }
+]

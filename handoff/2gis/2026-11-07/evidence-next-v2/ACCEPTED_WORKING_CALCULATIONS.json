@@ -1,0 +1,88 @@
+[
+  {
+    "id": "B05",
+    "road_product": "M4 517–544 +544–589",
+    "direction": "northbound Taman→Voronezh",
+    "geometry_id": "HISTORICAL_V1/M4_545/geometry/route-history-review.json",
+    "tariff_edition": "Order58",
+    "vehicle_category": "I",
+    "payment_profile": "cash/card",
+    "effective_from": "2026-03-02T00:00:00+03:00",
+    "valid_to": null,
+    "values_rub": {
+      "MonThu": 320,
+      "FriSunHolidays": 410,
+      "trip_2026_10_15": 320
+    },
+    "official_source": "HISTORICAL_V1/M4_545/m4-order58-effective-2026-03-02.pdf",
+    "justification": "Owner28.10 accepts73.9km; saved complete route via5818209495 and exit301694367; official2016 rule +140/180 source cells.",
+    "alternative_interpretations": "Существенной равноправной альтернативы для указанного полного scope не установлено; другие scope не включены.",
+    "limitations": "Только exact B05; два продукта один раз; не все дороги маршрута.",
+    "status": "accepted_working_calculation",
+    "receipt_verified": false,
+    "full_trip_total": false
+  },
+  {
+    "id": "CKAD",
+    "road_product": "CKAD M11 Neva→M12 Vostok",
+    "direction": "forward only",
+    "geometry_id": "HISTORICAL_V1/CKAD/ckad-m11-m12-binding-proof.json",
+    "tariff_edition": "Order56",
+    "vehicle_category": "I",
+    "payment_profile": "postpayment/listed transponders",
+    "effective_from": "2026-03-02T00:00:00+03:00",
+    "valid_to": null,
+    "values_rub": {
+      "allDays": 981
+    },
+    "official_source": "SOURCES/ckad-order56-effective-2026-03-02.pdf",
+    "justification": "Saved binding-proof + original acquisition README explicitly link named complete A113 block and ramps to direct operator pair; direct matrix cell981.",
+    "alternative_interpretations": "Существенной равноправной альтернативы для указанного полного scope не установлено; другие scope не включены.",
+    "limitations": "Полный source-backed OD, не короткое CKAD API-окно; четыре gantries не четыре платы; no replay; другие дороги отдельно.",
+    "status": "accepted_working_calculation",
+    "receipt_verified": false,
+    "full_trip_total": false
+  },
+  {
+    "id": "PULKOVO_FORWARD",
+    "road_product": "Pulkovo standalone airport access",
+    "direction": "M11→airport",
+    "geometry_id": "SOURCES/m11-pulkovo-airport-access.json",
+    "tariff_edition": "Order274",
+    "vehicle_category": "I",
+    "payment_profile": "cash/card/listed transponders",
+    "effective_from": "2026-09-04T00:00:00+03:00",
+    "valid_to": null,
+    "values_rub": {
+      "allDays": 38
+    },
+    "official_source": "SOURCES/2026-09-04-avtodor-order274-current.pdf",
+    "justification": "Named separate one-way gate chains match standalone airport access product; source tariff is not direction-restricted. Exact old API WKT not reconstructed.",
+    "alternative_interpretations": "Существенной равноправной альтернативы для указанного полного scope не установлено; другие scope не включены.",
+    "limitations": "Только заданный OSM airport-only corridor; не полный M11 tail;94 combined replaces56+38 only when continuation established.",
+    "status": "accepted_working_calculation",
+    "receipt_verified": false,
+    "full_trip_total": false
+  },
+  {
+    "id": "PULKOVO_REVERSE",
+    "road_product": "Pulkovo standalone airport access",
+    "direction": "airport→M11",
+    "geometry_id": "SOURCES/pulkovo-m11-airport-access-reverse.json",
+    "tariff_edition": "Order274",
+    "vehicle_category": "I",
+    "payment_profile": "cash/card/listed transponders",
+    "effective_from": "2026-09-04T00:00:00+03:00",
+    "valid_to": null,
+    "values_rub": {
+      "allDays": 38
+    },
+    "official_source": "SOURCES/2026-09-04-avtodor-order274-current.pdf",
+    "justification": "Named separate one-way gate chains match standalone airport access product; source tariff is not direction-restricted. Exact old API WKT not reconstructed.",
+    "alternative_interpretations": "Существенной равноправной альтернативы для указанного полного scope не установлено; другие scope не включены.",
+    "limitations": "Только заданный OSM airport-only corridor; не полный M11 tail;94 combined replaces56+38 only when continuation established.",
+    "status": "accepted_working_calculation",
+    "receipt_verified": false,
+    "full_trip_total": false
+  }
+]

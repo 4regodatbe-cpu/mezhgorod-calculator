@@ -1,0 +1,95 @@
+[
+  {
+    "roadId": "a289",
+    "requests": 3,
+    "sourceObjects": 2,
+    "scopeStatusCounts": {
+      "SOURCE_CORRIDOR_SUPPORTED": 3
+    },
+    "nonemptyPaymentSummaries": 0,
+    "tariffConclusion": "No individual-PVP assignment; no absent-payment-free inference"
+  },
+  {
+    "roadId": "ckad",
+    "requests": 2,
+    "sourceObjects": 1,
+    "scopeStatusCounts": {
+      "ROUTE_SCOPE_MISMATCH": 2
+    },
+    "nonemptyPaymentSummaries": 2,
+    "tariffConclusion": "No individual-PVP assignment; no absent-payment-free inference"
+  },
+  {
+    "roadId": "dzok",
+    "requests": 5,
+    "sourceObjects": 2,
+    "scopeStatusCounts": {
+      "SOURCE_CORRIDOR_SUPPORTED": 5
+    },
+    "nonemptyPaymentSummaries": 2,
+    "tariffConclusion": "No individual-PVP assignment; no absent-payment-free inference"
+  },
+  {
+    "roadId": "m11",
+    "requests": 5,
+    "sourceObjects": 2,
+    "scopeStatusCounts": {
+      "SOURCE_CORRIDOR_SUPPORTED": 2,
+      "ROUTE_SCOPE_MISMATCH": 3
+    },
+    "nonemptyPaymentSummaries": 0,
+    "tariffConclusion": "No individual-PVP assignment; no absent-payment-free inference"
+  },
+  {
+    "roadId": "m12",
+    "requests": 6,
+    "sourceObjects": 3,
+    "scopeStatusCounts": {
+      "SOURCE_CORRIDOR_SUPPORTED": 6
+    },
+    "nonemptyPaymentSummaries": 5,
+    "tariffConclusion": "No individual-PVP assignment; no absent-payment-free inference"
+  },
+  {
+    "roadId": "m3",
+    "requests": 6,
+    "sourceObjects": 2,
+    "scopeStatusCounts": {
+      "SOURCE_CORRIDOR_SUPPORTED": 3,
+      "ROUTE_SCOPE_MISMATCH": 3
+    },
+    "nonemptyPaymentSummaries": 3,
+    "tariffConclusion": "No individual-PVP assignment; no absent-payment-free inference"
+  },
+  {
+    "roadId": "m4",
+    "requests": 7,
+    "sourceObjects": 3,
+    "scopeStatusCounts": {
+      "SOURCE_CORRIDOR_SUPPORTED": 6,
+      "INCONCLUSIVE": 1
+    },
+    "nonemptyPaymentSummaries": 5,
+    "tariffConclusion": "No individual-PVP assignment; no absent-payment-free inference"
+  },
+  {
+    "roadId": "odintsovo",
+    "requests": 6,
+    "sourceObjects": 2,
+    "scopeStatusCounts": {
+      "SOURCE_CORRIDOR_SUPPORTED": 6
+    },
+    "nonemptyPaymentSummaries": 4,
+    "tariffConclusion": "No individual-PVP assignment; no absent-payment-free inference"
+  },
+  {
+    "roadId": "zsd",
+    "requests": 4,
+    "sourceObjects": 2,
+    "scopeStatusCounts": {
+      "SOURCE_CORRIDOR_SUPPORTED": 4
+    },
+    "nonemptyPaymentSummaries": 0,
+    "tariffConclusion": "No individual-PVP assignment; no absent-payment-free inference"
+  }
+]

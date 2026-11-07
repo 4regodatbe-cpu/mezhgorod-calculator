@@ -1,0 +1,271 @@
+{
+  "status": "PENDING_EXPLICIT_EXACT_WINDOW_APPROVAL",
+  "maximumUnits": 11,
+  "campaignMaximumUnits": 300,
+  "windows": [
+    {
+      "id": "MASS-081",
+      "group": "B",
+      "object": "M12-M7-exit",
+      "type": "exit",
+      "from": [
+        40.1954394,
+        56.0796577
+      ],
+      "to": [
+        40.1953167,
+        56.0798533
+      ],
+      "sourceLengthKm": 0.40172,
+      "hypothesis": "Selected route exitsM12 ontoM7 via retained directed link, rather than another interchange",
+      "requestParameters": {
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      }
+    },
+    {
+      "id": "MASS-121",
+      "group": "C",
+      "object": "M4-PVP545:5818209495",
+      "type": "before",
+      "from": [
+        39.554631,
+        51.4679181
+      ],
+      "to": [
+        39.5547146,
+        51.4701519
+      ],
+      "sourceLengthKm": 0.24849,
+      "hypothesis": "Selected route stays on the before side without crossing target boundary",
+      "requestParameters": {
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      }
+    },
+    {
+      "id": "MASS-122",
+      "group": "C",
+      "object": "M4-PVP545:5818209495",
+      "type": "after",
+      "from": [
+        39.5546944,
+        51.470384
+      ],
+      "to": [
+        39.5543378,
+        51.4728672
+      ],
+      "sourceLengthKm": 0.27743,
+      "hypothesis": "Selected route stays on the after side without crossing target boundary",
+      "requestParameters": {
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      }
+    },
+    {
+      "id": "MASS-123",
+      "group": "C",
+      "object": "M4-PVP545:3504914294",
+      "type": "before",
+      "from": [
+        39.5546495,
+        51.4722186
+      ],
+      "to": [
+        39.5547766,
+        51.473575
+      ],
+      "sourceLengthKm": 0.15159,
+      "hypothesis": "Selected route stays on the before side without crossing target boundary",
+      "requestParameters": {
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      }
+    },
+    {
+      "id": "MASS-124",
+      "group": "C",
+      "object": "M4-PVP545:3504914294",
+      "type": "after",
+      "from": [
+        39.5548468,
+        51.4737765
+      ],
+      "to": [
+        39.5552709,
+        51.4754439
+      ],
+      "sourceLengthKm": 0.18804,
+      "hypothesis": "Selected route stays on the after side without crossing target boundary",
+      "requestParameters": {
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      }
+    },
+    {
+      "id": "MASS-125",
+      "group": "C",
+      "object": "M4-PVP545:3504914294",
+      "type": "cross",
+      "from": [
+        39.5546172,
+        51.4725588
+      ],
+      "to": [
+        39.5552519,
+        51.4751743
+      ],
+      "sourceLengthKm": 0.29461,
+      "hypothesis": "Selected route crosses source boundary vicinity",
+      "requestParameters": {
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      }
+    },
+    {
+      "id": "MASS-126",
+      "group": "C",
+      "object": "M4-PVP545:9620416636",
+      "type": "before",
+      "from": [
+        39.554631,
+        51.4679181
+      ],
+      "to": [
+        39.5543652,
+        51.4701372
+      ],
+      "sourceLengthKm": 0.24744,
+      "hypothesis": "Selected route stays on the before side without crossing target boundary",
+      "requestParameters": {
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      }
+    },
+    {
+      "id": "MASS-127",
+      "group": "C",
+      "object": "M4-PVP545:9620416636",
+      "type": "after",
+      "from": [
+        39.5543375,
+        51.470369
+      ],
+      "to": [
+        39.5541728,
+        51.4718315
+      ],
+      "sourceLengthKm": 0.16303,
+      "hypothesis": "Selected route stays on the after side without crossing target boundary",
+      "requestParameters": {
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      }
+    },
+    {
+      "id": "MASS-128",
+      "group": "C",
+      "object": "M4-PVP545:9620416636",
+      "type": "cross",
+      "from": [
+        39.554631,
+        51.4679181
+      ],
+      "to": [
+        39.5541728,
+        51.4718315
+      ],
+      "sourceLengthKm": 0.43632,
+      "hypothesis": "Selected route crosses source boundary vicinity",
+      "requestParameters": {
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      }
+    },
+    {
+      "id": "MASS-241",
+      "group": "F",
+      "object": "Pulkovo:13377945035",
+      "type": "before",
+      "from": [
+        30.3498709,
+        59.7898794
+      ],
+      "to": [
+        30.3392171,
+        59.7903025
+      ],
+      "sourceLengthKm": 0.61228,
+      "hypothesis": "Selected route stays on the before side without crossing target boundary",
+      "requestParameters": {
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      }
+    },
+    {
+      "id": "MASS-242",
+      "group": "F",
+      "object": "Pulkovo:13377945036",
+      "type": "after",
+      "from": [
+        30.3392231,
+        59.7901961
+      ],
+      "to": [
+        30.3473335,
+        59.7890185
+      ],
+      "sourceLengthKm": 0.48401,
+      "hypothesis": "Selected route stays on the after side without crossing target boundary",
+      "requestParameters": {
+        "transport": "driving",
+        "route_mode": "fastest",
+        "output": "detailed",
+        "need_payment_info": true,
+        "locale": "ru",
+        "alternative": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='utf-8'?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.1 (1652018 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/"><bounds minlat="55.9674236" minlon="38.3187945" maxlat="55.9794236" maxlon="38.3307945" />
+ <node id="2021585481" visible="true" version="6" lat="55.9680974" lon="38.3496290" />
+ <node id="2021585482" visible="true" version="4" lat="55.9748578" lon="38.3182955" />
+ <node id="2021585488" visible="true" version="3" lat="55.9759954" lon="38.3143580" />
+ <node id="2021585498" visible="true" version="3" lat="55.9768029" lon="38.3121049" />
+ <node id="2947684540" visible="true" version="2" lat="55.9707812" lon="38.3370563" />
+ <node id="5882193255" visible="true" version="2" lat="55.9669074" lon="38.3537991" />
+ <node id="7215854848" visible="true" version="2" lat="55.9784493" lon="38.3086314" />
+ <node id="7399811520" visible="true" version="1" lat="55.9778228" lon="38.3101360" />
+ <node id="7399811521" visible="true" version="1" lat="55.9770126" lon="38.3119170" />
+ <node id="7399811522" visible="true" version="1" lat="55.9760593" lon="38.3145770" />
+ <node id="7399811523" visible="true" version="1" lat="55.9755086" lon="38.3163408" />
+ <node id="7399811524" visible="true" version="1" lat="55.9749654" lon="38.3183730" />
+ <node id="7399811525" visible="true" version="1" lat="55.9742907" lon="38.3213634" />
+ <node id="7399811529" visible="true" version="1" lat="55.9777033" lon="38.3101255" />
+ <node id="7399811531" visible="true" version="1" lat="55.9754041" lon="38.3162516" />
+ <node id="7399811532" visible="true" version="1" lat="55.9741824" lon="38.3212888" />
+ <node id="7399811533" visible="true" version="1" lat="55.9675420" lon="38.3517641" />
+ <node id="7399811554" visible="true" version="1" lat="55.9785149" lon="38.3087510" />
+ <node id="8120716325" visible="true" version="2" lat="55.9735129" lon="38.3248418">
+  <tag k="highway" v="toll_gantry" />
+ </node>
+ <node id="8120716326" visible="true" version="2" lat="55.9734236" lon="38.3247945">
+  <tag k="highway" v="toll_gantry" />
+ </node>
+ <node id="10782146511" visible="true" version="1" lat="55.9733982" lon="38.3249124" />
+ <node id="10782146512" visible="true" version="1" lat="55.9734884" lon="38.3249568" />
+ <node id="11067102981" visible="true" version="1" lat="55.9712526" lon="38.3354299" />
+ <way id="191575517" visible="true" version="19">
+  <nd ref="10782146511" />
+  <nd ref="2947684540" />
+  <nd ref="2021585481" />
+  <nd ref="7399811533" />
+  <nd ref="5882193255" />
+  <tag k="highway" v="motorway" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="RU:motorway" />
+  <tag k="maxspeed:designed" v="140" />
+  <tag k="name" v="Центральная кольцевая автомобильная дорога" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="А-113" />
+  <tag k="short_name" v="ЦКАД" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="1159434707" visible="true" version="3">
+  <nd ref="8120716325" />
+  <nd ref="7399811525" />
+  <nd ref="7399811524" />
+  <nd ref="7399811523" />
+  <nd ref="7399811522" />
+  <nd ref="7399811521" />
+  <nd ref="7399811520" />
+  <nd ref="7399811554" />
+  <tag k="highway" v="motorway" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="RU:motorway" />
+  <tag k="maxspeed:designed" v="140" />
+  <tag k="name" v="Центральная кольцевая автомобильная дорога" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="А-113" />
+  <tag k="short_name" v="ЦКАД" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="1159434708" visible="true" version="3">
+  <nd ref="7215854848" />
+  <nd ref="7399811529" />
+  <nd ref="2021585498" />
+  <nd ref="2021585488" />
+  <nd ref="7399811531" />
+  <nd ref="2021585482" />
+  <nd ref="7399811532" />
+  <nd ref="8120716326" />
+  <tag k="highway" v="motorway" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="RU:motorway" />
+  <tag k="maxspeed:designed" v="140" />
+  <tag k="name" v="Центральная кольцевая автомобильная дорога" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="А-113" />
+  <tag k="short_name" v="ЦКАД" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="1159434709" visible="true" version="3">
+  <nd ref="8120716326" />
+  <nd ref="10782146511" />
+  <tag k="highway" v="motorway" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="RU:motorway" />
+  <tag k="maxspeed:designed" v="140" />
+  <tag k="name" v="Центральная кольцевая автомобильная дорога" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="А-113" />
+  <tag k="short_name" v="ЦКАД" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="1159434710" visible="true" version="3">
+  <nd ref="10782146512" />
+  <nd ref="8120716325" />
+  <tag k="highway" v="motorway" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="RU:motorway" />
+  <tag k="maxspeed:designed" v="140" />
+  <tag k="name" v="Центральная кольцевая автомобильная дорога" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="А-113" />
+  <tag k="short_name" v="ЦКАД" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ <way id="1192111267" visible="true" version="4">
+  <nd ref="11067102981" />
+  <nd ref="10782146512" />
+  <tag k="highway" v="motorway" />
+  <tag k="lanes" v="2" />
+  <tag k="lit" v="yes" />
+  <tag k="maxspeed" v="RU:motorway" />
+  <tag k="maxspeed:designed" v="140" />
+  <tag k="maxspeed:variable" v="yes" />
+  <tag k="name" v="Центральная кольцевая автомобильная дорога" />
+  <tag k="oneway" v="yes" />
+  <tag k="ref" v="А-113" />
+  <tag k="short_name" v="ЦКАД" />
+  <tag k="surface" v="asphalt" />
+  <tag k="toll" v="yes" />
+ </way>
+ </osm>

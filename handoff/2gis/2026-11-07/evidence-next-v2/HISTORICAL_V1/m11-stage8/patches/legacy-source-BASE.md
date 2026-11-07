@@ -1,0 +1,3 @@
+# Legacy Stage 8 patch base
+
+`stage8-legacy-implementation.patch` and `stage8-source-files.tar.gz` are a complete historical implementation snapshot based on commit `3a000f64c82a7e89715cdea09a13e1edf9354bef`. The patch was checked/applied/reverse-checked in an isolated clone of that exact base during the previous stage. Required base object is not embedded in this evidence archive; retrieve that commit only if reviewing the legacy implementation. Do not apply it to the current published main (`636e6801bdd2a3db6ce4714830dc8a05fc73b7c9`), whose M-11 layout differs. Current-main data overlay is a separate, minimal patch.

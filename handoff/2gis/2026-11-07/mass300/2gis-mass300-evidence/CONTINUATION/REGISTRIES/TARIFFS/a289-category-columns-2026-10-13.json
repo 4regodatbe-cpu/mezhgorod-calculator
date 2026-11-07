@@ -1,0 +1,49 @@
+{
+  "capturedAt": "2026-10-13",
+  "source": "https://avtodor-tr.ru/road/tariffs/",
+  "operatorSource": "https://tskad.ru/stoimost-proezda/tarifs-a-289/",
+  "vehicleCategory": "I",
+  "payment": "base post-payment without transponder discount",
+  "effectiveFrom": "2026-03-02",
+  "effectiveDateBasis": "operator document listing Order 59 of 27.02.2026; user-approved 800 control",
+  "retrieval": "Search-indexed primary tariff page returned the six complete four-category rows; direct Avtodor fetch403, operator fetch timeout/proxy_error; no fresh PDF download claim.",
+  "correction": "Category-I and category-II columns were previously mislabeled transponder and noTransponder. 833 is category II, not the passenger-car base price.",
+  "rows": [
+    {
+      "from": "Maryanskaya",
+      "to": "Slavyansk",
+      "categoryIRub": 415,
+      "categoryIIRub": 555
+    },
+    {
+      "from": "Slavyansk",
+      "to": "Varenikovskaya",
+      "categoryIRub": 205,
+      "categoryIIRub": 278
+    },
+    {
+      "from": "Maryanskaya",
+      "to": "Varenikovskaya",
+      "categoryIRub": 620,
+      "categoryIIRub": 833
+    },
+    {
+      "from": "Varenikovskaya",
+      "to": "Temryuk",
+      "categoryIRub": 180,
+      "categoryIIRub": 270
+    },
+    {
+      "from": "Maryanskaya",
+      "to": "Temryuk",
+      "categoryIRub": 800,
+      "categoryIIRub": 1103
+    },
+    {
+      "from": "Slavyansk",
+      "to": "Temryuk",
+      "categoryIRub": 385,
+      "categoryIIRub": 548
+    }
+  ]
+}

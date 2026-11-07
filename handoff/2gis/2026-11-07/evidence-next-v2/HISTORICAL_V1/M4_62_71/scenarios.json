@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "caseId": "m4-62-71-pilot",
+  "priorExecution": {
+    "date": "2026-11-03",
+    "status": "historically_reported_successful_pilot",
+    "replayed": false,
+    "retainedSummary": "151 route geometry vertices were reported; raw geometry and complete request ledger are absent from this checkout.",
+    "evidenceReference": "../stage9-other-road-results.md"
+  },
+  "variants": [
+    {
+      "id": "exit-at-pvp62",
+      "routeCondition": "route leaves M-4 through the directed PVP62 exit and continues off the toll road",
+      "physicalPathStatus": "UNKNOWN_NO_RAW_PILOT_GEOMETRY",
+      "operatorProductStatus": "UNKNOWN",
+      "fareRub": null,
+      "requiredEvidence": ["directed entry-to-PVP62 route witness", "effective official tariff for the recorded vehicle/payment mode", "operator rule connecting that PVP to the route"]
+    },
+    {
+      "id": "continue-to-pvp71",
+      "routeCondition": "route remains on M-4 after the PVP62 area and reaches the directed PVP71 charging point",
+      "physicalPathStatus": "UNKNOWN_NO_RAW_PILOT_GEOMETRY",
+      "operatorProductStatus": "UNKNOWN",
+      "fareRub": null,
+      "requiredEvidence": ["directed continuous M-4 path past PVP62 to PVP71", "effective official tariff for the recorded vehicle/payment mode", "operator rule establishing the charged product and whether PVP62 also charges"]
+    }
+  ],
+  "regressionInvariant": "Do not assign the same PVP or tariff row to both variants without route geometry and official operator mapping; do not infer either fare from destination or nearest kilometre.",
+  "replayPolicy": "No repeated 2GIS call solely to recover the historical response."
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "MASS-081",
+    "refuted": "Short source-polyline length sufficiently predicts selected-route scope for monetary comparison",
+    "sourceLengthM": 401.72,
+    "actualRouteLengthM": 6548,
+    "reason": "Provider route contains substantial additional geometry even when many source witnesses are nearby; not a tariff-model refutation."
+  },
+  {
+    "id": "MASS-122",
+    "refuted": "Short source-polyline length sufficiently predicts selected-route scope for monetary comparison",
+    "sourceLengthM": 277.43,
+    "actualRouteLengthM": 26631,
+    "reason": "Provider route contains substantial additional geometry even when many source witnesses are nearby; not a tariff-model refutation."
+  },
+  {
+    "id": "MASS-241",
+    "refuted": "Short source-polyline length sufficiently predicts selected-route scope for monetary comparison",
+    "sourceLengthM": 612.28,
+    "actualRouteLengthM": 16671,
+    "reason": "Provider route contains substantial additional geometry even when many source witnesses are nearby; not a tariff-model refutation."
+  }
+]

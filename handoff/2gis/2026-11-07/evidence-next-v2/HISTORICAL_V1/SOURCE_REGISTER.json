@@ -1,0 +1,90 @@
+[
+  {
+    "id": "m4-order58-2026-03-02",
+    "title": "Avtodor Order 58, tariff appendix, effective 2026-03-02",
+    "kind": "official PDF",
+    "local_path": "M4_545/m4-order58-effective-2026-03-02.pdf",
+    "sha256": "25fdb9a430934f47617c8cc1563f95e49c6ebe41c6303e9bd67465b3c568662d",
+    "url": null,
+    "date": "2026-03-02",
+    "scope": "Category I cash/card values in retained Order58; product row 544–589."
+  },
+  {
+    "id": "m4-current-tariffs",
+    "title": "Avtodor current toll tariffs page",
+    "kind": "official web page",
+    "local_path": null,
+    "sha256": null,
+    "url": "https://avtodor-tr.ru/road/tariffs/",
+    "date_accessed": "2026-11-07",
+    "scope": "Current displayed M4 rows 517–544 and 545–589 and rates 140/160, 180/250 for Cat I cash/card; live page not archived locally."
+  },
+  {
+    "id": "m4-2016-pvp545",
+    "title": "Avtodor 2016 PVP545 route-dependent explanation",
+    "kind": "official historical page",
+    "local_path": null,
+    "sha256": null,
+    "url": "https://avtodor-tr.ru/press-center/news/rezhim-platnosti-vveden-na-uchastke-avtomobilnoy-dorogi-m-4-don-v-obkhod-sela-novaya-usman-i-sela-ro/",
+    "date": "2016-12-26",
+    "scope": "Historic product selection and combined tariff for continuing southbound trip; not current lane mapping."
+  },
+  {
+    "id": "m12-order302",
+    "title": "Avtodor M12 Order302 tariff matrix",
+    "kind": "official PDF",
+    "local_path": "M12/m12-order302-effective-2026-10-08.pdf",
+    "sha256": "25226467bed5d36691085e03ce706e49bb15b6e67607d0ebd4df420a9b07d213",
+    "url": null,
+    "date": "2026-10-08",
+    "scope": "Official M12 tariff anchors/OD rates."
+  },
+  {
+    "id": "m12-west-current-page",
+    "title": "Avtodor current toll tariff page",
+    "kind": "official web page",
+    "local_path": null,
+    "sha256": null,
+    "url": "https://avtodor-tr.ru/road/tariffs/",
+    "date_accessed": "2026-11-07",
+    "scope": "Displayed 81/118/174 segment labels and tariffs; location crosswalk remains unproven."
+  },
+  {
+    "id": "order57-120m",
+    "title": "Avtodor Order57 Appendix 1, 120-minute cross-network condition",
+    "kind": "official PDF",
+    "local_path": null,
+    "sha256": null,
+    "url": "https://avtodor-tr.ru/upload/iblock/fe5/a2e7y350b1wrbw28x181m10z1eeblnfd.pdf",
+    "date": "2026-02-27",
+    "scope": "Narrow M12–Nosoikhinskoe and CKAD paired-section toll detection rule; verify supersession before runtime use."
+  },
+  {
+    "id": "osm-license",
+    "title": "OpenStreetMap contributors data",
+    "kind": "OSM-derived geometry evidence",
+    "local_path": "M4_545/geometry/osm-directed-subset.json; M12/geometry/",
+    "sha256": null,
+    "url": "https://www.openstreetmap.org/copyright",
+    "date_accessed": "2026-11-07",
+    "scope": "ODbL attribution applies; OSM physical evidence does not establish operator tariff product."
+  },
+  {
+    "id": "stage7-saved",
+    "title": "Saved prior Stage 7 summaries",
+    "kind": "project experiment records",
+    "local_path": "ZSD_PULKOVO_M11/stage7-results.md",
+    "sha256": null,
+    "url": null,
+    "scope": "Historical outcomes only; no retries; no raw 2GIS responses in package."
+  },
+  {
+    "id": "m11-stage8",
+    "title": "Stage 8 M11 evidence and official data",
+    "kind": "project packet with official sources",
+    "local_path": "m11-stage8/",
+    "sha256": null,
+    "url": null,
+    "scope": "Already-integrated official M11 matrix; unchanged by this audit."
+  }
+]

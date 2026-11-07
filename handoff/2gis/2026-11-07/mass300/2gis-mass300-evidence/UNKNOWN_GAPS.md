@@ -1,0 +1,7 @@
+# Remaining meaningful gaps
+
+Exact11approvalresolved;all11returnedHTTP200/OK.289slots remainunallocatedwithoutvalidatedindependenthypotheses,notpermissionblock on alreadyexecuted11. DirectionsA,D,E,G,H havenonewAPIobservations. Gate requires exactfuturemanifestapproval;don'tfill300withshifts/repeats.
+
+M12exit remainsoperator-unbound;newM7routelength6.548km alters shortscope. North/oldM4banksnowprovider-supportedcrossings;productassociationnotprovedby160/250coincidence. Southern-bypassaftercannotbecomparedto550mbaselinebecause26.631kmdetour. Pulkovo94combinedcandidate stillnotnewstandaloneproductproof. NoCKAD/A289/PVP62/71newcalls. No receipts.
+
+Onlyin-memorydetailedanalysisallowed:rawWKT notretained;selectedpathorder/extra-wayidentitycannotbereconstructedfromderivativesandmustnotbeclaimed. Do not replaynewIDs to recoverdiscardeddata. PMmaylag;QUOTA_RECONCILIATION tracksobserved/reservedseparately.
