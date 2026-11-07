@@ -8,6 +8,11 @@ assert.ok(['127.0.0.1','localhost'].includes(base.hostname),'Local acceptance mu
 const {chromium}=await import(pathToFileURL(process.env.PLAYWRIGHT_MODULE).href);
 const output=process.env.LOCAL_V3_OUTPUT??'/tmp/stage-ad-browser';mkdirSync(output,{recursive:true});
 const report={kind:'LOCAL_BUILT_UI_CONTROLLED_API',sourceSha:process.env.EXPECTED_COMMIT,results:[],liveProviders:'NOT_RUN'};
+const versionResponse=await fetch(new URL('/api/version',base));
+assert.equal(versionResponse.status,200);
+report.version=await versionResponse.json();
+assert.ok(report.sourceSha,'Expected source commit is required');
+assert.equal(report.version.commit,report.sourceSha);
 const save=()=>writeFileSync(`${output}/results.json`,JSON.stringify(report,null,2));
 const browser=await chromium.launch({executablePath:'/usr/bin/chromium',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
 function result(body){
@@ -33,7 +38,7 @@ try{for(const mobile of [false,true]){
   }
   return route.continue();
  });
- const a=page.getByRole('textbox',{name:'Откуда'}),b=page.getByRole('textbox',{name:'Куда'});
+ const a=page.getByRole('textbox',{name:'Откуда',exact:true}),b=page.getByRole('textbox',{name:'Куда',exact:true});
  const clearA=()=>page.getByRole('button',{name:'Очистить поле «Точка A»'}).click();
  const clearB=()=>page.getByRole('button',{name:'Очистить поле «Точка B»'}).click();
  const calculate=()=>page.getByRole('button',{name:'Рассчитать поездку',exact:true}).filter({visible:true}).click();

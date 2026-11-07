@@ -52,7 +52,8 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     return [{ provider: resultNames[index], kind: index === 1 || index === 2 ? "bypass" : "primary",
       status: result.status === "fulfilled" ? "accepted" : "rejected",
       ...(result.status === "rejected" ? routingFailure(result.reason) : { failure: null, httpStatus: 200 }),
-      elapsedMs: Math.round(elapsed[index] ?? performance.now() - started), geometryUsable: raw.status === "fulfilled",
+      ...(raw.status === "fulfilled" ? { httpStatus: 200 } : {}),
+      elapsedMs: Math.round(elapsed[index] ?? performance.now() - started), geometryUsable: raw.status === "fulfilled" && isUsableRoute(raw.value, from, to),
       validator: raw.status === "rejected" ? "not_run" : result.status === "fulfilled" ? "accepted" : "rejected", selected: false }];
   });
   attempts.forEach(attempt => timing?.recordRoutingAttempt(attempt));
