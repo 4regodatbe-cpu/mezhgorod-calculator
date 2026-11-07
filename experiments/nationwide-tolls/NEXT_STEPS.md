@@ -1,10 +1,13 @@
-# STAGE AA V3 final-gate repair — IN PROGRESS (2026-11-07)
+# STAGE AA V3 final-gate repair — DONE LOCAL / RELEASE BLOCKED (2026-11-07)
 
-1. Audit the three removed workflow scripts against Git history and current maintained integrity/route test suites; do not restore dead runtime database assertions as fake green checks.
-2. Change gate route probes to call `/api/v3/calculate`, establish V3 request/response fields from the actual API, and preserve `/v2` as separately named legacy smoke. Correct all control failures or mark them unknown only when the V3 contract/evidence supports that outcome; never relax route/toll safety assertions by changing thresholds.
-3. Inspect the two stale Avtodor freshness records, official source, effective date, verification date, and freshness logic. Update source metadata only when evidence supports it; otherwise use `unconfirmed/unknown` and keep strict gate truthful.
-4. Align the local final-gate workflow with current V3 root/API and the current PR base (`audit/v3-matrix-provenance-2026-10-14`) for a future owner-approved run. This local patch alone cannot start CI: the workflow must exist on the PR base to handle this PR event; no push or PR-base mutation is authorized.
-5. Run focused regressions and the full offline suite, TypeScript, ESLint, Webpack and default production build where the environment permits; record Turbopack EPERM separately. Then save terminal checkpoint, WORK_STATE and append-only log, local commit and incremental bundle; no remote write.
+Completed locally at implementation commit `da4e362013ddbe2e2fb7ed9e3ed44d1ea4f3ab2f`, final documentation commit `5382c06fdeee1da8566704c73766c1a3b5b22104`. Details and all route/check outcomes: [Stage AA terminal checkpoint](../../docs/checkpoints/2026-11-07-stage-aa-v3-final-gate-DONE-LOCAL.md). The old route-monitor failures were generated against V2 and do not establish V3 defects. Four bounded V3 routes returned HTTP 200; Tver→Adler and Golubitskaya→SPB returned HTTP 502 after all three providers failed, with no detailed provider status in the response. M‑12 totals remain `unknown/null` where no direct pair is proven. The strict gate still rejects two stale Avtodor snapshots; no tariff evidence/date was invented.
+
+Next actions:
+
+1. Obtain current first-party tariff source and effective dates for both stale `avtodor-other-roads-2026-10-01-category1-*` rows; rerun strict freshness without relaxing its threshold.
+2. After separate owner authorization only, recheck remote/ancestry and publish this isolated candidate with a normal non-force fast-forward push to the working branch. No push is currently authorized.
+3. Inspect the resulting exact-SHA Actions run, including the V3 live route report and strict tariff freshness. Resolve provider-level cause of the two HTTP 502 outcomes before interpreting them as application defects.
+4. Preserve unknown toll amounts until independent directed tariff boundaries and current matching official tariff rows are available. Never change Production in this stage.
 
 ## Previous Stage Z combined M‑11/M‑4 — IMPLEMENTED; FULL OFFLINE GATE BLOCKED, local only
 
