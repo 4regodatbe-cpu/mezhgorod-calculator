@@ -72,9 +72,11 @@ export function assessTariffProducts(report, evidence, verifySource = verifyProd
     if (effective == null) fail('effective_date_unproven_or_invalid');
     else if (effective > report.asOf) fail('tariff_not_yet_effective');
     if (!verifySource(row.source)) fail('official_source_missing_or_unverified');
+    if (row.source?.sourceKind === 'official_page_rendered_excerpt' && row.source.originalPageBytesAvailable === false) warnings.push({id:row.id, code:'original_source_bytes_unavailable'});
     if (row.fareKnown !== true || !hasFareEvidence(row)) fail('official_fare_unproven');
     if (row.coverageComplete !== true) fail('product_coverage_incomplete');
     if (!['verified','accepted_working_calculation'].includes(row.paymentBinding?.status) || !row.paymentBinding?.basis?.trim()) fail('payment_mode_unproven');
+    if (row.paymentBinding?.status === 'accepted_working_calculation' || row.productBinding?.status === 'accepted_working_calculation') warnings.push({id:row.id, code:'owner_attested_working_mapping'});
     if (row.contradiction !== 'none') fail('material_or_unresolved_contradiction');
     if (!['verified','accepted_working_calculation'].includes(row.productBinding?.status) || !row.productBinding?.basis?.trim()) fail('product_binding_unproven');
     if (row.doubleChargeRisk !== false) fail('double_charge_risk_unresolved');

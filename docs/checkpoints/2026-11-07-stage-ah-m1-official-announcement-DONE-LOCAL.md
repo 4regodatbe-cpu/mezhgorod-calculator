@@ -26,7 +26,7 @@ No route/runtime calculation code or geometry changed; the experimental product-
 
 ## Product gate and remaining blockers
 
-The full product-level proposal evaluates 14 products; all 14 now PASS, including the two M‑1 views. The two aggregate `avtodor-other-roads` views each show six products and PASS because every represented product is individually evidenced or accepted as a working model. Overall candidate result: `PASS_WITH_WARNINGS`, exit 0, 15 warnings. Warnings concern old observations and aggregate effective-date metadata; they are not errors under the proposed gate. It does not certify selected-route traversal or a complete journey price.
+The full product-level proposal evaluates 14 products; all 14 now PASS, including the two M‑1 views. The two aggregate `avtodor-other-roads` views each show six products and PASS because every represented product is individually evidenced or accepted as a working model. Overall candidate result: `PASS_WITH_WARNINGS`, exit 0, 21 warnings: 12 observations due for recheck, 3 aggregate effective dates not established, 2 cases where original web-page bytes are unavailable, and 4 owner-attested working mappings. Warnings are visible qualifications, not errors under the proposed gate. It does not certify selected-route traversal or a complete journey price.
 
 The current mandatory freshness gate was deliberately not changed and still exits 2 under strict mode: two aggregate snapshots are 37 days old against a 30-day threshold. Its `observedAt` was not rewritten. Thus the M‑1 evidence gap is resolved for this product-gate candidate’s base tariff, but mandatory CI/release remains blocked until the owner approves the gate policy/integration and it is implemented without weakening source/date/conflict/double-charge controls.
 
@@ -36,7 +36,7 @@ The remaining Order54 limitation is narrow: local raw PDF/hash cannot independen
 
 - `node scripts/stage-ah-product-gate.test.mjs`: 5/5 PASS, including official excerpt hash and content, M‑1/aggregate status, stale-warning behavior, invalid/future dates, missing source, unknown fare, tariff conflict, double-charge risk and malformed input.
 - `node --test experiments/nationwide-tolls/national-price.test.mjs experiments/nationwide-tolls/m1-m3-shadow-quote.test.mjs`: 2/2 test files PASS after candidate correction.
-- `node scripts/run-stage-ah-product-gate.mjs`: `PASS_WITH_WARNINGS`, exit 0; 14/14 products, both aggregates PASS, zero errors, 15 warnings.
+- `node scripts/run-stage-ah-product-gate.mjs`: `PASS_WITH_WARNINGS`, exit 0; 14/14 products, both aggregates PASS, zero errors, 21 warnings (12 recheck, 3 effective-date, 2 original-byte, 4 owner-attested mapping).
 - Unchanged mandatory command `TARIFF_AS_OF=2026-11-07 TARIFF_STALE_STRICT=1 node scripts/check-tariff-freshness.mjs`: exit 2, `stale=2`, `invalid=0`, `effectiveDateUnknown=3`. This remains the actual CI blocker because both 2026-10-01 aggregates exceed the 30-day strict threshold; `observedAt` was not rewritten.
 - `node --check` for gate/CLI/tests, JSON parse for all changed JSON, extract SHA-256 verification and `git diff --check`: PASS.
 - No TypeScript, ESLint or application build was needed because runtime/build files and route geometry are unchanged. No hosted CI was run or claimed.

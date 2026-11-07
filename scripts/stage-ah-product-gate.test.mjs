@@ -45,6 +45,8 @@ test('official release closes M-1 Cat-I base fare; all listed products pass inde
   assert(result.registryAssessments.find(row => row.id.startsWith('m11-')).status === 'PASS');
   assert(result.registryAssessments.find(row => row.id.startsWith('m12-')).status === 'PASS');
   assert(result.warnings.some(row => row.code === 'observation_recheck_due'));
+  assert.equal(result.warnings.filter(row => row.code === 'original_source_bytes_unavailable').length, 2);
+  assert.equal(result.warnings.filter(row => row.code === 'owner_attested_working_mapping').length, 4);
   assert(!result.errors.some(row => row.code === 'observation_recheck_due'));
   assert.equal(evidence.m1OfficialNewsEvidence.status, 'OFFICIAL_PRIMARY_PAGE_CONFIRMS_CATEGORY_I_BASE_FARE');
   const capture = readJson(evidence.m1OfficialNewsEvidence.extractPath);
