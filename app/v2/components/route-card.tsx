@@ -2,7 +2,7 @@
 
 import { Check, Clipboard, Clock3, Route, ShieldCheck } from "lucide-react";
 import { PriceRows } from "./pricing-fields";
-import { clampNumber, duration, distance, money } from "./format";
+import { clampNumber, duration, durationWithDays, distance, money } from "./format";
 import { resolveTollAmount, type TollPeriod } from "./quote-presentation";
 import type { TollView, Trip, RouteQuality } from "./types";
 import { tollEstimateText } from "@/lib/toll-estimate-view";
@@ -55,7 +55,7 @@ export function RouteCard({
       </div>
       <div className={"mt-2 gap-x-3 gap-y-1.5 text-sm " + (showFastestSummary ? "grid grid-cols-2 items-center" : "flex flex-wrap")}>
         <span className="flex items-center gap-1.5 font-semibold text-brand-text"><Route className="h-4 w-4 text-brand-action" />{distance(trip.meters)}</span>
-        <span className="flex items-center gap-1.5 font-semibold text-brand-text"><Clock3 className="h-4 w-4 text-brand-action" />{duration(trip.seconds)}</span>
+        <span className="flex items-center gap-1.5 font-semibold text-brand-text"><Clock3 className="h-4 w-4 text-brand-action" />{showFastestSummary ? durationWithDays(trip.seconds) : duration(trip.seconds)}</span>
       </div>
       {(!showFastestSummary || trip.quality?.status !== "single" || trip.quality.message !== "Выбран маршрут с минимальным временем") && <QualityNote quality={trip.quality} />}
       {specialOnly && <p className="mt-2 text-xs font-bold text-brand-route">Тариф: Особые тарифные зоны</p>}

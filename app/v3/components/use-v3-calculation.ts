@@ -3,7 +3,7 @@ import { validV3Response } from "./response-validation";
 
 import { useEffect, useRef, useState } from "react";
 import { pickOptimal } from "../../v2/components/route-utils";
-import { distance, duration, money } from "../../v2/components/format";
+import { distance, durationWithDays as duration, money } from "../../v2/components/format";
 import { defaults, tariffNames } from "../../v2/components/pricing-data";
 import { buildAlternativeFareCopy, resolveTollAmount, shortPlaceName, totalWithToll, type TollPeriod } from "../../v2/components/quote-presentation";
 import { UserFacingCalculationError, userFacingCalculationErrorMessage } from "../../v2/components/request-errors";

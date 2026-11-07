@@ -1,3 +1,4 @@
+import { withinRoutingSignal } from "./routing-deadline";
 /** Safe request-local diagnostics. Never include URLs, coordinates or exception messages. */
 export type RoutingFailure = "rate_limited" | "upstream_http" | "timeout" | "cancelled" | "network" | "invalid_json" | "invalid_response" | "no_route" | "insufficient_geometry" | "invalid_geometry" | "corridor_rejected" | "quality_rejected" | "internal";
 export class RoutingProviderError extends Error {
@@ -27,7 +28,8 @@ export function routingFailure(error: unknown): { failure: RoutingFailure; httpS
 }
 export async function routingFetch(url: URL, init: RequestInit & { next?: { revalidate: number } }): Promise<Response> {
   try {
-    const response = await fetch(url, init);
+    const response = await withinRoutingSignal(() => fetch(url, init), init.signal ?? undefined,
+      late => { void late.body?.cancel().catch(() => undefined); });
     if (!response.ok) throw new RoutingProviderError(response.status === 429 ? "rate_limited" : "upstream_http", response.status);
     return response;
   } catch (error) {

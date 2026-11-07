@@ -2,9 +2,10 @@
  * Provider responses are kept comfortably above the largest retained route
  * payload while still bounding memory consumed by a malformed upstream body.
  */
+import { withinRoutingSignal } from "./routing-deadline";
 export const MAX_ROUTE_PROVIDER_RESPONSE_BYTES = 8 * 1024 * 1024;
 
-export async function readLimitedProviderJson<T>(response: Response, limitBytes = MAX_ROUTE_PROVIDER_RESPONSE_BYTES): Promise<T> {
+export async function readLimitedProviderJson<T>(response: Response, limitBytes = MAX_ROUTE_PROVIDER_RESPONSE_BYTES, signal?: AbortSignal): Promise<T> {
   if (!Number.isSafeInteger(limitBytes) || limitBytes < 1) {
     throw new RangeError("limitBytes must be a positive safe integer");
   }
@@ -16,7 +17,7 @@ export async function readLimitedProviderJson<T>(response: Response, limitBytes 
   let totalBytes = 0;
   try {
     while (true) {
-      const { done, value } = await reader.read();
+      const { done, value } = await withinRoutingSignal(() => reader.read(), signal);
       if (done) break;
       totalBytes += value.byteLength;
       if (totalBytes > limitBytes) {
@@ -34,6 +35,7 @@ export async function readLimitedProviderJson<T>(response: Response, limitBytes 
     }
     return JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(bytes)) as T;
   } catch (cause) {
+    void reader.cancel().catch(() => undefined);
     throw new Error("ROUTE_UNAVAILABLE", { cause });
   } finally {
     reader.releaseLock();

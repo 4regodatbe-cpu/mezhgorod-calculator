@@ -12,6 +12,7 @@ import { calculateSpecialOptions } from "@/lib/v3-calculation/special-options";
 import { acceptedYandexRouteEstimate, yandexRouteEstimateTolls } from "@/lib/v3-calculation/yandex-route-estimates";
 import type { Coordinate } from "@/lib/tolls";
 import { createCalculationTiming } from "@/lib/calculation-timing";
+import { calculationSignal, withinRoutingSignal } from "@/lib/routing-deadline";
 import type { TollEstimateView } from "@/lib/toll-estimate-view";
 
 type UserRates = { standard: number; comfort: number; comfortPlus: number; minivan: number };
@@ -41,6 +42,7 @@ function validDepartureAt(value: unknown): value is string {
 export const maxDuration = 120;
 
 export async function POST(request: NextRequest) {
+  const signal = calculationSignal(request.signal);
   const timing = createCalculationTiming();
   const respond = (body: unknown, init?: { status?: number }) => {
     const response = NextResponse.json(body, init);
@@ -51,7 +53,7 @@ export async function POST(request: NextRequest) {
   // V3 contract: one fastest route; no slower free-route substitution.
   try {
     request.signal.throwIfAborted();
-    const body = (await timing.measure("request_body", () => readLimitedJsonObject(request))) as {
+    const body = (await timing.measure("request_body", () => withinRoutingSignal(() => readLimitedJsonObject(request), signal))) as {
       from?: Point;
       via?: Point;
       to?: Point;
@@ -76,7 +78,7 @@ export async function POST(request: NextRequest) {
     if (!validPoint(body.from) || !validPoint(body.to)) return respond({ error: "Проверьте точки маршрута" }, { status: 400 });
     const departureAt = body.departureAt ?? new Date().toISOString();
 
-    const [from,to] = await timing.measure("geocoding", () => Promise.all([geocode(body.from!,request.signal),geocode(body.to!,request.signal)]));
+    const [from,to] = await timing.measure("geocoding", () => withinRoutingSignal(() => Promise.all([geocode(body.from!,signal),geocode(body.to!,signal)]), signal));
     request.signal.throwIfAborted();
     const policy = endpointPolicy(from.position,to.position,zones);
     const automaticMode = policy.specialEndpoint ? "dual" : "standard";
@@ -108,7 +110,7 @@ export async function POST(request: NextRequest) {
       })]))};
     });
     if(policy.specialEndpoint) {
-      const special=await timing.measure("special_options", () => calculateSpecialOptions(from,to,departureAt,true,timing,request.signal));
+      const special=await timing.measure("special_options", () => withinRoutingSignal(() => calculateSpecialOptions(from,to,departureAt,true,timing,signal), signal));
       request.signal.throwIfAborted();
       const options=special.options.map(option=>({from:option.from,to:option.to,fast:attachPricing(option.fast,option.split),free:null,freeCandidate:null}));
       if(!options.length)throw new Error("MAINLAND_UNAVAILABLE");
@@ -116,7 +118,7 @@ export async function POST(request: NextRequest) {
       return respond({legs:options,options,mode,automaticMode,specialEndpoint:true,specialOnly,preferredCorridor:special.preferredCorridor,routePolicy:special.routePolicy});
     }
     const plans=candidatePlans(from.position,to.position,zones);
-    const candidates=await Promise.allSettled(plans.map(plan => timing.measure("route_leg", () => calculateLeg(from,to,departureAt,body.diagnostics===true,plan.positions,true,timing,request.signal))));
+    const candidates=await withinRoutingSignal(() => Promise.allSettled(plans.map(plan => timing.measure("route_leg", () => calculateLeg(from,to,departureAt,body.diagnostics===true,plan.positions,true,timing,signal)))), signal);
     const available=candidates.flatMap(candidate=>candidate.status==="fulfilled"?[candidate.value]:[]);
     available.sort((a,b)=>a.fast.seconds-b.fast.seconds || a.fast.meters-b.fast.meters);
     if(!available.length)throw candidates.find(candidate=>candidate.status==="rejected")?.reason ?? new Error("ROUTING_UNAVAILABLE");
@@ -130,6 +132,7 @@ export async function POST(request: NextRequest) {
     return respond({legs:[priced],mode,automaticMode,specialEndpoint:false});
   } catch (error) {
     if(request.signal.aborted)return respond({error:"Расчёт отменён"},{status:400});
+    if(signal.aborted)return respond({error:"Превышено время ожидания расчёта. Повторите попытку позже."},{status:502});
     if (error instanceof RequestBodyError) return respond({ error: error.message }, { status: error.status });
     const failure = classifyCalculateApiError(error);
     return respond({ error: failure.message }, { status: failure.status });

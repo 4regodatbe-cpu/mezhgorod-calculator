@@ -97,11 +97,12 @@ export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, posi
       : { directions_type: "none" }),
   };
   url.searchParams.set("json", JSON.stringify(query));
+  const routeSignal = providerSignal(callerSignal);
   const response = await routingFetch(url, {
     headers: { Accept: "application/json", "User-Agent": "MezhgorodCalc/2.0" },
     cache: "force-cache",
     next: { revalidate: 21_600 },
-    signal: providerSignal(callerSignal),
+    signal: routeSignal,
   });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
   const data = await readLimitedProviderJson<{
@@ -109,7 +110,7 @@ export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, posi
       summary?: { length?: number; time?: number };
       legs?: Array<{ summary?: { length?: number; time?: number }; shape?: string; maneuvers?: M11ValhallaManeuver[] }>;
     };
-  }>(response);
+  }>(response, undefined, routeSignal);
   const summary = data.trip?.summary;
   if (!summary?.length || !summary.time) throw new RoutingProviderError("invalid_response", 200, "ROUTE_NOT_FOUND");
   const decodedLegs = (data.trip?.legs ?? []).map((item) => ({
@@ -141,11 +142,12 @@ async function brouterRoute(from: Located, to: Located, avoidTolls: boolean, pos
   if (avoidTolls) url.searchParams.set("profile:avoid_toll", "1");
   url.searchParams.set("alternativeidx", "0");
   url.searchParams.set("format", "geojson");
+  const routeSignal = providerSignal(callerSignal);
   const response = await routingFetch(url, {
     headers: { Accept: "application/geo+json", "User-Agent": "MezhgorodCalc/2.0" },
     cache: "force-cache",
     next: { revalidate: 21_600 },
-    signal: providerSignal(callerSignal),
+    signal: routeSignal,
   });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
   const data = await readLimitedProviderJson<{
@@ -153,7 +155,7 @@ async function brouterRoute(from: Located, to: Located, avoidTolls: boolean, pos
       properties?: { "track-length"?: string | number; "total-time"?: string | number };
       geometry?: { coordinates?: Coordinate[] };
     }>;
-  }>(response);
+  }>(response, undefined, routeSignal);
   const feature = data.features?.[0];
   const properties = feature?.properties;
   const meters = Number(properties?.["track-length"]);
@@ -178,14 +180,15 @@ export async function osrmRoute(from: Located, to: Located, positions = safeRout
   url.searchParams.set("overview", "full");
   url.searchParams.set("steps", "true");
   url.searchParams.set("geometries", "geojson");
+  const routeSignal = providerSignal(callerSignal);
   const response = await routingFetch(url, {
     headers: { Accept: "application/json", "User-Agent": "MezhgorodCalc/2.0" },
     cache: "force-cache",
     next: { revalidate: 21_600 },
-    signal: providerSignal(callerSignal),
+    signal: routeSignal,
   });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
-  const data = await readLimitedProviderJson<{ code?: string; routes?: Array<{ distance?: number; duration?: number; geometry?: { coordinates?: Coordinate[] }; legs?: Array<{ distance?: number; duration?: number; steps?: M11OsrmStep[] }> }> }>(response);
+  const data = await readLimitedProviderJson<{ code?: string; routes?: Array<{ distance?: number; duration?: number; geometry?: { coordinates?: Coordinate[] }; legs?: Array<{ distance?: number; duration?: number; steps?: M11OsrmStep[] }> }> }>(response, undefined, routeSignal);
   if (data.code === "NoRoute") throw new RoutingProviderError("no_route", 200, "ROUTE_NOT_FOUND");
   const route = data.routes?.[0];
   if (!route?.distance || !route.duration) throw new RoutingProviderError("invalid_response", 200, "ROUTE_NOT_FOUND");
