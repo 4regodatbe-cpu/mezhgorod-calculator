@@ -1,4 +1,12 @@
-# STAGE Z combined M‑11/M‑4 — IMPLEMENTED; FULL OFFLINE GATE BLOCKED, local only
+# STAGE AA V3 final-gate repair — IN PROGRESS (2026-11-07)
+
+1. Audit the three removed workflow scripts against Git history and current maintained integrity/route test suites; do not restore dead runtime database assertions as fake green checks.
+2. Change gate route probes to call `/api/v3/calculate`, establish V3 request/response fields from the actual API, and preserve `/v2` as separately named legacy smoke. Correct all control failures or mark them unknown only when the V3 contract/evidence supports that outcome; never relax route/toll safety assertions by changing thresholds.
+3. Inspect the two stale Avtodor freshness records, official source, effective date, verification date, and freshness logic. Update source metadata only when evidence supports it; otherwise use `unconfirmed/unknown` and keep strict gate truthful.
+4. Align the local final-gate workflow with current V3 root/API and the current PR base (`audit/v3-matrix-provenance-2026-10-14`) for a future owner-approved run. This local patch alone cannot start CI: the workflow must exist on the PR base to handle this PR event; no push or PR-base mutation is authorized.
+5. Run focused regressions and the full offline suite, TypeScript, ESLint, Webpack and default production build where the environment permits; record Turbopack EPERM separately. Then save terminal checkpoint, WORK_STATE and append-only log, local commit and incremental bundle; no remote write.
+
+## Previous Stage Z combined M‑11/M‑4 — IMPLEMENTED; FULL OFFLINE GATE BLOCKED, local only
 
 Candidate start HEAD `0dc9560450128f73590c6ca521ef5f176bb62db1`, final implementation before final documentation save `7d9310d8a131b1191b0f91d1b6b48e5296af762f`, branch/worktree `/workspace/stage-z-stabilization` / `codex/stage-z-stabilization`; M‑11 integration is implemented and targeted suites pass. Original Stage Z worktree and main local 91-commit tree are untouched. No push/merge/Production/Preview/main/Android/V2 change. Handoff ref is fetched read-only at `9c625c4cf5ea89625623fb4ead4bb4980b3e03c6`.
 

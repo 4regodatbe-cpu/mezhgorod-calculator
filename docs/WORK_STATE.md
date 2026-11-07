@@ -1,4 +1,14 @@
-# Текущий handoff — Stage Z combined M‑11/M‑4: LOCAL CANDIDATE, GATE BLOCKED (2026-11-07)
+# Текущий handoff — Stage AA V3 final-gate and route diagnosis IN PROGRESS (2026-11-07)
+
+**Основа:** опубликованный `8fae15c7e5b81ef55492f2b009cbe665e5fdc0fb`; изолированный локальный branch/worktree `codex/final-gate-v3-repair` / `/workspace/final-gate-v3`. Предыдущая документальная фиксация exact-SHA gate — `9374a1b75ac319fceb0491ba2edb629e0cd03620`; runtime/data не переносились. Защищённая основная 91-коммитная копия не трогалась. PR #14 Draft; no push, merge, PR/base edit, main, Production, Android or V2 runtime changes.
+
+**Главный diagnostic:** предыдущие `segment3-free-truth.mjs`, `live-user-route-audit.mjs`, `route-monitor.mjs` фактически вызывали `/api/v2/calculate`, поэтому их 9 route-monitor failures нельзя приписывать V3. Текущая задача сначала сверяет контрольные источники и строит bounded V3-only диагностику. Не запускать прежний полный набор без необходимости. Три скрипта, упомянутые workflow, отсутствуют; заменить только реальными актуальными эквивалентами, без заглушек. `calculator-final-gate.yml` требуется привести к V3 root/API и сохранить отдельные явно legacy V2 assertions.
+
+Точная STARTED-рамка: [Stage AA](checkpoints/2026-11-07-v3-final-gate-repair-STARTED.md). Финальные route verdicts, tariff-source rows, corrected workflow, checks, bundle and next action должны быть записаны в новом terminal checkpoint, WORK_LOG и NEXT_STEPS. Runtime defects are not yet established; preserve `unknown/null` and current M‑4/M‑11 evidence until each case is validated.
+
+---
+
+# Previous handoff — Stage Z combined M‑11/M‑4: LOCAL CANDIDATE, GATE BLOCKED (2026-11-07)
 
 **LOCAL ONLY / PUSH FORBIDDEN.** Isolated worktree `/workspace/stage-z-stabilization`, branch `codex/stage-z-stabilization`, final recorded HEAD `7d9310d8a131b1191b0f91d1b6b48e5296af762f`. Original Stage Z worktree remains clean at `40d650a29ee06643ee325402c3c4f7fead302dd9`; protected primary 91-commit worktree remains clean at `86fd19bd5cae0aaaa21f2ef352679a8b7a2db1fe` (ahead 91/behind 5). PR #14 stays Draft. No merge, push, Preview, Production, main, Android or V2 change.
 
