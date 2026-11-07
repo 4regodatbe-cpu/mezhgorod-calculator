@@ -1,4 +1,14 @@
-# Текущий handoff — Stage Z stabilization: fail-closed M‑4/V3, gate ограничен sandbox (2026-11-06)
+# Текущий handoff — Stage Z combined M‑11/M‑4 integration IN PROGRESS (2026-11-07)
+
+**LOCAL / PUSH FORBIDDEN.** Resumed in isolated `/workspace/stage-z-stabilization`, branch `codex/stage-z-stabilization`, start HEAD `0dc9560450128f73590c6ca521ef5f176bb62db1`. Stage Z original worktree remains at `40d650a29ee06643ee325402c3c4f7fead302dd9`; primary 91-commit worktree remains at `86fd19bd5cae0aaaa21f2ef352679a8b7a2db1fe`. PR #14 stays Draft. No merge, push, Preview, Production, main, Android or V2 change.
+
+Fetched remote evidence ref `handoff/2gis-evidence` read-only at `9c625c4cf5ea89625623fb4ead4bb4980b3e03c6`; not merged. Initial manifest documents 83 handoff files, original Stage 8 packet SHA `310d3b70…`, historical implementation SHA correction `136a5a72f76076188b3768897951a2b700a3d728`; source docs state 42 directed M‑11 pairs/210 cells, current edition effective `2026-11-02T01:00:00+03:00`, exit-PVP pricing, and that the old patch/data overlays do not apply mechanically. Local blob lazy-fetch currently requires an approved outer-executor read because sandbox proxy connection failed; exact file/archive verification and six source tests are still pending. No handoff blobs/runtime/data have been copied to the candidate.
+
+Stage Z stabilization result below remains valid and committed (`0dc956…`). Next current block: verify handoff manifest/archive/6 tests, then inspect and integrate only the M‑11 15–58 product into current V3; preserve PVP arrival-time uncertainty and do not change M‑11 58–679, M‑4 tariffs/trace, M‑12 or unsupported M‑4 PVP545. Stage 8 start record: [combined integration STARTED](checkpoints/2026-11-07-stage-z-m11-m4-integration-STARTED.md). Detailed execution plan/results: [NEXT_STEPS](../experiments/nationwide-tolls/NEXT_STEPS.md); no implementation has yet been accepted.
+
+---
+
+# Previous handoff — Stage Z stabilization: fail-closed M‑4/V3, gate limited by sandbox (2026-11-06)
 
 **LOCAL / NOT READY FOR PUBLICATION.** Изолированный worktree `/workspace/stage-z-stabilization`, branch `codex/stage-z-stabilization`, сохранённая основа Stage Z `40d650a29ee06643ee325402c3c4f7fead302dd9`. Предыдущий Stage Z worktree и основная локальная история из 91 коммита не перемещались. No push, merge, Preview, Production, main, Android или изменение PR #14 (он остаётся Draft).
 
