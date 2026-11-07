@@ -1,4 +1,9 @@
 import { withinRoutingSignal } from "./routing-deadline";
+const responseStatuses = new WeakMap<object, number>();
+export function withRoutingResponseStatus<T extends object>(route: T, status: number): T {
+  responseStatuses.set(route, status); return route;
+}
+export function routingResponseStatus(route: object): number | null { return responseStatuses.get(route) ?? null; }
 /** Safe request-local diagnostics. Never include URLs, coordinates or exception messages. */
 export type RoutingFailure = "rate_limited" | "upstream_http" | "timeout" | "cancelled" | "network" | "invalid_json" | "invalid_response" | "no_route" | "insufficient_geometry" | "invalid_geometry" | "corridor_rejected" | "quality_rejected" | "internal";
 export class RoutingProviderError extends Error {

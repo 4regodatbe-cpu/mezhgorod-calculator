@@ -8,7 +8,7 @@ import { selectFreeRoute, tollsForApi } from "../v2-calculation/free-route-selec
 import { calculateLegTolls } from "./route-leg-pricing";
 import { selectFastestRoute } from "@/experiments/nationwide-tolls/fastest-route-policy.mjs";
 import type { CalculationTiming, CalculationStage } from "@/lib/calculation-timing";
-import { routingFailure, type RoutingAttempt } from "../routing-attempt";
+import { routingFailure, routingResponseStatus, type RoutingAttempt } from "../routing-attempt";
 
 export async function calculateLeg(from: Located, to: Located, departureAt?: string, diagnostics = false, positions?: Array<{ lat:number; lng:number }>, fastestOnly = false, timing?: CalculationTiming, signal?: AbortSignal) {
   signal?.throwIfAborted();
@@ -51,8 +51,8 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     const raw = rawResults[index];
     return [{ provider: resultNames[index], kind: index === 1 || index === 2 ? "bypass" : "primary",
       status: result.status === "fulfilled" ? "accepted" : "rejected",
-      ...(result.status === "rejected" ? routingFailure(result.reason) : { failure: null, httpStatus: 200 }),
-      ...(raw.status === "fulfilled" ? { httpStatus: 200 } : {}),
+      ...(result.status === "rejected" ? routingFailure(result.reason) : { failure: null, httpStatus: routingResponseStatus(result.value) }),
+      ...(raw.status === "fulfilled" ? { httpStatus: routingResponseStatus(raw.value) } : {}),
       elapsedMs: Math.round(elapsed[index] ?? performance.now() - started), geometryUsable: raw.status === "fulfilled" && isUsableRoute(raw.value, from, to),
       validator: raw.status === "rejected" ? "not_run" : result.status === "fulfilled" ? "accepted" : "rejected", selected: false }];
   });

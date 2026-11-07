@@ -1,5 +1,5 @@
 import {deriveM12FromOsrm} from "@/lib/toll-engine/m12-osrm-span";
-import { routingFetch, RoutingProviderError } from "./routing-attempt";
+import { routingFetch, RoutingProviderError, withRoutingResponseStatus } from "./routing-attempt";
 import { safeRoutePositions } from "@/lib/safe-route";
 import { roadBoundariesFromOsrm, roadBoundariesFromValhalla, type RoadBoundaryResolution } from "@/lib/toll-engine/road-boundaries";
 import type { Coordinate } from "@/lib/tolls";
@@ -123,7 +123,7 @@ export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, posi
   requireProviderRouteGeometry(coordinates);
   const m12StrictSpan = useTolls === 1 ? deriveStrictM12Span(decodedLegs) : null;
   const m11RoadEvidence = useTolls === 1 ? deriveM11EvidenceFromValhalla(decodedLegs) : null;
-  return {
+  return withRoutingResponseStatus({
     meters: Math.round(summary.length * 1000),
     seconds: Math.round(summary.time),
     coordinates,
@@ -132,7 +132,7 @@ export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, posi
     m12EndpointSpan: useTolls === 1 ? deriveStrictM12Span(decodedLegs, true) : null,
     m11RoadEvidence,
     m4RoadBoundaries: roadBoundariesFromValhalla(decodedLegs),
-  };
+  }, response.status);
 }
 
 async function brouterRoute(from: Located, to: Located, avoidTolls: boolean, positions = safeRoutePositions(from, to), callerSignal?: AbortSignal): Promise<RouteWithGeometry> {
@@ -163,7 +163,7 @@ async function brouterRoute(from: Located, to: Located, avoidTolls: boolean, pos
   if (!Number.isFinite(meters) || !Number.isFinite(seconds) || meters <= 0 || seconds <= 0) throw new RoutingProviderError("invalid_response", 200, "ROUTE_NOT_FOUND");
   const coordinates = feature?.geometry?.coordinates;
   requireProviderRouteGeometry(coordinates);
-  return { meters: Math.round(meters), seconds: Math.round(seconds), coordinates };
+  return withRoutingResponseStatus({ meters: Math.round(meters), seconds: Math.round(seconds), coordinates }, response.status);
 }
 
 export function brouterFree(from: Located, to: Located, positions = safeRoutePositions(from, to), callerSignal?: AbortSignal) {
@@ -195,5 +195,5 @@ export async function osrmRoute(from: Located, to: Located, positions = safeRout
   const coordinates = route.geometry?.coordinates;
   requireProviderRouteGeometry(coordinates);
   const m12 = deriveM12FromOsrm(route.legs ?? [], route.geometry?.coordinates ?? []);
-  return { m4RoadBoundaries:roadBoundariesFromOsrm(route.legs ?? [], coordinates), m12EndpointSpan:m12.endpointSpan,m12StrictSpan:m12.span,m12Candidate:m12.candidate,m12SpanReason:m12.reason,m11RoadEvidence: deriveM11EvidenceFromOsrm(route.legs ?? []), meters: Math.round(route.distance), seconds: Math.round(route.duration), coordinates, legs: route.legs?.map(leg => ({ meters: Number(leg.distance), seconds: Number(leg.duration), coordinates: (leg.steps ?? []).flatMap(step => step.geometry?.coordinates ?? []) })) };
+  return withRoutingResponseStatus({ m4RoadBoundaries:roadBoundariesFromOsrm(route.legs ?? [], coordinates), m12EndpointSpan:m12.endpointSpan,m12StrictSpan:m12.span,m12Candidate:m12.candidate,m12SpanReason:m12.reason,m11RoadEvidence: deriveM11EvidenceFromOsrm(route.legs ?? []), meters: Math.round(route.distance), seconds: Math.round(route.duration), coordinates, legs: route.legs?.map(leg => ({ meters: Number(leg.distance), seconds: Number(leg.duration), coordinates: (leg.steps ?? []).flatMap(step => step.geometry?.coordinates ?? []) })) }, response.status);
 }
