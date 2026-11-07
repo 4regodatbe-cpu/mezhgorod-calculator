@@ -50,12 +50,14 @@ Actual result: exit 2, `stale=2`, `invalid=0`, `effectiveDateUnknown=3`. Both st
 
 ## Changes retained in this closeout
 
-Only two focused regression expectations were corrected from 250 to 230 ₽ to match the isolated Stage AH data/source interpretation:
+Two focused regression expectations were corrected from 250 to 230 ₽ to match the isolated Stage AH data/source interpretation:
 
 - `scripts/segment6b-other-road-tariff-snapshot-test.ts`
 - `scripts/segment6c-other-road-evidence-contract-test.ts`
 
-No route geometry, route selection, V2, Android, or Production code changed in this closeout. The inherited candidate contains the earlier V3 work; this closeout did not broaden it.
+The shared result component lives under `app/v2` but is also called by V3. A temporary attempt to move formatting wholly into V3 caused the browser to show `25 ч 0 мин` for the V3 summary; that change was removed. The retained shared-card branch uses day formatting only when `showFastestSummary` is true, a prop passed only by V3's `fastestOnly` branch. V2 uses the unchanged default (`duration()`), and the regression confirms V2 still prints `25 ч 0 мин`. The candidate therefore contains two shared V2-component source paths, but no Android paths or Android workflow changes; the existing V2 runtime presentation is preserved.
+
+No route geometry, route selection, Android or Production code changed in this closeout. The shared component's V3-only `showFastestSummary` branch is retained because the built browser verified the day label; ordinary V2 cards keep the legacy output. The closeout also corrects M1 regression expectations.
 
 ## Next safe action
 
