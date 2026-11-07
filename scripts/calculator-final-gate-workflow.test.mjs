@@ -37,6 +37,7 @@ test("workflow calls only scripts available in the checkout and keeps V2 checks 
   assert.match(workflow, /scripts\/v3-pipeline-integrity\.test\.ts/);
   assert.match(workflow, /scripts\/v3-final-price-integrity\.test\.ts/);
   assert.match(workflow, /scripts\/v3-unpriced-coverage-audit\.test\.ts/);
+  assert.match(workflow, /scripts\/v3-all-routing-providers-unavailable\.test\.ts/);
 });
 
 test("live route audit is V3-only, bounded, one-pass, and omits provider geometry", () => {

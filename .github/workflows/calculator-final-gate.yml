@@ -66,7 +66,7 @@ jobs:
       - name: Offline Yandex benchmark corpus integrity
         run: pnpm test:route-benchmark
       - name: V3 API, toll composition, and unknown-price integrity suites
-        run: node --import ./scripts/register-ts-paths.mjs --test scripts/v3-pipeline-integrity.test.ts scripts/v3-final-price-integrity.test.ts scripts/v3-unpriced-coverage-audit.test.ts
+        run: node --import ./scripts/register-ts-paths.mjs --test scripts/v3-pipeline-integrity.test.ts scripts/v3-final-price-integrity.test.ts scripts/v3-unpriced-coverage-audit.test.ts scripts/v3-all-routing-providers-unavailable.test.ts
       - name: M12 recovery replay
         run: node scripts/segment5a1-m12-recovery-replay.mjs
       - name: Systemic composition regression
