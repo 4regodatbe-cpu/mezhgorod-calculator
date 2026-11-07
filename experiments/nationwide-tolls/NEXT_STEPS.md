@@ -2,14 +2,21 @@
 
 Candidate start HEAD `0dc9560450128f73590c6ca521ef5f176bb62db1`, branch/worktree `/workspace/stage-z-stabilization` / `codex/stage-z-stabilization`; prior stabilization is complete and committed, new integration is not yet implemented. Original Stage Z worktree and main local 91-commit tree are untouched. No push/merge/Production/Preview/main/Android/V2 change. Handoff ref is fetched read-only at `9c625c4cf5ea89625623fb4ead4bb4980b3e03c6`.
 
+**Current progress (2026-11-07):**
+
+- M‑11 handoff verified: manifest 83/83, checksums 84/84, six source tests pass; details in `docs/checkpoints/2026-11-07-stage-z-handoff-evidence-DONE.md`.
+- M‑11 15–58 dated adapter implemented. Historical April and current November matrices remain separate, selection is exact to the Moscow effective instant, direction, and supported tariff profile. Unsupported point pairs remain unknown. Actual exit-PVP time is not available, so returned amounts remain departure-time estimates and explicitly state the operator's exit-time rule.
+- New adapter tests 6/6 PASS; saved M‑11 boundary suites 7/7 PASS; existing M‑11/CKAD adapter suites 2/2 PASS; M‑11 matrix composition tests check unique split products and fail closed on duplicate/legacy overlap.
+- Next: M‑4/combined API regressions, then static/type/lint/build/full offline gate. No push/publication.
+
 **Next actions, in order:**
 
 1. DONE: handoff license/data-use notes reviewed; `MANIFEST.json` 83/83, `SHA256SUMS` 84/84, Stage 8 packet hash verified, six source/evidence tests PASS. Historical implementation SHA metadata conflicts with the packet README and the old object is unavailable; no historical patch applied. Details: `docs/checkpoints/2026-11-07-stage-z-handoff-evidence-DONE.md`.
-2. Inspect current `m11-moscow-schedule.ts`, `m11-moscow-production.ts`, `m11-current-tariffs.ts`, `m11-product-boundaries.ts`, `route-leg-pricing.ts`, datasets and API pricing DTO. Implement only minimal versioned directed 15–58 lookup for source-supported Category I/no-transponder; keep April version and November edition with Nov 3=Friday and Nov 4=Saturday. Keep 58–679 separate and do not import full research subtree or either historical patch.
+2. DONE: current V3 head lookup uses preserved April and verified November editions, exact directed pair/profile. Unsupported pair returns null. Source/model and tests are in `checks/2026-11-07-stage-z-m11-m4/README.md`.
 3. Confirm no reliable predicted PVP exit time exists. If only departure instant is available, treat the output explicitly as a departure-time estimate; around the 2026-11-02 01:00 boundary where output could represent different edition, return unknown if the supported policy cannot choose safely. Add exact ±1-second tests; do not claim exact operator charge time.
-4. Add saved-geometry/API composition tests across direction, edition, profile, complete/foreign/incomplete boundaries, multiple toll products and no double charge. Keep M‑4 PVP545 and four M‑12 mismatches unknown; verify Stage Z M‑4 62/71 and unknown/null contracts.
-5. Run six source/evidence tests, target M‑11/M‑4/composition tests, full offline gate, TypeScript, ESLint and Webpack build. Known three subprocess failures remain sandbox-blocked; do not alter tests. Browser production acceptance is not repeated.
-6. Save local implementation commit, update state/log/manifest/checkpoint and verified bundle. Push remains forbidden; exact workflow path is in the implementation report after the code candidate exists.
+4. DONE (M‑11 minimum): saved route-boundary tests, official tariff-profile tests, unsupported-boundary unknowns and duplicate/legacy-overlap composition guards pass. NEXT: verify M‑4 62/71, selected trace, A‑289, multi-road API and unknown/null contracts without editing M‑4 data.
+5. NEXT: run six source/evidence tests again with the final candidate, M‑11/M‑4/composition targets, full offline gate, TypeScript, ESLint and Webpack build. Record actual results; do not weaken tests or repeat known sandbox subprocess failures unchanged. No Production browser repeat.
+6. Then save final local commit, update state/log/NEXT_STEPS/checkpoints and a verified bundle. Push remains forbidden; unpublished commits cannot receive GitHub Actions results.
 
 Historical Stage X/Y/Stage W sections below are preserved; Stage W's intermediate tariff interpretation remains superseded for correctness.
 
