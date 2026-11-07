@@ -10,4 +10,6 @@ Two live route POSTs, one each, original coordinates/departure 2026-10-02T09:00:
 
 The latter exposed a diagnostics defect: rejected HTTP200 geometry lost known HTTP status and reported geometryUsable=true. Corrected attempt metadata and added actual-handler regression; final gates/rebuilt exact SHA still required. No toll/route-selection changes.
 
+Temporal acceptance extension: actual V3 handler tested with real short native timer expiries injected only for deadline durations. Each of three independently hanging transports expires without losing valid competitors; a slower-returning but faster-ETA candidate still wins. A valid candidate before the shared operation deadline succeeds; the same response after the operation deadline produces HTTP502 calculation-timeout and cannot commit late. Production25s all-hung test remains separate (not shortened). Targeted extended API matrix PASS.
+
 Freshness proposal remains isolated; mandatory strict30day gate unchanged. Final action: commit refinements, run final standard build/offline and exact-SHA local browser, then logs/manifest/bundle. No push authorized.
