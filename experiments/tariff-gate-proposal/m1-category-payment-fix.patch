@@ -1,0 +1,72 @@
+--- a/data/tolls/2026-10-01-avtodor-other-roads-category1.json
++++ b/data/tolls/2026-10-01-avtodor-other-roads-category1.json
+@@ -3,7 +3,7 @@
+   "observedAt": "2026-10-01",
+   "source": "https://avtodor-tr.ru/road/tariffs/",
+   "category": 1,
+-  "note": "A289 reading corrected on 2026-10-13: columns are vehicle categories, not transponder/no-transponder modes. Active A289 rows contain category-I base fares415/205/620/180/800/385 in both undiscounted payment modes. M1 no-transponder=250 (transponder=230), as the tariff page explicitly separates payment columns. M3 category-I direct schedule is 100/100, 190/190, 190/230 MonThu/FriSun; the operator's 2026-03-02 whole-road table confirms 480/520. Do not read neighboring higher-category values as M3 payment modes. This snapshot alone does not prove selected-route crossing. CKAD corrected from uploaded order56PDF: both payment-mode fields now carry categoryI; prior classII values archived.",
++  "note": "A289 reading corrected on 2026-10-13: columns are vehicle categories, not transponder/no-transponder modes. Active A289 rows contain category-I base fares415/205/620/180/800/385 in both undiscounted payment modes. Stage AH candidate: the earlier derived M1 interpretation (no-transponder=250/transponder=230) is superseded by owner-reported visual reading of Order54 (Cat I=230, Cat II=250, one shared table for cash/card/listed transponders), pending original PDF bytes and hash. M3 category-I direct schedule is 100/100, 190/190, 190/230 MonThu/FriSun; operator whole-road table confirms 480/520. Do not read neighboring higher-category values as M3 payment modes. This snapshot alone does not prove selected-route crossing. CKAD corrected from Order56; prior class-II values archived.",
+   "roads": {
+     "m1-33-66": [
+       {
+@@ -12,7 +12,7 @@
+         "to": "66 km",
+         "allDays": {
+           "transponder": 230,
+-          "noTransponder": 250
++          "noTransponder": 230
+         }
+       }
+     ],
+--- a/experiments/nationwide-tolls/national-registry.json
++++ b/experiments/nationwide-tolls/national-registry.json
+@@ -234,7 +234,7 @@
+       "verifiedFor": "category-I-no-transponder",
+       "rows": {
+         "m1-33-66": {
+-          "all": 250
++          "all": 230
+         }
+       },
+       "verifiedThrough": "2026-10-10",
+--- a/experiments/nationwide-tolls/national-price.test.mjs
++++ b/experiments/nationwide-tolls/national-price.test.mjs
+@@ -19,7 +19,7 @@
+ test("Kazan peak ends at 19:30",()=>assert.equal(q(registry,req("voznesensky",["voznesensky-rvp"],{dayClass:"verified_workday",moscowPassageTime:"19:30",timeSource:"same_route_estimated_passage"})).amountRub,90));
+ test("Kazan weekend peak remains 90",()=>assert.equal(q(registry,req("voznesensky",["voznesensky-rvp"],{dayClass:"verified_weekend_or_holiday",moscowPassageTime:"08:30",timeSource:"same_route_estimated_passage"})).amountRub,90));
+ test("Kazan unknown holiday state returns unknown",()=>assert.equal(q(registry,req("voznesensky",["voznesensky-rvp"],{moscowPassageTime:"08:30",timeSource:"same_route_estimated_passage"})).amountRub,null));
+-test("M1 official category-I no-transponder rate is 250 (230 is the transponder column)",()=>assert.equal(q(registry,req("m1",["m1-33-66"],{operatorProfile:"all",calendarSource:"verified_operator_schedule"})).amountRub,250));
++test("M1 candidate Order54 category-I rate is 230; same category-I base is used without a transponder",()=>assert.equal(q(registry,req("m1",["m1-33-66"],{operatorProfile:"all",calendarSource:"verified_operator_schedule"})).amountRub,230));
+ test("M3 verified monThu two-section fare",()=>assert.equal(q(registry,req("m3",["m3-65-86","m3-112-150"],{operatorProfile:"monThu",calendarSource:"verified_operator_schedule"})).amountRub,290));
+ test("M3 FriSun category-I PVP86+136 is 290",()=>assert.equal(q(registry,req("m3",["m3-65-86","m3-112-150"],{operatorProfile:"friSun",calendarSource:"verified_operator_schedule"})).amountRub,290));
+ test("M3 no period proof unknown",()=>assert.equal(q(registry,req("m3",["m3-65-86"])).amountRub,null));
+@@ -67 +67 @@
+-test("M1 operator order 54 valid Oct10 2026 category-I no-transponder 250 Rub",()=>{
++test("M1 candidate Order54 valid Oct10 2026 category-I no-transponder 230 Rub",()=>{
+@@ -69 +69 @@
+- x.tariffDate="2026-10-10";assert.equal(q(registry,x).amountRub,250);
++ x.tariffDate="2026-10-10";assert.equal(q(registry,x).amountRub,230);
+--- a/experiments/nationwide-tolls/m1-m3-shadow-quote.test.mjs
++++ b/experiments/nationwide-tolls/m1-m3-shadow-quote.test.mjs
+@@ -55,10 +55,10 @@
+ test("M1 no OSM mapping means UNKNOWN, never add an unverified fare in live pricing",()=>{
+  const x=audit([]);assert.equal(m1(catalog,x,"2026-10-10T10:00:00+03:00",6000).amountRub,null);
+ });
+-test("M1 verified physical gate contract yields dated 250-ruble no-transponder component only",()=>{
++test("M1 candidate verified physical gate contract yields dated 230-ruble Cat-I no-transponder component only",()=>{
+  const x=audit([{id:"m1-pvp-46",km:46,roadId:"m1",edgeToll:true,osmNodeId:"123456789",fareRowId:"m1-33-66"}]);
+  const y=m1(catalog,x,"2026-10-10T10:00:00+03:00",5400);
+- assert.equal(y.amountRub,250);assert.equal(y.diagnosticOnly,true);assert.equal(y.kind,"m1_exact_one_gate_component_only");
++ assert.equal(y.amountRub,230);assert.equal(y.diagnosticOnly,true);assert.equal(y.kind,"m1_exact_one_gate_component_only");
+ });
+ test("M1 false nearby node cannot be billed",()=>{
+  const x=audit([{id:"m1-pvp-46",km:46,roadId:"m1",edgeToll:false,osmNodeId:"123456789",fareRowId:"m1-33-66"}]);
+@@ -84,7 +84,7 @@
+ test("M1 midnight crossing uses a verified departure and keeps source-date guards",()=>{
+  const x=audit([{id:"m1-pvp-46",km:46,roadId:"m1",edgeToll:true,osmNodeId:"123456789",fareRowId:"m1-33-66"}]);
+  const q=m1(catalog,x,"2026-10-10T23:30:00+03:00",7200);
+- assert.equal(q.amountRub,250);assert.equal(q.tariffDate,"2026-10-10");assert.equal(q.diagnosticOnly,true);
++ assert.equal(q.amountRub,230);assert.equal(q.tariffDate,"2026-10-10");assert.equal(q.diagnosticOnly,true);
+  assert.equal(m1(catalog,x,"2026-10-11T00:30:00+03:00",7200).amountRub,null);
+  assert.equal(m1(catalog,x,"2026-03-01T23:30:00+03:00",7200).amountRub,null);
+ });

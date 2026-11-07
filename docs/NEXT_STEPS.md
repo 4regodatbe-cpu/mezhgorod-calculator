@@ -1,6 +1,13 @@
 # Next steps
 
-## Stage AG — next evidence step
+## Stage AH — owner/source review required
+
+1. **Blocked:** obtain the original Order54 PDF bytes through a permitted source (official URL currently returns 403); verify PDF page, tariff columns, payment clause and effective-date clause, then record SHA-256. Do not retry unchanged access or bypass protection; do not invent a hash.
+2. Owner reviews `experiments/tariff-gate-proposal/m1-category-payment-fix.patch`. It is a candidate only: M‑1 Cat I no-transponder 250→230 with regression updates; it is not applied to runtime or active data. Do not apply until the source discrepancy and intended use are accepted.
+3. Owner reviews `experiments/tariff-gate-proposal/product-gate-approval.patch` and `stage-ah-product-evidence-2026-11-07.json`. This product-specific model keeps M‑1 blocked while allowing unrelated proven road products to pass individually; the two aggregate registry rows remain blocked until every in-scope product/payment view is covered.
+4. If approved and source proof is retained, reconcile only the M‑1 product record and rerun the proposal checks. Keep old observation age a warning; invalid/future application date, missing material source, tariff conflict, incomplete product coverage and double-charge risk remain blocking. No runtime, mandatory gate, push or publication without authorization.
+
+## Stage AG — superseded next evidence step (history)
 
 1. **Blocked:** obtain the exact official Order54 PDF bytes via an allowed source. Its saved official URL returned HTTP403 anti-bot once; do not retry/bypass. Verify PVP46 table headings, Cat I–IV 230/250/320/500, period/payment clause and effective 2026-03-02. Reconcile the conflict with the AF-derived M‑1 interpretation; never change `observedAt` to hide age.
 2. Re-evaluate the two aggregate records after Order54 verification; add a saved source path/SHA, source-backed category and payment mapping for M‑1, mark complete only if all four declared road systems and both payment views are covered. Keep transponder/no-transponder alternatives non-additive.
