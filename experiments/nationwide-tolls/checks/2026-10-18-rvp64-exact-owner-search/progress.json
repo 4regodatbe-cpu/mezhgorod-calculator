@@ -1,0 +1,20 @@
+{
+  "status": "DONE",
+  "atMsk": "2026-10-18T11:26:39.363248+03:00",
+  "queriesSubmitted": 2,
+  "queryProgress": [
+    {
+      "query": "\"РВП-64\" ЗСД",
+      "status": "returned_in_combined_response",
+      "perQueryHitCount": null
+    },
+    {
+      "query": "site:nch-spb.com \"Макарова\" \"без транспондера\"",
+      "status": "returned_in_combined_response",
+      "perQueryHitCount": null
+    }
+  ],
+  "newPrimaryReads": 0,
+  "primaryReadsSkippedBecause": "Combined search response contained no new qualifying operator source; no speculative or repeated URLs opened.",
+  "resume": "This bounded pass is complete. Do not rerun these exact queries or the retained PDF. Next source work needs a new independent operator diagram/receipt/identifier mapping."
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (3964723 spike-06.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="10090995838" visible="true" version="4" changeset="187636398" timestamp="2026-08-18T12:24:15Z" user="osm1osm1osm1" uid="24410149" lat="55.4981795" lon="43.5658384"/>
+ <node id="14102954883" visible="true" version="1" changeset="187636398" timestamp="2026-08-18T12:24:15Z" user="osm1osm1osm1" uid="24410149" lat="55.4995930" lon="43.5665522"/>
+ <node id="14102954884" visible="true" version="1" changeset="187636398" timestamp="2026-08-18T12:24:15Z" user="osm1osm1osm1" uid="24410149" lat="55.5006404" lon="43.5669594"/>
+ <node id="14102954885" visible="true" version="1" changeset="187636398" timestamp="2026-08-18T12:24:15Z" user="osm1osm1osm1" uid="24410149" lat="55.4991864" lon="43.5663247"/>
+ <way id="1550561305" visible="true" version="1" changeset="187636398" timestamp="2026-08-18T12:24:15Z" user="osm1osm1osm1" uid="24410149">
+  <nd ref="10090995838"/>
+  <nd ref="14102954885"/>
+  <nd ref="14102954883"/>
+  <nd ref="14102954884"/>
+  <tag k="highway" v="unclassified"/>
+ </way>
+</osm>

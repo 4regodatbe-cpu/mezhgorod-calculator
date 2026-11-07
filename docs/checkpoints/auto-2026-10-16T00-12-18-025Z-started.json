@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:12:18.025Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 96,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 8,
+    "spec": {
+      "caseId": "pair-m4-m11-rostov-to-spb",
+      "kind": "road",
+      "group": "pair-m4-m11"
+    }
+  },
+  "caseId": "pair-m4-m11-rostov-to-spb",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-12-18-025Z-part8",
+  "parent": "ceeae668546965d4ed1bcffcdbedc58e067c158d"
+}

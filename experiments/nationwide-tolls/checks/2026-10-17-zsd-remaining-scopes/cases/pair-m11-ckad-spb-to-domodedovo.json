@@ -1,0 +1,68 @@
+{
+  "caseId": "pair-m11-ckad-spb-to-domodedovo",
+  "sourceHead": "97d165fe4d071e68d2a30b341babc16fb1c2af56",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-domodedovo/2026-10-16T00-04-31-865Z-capture.json.gz",
+  "captureSha256": "7e59435e53caa51ba754f0750dd80c7898389144b3504a85d9d6aa743d4236d0",
+  "priorResultPath": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-ckad-spb-to-domodedovo.json",
+  "priorResultSha256": "bcc305c24c89fdf62c0b6cbf4e164df8350715476277e714da09c2058762e234",
+  "fingerprint": "2c00c1cc6c1d9e8f8b34365454ebb654ed4c4054a8530c84c21fe727dd5f5377",
+  "selectedProvider": "Valhalla",
+  "selectedProviderGeometryIdentity": "exact",
+  "coordinateCount": 4225,
+  "selectedProviderSteps": [],
+  "traceComplete": true,
+  "boothCoverage": "complete",
+  "recordedZsdBooths": [
+    {
+      "osmNodeId": "933975069",
+      "wayId": "375574640",
+      "edgeToll": true
+    }
+  ],
+  "scopeReview": "Въезд со стороны проспекта Крузенштерна / Шкиперского протока → КАД-юг",
+  "ownerZoneCandidateOnly": "entry2-plus-interchange–exit1",
+  "outcome": "blocked_by_missing_reliable_data",
+  "readyTariffRub": null,
+  "newPricedComponents": 0,
+  "priorComponentProfiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1",
+      "componentResult": "unknown",
+      "segments": []
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1",
+      "componentResult": "unknown",
+      "segments": []
+    }
+  ],
+  "newComponentDateChecks": 0,
+  "newLiveRouteRequests": 0,
+  "newFullRouteReplays": 0,
+  "reentryProof": [],
+  "separateInterchangeGantryEvidence": [
+    {
+      "captureCallIndex": 3,
+      "edge": {
+        "way_id": 351741889,
+        "toll": false,
+        "end_shape_index": 182,
+        "begin_shape_index": 178,
+        "names": [
+          "проспект Крузенштерна"
+        ],
+        "sign": {},
+        "end_node": {
+          "node_id": 13020687195,
+          "type": "toll_gantry"
+        }
+      }
+    }
+  ],
+  "traceIndexLimit": "Do not apply trace end_shape_index to input shape: matched trace indices differ. No such coordinate mapping used.",
+  "missing": "Primary directed cash/card collection bundle for these entry/exit boundaries; separate interchange fee where applicable."
+}

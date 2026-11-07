@@ -1,0 +1,181 @@
+{
+  "core": {
+    "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+    "sourceCapture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-voronezh/2026-10-16T01-27-29-307Z-capture.json.gz",
+    "sourceSha256": "df4379076a11666c8c30ea95f4068f86304d1477638f7a71e18d3b02e6e1751d",
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "selectedProvider": "OSRM",
+    "routeSha256": "c96cb9d5fdf36607c9cc5f1f64b8fc9805e95bb2e6574792d7b3e3f3978c484f",
+    "geometrySha256": "6fd6dd550bff8b48e45e77d7a18ecefa0ccdb2e2fed95e73dcce8cfbef7b1071",
+    "routeMeters": 1238595,
+    "routeSeconds": 55226,
+    "candidates": [
+      {
+        "provider": "Valhalla",
+        "admitted": false,
+        "seconds": 48214
+      },
+      {
+        "provider": "OSRM",
+        "admitted": true,
+        "seconds": 55226
+      },
+      {
+        "provider": "BRouter",
+        "admitted": false,
+        "seconds": 52458
+      }
+    ],
+    "projectedBrouterAlsoReentry": true,
+    "validation": {
+      "complete": true,
+      "boothEventCoverage": "complete",
+      "chunks": 9,
+      "checked": 9,
+      "failed": 0
+    },
+    "zsdComponent": {
+      "reason": "zsd_zone1_complete_directed_base_tariff",
+      "tolls": {
+        "amount": 300,
+        "weekdayAmount": 300,
+        "weekendAmount": 300,
+        "period": "все дни, без транспондера",
+        "confidence": "matched",
+        "segments": [
+          "ЗСД: тарифная зона 1 · 300 ₽"
+        ]
+      }
+    },
+    "componentAudit": {
+      "status": "priced",
+      "priced": [
+        "m4",
+        "m11-15-58",
+        "m11-58-679",
+        "m11-679-684",
+        "zsd"
+      ],
+      "missing": [],
+      "components": [
+        {
+          "id": "m4",
+          "detected": true,
+          "tolls": {
+            "amount": 1830,
+            "weekdayAmount": 1830,
+            "weekendAmount": 2300,
+            "period": "понедельник–четверг",
+            "segments": [
+              "М-4: m4-71 → m4-460 · Стоимость не подтверждена"
+            ],
+            "confidence": "matched"
+          },
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "m11-15-58",
+          "detected": true,
+          "tolls": {
+            "amount": 1130,
+            "weekdayAmount": 1130,
+            "weekendAmount": 1650,
+            "period": "по тарифу отправления М-11 15–58 (monThu)",
+            "confidence": "matched",
+            "segments": [
+              "М-11 15–58: solnechnogorsk → moscow: 1130 ₽ · Стоимость не подтверждена"
+            ]
+          },
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "detected": true,
+          "tolls": {
+            "amount": 3900,
+            "weekdayAmount": 3900,
+            "weekendAmount": 4200,
+            "period": "понедельник–четверг",
+            "segments": [
+              "М-11: p679 → p58 · Стоимость не подтверждена"
+            ],
+            "confidence": "matched"
+          },
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "detected": true,
+          "tolls": {
+            "amount": 94,
+            "weekdayAmount": 94,
+            "weekendAmount": 94,
+            "period": "пн–вс, приказ №274 с 04.09.2026",
+            "segments": [
+              "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽"
+            ],
+            "confidence": "matched"
+          },
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "detected": true,
+          "reason": "zsd_zone1_complete_directed_base_tariff",
+          "tolls": {
+            "amount": 300,
+            "weekdayAmount": 300,
+            "weekendAmount": 300,
+            "period": "все дни, без транспондера",
+            "confidence": "matched",
+            "segments": [
+              "ЗСД: тарифная зона 1 · 300 ₽"
+            ]
+          }
+        }
+      ]
+    },
+    "apiTolls": {
+      "amount": 7254,
+      "weekdayAmount": 7254,
+      "weekendAmount": 8544,
+      "period": "понедельник–четверг",
+      "segments": [
+        "М-4: m4-71 → m4-460 · Стоимость не подтверждена",
+        "М-11 15–58: solnechnogorsk → moscow: 1130 ₽ · Стоимость не подтверждена",
+        "М-11: p679 → p58 · Стоимость не подтверждена",
+        "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽",
+        "ЗСД: тарифная зона 1 · 300 ₽"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "priceConfirmation": "unconfirmed",
+    "negativeChecks": [
+      {
+        "name": "incomplete_trace",
+        "reason": "zsd_complete_selected_trace_missing",
+        "status": "PASS"
+      },
+      {
+        "name": "outside_zone1_way",
+        "reason": "zsd_trip_extends_outside_reviewed_zone1",
+        "status": "PASS"
+      },
+      {
+        "name": "reversed_geometry",
+        "reason": "zsd_zone1_directional_geometry_unresolved",
+        "status": "PASS"
+      }
+    ],
+    "pricedComponents": 5,
+    "pricedZsdComponents": 1,
+    "confirmedFullTripFares": 0
+  },
+  "outcome": "fixed_and_verified",
+  "traceRequestOccurrences": 10,
+  "networkRequestsThisCase": 6,
+  "reusedResponseOccurrences": 4
+}

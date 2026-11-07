@@ -1,0 +1,2 @@
+lib/v3-calculation/route-leg-pricing.ts(289,93): error TS2339: Property 'coverageKeys' does not exist on type '{ status: string; reason: any; amount: null; isWholeRouteTotal: boolean; } | { status: string; amount: number; weekdayAmount: number; weekendAmount: number; period: "пятница–воскресенье" | "понедельник–четверг"; ... 9 more ...; limitation: string; }'.
+  Property 'coverageKeys' does not exist on type '{ status: string; reason: any; amount: null; isWholeRouteTotal: boolean; }'.

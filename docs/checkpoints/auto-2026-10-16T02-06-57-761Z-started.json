@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T02:06:57.761Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 134,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 18,
+    "spec": {
+      "caseId": "single-odintsovo-golitsyno-to-rublevo",
+      "kind": "road",
+      "group": "single-odintsovo"
+    }
+  },
+  "caseId": "single-odintsovo-golitsyno-to-rublevo",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-06-57-761Z-part18",
+  "parent": "c1ee1b137bed45040e35feefbac52b4541338cb7"
+}

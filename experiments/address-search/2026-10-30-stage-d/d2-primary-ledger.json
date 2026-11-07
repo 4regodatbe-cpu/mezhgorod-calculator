@@ -1,0 +1,31 @@
+{
+  "block": "D2",
+  "dateMsk": "2026-10-30",
+  "status": "BLOCKED_BY_DATA_AND_SOURCE_ACCESS",
+  "method": "One read-only research agent, max4new queries/2primary opens; main-only writer. Retrieval outcomes recorded from agent tool results, not newly downloaded primary document bytes.",
+  "existingEvidence": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/m4-evidence.json",
+  "physicalVector": {
+    "entry": "osm-transition:4443232947:447135768>1182567076",
+    "exit": "osm-transition:358467208:1211606940>28835034",
+    "traceDate": "2026-10-15",
+    "osmIntakeDate": "2026-10-24",
+    "officialKm": null,
+    "operatorProduct": null,
+    "tariffPair": null,
+    "priceRub": null
+  },
+  "queries": [
+    {"q": "site:avtodor-tr.ru \"Платов\" \"въезд\"", "outcome": "Empty search results"},
+    {"q": "site:donland.ru \"Платов\" \"М-4\" \"схема\"", "outcome": "Empty search results"},
+    {"q": "site:russianhighways.ru \"Платов\" \"подъезд\" -87670", "outcome": "Empty search results"},
+    {"q": "site:rosavtodor.gov.ru \"Каменск-Шахтинский\" \"развязка\" \"М-4\" -10342912", "outcome": "Empty search results"}
+  ],
+  "attemptedPrimaryPages": [
+    {"url": "https://avtodor-tr.ru/road/m-4/", "outcome": "Failed to fetch (403) Forbidden", "publicationDate": null, "contentsRetrieved": false},
+    {"url": "https://www.russianhighways.ru/for_drivers/m-4-don/", "outcome": "URL is not accessible via this tool", "publicationDate": null, "contentsRetrieved": false}
+  ],
+  "avoided": ["old OSM node-ID/API queries", "old broad Platov/chainage and R260 queries", "rejected Novocherkassk1038km news87670", "previous blocked PDF10342912", "new router/OSM captures or tariff audits", "alternative access after source rejection"],
+  "newFactsAdmitted": [],
+  "limitations": ["Empty results do not prove no document exists", "Failed opens do not establish kilometre/product/collection rules", "No exact operator crosswalk or fare may be inferred from geographic proximity"],
+  "requiredPrimaryEvidence": ["operator/government georeferenced plan or exact directed access-to-charge-product crosswalk for these two node/way transitions", "applicable partial-path collection rule and branch/official kilometre scale", "applicable existing official matrix origin/destination once physical product is bound"]
+}

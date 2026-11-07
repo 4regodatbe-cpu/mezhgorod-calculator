@@ -1,0 +1,1458 @@
+[
+  {
+    "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/capture.json.gz",
+    "sha256": "499a736b6a699d1076867193a222f1eae076249347df72c9788698e087df87bf"
+  },
+  {
+    "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary/capture.json.gz",
+    "sha256": "370ac4c3bbc70768e5a84f635c4fe07ec30bb8208f91cc2eb25d8cd37cfe3756"
+  },
+  {
+    "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/max-chain-m4-ckad-m11-zsd-prim-to-voronezh/capture.json.gz",
+    "sha256": "8a2018625e279ad0f3df11ac5446a00f0767b0e798001f9ce3532171fddf2fa7"
+  },
+  {
+    "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/pair-m11-zsd-prim-to-torzhok/capture.json.gz",
+    "sha256": "ad40dfa2b7bd7fc69266854e18816c5804d7152879edab54d5abb1a7e2b49bb4"
+  },
+  {
+    "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/triple-m4-m11-zsd-prim-to-voronezh/capture.json.gz",
+    "sha256": "a0e12dce21af577957eac36b4b7f34e3097c6d6b99a2a9deca4816d9ce134452"
+  },
+  {
+    "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/capture.json.gz",
+    "sha256": "e920e57e3e296d51b0f3e3461f150e10fe697d3643d5aff05828e9a47f1cf69b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/kazan-spb-ckad-2026-10-14T21-36-07-401Z/capture.json.gz",
+    "sha256": "a928f37c45aa1c4a76c56acecbb420504ad86d14a11bf02471a2f2fa7b446b98"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/kazan-spb-moscow-2026-10-14T21-33-33-310Z/capture.json.gz",
+    "sha256": "5dd3cf7ef3c251cae6bdef49404cc6e36695777c3f9e4cbcfefdc9ac6adb6a3e"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/kazan-spb-moscow-2026-10-14T21-44-12-041Z/capture.json.gz",
+    "sha256": "d401c2bdd959e91d0a6bf5f2922dc1be5f9be2628cd2888adcb3af4e19930a05"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-ckad-2026-10-14T21-37-26-638Z/capture.json.gz",
+    "sha256": "9f035cb450fd10d7cfce78387f1123f89d460091234ccf8680182f800cf2cf5f"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-ckad-2026-10-15T10-03-48-754Z/capture.json.gz",
+    "sha256": "43e2ba64f5b805036cb37e9b531a209f224e3268eecc146675c85fca18cf9720"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-ckad-outer-2026-10-14T21-41-55-075Z/capture.json.gz",
+    "sha256": "cd21f7750d5884e4d7f798ce9824679d6de908f136975645734e84d585c24548"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-moscow-2026-10-14T21-33-34-774Z/capture.json.gz",
+    "sha256": "e9445c40a3cc779fee7d82c7ec4508a38e097f507f8d6d5d6a510f9eaedf1975"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-moscow-2026-10-14T22-16-24-914Z/capture.json.gz",
+    "sha256": "8f6e2e2ee068efdf5e3d98bb5bbd2d1ee8ec5bb1f3354c4420fabbfd4f5b0770"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-moscow-2026-10-15T03-00-40-046Z/capture.json.gz",
+    "sha256": "826d60419cc38a7c1f64e99686c431d3a65b9de02b49a3cf2048fbd07ad7ddaa"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/spb-kazan-ckad-2026-10-14T22-04-00-214Z/capture.json.gz",
+    "sha256": "316222cb32495790dac46a8690e6f5f54b2ecd9458eec7bfdb8efbdaa0e84620"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/spb-kazan-moscow-2026-10-14T21-34-43-485Z/capture.json.gz",
+    "sha256": "7aa9dd8c67e18349c6fb3f2c2d1a16cc77d96b15dec9862557ae11a3a57f7c42"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/spb-krasnodar-moscow-2026-10-14T21-34-43-497Z/capture.json.gz",
+    "sha256": "91656daf6ee1ec2f14f3e52c9f8939e7a7f2f218ecc318d56521f0394843a0bd"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/spb-krasnodar-moscow-2026-10-15T03-01-42-562Z/capture.json.gz",
+    "sha256": "3a5453830b2eebe7ef99c6843c88d5d5369be6380335095b7a282c323d0e986b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/spb-krasnodar-moscow-2026-10-15T04-35-19-248Z/capture.json.gz",
+    "sha256": "22c1363f19e3d681989aa5d893c979f6a1520ac55204c166343d76b3c8b88000"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/spb-krasnodar-moscow-2026-10-15T04-45-39-137Z/capture.json.gz",
+    "sha256": "e53aa3828c3e81b66ddc3cf5586685a0c8f1b1ac1a4d1d3579fff214aedeb37f"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0431\u0430\u0445\u043c\u0443\u0442-kazan-center/2026-10-15T22-18-10-825Z-capture.json.gz",
+    "sha256": "03c155aa97de4864fbb54405bb7fcd81c519a50b66c8da29c7aa7c9c06a6d882"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0431\u0430\u0445\u043c\u0443\u0442-kerch-center/2026-10-15T22-21-40-610Z-capture.json.gz",
+    "sha256": "267928934ff6abb1d6b5bc0683ccfc1c084fbbbab39ae7f1f1e8fbd537f3cb45"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0431\u0430\u0445\u043c\u0443\u0442-moscow-center/2026-10-15T22-24-31-910Z-capture.json.gz",
+    "sha256": "f2d806e59d7c139ab6d0875757ee76c55abf1b85b9e909e12e4673a40147ea44"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0431\u0430\u0445\u043c\u0443\u0442-saint-petersburg-center/2026-10-15T22-26-07-326Z-capture.json.gz",
+    "sha256": "a5a5c85437d22007c8b7e8e53ec40f6635ba524336cb6d4b5e637562f32c2906"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0432\u043e\u043b\u043d\u043e\u0432\u0430\u0445\u0430-kazan-center/2026-10-15T22-27-21-244Z-capture.json.gz",
+    "sha256": "0c8ff55a214af68843dc065ef429e0a0c27a515300b471d857c80b9c20692611"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0432\u043e\u043b\u043d\u043e\u0432\u0430\u0445\u0430-kerch-center/2026-10-15T22-28-26-541Z-capture.json.gz",
+    "sha256": "075de45bcfd95b5e28ead0686979937bd025eace6e584c0fb42378bf1f78bd38"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0432\u043e\u043b\u043d\u043e\u0432\u0430\u0445\u0430-moscow-center/2026-10-15T22-29-26-171Z-capture.json.gz",
+    "sha256": "6736868ba8d99a71a2fa5c8e9e724113bd8387b14314c8c10b3b87901c1f7927"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0432\u043e\u043b\u043d\u043e\u0432\u0430\u0445\u0430-saint-petersburg-center/2026-10-15T22-30-32-979Z-capture.json.gz",
+    "sha256": "ca7587412920f88d877c8f08db81a806b23e0cc854675f7a9a1841ad62cc9464"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0433\u0440\u0430\u043d\u0438\u0442\u043d\u043e\u0435-kazan-center/2026-10-15T12-00-00-440Z-capture.json.gz",
+    "sha256": "5c49cbd71433f7200538a5a4526d81f009375d49fce4445546151a8152cb19b9"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0433\u0440\u0430\u043d\u0438\u0442\u043d\u043e\u0435-kerch-center/2026-10-15T12-01-53-430Z-capture.json.gz",
+    "sha256": "7ae5a334744216df05f17a7f0a739a760687f8aa20e85fa814063807863e1366"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0433\u0440\u0430\u043d\u0438\u0442\u043d\u043e\u0435-moscow-center/2026-10-15T10-10-34-547Z-capture.json.gz",
+    "sha256": "8f2d4185a67b3a4eec7dee573adc6a3aa17c9e6d4c4f9242c6d6c9e178fa8f5f"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0433\u0440\u0430\u043d\u0438\u0442\u043d\u043e\u0435-moscow-center/2026-10-15T11-53-07-903Z-capture.json.gz",
+    "sha256": "a964e0c517f411080fa121cda0116a4324d183f6e0639e351fc9849fbed9bb9a"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0433\u0440\u0430\u043d\u0438\u0442\u043d\u043e\u0435-moscow-center/2026-10-15T11-54-48-260Z-capture.json.gz",
+    "sha256": "83d926658f6cc87a970d69abad120df3f743b4782f55031494005293a9be7146"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0433\u0440\u0430\u043d\u0438\u0442\u043d\u043e\u0435-saint-petersburg-center/2026-10-15T11-56-56-059Z-capture.json.gz",
+    "sha256": "0493305d255cfc779f4d2b7f15e5c4fb7161b80857f3af75a4c57567a6df3cb1"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0434\u043e\u043d\u0435\u0446\u043a-kazan-center/2026-10-15T22-31-38-361Z-capture.json.gz",
+    "sha256": "c07ee285cfa488ba6be90f5c1bafc12b922523113875b5c469025892c7f6ffb1"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0434\u043e\u043d\u0435\u0446\u043a-kerch-center/2026-10-15T22-32-46-626Z-capture.json.gz",
+    "sha256": "75d23b94cc5a55b9d69311f512e9865deef35cdba075ebfa520c7443b3eef5c9"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0434\u043e\u043d\u0435\u0446\u043a-moscow-center/2026-10-15T22-34-03-156Z-capture.json.gz",
+    "sha256": "8b168610a9b6e899b6ca4074e64cfbea2f52bc6ccafddc09f63c28716df2f630"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0434\u043e\u043d\u0435\u0446\u043a-saint-petersburg-center/2026-10-15T22-35-07-667Z-capture.json.gz",
+    "sha256": "e46d6bee84222d17700ed46e0f6233f99170f83090ea1f070446e9445979d5ec"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u043a\u0440\u0430\u043c\u0430\u0442\u043e\u0440\u0441\u043a-kazan-center/2026-10-15T22-36-17-033Z-capture.json.gz",
+    "sha256": "fb8bff8a79010fd8e9df840a6814ff743b5494c510deeea5aa1ffafde82368c3"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u043a\u0440\u0430\u043c\u0430\u0442\u043e\u0440\u0441\u043a-kerch-center/2026-10-15T22-37-25-281Z-capture.json.gz",
+    "sha256": "2b7bf736942b3cd66494041b5f0e68332b798f40d0ceedc1bb41fb14934ac11e"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u043a\u0440\u0430\u043c\u0430\u0442\u043e\u0440\u0441\u043a-moscow-center/2026-10-15T22-38-43-101Z-capture.json.gz",
+    "sha256": "ed4c45197f7a105878675ec0e4021e2c3bc95df216addfcedde0e4c896578d12"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u043a\u0440\u0430\u043c\u0430\u0442\u043e\u0440\u0441\u043a-saint-petersburg-center/2026-10-16T00-38-52-089Z-capture.json.gz",
+    "sha256": "84d7fba91dc89ca70022d7458e0d1b8f10dc10b3edb05f724e86226660dd481b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u043d\u043e\u0432\u043e\u0430\u0437\u043e\u0432\u0441\u043a-kazan-center/2026-10-16T00-39-28-580Z-capture.json.gz",
+    "sha256": "1774d480c1e4f8dc82d529fb21c2daf87e95ab84be4945bcb9336bb6fc451c0d"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u043d\u043e\u0432\u043e\u0430\u0437\u043e\u0432\u0441\u043a-kerch-center/2026-10-16T00-39-54-752Z-capture.json.gz",
+    "sha256": "e4fae69271fe4eee4d80293f7e13cc13ba8dda06b62e8b4953af092f61f22ba0"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u043d\u043e\u0432\u043e\u0430\u0437\u043e\u0432\u0441\u043a-moscow-center/2026-10-16T00-40-26-579Z-capture.json.gz",
+    "sha256": "e01519ca0c046bd2271903073a62b967093de6f01676d9a54a480ec54d2d252f"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u043d\u043e\u0432\u043e\u0430\u0437\u043e\u0432\u0441\u043a-saint-petersburg-center/2026-10-16T00-41-09-982Z-capture.json.gz",
+    "sha256": "5dbe074d9a062c789d6aec5b325c0b354783074dd9f88a95225674918f55873a"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0442\u0430\u043b\u0430\u043a\u043e\u0432\u043a\u0430-kazan-center/2026-10-16T00-41-48-274Z-capture.json.gz",
+    "sha256": "001b73aad0a3ef9cb42ac679ab6652ca17b8fa256d30d80bdd68a1b54c11994a"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0442\u0430\u043b\u0430\u043a\u043e\u0432\u043a\u0430-kerch-center/2026-10-16T00-42-15-042Z-capture.json.gz",
+    "sha256": "59fa2cad04430debe6146366ccf6d28bebc9f274803e2d827e524f98a0a6220b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0442\u0430\u043b\u0430\u043a\u043e\u0432\u043a\u0430-moscow-center/2026-10-16T00-42-47-617Z-capture.json.gz",
+    "sha256": "cfbde4059866e2fb5c0a2278ca5bd57957c2599875cce555167924e765da638f"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0442\u0430\u043b\u0430\u043a\u043e\u0432\u043a\u0430-saint-petersburg-center/2026-10-16T00-43-33-284Z-capture.json.gz",
+    "sha256": "7574636f28afb646ca13b7b033d1d9c47ee241a65062578921a57686a9c59004"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0443\u0440\u0437\u0443\u0444-kazan-center/2026-10-16T00-44-22-108Z-capture.json.gz",
+    "sha256": "59e6cafced59dd6df58642991c794517bf347cc975c230404f6ef9b7f2fec37f"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0443\u0440\u0437\u0443\u0444-kerch-center/2026-10-16T00-44-48-785Z-capture.json.gz",
+    "sha256": "1088985fb85fab9b7ca49415f44f8772e5531fad2885af9816bd99224f517638"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0443\u0440\u0437\u0443\u0444-moscow-center/2026-10-15T12-12-21-705Z-capture.json.gz",
+    "sha256": "09883e42fd76c7fe9f90e51c35c18d45ba76d368e0fde1baee9bd12d9e2f91d5"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0443\u0440\u0437\u0443\u0444-saint-petersburg-center/2026-10-15T12-15-30-557Z-capture.json.gz",
+    "sha256": "07a4aa99f441c97af0cf4a1e776a5e89e1586c75caa8e96536aee59ba3c952a1"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0445\u0430\u0440\u0446\u044b\u0437\u0441\u043a-kazan-center/2026-10-16T00-45-24-630Z-capture.json.gz",
+    "sha256": "fb32d21faf034c8794fcf7579827f68f661f56b32eed91e42adb5d5590467bfa"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0445\u0430\u0440\u0446\u044b\u0437\u0441\u043a-kerch-center/2026-10-16T00-45-52-449Z-capture.json.gz",
+    "sha256": "b4cb7addb15220a6d53c4c7edb9babed781ac2887f255ae0c83755b2cbec139d"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0445\u0430\u0440\u0446\u044b\u0437\u0441\u043a-moscow-center/2026-10-16T00-46-24-423Z-capture.json.gz",
+    "sha256": "7e327aadb3f98c1ce4efa3f7cf3460e6ced3f4529b42b14b345765ffc558f033"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0445\u0430\u0440\u0446\u044b\u0437\u0441\u043a-saint-petersburg-center/2026-10-16T00-47-08-409Z-capture.json.gz",
+    "sha256": "c3319b76cb8da5c03007811885528fb1df014e9953282c58cae4ea952da42d76"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0448\u0438\u0440\u043e\u043a\u0438\u043d\u043e-kazan-center/2026-10-15T12-08-35-445Z-capture.json.gz",
+    "sha256": "51dff085bde8c3f9a409146a4d5790c070a33c4ee3d20631c2d83713ba8d36ff"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0448\u0438\u0440\u043e\u043a\u0438\u043d\u043e-kerch-center/2026-10-15T12-10-26-967Z-capture.json.gz",
+    "sha256": "2e02fe564d032d0bbf761743e25d18674bea6981f9f0a7329488b10e49f82cd0"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0448\u0438\u0440\u043e\u043a\u0438\u043d\u043e-moscow-center/2026-10-15T12-03-07-004Z-capture.json.gz",
+    "sha256": "a4bd488dd0d777371b49f1f41ef225b65af21d71b0b65b2c2fb83e8cdd549bda"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-\u0448\u0438\u0440\u043e\u043a\u0438\u043d\u043e-saint-petersburg-center/2026-10-15T12-04-54-252Z-capture.json.gz",
+    "sha256": "6ffccea6b7cf0b7a43994058f70cabaa68a10111b8b696eeb8bf0a40b60e45b4"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0430\u0441\u043a\u0430\u043d\u0438\u044f-\u043d\u043e\u0432\u0430-kazan-center/2026-10-15T23-18-27-629Z-capture.json.gz",
+    "sha256": "8a1ae06d65a40852688c50e3f866ec0266960bd61c78461eb52126fa5271c668"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0430\u0441\u043a\u0430\u043d\u0438\u044f-\u043d\u043e\u0432\u0430-kerch-center/2026-10-15T23-22-07-273Z-capture.json.gz",
+    "sha256": "61367117ba07eeb74ddc0fbeb5300de9b942bc144d7df064afdfceff5a50164f"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0430\u0441\u043a\u0430\u043d\u0438\u044f-\u043d\u043e\u0432\u0430-moscow-center/2026-10-15T23-25-38-460Z-capture.json.gz",
+    "sha256": "0445a3d0a85a1081ba57f7c4f653490d8939307ec96d952f0cf9111afb4984a4"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0430\u0441\u043a\u0430\u043d\u0438\u044f-\u043d\u043e\u0432\u0430-saint-petersburg-center/2026-10-15T23-27-13-024Z-capture.json.gz",
+    "sha256": "13c48641c03ee193355fff59e89b3e15365132dd9bdf769f483d21db2c5499cd"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0433\u0435\u043d\u0438\u0447\u0435\u0441\u043a-kazan-center/2026-10-15T23-40-55-226Z-capture.json.gz",
+    "sha256": "ee465512091f35456d2ed17fa542eeae0c30fb8e5c8a2ebe53372ea6c9333426"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0433\u0435\u043d\u0438\u0447\u0435\u0441\u043a-kerch-center/2026-10-15T23-41-11-118Z-capture.json.gz",
+    "sha256": "57f6cfbd3517cb5d2d64006610c9f4c90b2e6a594f2c7e0eef6d7709f501628b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0433\u0435\u043d\u0438\u0447\u0435\u0441\u043a-moscow-center/2026-10-15T23-41-37-103Z-capture.json.gz",
+    "sha256": "7ac29c0fda18ace03652c8f86caf6b7292e89b31e289db9c2c527c2d5c6d14b4"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0433\u0435\u043d\u0438\u0447\u0435\u0441\u043a-saint-petersburg-center/2026-10-15T23-42-13-927Z-capture.json.gz",
+    "sha256": "a138bd1f24ed16650d8768fefed1789d254c0dd799701d358f35b90c48f64539"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u043a\u0430\u0445\u043e\u0432\u043a\u0430-kazan-center/2026-10-15T23-42-48-320Z-capture.json.gz",
+    "sha256": "54c899b91b7c75e0b7191fec23688d1d3b5e976a544b1af63f973479e32a5ae1"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u043a\u0430\u0445\u043e\u0432\u043a\u0430-kerch-center/2026-10-15T23-43-04-751Z-capture.json.gz",
+    "sha256": "566778afc2bdcfc2f113586ffcae40791f6cb3ed08a21102d3a78ce6d04ee55e"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u043a\u0430\u0445\u043e\u0432\u043a\u0430-moscow-center/2026-10-15T23-43-32-225Z-capture.json.gz",
+    "sha256": "b39c816ec8e4ae4fc7ff0c6f0b7120f84e318aabfcf9785b7f6df859caa75269"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u043a\u0430\u0445\u043e\u0432\u043a\u0430-saint-petersburg-center/2026-10-15T23-44-10-492Z-capture.json.gz",
+    "sha256": "3aca265504811b7f9b993d80d2263bd6e69a58b7e7e2c1e3132e3965af547c10"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u043d\u043e\u0432\u0430\u044f-\u0437\u0431\u0443\u0440\u044c\u0435\u0432\u043a\u0430-kazan-center/2026-10-15T23-44-45-420Z-capture.json.gz",
+    "sha256": "ddd794445deacc5bc9abe1028c0d4c1f4225e7082558165505be5a71d13e4312"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u043d\u043e\u0432\u0430\u044f-\u0437\u0431\u0443\u0440\u044c\u0435\u0432\u043a\u0430-kerch-center/2026-10-15T23-45-02-634Z-capture.json.gz",
+    "sha256": "9e8b00c2f8704105af43e863d146b8d449f0be9e6d92d78d6f130b05645cb7f1"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u043d\u043e\u0432\u0430\u044f-\u0437\u0431\u0443\u0440\u044c\u0435\u0432\u043a\u0430-moscow-center/2026-10-15T23-45-31-211Z-capture.json.gz",
+    "sha256": "54337fdd6e3e5986432f5bcdb2b943cc26502e4ff2c377cbdfc171bef5a3b995"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u043d\u043e\u0432\u0430\u044f-\u0437\u0431\u0443\u0440\u044c\u0435\u0432\u043a\u0430-saint-petersburg-center/2026-10-16T00-47-57-970Z-capture.json.gz",
+    "sha256": "7ac13a5e02d62f47a70520c788874bf9f30c93909eb5b7f6038f21898ab3b59a"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0440\u0430\u0434\u0435\u043d\u0441\u043a-kazan-center/2026-10-15T12-01-39-614Z-capture.json.gz",
+    "sha256": "d6d6fb9c71a8000bbb9edaf5a069c95339828e0936695fccd2ddc6ff3a44b495"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0440\u0430\u0434\u0435\u043d\u0441\u043a-kerch-center/2026-10-15T12-02-49-106Z-capture.json.gz",
+    "sha256": "66b7db419dd6ab6f6337e47afd2206b8ce1559fe1fd724555ff5e1af651fd9bc"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0440\u0430\u0434\u0435\u043d\u0441\u043a-moscow-center/2026-10-15T11-56-25-327Z-capture.json.gz",
+    "sha256": "cdb0e406663dd829f29ecb09393468a6fd1e1896665b4aa42f28ae95c1486e5d"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0440\u0430\u0434\u0435\u043d\u0441\u043a-saint-petersburg-center/2026-10-15T11-59-10-514Z-capture.json.gz",
+    "sha256": "afb25d1fea5710c0d36c4eaf1ba7ffa1e0b1f50d3d05e3a34676769e58ff4409"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0441\u043a\u0430\u0434\u043e\u0432\u0441\u043a-kazan-center/2026-10-16T00-48-43-357Z-capture.json.gz",
+    "sha256": "89bccff5ee0fd538d51b7003de80578087a43580eeb53ef8c9c0805fe484fc40"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0441\u043a\u0430\u0434\u043e\u0432\u0441\u043a-kerch-center/2026-10-16T00-49-11-234Z-capture.json.gz",
+    "sha256": "27ca7929a37152dd180801408d8882ea365e0bd880dff740d9396fc3b9523b90"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0441\u043a\u0430\u0434\u043e\u0432\u0441\u043a-moscow-center/2026-10-16T00-49-50-522Z-capture.json.gz",
+    "sha256": "983156b98c3954648f8657a09641f1d68a7b7c24ff2b4145be3955de8ce73b29"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0441\u043a\u0430\u0434\u043e\u0432\u0441\u043a-saint-petersburg-center/2026-10-16T00-50-41-110Z-capture.json.gz",
+    "sha256": "d28bec0e9c3693d698d0a80e4afdef7e6e2e425a59bc903d0c0c60da662050b7"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0441\u0442\u0430\u0440\u0430\u044f-\u0437\u0431\u0443\u0440\u044c\u0435\u0432\u043a\u0430-kazan-center/2026-10-16T00-51-27-256Z-capture.json.gz",
+    "sha256": "81bd119029104f90f3f7ac656f9290d59b21a76cda6f9884ebf6e920df58720b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0441\u0442\u0430\u0440\u0430\u044f-\u0437\u0431\u0443\u0440\u044c\u0435\u0432\u043a\u0430-kerch-center/2026-10-16T00-51-55-672Z-capture.json.gz",
+    "sha256": "f1b8139cb2320540f20aa6f3835b20de82a548f3bc0f075c6588a6231d843f18"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0441\u0442\u0430\u0440\u0430\u044f-\u0437\u0431\u0443\u0440\u044c\u0435\u0432\u043a\u0430-moscow-center/2026-10-15T12-14-47-097Z-capture.json.gz",
+    "sha256": "360bde4f11db57e9dd35c3b7d58c03fc5130e77f66b714622ab0ef644596ca08"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0441\u0442\u0430\u0440\u0430\u044f-\u0437\u0431\u0443\u0440\u044c\u0435\u0432\u043a\u0430-saint-petersburg-center/2026-10-15T12-17-15-705Z-capture.json.gz",
+    "sha256": "7c9fe0f5914bbad394bae3791f30b99efa9783e90442a53fa36e41f9ef0f996b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0442\u0430\u0432\u0440\u0438\u0439\u0441\u043a-kazan-center/2026-10-16T00-52-39-971Z-capture.json.gz",
+    "sha256": "5eb0effd28e3ba7574acf2eec83632c328faa2a0519a6777a40f3824ee62a5e7"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0442\u0430\u0432\u0440\u0438\u0439\u0441\u043a-kerch-center/2026-10-16T00-53-09-088Z-capture.json.gz",
+    "sha256": "88d9034b0679f580c3d0568410226a6c29d5984f7f0a886e7ba3afef2f029628"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0442\u0430\u0432\u0440\u0438\u0439\u0441\u043a-moscow-center/2026-10-16T00-53-48-722Z-capture.json.gz",
+    "sha256": "00f1254039f0ab27f20a1881036b7e701797cd0146f9c597a9ad45824bd5df59"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0442\u0430\u0432\u0440\u0438\u0439\u0441\u043a-saint-petersburg-center/2026-10-16T00-54-39-312Z-capture.json.gz",
+    "sha256": "e5dcba11282430e65312f0c865d67945f711088bfd244229c428fc81d9679c3e"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0445\u0435\u0440\u0441\u043e\u043d-kazan-center/2026-10-16T00-55-32-204Z-capture.json.gz",
+    "sha256": "85ab204b645185ca8a4f2ba714866bdc035a6d7c415a005fb9df46b8ee88027b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0445\u0435\u0440\u0441\u043e\u043d-kerch-center/2026-10-16T00-56-04-976Z-capture.json.gz",
+    "sha256": "38e248f7ecdb436d87f8719cdb63ec45abef07011e9f5f70e21dd02c825567a6"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0445\u0435\u0440\u0441\u043e\u043d-moscow-center/2026-10-16T00-56-51-739Z-capture.json.gz",
+    "sha256": "e4fd9b7ae01735975a437041ce13e5f058f99d1eb1a5d11ae33f84cc70c96aca"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0445\u0435\u0440\u0441\u043e\u043d-saint-petersburg-center/2026-10-16T00-57-49-532Z-capture.json.gz",
+    "sha256": "084399bb661097336f40000cbefafd464342e3e80fa6bba4dd01c6ee9bee7910"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0447\u0443\u043b\u0430\u043a\u043e\u0432\u043a\u0430-kazan-center/2026-10-15T12-09-56-015Z-capture.json.gz",
+    "sha256": "77a7e9dae5bdeb413c8393220ca8c3911929135161f714fb5f044a67a2e9eed6"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0447\u0443\u043b\u0430\u043a\u043e\u0432\u043a\u0430-kerch-center/2026-10-15T12-11-17-292Z-capture.json.gz",
+    "sha256": "217ca10b0c0c5c0b4d22d20ff31b8fcf669e42b98a20d580eda2e53e31d0d60b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0447\u0443\u043b\u0430\u043a\u043e\u0432\u043a\u0430-moscow-center/2026-10-15T12-04-20-103Z-capture.json.gz",
+    "sha256": "069070aa159571c38351ea10d7e7cf3ff146203f7830baa834722412973d9b2f"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-\u0447\u0443\u043b\u0430\u043a\u043e\u0432\u043a\u0430-saint-petersburg-center/2026-10-15T12-07-35-510Z-capture.json.gz",
+    "sha256": "c657c9727c4e68fdea50f6cb766664705dd48d053b438cd69490d89ba41eecec"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0430\u043b\u0447\u0435\u0432\u0441\u043a-kazan-center/2026-10-15T23-45-58-016Z-capture.json.gz",
+    "sha256": "c4dcdff6c9b58aec39f914f8481a784adc3a2d7ed1205dbc0333049c003db1b5"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0430\u043b\u0447\u0435\u0432\u0441\u043a-kerch-center/2026-10-15T23-46-16-417Z-capture.json.gz",
+    "sha256": "9ade58aa929206f460ed531773ddcaafdc4702f5dc74c17b993ec6bef61c5a1f"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0430\u043b\u0447\u0435\u0432\u0441\u043a-moscow-center/2026-10-15T23-46-37-531Z-capture.json.gz",
+    "sha256": "8b1fe2d64f3497675746ab90985940a241cc358a6a7d269af9ca785e061c34ad"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0430\u043b\u0447\u0435\u0432\u0441\u043a-saint-petersburg-center/2026-10-15T23-47-10-449Z-capture.json.gz",
+    "sha256": "4bf7f18a46c846c87b005ec60dadd7c2259ed2290fd972aa8457e17d6a6b3523"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0430\u043d\u0442\u0440\u0430\u0446\u0438\u0442-kazan-center/2026-10-15T23-47-38-365Z-capture.json.gz",
+    "sha256": "d330292b3779fd035f1a12f8969bad602de3fdfe8ea8b61d14725b5d6101769c"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0430\u043d\u0442\u0440\u0430\u0446\u0438\u0442-kerch-center/2026-10-15T23-47-57-237Z-capture.json.gz",
+    "sha256": "46dcde671a4e89318f221b3ae2395dbf1fc2eb33b141726edcbf3c24924dacc7"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0430\u043d\u0442\u0440\u0430\u0446\u0438\u0442-moscow-center/2026-10-15T23-48-18-925Z-capture.json.gz",
+    "sha256": "69b432eac404dc7cf87a51e8147dbf16c1f8c3ca93844e13e6f8e2956b0d53bb"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0430\u043d\u0442\u0440\u0430\u0446\u0438\u0442-saint-petersburg-center/2026-10-15T23-48-51-572Z-capture.json.gz",
+    "sha256": "cdc93c5f30bb20dd51d0ab45ba01fad4f412a06ee8fed982b07d3d97dde5d4c4"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0431\u0440\u044f\u043d\u043a\u0430-kazan-center/2026-10-15T12-00-26-371Z-capture.json.gz",
+    "sha256": "699cd5d95c51ffa51b62ef8dfa135e005c13097c2f96115449e0d3349704f116"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0431\u0440\u044f\u043d\u043a\u0430-kerch-center/2026-10-15T12-02-15-379Z-capture.json.gz",
+    "sha256": "5f5fe1f82475dc7bb835b1efb1c9a52b0a406bb87a9efb03160b6da58ba1d070"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0431\u0440\u044f\u043d\u043a\u0430-moscow-center/2026-10-15T11-55-29-381Z-capture.json.gz",
+    "sha256": "8f6ec567b5052c7876abb9f301e7692da5708b958fb1de6a9a2ab938f693ee4a"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0431\u0440\u044f\u043d\u043a\u0430-saint-petersburg-center/2026-10-15T11-57-59-642Z-capture.json.gz",
+    "sha256": "bb720239367689bf2c68a22c3c2277cf3c34cd48a80a3d8052464c1f68a71815"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0434\u043e\u0432\u0436\u0430\u043d\u0441\u043a-kazan-center/2026-10-15T23-49-18-914Z-capture.json.gz",
+    "sha256": "c9cdb2c2350e65f7a73ae12f9694bc791edd6e5c50470892bfe6041a3ec4d6d1"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0434\u043e\u0432\u0436\u0430\u043d\u0441\u043a-kerch-center/2026-10-15T23-49-37-734Z-capture.json.gz",
+    "sha256": "97ca05b796fe675a719adcf4e226e4db82cce75abab22ba3af2b0f05c6f08bf6"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0434\u043e\u0432\u0436\u0430\u043d\u0441\u043a-moscow-center/2026-10-15T23-49-59-788Z-capture.json.gz",
+    "sha256": "d012a3a20388fdd10980fc10aba3678edb310027a494b902c11ccb0419cdc1fb"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0434\u043e\u0432\u0436\u0430\u043d\u0441\u043a-saint-petersburg-center/2026-10-15T23-50-32-019Z-capture.json.gz",
+    "sha256": "93485c6863864283f48e713554d1104af3bdc5f07dbe7b245a2acf872146d81a"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u043b\u0438\u0441\u0438\u0447\u0430\u043d\u0441\u043a-kazan-center/2026-10-15T12-08-58-924Z-capture.json.gz",
+    "sha256": "a069308e388242bba566c558b003cd6f59022ec268816d0618c0c71095f166e5"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u043b\u0438\u0441\u0438\u0447\u0430\u043d\u0441\u043a-kerch-center/2026-10-15T12-10-39-555Z-capture.json.gz",
+    "sha256": "ec906ecdeecfbc76ac9f14e0990c75e41e6e4cfd3b27eeb70e9dccdc3347c236"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u043b\u0438\u0441\u0438\u0447\u0430\u043d\u0441\u043a-moscow-center/2026-10-15T12-03-20-913Z-capture.json.gz",
+    "sha256": "54f90ef278e0bca47313503419ccba018eb3362c8ae6dc25a51d0a1e6e4d51d9"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u043b\u0438\u0441\u0438\u0447\u0430\u043d\u0441\u043a-moscow-center/2026-10-16T00-38-10-215Z-capture.json.gz",
+    "sha256": "9dd9bdfb0f41918e5f7507250de19613ee46082a19f57e392cdb3803a3fe8aee"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u043b\u0438\u0441\u0438\u0447\u0430\u043d\u0441\u043a-saint-petersburg-center/2026-10-15T16-58-16-753Z-capture.json.gz",
+    "sha256": "4e57bf75932979db5bdced425b67dc617fd7107b87824d3ed6299e77186704f8"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u043c\u0430\u0440\u043a\u043e\u0432\u043a\u0430-kazan-center/2026-10-15T23-50-58-026Z-capture.json.gz",
+    "sha256": "c4c87727b7e8024da1a8b42e70aebaff3e9f3f5ade1d86e93fc7519dcd013e70"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u043c\u0430\u0440\u043a\u043e\u0432\u043a\u0430-kerch-center/2026-10-15T23-51-18-116Z-capture.json.gz",
+    "sha256": "5103e73b3e79e86a0334b1af7c0cb346f37177d6d7a3ec7d18907a075159b785"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u043c\u0430\u0440\u043a\u043e\u0432\u043a\u0430-moscow-center/2026-10-15T23-51-38-368Z-capture.json.gz",
+    "sha256": "8ae0a026aa886ee5040171360ab68c6c9e2c690025d9ad812b68c6854e9af04c"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u043c\u0430\u0440\u043a\u043e\u0432\u043a\u0430-saint-petersburg-center/2026-10-15T23-52-08-514Z-capture.json.gz",
+    "sha256": "2ee5240512d140e98a5c4e181ae3c9d54fccb33870fa68023b1d4f0f2b743a19"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0440\u043e\u0432\u0435\u043d\u044c\u043a\u0438-kazan-center/2026-10-16T00-58-29-954Z-capture.json.gz",
+    "sha256": "c703d412626c77a9a42a35e459251fe8b988802e49789d1c601fe309e8ce060b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0440\u043e\u0432\u0435\u043d\u044c\u043a\u0438-kerch-center/2026-10-16T00-59-01-246Z-capture.json.gz",
+    "sha256": "619b61dfedff876dcb6ea22f6f42f40c8d6b4af2aed883bcc87fb0ebcb8222d3"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0440\u043e\u0432\u0435\u043d\u044c\u043a\u0438-moscow-center/2026-10-16T00-59-34-907Z-capture.json.gz",
+    "sha256": "020ec65634e73a8c69fab7e6af3b3bc4cdcf2566ce8bec4c95f4bed19d3309ee"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0440\u043e\u0432\u0435\u043d\u044c\u043a\u0438-saint-petersburg-center/2026-10-16T01-00-19-156Z-capture.json.gz",
+    "sha256": "d296504aaa25e964a351eeb441d2ec5a9113bbcdb73ec8075a67e792e2af9255"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0440\u0443\u0431\u0435\u0436\u043d\u043e\u0435-kazan-center/2026-10-16T01-00-57-394Z-capture.json.gz",
+    "sha256": "67f9f89a4da0f1ffcac1598ccb80e0e4b105b7b0b3ea2f48d06cca3be5e75d90"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0440\u0443\u0431\u0435\u0436\u043d\u043e\u0435-kerch-center/2026-10-16T01-01-29-026Z-capture.json.gz",
+    "sha256": "02c8e7c101b33bfceb3488c206bdbf28e25a48ed0ebac0c2e87844bb7be1c4a4"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0440\u0443\u0431\u0435\u0436\u043d\u043e\u0435-moscow-center/2026-10-15T17-01-31-720Z-capture.json.gz",
+    "sha256": "36d0b3bfcf20b6d80eb8bd3baa310c61be3a87a49b5e988e6502f232997ea2b6"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0440\u0443\u0431\u0435\u0436\u043d\u043e\u0435-saint-petersburg-center/2026-10-15T17-03-35-545Z-capture.json.gz",
+    "sha256": "0dec6793237ea0b72e224c90ad797953bb8e7d9461bb36057898a2a0565677a7"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0441\u043e\u0440\u043e\u043a\u0438\u043d\u043e-kazan-center/2026-10-16T01-02-08-162Z-capture.json.gz",
+    "sha256": "35870a1ad8257accbf7357026b6a5a419363d1832bdff9c70e43418de7faa80e"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0441\u043e\u0440\u043e\u043a\u0438\u043d\u043e-kerch-center/2026-10-16T01-02-39-667Z-capture.json.gz",
+    "sha256": "47b5fa802390a7d672aff1f09558315b68f0d93de27ce086b0d06be9251b28a7"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0441\u043e\u0440\u043e\u043a\u0438\u043d\u043e-moscow-center/2026-10-16T01-03-14-231Z-capture.json.gz",
+    "sha256": "3ede605d86256904b3328a6b4d1201081e9e010575d643e60e321386805b89ff"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0441\u043e\u0440\u043e\u043a\u0438\u043d\u043e-saint-petersburg-center/2026-10-16T01-03-59-219Z-capture.json.gz",
+    "sha256": "2a639434ff3783a738d77c32f1979ffcbc037ba3d0f0575778f8aca5764e5647"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0441\u0442\u0430\u0440\u043e\u0431\u0435\u043b\u044c\u0441\u043a-kazan-center/2026-10-16T01-04-38-298Z-capture.json.gz",
+    "sha256": "fac1509da3e3eab9d33a70d43110c006ea3fd14e4853a1c7699a1e848bc28cd9"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0441\u0442\u0430\u0440\u043e\u0431\u0435\u043b\u044c\u0441\u043a-kerch-center/2026-10-16T01-05-10-632Z-capture.json.gz",
+    "sha256": "f5c03462e30f1b073037a5515d6fc306b937528b4b385745722cee460d3107ec"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0441\u0442\u0430\u0440\u043e\u0431\u0435\u043b\u044c\u0441\u043a-moscow-center/2026-10-16T01-05-43-867Z-capture.json.gz",
+    "sha256": "c524951a402219e69ba42649abeb799709e6b4393bf05521588d345b9d861329"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-\u0441\u0442\u0430\u0440\u043e\u0431\u0435\u043b\u044c\u0441\u043a-saint-petersburg-center/2026-10-16T01-06-26-769Z-capture.json.gz",
+    "sha256": "38edb90e297c81dde1baf8d5c5c06557c2a260733fc11980cbc2c44d11500369"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/2026-10-15T23-58-33-171Z-capture.json.gz",
+    "sha256": "e8b5d42fb9b737227c04d195271c4cb4dde444a66f85aa579d238a0cd2769ed0"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/2026-10-16T01-21-31-631Z-capture.json.gz",
+    "sha256": "ce2577c835f8a5321dcff6be9717084452234bc4512683fd59fb7085b1f6fdcf"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-kazan-to-sest/2026-10-15T23-59-05-400Z-capture.json.gz",
+    "sha256": "51b8e21059a597bf7797b348f58f2e47ac55ce992d364ef112f7085660e90d90"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-murom-to-sest/2026-10-15T23-59-30-619Z-capture.json.gz",
+    "sha256": "7f52b3f094508f3782a3b13b1785b39a0e200123c948ad45771bddc82e76def9"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/2026-10-16T01-22-12-554Z-capture.json.gz",
+    "sha256": "c7fe6e20ebaf1854e7dba96db30bac54b2c929be4482f9f2144c686b17d104a4"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary/2026-10-16T01-22-56-513Z-capture.json.gz",
+    "sha256": "ff9294352008224ef3ce7433539682ed9d80bcb8f7b3a4eb4d573cfd8dd4a4d5"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-kazan/2026-10-16T00-00-02-750Z-capture.json.gz",
+    "sha256": "1541f0cf350d5c4613d150985aae0d110111f3ea1af5ad0d74be468c299fe99b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-murom/2026-10-16T00-00-27-781Z-capture.json.gz",
+    "sha256": "e216f1a726f777fd77fc40e1422e982cca13bd7afb4418c4e1fb677e9dcbddfd"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-vladimir/2026-10-16T01-23-33-921Z-capture.json.gz",
+    "sha256": "f65cd0bf4f8e7b05a5f4182be4f7568daded7b31731cedd8b08d5fc2ea557ed7"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-vladimir-to-sest/2026-10-16T01-24-11-271Z-capture.json.gz",
+    "sha256": "5e895d6785df78dafd9a016706e733fd3da66502001fbb5611ff34d33f52eb6f"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-krasnodar-to-prim/2026-10-16T01-25-02-469Z-capture.json.gz",
+    "sha256": "091a0267c85c6e06fb3a8ba635a24e8a46da3ebe05be102828f8780ca44c8030"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-krasnodar-to-sest/2026-10-16T00-01-04-945Z-capture.json.gz",
+    "sha256": "3c29b35159cbdfb9e308db468d0896c19f54e4ebc73591bbf42216cbba0d1175"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-krasnodar/2026-10-16T01-25-55-412Z-capture.json.gz",
+    "sha256": "5c94090b3be61998ec8e02f99587a5707301891e877edb4f79b7d94a1bb5ccf2"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-rostov/2026-10-16T01-26-44-471Z-capture.json.gz",
+    "sha256": "ff1c9f594bc3bc1df83133fdad003dbbed7227aeb734aac63a1d1936dc998007"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-voronezh/2026-10-16T01-27-29-307Z-capture.json.gz",
+    "sha256": "df4379076a11666c8c30ea95f4068f86304d1477638f7a71e18d3b02e6e1751d"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-rostov-to-prim/2026-10-16T01-28-18-618Z-capture.json.gz",
+    "sha256": "b54fc4d7d26dc8df2a002eb3373fcb4d5a2e1a65d81de80077727eb68ca44176"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-rostov-to-sest/2026-10-16T00-01-40-957Z-capture.json.gz",
+    "sha256": "74733c833d428ab1d61023bbbe4566e425336fd6994234c5f66d7b612a69f95c"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-sest-to-krasnodar/2026-10-16T00-02-19-759Z-capture.json.gz",
+    "sha256": "9e1e0ed4c4400b84bf188a1664a6f89f7cf082500fcffe4fe746b3e6765ebc65"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-sest-to-rostov/2026-10-16T00-02-55-469Z-capture.json.gz",
+    "sha256": "72cbd07bf21293d93a6ff42138e55ddd252aa4ee886fcbfc7ba22f0a948850b8"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-voronezh-to-prim/2026-10-16T00-03-24-052Z-capture.json.gz",
+    "sha256": "fa38a093f1ccf7fee9c35e27eec0dff76bf878fcdcf88bb06fda0ea79f17c7c9"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-domodedovo-to-novgorod/2026-10-16T01-28-56-134Z-capture.json.gz",
+    "sha256": "c6d502f856ae39ea9f044c28e4a5731cf75e371fcfbbb56e445a2d6e2e88fd7d"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-domodedovo-to-spb/2026-10-16T00-03-47-831Z-capture.json.gz",
+    "sha256": "0e26ddd23e2542a907122ee95c662cb03d857abbff4a64225d040de69888e28f"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-spb/2026-10-16T00-04-08-712Z-capture.json.gz",
+    "sha256": "738c29e0773a4ac17fa4b56ea324cf060a62533b843560f3ca0413ea9b7234e4"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-tver/2026-10-16T01-29-30-153Z-capture.json.gz",
+    "sha256": "3235c04e3f0d95c30df518d159c3e47bce988a0c4a0b1b5700b5ee9e206f61b1"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-novgorod-to-domodedovo/2026-10-16T01-30-06-017Z-capture.json.gz",
+    "sha256": "95e85d22d9154096958daa04a7f2fa19c3e0887cd4942436c58717c9d0af1564"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-ramenskoe-to-torzhok/2026-10-16T01-30-43-073Z-capture.json.gz",
+    "sha256": "997d836b516306fa31e9d3849b10586f59e4eeb17e1e1b2299d2a4351a0851b7"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-domodedovo/2026-10-16T00-04-31-865Z-capture.json.gz",
+    "sha256": "7e59435e53caa51ba754f0750dd80c7898389144b3504a85d9d6aa743d4236d0"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/2026-10-16T00-04-54-634Z-capture.json.gz",
+    "sha256": "9fa98f4f93639f6c2d7de6dbb8d6529c6e2a889e0a4d53456c93aceae5633eaa"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-torzhok-to-ramenskoe/2026-10-16T00-05-16-512Z-capture.json.gz",
+    "sha256": "8fe0ec0ac265d465dbeabeed12087a44d105529839c120bf3bc8231a7feeb4d6"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-tver-to-noginsk/2026-10-16T01-31-18-037Z-capture.json.gz",
+    "sha256": "891ee5ad4fb654412d9b9530a6c0e8d0e1e8fa0016e20b3923d63fd0951568ca"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-moscow-to-prim/2026-10-16T00-05-39-475Z-capture.json.gz",
+    "sha256": "7a51a446061ddacfd33a6ce2669110570da6a33d8e6b9f7f4c1bc0b9cbf68705"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-moscow-to-sest/2026-10-16T00-06-02-495Z-capture.json.gz",
+    "sha256": "3373138f25f8eba9eeae0544f0c18cac148b5073af4c4fa28481398508d000a9"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-novgorod-to-sest/2026-10-16T01-31-53-074Z-capture.json.gz",
+    "sha256": "205d1dd3d2b2fabccdc6400065a1fd56861de1d93bd5166652973f26fc57d779"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-moscow/2026-10-16T00-06-25-425Z-capture.json.gz",
+    "sha256": "24a24fda86b252ba77c3765a24b8ee58f05c742b84af6ed7445540368fd0eb61"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-torzhok/2026-10-16T01-32-28-268Z-capture.json.gz",
+    "sha256": "73413ec362a4f55a1219e5c0b2011f464e446d595af37d852434beb76d6df15e"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-moscow/2026-10-16T00-06-47-974Z-capture.json.gz",
+    "sha256": "a30ef881b9290377bf30abc1d75c1a740bcc797762b2447182e2169db6c017cc"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-novgorod/2026-10-16T01-33-03-898Z-capture.json.gz",
+    "sha256": "50906f673fa32a6219e678697a823c16806bf8c400f5408a4472f6a2a3f44534"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-tver/2026-10-16T01-33-39-370Z-capture.json.gz",
+    "sha256": "f345d2c725eefeff29ec7fcfb73d7a510c1e8199e4e04191a1cccb92bcbf35f0"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-torzhok-to-prim/2026-10-16T01-34-14-347Z-capture.json.gz",
+    "sha256": "875a7b43b82e9e35432ac2ac76cb116242fb2a646eb745fc82fd85c9981fdb09"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-tver-to-sest/2026-10-16T00-07-09-536Z-capture.json.gz",
+    "sha256": "23569180e6f0281e83966b4269468fb3e022facdede07769ec29b76c8fc01edf"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-arzamas-to-domodedovo/2026-10-16T01-34-49-494Z-capture.json.gz",
+    "sha256": "edef4936af7490412a5e315a26f9b39f8ed0e78f348e873a531489b8d37e4028"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-dmitrov-to-kazan/2026-10-16T00-07-34-392Z-capture.json.gz",
+    "sha256": "5a1b57074dcb8ad3a3a64e878c5884dc6b92f869eea03acff6b84db0846b85be"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-dmitrov-to-murom/2026-10-16T01-35-24-958Z-capture.json.gz",
+    "sha256": "54a3b8f299aa811a14170fe942856a8cb6ed1eb2b66574ac8a684ca24221663e"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/2026-10-16T01-36-02-089Z-capture.json.gz",
+    "sha256": "4a4010becad92e7b9e83530c602678d3b98ef9bb0e540e61c91ded03aa1c21c3"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-kazan-to-dmitrov/2026-10-16T00-07-58-138Z-capture.json.gz",
+    "sha256": "924a01b671d21410ee212590b7ec9fd9c68f80d4a18c9062ef5e8b922c827ce2"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-kazan-to-klin/2026-10-16T00-08-21-918Z-capture.json.gz",
+    "sha256": "2adf0ed3480fa6f39517852c63e63a2764245ca929a3d016e3abb5e9632123a5"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-kazan/2026-10-16T00-08-48-266Z-capture.json.gz",
+    "sha256": "9dc5f3c3201e45c5ad888fe71de1112daac1a26b510e6410b1d0ca58ba145539"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-vladimir/2026-10-16T01-36-38-142Z-capture.json.gz",
+    "sha256": "46110034583a519fae3dc7ef4330263f313c9d6353ee038264bca964561c716d"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-murom-to-dmitrov/2026-10-16T01-37-13-778Z-capture.json.gz",
+    "sha256": "42f8df17647a37778561d3a328fde01af855c7d32468ed1f55e34da20acbb0ce"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-vladimir-to-klin/2026-10-16T00-09-09-849Z-capture.json.gz",
+    "sha256": "7ef6d5c26ac800e2f2078e0a3402cdfeda49ce161be931a69e12c3ddc2bed34a"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-anapa-to-voronezh/2026-10-16T01-37-51-243Z-capture.json.gz",
+    "sha256": "dda02d02b6dc3afcf524389f74e89bfefbed3e405b574e6d1253066b1b9ed61a"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-domodedovo-to-kerch/2026-10-16T01-38-36-517Z-capture.json.gz",
+    "sha256": "4652c2089a4d83b30dbb38a4bead2970c69b88d2014c8ab8be737b2c314f4d49"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-domodedovo/2026-10-16T01-39-20-603Z-capture.json.gz",
+    "sha256": "e785f2b09e0beae2dedcaa9cd2734b1c7f1dd02ac612de6126aa6580562ba85b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-rostov/2026-10-16T00-09-31-679Z-capture.json.gz",
+    "sha256": "16dd2abb0d06fa842647b0535697488db7d1a3a1b88cd344adbd0a5e1e5cd6e6"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-moscow-to-taman/2026-10-16T00-10-06-845Z-capture.json.gz",
+    "sha256": "3a49571931bdfe0afedfa1f2bbefff81b6c265dd85ab51fd7e52f1a638c5ab66"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-rostov-to-kerch/2026-10-16T00-10-29-414Z-capture.json.gz",
+    "sha256": "aafaeeccad881ed748dc32e34482ea538f60d58c468f80b1b221cfda2108df28"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-moscow/2026-10-16T01-40-05-574Z-capture.json.gz",
+    "sha256": "84d63ae07de73f59c97340972e96803918c3137ec4c1e6e90603d568ba26f679"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-voronezh/2026-10-16T00-10-53-930Z-capture.json.gz",
+    "sha256": "db7ce8f0d256d7e2583644611c3a00adae58c5367735a146a4f9005867b9404a"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-voronezh-to-anapa/2026-10-16T01-40-45-651Z-capture.json.gz",
+    "sha256": "41c949cc9afef9cb51ffc2fef5dd89030e58e897758f39eeecc9d37be121531d"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-voronezh-to-taman/2026-10-16T00-11-20-485Z-capture.json.gz",
+    "sha256": "d04dc4f1c995ce0badecf4c75da16b16c04781f56b5c55a5672aa67325bf3b70"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-krasnodar-to-spb/2026-10-16T00-11-59-083Z-capture.json.gz",
+    "sha256": "0146e84b961b714fcc4e11dcb723285482127efb30bf417c5fc8ccf1215e41c8"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-krasnodar-to-torzhok/2026-10-16T01-41-33-297Z-capture.json.gz",
+    "sha256": "4a3d1ca1ee59891e94b12690f70046b4600bc59226be7b4b449968bdde5aa1da"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-spb/2026-10-16T00-12-35-097Z-capture.json.gz",
+    "sha256": "7daa83ea4a1f8fcc5f4819bddaa4f8153e1e88e7e49ea5f3f7f656b93ef143f4"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-rostov-to-tver/2026-10-16T01-42-17-713Z-capture.json.gz",
+    "sha256": "6cccb320f5cc436c33eed7b2731396e427b410c7de519188221b88cda4f7ca82"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-krasnodar/2026-10-16T00-13-15-022Z-capture.json.gz",
+    "sha256": "bf42bce43a7cf6bd1a428ba7f263d721882c20af5bd12a6a963ce46b86d254f2"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-rostov/2026-10-16T00-13-51-454Z-capture.json.gz",
+    "sha256": "a0be7e70e70158074e861347b8d10367c69a9bfb9444fe3a9b42f55b349063f1"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-voronezh/2026-10-16T01-43-03-406Z-capture.json.gz",
+    "sha256": "4d3c6d232c73eab5c662c3532fb85931d3083bfb43f4c5184dfe1b285abebc57"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-torzhok-to-krasnodar/2026-10-16T01-43-51-795Z-capture.json.gz",
+    "sha256": "92790f5b131ecf57f859619ff98b272067ef469cbfb34b91efe6d9ba79e6f249"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-tver-to-rostov/2026-10-16T01-44-37-580Z-capture.json.gz",
+    "sha256": "b3b5ddece93d90c7ac1b4e09555113867012fc084b640ca0458beb2c62a20574"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-voronezh-to-spb/2026-10-16T00-14-21-840Z-capture.json.gz",
+    "sha256": "1ee4623d549d84d8ba29838b2a5ab649a0875a5484c6c3df5dfa402d16f27904"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-anapa-to-krasnodar/2026-10-16T01-45-14-228Z-capture.json.gz",
+    "sha256": "93a87bfbd5425c4191ed49f8893c09c1efa467b4e35708b9efb5dd5168a69ff4"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-kerch-to-krasnodar/2026-10-16T00-14-44-459Z-capture.json.gz",
+    "sha256": "a4fba1a788c295dd879668c4adee2f1e07ad18ae404289a5667fe2deaf7d6a9f"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-krasnodar-to-anapa/2026-10-16T01-45-49-820Z-capture.json.gz",
+    "sha256": "900352fe26a77420e5856be7bd698cd7c6decf712945cd419036578941f06409"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-krasnodar-to-kerch/2026-10-16T00-15-07-021Z-capture.json.gz",
+    "sha256": "16eecd85feab06f4344dc6d28b8c8d23a3fc3a277ecba7c692d6a934affc901e"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-krasnodar-to-taman/2026-10-16T00-15-28-913Z-capture.json.gz",
+    "sha256": "9ef18351418277f4a7d6f19c6129b4b85a8be71aa17ed266cdea0e4161fc9bb7"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-krasnodar-to-temryuk/2026-10-16T00-15-50-775Z-capture.json.gz",
+    "sha256": "b20571e70818ed7a711dcc86ee476407ec5496caa8de2d52a59610ff7ff89268"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-slavyansk-to-taman/2026-10-16T01-46-25-864Z-capture.json.gz",
+    "sha256": "1d34ed443ac48f906368bce2fd6a23e4326bc66ab3ba06c3ec740bc9384bc279"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-taman-to-krasnodar/2026-10-16T00-16-12-555Z-capture.json.gz",
+    "sha256": "9720fea78305f3305afa4d1618710daeabf60f31f264be789d0c91ee031c09ad"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-taman-to-slavyansk/2026-10-16T01-47-00-245Z-capture.json.gz",
+    "sha256": "3efcc6d370ec2c1620690eaeb19fa801904c730bbc97c87b0ae75ac7568d76df"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-temryuk-to-krasnodar/2026-10-16T01-47-35-770Z-capture.json.gz",
+    "sha256": "485dff853e437d6d8cf1eaf5fd0d74e71cd133e742c770e84ba9e96976aad7d2"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-dmitrov-to-kazan/2026-10-16T01-48-15-964Z-capture.json.gz",
+    "sha256": "f6af00c398d7bf9020046e64e594c636b606d27f0625b2e2ed13ab079659fb0f"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-dmitrov-to-rostov/2026-10-16T01-48-59-594Z-capture.json.gz",
+    "sha256": "7caf0544d7ccba8aefe4e2a3027dc29adc7f9c5c4e0c7904a2738ef69b612995"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-domodedovo-to-klin/2026-10-16T00-16-36-317Z-capture.json.gz",
+    "sha256": "3bc427f0942a9081dfb33a1a689ff83e980d17a4b2004cbceb4d0c98232101f7"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-kazan-to-dmitrov/2026-10-16T01-49-38-539Z-capture.json.gz",
+    "sha256": "a02b0d00b9f716f7111cf36b850a261d5018ce57ab85da42b0c590639ebae14a"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-domodedovo/2026-10-16T00-16-59-095Z-capture.json.gz",
+    "sha256": "c43b8ffbe9e08bddae3f773cf030bb958b38fcd319a840dd748df2b6fff4dbc4"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-klin-to-ramenskoe/2026-10-16T01-50-15-672Z-capture.json.gz",
+    "sha256": "43a188c7e5d0d91462574e2f8407b152ed66be721ea1ec8f0d8b630336525f2c"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-noginsk-to-podolsk/2026-10-16T00-17-20-995Z-capture.json.gz",
+    "sha256": "88287ccaa9cb6e70a68083f70fa9f9ea4ae08b84c767565518b16858fe236354"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-podolsk-to-noginsk/2026-10-16T00-17-43-312Z-capture.json.gz",
+    "sha256": "7d6cd524c0b792c9b99f25c951e054e56683f4d356642fa1bafdc93ab7ac8042"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/2026-10-16T00-18-05-785Z-capture.json.gz",
+    "sha256": "7e51c29bed351d8f5b24dfd4630802d84a04152e5703d677b8edb1e68c297d14"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-rostov-to-dmitrov/2026-10-16T01-50-58-641Z-capture.json.gz",
+    "sha256": "a44e244dd807bf66f9d9bca6f098c15388eed6e55eca1eb7995daf84985e1afc"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-berezovka-to-vyazemsky/2026-10-16T01-51-35-834Z-capture.json.gz",
+    "sha256": "32cae9460235866236126dd52475ffe8b4adbfaee141af11b6e657d4530d32ec"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-khabarovsk-to-vyazemsky/2026-10-16T01-52-11-167Z-capture.json.gz",
+    "sha256": "dd5c3cb4f59f912e619e97a09dec60faeebbc94635335ff7de5569c7f8848e48"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-knyaze-to-smidovich/2026-10-16T00-18-27-187Z-capture.json.gz",
+    "sha256": "928532ae6cc75319631608e4008e58ffcf65361e933ba54055187a967c49bcf7"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-nekrasovka-to-smidovich/2026-10-16T01-52-46-856Z-capture.json.gz",
+    "sha256": "cedc08b718071f6f768ec2e789f817803b2b3382fa5a9667ddb517045fcb8a42"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-smidovich-to-knyaze/2026-10-16T00-18-48-428Z-capture.json.gz",
+    "sha256": "5925d523b4d1528dddeff2bbfc130ecb8009b11b78bb0ddab170dd0cbfaf721b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-smidovich-to-nekrasovka/2026-10-16T00-19-09-941Z-capture.json.gz",
+    "sha256": "d80bb232c53b3d7a230c0f9711d3d21702b77c42b80ea73c38f682c7abc91f1b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-smidovich-to-vyazemsky/2026-10-16T00-19-32-738Z-capture.json.gz",
+    "sha256": "255023e1e0667cff223e7da46ab6605fb0b4043315b71c3df5fe1b67690d4ff7"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-vyazemsky-to-berezovka/2026-10-16T01-53-22-245Z-capture.json.gz",
+    "sha256": "b9512ca77d6e2f81c3426d66893a2525c182263cb7dd696be290508010337020"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-vyazemsky-to-khabarovsk/2026-10-16T01-53-57-659Z-capture.json.gz",
+    "sha256": "21a613e6a0b6a58ca92b9fe6341ee8f4cc5ab3c7c78bccc75951eb93fd17d9cd"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-vyazemsky-to-smidovich/2026-10-16T00-19-55-206Z-capture.json.gz",
+    "sha256": "0b72ec044091521b62de22e9485bc954db3e051863ac37ac212ab76da69b87f2"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-novgorod/2026-10-16T01-54-35-933Z-capture.json.gz",
+    "sha256": "5e02fe73b6cf73be09885f8c27e6c64de2ee00f8443bb0286318cf4606cbe927"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-spb/2026-10-16T00-20-19-830Z-capture.json.gz",
+    "sha256": "8b55d896cc1c1cb8f57b7834171adaf2d1c154547dea4b449def001c5e164f7e"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-torzhok/2026-10-16T00-20-42-832Z-capture.json.gz",
+    "sha256": "6b667e386702b41fd3d6b3ba9433a0f12df846fa53727a76bca48aae9c695b17"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-moscow-to-tver/2026-10-16T00-21-05-808Z-capture.json.gz",
+    "sha256": "fdabe3231a0504f174a1b478b2eefbc1b940bb13ee74ed0bef163f0d447f3031"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-novgorod-to-moscow/2026-10-16T01-55-12-861Z-capture.json.gz",
+    "sha256": "9e106677404d9fa490694cf63eb26db107ede81ce5ff9571e0d8d8beaae15402"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-moscow/2026-10-16T00-21-30-804Z-capture.json.gz",
+    "sha256": "4c46688a3500002398c580012b3f0c5b1f397decc49c01c9237e60fce2ef3094"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-tver/2026-10-16T01-55-49-922Z-capture.json.gz",
+    "sha256": "dbe832b30cefdedaeca8e818eece65af91461febd941b579cbc2032a94d6db94"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-torzhok-to-moscow/2026-10-16T01-56-26-781Z-capture.json.gz",
+    "sha256": "11c1ccb92c498be357958138e293b7ed24f94a86e59bb7e1a366c9e67172b798"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-tver-to-moscow/2026-10-16T00-21-53-115Z-capture.json.gz",
+    "sha256": "0c65966fffb33ef1e3afd404e485db07b11ccff9a06736c34db79525c20d1d52"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-tver-to-spb/2026-10-16T01-57-04-032Z-capture.json.gz",
+    "sha256": "105e36359823ef4a72a16a9ba7f5892f09d836b461b0726d20a8efc3c4627d0f"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-arzamas-to-moscow/2026-10-16T01-57-41-594Z-capture.json.gz",
+    "sha256": "62f6c8398474b2df246790418b453bdad386b2758daed86605c80f55bdc5ebe2"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-cheboksary-to-moscow/2026-10-16T01-58-19-492Z-capture.json.gz",
+    "sha256": "2180d9fa005e0df8223de78e44b69680b9cf2a99003c7cacbebe54eac01e57c1"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-kazan-to-moscow/2026-10-16T00-22-18-257Z-capture.json.gz",
+    "sha256": "9db05776377618e3516344056140b414605dfb95b70ae46b76bd4c20cc0f182f"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-kazan-to-murom/2026-10-16T01-58-57-085Z-capture.json.gz",
+    "sha256": "9639e74ec1a849c4031724a3ebd899f71460f62c8421f9f8c9ecefa155daa844"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-kazan-to-vladimir/2026-10-16T00-22-43-108Z-capture.json.gz",
+    "sha256": "9a1b948da18a63fcbbb8176fc82acf196cb771007b146e49f0db561ab2fcd9a3"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-arzamas/2026-10-16T01-59-35-968Z-capture.json.gz",
+    "sha256": "5f4671a2236dcd45e4c49a8f6c9ca260e8f9aefaa92c9c33901c2f6535348aec"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-cheboksary/2026-10-16T02-00-15-677Z-capture.json.gz",
+    "sha256": "c4b3c5cbd90b3a9de54d637ae8a99973d83e0b17b5c4e1a6280bcf5240e4a400"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-kazan/2026-10-16T00-23-10-215Z-capture.json.gz",
+    "sha256": "64916c1e6203e5156f7eba704bb0ab0599a3a7bdc96aa52c3b346c4a2e2c1143"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-murom-to-kazan/2026-10-16T00-23-34-429Z-capture.json.gz",
+    "sha256": "8e9d3855081621df5521464176e7e2ee837f6378e3ccb559121e699afba31f39"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-vladimir-to-kazan/2026-10-16T00-23-58-262Z-capture.json.gz",
+    "sha256": "37baac19b019822ce83e27b4ab9ca4ad9b9f4b5887ce5ca71805a8f9f3133b41"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-balabanovo-to-kaluga/2026-10-16T02-00-51-663Z-capture.json.gz",
+    "sha256": "6aa9fa519ec6e584f333450c0eded4f39196a19748d2a9324b71d1d51d1ef37e"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-balabanovo/2026-10-16T02-01-27-964Z-capture.json.gz",
+    "sha256": "4c124ffb18a73a506607012b9fc8e5af5ce3737844081e70a23f9df690c39262"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-moscow/2026-10-16T00-24-21-855Z-capture.json.gz",
+    "sha256": "66b497dde94c29ccac7dfe6367bf179083ed51dba6d48ffce8791cc3e185e697"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-obninsk/2026-10-16T02-02-04-435Z-capture.json.gz",
+    "sha256": "057316771a32c49baab87e82db4363ce035b99da0a8b5b6495033c5c0309fe1f"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-maloyaroslavets-to-moscow/2026-10-16T02-02-40-569Z-capture.json.gz",
+    "sha256": "f71c2f7455b8a0dc4a119d597535931ef44e4df0d212fca92e79143bb5cbbad7"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-kaluga/2026-10-16T00-24-45-734Z-capture.json.gz",
+    "sha256": "136e928c0358dcf2667483cbd61d8860a94bea90f38ad88b90c6f10ee42b58ea"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-maloyaroslavets/2026-10-16T00-25-08-640Z-capture.json.gz",
+    "sha256": "2f59f261ebd40f981b6400e024446a135e0e1448367c44518f2f1bcb18ba41d4"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-obninsk/2026-10-16T00-25-31-320Z-capture.json.gz",
+    "sha256": "8d517e405e626735647dc1097d6c6c71b4d8a3a75da80c43c141f79f51b8b2b6"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-kaluga/2026-10-16T02-03-16-139Z-capture.json.gz",
+    "sha256": "c4fe5a9a01210d6eb1aad0b167e0c47e35e81d86a5f156593f1642bcf5661615"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-obninsk-to-moscow/2026-10-16T00-25-53-752Z-capture.json.gz",
+    "sha256": "567ebd8a7e3ae504cc25c63747661b779587af406740e0876e2d965b7b79192f"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-domodedovo-to-krasnodar/2026-10-16T00-26-25-324Z-capture.json.gz",
+    "sha256": "b31fb096e2b7e4258cabae9e058774b4be15ab7128cb943a2dcb47887a3ed125"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-domodedovo/2026-10-16T00-26-54-772Z-capture.json.gz",
+    "sha256": "17172d3cc8c0958f09ac9b4cf53f2ac98ce47e63ce4a63ab38e91cb20bb5e382"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-rostov/2026-10-16T00-27-18-289Z-capture.json.gz",
+    "sha256": "44cc206d29d6c4d1448686301075428af8ca39a1c9fc455f36f47ef963799bea"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-voronezh/2026-10-16T00-27-42-453Z-capture.json.gz",
+    "sha256": "888ef81db25b0f8c288f2157785979ae49d87bd13902ee7e675b38416cdef69c"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-moscow-to-voronezh/2026-10-16T02-03-55-223Z-capture.json.gz",
+    "sha256": "49825c255f70bc823bdbbb816ffeef49f7900661f432bbb6940bd50e730ce75f"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-krasnodar/2026-10-16T02-04-31-635Z-capture.json.gz",
+    "sha256": "38ddaef1b413a6e7975351d3c49d735d8807acfbaf7e98bddd8edb69655150c0"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/2026-10-16T02-05-08-728Z-capture.json.gz",
+    "sha256": "8e18a6d8b917f126561a9410631bf6a54ebbc217e994d53e0553e55d349cc874"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-krasnodar/2026-10-16T00-28-07-330Z-capture.json.gz",
+    "sha256": "46f2b93d8dca725bcd40711b0afe78e6f3f356d3fde1a48a6133cfad2e2db3e2"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-moscow/2026-10-16T02-05-46-824Z-capture.json.gz",
+    "sha256": "148f5753cba3fe4ca59e993613c28e249b10e377764626360e10af491c608022"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-rostov/2026-10-16T02-06-24-407Z-capture.json.gz",
+    "sha256": "a10933182515f4dd70e2aaf7d6c85dd15542cc0178214cf6dada264f75fc29f5"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-moscow/2026-10-16T00-28-29-783Z-capture.json.gz",
+    "sha256": "cc3a24872e331291fb31b1da4b1c939c0e9e0ea25fc32d46103f77f9a4eef978"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/2026-10-16T02-07-00-749Z-capture.json.gz",
+    "sha256": "6b774aae7ccc059e02ce7b6b16d9e336c73a635fb3add1f3a0b58949487c64b8"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-kubinka-to-moscow/2026-10-16T02-07-36-416Z-capture.json.gz",
+    "sha256": "673cb348ac8d2c8a48a0930a4e694efa483967f28cfa538e35c87619633c4a07"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-lesnoy-to-moscow/2026-10-16T02-08-12-705Z-capture.json.gz",
+    "sha256": "e2c6fab4ce8d38faeeb4ea1d19309f9269087f254d749c30172a70222ba08222"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-golitsyno/2026-10-16T00-28-52-447Z-capture.json.gz",
+    "sha256": "8b767d0e524d0292d629d3804c5581d160dd691e1ff80e0751a89d1ba12a6cd5"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-kubinka/2026-10-16T00-29-14-585Z-capture.json.gz",
+    "sha256": "22ba38dce7906b296badface275dc3574b7f6628b0504c460aecaa569b54bf58"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-lesnoy/2026-10-16T02-08-48-327Z-capture.json.gz",
+    "sha256": "ff656c36de4fc2489dfcff280e34164cddf2d42fcbb98552d110da1a70da01ab"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-zvenigorod/2026-10-16T00-29-38-328Z-capture.json.gz",
+    "sha256": "b3f872bc740351208355cca3da0a05bb0e133175e341c0f5ca24ac8cb3378d74"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/2026-10-16T02-09-24-620Z-capture.json.gz",
+    "sha256": "14ff3bd2aa0daa55de044e69757be17b2632559411ebad074b8b9a4098981522"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-zvenigorod-to-moscow/2026-10-16T00-30-00-949Z-capture.json.gz",
+    "sha256": "01a29675907f827df9fb10f1966fadfcb98750964ebf2082f53e0899ef9437be"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-prim/2026-10-16T00-30-24-682Z-capture.json.gz",
+    "sha256": "81d39b35576832f92026ba1c7eb7e4cf41d80c93eb5f26e96d0bb1370431bb92"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-sest/2026-10-16T02-10-00-890Z-capture.json.gz",
+    "sha256": "77a2eb49ca1cf11d3ec016d2ae428a727d3c92e1fa9a481caf859f73c643dd0e"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-prim/2026-10-16T02-10-37-044Z-capture.json.gz",
+    "sha256": "a6094dac09cb047abc904962c94db56d59e9a96b43303aed84ef6dd59f54fbc3"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-sest/2026-10-16T00-30-47-244Z-capture.json.gz",
+    "sha256": "100e220563ea8e7f57382b65469d6660b5d6d75fc7781ccfd7102e3994e2407e"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-prim-to-blag/2026-10-16T00-31-09-448Z-capture.json.gz",
+    "sha256": "278b565bf98b9b6f73e7c6ef7aed4ede0eab46bbbc6047d9558e2395597fa57b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-prim-to-peterhof/2026-10-16T02-11-13-953Z-capture.json.gz",
+    "sha256": "ac4e6eefc011ac49edd11fbd1115e17eca6c1845138c71c6302a0c6593363a80"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-pushkin-to-sest/2026-10-16T00-31-32-110Z-capture.json.gz",
+    "sha256": "a961c7c83a363ea8ac664a3084ab66137fdcba30f3b52114ad0e4f851c6486b0"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-sest-to-blag/2026-10-16T02-11-50-603Z-capture.json.gz",
+    "sha256": "553b0f40b267cc5c5ffa1e1a60eaf5b020e10fcd31b049bbb3c865d980a26437"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-sest-to-peterhof/2026-10-16T02-12-26-503Z-capture.json.gz",
+    "sha256": "667f4590b6dc11a21f3f157fc8ad3a89b1013dd9bc0c9c029fb187c9b56c8394"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-sest-to-pushkin/2026-10-16T00-31-54-560Z-capture.json.gz",
+    "sha256": "826f1e75c2bc9819a50ad7e99a90490fd3353b7eb2230d656b3ad088f79728b4"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-arzamas-to-spb/2026-10-16T02-13-09-138Z-capture.json.gz",
+    "sha256": "b47f5207bc108a91b0121614d3184d5c7fe9339db341cd44102acfba191ea61b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/2026-10-16T00-32-28-847Z-capture.json.gz",
+    "sha256": "b4e49dba2d15497de15fb898e007ec1153335884d21d6300c5d475604acafe00"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-torzhok/2026-10-16T00-32-56-862Z-capture.json.gz",
+    "sha256": "3435dbbb707f6d1441e92b4783032b2506e79a2021d46963be96120d642434f6"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-murom-to-tver/2026-10-16T02-13-47-673Z-capture.json.gz",
+    "sha256": "39a3c1a8b884e3dae772918ef5f298c8c55162974bcecdb03096ef61f988fa55"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-novgorod-to-vladimir/2026-10-16T02-14-26-102Z-capture.json.gz",
+    "sha256": "8863dbc88b6b83021dc2fbcbcec24faff68645a428c537d83d90885c6d8fe4b4"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-spb-to-arzamas/2026-10-16T02-15-10-048Z-capture.json.gz",
+    "sha256": "51d960752775c382ff16f6e76431a7389010f71fd6bc85103ad722368954467a"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-spb-to-kazan/2026-10-16T00-33-32-062Z-capture.json.gz",
+    "sha256": "5803bd2fa0a447847d6ffdb78eb58fbf7828fbb77fde1a9f5c4414fbeaff77cb"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/2026-10-16T00-34-01-248Z-capture.json.gz",
+    "sha256": "da0f293ff4743939866e74b60ea49cae07891b08306b386a58c57da0e058fa6a"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-tver-to-murom/2026-10-16T00-34-27-353Z-capture.json.gz",
+    "sha256": "52c526f20f0642c5928210f5dd37ce18e224da9dc1d91f552270f905ed1c04b8"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-vladimir-to-novgorod/2026-10-16T02-15-50-182Z-capture.json.gz",
+    "sha256": "5671de2c63b81379466bdf674937ce80265736c2526e0e526e55a49442c40eb3"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-domodedovo-to-sest/2026-10-16T02-16-30-383Z-capture.json.gz",
+    "sha256": "95ec87d65b77d9d153a285b811847dad0097ea7b4bdff733607942a25aab9e25"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-prim/2026-10-16T02-17-24-374Z-capture.json.gz",
+    "sha256": "860f18ffe2fa0627df462b57888a8033a4f16964316f79dfacdfe9af0e976374"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-sest/2026-10-16T00-35-08-826Z-capture.json.gz",
+    "sha256": "db8d46c55c2901add588de7c0f8cb727e2122411a8ea092f8ebcb600f272fd8b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-prim-to-krasnodar/2026-10-16T02-18-20-053Z-capture.json.gz",
+    "sha256": "c0dd9180eee12fb58319754e1b36fd0f9d2ff34a17d6635e828d698511988641"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-prim-to-voronezh/2026-10-16T02-19-07-294Z-capture.json.gz",
+    "sha256": "d18c078fdca15034c81382d997906bf81ad42d90f98e25f6b4fc3c3da4384a7a"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-rostov-to-sest/2026-10-16T00-35-48-639Z-capture.json.gz",
+    "sha256": "035e17e6313a038ac2e41da041d91f3a98ffe284c779f78ae1714e70add2eee3"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-domodedovo/2026-10-16T02-19-47-235Z-capture.json.gz",
+    "sha256": "a2173d14fed6e04452f39096e87344095c47341c926639d241c1136cc8e63571"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-krasnodar/2026-10-16T00-36-30-643Z-capture.json.gz",
+    "sha256": "a7dbc2feb0e4868f85b22bb790d11468b6eb3a275bf2d485b71d828aa4a1af65"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-rostov/2026-10-16T00-37-10-139Z-capture.json.gz",
+    "sha256": "92155c45aeafc0cffbaaa5a90b8206cfeb013075449bde8aba63fd2473b758b8"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-voronezh-to-prim/2026-10-16T00-37-41-949Z-capture.json.gz",
+    "sha256": "d3cc5bb511b0708c17bbb15347338a0e2d483db809bea8c7348d205e0b68e5ae"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0431\u0435\u0440\u0434\u044f\u043d\u0441\u043a-kazan-center/2026-10-15T23-52-45-140Z-capture.json.gz",
+    "sha256": "bd67e7b4d9c7fbecaae0b58e95603a2c45b83879a7a99123a376b9babfb48f4c"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0431\u0435\u0440\u0434\u044f\u043d\u0441\u043a-kerch-center/2026-10-15T23-53-05-226Z-capture.json.gz",
+    "sha256": "e7bf4ea9c383b74c63c8bfbd1672a6db85fb68ac0772949b25776a1f61328082"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0431\u0435\u0440\u0434\u044f\u043d\u0441\u043a-moscow-center/2026-10-15T23-53-36-130Z-capture.json.gz",
+    "sha256": "4f24c5a00e8c4a0206054c7b2802d35a5e66c9009e7bd5280859dee5eefdb142"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0431\u0435\u0440\u0434\u044f\u043d\u0441\u043a-saint-petersburg-center/2026-10-15T23-54-17-863Z-capture.json.gz",
+    "sha256": "fe92a3e8cdad00471484dffa0c0c4a6a5820f30d3ed397246b86837b97c04e58"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0432\u0430\u0441\u0438\u043b\u044c\u0435\u0432\u043a\u0430-kazan-center/2026-10-15T23-54-55-920Z-capture.json.gz",
+    "sha256": "5c61fc2cf00798bae95882bab21093bf130369edc4b263aa3347643c7cce94b9"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0432\u0430\u0441\u0438\u043b\u044c\u0435\u0432\u043a\u0430-kerch-center/2026-10-15T23-55-16-209Z-capture.json.gz",
+    "sha256": "6adb787a8449cb1a6b78df73fa0f8ef394b05d68385e00f45c9bac081910c79c"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0432\u0430\u0441\u0438\u043b\u044c\u0435\u0432\u043a\u0430-moscow-center/2026-10-15T23-55-47-612Z-capture.json.gz",
+    "sha256": "6c760d7cebb4bbfdd2fbeadbaa4c8c321aac514fb4e63809677fcba853fbca06"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0432\u0430\u0441\u0438\u043b\u044c\u0435\u0432\u043a\u0430-saint-petersburg-center/2026-10-15T23-56-30-142Z-capture.json.gz",
+    "sha256": "268ee154391a71ae251ed97cb1cfd00db52b28bb8c4518587656ef6d625676fd"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0433\u0443\u043b\u044f\u0439\u043f\u043e\u043b\u0435-kazan-center/2026-10-15T23-57-04-975Z-capture.json.gz",
+    "sha256": "34148e82f69e87b58eadce3e90ec0965d2c25e4b939213c5106c1059cacbafce"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0433\u0443\u043b\u044f\u0439\u043f\u043e\u043b\u0435-kerch-center/2026-10-15T23-57-27-069Z-capture.json.gz",
+    "sha256": "fedada2a16c38301c8594c9b18496a58aadf518cab4cc0b5ac56b14482f363ef"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0433\u0443\u043b\u044f\u0439\u043f\u043e\u043b\u0435-moscow-center/2026-10-15T18-16-40-411Z-capture.json.gz",
+    "sha256": "c76a9a1ade47e032e1a510fcabed7c762b3cabf691fcf539501272acda2a83ed"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0433\u0443\u043b\u044f\u0439\u043f\u043e\u043b\u0435-saint-petersburg-center/2026-10-15T18-18-15-355Z-capture.json.gz",
+    "sha256": "fc521b0bf71e2b331794cccb9edf58ecfb92f188d45b9631e9bb46849e3b1fd2"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043a\u0443\u0448\u0443\u0433\u0443\u043c-kazan-center/2026-10-15T23-58-06-328Z-capture.json.gz",
+    "sha256": "6c777b9beb2d89fb0523ed8e47fe8f51c3f945edff4ff2e7fce10db9d0075e9b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043a\u0443\u0448\u0443\u0433\u0443\u043c-kerch-center/2026-10-16T01-06-59-634Z-capture.json.gz",
+    "sha256": "923fee007be88397ef4d798a38e60c81194a39b4842c4afd71d229fe71461125"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043a\u0443\u0448\u0443\u0433\u0443\u043c-moscow-center/2026-10-16T01-07-44-424Z-capture.json.gz",
+    "sha256": "7b6331ed3d6ee24fd611c35a2ef23b50b365052b266f401d6b4ba94d311e7f78"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043a\u0443\u0448\u0443\u0433\u0443\u043c-saint-petersburg-center/2026-10-16T01-08-39-850Z-capture.json.gz",
+    "sha256": "5d84bfd9c1214cc0970571ed60cde2330aca79875240814fb3ef48519550aea8"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043c\u0435\u043b\u0438\u0442\u043e\u043f\u043e\u043b\u044c-kazan-center/2026-10-16T01-09-28-600Z-capture.json.gz",
+    "sha256": "984eb288611bdb6532f27ed8184cd3ec6b2382c92267c54bbb354be734d435a5"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043c\u0435\u043b\u0438\u0442\u043e\u043f\u043e\u043b\u044c-kerch-center/2026-10-16T01-10-00-920Z-capture.json.gz",
+    "sha256": "1ab70e54cf57f8da7144bfee3b8dddf0736f149ac5fbddfc36414b295b02aebf"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043c\u0435\u043b\u0438\u0442\u043e\u043f\u043e\u043b\u044c-moscow-center/2026-10-16T01-10-44-220Z-capture.json.gz",
+    "sha256": "a14e686451916a913c7068418a6b402f2dfcb1a8bf6b45c24e894f12807c7b78"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043c\u0435\u043b\u0438\u0442\u043e\u043f\u043e\u043b\u044c-saint-petersburg-center/2026-10-16T01-11-38-856Z-capture.json.gz",
+    "sha256": "2f4aed01b70210bfc4e06f73455bc643c1965ca0ebd19c89fca27cae78d609fd"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043c\u043e\u043b\u043e\u0447\u0430\u043d\u0441\u043a-kazan-center/2026-10-15T18-19-44-160Z-capture.json.gz",
+    "sha256": "7e70b3852d5cf3d756f31298d6462c5e93dd1e9036b5820b5f507396dc036887"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043c\u043e\u043b\u043e\u0447\u0430\u043d\u0441\u043a-kerch-center/2026-10-15T18-20-59-768Z-capture.json.gz",
+    "sha256": "e93cb5fe8053812604e074b0a0e768d08604f49b1b41b816c9011d15de1de0f1"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043c\u043e\u043b\u043e\u0447\u0430\u043d\u0441\u043a-moscow-center/2026-10-15T18-22-49-183Z-capture.json.gz",
+    "sha256": "6b0bb9bbb5c3699f83e41f9098d4c44ab3ce1ed03a356fe379707cfc722c7cf2"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043c\u043e\u043b\u043e\u0447\u0430\u043d\u0441\u043a-saint-petersburg-center/2026-10-15T18-24-25-094Z-capture.json.gz",
+    "sha256": "504d3eb43a0126695c2b3693af962b226a0a20212bef66d0d6295133ff26951b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043f\u043e\u043b\u043e\u0433\u0438-kazan-center/2026-10-16T01-12-29-382Z-capture.json.gz",
+    "sha256": "82410be1d748e34217785e28fa2316afbaf367868066e5c8a8e0a95f5f0c86e8"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043f\u043e\u043b\u043e\u0433\u0438-kerch-center/2026-10-16T01-13-03-027Z-capture.json.gz",
+    "sha256": "02e7838fe978b010e2a9449cc2bf4ac119a60f797d50c7de407e6215a0b6dbb4"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043f\u043e\u043b\u043e\u0433\u0438-moscow-center/2026-10-16T01-13-47-196Z-capture.json.gz",
+    "sha256": "1b01e8344815399f9612640d0f53d2bc4f479a2531ddb9f3b25278403bc3d46a"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043f\u043e\u043b\u043e\u0433\u0438-saint-petersburg-center/2026-10-16T01-14-42-750Z-capture.json.gz",
+    "sha256": "edef1902bdb6fedc14bde45f68a8a981e76b9dc758b79bc325127a399ab9e760"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043f\u0440\u0438\u0448\u0438\u0431-kazan-center/2026-10-15T18-13-39-642Z-capture.json.gz",
+    "sha256": "783997a9e62578074bff0ea8a1abb58de1db19a7165376fd8eb43df9647795bd"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043f\u0440\u0438\u0448\u0438\u0431-kerch-center/2026-10-15T18-25-35-911Z-capture.json.gz",
+    "sha256": "5f6f882ea7a1672c50738c2367ed771e7aac11585f93713be18c17bdfd7d38c4"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043f\u0440\u0438\u0448\u0438\u0431-moscow-center/2026-10-15T17-05-15-066Z-capture.json.gz",
+    "sha256": "ed2ee4dbc7bc60dade32ef6eb26f7a431aaa09028c132bfe829a96729c323564"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u043f\u0440\u0438\u0448\u0438\u0431-saint-petersburg-center/2026-10-15T17-07-07-263Z-capture.json.gz",
+    "sha256": "55137f2633cd2a41328a43093654782c4fb77306adc0a663a616a6c997c3258b"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0440\u043e\u0437\u043e\u0432\u043a\u0430-kazan-center/2026-10-16T01-15-29-491Z-capture.json.gz",
+    "sha256": "08d30f965aa39414bb5c75919b94012413bad475f06097a5c68f5960ec4e1822"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0440\u043e\u0437\u043e\u0432\u043a\u0430-kerch-center/2026-10-16T01-16-04-380Z-capture.json.gz",
+    "sha256": "b83ff19940e6f162684b9abb6d05668166a9be527af6ef84637b1e9b8cae2cef"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0440\u043e\u0437\u043e\u0432\u043a\u0430-moscow-center/2026-10-16T01-16-46-126Z-capture.json.gz",
+    "sha256": "432820d7ec11ad1b187d9d5d31378ca9fbbf6d23e9e319f8716ec7a075f039c6"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0440\u043e\u0437\u043e\u0432\u043a\u0430-saint-petersburg-center/2026-10-16T01-17-39-935Z-capture.json.gz",
+    "sha256": "68ab50393b30454a81c0b17950b3d26d6e3680ddc8cc1314acbe7143ead856a6"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0442\u043e\u043a\u043c\u0430\u043a-kazan-center/2026-10-16T01-18-31-408Z-capture.json.gz",
+    "sha256": "b8d70b92787f6d5df93bc70f2c5067f591fb5c065a8d0c0c204a314a61240fae"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0442\u043e\u043a\u043c\u0430\u043a-kerch-center/2026-10-16T01-19-05-995Z-capture.json.gz",
+    "sha256": "30eab744af2fc9cc8f9e952c7be044f796ffb0cff87806733d3818823d14c6a1"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0442\u043e\u043a\u043c\u0430\u043a-moscow-center/2026-10-16T01-19-51-519Z-capture.json.gz",
+    "sha256": "b26335058bfca30e15f165fd3f0b84d15163559b31a77096459ba73f37d06556"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-\u0442\u043e\u043a\u043c\u0430\u043a-saint-petersburg-center/2026-10-16T01-20-47-701Z-capture.json.gz",
+    "sha256": "b789fc9bb46b4f6973c130788fbaad99a9f4c28c2b1d8b00e534ba22096884ac"
+  }
+]

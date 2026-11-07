@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T02:01:24.637Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 125,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 17,
+    "spec": {
+      "caseId": "single-m3-kaluga-to-balabanovo",
+      "kind": "road",
+      "group": "single-m3"
+    }
+  },
+  "caseId": "single-m3-kaluga-to-balabanovo",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-01-24-637Z-part17",
+  "parent": "a0ce64de5a0fd7a3ab9ae5a403203debe12b5864"
+}

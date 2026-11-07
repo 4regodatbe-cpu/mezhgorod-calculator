@@ -1,0 +1,109 @@
+{
+  "at": "2026-10-16T00:44:40.867Z",
+  "phase": "DONE",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 11,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 11,
+    "spec": {
+      "caseId": "dnr-урзуф-kerch-center",
+      "kind": "regional",
+      "region": "dnr"
+    }
+  },
+  "caseId": "dnr-урзуф-kazan-center",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "dnr-урзуф-kazan-center",
+    "startedAt": "2026-10-16T00:43:57.473Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-44-22-264Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-kazan-center/2026-10-16T00-44-22-108Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-44-22-961Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-44-23-633Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [],
+      "provenRoads": [
+        "a289",
+        "m4",
+        "m12"
+      ],
+      "missingExpectedRoads": [],
+      "status": "not-assigned"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: a289",
+        "a289: A-289 frames detected but selected-route exits are unresolved"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: a289",
+        "a289: A-289 frames detected but selected-route exits are unresolved"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "m4",
+        "amount": 1990,
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "a289",
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      {
+        "id": "m12",
+        "amount": 850,
+        "reason": "matrix dated selected-route M12 directed endpoint pair"
+      }
+    ],
+    "finishedAt": "2026-10-16T00:44:23.652Z"
+  },
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-43-55-942Z-part11",
+  "parent": "3fa991fa27809e82db995503517ceb4a83131144"
+}

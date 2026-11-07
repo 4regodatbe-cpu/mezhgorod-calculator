@@ -1,0 +1,87 @@
+{
+  "status": "RETAINED_PROVENANCE_DONE_BINDING_BLOCKED",
+  "sourceHead": "e3d1d050d5f1fda1c8a3cb0ccf3e5647e3ca902e",
+  "newRouteAudits": 0,
+  "newReplays": 0,
+  "newNetworkRequests": 0,
+  "newPrices": 0,
+  "confirmedFullTripFares": 0,
+  "cases": [
+    {
+      "caseId": "single-odintsovo-golitsyno-to-rublevo",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/2026-10-16T02-07-00-749Z-capture.json.gz",
+      "sha256": "6b774aae7ccc059e02ce7b6b16d9e336c73a635fb3add1f3a0b58949487c64b8",
+      "knownBoothOrder": [
+        {
+          "osmNodeId": "3109177688",
+          "wayId": "1067836106",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "edgeIndex": 0,
+          "edgeToll": true,
+          "beginShapeIndex": 438,
+          "endShapeIndex": 439
+        },
+        {
+          "osmNodeId": "3783549013",
+          "wayId": "374972862",
+          "roadNames": [],
+          "edgeIndex": 1,
+          "edgeToll": false,
+          "beginShapeIndex": 629,
+          "endShapeIndex": 634
+        }
+      ],
+      "newTraversalAssessment": false
+    },
+    {
+      "caseId": "single-odintsovo-rublevo-to-golitsyno",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/2026-10-16T02-09-24-620Z-capture.json.gz",
+      "sha256": "14ff3bd2aa0daa55de044e69757be17b2632559411ebad074b8b9a4098981522",
+      "knownBoothOrder": [
+        {
+          "osmNodeId": "3783549015",
+          "wayId": "374972870",
+          "roadNames": [],
+          "edgeIndex": 0,
+          "edgeToll": true,
+          "beginShapeIndex": 246,
+          "endShapeIndex": 251
+        },
+        {
+          "osmNodeId": "3109177690",
+          "wayId": "1067836109",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "edgeIndex": 1,
+          "edgeToll": true,
+          "beginShapeIndex": 447,
+          "endShapeIndex": 448
+        }
+      ],
+      "newTraversalAssessment": false
+    }
+  ],
+  "sourceHashes": {
+    "docs/checkpoints/evidence/2026-10-17-part19-odintsovo-unpriced-blocked.json": "7286274fa0c053162101bb36adc4559fa73bba5398d328f4e9405e7fe297ed0f",
+    "experiments/nationwide-tolls/TARIFF_MATRIX_CANDIDATES_2026-10-12.json": "61d0c665343f75697acb115b4e9bc9337af3bf947ecc277cc69a9acfddc6e968",
+    "experiments/nationwide-tolls/TARIFF_SELECTION_REGISTER.json": "527b0ac0bcf932a30e8a9d95a2bd9c6cac90ee081107371bebb1abd8d0f5d378"
+  },
+  "missingEvidence": [
+    "Primary OSM way/node definitions identifying four directed booth lanes, not present in selected retained source-snapshot text search. Raw mapmatching identities already known.",
+    "Independent mapping of these physical lane locations to operator plaza6.9/17.7 (or another actual plaza); no assignment by road/city name.",
+    "Own selected-route product boundaries and per-product completeness before any runtime integration. M1/unknown-paid-road remain separate."
+  ],
+  "tariffNotes": {
+    "candidateId": "odintsovo-bypass-category1-base",
+    "selectedCandidateRows": 96,
+    "runtimeApproved": false,
+    "operatorRouteExamplesAlreadyAvailable": true,
+    "localOdintsovoSourceSnapshotReference": false,
+    "timePolicy": "User trip-departure tariff policy overrides older candidate notes requesting per-crossing time; do not introduce per-crossing day changes."
+  }
+}

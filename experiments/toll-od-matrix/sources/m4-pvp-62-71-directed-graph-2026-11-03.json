@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "retrievedAt": "2026-11-03T22:05:57Z",
+  "attribution": "© OpenStreetMap contributors; Open Database License (ODbL)",
+  "sources": [
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=37.84,55.22,37.90,55.25",
+      "objects": ["PVP 62 nodes 1755090321, 4598844673", "toll links 51445551, 51445557, 464812650, 464812659, 464812660, 464812661, 464812662"]
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=37.89,55.15,37.94,55.18",
+      "objects": ["PVP 71 nodes 285903913, 3036681112", "mainline ways 523826061, 523826062, 523826063, 1050308503"]
+    },
+    {
+      "url": "https://www.openstreetmap.org/copyright",
+      "note": "OSM attribution and ODbL notice"
+    }
+  ],
+  "routeEvidence": {
+    "forwardCapture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-moscow-to-voronezh/2026-10-16T02-03-55-223Z-capture.json.gz",
+    "reverseCapture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-moscow/2026-10-16T02-05-46-824Z-capture.json.gz",
+    "forwardWindowEndpoints": [[37.862552, 55.280674], [37.933973, 55.125436]],
+    "forwardPvp62": {
+      "nodes": ["1755090321", "4598844673"],
+      "nodeTypes": "operator-named toll_booth nodes on secondary_link exit/slip roads",
+      "nearestNamedBoothDistanceMeters": [124, 160],
+      "completeSelectedTraceEvent": "absent",
+      "decision": "not charged; route meets the ramp/mainline divergence area but does not traverse a confirmed toll-booth edge"
+    },
+    "forwardPvp71": {
+      "node": "3036681112",
+      "way": "523826063",
+      "wayTags": {"highway": "motorway", "oneway": "yes", "toll": "yes"},
+      "selectedTrace": {"edgeToll": true, "beginShapeIndex": 934, "endShapeIndex": 935},
+      "direction": "Moscow-to-Voronezh; route reaches the toll node on directed mainline way 523826063 and continues on the opposite one-way mainline way 523826062",
+      "decision": "one PVP 71 payment event"
+    },
+    "reversePvp71": {
+      "node": "285903913",
+      "way": "523826061",
+      "wayTags": {"highway": "motorway", "oneway": "yes", "toll": "yes"},
+      "selectedTrace": {"edgeToll": true, "beginShapeIndex": 158, "endShapeIndex": 159},
+      "direction": "Voronezh-to-Moscow; direction-specific one-way motorway toll edge",
+      "decision": "one PVP 71 payment event; current open-plaza tariff is not direction-separated"
+    }
+  },
+  "currencyAndFareCrossCheck": {
+    "vehicle": "Category I",
+    "runtimePaymentProfile": "no_transponder",
+    "currentOperatorTableAsProvidedByOwner": {
+      "observedAt": "2026-11-03",
+      "url": "https://avtodor-tr.ru/business/road/tariffs/",
+      "columns": ["Mon–Thu transponder", "Mon–Thu no transponder", "Fri–Sun transponder", "Fri–Sun no transponder"],
+      "pvp62Rub": [220, 220, 240, 260],
+      "pvp71Rub": [310, 400, 450, 500]
+    },
+    "selectedRuntimeCells": {"pvp62RubMonThuFriSun": [220, 260], "pvp71RubMonThuFriSun": [400, 500]},
+    "historicalOrder58": {
+      "source": "experiments/nationwide-tolls/source-documents/m4-order58-effective-2026-03-02.pdf",
+      "sha256": "25fdb9a430934f47617c8cc1563f95e49c6ebe41c6303e9bd67465b3c568662d",
+      "publishedDayColumns": {"pvp62RubMonThuFriSun": [220, 220], "pvp71RubMonThuFriSun": [310, 400]},
+      "interpretation": "historic order #58 has weekday/weekend columns; it predates the current four-column table and is not the current no-transponder tariff evidence"
+    },
+    "networkLimitation": "official tariff page returned HTTP 403 on the prior bounded GET; values above are the owner-provided current official table, not a successful fetch in this session"
+  },
+  "scope": "Compact graph and event evidence only; no raw OSM XML and no 2GIS response/geometry/payment data are stored here."
+}

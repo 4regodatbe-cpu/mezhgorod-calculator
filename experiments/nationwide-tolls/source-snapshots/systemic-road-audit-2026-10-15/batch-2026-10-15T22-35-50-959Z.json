@@ -1,0 +1,68 @@
+{
+  "startedAt": "2026-10-15T22:35:50.959Z",
+  "scope": {
+    "region": null,
+    "group": null,
+    "caseId": "dnr-краматорск-kazan-center",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "dnr-краматорск-kazan-center",
+      "startedAt": "2026-10-15T22:35:50.960Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-36-17-143Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-kazan-center/2026-10-15T22-36-17-033Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T22-36-17-646Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T22-36-18-077Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m12"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "weekday": {
+        "amount": 850,
+        "weekdayAmount": 850,
+        "weekendAmount": 850,
+        "period": "все дни",
+        "segments": [
+          "М-12: shumerlya → ivanovskoe_p241 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 850,
+        "weekdayAmount": 850,
+        "weekendAmount": 850,
+        "period": "все дни",
+        "segments": [
+          "М-12: shumerlya → ivanovskoe_p241 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m12",
+          "amount": 850,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        }
+      ],
+      "finishedAt": "2026-10-15T22:36:18.088Z"
+    }
+  ],
+  "finishedAt": "2026-10-15T22:36:18.090Z"
+}

@@ -1,0 +1,7 @@
+# Реорганизация V1 Release — итог PARTIAL
+
+31.10.2026 МСК. База remote `5e86ed3b77fe03e691ef139774c16ef739b3bfa8`, PR №14 OPEN/Draft. [Полная проверяемая сводка](../reorganization/FINAL_STATUS.md), [машинные результаты E](../reorganization/checks/RESULTS.json), [манифесты версий](../../archive/versions/README.md), [исследовательский архив](../../archive/research/README.md).
+
+A — инвентарь DONE. B — PARTIAL: 3/3 архива созданы локально и byte-verified; 2/3 доступны в GitHub, V3 asset 343 730 585 байт не загружен из-за `uploads.github.com` HTTP401 при явном разрешении владельца. C — PARTIAL: 61 исторический файл архивирован, оригиналы сохранены из-за ссылок и обязательной проверяемости. D — BLOCKED: 0 переносов, 0 удалений, 0 байт уменьшения. E — обязательные tests/TS/lint/build и локальный V2/V3/GeoNames smoke PASS; новый desktop/mobile browser и live route NOT_RUN. F — документация подготовлена к одному обычному push/readback.
+
+Production deployment `dpl_E3e6gUCSd9izZ8tKHA9tf85fr115`, source `e3ca3783a8ba9de3271851959eba213bf7a76868`, READY; main `636e6801...`, release `e3ca3783...`, три архивных и backup refs неизменны. Приложение/тарифы/маршруты/Android/CI не менялись. Raw test logs сохранили исходные пробелы: `git diff --check` на E commit содержит предупреждения по ним, не объявлять его PASS. Следующее: после восстановления GitHub uploads-авторизации разместить проверенный V3 архив, сверить URL/размер/SHA256, затем рассматривать конкретные исторические ссылки и очистку.

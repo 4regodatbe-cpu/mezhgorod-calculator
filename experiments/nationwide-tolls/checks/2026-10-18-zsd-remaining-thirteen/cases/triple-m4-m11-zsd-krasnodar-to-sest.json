@@ -1,0 +1,258 @@
+{
+  "caseId": "triple-m4-m11-zsd-krasnodar-to-sest",
+  "fingerprint": "3493d8c10e8bd66d6a242fabe4e64e53ea85908f972e3cf823be50292735e06c",
+  "scopeReview": "КАД-юг → КАД-север, OSRM, другая полоса северного ПВП",
+  "atUtc": "2026-10-18T06:12:26.110804+00:00",
+  "sourceReport": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m4-m11-zsd-krasnodar-to-sest.json",
+  "sourceReportSha256": "a59a03c28241ad77b3fccfac93fbdd51d226da7ec79ab26f2b5397b091e9d912",
+  "mode": "own_saved_boundary_exception_review",
+  "newPricingCalls": 0,
+  "newRouteCalls": 0,
+  "newTraceCalls": 0,
+  "newFullRouteReplays": 0,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-sest/2026-10-16T00-35-08-826Z-capture.json.gz",
+  "captureSha256": "db8d46c55c2901add588de7c0f8cb727e2122411a8ea092f8ebcb600f272fd8b",
+  "provider": "OSRM",
+  "selectedProviderGeometryIdentity": "exact",
+  "coordinateCount": 12745,
+  "routeMeters": 2096260,
+  "traceComplete": true,
+  "boothEventCoverage": "complete",
+  "traceChunks": 15,
+  "ownSelectedBoundarySteps": [
+    {
+      "name": "«Нева»",
+      "maneuver": {
+        "bearing_after": 338,
+        "bearing_before": 329,
+        "location": [
+          30.358981,
+          59.776376
+        ],
+        "modifier": "slight left",
+        "type": "merge"
+      },
+      "distance": 3144.9
+    },
+    {
+      "name": "«Нева»",
+      "destinations": "А-118: КАД, ЗСД",
+      "maneuver": {
+        "bearing_after": 323,
+        "bearing_before": 330,
+        "location": [
+          30.337801,
+          59.802372
+        ],
+        "modifier": "slight left",
+        "type": "fork"
+      },
+      "distance": 2181.8
+    },
+    {
+      "name": "КАД",
+      "maneuver": {
+        "bearing_after": 315,
+        "bearing_before": 307,
+        "location": [
+          30.312274,
+          59.81611
+        ],
+        "modifier": "slight left",
+        "type": "merge"
+      },
+      "distance": 2472.6
+    },
+    {
+      "name": "",
+      "destinations": "ЗСД, Морской порт",
+      "maneuver": {
+        "bearing_after": 329,
+        "bearing_before": 315,
+        "location": [
+          30.283506,
+          59.832743
+        ],
+        "modifier": "slight right",
+        "type": "off ramp"
+      },
+      "distance": 29954.3
+    },
+    {
+      "name": "ЗСД",
+      "maneuver": {
+        "bearing_after": 334,
+        "bearing_before": 341,
+        "location": [
+          30.150759,
+          60.047377
+        ],
+        "modifier": "slight left",
+        "type": "turn"
+      },
+      "distance": 1338.4
+    },
+    {
+      "name": "",
+      "destinations": "Левашовское ш., КАД, Приморское ш.",
+      "maneuver": {
+        "bearing_after": 347,
+        "bearing_before": 344,
+        "location": [
+          30.14377,
+          60.058867
+        ],
+        "modifier": "slight right",
+        "type": "off ramp"
+      },
+      "distance": 1249.8
+    }
+  ],
+  "zsdWays": [
+    "1122966004",
+    "1122966005",
+    "1122966006",
+    "119176946",
+    "119176950",
+    "123232666",
+    "123232668",
+    "123303017",
+    "123709500",
+    "123709505",
+    "1257246766",
+    "1257246767",
+    "1257246771",
+    "1257246772",
+    "130062822",
+    "130068396",
+    "139658547",
+    "143207558",
+    "165035756",
+    "172999959",
+    "183912267",
+    "183912268",
+    "185060386",
+    "222395955",
+    "222395960",
+    "223744446",
+    "224933656",
+    "224933658",
+    "224933660",
+    "224933662",
+    "224933664",
+    "224933665",
+    "224933668",
+    "224933669",
+    "224933672",
+    "233006896",
+    "28934684",
+    "31369306",
+    "350477988",
+    "373871040",
+    "381576631",
+    "381576632",
+    "396293737",
+    "397223749",
+    "397223751",
+    "397223752",
+    "400111351",
+    "400111354",
+    "458501106",
+    "458501110",
+    "461676671",
+    "465117517",
+    "493643653",
+    "589047639",
+    "589047642",
+    "589047646",
+    "589047650",
+    "688149995",
+    "721628540",
+    "721628541",
+    "721628543",
+    "721628544",
+    "721839717",
+    "736881673",
+    "776695119",
+    "776695120",
+    "776695121",
+    "776695122",
+    "776695123",
+    "80056716",
+    "80056742",
+    "80056745",
+    "85763340",
+    "86983548",
+    "87072167",
+    "944399839"
+  ],
+  "zsdBooths": [
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "edgeToll": true
+    },
+    {
+      "osmNodeId": "1766158809",
+      "wayId": "458501110",
+      "edgeToll": true
+    }
+  ],
+  "rawTraceBoothOrder": [
+    [
+      "933974870",
+      "381576632",
+      true
+    ],
+    [
+      "1766158809",
+      "458501110",
+      true
+    ]
+  ],
+  "sameWaySetAndBoothsAsRepresentative": true,
+  "referenceEntryExitSignatures": [
+    [
+      "",
+      "ЗСД, Морской порт",
+      "off ramp",
+      "slight right",
+      [
+        30.283506,
+        59.832743
+      ]
+    ],
+    [
+      "",
+      "Левашовское ш., КАД, Приморское ш.",
+      "off ramp",
+      "slight right",
+      [
+        30.14377,
+        60.058867
+      ]
+    ]
+  ],
+  "entryExitSignaturesMatchInOrder": true,
+  "materialException": false,
+  "priorProfilesReferenced": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_finished_vector_scope_not_reviewed",
+      "componentResult": "unknown",
+      "segments": []
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_finished_vector_scope_not_reviewed",
+      "componentResult": "unknown",
+      "segments": []
+    }
+  ],
+  "outcome": "blocked_by_same_missing_directed_owner_collection_scope",
+  "readyTariffRub": null,
+  "traceIndexLimit": "No trace end_shape_index used on selected/provider input shape. Provider geometry compared independently; raw gate IDs checked directly.",
+  "elapsedSeconds": 0.08
+}

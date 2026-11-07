@@ -1,0 +1,122 @@
+{
+  "initialLocalSha": "a04c31957c683a87dfced352de26dc0076ed6e4a",
+  "testedSourceSha": "82b6bf105b372778097cf8b4f09794dba67a6c64",
+  "remoteBefore": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+  "node": "v24.19.0",
+  "next": "16.3.4",
+  "typescript": "5.9.3",
+  "eslint": "9.39.4",
+  "initialDiff": {
+    "commits": 55,
+    "files": 467,
+    "insertions": 79053,
+    "deletions": 22,
+    "currentFileBytes": 14325255,
+    "areas": {
+      "app": 6,
+      "lib": 10,
+      "scripts": 6,
+      "docs": 58,
+      "experiments": 387
+    }
+  },
+  "credentialsKnownPatternScan": {
+    "textFindings": 0,
+    "artifactZipTextBytes": 277417,
+    "artifactTextFindings": 0,
+    "additionalBearerShareCandidates": 0,
+    "scope": "Not exhaustive DLP; relevant staged source/evidence reviewed"
+  },
+  "featureSwitch": {
+    "default": "OFF",
+    "production": "denied",
+    "requestOverride": false
+  },
+  "runtimeReview": {
+    "strictFields": "unchanged additive overlay only",
+    "tariffMatrix": "unchanged",
+    "fastestRoute": "unchanged",
+    "unknownNull": "preserved",
+    "ciConfiguration": "unchanged",
+    "addressD1Included": true,
+    "nftFiles": 48,
+    "offlineEvidenceFixturesTraced": 0
+  },
+  "gates": [
+    {
+      "label": "offline",
+      "exit": 0,
+      "command": "npm run test:audit",
+      "stdoutSha256": "15bd82b59c2082778c0e65e9b86bf211c56f6e3cb8b9a3bf3ad4037ce1d66208",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "focused",
+      "exit": 0,
+      "command": "node --import ./scripts/register-ts-paths.mjs --test lib/v3-calculation/toll-estimate-adapter.test.ts lib/v3-calculation/toll-estimate-ui.test.ts experiments/toll-estimates/acceptance.test.ts experiments/toll-estimates/estimate.test.ts experiments/toll-estimates/integration-cases.test.ts experiments/toll-estimates/presentation.test.ts experiments/toll-estimates/saved-samples.test.ts experiments/toll-estimates/practical-recovery.test.mjs experiments/toll-estimates/torzhok-recovery.test.mjs experiments/toll-estimates/stage-h2-2026-10-31/reconcile.test.mjs experiments/toll-estimates/stage-h4-2026-10-31/compare.test.mjs",
+      "stdoutSha256": "f28b3f37b3748e310694ea0d13f7dce165028f07a2ff27d19ce6b6b0401595db",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "typescript",
+      "exit": 2,
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "stdoutSha256": "31813b9c0df0d354eb9cb204cc173869d5e5b5227660a96a444782ce6dbc18be",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "typescript-final",
+      "exit": 0,
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "lint",
+      "exit": 0,
+      "command": "npm run lint",
+      "stdoutSha256": "8476fcf9162732208c695dd651c164a512c04a14de73c46b709da76088f74dd9",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "build",
+      "exit": 0,
+      "command": "env NEXT_TELEMETRY_DISABLED=1 node node_modules/next/dist/bin/next build --webpack",
+      "stdoutSha256": "52e917d03c3e5400ac8c530e4fa95ac119cf16a52bd288df0ff0b0129c63b20e",
+      "stderrSha256": "aaae98601d7417d7576895e0feb36e488a0be1b277a811a2e5fa93824b63e507"
+    }
+  ],
+  "initialTypescriptFailure": {
+    "exit": 2,
+    "reason": "Concurrent next build regenerated .next/types while tsc read includes; TS6053 generated-file-not-found. No application/config change; sequential repeat after build exit0."
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 7
+  },
+  "build": {
+    "exit": 0,
+    "warning": "preferredRegion deprecated"
+  },
+  "verificationScope": "Fresh local gates; not GitHub CI or hosted Preview proof",
+  "publication": "NOT_YET_PUSHED",
+  "productionBefore": {
+    "deployment": "dpl_6XMRbMu5V5vqWTzf684oPTMyubju",
+    "sha": "051d51ea4e4e40b21245af4f7e21b2fea4c4f00f"
+  },
+  "previewBefore": {
+    "deployment": "dpl_HbLBjiztL9wCe4xn22gTho3V2Y4k",
+    "sha": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+    "target": "preview"
+  },
+  "offlineCounts": {
+    "pass": 1057,
+    "fail": 0,
+    "skip": 1
+  },
+  "focusedCounts": {
+    "pass": 67,
+    "fail": 0,
+    "skip": 0
+  }
+}

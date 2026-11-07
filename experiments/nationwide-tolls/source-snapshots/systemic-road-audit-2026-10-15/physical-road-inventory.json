@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-15",
+  "scope": "Eligibility audit of the 22 existing registry rows, including one M11 child concession. Not a complete legal census; unknown counts remain in scope for research. Physical plazas/gantry sites count once regardless of number of lanes or direction nodes.",
+  "rows": [
+    {
+      "roadId": "m1",
+      "name": "М-1 «Беларусь» (33–66 км)",
+      "eligibility": "count-unresolved",
+      "minimumPhysicalPointsProven": null,
+      "pointIdentities": [],
+      "sources": [
+        "https://avtodor-tr.ru/road/tariffs/"
+      ],
+      "notes": "Not excluded: a price table, interchange count or parent registry entry does not prove three distinct physical payment points. Resolve current facility inventory before declaring complete campaign coverage."
+    },
+    {
+      "roadId": "m3",
+      "name": "М-3 «Украина»",
+      "eligibility": "qualified-lower-bound",
+      "minimumPhysicalPointsProven": 3,
+      "pointIdentities": [
+        "m3-pvp-86",
+        "m3-pvp-136",
+        "m3-pvp-168"
+      ],
+      "sources": [
+        "experiments/nationwide-tolls/m1-m3-official-gates.json"
+      ],
+      "notes": "Three distinct named plazas with bidirectional physical bindings."
+    },
+    {
+      "roadId": "m4",
+      "name": "М-4 «Дон»",
+      "eligibility": "qualified-lower-bound",
+      "minimumPhysicalPointsProven": 3,
+      "pointIdentities": [
+        "m4-71",
+        "m4-133",
+        "m4-228"
+      ],
+      "sources": [
+        "lib/toll-engine/m4-plaza-nodes.ts"
+      ],
+      "notes": "Distinct plaza km groups, not individual lanes; lower bound only."
+    },
+    {
+      "roadId": "m11",
+      "name": "М-11 «Нева» (участки 58–679 км)",
+      "eligibility": "qualified-lower-bound",
+      "minimumPhysicalPointsProven": 3,
+      "pointIdentities": [
+        "p58",
+        "p593",
+        "p679"
+      ],
+      "sources": [
+        "data/tolls/m11/2026-10-01-58-679-spatial-anchors.json"
+      ],
+      "notes": "At least three distinct spatial facilities; includes separate M11 products in route-level reporting."
+    },
+    {
+      "roadId": "m11-15-58",
+      "name": "М-11 «Нева» (15–58 км)",
+      "eligibility": "qualified-lower-bound",
+      "minimumPhysicalPointsProven": 3,
+      "pointIdentities": [
+        "pvp21-moscow",
+        "pvp24-sheremetyevo2",
+        "pvp28-sheremetyevo1"
+      ],
+      "sources": [
+        "data/tolls/m11/2026-02-24-15-58-facility-evidence.json"
+      ],
+      "notes": "Child concession, not an additional physical road. Covered inside single-m11; separate fare components remain separate."
+    },
+    {
+      "roadId": "m12",
+      "name": "М-12 «Восток»",
+      "eligibility": "qualified-lower-bound",
+      "minimumPhysicalPointsProven": 3,
+      "pointIdentities": [
+        "rvp184",
+        "rvp281",
+        "rvp314"
+      ],
+      "sources": [
+        "data/tolls/m12-rvp-evidence-2026-09-30.json"
+      ],
+      "notes": "Nine calibrated points exist; lower bound here uses three distinct physical frame km groups. Not total census."
+    },
+    {
+      "roadId": "ckad",
+      "name": "А-113 ЦКАД",
+      "eligibility": "qualified-lower-bound",
+      "minimumPhysicalPointsProven": 3,
+      "pointIdentities": [
+        "rvp205",
+        "rvp239",
+        "rvp252"
+      ],
+      "sources": [
+        "https://avtodor-tr.ru/press-center/news/novoe-koltso-vokrug-moskvy-zamknulos-zapushcheno-dvizhenie-po-tskad-1-/"
+      ],
+      "notes": "Operator commissioning notice 2021-07-08 lists three distinct frame km positions on CKAD-1 alone; not a complete 2026 count."
+    },
+    {
+      "roadId": "a289",
+      "name": "А-289 Краснодар — Темрюк",
+      "eligibility": "qualified-lower-bound",
+      "minimumPhysicalPointsProven": 3,
+      "pointIdentities": [
+        "rvp23",
+        "rvp82",
+        "rvp103"
+      ],
+      "sources": [
+        "lib/toll-engine/a289-engine.ts",
+        "https://avtodor-tr.ru/road/a-289/"
+      ],
+      "notes": "Operator page retrieved in web search 2026-10-15 confirms three free-flow frames; paired carriageway nodes are not separate points."
+    },
+    {
+      "roadId": "ufa-east",
+      "name": "Восточный выезд Уфы",
+      "eligibility": "count-unresolved",
+      "minimumPhysicalPointsProven": null,
+      "pointIdentities": [],
+      "sources": [
+        "https://avtodor-tr.ru/business/road/tariffs/"
+      ],
+      "notes": "Not excluded: a price table, interchange count or parent registry entry does not prove three distinct physical payment points. Resolve current facility inventory before declaring complete campaign coverage."
+    },
+    {
+      "roadId": "tolyatti",
+      "name": "Обход Тольятти",
+      "eligibility": "count-unresolved",
+      "minimumPhysicalPointsProven": null,
+      "pointIdentities": [],
+      "sources": [
+        "https://avtodor-tr.ru/business/road/tariffs/"
+      ],
+      "notes": "Not excluded: a price table, interchange count or parent registry entry does not prove three distinct physical payment points. Resolve current facility inventory before declaring complete campaign coverage."
+    },
+    {
+      "roadId": "odintsovo",
+      "name": "Северный обход Одинцова",
+      "eligibility": "qualified-lower-bound",
+      "minimumPhysicalPointsProven": 3,
+      "pointIdentities": [
+        "pvp6.9",
+        "pvp13.4",
+        "pvp17.7"
+      ],
+      "sources": [
+        "https://m-road.ru/questions/"
+      ],
+      "notes": "Current operator FAQ retrieved 2026-10-15 explicitly lists these three plaza km positions."
+    },
+    {
+      "roadId": "bagration",
+      "name": "Проспект Багратиона",
+      "eligibility": "count-unresolved",
+      "minimumPhysicalPointsProven": null,
+      "pointIdentities": [],
+      "sources": [
+        "https://m-road.ru/tariffs/"
+      ],
+      "notes": "Not excluded: a price table, interchange count or parent registry entry does not prove three distinct physical payment points. Resolve current facility inventory before declaring complete campaign coverage."
+    },
+    {
+      "roadId": "msd",
+      "name": "Московский скоростной диаметр",
+      "eligibility": "count-unresolved",
+      "minimumPhysicalPointsProven": null,
+      "pointIdentities": [],
+      "sources": [
+        "https://msd.mos.ru/info"
+      ],
+      "notes": "Not excluded: a price table, interchange count or parent registry entry does not prove three distinct physical payment points. Resolve current facility inventory before declaring complete campaign coverage."
+    },
+    {
+      "roadId": "zsd",
+      "name": "Западный скоростной диаметр",
+      "eligibility": "qualified-lower-bound",
+      "minimumPhysicalPointsProven": 3,
+      "pointIdentities": [],
+      "sources": [
+        "https://nch-spb.com/upload/iblock/f1c/jmuuuisu6ok6oerralhv24tk0kw7bykr/Ekologicheskiy-otchet-2022.pdf",
+        "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/identity-sources/node-identities.json"
+      ],
+      "notes": "Operator 2022 report states 16 plazas; use only >=3 historical eligibility here, not a claim that all 16 operate unchanged in 2026. Saved current selected-route nodes identify PVP3/PVP4; remaining nodes need review."
+    },
+    {
+      "roadId": "shmsd",
+      "name": "ШМСД / Витебская развязка",
+      "eligibility": "count-unresolved",
+      "minimumPhysicalPointsProven": null,
+      "pointIdentities": [],
+      "sources": [
+        "https://www.gov.spb.ru/gov/otrasl/kio/news/315898/"
+      ],
+      "notes": "Not excluded: a price table, interchange count or parent registry entry does not prove three distinct physical payment points. Resolve current facility inventory before declaring complete campaign coverage."
+    },
+    {
+      "roadId": "voznesensky",
+      "name": "Вознесенский тракт (Казань)",
+      "eligibility": "count-unresolved",
+      "minimumPhysicalPointsProven": null,
+      "pointIdentities": [],
+      "sources": [
+        "https://vtkazan.ru/"
+      ],
+      "notes": "Not excluded: a price table, interchange count or parent registry entry does not prove three distinct physical payment points. Resolve current facility inventory before declaring complete campaign coverage."
+    },
+    {
+      "roadId": "udmurt-bridges",
+      "name": "Мосты через Каму и Буй",
+      "eligibility": "count-unresolved",
+      "minimumPhysicalPointsProven": null,
+      "pointIdentities": [],
+      "sources": [
+        "https://osa-kama.ru/tarify/"
+      ],
+      "notes": "Not excluded: a price table, interchange count or parent registry entry does not prove three distinct physical payment points. Resolve current facility inventory before declaring complete campaign coverage."
+    },
+    {
+      "roadId": "khabarovsk",
+      "name": "Обход Хабаровска",
+      "eligibility": "qualified-lower-bound",
+      "minimumPhysicalPointsProven": 5,
+      "pointIdentities": [],
+      "sources": [
+        "https://vis-transtoll.ru/khabarovsk"
+      ],
+      "notes": "Current operator page retrieved 2026-10-15: five barrier plazas, two mainline and three exit plazas. Exact node mapping still required."
+    },
+    {
+      "roadId": "mytishchi",
+      "name": "Мытищинская хорда",
+      "eligibility": "count-unresolved",
+      "minimumPhysicalPointsProven": null,
+      "pointIdentities": [],
+      "sources": [
+        "https://vis-transtoll.ru/"
+      ],
+      "notes": "Not excluded: a price table, interchange count or parent registry entry does not prove three distinct physical payment points. Resolve current facility inventory before declaring complete campaign coverage."
+    },
+    {
+      "roadId": "pskov",
+      "name": "Платные дороги Псковской области (4 участка)",
+      "eligibility": "count-unresolved",
+      "minimumPhysicalPointsProven": null,
+      "pointIdentities": [],
+      "sources": [
+        "https://www.pskov.ru/"
+      ],
+      "notes": "Not excluded: a price table, interchange count or parent registry entry does not prove three distinct physical payment points. Resolve current facility inventory before declaring complete campaign coverage."
+    },
+    {
+      "roadId": "ryazan",
+      "name": "Платный путепровод в Рязани",
+      "eligibility": "count-unresolved",
+      "minimumPhysicalPointsProven": null,
+      "pointIdentities": [],
+      "sources": [
+        "https://m-road62.ru/"
+      ],
+      "notes": "Not excluded: a price table, interchange count or parent registry entry does not prove three distinct physical payment points. Resolve current facility inventory before declaring complete campaign coverage."
+    },
+    {
+      "roadId": "amur-bridge",
+      "name": "Мост Благовещенск — Хэйхэ",
+      "eligibility": "count-unresolved",
+      "minimumPhysicalPointsProven": null,
+      "pointIdentities": [],
+      "sources": [
+        "https://mintrans.gov.ru/"
+      ],
+      "notes": "Not excluded: a price table, interchange count or parent registry entry does not prove three distinct physical payment points. Resolve current facility inventory before declaring complete campaign coverage."
+    }
+  ],
+  "additionalCandidateNotes": [
+    {
+      "roadId": "mytishchi",
+      "source": "https://vis-transtoll.ru/vbt",
+      "observed": "Current operator page shows five charge sections and six interchanges, but no explicit physical-frame count in retrieved text. These numbers do not establish five payment frames."
+    },
+    {
+      "roadId": "tolyatti",
+      "source": "https://avtodor-tr.ru/business/road/bypass-tolyatti/",
+      "observed": "Current operator page describes three entrances/exits and a closed payment system; still require explicit distinct plaza identities instead of inferring a physical count from three junctions."
+    },
+    {
+      "roadId": "pskov",
+      "observed": "Four independent roads must not be combined into one road with >=3 payment points."
+    },
+    {
+      "roadId": "krasnodar-west-bypass",
+      "observed": "Separately priced product not represented by a dedicated parent registry row; add explicit physical inventory rather than counting its plaza as another M4 gate."
+    }
+  ],
+  "retrievalLimitations": [
+    "Direct web open of M11/M12 pages returned HTTP403. Existing dated facility evidence retained.",
+    "Direct web open of WHSD owner rules returned502; saved owner rules remain available.",
+    "Historical ZSD commissioning/annual report is eligibility evidence, not proof of unchanged current point count."
+  ]
+}

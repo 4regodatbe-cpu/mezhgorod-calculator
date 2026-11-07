@@ -1,0 +1,54 @@
+{
+  "downloadRun": 40091634576,
+  "artifactId": 12558568536,
+  "artifactSha256": "0c92e4e0e21c5e39355344264cadcbba6640d06db64fff6c055adc1944814ce8",
+  "stage": "B_DOWNLOAD_ONLY",
+  "sourceHeadRun": 40091487220,
+  "runtimeApproved": false,
+  "recordsReviewed": false,
+  "files": [
+    {
+      "country": "RU",
+      "url": "https://download.geonames.org/export/dump/RU.zip",
+      "etag": "\"e8e810-65e8c60db5937\"",
+      "bytes": 15263760,
+      "sha256": "4d7891b248e26efcdb3d8319245151f8f640031001fe678595101b93ca2b2840",
+      "zipIntegrity": "PASS",
+      "members": [
+        {
+          "name": "readme.txt",
+          "bytes": 8843,
+          "crc": 3350412656
+        },
+        {
+          "name": "RU.txt",
+          "bytes": 61888461,
+          "crc": 3993276208
+        }
+      ],
+      "receivedAt": "2026-10-24T11:52:31.794003+00:00"
+    },
+    {
+      "country": "UA",
+      "url": "https://download.geonames.org/export/dump/UA.zip",
+      "etag": "\"24884a-65e8c62e3b818\"",
+      "bytes": 2394186,
+      "sha256": "bbc894ae4e39ff589f8682c4551d4bfb8115edc04692f887d1632c529481d4aa",
+      "zipIntegrity": "PASS",
+      "members": [
+        {
+          "name": "readme.txt",
+          "bytes": 8843,
+          "crc": 3350412656
+        },
+        {
+          "name": "UA.txt",
+          "bytes": 8815593,
+          "crc": 3751426755
+        }
+      ],
+      "receivedAt": "2026-10-24T11:52:33.687169+00:00"
+    }
+  ],
+  "status": "DOWNLOADED_NOT_REVIEWED"
+}

@@ -1,0 +1,110 @@
+{
+  "reviewDate": "2026-10-27",
+  "newMonetaryComponents": 0,
+  "newAdmissibleDirectedPairs": 0,
+  "documentBytesRetained": false,
+  "sources": [
+    {
+      "id": "m4-government",
+      "url": "https://avtodor-tr.ru/upload/iblock/0cb/7mhd7hv5t160r1vaxkp7jl9wot5t1tez.pdf",
+      "title": "Распоряжение Правительства РФ 4063-р, приложение1",
+      "date": "2022-12-22",
+      "access": "SEARCH_INDEX; DIRECT_OPEN_HTTP403",
+      "sha256": null,
+      "observation": "Index describes Aksay bypass1024–1091km and intersection1038. No mapping to saved OSM transitions or monetary quote proven."
+    },
+    {
+      "id": "m4-road-invest",
+      "url": "https://road-invest.ru/doroga-i-proezd/tariff/",
+      "operator": "Road Invest",
+      "revisionShown": "2026-03-02",
+      "access": "WEB_OPEN_SUCCESS",
+      "sha256": null,
+      "observation": "Published scope1091.6–1319km. Summary and detailed categoryI weekend rows for PVP1093 differ (150/150 versus130/130 in extraction). Cannot resolve amount or assume publication-date equals effectiveFrom. Outside pending Aksay candidate scope.",
+      "classification": "CONFLICT_OR_EXTRACTION_AMBIGUITY"
+    },
+    {
+      "id": "m11-authority",
+      "url": "https://unitoll.ru/roads/m-11/payment_m11/road_section_tariffs/",
+      "operator": "ОССП",
+      "access": "WEB_OPEN_SUCCESS",
+      "sha256": null,
+      "observation": "Tariff-setting authority differs:15–58 СЗКК;58–149 and208–543 Автодор. Same road/operator-service does not imply one tariff system."
+    },
+    {
+      "id": "m11-update",
+      "url": "https://unitoll.ru/about/press/news/izmenyayutsya-tarify-na-proezd-po-doroge-m-11-neva-/",
+      "operator": "ОССП",
+      "publicationDate": "2026-09-04",
+      "access": "WEB_OPEN_SUCCESS",
+      "sha256": null,
+      "observation": "Confirms price change for58–543 from2026-09-04; supplies no exact pair amount."
+    },
+    {
+      "id": "avtodor",
+      "url": "https://avtodor-tr.ru/road/tariffs/",
+      "access": "SEARCH_INDEX; DIRECT_CLICK_HTTP403",
+      "sha256": null,
+      "observation": "Index distinguishes M4 PVP545 rows517–544 and545–589; do not collapse booth number into one tariff identity. Shows M11 Пешки–Тверь58–149; column alignment/date document and exact geographic endpoint mapping remain unverified."
+    },
+    {
+      "id": "m11-szkk",
+      "url": "https://m11-neva.ru/rate/",
+      "operator": "СЗКК",
+      "access": "WEB_OPEN_SUCCESS",
+      "sha256": null,
+      "observation": "Calculator has direction/day/payment inputs; cash/card payment at exit. Static read gives no chosen-pair fare or applicability dates; no query submitted."
+    }
+  ],
+  "pairInvestigations": [
+    {
+      "entry": "osm-transition:4443232947:447135768>1182567076",
+      "exit": "osm-transition:358467208:1211606940>28835034",
+      "road": "M4",
+      "sources": [
+        "m4-government",
+        "m4-road-invest",
+        "avtodor"
+      ],
+      "status": "BLOCKED_BY_DATA",
+      "amount": null,
+      "missing": [
+        "official mapping from each physical transition to operator fare endpoints",
+        "full-pair fare with vehicle/date/direction/payment"
+      ]
+    },
+    {
+      "entry": "m4-545:517",
+      "exit": "m4-545:589",
+      "idType": "saved label/km control, not independently certified tariff endpoint",
+      "sources": [
+        "avtodor"
+      ],
+      "status": "BLOCKED_BY_DATA",
+      "amount": null,
+      "missing": [
+        "verified split boundary544/545 and charge applicability",
+        "dated original table and column interpretation",
+        "additivity proof; no automatic sum"
+      ]
+    },
+    {
+      "entry": "M11:58:Пешки",
+      "exit": "M11:149:Тверь",
+      "idType": "operator-labelled scope lead, physical IDs not bound",
+      "sources": [
+        "m11-authority",
+        "m11-update",
+        "avtodor"
+      ],
+      "status": "BLOCKED_BY_DATA",
+      "amount": null,
+      "missing": [
+        "original dated complete pair table",
+        "exact directed physical endpoint binding",
+        "vehicle/payment column verification"
+      ]
+    }
+  ],
+  "limitations": "Web extracted observations, not retained original byte documents; no SHA invented. No tariff admitted to experimental registry or runtime."
+}

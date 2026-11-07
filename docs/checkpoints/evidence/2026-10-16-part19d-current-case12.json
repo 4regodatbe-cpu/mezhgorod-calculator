@@ -1,0 +1,120 @@
+{
+  "caseId": "single-m4-krasnodar-to-voronezh",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-voronezh/2026-10-16T00-27-42-453Z-capture.json.gz",
+  "captureSha256": "888ef81db25b0f8c288f2157785979ae49d87bd13902ee7e675b38416cdef69c",
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-voronezh/replay-2026-10-15T09-00-00-03-00-2026-10-16T09-37-24-791Z.json",
+      "sha256": "b3dac619b9079beecc074f12b9342cfd5d3331a1fce78b3ef06cdf9eb1ca760d",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "provider": "OSRM",
+      "routeMeters": 836186,
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "audit": {
+        "status": "unknown",
+        "priced": [],
+        "missing": [
+          "m4"
+        ],
+        "components": [
+          {
+            "id": "m4",
+            "detected": true,
+            "tolls": null,
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          }
+        ]
+      },
+      "m4": {
+        "status": "boundaries_resolved",
+        "reason": null,
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 2,
+        "confirmedPvps": [
+          "m4-1223",
+          "m4-545"
+        ],
+        "diagnosticOnly": true
+      }
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-krasnodar-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T09-37-25-773Z.json",
+      "sha256": "9b9565364a80a230510b717b44d84bdd50c2362190419c8cd40bc980435c2d10",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "provider": "OSRM",
+      "routeMeters": 836186,
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "audit": {
+        "status": "unknown",
+        "priced": [],
+        "missing": [
+          "m4"
+        ],
+        "components": [
+          {
+            "id": "m4",
+            "detected": true,
+            "tolls": null,
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          }
+        ]
+      },
+      "m4": {
+        "status": "boundaries_resolved",
+        "reason": null,
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 2,
+        "confirmedPvps": [
+          "m4-1223",
+          "m4-545"
+        ],
+        "diagnosticOnly": true
+      }
+    }
+  ],
+  "validation": {
+    "complete": true,
+    "boothEventCoverage": "complete",
+    "tollBoothCount": 9,
+    "paidEdgeCount": 554,
+    "paidWaysIfShort": null,
+    "selected545Nodes": [
+      "5818209495"
+    ]
+  },
+  "geometry": null,
+  "previousCount": 11,
+  "nextCase": "single-m4-voronezh-to-krasnodar",
+  "oldNext": "single-m4-krasnodar-to-voronezh",
+  "oldPlan": "19D11/22 reviewed, latestpair-m4-m11-voronezh-to-spb m4_component_priced_other_products_unknown; nextsingle-m4-krasnodar-to-voronezh exactsavedcapture/twoofflineprofiles; sourcegapsretained, no newgate",
+  "result": "source_gated_physical545_scope_unresolved",
+  "scopeCheckpoint": "docs/checkpoints/2026-10-16-122949-case9-545-source-gate.md"
+}

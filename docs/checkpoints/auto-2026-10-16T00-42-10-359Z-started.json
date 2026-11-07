@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:42:10.359Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 7,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 11,
+    "spec": {
+      "caseId": "dnr-талаковка-kerch-center",
+      "kind": "regional",
+      "region": "dnr"
+    }
+  },
+  "caseId": "dnr-талаковка-kerch-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-42-10-359Z-part11",
+  "parent": "7698ef1602164b2205549aff00a61df9a0dbb7da"
+}

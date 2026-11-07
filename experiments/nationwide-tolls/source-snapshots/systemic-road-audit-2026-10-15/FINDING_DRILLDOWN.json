@@ -1,0 +1,2037 @@
+{
+  "generatedAt": "2026-10-15T16:45:57.628Z",
+  "scope": "No product/tariff mutation. Passage times are distance-proportional diagnostic estimates, not exact provider timestamps or operator billing events. Partial/missing identities cannot prove an entire road is free.",
+  "rows": [
+    {
+      "caseId": "dnr-гранитное-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-54-48-347Z.json",
+      "captureSha256": "83d926658f6cc87a970d69abad120df3f743b4782f55031494005293a9be7146",
+      "from": {
+        "label": "Гранітне — ДНР",
+        "position": {
+          "lat": 47.4593941,
+          "lng": 37.866983
+        },
+        "kind": "village",
+        "sourceRequested": "Гранитное"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "provider": "Valhalla",
+      "wholeRouteWindow": {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "arrivalAt": "2026-10-15T22:37:09.000Z",
+        "resolved": {
+          "status": "unknown",
+          "reason": "crossing_profile_changes"
+        }
+      },
+      "m4SelectedTracePlazas": [
+        {
+          "km": 911,
+          "nodeId": "11838466120",
+          "routeIndex": 2510.9739828854217,
+          "approximatePassageAt": "2026-10-15T10:27:37.961Z"
+        },
+        {
+          "km": 803,
+          "nodeId": "75715767",
+          "routeIndex": 3042.005317574259,
+          "approximatePassageAt": "2026-10-15T11:53:38.137Z"
+        },
+        {
+          "km": 636,
+          "nodeId": "7678126300",
+          "routeIndex": 3881.978942709916,
+          "approximatePassageAt": "2026-10-15T14:08:30.895Z"
+        },
+        {
+          "km": 620,
+          "nodeId": "4315323077",
+          "routeIndex": 3989.954971103872,
+          "approximatePassageAt": "2026-10-15T14:20:35.462Z"
+        },
+        {
+          "km": 545,
+          "nodeId": "3504914294",
+          "routeIndex": 4504.550445940577,
+          "approximatePassageAt": "2026-10-15T15:20:45.032Z"
+        },
+        {
+          "km": 515,
+          "nodeId": "3257030196",
+          "routeIndex": 4859.722981887999,
+          "approximatePassageAt": "2026-10-15T15:45:27.578Z"
+        },
+        {
+          "km": 460,
+          "nodeId": "75724804",
+          "routeIndex": 5368.7795446643795,
+          "approximatePassageAt": "2026-10-15T16:29:37.262Z"
+        },
+        {
+          "km": 416,
+          "nodeId": "1051218389",
+          "routeIndex": 5617.172855593152,
+          "approximatePassageAt": "2026-10-15T17:06:17.501Z"
+        },
+        {
+          "km": 339,
+          "nodeId": "3598837930",
+          "routeIndex": 6241.989732539083,
+          "approximatePassageAt": "2026-10-15T18:06:23.794Z"
+        },
+        {
+          "km": 322,
+          "nodeId": "2431427636",
+          "routeIndex": 6381.330321946495,
+          "approximatePassageAt": "2026-10-15T18:21:12.752Z"
+        },
+        {
+          "km": 228,
+          "nodeId": "3598939358",
+          "routeIndex": 7063.002251329635,
+          "approximatePassageAt": "2026-10-15T19:37:10.238Z"
+        },
+        {
+          "km": 133,
+          "nodeId": "4341143825",
+          "routeIndex": 7814.944946660764,
+          "approximatePassageAt": "2026-10-15T20:52:25.494Z"
+        },
+        {
+          "km": 71,
+          "nodeId": "285903913",
+          "routeIndex": 8227.039491926764,
+          "approximatePassageAt": "2026-10-15T21:38:01.615Z"
+        }
+      ],
+      "a289": {
+        "frames": [],
+        "originClass": null,
+        "destinationClass": null,
+        "hasEasternM4Proof": true,
+        "limitation": "a289ShortRoute can supply Maryanskaya from M4 proof only when the other trip endpoint already maps to an A289 local endpoint. Two distant trip endpoints remain unresolved even when every A289 frame is crossed."
+      }
+    },
+    {
+      "caseId": "kherson-раденск-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-56-25-468Z.json",
+      "captureSha256": "cdb0e406663dd829f29ecb09393468a6fd1e1896665b4aa42f28ae95c1486e5d",
+      "from": {
+        "label": "Раденськ — Херсонская область",
+        "position": {
+          "lat": 46.551144,
+          "lng": 32.925629
+        },
+        "kind": "village",
+        "sourceRequested": "Раденск"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "provider": "OSRM",
+      "wholeRouteWindow": {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "arrivalAt": "2026-10-16T09:23:57.000Z",
+        "resolved": {
+          "status": "unknown",
+          "reason": "crossing_profile_changes"
+        }
+      },
+      "m4SelectedTracePlazas": [
+        {
+          "km": 1223,
+          "nodeId": "9772717210",
+          "routeIndex": 5700.011777415434,
+          "approximatePassageAt": "2026-10-15T16:19:52.717Z"
+        },
+        {
+          "km": 1184,
+          "nodeId": "6594273708",
+          "routeIndex": 5959.998421431139,
+          "approximatePassageAt": "2026-10-15T16:53:09.588Z"
+        },
+        {
+          "km": 1093,
+          "nodeId": "5325424716",
+          "routeIndex": 6392.003835902585,
+          "approximatePassageAt": "2026-10-15T18:08:31.109Z"
+        },
+        {
+          "km": 1046,
+          "nodeId": "11295106602",
+          "routeIndex": 6831.991314357663,
+          "approximatePassageAt": "2026-10-15T18:46:55.430Z"
+        },
+        {
+          "km": 911,
+          "nodeId": "11838466120",
+          "routeIndex": 7587.983320392729,
+          "approximatePassageAt": "2026-10-15T20:38:56.359Z"
+        },
+        {
+          "km": 803,
+          "nodeId": "75715767",
+          "routeIndex": 8119.00531757426,
+          "approximatePassageAt": "2026-10-15T22:08:55.730Z"
+        },
+        {
+          "km": 636,
+          "nodeId": "7678126300",
+          "routeIndex": 8958.978942709915,
+          "approximatePassageAt": "2026-10-16T00:30:03.629Z"
+        },
+        {
+          "km": 620,
+          "nodeId": "4315323077",
+          "routeIndex": 9066.954875724292,
+          "approximatePassageAt": "2026-10-16T00:42:41.781Z"
+        },
+        {
+          "km": 545,
+          "nodeId": "5818209495",
+          "routeIndex": 9578.71153174208,
+          "approximatePassageAt": "2026-10-16T01:45:38.406Z"
+        },
+        {
+          "km": 515,
+          "nodeId": "3257030196",
+          "routeIndex": 9931.722981887999,
+          "approximatePassageAt": "2026-10-16T02:11:29.989Z"
+        },
+        {
+          "km": 460,
+          "nodeId": "75724804",
+          "routeIndex": 10440.77954466438,
+          "approximatePassageAt": "2026-10-16T02:57:42.501Z"
+        },
+        {
+          "km": 416,
+          "nodeId": "3717382721",
+          "routeIndex": 10690.214566104692,
+          "approximatePassageAt": "2026-10-16T03:36:04.742Z"
+        },
+        {
+          "km": 322,
+          "nodeId": "2431427636",
+          "routeIndex": 11460.330321946496,
+          "approximatePassageAt": "2026-10-16T04:54:29.314Z"
+        },
+        {
+          "km": 228,
+          "nodeId": "5061777372",
+          "routeIndex": 12143.02413231921,
+          "approximatePassageAt": "2026-10-16T06:13:58.076Z"
+        },
+        {
+          "km": 133,
+          "nodeId": "4341143825",
+          "routeIndex": 12895.944946660764,
+          "approximatePassageAt": "2026-10-16T07:32:42.654Z"
+        },
+        {
+          "km": 71,
+          "nodeId": "285903913",
+          "routeIndex": 13308.039491926764,
+          "approximatePassageAt": "2026-10-16T08:20:25.607Z"
+        }
+      ],
+      "a289": {
+        "frames": [
+          "103",
+          "82",
+          "23"
+        ],
+        "originClass": null,
+        "destinationClass": null,
+        "hasEasternM4Proof": true,
+        "limitation": "a289ShortRoute can supply Maryanskaya from M4 proof only when the other trip endpoint already maps to an A289 local endpoint. Two distant trip endpoints remain unresolved even when every A289 frame is crossed."
+      }
+    },
+    {
+      "caseId": "dnr-гранитное-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-56-56-166Z.json",
+      "captureSha256": "0493305d255cfc779f4d2b7f15e5c4fb7161b80857f3af75a4c57567a6df3cb1",
+      "from": {
+        "label": "Гранітне — ДНР",
+        "position": {
+          "lat": 47.4593941,
+          "lng": 37.866983
+        },
+        "kind": "village",
+        "sourceRequested": "Гранитное"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "provider": "Valhalla",
+      "wholeRouteWindow": {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "arrivalAt": "2026-10-16T04:42:25.000Z",
+        "resolved": {
+          "status": "unknown",
+          "reason": "crossing_profile_changes"
+        }
+      },
+      "m4SelectedTracePlazas": [
+        {
+          "km": 911,
+          "nodeId": "11838466120",
+          "routeIndex": 2510.9739828854217,
+          "approximatePassageAt": "2026-10-15T09:52:55.087Z"
+        },
+        {
+          "km": 803,
+          "nodeId": "75715767",
+          "routeIndex": 3042.005317574259,
+          "approximatePassageAt": "2026-10-15T11:07:45.938Z"
+        },
+        {
+          "km": 636,
+          "nodeId": "7678126300",
+          "routeIndex": 3881.978942709916,
+          "approximatePassageAt": "2026-10-15T13:05:08.987Z"
+        },
+        {
+          "km": 620,
+          "nodeId": "4315323077",
+          "routeIndex": 3989.954971103872,
+          "approximatePassageAt": "2026-10-15T13:15:39.570Z"
+        },
+        {
+          "km": 545,
+          "nodeId": "3504914294",
+          "routeIndex": 4504.550445940577,
+          "approximatePassageAt": "2026-10-15T14:08:00.944Z"
+        },
+        {
+          "km": 515,
+          "nodeId": "3257030196",
+          "routeIndex": 4859.722981887999,
+          "approximatePassageAt": "2026-10-15T14:29:31.190Z"
+        },
+        {
+          "km": 460,
+          "nodeId": "75724804",
+          "routeIndex": 5368.7795446643795,
+          "approximatePassageAt": "2026-10-15T15:07:57.184Z"
+        },
+        {
+          "km": 416,
+          "nodeId": "1051218389",
+          "routeIndex": 5617.172855593152,
+          "approximatePassageAt": "2026-10-15T15:39:52.030Z"
+        },
+        {
+          "km": 339,
+          "nodeId": "3598837930",
+          "routeIndex": 6241.989732539083,
+          "approximatePassageAt": "2026-10-15T16:32:10.552Z"
+        },
+        {
+          "km": 322,
+          "nodeId": "2431427636",
+          "routeIndex": 6381.330321946495,
+          "approximatePassageAt": "2026-10-15T16:45:04.203Z"
+        },
+        {
+          "km": 228,
+          "nodeId": "3598939358",
+          "routeIndex": 7063.002251329635,
+          "approximatePassageAt": "2026-10-15T17:51:10.539Z"
+        },
+        {
+          "km": 133,
+          "nodeId": "4341143825",
+          "routeIndex": 7814.944946660764,
+          "approximatePassageAt": "2026-10-15T18:56:40.122Z"
+        },
+        {
+          "km": 71,
+          "nodeId": "285903913",
+          "routeIndex": 8227.039491926764,
+          "approximatePassageAt": "2026-10-15T19:36:21.342Z"
+        }
+      ],
+      "a289": {
+        "frames": [],
+        "originClass": null,
+        "destinationClass": null,
+        "hasEasternM4Proof": true,
+        "limitation": "a289ShortRoute can supply Maryanskaya from M4 proof only when the other trip endpoint already maps to an A289 local endpoint. Two distant trip endpoints remain unresolved even when every A289 frame is crossed."
+      }
+    },
+    {
+      "caseId": "lnr-брянка-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-57-59-745Z.json",
+      "captureSha256": "bb720239367689bf2c68a22c3c2277cf3c34cd48a80a3d8052464c1f68a71815",
+      "from": {
+        "label": "Брянка — ЛНР",
+        "position": {
+          "lat": 48.50361,
+          "lng": 38.66432
+        },
+        "kind": "town",
+        "sourceRequested": "Брянка"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "provider": "Valhalla",
+      "wholeRouteWindow": {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "arrivalAt": "2026-10-16T02:37:23.000Z",
+        "resolved": {
+          "status": "unknown",
+          "reason": "crossing_profile_changes"
+        }
+      },
+      "m4SelectedTracePlazas": [
+        {
+          "km": 911,
+          "nodeId": "11838466120",
+          "routeIndex": 2080.9739828854217,
+          "approximatePassageAt": "2026-10-15T08:09:55.397Z"
+        },
+        {
+          "km": 803,
+          "nodeId": "75715767",
+          "routeIndex": 2612.005317574259,
+          "approximatePassageAt": "2026-10-15T09:23:18.623Z"
+        },
+        {
+          "km": 636,
+          "nodeId": "7678126300",
+          "routeIndex": 3451.978942709916,
+          "approximatePassageAt": "2026-10-15T11:18:24.250Z"
+        },
+        {
+          "km": 620,
+          "nodeId": "4315323077",
+          "routeIndex": 3559.954971103872,
+          "approximatePassageAt": "2026-10-15T11:28:42.530Z"
+        },
+        {
+          "km": 545,
+          "nodeId": "3504914294",
+          "routeIndex": 4074.5504459405774,
+          "approximatePassageAt": "2026-10-15T12:20:02.610Z"
+        },
+        {
+          "km": 515,
+          "nodeId": "3257030196",
+          "routeIndex": 4429.722981887999,
+          "approximatePassageAt": "2026-10-15T12:41:07.681Z"
+        },
+        {
+          "km": 460,
+          "nodeId": "75724804",
+          "routeIndex": 4938.7795446643795,
+          "approximatePassageAt": "2026-10-15T13:18:48.681Z"
+        },
+        {
+          "km": 416,
+          "nodeId": "1051218389",
+          "routeIndex": 5187.172855593152,
+          "approximatePassageAt": "2026-10-15T13:50:06.165Z"
+        },
+        {
+          "km": 339,
+          "nodeId": "3598837930",
+          "routeIndex": 5811.989732539083,
+          "approximatePassageAt": "2026-10-15T14:41:23.448Z"
+        },
+        {
+          "km": 322,
+          "nodeId": "2431427636",
+          "routeIndex": 5951.330321946495,
+          "approximatePassageAt": "2026-10-15T14:54:02.005Z"
+        },
+        {
+          "km": 228,
+          "nodeId": "3598939358",
+          "routeIndex": 6633.002251329635,
+          "approximatePassageAt": "2026-10-15T15:58:50.950Z"
+        },
+        {
+          "km": 133,
+          "nodeId": "4341143825",
+          "routeIndex": 7384.944946660764,
+          "approximatePassageAt": "2026-10-15T17:03:03.861Z"
+        },
+        {
+          "km": 71,
+          "nodeId": "285903913",
+          "routeIndex": 7797.039491926765,
+          "approximatePassageAt": "2026-10-15T17:41:58.618Z"
+        }
+      ],
+      "a289": {
+        "frames": [],
+        "originClass": null,
+        "destinationClass": null,
+        "hasEasternM4Proof": true,
+        "limitation": "a289ShortRoute can supply Maryanskaya from M4 proof only when the other trip endpoint already maps to an A289 local endpoint. Two distant trip endpoints remain unresolved even when every A289 frame is crossed."
+      }
+    },
+    {
+      "caseId": "kherson-раденск-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-59-10-667Z.json",
+      "captureSha256": "afb25d1fea5710c0d36c4eaf1ba7ffa1e0b1f50d3d05e3a34676769e58ff4409",
+      "from": {
+        "label": "Раденськ — Херсонская область",
+        "position": {
+          "lat": 46.551144,
+          "lng": 32.925629
+        },
+        "kind": "village",
+        "sourceRequested": "Раденск"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "provider": "OSRM",
+      "wholeRouteWindow": {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "arrivalAt": "2026-10-16T17:30:05.000Z",
+        "resolved": {
+          "status": "unknown",
+          "reason": "crossing_profile_changes"
+        }
+      },
+      "m4SelectedTracePlazas": [
+        {
+          "km": 1223,
+          "nodeId": "9772717210",
+          "routeIndex": 5700.011777415434,
+          "approximatePassageAt": "2026-10-15T15:51:00.974Z"
+        },
+        {
+          "km": 1184,
+          "nodeId": "6594273708",
+          "routeIndex": 5959.998421431139,
+          "approximatePassageAt": "2026-10-15T16:22:44.868Z"
+        },
+        {
+          "km": 1093,
+          "nodeId": "5325424716",
+          "routeIndex": 6392.003835902585,
+          "approximatePassageAt": "2026-10-15T17:34:35.861Z"
+        },
+        {
+          "km": 1046,
+          "nodeId": "11295106602",
+          "routeIndex": 6831.991314357663,
+          "approximatePassageAt": "2026-10-15T18:11:12.889Z"
+        },
+        {
+          "km": 911,
+          "nodeId": "11838466120",
+          "routeIndex": 7587.983320392729,
+          "approximatePassageAt": "2026-10-15T19:58:00.882Z"
+        },
+        {
+          "km": 803,
+          "nodeId": "75715767",
+          "routeIndex": 8119.00531757426,
+          "approximatePassageAt": "2026-10-15T21:23:48.852Z"
+        },
+        {
+          "km": 636,
+          "nodeId": "7678126300",
+          "routeIndex": 8958.978942709915,
+          "approximatePassageAt": "2026-10-15T23:38:22.474Z"
+        },
+        {
+          "km": 620,
+          "nodeId": "4315323077",
+          "routeIndex": 9066.954875724292,
+          "approximatePassageAt": "2026-10-15T23:50:25.325Z"
+        },
+        {
+          "km": 545,
+          "nodeId": "5818209495",
+          "routeIndex": 9578.71153174208,
+          "approximatePassageAt": "2026-10-16T00:50:26.105Z"
+        },
+        {
+          "km": 515,
+          "nodeId": "3257030196",
+          "routeIndex": 9931.722981887999,
+          "approximatePassageAt": "2026-10-16T01:15:05.444Z"
+        },
+        {
+          "km": 460,
+          "nodeId": "75724804",
+          "routeIndex": 10440.77954466438,
+          "approximatePassageAt": "2026-10-16T01:59:08.864Z"
+        },
+        {
+          "km": 416,
+          "nodeId": "3717382721",
+          "routeIndex": 10690.214566104692,
+          "approximatePassageAt": "2026-10-16T02:35:43.910Z"
+        },
+        {
+          "km": 322,
+          "nodeId": "2431427636",
+          "routeIndex": 11460.330321946496,
+          "approximatePassageAt": "2026-10-16T03:50:29.431Z"
+        },
+        {
+          "km": 228,
+          "nodeId": "5061777372",
+          "routeIndex": 12143.02413231921,
+          "approximatePassageAt": "2026-10-16T05:06:16.153Z"
+        },
+        {
+          "km": 133,
+          "nodeId": "4341143825",
+          "routeIndex": 12895.944946660764,
+          "approximatePassageAt": "2026-10-16T06:21:20.748Z"
+        },
+        {
+          "km": 71,
+          "nodeId": "285903913",
+          "routeIndex": 13308.039491926764,
+          "approximatePassageAt": "2026-10-16T07:06:50.398Z"
+        }
+      ],
+      "a289": {
+        "frames": [
+          "103",
+          "82",
+          "23"
+        ],
+        "originClass": null,
+        "destinationClass": null,
+        "hasEasternM4Proof": true,
+        "limitation": "a289ShortRoute can supply Maryanskaya from M4 proof only when the other trip endpoint already maps to an A289 local endpoint. Two distant trip endpoints remain unresolved even when every A289 frame is crossed."
+      }
+    },
+    {
+      "caseId": "dnr-гранитное-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-00-00-533Z.json",
+      "captureSha256": "5c49cbd71433f7200538a5a4526d81f009375d49fce4445546151a8152cb19b9",
+      "from": {
+        "label": "Гранітне — ДНР",
+        "position": {
+          "lat": 47.4593941,
+          "lng": 37.866983
+        },
+        "kind": "village",
+        "sourceRequested": "Гранитное"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "provider": "Valhalla",
+      "wholeRouteWindow": {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "arrivalAt": "2026-10-16T06:04:02.000Z",
+        "resolved": {
+          "status": "unknown",
+          "reason": "crossing_profile_changes"
+        }
+      },
+      "m4SelectedTracePlazas": [],
+      "a289": {
+        "frames": [],
+        "originClass": null,
+        "destinationClass": null,
+        "hasEasternM4Proof": false,
+        "limitation": "a289ShortRoute can supply Maryanskaya from M4 proof only when the other trip endpoint already maps to an A289 local endpoint. Two distant trip endpoints remain unresolved even when every A289 frame is crossed."
+      }
+    },
+    {
+      "caseId": "kherson-раденск-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-01-39-761Z.json",
+      "captureSha256": "d6d6fb9c71a8000bbb9edaf5a069c95339828e0936695fccd2ddc6ff3a44b495",
+      "from": {
+        "label": "Раденськ — Херсонская область",
+        "position": {
+          "lat": 46.551144,
+          "lng": 32.925629
+        },
+        "kind": "village",
+        "sourceRequested": "Раденск"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "provider": "OSRM",
+      "wholeRouteWindow": {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "arrivalAt": "2026-10-16T16:59:22.000Z",
+        "resolved": {
+          "status": "unknown",
+          "reason": "crossing_profile_changes"
+        }
+      },
+      "m4SelectedTracePlazas": [
+        {
+          "km": 1223,
+          "nodeId": "9772717210",
+          "routeIndex": 5700.011777415434,
+          "approximatePassageAt": "2026-10-15T16:56:54.861Z"
+        },
+        {
+          "km": 1184,
+          "nodeId": "6594273708",
+          "routeIndex": 5959.998421431139,
+          "approximatePassageAt": "2026-10-15T17:32:11.039Z"
+        },
+        {
+          "km": 1093,
+          "nodeId": "5325424716",
+          "routeIndex": 6392.003835902585,
+          "approximatePassageAt": "2026-10-15T18:52:02.706Z"
+        },
+        {
+          "km": 1046,
+          "nodeId": "11295106602",
+          "routeIndex": 6831.991314357663,
+          "approximatePassageAt": "2026-10-15T19:32:44.702Z"
+        },
+        {
+          "km": 911,
+          "nodeId": "11838466120",
+          "routeIndex": 7587.983320392729,
+          "approximatePassageAt": "2026-10-15T21:31:27.184Z"
+        },
+        {
+          "km": 803,
+          "nodeId": "75715767",
+          "routeIndex": 8119.00531757426,
+          "approximatePassageAt": "2026-10-15T23:06:49.151Z"
+        }
+      ],
+      "a289": {
+        "frames": [
+          "103",
+          "82",
+          "23"
+        ],
+        "originClass": null,
+        "destinationClass": null,
+        "hasEasternM4Proof": true,
+        "limitation": "a289ShortRoute can supply Maryanskaya from M4 proof only when the other trip endpoint already maps to an A289 local endpoint. Two distant trip endpoints remain unresolved even when every A289 frame is crossed."
+      }
+    },
+    {
+      "caseId": "dnr-широкино-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-07-092Z.json",
+      "captureSha256": "a4bd488dd0d777371b49f1f41ef225b65af21d71b0b65b2c2fb83e8cdd549bda",
+      "from": {
+        "label": "Широкине — ДНР",
+        "position": {
+          "lat": 47.09822,
+          "lng": 37.81769
+        },
+        "kind": "village",
+        "sourceRequested": "Широкино"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "provider": "Valhalla",
+      "wholeRouteWindow": {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "arrivalAt": "2026-10-15T21:43:08.000Z",
+        "resolved": {
+          "status": "unknown",
+          "reason": "crossing_profile_changes"
+        }
+      },
+      "m4SelectedTracePlazas": [
+        {
+          "km": 911,
+          "nodeId": "11838466120",
+          "routeIndex": 2352.9739828854217,
+          "approximatePassageAt": "2026-10-15T09:57:16.976Z"
+        },
+        {
+          "km": 803,
+          "nodeId": "75715767",
+          "routeIndex": 2884.005317574259,
+          "approximatePassageAt": "2026-10-15T11:20:29.746Z"
+        },
+        {
+          "km": 636,
+          "nodeId": "7678126300",
+          "routeIndex": 3723.978942709916,
+          "approximatePassageAt": "2026-10-15T13:30:59.960Z"
+        },
+        {
+          "km": 620,
+          "nodeId": "4315323077",
+          "routeIndex": 3831.954971103872,
+          "approximatePassageAt": "2026-10-15T13:42:41.020Z"
+        },
+        {
+          "km": 545,
+          "nodeId": "3504914294",
+          "routeIndex": 4346.550445940577,
+          "approximatePassageAt": "2026-10-15T14:40:53.489Z"
+        },
+        {
+          "km": 515,
+          "nodeId": "3257030196",
+          "routeIndex": 4701.722981887999,
+          "approximatePassageAt": "2026-10-15T15:04:47.939Z"
+        },
+        {
+          "km": 460,
+          "nodeId": "75724804",
+          "routeIndex": 5210.7795446643795,
+          "approximatePassageAt": "2026-10-15T15:47:31.662Z"
+        },
+        {
+          "km": 416,
+          "nodeId": "1051218389",
+          "routeIndex": 5459.172855593152,
+          "approximatePassageAt": "2026-10-15T16:23:00.521Z"
+        },
+        {
+          "km": 339,
+          "nodeId": "3598837930",
+          "routeIndex": 6083.989732539083,
+          "approximatePassageAt": "2026-10-15T17:21:09.819Z"
+        },
+        {
+          "km": 322,
+          "nodeId": "2431427636",
+          "routeIndex": 6223.330321946495,
+          "approximatePassageAt": "2026-10-15T17:35:29.938Z"
+        },
+        {
+          "km": 228,
+          "nodeId": "3598939358",
+          "routeIndex": 6905.002251329635,
+          "approximatePassageAt": "2026-10-15T18:48:59.570Z"
+        },
+        {
+          "km": 133,
+          "nodeId": "4341143825",
+          "routeIndex": 7656.944946660764,
+          "approximatePassageAt": "2026-10-15T20:01:48.343Z"
+        },
+        {
+          "km": 71,
+          "nodeId": "285903913",
+          "routeIndex": 8069.039491926765,
+          "approximatePassageAt": "2026-10-15T20:45:55.698Z"
+        }
+      ],
+      "a289": {
+        "frames": [],
+        "originClass": null,
+        "destinationClass": null,
+        "hasEasternM4Proof": true,
+        "limitation": "a289ShortRoute can supply Maryanskaya from M4 proof only when the other trip endpoint already maps to an A289 local endpoint. Two distant trip endpoints remain unresolved even when every A289 frame is crossed."
+      }
+    },
+    {
+      "caseId": "kherson-чулаковка-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-04-20-248Z.json",
+      "captureSha256": "069070aa159571c38351ea10d7e7cf3ff146203f7830baa834722412973d9b2f",
+      "from": {
+        "label": "Чулаківка — Херсонская область",
+        "position": {
+          "lat": 46.361961,
+          "lng": 32.358509
+        },
+        "kind": "village",
+        "sourceRequested": "Чулаковка"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "provider": "OSRM",
+      "wholeRouteWindow": {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "arrivalAt": "2026-10-16T10:18:06.000Z",
+        "resolved": {
+          "status": "unknown",
+          "reason": "crossing_profile_changes"
+        }
+      },
+      "m4SelectedTracePlazas": [
+        {
+          "km": 1223,
+          "nodeId": "9772717210",
+          "routeIndex": 5801.011777415434,
+          "approximatePassageAt": "2026-10-15T17:05:21.142Z"
+        },
+        {
+          "km": 1184,
+          "nodeId": "6594273708",
+          "routeIndex": 6060.998421431139,
+          "approximatePassageAt": "2026-10-15T17:38:54.931Z"
+        },
+        {
+          "km": 1093,
+          "nodeId": "5325424716",
+          "routeIndex": 6493.003835902585,
+          "approximatePassageAt": "2026-10-15T18:54:54.759Z"
+        },
+        {
+          "km": 1046,
+          "nodeId": "11295106602",
+          "routeIndex": 6932.991314357663,
+          "approximatePassageAt": "2026-10-15T19:33:38.603Z"
+        },
+        {
+          "km": 911,
+          "nodeId": "11838466120",
+          "routeIndex": 7688.983320392729,
+          "approximatePassageAt": "2026-10-15T21:26:36.474Z"
+        },
+        {
+          "km": 803,
+          "nodeId": "75715767",
+          "routeIndex": 8220.00531757426,
+          "approximatePassageAt": "2026-10-15T22:57:21.591Z"
+        },
+        {
+          "km": 636,
+          "nodeId": "7678126300",
+          "routeIndex": 9059.978942709915,
+          "approximatePassageAt": "2026-10-16T01:19:41.232Z"
+        },
+        {
+          "km": 620,
+          "nodeId": "4315323077",
+          "routeIndex": 9167.954875724292,
+          "approximatePassageAt": "2026-10-16T01:32:25.807Z"
+        },
+        {
+          "km": 545,
+          "nodeId": "5818209495",
+          "routeIndex": 9679.71153174208,
+          "approximatePassageAt": "2026-10-16T02:35:54.429Z"
+        },
+        {
+          "km": 515,
+          "nodeId": "3257030196",
+          "routeIndex": 10032.722981887999,
+          "approximatePassageAt": "2026-10-16T03:01:59.157Z"
+        },
+        {
+          "km": 460,
+          "nodeId": "75724804",
+          "routeIndex": 10541.77954466438,
+          "approximatePassageAt": "2026-10-16T03:48:35.159Z"
+        },
+        {
+          "km": 416,
+          "nodeId": "3717382721",
+          "routeIndex": 10791.214566104692,
+          "approximatePassageAt": "2026-10-16T04:27:16.905Z"
+        },
+        {
+          "km": 322,
+          "nodeId": "2431427636",
+          "routeIndex": 11561.330321946496,
+          "approximatePassageAt": "2026-10-16T05:46:21.337Z"
+        },
+        {
+          "km": 228,
+          "nodeId": "5061777372",
+          "routeIndex": 12244.02413231921,
+          "approximatePassageAt": "2026-10-16T07:06:30.501Z"
+        },
+        {
+          "km": 133,
+          "nodeId": "4341143825",
+          "routeIndex": 12996.944946660764,
+          "approximatePassageAt": "2026-10-16T08:25:55.106Z"
+        },
+        {
+          "km": 71,
+          "nodeId": "285903913",
+          "routeIndex": 13409.039491926764,
+          "approximatePassageAt": "2026-10-16T09:14:02.316Z"
+        }
+      ],
+      "a289": {
+        "frames": [
+          "103",
+          "82",
+          "23"
+        ],
+        "originClass": null,
+        "destinationClass": null,
+        "hasEasternM4Proof": true,
+        "limitation": "a289ShortRoute can supply Maryanskaya from M4 proof only when the other trip endpoint already maps to an A289 local endpoint. Two distant trip endpoints remain unresolved even when every A289 frame is crossed."
+      }
+    },
+    {
+      "caseId": "dnr-широкино-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-04-54-360Z.json",
+      "captureSha256": "6ffccea6b7cf0b7a43994058f70cabaa68a10111b8b696eeb8bf0a40b60e45b4",
+      "from": {
+        "label": "Широкине — ДНР",
+        "position": {
+          "lat": 47.09822,
+          "lng": 37.81769
+        },
+        "kind": "village",
+        "sourceRequested": "Широкино"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "provider": "OSRM",
+      "wholeRouteWindow": {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "arrivalAt": "2026-10-16T06:33:59.000Z",
+        "resolved": {
+          "status": "unknown",
+          "reason": "crossing_profile_changes"
+        }
+      },
+      "m4SelectedTracePlazas": [
+        {
+          "km": 911,
+          "nodeId": "11838466120",
+          "routeIndex": 2352.983320392729,
+          "approximatePassageAt": "2026-10-15T09:54:40.189Z"
+        },
+        {
+          "km": 803,
+          "nodeId": "75715767",
+          "routeIndex": 2884.005317574259,
+          "approximatePassageAt": "2026-10-15T11:16:57.968Z"
+        },
+        {
+          "km": 636,
+          "nodeId": "7678126300",
+          "routeIndex": 3723.978942709916,
+          "approximatePassageAt": "2026-10-15T13:26:01.944Z"
+        },
+        {
+          "km": 620,
+          "nodeId": "4315323077",
+          "routeIndex": 3831.9548757242915,
+          "approximatePassageAt": "2026-10-15T13:37:35.281Z"
+        },
+        {
+          "km": 545,
+          "nodeId": "5818209495",
+          "routeIndex": 4343.711531742079,
+          "approximatePassageAt": "2026-10-15T14:35:09.042Z"
+        },
+        {
+          "km": 515,
+          "nodeId": "3257030196",
+          "routeIndex": 4696.722981887999,
+          "approximatePassageAt": "2026-10-15T14:58:47.979Z"
+        },
+        {
+          "km": 460,
+          "nodeId": "75724804",
+          "routeIndex": 5205.7795446643795,
+          "approximatePassageAt": "2026-10-15T15:41:03.469Z"
+        },
+        {
+          "km": 416,
+          "nodeId": "3717382721",
+          "routeIndex": 5455.2145661046925,
+          "approximatePassageAt": "2026-10-15T16:16:08.890Z"
+        },
+        {
+          "km": 322,
+          "nodeId": "2431427636",
+          "routeIndex": 6225.330321946495,
+          "approximatePassageAt": "2026-10-15T17:27:51.268Z"
+        },
+        {
+          "km": 228,
+          "nodeId": "5061777372",
+          "routeIndex": 6908.024132319209,
+          "approximatePassageAt": "2026-10-15T18:40:32.347Z"
+        },
+        {
+          "km": 133,
+          "nodeId": "4341143825",
+          "routeIndex": 7660.944946660764,
+          "approximatePassageAt": "2026-10-15T19:52:33.019Z"
+        },
+        {
+          "km": 71,
+          "nodeId": "285903913",
+          "routeIndex": 8073.039491926765,
+          "approximatePassageAt": "2026-10-15T20:36:11.218Z"
+        }
+      ],
+      "a289": {
+        "frames": [],
+        "originClass": null,
+        "destinationClass": null,
+        "hasEasternM4Proof": true,
+        "limitation": "a289ShortRoute can supply Maryanskaya from M4 proof only when the other trip endpoint already maps to an A289 local endpoint. Two distant trip endpoints remain unresolved even when every A289 frame is crossed."
+      }
+    },
+    {
+      "caseId": "kherson-чулаковка-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-07-35-633Z.json",
+      "captureSha256": "c657c9727c4e68fdea50f6cb766664705dd48d053b438cd69490d89ba41eecec",
+      "from": {
+        "label": "Чулаківка — Херсонская область",
+        "position": {
+          "lat": 46.361961,
+          "lng": 32.358509
+        },
+        "kind": "village",
+        "sourceRequested": "Чулаковка"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "provider": "OSRM",
+      "wholeRouteWindow": {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "arrivalAt": "2026-10-16T18:24:13.000Z",
+        "resolved": {
+          "status": "unknown",
+          "reason": "crossing_profile_changes"
+        }
+      },
+      "m4SelectedTracePlazas": [
+        {
+          "km": 1223,
+          "nodeId": "9772717210",
+          "routeIndex": 5801.011777415434,
+          "approximatePassageAt": "2026-10-15T16:33:42.972Z"
+        },
+        {
+          "km": 1184,
+          "nodeId": "6594273708",
+          "routeIndex": 6060.998421431139,
+          "approximatePassageAt": "2026-10-15T17:05:41.010Z"
+        },
+        {
+          "km": 1093,
+          "nodeId": "5325424716",
+          "routeIndex": 6493.003835902585,
+          "approximatePassageAt": "2026-10-15T18:18:04.028Z"
+        },
+        {
+          "km": 1046,
+          "nodeId": "11295106602",
+          "routeIndex": 6932.991314357663,
+          "approximatePassageAt": "2026-10-15T18:54:57.377Z"
+        },
+        {
+          "km": 911,
+          "nodeId": "11838466120",
+          "routeIndex": 7688.983320392729,
+          "approximatePassageAt": "2026-10-15T20:42:32.974Z"
+        },
+        {
+          "km": 803,
+          "nodeId": "75715767",
+          "routeIndex": 8220.00531757426,
+          "approximatePassageAt": "2026-10-15T22:08:59.187Z"
+        },
+        {
+          "km": 636,
+          "nodeId": "7678126300",
+          "routeIndex": 9059.978942709915,
+          "approximatePassageAt": "2026-10-16T00:24:32.785Z"
+        },
+        {
+          "km": 620,
+          "nodeId": "4315323077",
+          "routeIndex": 9167.954875724292,
+          "approximatePassageAt": "2026-10-16T00:36:41.007Z"
+        },
+        {
+          "km": 545,
+          "nodeId": "5818209495",
+          "routeIndex": 9679.71153174208,
+          "approximatePassageAt": "2026-10-16T01:37:08.537Z"
+        },
+        {
+          "km": 515,
+          "nodeId": "3257030196",
+          "routeIndex": 10032.722981887999,
+          "approximatePassageAt": "2026-10-16T02:01:58.865Z"
+        },
+        {
+          "km": 460,
+          "nodeId": "75724804",
+          "routeIndex": 10541.77954466438,
+          "approximatePassageAt": "2026-10-16T02:46:21.923Z"
+        },
+        {
+          "km": 416,
+          "nodeId": "3717382721",
+          "routeIndex": 10791.214566104692,
+          "approximatePassageAt": "2026-10-16T03:23:13.275Z"
+        },
+        {
+          "km": 322,
+          "nodeId": "2431427636",
+          "routeIndex": 11561.330321946496,
+          "approximatePassageAt": "2026-10-16T04:38:32.118Z"
+        },
+        {
+          "km": 228,
+          "nodeId": "5061777372",
+          "routeIndex": 12244.02413231921,
+          "approximatePassageAt": "2026-10-16T05:54:52.616Z"
+        },
+        {
+          "km": 133,
+          "nodeId": "4341143825",
+          "routeIndex": 12996.944946660764,
+          "approximatePassageAt": "2026-10-16T07:10:30.674Z"
+        },
+        {
+          "km": 71,
+          "nodeId": "285903913",
+          "routeIndex": 13409.039491926764,
+          "approximatePassageAt": "2026-10-16T07:56:20.602Z"
+        }
+      ],
+      "a289": {
+        "frames": [
+          "103",
+          "82",
+          "23"
+        ],
+        "originClass": null,
+        "destinationClass": null,
+        "hasEasternM4Proof": true,
+        "limitation": "a289ShortRoute can supply Maryanskaya from M4 proof only when the other trip endpoint already maps to an A289 local endpoint. Two distant trip endpoints remain unresolved even when every A289 frame is crossed."
+      }
+    },
+    {
+      "caseId": "dnr-широкино-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-08-35-550Z.json",
+      "captureSha256": "51dff085bde8c3f9a409146a4d5790c070a33c4ee3d20631c2d83713ba8d36ff",
+      "from": {
+        "label": "Широкине — ДНР",
+        "position": {
+          "lat": 47.09822,
+          "lng": 37.81769
+        },
+        "kind": "village",
+        "sourceRequested": "Широкино"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "provider": "Valhalla",
+      "wholeRouteWindow": {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "arrivalAt": "2026-10-16T05:10:00.000Z",
+        "resolved": {
+          "status": "unknown",
+          "reason": "crossing_profile_changes"
+        }
+      },
+      "m4SelectedTracePlazas": [],
+      "a289": {
+        "frames": [],
+        "originClass": null,
+        "destinationClass": null,
+        "hasEasternM4Proof": false,
+        "limitation": "a289ShortRoute can supply Maryanskaya from M4 proof only when the other trip endpoint already maps to an A289 local endpoint. Two distant trip endpoints remain unresolved even when every A289 frame is crossed."
+      }
+    },
+    {
+      "caseId": "kherson-чулаковка-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-09-56-128Z.json",
+      "captureSha256": "77a7e9dae5bdeb413c8393220ca8c3911929135161f714fb5f044a67a2e9eed6",
+      "from": {
+        "label": "Чулаківка — Херсонская область",
+        "position": {
+          "lat": 46.361961,
+          "lng": 32.358509
+        },
+        "kind": "village",
+        "sourceRequested": "Чулаковка"
+      },
+      "to": {
+        "id": "kazan-center",
+        "label": "Казань, центр",
+        "position": {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      },
+      "provider": "OSRM",
+      "wholeRouteWindow": {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "arrivalAt": "2026-10-16T17:53:31.000Z",
+        "resolved": {
+          "status": "unknown",
+          "reason": "crossing_profile_changes"
+        }
+      },
+      "m4SelectedTracePlazas": [
+        {
+          "km": 1223,
+          "nodeId": "9772717210",
+          "routeIndex": 5801.011777415434,
+          "approximatePassageAt": "2026-10-15T17:43:03.647Z"
+        },
+        {
+          "km": 1184,
+          "nodeId": "6594273708",
+          "routeIndex": 6060.998421431139,
+          "approximatePassageAt": "2026-10-15T18:18:31.566Z"
+        },
+        {
+          "km": 1093,
+          "nodeId": "5325424716",
+          "routeIndex": 6493.003835902585,
+          "approximatePassageAt": "2026-10-15T19:38:49.820Z"
+        },
+        {
+          "km": 1046,
+          "nodeId": "11295106602",
+          "routeIndex": 6932.991314357663,
+          "approximatePassageAt": "2026-10-15T20:19:45.366Z"
+        },
+        {
+          "km": 911,
+          "nodeId": "11838466120",
+          "routeIndex": 7688.983320392729,
+          "approximatePassageAt": "2026-10-15T22:19:07.368Z"
+        },
+        {
+          "km": 803,
+          "nodeId": "75715767",
+          "routeIndex": 8220.00531757426,
+          "approximatePassageAt": "2026-10-15T23:55:01.084Z"
+        }
+      ],
+      "a289": {
+        "frames": [
+          "103",
+          "82",
+          "23"
+        ],
+        "originClass": null,
+        "destinationClass": null,
+        "hasEasternM4Proof": true,
+        "limitation": "a289ShortRoute can supply Maryanskaya from M4 proof only when the other trip endpoint already maps to an A289 local endpoint. Two distant trip endpoints remain unresolved even when every A289 frame is crossed."
+      }
+    },
+    {
+      "caseId": "dnr-урзуф-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-12-21-839Z.json",
+      "captureSha256": "09883e42fd76c7fe9f90e51c35c18d45ba76d368e0fde1baee9bd12d9e2f91d5",
+      "from": {
+        "label": "Урзуф — ДНР",
+        "position": {
+          "lat": 46.9153594,
+          "lng": 37.0984904
+        },
+        "kind": "village",
+        "sourceRequested": "Урзуф"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "provider": "OSRM",
+      "wholeRouteWindow": {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "arrivalAt": "2026-10-16T11:32:08.000Z",
+        "resolved": {
+          "status": "unknown",
+          "reason": "crossing_profile_changes"
+        }
+      },
+      "m4SelectedTracePlazas": [
+        {
+          "km": 1223,
+          "nodeId": "9772717210",
+          "routeIndex": 6197.011777415434,
+          "approximatePassageAt": "2026-10-15T18:21:49.667Z"
+        },
+        {
+          "km": 1184,
+          "nodeId": "6594273708",
+          "routeIndex": 6456.998421431139,
+          "approximatePassageAt": "2026-10-15T18:55:18.694Z"
+        },
+        {
+          "km": 1093,
+          "nodeId": "5325424716",
+          "routeIndex": 6889.003835902585,
+          "approximatePassageAt": "2026-10-15T20:11:07.740Z"
+        },
+        {
+          "km": 1046,
+          "nodeId": "11295106602",
+          "routeIndex": 7328.991314357663,
+          "approximatePassageAt": "2026-10-15T20:49:46.089Z"
+        },
+        {
+          "km": 911,
+          "nodeId": "11838466120",
+          "routeIndex": 8084.983320392729,
+          "approximatePassageAt": "2026-10-15T22:42:27.932Z"
+        },
+        {
+          "km": 803,
+          "nodeId": "75715767",
+          "routeIndex": 8616.00531757426,
+          "approximatePassageAt": "2026-10-16T00:13:00.173Z"
+        },
+        {
+          "km": 636,
+          "nodeId": "7678126300",
+          "routeIndex": 9455.978942709915,
+          "approximatePassageAt": "2026-10-16T02:34:59.621Z"
+        },
+        {
+          "km": 620,
+          "nodeId": "4315323077",
+          "routeIndex": 9563.954875724292,
+          "approximatePassageAt": "2026-10-16T02:47:42.389Z"
+        },
+        {
+          "km": 545,
+          "nodeId": "5818209495",
+          "routeIndex": 10075.71153174208,
+          "approximatePassageAt": "2026-10-16T03:51:02.005Z"
+        },
+        {
+          "km": 515,
+          "nodeId": "3257030196",
+          "routeIndex": 10428.722981887999,
+          "approximatePassageAt": "2026-10-16T04:17:03.033Z"
+        },
+        {
+          "km": 460,
+          "nodeId": "75724804",
+          "routeIndex": 10937.77954466438,
+          "approximatePassageAt": "2026-10-16T05:03:32.423Z"
+        },
+        {
+          "km": 416,
+          "nodeId": "3717382721",
+          "routeIndex": 11187.214566104692,
+          "approximatePassageAt": "2026-10-16T05:42:08.679Z"
+        },
+        {
+          "km": 322,
+          "nodeId": "2431427636",
+          "routeIndex": 11957.330321946496,
+          "approximatePassageAt": "2026-10-16T07:01:01.891Z"
+        },
+        {
+          "km": 228,
+          "nodeId": "5061777372",
+          "routeIndex": 12640.02413231921,
+          "approximatePassageAt": "2026-10-16T08:20:59.684Z"
+        },
+        {
+          "km": 133,
+          "nodeId": "4341143825",
+          "routeIndex": 13392.944946660764,
+          "approximatePassageAt": "2026-10-16T09:40:13.023Z"
+        },
+        {
+          "km": 71,
+          "nodeId": "285903913",
+          "routeIndex": 13805.039491926764,
+          "approximatePassageAt": "2026-10-16T10:28:13.405Z"
+        }
+      ],
+      "a289": {
+        "frames": [
+          "103",
+          "82",
+          "23"
+        ],
+        "originClass": null,
+        "destinationClass": null,
+        "hasEasternM4Proof": true,
+        "limitation": "a289ShortRoute can supply Maryanskaya from M4 proof only when the other trip endpoint already maps to an A289 local endpoint. Two distant trip endpoints remain unresolved even when every A289 frame is crossed."
+      }
+    },
+    {
+      "caseId": "kherson-старая-збурьевка-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-14-47-222Z.json",
+      "captureSha256": "360bde4f11db57e9dd35c3b7d58c03fc5130e77f66b714622ab0ef644596ca08",
+      "from": {
+        "label": "Стара Збур’ївка — Херсонская область",
+        "position": {
+          "lat": 46.4727289,
+          "lng": 32.420034
+        },
+        "kind": "village",
+        "sourceRequested": "Старая Збурьевка"
+      },
+      "to": {
+        "id": "moscow-center",
+        "label": "Москва, центр",
+        "position": {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      },
+      "provider": "OSRM",
+      "wholeRouteWindow": {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "arrivalAt": "2026-10-16T10:13:52.000Z",
+        "resolved": {
+          "status": "unknown",
+          "reason": "crossing_profile_changes"
+        }
+      },
+      "m4SelectedTracePlazas": [
+        {
+          "km": 1223,
+          "nodeId": "9772717210",
+          "routeIndex": 6123.011777415434,
+          "approximatePassageAt": "2026-10-15T17:05:18.801Z"
+        },
+        {
+          "km": 1184,
+          "nodeId": "6594273708",
+          "routeIndex": 6382.998421431139,
+          "approximatePassageAt": "2026-10-15T17:38:44.411Z"
+        },
+        {
+          "km": 1093,
+          "nodeId": "5325424716",
+          "routeIndex": 6815.003835902585,
+          "approximatePassageAt": "2026-10-15T18:54:25.721Z"
+        },
+        {
+          "km": 1046,
+          "nodeId": "11295106602",
+          "routeIndex": 7254.991314357663,
+          "approximatePassageAt": "2026-10-15T19:33:00.126Z"
+        },
+        {
+          "km": 911,
+          "nodeId": "11838466120",
+          "routeIndex": 8010.983320392729,
+          "approximatePassageAt": "2026-10-15T21:25:30.470Z"
+        },
+        {
+          "km": 803,
+          "nodeId": "75715767",
+          "routeIndex": 8542.00531757426,
+          "approximatePassageAt": "2026-10-15T22:55:53.473Z"
+        },
+        {
+          "km": 636,
+          "nodeId": "7678126300",
+          "routeIndex": 9381.978942709915,
+          "approximatePassageAt": "2026-10-16T01:17:38.432Z"
+        },
+        {
+          "km": 620,
+          "nodeId": "4315323077",
+          "routeIndex": 9489.954875724292,
+          "approximatePassageAt": "2026-10-16T01:30:19.902Z"
+        },
+        {
+          "km": 545,
+          "nodeId": "5818209495",
+          "routeIndex": 10001.71153174208,
+          "approximatePassageAt": "2026-10-16T02:33:33.056Z"
+        },
+        {
+          "km": 515,
+          "nodeId": "3257030196",
+          "routeIndex": 10354.722981887999,
+          "approximatePassageAt": "2026-10-16T02:59:31.429Z"
+        },
+        {
+          "km": 460,
+          "nodeId": "75724804",
+          "routeIndex": 10863.77954466438,
+          "approximatePassageAt": "2026-10-16T03:45:56.076Z"
+        },
+        {
+          "km": 416,
+          "nodeId": "3717382721",
+          "routeIndex": 11113.214566104692,
+          "approximatePassageAt": "2026-10-16T04:24:28.392Z"
+        },
+        {
+          "km": 322,
+          "nodeId": "2431427636",
+          "routeIndex": 11883.330321946496,
+          "approximatePassageAt": "2026-10-16T05:43:13.555Z"
+        },
+        {
+          "km": 228,
+          "nodeId": "5061777372",
+          "routeIndex": 12566.02413231921,
+          "approximatePassageAt": "2026-10-16T07:03:03.188Z"
+        },
+        {
+          "km": 133,
+          "nodeId": "4341143825",
+          "routeIndex": 13318.944946660764,
+          "approximatePassageAt": "2026-10-16T08:22:08.443Z"
+        },
+        {
+          "km": 71,
+          "nodeId": "285903913",
+          "routeIndex": 13731.039491926764,
+          "approximatePassageAt": "2026-10-16T09:10:03.926Z"
+        }
+      ],
+      "a289": {
+        "frames": [
+          "103",
+          "82",
+          "23"
+        ],
+        "originClass": null,
+        "destinationClass": null,
+        "hasEasternM4Proof": true,
+        "limitation": "a289ShortRoute can supply Maryanskaya from M4 proof only when the other trip endpoint already maps to an A289 local endpoint. Two distant trip endpoints remain unresolved even when every A289 frame is crossed."
+      }
+    },
+    {
+      "caseId": "dnr-урзуф-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-15-30-684Z.json",
+      "captureSha256": "07a4aa99f441c97af0cf4a1e776a5e89e1586c75caa8e96536aee59ba3c952a1",
+      "from": {
+        "label": "Урзуф — ДНР",
+        "position": {
+          "lat": 46.9153594,
+          "lng": 37.0984904
+        },
+        "kind": "village",
+        "sourceRequested": "Урзуф"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "provider": "OSRM",
+      "wholeRouteWindow": {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "arrivalAt": "2026-10-16T19:38:15.000Z",
+        "resolved": {
+          "status": "unknown",
+          "reason": "crossing_profile_changes"
+        }
+      },
+      "m4SelectedTracePlazas": [
+        {
+          "km": 1223,
+          "nodeId": "9772717210",
+          "routeIndex": 6197.011777415434,
+          "approximatePassageAt": "2026-10-15T17:48:04.765Z"
+        },
+        {
+          "km": 1184,
+          "nodeId": "6594273708",
+          "routeIndex": 6456.998421431139,
+          "approximatePassageAt": "2026-10-15T18:20:02.394Z"
+        },
+        {
+          "km": 1093,
+          "nodeId": "5325424716",
+          "routeIndex": 6889.003835902585,
+          "approximatePassageAt": "2026-10-15T19:32:24.488Z"
+        },
+        {
+          "km": 1046,
+          "nodeId": "11295106602",
+          "routeIndex": 7328.991314357663,
+          "approximatePassageAt": "2026-10-15T20:09:17.367Z"
+        },
+        {
+          "km": 911,
+          "nodeId": "11838466120",
+          "routeIndex": 8084.983320392729,
+          "approximatePassageAt": "2026-10-15T21:56:51.590Z"
+        },
+        {
+          "km": 803,
+          "nodeId": "75715767",
+          "routeIndex": 8616.00531757426,
+          "approximatePassageAt": "2026-10-15T23:23:16.700Z"
+        },
+        {
+          "km": 636,
+          "nodeId": "7678126300",
+          "routeIndex": 9455.978942709915,
+          "approximatePassageAt": "2026-10-16T01:38:48.568Z"
+        },
+        {
+          "km": 620,
+          "nodeId": "4315323077",
+          "routeIndex": 9563.954875724292,
+          "approximatePassageAt": "2026-10-16T01:50:56.634Z"
+        },
+        {
+          "km": 545,
+          "nodeId": "5818209495",
+          "routeIndex": 10075.71153174208,
+          "approximatePassageAt": "2026-10-16T02:51:23.392Z"
+        },
+        {
+          "km": 515,
+          "nodeId": "3257030196",
+          "routeIndex": 10428.722981887999,
+          "approximatePassageAt": "2026-10-16T03:16:13.403Z"
+        },
+        {
+          "km": 460,
+          "nodeId": "75724804",
+          "routeIndex": 10937.77954466438,
+          "approximatePassageAt": "2026-10-16T04:00:35.895Z"
+        },
+        {
+          "km": 416,
+          "nodeId": "3717382721",
+          "routeIndex": 11187.214566104692,
+          "approximatePassageAt": "2026-10-16T04:37:26.776Z"
+        },
+        {
+          "km": 322,
+          "nodeId": "2431427636",
+          "routeIndex": 11957.330321946496,
+          "approximatePassageAt": "2026-10-16T05:52:44.658Z"
+        },
+        {
+          "km": 228,
+          "nodeId": "5061777372",
+          "routeIndex": 12640.02413231921,
+          "approximatePassageAt": "2026-10-16T07:09:04.181Z"
+        },
+        {
+          "km": 133,
+          "nodeId": "4341143825",
+          "routeIndex": 13392.944946660764,
+          "approximatePassageAt": "2026-10-16T08:24:41.274Z"
+        },
+        {
+          "km": 71,
+          "nodeId": "285903913",
+          "routeIndex": 13805.039491926764,
+          "approximatePassageAt": "2026-10-16T09:10:30.617Z"
+        }
+      ],
+      "a289": {
+        "frames": [
+          "103",
+          "82",
+          "23"
+        ],
+        "originClass": null,
+        "destinationClass": null,
+        "hasEasternM4Proof": true,
+        "limitation": "a289ShortRoute can supply Maryanskaya from M4 proof only when the other trip endpoint already maps to an A289 local endpoint. Two distant trip endpoints remain unresolved even when every A289 frame is crossed."
+      }
+    },
+    {
+      "caseId": "kherson-старая-збурьевка-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-17-15-859Z.json",
+      "captureSha256": "7c9fe0f5914bbad394bae3791f30b99efa9783e90442a53fa36e41f9ef0f996b",
+      "from": {
+        "label": "Стара Збур’ївка — Херсонская область",
+        "position": {
+          "lat": 46.4727289,
+          "lng": 32.420034
+        },
+        "kind": "village",
+        "sourceRequested": "Старая Збурьевка"
+      },
+      "to": {
+        "id": "saint-petersburg-center",
+        "label": "Санкт-Петербург, центр",
+        "position": {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      },
+      "provider": "OSRM",
+      "wholeRouteWindow": {
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "arrivalAt": "2026-10-16T18:19:59.000Z",
+        "resolved": {
+          "status": "unknown",
+          "reason": "crossing_profile_changes"
+        }
+      },
+      "m4SelectedTracePlazas": [
+        {
+          "km": 1223,
+          "nodeId": "9772717210",
+          "routeIndex": 6123.011777415434,
+          "approximatePassageAt": "2026-10-15T16:34:17.419Z"
+        },
+        {
+          "km": 1184,
+          "nodeId": "6594273708",
+          "routeIndex": 6382.998421431139,
+          "approximatePassageAt": "2026-10-15T17:06:09.510Z"
+        },
+        {
+          "km": 1093,
+          "nodeId": "5325424716",
+          "routeIndex": 6815.003835902585,
+          "approximatePassageAt": "2026-10-15T18:18:19.062Z"
+        },
+        {
+          "km": 1046,
+          "nodeId": "11295106602",
+          "routeIndex": 7254.991314357663,
+          "approximatePassageAt": "2026-10-15T18:55:05.549Z"
+        },
+        {
+          "km": 911,
+          "nodeId": "11838466120",
+          "routeIndex": 8010.983320392729,
+          "approximatePassageAt": "2026-10-15T20:42:21.129Z"
+        },
+        {
+          "km": 803,
+          "nodeId": "75715767",
+          "routeIndex": 8542.00531757426,
+          "approximatePassageAt": "2026-10-15T22:08:31.262Z"
+        },
+        {
+          "km": 636,
+          "nodeId": "7678126300",
+          "routeIndex": 9381.978942709915,
+          "approximatePassageAt": "2026-10-16T00:23:39.642Z"
+        },
+        {
+          "km": 620,
+          "nodeId": "4315323077",
+          "routeIndex": 9489.954875724292,
+          "approximatePassageAt": "2026-10-16T00:35:45.605Z"
+        },
+        {
+          "km": 545,
+          "nodeId": "5818209495",
+          "routeIndex": 10001.71153174208,
+          "approximatePassageAt": "2026-10-16T01:36:01.887Z"
+        },
+        {
+          "km": 515,
+          "nodeId": "3257030196",
+          "routeIndex": 10354.722981887999,
+          "approximatePassageAt": "2026-10-16T02:00:47.595Z"
+        },
+        {
+          "km": 460,
+          "nodeId": "75724804",
+          "routeIndex": 10863.77954466438,
+          "approximatePassageAt": "2026-10-16T02:45:02.396Z"
+        },
+        {
+          "km": 416,
+          "nodeId": "3717382721",
+          "routeIndex": 11113.214566104692,
+          "approximatePassageAt": "2026-10-16T03:21:46.891Z"
+        },
+        {
+          "km": 322,
+          "nodeId": "2431427636",
+          "routeIndex": 11883.330321946496,
+          "approximatePassageAt": "2026-10-16T04:36:51.723Z"
+        },
+        {
+          "km": 228,
+          "nodeId": "5061777372",
+          "routeIndex": 12566.02413231921,
+          "approximatePassageAt": "2026-10-16T05:52:58.019Z"
+        },
+        {
+          "km": 133,
+          "nodeId": "4341143825",
+          "routeIndex": 13318.944946660764,
+          "approximatePassageAt": "2026-10-16T07:08:22.007Z"
+        },
+        {
+          "km": 71,
+          "nodeId": "285903913",
+          "routeIndex": 13731.039491926764,
+          "approximatePassageAt": "2026-10-16T07:54:03.409Z"
+        }
+      ],
+      "a289": {
+        "frames": [
+          "103",
+          "82",
+          "23"
+        ],
+        "originClass": null,
+        "destinationClass": null,
+        "hasEasternM4Proof": true,
+        "limitation": "a289ShortRoute can supply Maryanskaya from M4 proof only when the other trip endpoint already maps to an A289 local endpoint. Two distant trip endpoints remain unresolved even when every A289 frame is crossed."
+      }
+    }
+  ],
+  "unmappedPaymentNodes": [],
+  "ckadControl": {
+    "capture": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/krasnodar-spb-ckad-2026-10-15T10-03-48-754Z/capture.json.gz",
+    "resolution": {
+      "status": "unresolved",
+      "candidate": true,
+      "reason": "ckad_arc_length_out_of_range"
+    },
+    "approximateArcKm": 242.4069254519442,
+    "configuredRangeKm": [
+      135,
+      230
+    ],
+    "anchorMatches": [
+      {
+        "anchor": [
+          37.75,
+          55.32
+        ],
+        "index": 8678.98199984593,
+        "distanceKm": 0.2582072246863165
+      },
+      {
+        "anchor": [
+          37.8,
+          55.35
+        ],
+        "index": 8782.99907474431,
+        "distanceKm": 0.1884882220916855
+      },
+      {
+        "anchor": [
+          38.05,
+          55.39
+        ],
+        "index": 9223,
+        "distanceKm": 0.5198528149351491
+      },
+      {
+        "anchor": [
+          38.34,
+          55.53
+        ],
+        "index": 9796.000506323011,
+        "distanceKm": 0.012845154543038816
+      },
+      {
+        "anchor": [
+          38.35,
+          55.65
+        ],
+        "index": 10123,
+        "distanceKm": 0.6163020681902407
+      },
+      {
+        "anchor": [
+          38.46,
+          55.72
+        ],
+        "index": 10331,
+        "distanceKm": 0.12686230725727785
+      },
+      {
+        "anchor": [
+          38.5,
+          55.9
+        ],
+        "index": 10803.061810004092,
+        "distanceKm": 0.021825604424147115
+      },
+      {
+        "anchor": [
+          37.92,
+          56.13
+        ],
+        "index": 11536.000064783831,
+        "distanceKm": 0.013972178913932706
+      },
+      {
+        "anchor": [
+          37.55,
+          56.18
+        ],
+        "index": 11727,
+        "distanceKm": 0.08680883036602755
+      }
+    ],
+    "limitation": "Do not widen the guard before checking exact physical route and whether these audit controls force a detour."
+  }
+}

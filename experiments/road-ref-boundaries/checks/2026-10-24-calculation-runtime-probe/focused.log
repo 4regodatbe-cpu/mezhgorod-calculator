@@ -1,0 +1,23 @@
+✔ runtime report distinguishes successful timing, slow request and HTTP failure (1.170685ms)
+✔ unknown price stays null and cannot be converted into a free/complete total (0.214399ms)
+{"type":"calculation-runtime-summary","status":"PASS","httpStatus":200,"elapsedMs":2.386485999999991,"handlerElapsedMs":50,"targetMs":10000,"overTarget":false,"meters":170000,"seconds":10000,"tollPricingStatus":"priced","tollAmount":620,"tariffIndependentlyVerified":false,"deployedBrowserEndToEnd":false,"importedMs":0.0009310000000084528,"serverTiming":"calc_total;dur=50, routing;dur=30"}
+✔ one injected handler call preserves the complete body and atomic result (11.631271ms)
+{"type":"calculation-runtime-process","status":"PROCESS_TIMEOUT","supervisorElapsedMs":106.93394200000002}
+{"type":"calculation-runtime-process","status":"WORKER_ERROR","supervisorElapsedMs":58.347713999999996}
+{"type":"calculation-runtime-process","status":"WORKER_ERROR","supervisorElapsedMs":60.985634000000005}
+✔ supervisor bounds a stalled child and retains progress; crash cannot pass (231.019953ms)
+{"type":"calculation-runtime-process","status":"PASS","supervisorElapsedMs":61.509906}
+✔ supervisor preserves a completed child result and body (63.910143ms)
+✔ timing preserves values and records overlapping stages without summing request duration (1.171555ms)
+✔ timing preserves original synchronous and asynchronous errors (0.544341ms)
+✔ disabled timing performs no instrumentation (0.18125ms)
+✔ unavailable clocks and loggers cannot break the calculation (0.725391ms)
+✔ backwards clock is unknown and a slow valid request exceeds the target (1.120289ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 430.235343

@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:07:26.625Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 46,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 13,
+    "spec": {
+      "caseId": "zaporizhzhia-кушугум-moscow-center",
+      "kind": "regional",
+      "region": "zaporizhzhia"
+    }
+  },
+  "caseId": "zaporizhzhia-кушугум-moscow-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-07-26-625Z-part13",
+  "parent": "c4ef3746a5cb4b24b92ef9acb4b2503ab1ff1438"
+}

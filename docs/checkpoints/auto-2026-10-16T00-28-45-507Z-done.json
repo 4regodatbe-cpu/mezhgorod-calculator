@@ -1,0 +1,99 @@
+{
+  "at": "2026-10-16T00:28:45.507Z",
+  "phase": "DONE",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 136,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 10,
+    "spec": {
+      "caseId": "single-odintsovo-moscow-to-golitsyno",
+      "kind": "road",
+      "group": "single-odintsovo"
+    }
+  },
+  "caseId": "single-odintsovo-golitsyno-to-moscow",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "single-odintsovo-golitsyno-to-moscow",
+    "startedAt": "2026-10-16T00:28:28.287Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T00-28-29-794Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-moscow/2026-10-16T00-28-29-783Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-28-30-137Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-28-30-467Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "odintsovo"
+      ],
+      "provenRoads": [],
+      "missingExpectedRoads": [
+        "odintsovo"
+      ],
+      "status": "expected-road-not-proven"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: unknown-paid-road",
+        "unknown-paid-road: unmapped_selected_route_paid_edges"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: unknown-paid-road",
+        "unknown-paid-road: unmapped_selected_route_paid_edges"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "unknown-paid-road",
+        "amount": null,
+        "reason": "unmapped_selected_route_paid_edges"
+      }
+    ],
+    "finishedAt": "2026-10-16T00:28:30.482Z"
+  },
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-28-26-949Z-part10",
+  "parent": "9677f1a5d8f3d72a02db1375895215ae08c6335b"
+}

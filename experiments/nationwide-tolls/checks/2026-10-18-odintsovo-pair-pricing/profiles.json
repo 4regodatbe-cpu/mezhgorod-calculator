@@ -1,0 +1,461 @@
+{
+  "completed": [
+    {
+      "caseId": "single-odintsovo-golitsyno-to-rublevo",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "componentAudit": {
+        "status": "unknown",
+        "priced": [
+          "odintsovo"
+        ],
+        "missing": [
+          "ckad"
+        ],
+        "components": [
+          {
+            "id": "ckad",
+            "detected": true,
+            "tolls": null,
+            "reason": "ckad_east_arc_not_proven"
+          },
+          {
+            "id": "odintsovo",
+            "detected": true,
+            "reason": "matrix dated selected-route Odintsovo directed pair at departure",
+            "tolls": {
+              "amount": 700,
+              "weekdayAmount": 700,
+              "weekendAmount": 700,
+              "period": "по времени отправления",
+              "segments": [
+                "Северный обход Одинцова: ПВП 17.7 → 6.9 км · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            }
+          }
+        ]
+      },
+      "api": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: ckad",
+          "ckad: ckad_east_arc_not_proven"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      }
+    },
+    {
+      "caseId": "single-odintsovo-rublevo-to-golitsyno",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "componentAudit": {
+        "status": "priced",
+        "priced": [
+          "odintsovo"
+        ],
+        "missing": [],
+        "components": [
+          {
+            "id": "odintsovo",
+            "detected": true,
+            "reason": "matrix dated selected-route Odintsovo directed pair at departure",
+            "tolls": {
+              "amount": 650,
+              "weekdayAmount": 650,
+              "weekendAmount": 650,
+              "period": "по времени отправления",
+              "segments": [
+                "Северный обход Одинцова: ПВП 6.9 → 17.7 км · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            }
+          }
+        ]
+      },
+      "api": {
+        "amount": 650,
+        "weekdayAmount": 650,
+        "weekendAmount": 650,
+        "period": "по времени отправления",
+        "segments": [
+          "Северный обход Одинцова: ПВП 6.9 → 17.7 км · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      }
+    },
+    {
+      "caseId": "single-odintsovo-golitsyno-to-rublevo",
+      "departureAt": "2026-10-15T23:59:00+03:00",
+      "componentAudit": {
+        "status": "unknown",
+        "priced": [
+          "odintsovo"
+        ],
+        "missing": [
+          "ckad"
+        ],
+        "components": [
+          {
+            "id": "ckad",
+            "detected": true,
+            "tolls": null,
+            "reason": "ckad_east_arc_not_proven"
+          },
+          {
+            "id": "odintsovo",
+            "detected": true,
+            "reason": "matrix dated selected-route Odintsovo directed pair at departure",
+            "tolls": {
+              "amount": 650,
+              "weekdayAmount": 650,
+              "weekendAmount": 650,
+              "period": "по времени отправления",
+              "segments": [
+                "Северный обход Одинцова: ПВП 17.7 → 6.9 км · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            }
+          }
+        ]
+      },
+      "api": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: ckad",
+          "ckad: ckad_east_arc_not_proven"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      }
+    },
+    {
+      "caseId": "single-odintsovo-rublevo-to-golitsyno",
+      "departureAt": "2026-10-15T23:59:00+03:00",
+      "componentAudit": {
+        "status": "priced",
+        "priced": [
+          "odintsovo"
+        ],
+        "missing": [],
+        "components": [
+          {
+            "id": "odintsovo",
+            "detected": true,
+            "reason": "matrix dated selected-route Odintsovo directed pair at departure",
+            "tolls": {
+              "amount": 650,
+              "weekdayAmount": 650,
+              "weekendAmount": 650,
+              "period": "по времени отправления",
+              "segments": [
+                "Северный обход Одинцова: ПВП 6.9 → 17.7 км · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            }
+          }
+        ]
+      },
+      "api": {
+        "amount": 650,
+        "weekdayAmount": 650,
+        "weekendAmount": 650,
+        "period": "по времени отправления",
+        "segments": [
+          "Северный обход Одинцова: ПВП 6.9 → 17.7 км · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      }
+    },
+    {
+      "caseId": "single-odintsovo-golitsyno-to-rublevo",
+      "departureAt": "2026-10-16T17:00:00+03:00",
+      "componentAudit": {
+        "status": "unknown",
+        "priced": [
+          "odintsovo"
+        ],
+        "missing": [
+          "ckad"
+        ],
+        "components": [
+          {
+            "id": "ckad",
+            "detected": true,
+            "tolls": null,
+            "reason": "ckad_east_arc_not_proven"
+          },
+          {
+            "id": "odintsovo",
+            "detected": true,
+            "reason": "matrix dated selected-route Odintsovo directed pair at departure",
+            "tolls": {
+              "amount": 650,
+              "weekdayAmount": 650,
+              "weekendAmount": 650,
+              "period": "по времени отправления",
+              "segments": [
+                "Северный обход Одинцова: ПВП 17.7 → 6.9 км · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            }
+          }
+        ]
+      },
+      "api": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: ckad",
+          "ckad: ckad_east_arc_not_proven"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      }
+    },
+    {
+      "caseId": "single-odintsovo-rublevo-to-golitsyno",
+      "departureAt": "2026-10-16T17:00:00+03:00",
+      "componentAudit": {
+        "status": "priced",
+        "priced": [
+          "odintsovo"
+        ],
+        "missing": [],
+        "components": [
+          {
+            "id": "odintsovo",
+            "detected": true,
+            "reason": "matrix dated selected-route Odintsovo directed pair at departure",
+            "tolls": {
+              "amount": 700,
+              "weekdayAmount": 700,
+              "weekendAmount": 700,
+              "period": "по времени отправления",
+              "segments": [
+                "Северный обход Одинцова: ПВП 6.9 → 17.7 км · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            }
+          }
+        ]
+      },
+      "api": {
+        "amount": 700,
+        "weekdayAmount": 700,
+        "weekendAmount": 700,
+        "period": "по времени отправления",
+        "segments": [
+          "Северный обход Одинцова: ПВП 6.9 → 17.7 км · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      }
+    },
+    {
+      "caseId": "single-odintsovo-golitsyno-to-rublevo",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "componentAudit": {
+        "status": "unknown",
+        "priced": [
+          "odintsovo"
+        ],
+        "missing": [
+          "ckad"
+        ],
+        "components": [
+          {
+            "id": "ckad",
+            "detected": true,
+            "tolls": null,
+            "reason": "ckad_east_arc_not_proven"
+          },
+          {
+            "id": "odintsovo",
+            "detected": true,
+            "reason": "matrix dated selected-route Odintsovo directed pair at departure",
+            "tolls": {
+              "amount": 650,
+              "weekdayAmount": 650,
+              "weekendAmount": 650,
+              "period": "по времени отправления",
+              "segments": [
+                "Северный обход Одинцова: ПВП 17.7 → 6.9 км · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            }
+          }
+        ]
+      },
+      "api": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: ckad",
+          "ckad: ckad_east_arc_not_proven"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      }
+    },
+    {
+      "caseId": "single-odintsovo-rublevo-to-golitsyno",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "componentAudit": {
+        "status": "priced",
+        "priced": [
+          "odintsovo"
+        ],
+        "missing": [],
+        "components": [
+          {
+            "id": "odintsovo",
+            "detected": true,
+            "reason": "matrix dated selected-route Odintsovo directed pair at departure",
+            "tolls": {
+              "amount": 650,
+              "weekdayAmount": 650,
+              "weekendAmount": 650,
+              "period": "по времени отправления",
+              "segments": [
+                "Северный обход Одинцова: ПВП 6.9 → 17.7 км · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            }
+          }
+        ]
+      },
+      "api": {
+        "amount": 650,
+        "weekdayAmount": 650,
+        "weekendAmount": 650,
+        "period": "по времени отправления",
+        "segments": [
+          "Северный обход Одинцова: ПВП 6.9 → 17.7 км · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      }
+    },
+    {
+      "caseId": "single-odintsovo-golitsyno-to-rublevo",
+      "departureAt": "2026-10-18T02:00:00+03:00",
+      "componentAudit": {
+        "status": "unknown",
+        "priced": [
+          "odintsovo"
+        ],
+        "missing": [
+          "ckad"
+        ],
+        "components": [
+          {
+            "id": "ckad",
+            "detected": true,
+            "tolls": null,
+            "reason": "ckad_east_arc_not_proven"
+          },
+          {
+            "id": "odintsovo",
+            "detected": true,
+            "reason": "matrix dated selected-route Odintsovo directed pair at departure",
+            "tolls": {
+              "amount": 20,
+              "weekdayAmount": 20,
+              "weekendAmount": 20,
+              "period": "по времени отправления",
+              "segments": [
+                "Северный обход Одинцова: ПВП 17.7 → 6.9 км · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            }
+          }
+        ]
+      },
+      "api": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: ckad",
+          "ckad: ckad_east_arc_not_proven"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      }
+    },
+    {
+      "caseId": "single-odintsovo-rublevo-to-golitsyno",
+      "departureAt": "2026-10-18T02:00:00+03:00",
+      "componentAudit": {
+        "status": "priced",
+        "priced": [
+          "odintsovo"
+        ],
+        "missing": [],
+        "components": [
+          {
+            "id": "odintsovo",
+            "detected": true,
+            "reason": "matrix dated selected-route Odintsovo directed pair at departure",
+            "tolls": {
+              "amount": 20,
+              "weekdayAmount": 20,
+              "weekendAmount": 20,
+              "period": "по времени отправления",
+              "segments": [
+                "Северный обход Одинцова: ПВП 6.9 → 17.7 км · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            }
+          }
+        ]
+      },
+      "api": {
+        "amount": 20,
+        "weekdayAmount": 20,
+        "weekendAmount": 20,
+        "period": "по времени отправления",
+        "segments": [
+          "Северный обход Одинцова: ПВП 6.9 → 17.7 км · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      }
+    }
+  ],
+  "newConfirmedFullTripFares": 0,
+  "externalRequests": 0
+}

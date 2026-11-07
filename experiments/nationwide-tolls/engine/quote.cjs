@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-require-imports -- This Node .cjs entrypoint intentionally uses CommonJS. */
 const {validDate,fareValidityOnDate}=require('./fare-validity.cjs');
 const registry=require('../TARIFF_SELECTION_REGISTER.json');
 const {matrixProductId}=require('./tariff-product-identity.cjs');

@@ -1,0 +1,61 @@
+{
+  "road": "ckad",
+  "date": "2026-10-15T09:00:00+03:00",
+  "source": "current pure boundary/quote adapters on1–2retainedrecords; not provider/trace/API replay or a mass route audit",
+  "externalRequests": 0,
+  "pricePolicy": "latest retained official price/rule until replaced; neither document age nor an optional lane certificate is a standalone blocker; geometry/product conflicts remain material",
+  "results": [
+    {
+      "caseId": "single-odintsovo-golitsyno-to-rublevo",
+      "capture": {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/2026-10-16T02-07-00-749Z-capture.json.gz",
+        "sha256": "6b774aae7ccc059e02ce7b6b16d9e336c73a635fb3add1f3a0b58949487c64b8",
+        "expectedShaPreviouslyPinned": false
+      },
+      "provider": "OSRM",
+      "meters": 46386,
+      "seconds": 2811,
+      "selectedTraceComplete": true,
+      "physical": {
+        "continuousPaidEdges": [
+          46,
+          53
+        ],
+        "sourceCall": 3,
+        "wayIds": [
+          "1080462756",
+          "1080462754",
+          "1080462753",
+          "1080462751",
+          "1346919149",
+          "1080462767"
+        ],
+        "noIntermediateReentry": true,
+        "scope": "А-113 near Golitsyno; exact operator PK5 coordinate/chainage crosswalk remains missing"
+      },
+      "boundary": {
+        "candidate": false,
+        "exact": false,
+        "traversal": null,
+        "reason": "ckad_east_arc_not_proven"
+      },
+      "quote": null,
+      "coverage": {
+        "core": [
+          "ckad"
+        ],
+        "regional": [
+          {
+            "id": "odintsovo",
+            "reason": "source_bound_selected_route_odintsovo_lane:3109177688; source_bound_selected_route_odintsovo_lane:3783549013"
+          }
+        ]
+      },
+      "status": "BLOCKED_BY_DATA",
+      "missingEvidence": [
+        "official coordinate/OSM-to-chainage boundary proving this exact8edgeblock belongs to toll-freePK5, or the actual payable operator origin/destination pair",
+        "accessible publisher copy of retained PK5 plan2843-р/10.10.2019 or equivalent georeferenced primary boundary; no retry of blocked storage link"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "schema": "stage-g-reconstruction-diagnostic-v1",
+  "title": "Recovered observational comparison records, not original stage G artifacts",
+  "created_at": "2026-10-31",
+  "original_stage_g_commit": "dd3e2ff6ab6ffc7ec10b9630f2d064b32058ca29",
+  "original_stage_g_commit_verified": false,
+  "original_stage_g_component_analysis_recovered_bytewise": false,
+  "original_stage_g_evidence_manifest_recovered_bytewise": false,
+  "source_report": {
+    "path": "source/YANDEX_PAID_ROADS_REPORT_2026-10-31.md",
+    "sha256": "9262482b666455be2a65550e77c88a327d804fd50abe480d8a02e9df53af8f76",
+    "library_url": "https://chatgpt.com/library?file_id=libfile_f111eb19037c8191bec3e3487c4dab25&account_id=personal"
+  },
+  "observation": {
+    "date": "2026-10-31",
+    "departure_mode": "now",
+    "vehicle": "passenger car below 2 meters",
+    "transponder": false,
+    "reported_yandex_currency": "RUB",
+    "comparison_tariff_dates": [
+      "2026-10-15T09:00:00+03:00",
+      "2026-10-17T09:00:00+03:00"
+    ],
+    "tariff_dates_match": false,
+    "polyline_vertex_match_verified": false,
+    "pricing_type": "external_whole_route_estimate_not_operator_tariff",
+    "screenshots": "Displayed in prior Cloud Browser conversation; no independent binary capture in package."
+  },
+  "routes": [
+    {
+      "case_id": "triple-m11-ckad-m12-torzhok-to-kazan",
+      "name": "Торжок → Казань",
+      "from_lat_lon": [
+        57.041,
+        34.962
+      ],
+      "to_lat_lon": [
+        55.7887,
+        49.1221
+      ],
+      "project_distance_km": 1068.385,
+      "yandex_distance_km_approx": 1062.2,
+      "project_estimate_rub": {
+        "weekday": 5904,
+        "saturday": 6084
+      },
+      "yandex_whole_route_rub_approx": null,
+      "yandex_minus_project_rub": null,
+      "route_issue": "Yandex route includes a ferry; displayed no toll amount. No monetary comparison.",
+      "geometry_status": "not_vertex_verified",
+      "yandex_url": "https://yandex.com/maps/?ll=42.042361%2C56.192123&mode=routes&rtd=0&rtext=57.041000%2C34.962000~55.788700%2C49.122100&rtt=auto&ruri=~&z=6"
+    },
+    {
+      "case_id": "pair-m4-m11-krasnodar-to-spb",
+      "name": "Краснодар → Санкт-Петербург, центр",
+      "from_lat_lon": [
+        45.03547,
+        38.975313
+      ],
+      "to_lat_lon": [
+        59.9391,
+        30.3159
+      ],
+      "project_distance_km": 2061.46,
+      "yandex_distance_km_approx": 2060.0,
+      "project_estimate_rub": {
+        "weekday": 10464,
+        "saturday": 12334
+      },
+      "yandex_whole_route_rub_approx": 11070,
+      "yandex_minus_project_rub": {
+        "weekday": 606,
+        "saturday": -1264
+      },
+      "geometry_status": "visible_corridor_similar_0.07_percent_distance_difference_no_vertex_match",
+      "diagnostic_scope": "overall only; do not allocate difference to M4, M11, ZSD",
+      "yandex_url": "https://yandex.com/maps/?ll=35.459232%2C53.131461&mode=routes&rtext=45.035470%2C38.975313~59.939100%2C30.315900&rtt=auto&ruri=~&z=5"
+    },
+    {
+      "case_id": "dnr-гранитное-saint-petersburg-center",
+      "name": "Гранитное → Санкт-Петербург, центр",
+      "from_lat_lon": [
+        47.4593941,
+        37.866983
+      ],
+      "to_lat_lon": [
+        59.9391,
+        30.3159
+      ],
+      "project_distance_km": 1972.786,
+      "yandex_distance_km_approx": 1995.6,
+      "project_estimate_rub": {
+        "weekday": 9534,
+        "saturday": 11184
+      },
+      "yandex_whole_route_rub_approx": 10320,
+      "yandex_minus_project_rub": {
+        "weekday": 786,
+        "saturday": -864
+      },
+      "geometry_status": "visible_corridor_similar_1.16_percent_distance_difference_no_vertex_match",
+      "conditional_group_residual": {
+        "amount_rub": 4376,
+        "known_m11_saturday_components_rub": 5944,
+        "group": "М-4 + ЗСД",
+        "note": "cross-date difference not a road tariff or confirmed route matched pair"
+      },
+      "yandex_url": "https://yandex.com/maps/?ll=35.459232%2C54.026064&mode=routes&rtext=47.459394%2C37.866983~59.939100%2C30.315900&rtt=auto&ruri=~&z=5"
+    },
+    {
+      "case_id": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+      "name": "Арзамас → Приморский проспект Санкт-Петербурга",
+      "from_lat_lon": [
+        55.394,
+        43.84
+      ],
+      "to_lat_lon": [
+        59.982,
+        30.24
+      ],
+      "project_distance_km": 1158.57,
+      "yandex_distance_km_approx": 1174.8,
+      "project_complete_tolls_rub": null,
+      "project_estimated_partial_rub": {
+        "weekday": 6928,
+        "saturday": 7268
+      },
+      "estimated_component_sum_rub": 2654,
+      "estimated_components_rub": {
+        "m12": 1713,
+        "ckad_M7_M11_operator_document_price_but_application_unconfirmed": 941
+      },
+      "m11_head_rub": {
+        "weekday": 280,
+        "saturday": 320
+      },
+      "yandex_whole_route_rub_approx": 9353,
+      "conditional_yandex_minus_project_partial_rub": {
+        "weekday": 2425,
+        "saturday": 2085
+      },
+      "geometry_status": "visible_corridor_similar_1.40_percent_distance_difference_no_exact_entry_exit_match",
+      "unknown_components": "ZSD, unmapped toll component(s), and any other unsupported payment scope; remain null",
+      "ckad_941_provenance": "As reported by Stage H2: operator order No.56 dated 2026-02-27, p.1 category I M7<->M11. Document SHA and exact applicability not reverified in this package.",
+      "yandex_url": "https://yandex.com/maps/?ll=37.051592%2C57.772332&mode=routes&rtd=0&rtext=55.394000%2C43.840000~59.982000%2C30.240000&rtt=auto&ruri=~&z=6"
+    }
+  ],
+  "safety_rules": [
+    "Never assign a conditional residual to an individual road without matched geometry/payment boundaries.",
+    "Do not use current Yandex price as proof for historical tariff date.",
+    "Do not mark 6928/7268 as fully confirmed; 2654 are estimates in Stage E.",
+    "Do not infer exact original Stage G file contents, history, hashes or PASS result from reconstructed files.",
+    "No runtime, tariff matrix, routing or production edits are authorized."
+  ]
+}

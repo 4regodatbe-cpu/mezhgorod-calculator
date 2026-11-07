@@ -1,0 +1,1419 @@
+{
+  "scope": "A289 component only on saved selected geometry; no live calls, whole-route price or baseline update",
+  "cases": 59,
+  "recovered": 57,
+  "unresolved": 2,
+  "previouslyPriced": 0,
+  "rows": [
+    {
+      "caseId": "zaporizhzhia-пришиб-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T17-05-15-213Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-moscow-center/2026-10-15T17-05-15-066Z-capture.json.gz",
+      "captureSha256": "ed2ee4dbc7bc60dade32ef6eb26f7a431aaa09028c132bfe829a96729c323564",
+      "tariffPolicy": null,
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-раденск-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-56-25-468Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-moscow-center/2026-10-15T11-56-25-327Z-capture.json.gz",
+      "captureSha256": "cdb0e406663dd829f29ecb09393468a6fd1e1896665b4aa42f28ae95c1486e5d",
+      "tariffPolicy": null,
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-пришиб-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T17-07-07-419Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-saint-petersburg-center/2026-10-15T17-07-07-263Z-capture.json.gz",
+      "captureSha256": "55137f2633cd2a41328a43093654782c4fb77306adc0a663a616a6c997c3258b",
+      "tariffPolicy": null,
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-раденск-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T11-59-10-667Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-saint-petersburg-center/2026-10-15T11-59-10-514Z-capture.json.gz",
+      "captureSha256": "afb25d1fea5710c0d36c4eaf1ba7ffa1e0b1f50d3d05e3a34676769e58ff4409",
+      "tariffPolicy": null,
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-пришиб-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T18-13-39-894Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пришиб-kazan-center/2026-10-15T18-13-39-642Z-capture.json.gz",
+      "captureSha256": "783997a9e62578074bff0ea8a1abb58de1db19a7165376fd8eb43df9647795bd",
+      "tariffPolicy": null,
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-раденск-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-01-39-761Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kazan-center/2026-10-15T12-01-39-614Z-capture.json.gz",
+      "captureSha256": "d6d6fb9c71a8000bbb9edaf5a069c95339828e0936695fccd2ddc6ff3a44b495",
+      "tariffPolicy": null,
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-молочанск-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T18-22-49-330Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/2026-10-15T18-22-49-183Z-capture.json.gz",
+      "captureSha256": "6b0bb9bbb5c3699f83e41f9098d4c44ab3ce1ed03a356fe379707cfc722c7cf2",
+      "tariffPolicy": null,
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-чулаковка-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-04-20-248Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-moscow-center/2026-10-15T12-04-20-103Z-capture.json.gz",
+      "captureSha256": "069070aa159571c38351ea10d7e7cf3ff146203f7830baa834722412973d9b2f",
+      "tariffPolicy": null,
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-молочанск-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T18-24-25-267Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-saint-petersburg-center/2026-10-15T18-24-25-094Z-capture.json.gz",
+      "captureSha256": "504d3eb43a0126695c2b3693af962b226a0a20212bef66d0d6295133ff26951b",
+      "tariffPolicy": null,
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-чулаковка-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-07-35-633Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-saint-petersburg-center/2026-10-15T12-07-35-510Z-capture.json.gz",
+      "captureSha256": "c657c9727c4e68fdea50f6cb766664705dd48d053b438cd69490d89ba41eecec",
+      "tariffPolicy": null,
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-молочанск-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T18-19-44-320Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-kazan-center/2026-10-15T18-19-44-160Z-capture.json.gz",
+      "captureSha256": "7e70b3852d5cf3d756f31298d6462c5e93dd1e9036b5820b5f507396dc036887",
+      "tariffPolicy": null,
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-чулаковка-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-09-56-128Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/2026-10-15T12-09-56-015Z-capture.json.gz",
+      "captureSha256": "77a7e9dae5bdeb413c8393220ca8c3911929135161f714fb5f044a67a2e9eed6",
+      "tariffPolicy": null,
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "dnr-урзуф-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-12-21-839Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-moscow-center/2026-10-15T12-12-21-705Z-capture.json.gz",
+      "captureSha256": "09883e42fd76c7fe9f90e51c35c18d45ba76d368e0fde1baee9bd12d9e2f91d5",
+      "tariffPolicy": null,
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-старая-збурьевка-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-14-47-222Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-moscow-center/2026-10-15T12-14-47-097Z-capture.json.gz",
+      "captureSha256": "360bde4f11db57e9dd35c3b7d58c03fc5130e77f66b714622ab0ef644596ca08",
+      "tariffPolicy": null,
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "dnr-урзуф-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-15-30-684Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/2026-10-15T12-15-30-557Z-capture.json.gz",
+      "captureSha256": "07a4aa99f441c97af0cf4a1e776a5e89e1586c75caa8e96536aee59ba3c952a1",
+      "tariffPolicy": null,
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-старая-збурьевка-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-17-15-859Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-saint-petersburg-center/2026-10-15T12-17-15-705Z-capture.json.gz",
+      "captureSha256": "7c9fe0f5914bbad394bae3791f30b99efa9783e90442a53fa36e41f9ef0f996b",
+      "tariffPolicy": null,
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-аскания-нова-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-18-27-789Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-kazan-center/2026-10-15T23-18-27-629Z-capture.json.gz",
+      "captureSha256": "8a1ae06d65a40852688c50e3f866ec0266960bd61c78461eb52126fa5271c668",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-аскания-нова-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-25-38-597Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-moscow-center/2026-10-15T23-25-38-460Z-capture.json.gz",
+      "captureSha256": "0445a3d0a85a1081ba57f7c4f653490d8939307ec96d952f0cf9111afb4984a4",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-аскания-нова-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-27-13-176Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-saint-petersburg-center/2026-10-15T23-27-13-024Z-capture.json.gz",
+      "captureSha256": "13c48641c03ee193355fff59e89b3e15365132dd9bdf769f483d21db2c5499cd",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-геническ-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-геническ-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-40-55-383Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-геническ-kazan-center/2026-10-15T23-40-55-226Z-capture.json.gz",
+      "captureSha256": "ee465512091f35456d2ed17fa542eeae0c30fb8e5c8a2ebe53372ea6c9333426",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-геническ-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-геническ-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-41-37-221Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-геническ-moscow-center/2026-10-15T23-41-37-103Z-capture.json.gz",
+      "captureSha256": "7ac29c0fda18ace03652c8f86caf6b7292e89b31e289db9c2c527c2d5c6d14b4",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-геническ-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-геническ-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-42-14-087Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-геническ-saint-petersburg-center/2026-10-15T23-42-13-927Z-capture.json.gz",
+      "captureSha256": "a138bd1f24ed16650d8768fefed1789d254c0dd799701d358f35b90c48f64539",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-каховка-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-каховка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-42-48-478Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-каховка-kazan-center/2026-10-15T23-42-48-320Z-capture.json.gz",
+      "captureSha256": "54c899b91b7c75e0b7191fec23688d1d3b5e976a544b1af63f973479e32a5ae1",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-каховка-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-каховка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-43-32-355Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-каховка-moscow-center/2026-10-15T23-43-32-225Z-capture.json.gz",
+      "captureSha256": "b39c816ec8e4ae4fc7ff0c6f0b7120f84e318aabfcf9785b7f6df859caa75269",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-каховка-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-каховка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-44-10-655Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-каховка-saint-petersburg-center/2026-10-15T23-44-10-492Z-capture.json.gz",
+      "captureSha256": "3aca265504811b7f9b993d80d2263bd6e69a58b7e7e2c1e3132e3965af547c10",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-новая-збурьевка-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-44-45-576Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-kazan-center/2026-10-15T23-44-45-420Z-capture.json.gz",
+      "captureSha256": "ddd794445deacc5bc9abe1028c0d4c1f4225e7082558165505be5a71d13e4312",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-новая-збурьевка-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-45-31-336Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-moscow-center/2026-10-15T23-45-31-211Z-capture.json.gz",
+      "captureSha256": "54337fdd6e3e5986432f5bcdb2b943cc26502e4ff2c377cbdfc171bef5a3b995",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-бердянск-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-52-45-302Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-kazan-center/2026-10-15T23-52-45-140Z-capture.json.gz",
+      "captureSha256": "bd67e7b4d9c7fbecaae0b58e95603a2c45b83879a7a99123a376b9babfb48f4c",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-бердянск-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-53-36-260Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-moscow-center/2026-10-15T23-53-36-130Z-capture.json.gz",
+      "captureSha256": "4f24c5a00e8c4a0206054c7b2802d35a5e66c9009e7bd5280859dee5eefdb142",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-бердянск-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-54-18-028Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-бердянск-saint-petersburg-center/2026-10-15T23-54-17-863Z-capture.json.gz",
+      "captureSha256": "fe92a3e8cdad00471484dffa0c0c4a6a5820f30d3ed397246b86837b97c04e58",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-васильевка-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-54-56-080Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-kazan-center/2026-10-15T23-54-55-920Z-capture.json.gz",
+      "captureSha256": "5c61fc2cf00798bae95882bab21093bf130369edc4b263aa3347643c7cce94b9",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-васильевка-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-55-47-751Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-moscow-center/2026-10-15T23-55-47-612Z-capture.json.gz",
+      "captureSha256": "6c760d7cebb4bbfdd2fbeadbaa4c8c321aac514fb4e63809677fcba853fbca06",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-васильевка-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-56-30-302Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-васильевка-saint-petersburg-center/2026-10-15T23-56-30-142Z-capture.json.gz",
+      "captureSha256": "268ee154391a71ae251ed97cb1cfd00db52b28bb8c4518587656ef6d625676fd",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-кушугум-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-58-06-503Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-kazan-center/2026-10-15T23-58-06-328Z-capture.json.gz",
+      "captureSha256": "6c777b9beb2d89fb0523ed8e47fe8f51c3f945edff4ff2e7fce10db9d0075e9b",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "pair-m4-a289-moscow-to-taman",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-moscow-to-taman/live-2026-10-15T09-00-00-03-00-2026-10-16T00-10-06-923Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-moscow-to-taman/2026-10-16T00-10-06-845Z-capture.json.gz",
+      "captureSha256": "3a49571931bdfe0afedfa1f2bbefff81b6c265dd85ab51fd7e52f1a638c5ab66",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "82",
+        "103"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 selected frame vector has no applicable finished OD price"
+      },
+      "after": {
+        "amount": null,
+        "reason": "A-289 selected frame vector has no applicable finished OD price"
+      },
+      "recovered": false
+    },
+    {
+      "caseId": "dnr-урзуф-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-44-22-264Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-kazan-center/2026-10-16T00-44-22-108Z-capture.json.gz",
+      "captureSha256": "59e6cafced59dd6df58642991c794517bf347cc975c230404f6ef9b7f2fec37f",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-новая-збурьевка-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-47-58-136Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-новая-збурьевка-saint-petersburg-center/2026-10-16T00-47-57-970Z-capture.json.gz",
+      "captureSha256": "7ac13a5e02d62f47a70520c788874bf9f30c93909eb5b7f6038f21898ab3b59a",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-скадовск-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-скадовск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-48-43-508Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-скадовск-kazan-center/2026-10-16T00-48-43-357Z-capture.json.gz",
+      "captureSha256": "89bccff5ee0fd538d51b7003de80578087a43580eeb53ef8c9c0805fe484fc40",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-скадовск-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-скадовск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-49-50-655Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-скадовск-moscow-center/2026-10-16T00-49-50-522Z-capture.json.gz",
+      "captureSha256": "983156b98c3954648f8657a09641f1d68a7b7c24ff2b4145be3955de8ce73b29",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-скадовск-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-скадовск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-50-41-274Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-скадовск-saint-petersburg-center/2026-10-16T00-50-41-110Z-capture.json.gz",
+      "captureSha256": "d28bec0e9c3693d698d0a80e4afdef7e6e2e425a59bc903d0c0c60da662050b7",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-старая-збурьевка-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-51-27-414Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-kazan-center/2026-10-16T00-51-27-256Z-capture.json.gz",
+      "captureSha256": "81bd119029104f90f3f7ac656f9290d59b21a76cda6f9884ebf6e920df58720b",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-таврийск-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-таврийск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-52-40-129Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-таврийск-kazan-center/2026-10-16T00-52-39-971Z-capture.json.gz",
+      "captureSha256": "5eb0effd28e3ba7574acf2eec83632c328faa2a0519a6777a40f3824ee62a5e7",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-таврийск-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-таврийск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-53-48-858Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-таврийск-moscow-center/2026-10-16T00-53-48-722Z-capture.json.gz",
+      "captureSha256": "00f1254039f0ab27f20a1881036b7e701797cd0146f9c597a9ad45824bd5df59",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-таврийск-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-таврийск-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-54-39-480Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-таврийск-saint-petersburg-center/2026-10-16T00-54-39-312Z-capture.json.gz",
+      "captureSha256": "e5dcba11282430e65312f0c865d67945f711088bfd244229c428fc81d9679c3e",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-херсон-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-55-32-402Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-kazan-center/2026-10-16T00-55-32-204Z-capture.json.gz",
+      "captureSha256": "85ab204b645185ca8a4f2ba714866bdc035a6d7c415a005fb9df46b8ee88027b",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-херсон-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-56-51-917Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-moscow-center/2026-10-16T00-56-51-739Z-capture.json.gz",
+      "captureSha256": "e4fd9b7ae01735975a437041ce13e5f058f99d1eb1a5d11ae33f84cc70c96aca",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "kherson-херсон-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-57-49-734Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-saint-petersburg-center/2026-10-16T00-57-49-532Z-capture.json.gz",
+      "captureSha256": "084399bb661097336f40000cbefafd464342e3e80fa6bba4dd01c6ee9bee7910",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-кушугум-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-07-44-562Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-moscow-center/2026-10-16T01-07-44-424Z-capture.json.gz",
+      "captureSha256": "7b6331ed3d6ee24fd611c35a2ef23b50b365052b266f401d6b4ba94d311e7f78",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-кушугум-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-08-40-021Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-saint-petersburg-center/2026-10-16T01-08-39-850Z-capture.json.gz",
+      "captureSha256": "5d84bfd9c1214cc0970571ed60cde2330aca79875240814fb3ef48519550aea8",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-мелитополь-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-09-28-756Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-kazan-center/2026-10-16T01-09-28-600Z-capture.json.gz",
+      "captureSha256": "984eb288611bdb6532f27ed8184cd3ec6b2382c92267c54bbb354be734d435a5",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-мелитополь-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-10-44-352Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-moscow-center/2026-10-16T01-10-44-220Z-capture.json.gz",
+      "captureSha256": "a14e686451916a913c7068418a6b402f2dfcb1a8bf6b45c24e894f12807c7b78",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-мелитополь-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-11-39-016Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-мелитополь-saint-petersburg-center/2026-10-16T01-11-38-856Z-capture.json.gz",
+      "captureSha256": "2f4aed01b70210bfc4e06f73455bc643c1965ca0ebd19c89fca27cae78d609fd",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-пологи-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пологи-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-12-29-542Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пологи-kazan-center/2026-10-16T01-12-29-382Z-capture.json.gz",
+      "captureSha256": "82410be1d748e34217785e28fa2316afbaf367868066e5c8a8e0a95f5f0c86e8",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-пологи-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пологи-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-13-47-337Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пологи-moscow-center/2026-10-16T01-13-47-196Z-capture.json.gz",
+      "captureSha256": "1b01e8344815399f9612640d0f53d2bc4f479a2531ddb9f3b25278403bc3d46a",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-пологи-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пологи-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-14-42-926Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-пологи-saint-petersburg-center/2026-10-16T01-14-42-750Z-capture.json.gz",
+      "captureSha256": "edef1902bdb6fedc14bde45f68a8a981e76b9dc758b79bc325127a399ab9e760",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-токмак-kazan-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-токмак-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-18-31-569Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-токмак-kazan-center/2026-10-16T01-18-31-408Z-capture.json.gz",
+      "captureSha256": "b8d70b92787f6d5df93bc70f2c5067f591fb5c065a8d0c0c204a314a61240fae",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-токмак-moscow-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-токмак-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-19-51-657Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-токмак-moscow-center/2026-10-16T01-19-51-519Z-capture.json.gz",
+      "captureSha256": "b26335058bfca30e15f165fd3f0b84d15163559b31a77096459ba73f37d06556",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "zaporizhzhia-токмак-saint-petersburg-center",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-токмак-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-20-47-870Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-токмак-saint-petersburg-center/2026-10-16T01-20-47-701Z-capture.json.gz",
+      "captureSha256": "b789fc9bb46b4f6973c130788fbaad99a9f4c28c2b1d8b00e534ba22096884ac",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82",
+        "23"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      "after": {
+        "amount": 800,
+        "reason": "A-289 complete ordered three-frame traversal"
+      },
+      "recovered": true
+    },
+    {
+      "caseId": "pair-m4-a289-taman-to-moscow",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T01-40-05-675Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-moscow/2026-10-16T01-40-05-574Z-capture.json.gz",
+      "captureSha256": "84d63ae07de73f59c97340972e96803918c3137ec4c1e6e90603d568ba26f679",
+      "tariffPolicy": {
+        "id": "trip-departure-v1",
+        "basisAt": "2026-10-15T09:00:00+03:00"
+      },
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "frames": [
+        "103",
+        "82"
+      ],
+      "before": {
+        "amount": null,
+        "reason": "A-289 selected frame vector has no applicable finished OD price"
+      },
+      "after": {
+        "amount": null,
+        "reason": "A-289 selected frame vector has no applicable finished OD price"
+      },
+      "recovered": false
+    }
+  ]
+}

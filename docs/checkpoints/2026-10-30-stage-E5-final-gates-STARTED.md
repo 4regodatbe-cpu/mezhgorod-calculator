@@ -1,0 +1,7 @@
+# E5 final prototype acceptance STARTED LOCAL
+
+30.10.2026 MSK; parentf600739f. All E2/E3/E4 outputs local, moduledisabled/no runtime integration, E1mapcontrolsblocked. New5acceptance tests add real-currentmatrix controlled comparable bounds, explicitreversequote, per-road01:00/night/departurecalendars, actualsampleatomicM4/ZSD overlap and blockedmap/productscope refusal. Controlled ambiguity/calendars are not new real saved-route estimates.
+
+Planned one final sequence: combined prototype tests(28), scopedstrictTS/lint, mandatory existing `npm run test:audit` OFFLINE once, projectTS and direct `next build --webpack` once (not pnpm build/doubleaudit). This is the repository code-change gate for a new calculation prototype, not a road/capture/source audit. No liveproviders, workflowdispatch, CIconfig/publication or second fullgate without an actual failure/fix reason. Preserve exact logs/exits; sourceHEAD recorded by local commit after thisSTARTED checkpoint. On failure retain evidence/fixonlyjustifiedprototypefault, no assertion weakening or unsafe activation.
+
+Before final summary: compare app/lib/data/public/scripts/CI/dependencies tosourcee6a8a2fe, ensure no liveimports ofnewmodule, verifygeometry/sourceartifacts, updatesavedreport/WORK_STATE/checkpoint/localcommit and recoverybundle. Do not mark E5DONE until mandatory checks actually finish; no Preview/desktop/mobile browser claim fromstaticmarkup/build. No push/Production/main/Android/backup/PR changes allowed.

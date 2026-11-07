@@ -1,0 +1,100 @@
+{
+  "at": "2026-10-16T01:37:39.830Z",
+  "phase": "DONE",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 89,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 15,
+    "spec": {
+      "caseId": "pair-m4-a289-anapa-to-voronezh",
+      "kind": "road",
+      "group": "pair-m4-a289"
+    }
+  },
+  "caseId": "pair-m12-ckad-murom-to-dmitrov",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "pair-m12-ckad-murom-to-dmitrov",
+    "startedAt": "2026-10-16T01:37:11.056Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-murom-to-dmitrov/live-2026-10-15T09-00-00-03-00-2026-10-16T01-37-13-808Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-murom-to-dmitrov/2026-10-16T01-37-13-778Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-37-14-217Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-37-14-614Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "m12",
+        "ckad"
+      ],
+      "provenRoads": [
+        "m12"
+      ],
+      "missingExpectedRoads": [
+        "ckad"
+      ],
+      "status": "expected-road-not-proven"
+    },
+    "weekday": {
+      "amount": 892,
+      "weekdayAmount": 892,
+      "weekendAmount": 892,
+      "period": "все дни",
+      "segments": [
+        "М-12: murom → vladimir · Стоимость не подтверждена"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "weekend": {
+      "amount": 892,
+      "weekdayAmount": 892,
+      "weekendAmount": 892,
+      "period": "все дни",
+      "segments": [
+        "М-12: murom → vladimir · Стоимость не подтверждена"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "components": [
+      {
+        "id": "m12",
+        "amount": 892,
+        "reason": "matrix dated selected-route M12 directed endpoint pair"
+      }
+    ],
+    "finishedAt": "2026-10-16T01:37:14.632Z"
+  },
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-37-09-503Z-part15",
+  "parent": "1ca30d69dab812b2812c187d4e7ab430716f6bdd"
+}

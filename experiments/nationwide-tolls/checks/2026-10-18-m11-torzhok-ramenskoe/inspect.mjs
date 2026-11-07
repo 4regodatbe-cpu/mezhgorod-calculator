@@ -1,0 +1,18 @@
+import {execFileSync} from 'node:child_process';
+import {gunzipSync} from 'node:zlib';
+import {createHash} from 'node:crypto';
+import {readFileSync,writeFileSync} from 'node:fs';
+import {inspectM11P258Exit} from '@/lib/v3-calculation/m11-p258-exit-boundary.ts';
+import {resolveM11ProductBoundaries} from '@/lib/v3-calculation/m11-product-boundaries.ts';
+import {nearestSegment,haversineKm} from '@/lib/toll-engine/m11-moscow-geometry.ts';
+const sha='c4c60b8987cb2ff44be21df4a0359249c90b5cfb';
+const bytes=execFileSync('git',['cat-file','blob',sha],{timeout:10000,maxBuffer:8*1024*1024});
+if(createHash('sha1').update(Buffer.from(`blob ${bytes.length}\0`)).update(bytes).digest('hex')!==sha)throw Error('blob mismatch');
+const r=JSON.parse(gunzipSync(bytes)).record,v=r.validation,e=r.route.m11RoadEvidence,route=r.route.coordinates;
+const raw='experiments/nationwide-tolls/source-snapshots/m11/2026-10-17-p258-binding/e16194851d1c15e2611d.osm';
+const xml=readFileSync(raw,'utf8');
+const p258=[34.9162673,57.2256978];
+let networkCalls=0;globalThis.fetch=async()=>{networkCalls++;throw Error('network forbidden');};
+const out={status:'DONE',caseId:'pair-m11-ckad-torzhok-to-ramenskoe',sourceCommit:'4067d68f4cb750070b1c022b81105cf7565784f1',captureGitBlob:sha,captureSha256:createHash('sha256').update(bytes).digest('hex'),provider:r.provider,complete:v.complete,boothEventCoverage:v.boothEventCoverage,strictBlocks:e.strictBlocks,selectedGateEvents:v.tollBooths,p258ExitGuard:inspectM11P258Exit(route,e,v),p258GateNearestRoute:nearestSegment(route,[p258]),strictBeginDistanceFromP258Km:haversineKm(e.strictBlocks[0].beginCoordinate,p258),retainedMap:{path:raw,sha256:createHash('sha256').update(xml).digest('hex'),hasSelectedEntryGate:xml.includes('id="5286168661"'),hasOppositeP258Gate:xml.includes('id="5286254520"')},profiles:['2026-10-15T09:00:00+03:00','2026-10-17T09:00:00+03:00'].map(at=>({departureAt:at,result:resolveM11ProductBoundaries(route,r.route.seconds,at,e,v)})),networkCalls,newRoutingRequests:0,newTraceRequests:0,confirmedWholeTripFares:0,runtimeChanged:false,outcome:'blocked_by_missing_reliable_entry_binding',nextAction:'Bind exact selected gate 5286168661 / way766468434 and its directed paid continuation to an operator tariff boundary. Do not infer p258 or another tariff point from the city label.'};
+if(!v.complete||v.boothEventCoverage!=='complete'||out.p258ExitGuard||out.profiles.some(p=>p.result.resolved))throw Error('unexpected evidence');
+writeFileSync(new URL('./result.json',import.meta.url),JSON.stringify(out,null,2)+'\n');console.log(JSON.stringify(out));

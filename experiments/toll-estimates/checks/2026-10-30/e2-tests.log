@@ -1,0 +1,18 @@
+✔ E2 disabled module passes strict object through without activating estimates (1.38006ms)
+✔ E2 fully confirmed complete route retains exact total (1.730957ms)
+✔ E2 one and multiple working estimates mark only the complete toll total as estimated (0.521346ms)
+✔ E2 mixed roads sum confirmed and estimated components without relabelling strict input (0.311608ms)
+✔ E2 insufficient product data never turns known subtotal into a full total (0.787072ms)
+✔ E2 comparable upper bound requires a documented exhaustive same-product candidate set (0.518678ms)
+✔ E2 incompatible road direction category payment product profile or date cannot be a convenient estimate (1.841605ms)
+✔ E2 duplicate and aggregate-overlap protection rejects double charging (0.34702ms)
+✔ E2 unsafe route scope malformed date and unknown zero remain insufficient (0.302613ms)
+✔ E2 confirmed strict conflict and unsafe arithmetic never overwrite an existing confirmed calculation (0.453849ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 214.835176

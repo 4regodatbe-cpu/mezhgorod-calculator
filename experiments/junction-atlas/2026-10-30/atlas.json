@@ -1,0 +1,1451 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-30",
+  "timezone": "Europe/Moscow",
+  "scope": "local research atlas; not runtime tariff input or all-road completion",
+  "sourceHead": "f29c83784c794dc77e4d9805465cab444d9d3e47",
+  "publishedHead": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+  "pr": {
+    "number": 14,
+    "draft": true,
+    "merged": false,
+    "verification": "Connector re-read before final local consolidation"
+  },
+  "counters": {
+    "completedBoundedResearchBlocks": 6,
+    "pointRecords": 32,
+    "geographicInterchangeApproaches": 6,
+    "entries": 2,
+    "exits": 4,
+    "approachesWithUnresolvedCurrentMapCompatibility": 2,
+    "retainedAcceptedWorkingVectorsIndexed": 2,
+    "newOperatorTariffBindings": 0,
+    "newPrices": 0,
+    "newFunctionalTariffBlockersClosed": 0,
+    "targetedAtlasChecks": 15,
+    "checksFailed": 0,
+    "yandexRouteControls": 8,
+    "shortControls": 6,
+    "detourConflicts": 2,
+    "osmPrimaryRequests": 5,
+    "osmRasterViews": 5,
+    "newValhallaOsrmBrouterRequests": 0
+  },
+  "counterMeaning": {
+    "interchanges": "Physical approach records, not six independently proven current legal turns or full operator tariff pairs.",
+    "pointRecords": "Includes plazas, gantries, source way endpoints and technical nodes; not32interchanges.",
+    "existingVectors": "One retained M4 compound320/410 working vector using two products, plus existing ZSD600 finished pair; no newly admitted tariff."
+  },
+  "caseFiles": [
+    {
+      "name": "m4",
+      "path": "experiments/junction-atlas/2026-10-30/m4.json",
+      "sha256": "9682ff8fe4ac328390d98062c7ddc5e542f67b6583fa59f8902fc34366500c49",
+      "pointRecords": 11
+    },
+    {
+      "name": "zsd",
+      "path": "experiments/junction-atlas/2026-10-30/zsd.json",
+      "sha256": "a7d9559e14412bcbc5c86bf2402bb6938184bd423bc25f707a892c539ae6bbc5",
+      "pointRecords": 5
+    },
+    {
+      "name": "m12",
+      "path": "experiments/junction-atlas/2026-10-30/m12.json",
+      "sha256": "99bed23986c41d33d06e3372b88d2834b5df7191101bfa0aa71e9aaf49783c00",
+      "pointRecords": 6
+    },
+    {
+      "name": "m11",
+      "path": "experiments/junction-atlas/2026-10-30/m11.json",
+      "sha256": "dccbacf380e97d404041a2058c7ae6efc838ed1529e84deef3075c8ab91d181f",
+      "pointRecords": 4
+    },
+    {
+      "name": "ckad",
+      "path": "experiments/junction-atlas/2026-10-30/ckad.json",
+      "sha256": "0743839460629f7f6906f29cdce5dba611010a90e55bb309caa0b4759e93eae0",
+      "pointRecords": 3
+    },
+    {
+      "name": "zsd-extended",
+      "path": "experiments/junction-atlas/2026-10-30/zsd-extended.json",
+      "sha256": "9e13c6afa09a04769aae114407203295477d9692cb1e35dd43fd8e487564cf9f",
+      "pointRecords": 3
+    }
+  ],
+  "points": [
+    {
+      "id": "m4-4522140254",
+      "road": "M4",
+      "kind": "technical",
+      "title": "Разделение трёх северных ветвей у Калина Ойл",
+      "position": {
+        "lat": 51.4679181,
+        "lon": 39.554631
+      },
+      "coordinateSource": {
+        "path": "experiments/tariff-proof-selection/m4-545-directed-osm.json",
+        "nodeId": "4522140254",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "northbound",
+      "osm": {
+        "nodeId": "4522140254",
+        "wayIds": [
+          "799492317",
+          "799492326",
+          "522875739"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.554631%2C51.4679181&z=18&pt=39.554631%2C51.4679181%2Cpm2rdm",
+      "operatorScheme": "experiments/tariff-proof-selection/M4_545_ENGINEERING_CROSSWALK.md",
+      "evidence": {
+        "visual": "locality corroboration only; exact lane/coordinate comes from retained OSM, not browser canvas",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding.",
+      "caseFile": "experiments/junction-atlas/2026-10-30/m4.json"
+    },
+    {
+      "id": "m4-5818209495",
+      "road": "M4",
+      "kind": "plaza",
+      "title": "ПВП545, южная северная кассовая ветвь в обходной коридор",
+      "position": {
+        "lat": 51.4702718,
+        "lon": 39.554704
+      },
+      "coordinateSource": {
+        "path": "experiments/tariff-proof-selection/m4-545-directed-osm.json",
+        "nodeId": "5818209495",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "northbound",
+      "osm": {
+        "nodeId": "5818209495",
+        "wayIds": [
+          "615270691"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.554704%2C51.4702718&z=18&pt=39.554704%2C51.4702718%2Cpm2rdm",
+      "operatorScheme": "experiments/tariff-proof-selection/M4_545_ENGINEERING_CROSSWALK.md",
+      "evidence": {
+        "visual": "locality corroboration only; exact lane/coordinate comes from retained OSM, not browser canvas",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding.",
+      "caseFile": "experiments/junction-atlas/2026-10-30/m4.json"
+    },
+    {
+      "id": "m4-3504914294",
+      "road": "M4",
+      "kind": "plaza",
+      "title": "ПВП545, северная кассовая ветвь",
+      "position": {
+        "lat": 51.4736578,
+        "lon": 39.5548118
+      },
+      "coordinateSource": {
+        "path": "experiments/tariff-proof-selection/m4-545-directed-osm.json",
+        "nodeId": "3504914294",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "northbound",
+      "osm": {
+        "nodeId": "3504914294",
+        "wayIds": [
+          "606838738"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.5548118%2C51.4736578&z=18&pt=39.5548118%2C51.4736578%2Cpm2rdm",
+      "operatorScheme": "experiments/tariff-proof-selection/M4_545_ENGINEERING_CROSSWALK.md",
+      "evidence": {
+        "visual": "locality corroboration only; exact lane/coordinate comes from retained OSM, not browser canvas",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding.",
+      "caseFile": "experiments/junction-atlas/2026-10-30/m4.json"
+    },
+    {
+      "id": "m4-9620416636",
+      "road": "M4",
+      "kind": "plaza",
+      "title": "ПВП545, соседняя ветвь к старому коридору",
+      "position": {
+        "lat": 51.4702571,
+        "lon": 39.5543533
+      },
+      "coordinateSource": {
+        "path": "experiments/tariff-proof-selection/m4-545-directed-osm.json",
+        "nodeId": "9620416636",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "northbound",
+      "osm": {
+        "nodeId": "9620416636",
+        "wayIds": [
+          "467980114"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.5543533%2C51.4702571&z=18&pt=39.5543533%2C51.4702571%2Cpm2rdm",
+      "operatorScheme": "experiments/tariff-proof-selection/M4_545_ENGINEERING_CROSSWALK.md",
+      "evidence": {
+        "visual": "locality corroboration only; exact lane/coordinate comes from retained OSM, not browser canvas",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding.",
+      "caseFile": "experiments/junction-atlas/2026-10-30/m4.json"
+    },
+    {
+      "id": "m4-365274796",
+      "road": "M4",
+      "kind": "plaza",
+      "title": "ПВП545, противоположное направление старого коридора",
+      "position": {
+        "lat": 51.4702443,
+        "lon": 39.5539863
+      },
+      "coordinateSource": {
+        "path": "experiments/tariff-proof-selection/m4-545-directed-osm.json",
+        "nodeId": "365274796",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "southbound",
+      "osm": {
+        "nodeId": "365274796",
+        "wayIds": [
+          "467980112"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.5539863%2C51.4702443&z=18&pt=39.5539863%2C51.4702443%2Cpm2rdm",
+      "operatorScheme": "experiments/tariff-proof-selection/M4_545_ENGINEERING_CROSSWALK.md",
+      "evidence": {
+        "visual": "locality corroboration only; exact lane/coordinate comes from retained OSM, not browser canvas",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding.",
+      "caseFile": "experiments/junction-atlas/2026-10-30/m4.json"
+    },
+    {
+      "id": "m4-6594393968",
+      "road": "M4",
+      "kind": "plaza",
+      "title": "ПВП545, южная группа противоположного направления",
+      "position": {
+        "lat": 51.4702271,
+        "lon": 39.5536991
+      },
+      "coordinateSource": {
+        "path": "experiments/tariff-proof-selection/m4-545-directed-osm.json",
+        "nodeId": "6594393968",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "southbound",
+      "osm": {
+        "nodeId": "6594393968",
+        "wayIds": [
+          "702218804"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.5536991%2C51.4702271&z=18&pt=39.5536991%2C51.4702271%2Cpm2rdm",
+      "operatorScheme": "experiments/tariff-proof-selection/M4_545_ENGINEERING_CROSSWALK.md",
+      "evidence": {
+        "visual": "locality corroboration only; exact lane/coordinate comes from retained OSM, not browser canvas",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding.",
+      "caseFile": "experiments/junction-atlas/2026-10-30/m4.json"
+    },
+    {
+      "id": "m4-3842564088",
+      "road": "M4",
+      "kind": "plaza",
+      "title": "ПВП545, северная группа противоположного направления",
+      "position": {
+        "lat": 51.4738083,
+        "lon": 39.553241
+      },
+      "coordinateSource": {
+        "path": "experiments/tariff-proof-selection/m4-545-directed-osm.json",
+        "nodeId": "3842564088",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "southbound",
+      "osm": {
+        "nodeId": "3842564088",
+        "wayIds": [
+          "702218806"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.553241%2C51.4738083&z=18&pt=39.553241%2C51.4738083%2Cpm2rdm",
+      "operatorScheme": "experiments/tariff-proof-selection/M4_545_ENGINEERING_CROSSWALK.md",
+      "evidence": {
+        "visual": "locality corroboration only; exact lane/coordinate comes from retained OSM, not browser canvas",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding.",
+      "caseFile": "experiments/junction-atlas/2026-10-30/m4.json"
+    },
+    {
+      "id": "m4-4513805004",
+      "road": "M4",
+      "kind": "technical",
+      "title": "Общее слияние двух северных ветвей в обходной коридор",
+      "position": {
+        "lat": 51.4757199,
+        "lon": 39.5552263
+      },
+      "coordinateSource": {
+        "path": "experiments/tariff-proof-selection/m4-545-directed-osm.json",
+        "nodeId": "4513805004",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "northbound",
+      "osm": {
+        "nodeId": "4513805004",
+        "wayIds": [
+          "799492323",
+          "1043769288",
+          "702218808"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.5552263%2C51.4757199&z=18&pt=39.5552263%2C51.4757199%2Cpm2rdm",
+      "operatorScheme": "experiments/tariff-proof-selection/M4_545_ENGINEERING_CROSSWALK.md",
+      "evidence": {
+        "visual": "locality corroboration only; exact lane/coordinate comes from retained OSM, not browser canvas",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding.",
+      "caseFile": "experiments/junction-atlas/2026-10-30/m4.json"
+    },
+    {
+      "id": "m4-4512436102",
+      "road": "M4",
+      "kind": "technical",
+      "title": "Отдельный выход северной ветви к старому коридору",
+      "position": {
+        "lat": 51.4739566,
+        "lon": 39.55394
+      },
+      "coordinateSource": {
+        "path": "experiments/tariff-proof-selection/m4-545-directed-osm.json",
+        "nodeId": "4512436102",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "northbound",
+      "osm": {
+        "nodeId": "4512436102",
+        "wayIds": [
+          "1043769285",
+          "454710293"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.55394%2C51.4739566&z=18&pt=39.55394%2C51.4739566%2Cpm2rdm",
+      "operatorScheme": "experiments/tariff-proof-selection/M4_545_ENGINEERING_CROSSWALK.md",
+      "evidence": {
+        "visual": "locality corroboration only; exact lane/coordinate comes from retained OSM, not browser canvas",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding.",
+      "caseFile": "experiments/junction-atlas/2026-10-30/m4.json"
+    },
+    {
+      "id": "m4-3057885096",
+      "road": "M4",
+      "kind": "technical",
+      "title": "Начало подтверждённого соединительного съезда М4 к Р-298",
+      "position": {
+        "lat": 51.6449648,
+        "lon": 39.314027
+      },
+      "coordinateSource": {
+        "path": "experiments/junction-atlas/2026-10-30/raw/m4-r298-way301694367-full.json",
+        "nodeId": "3057885096",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»: обходной и старый коридоры"
+      ],
+      "interchangeName": null,
+      "direction": "northbound_to_west",
+      "osm": {
+        "nodeId": "3057885096",
+        "wayIds": [
+          "1044709392",
+          "301694367"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.314027%2C51.6449648&z=18&pt=39.314027%2C51.6449648%2Cpm2rdm",
+      "operatorScheme": null,
+      "evidence": {
+        "visual": "not independently viewed on a map in this block; original OSM node/way only",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding.",
+      "caseFile": "experiments/junction-atlas/2026-10-30/m4.json"
+    },
+    {
+      "id": "m4-3057885104",
+      "road": "M4",
+      "kind": "exit",
+      "title": "Конец съезда с М4 к Р-298, Курск/Воронеж",
+      "position": {
+        "lat": 51.6462483,
+        "lon": 39.3099156
+      },
+      "coordinateSource": {
+        "path": "experiments/junction-atlas/2026-10-30/raw/m4-r298-way301694367-full.json",
+        "nodeId": "3057885104",
+        "meaning": "original OSM node, not pixel-derived or official tariff chainage"
+      },
+      "crossingRoads": [
+        "М-4 «Дон»",
+        "Р-298"
+      ],
+      "interchangeName": null,
+      "direction": "northbound_to_west",
+      "osm": {
+        "nodeId": "3057885104",
+        "wayIds": [
+          "301694367",
+          "705714822"
+        ]
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.3099156%2C51.6462483&z=18&pt=39.3099156%2C51.6462483%2Cpm2rdm",
+      "operatorScheme": null,
+      "evidence": {
+        "visual": "not independently viewed on a map in this block; original OSM node/way only",
+        "directed": "one-way graph/selected route as referenced by connections",
+        "operatorBoundary": "not established by this point alone"
+      },
+      "tariffPair": null,
+      "tariffReason": "Point/plaza is not a unique charge product; see applicable complete directed route binding.",
+      "caseFile": "experiments/junction-atlas/2026-10-30/m4.json"
+    },
+    {
+      "id": "zsd-10270133471",
+      "road": "ZSD",
+      "kind": "entry",
+      "title": "Начало сохранённого соединительного въезда с КАДюг",
+      "position": {
+        "lat": 59.8359361,
+        "lon": 30.2805497
+      },
+      "direction": "northbound",
+      "crossingRoads": [
+        "А-118/КАД (юг)",
+        "ЗСД"
+      ],
+      "osm": {
+        "nodeId": "10270133471",
+        "wayIds": [
+          "1122966006"
+        ]
+      },
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/selected-paid-nodes.osm.gz",
+        "field": "osm/node[@id=\"10270133471\"]/@lat,@lon"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=30.2805497%2C59.8359361&z=18",
+      "evidence": {
+        "visual": "not independently viewed at this point",
+        "directed": "exact source OSM one-way order plus retained selected-trace witness",
+        "operatorBoundary": "existing complete vector only; point alone is not a tariff endpoint"
+      },
+      "operatorScheme": "experiments/tariff-proof-selection/ZSD_EXPERIMENT6_SOURCE_REVIEW.md",
+      "tariffPair": null,
+      "tariffReason": "Use complete reviewed entry→exit vector, not an isolated node/plaza count.",
+      "caseFile": "experiments/junction-atlas/2026-10-30/zsd.json"
+    },
+    {
+      "id": "zsd-1833109726",
+      "road": "ZSD",
+      "kind": "technical",
+      "title": "Конец сохранённого соединительного въезда",
+      "position": {
+        "lat": 59.836389,
+        "lon": 30.2807444
+      },
+      "direction": "northbound",
+      "crossingRoads": [
+        "КАДюг",
+        "ЗСД"
+      ],
+      "osm": {
+        "nodeId": "1833109726",
+        "wayIds": [
+          "1122966006"
+        ]
+      },
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/selected-paid-nodes.osm.gz",
+        "field": "osm/node[@id=\"1833109726\"]/@lat,@lon"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=30.2807444%2C59.836389&z=18",
+      "evidence": {
+        "visual": "not independently viewed at this point",
+        "directed": "exact source OSM one-way order plus retained selected-trace witness",
+        "operatorBoundary": "existing complete vector only; point alone is not a tariff endpoint"
+      },
+      "operatorScheme": "experiments/tariff-proof-selection/ZSD_EXPERIMENT6_SOURCE_REVIEW.md",
+      "tariffPair": null,
+      "tariffReason": "Use complete reviewed entry→exit vector, not an isolated node/plaza count.",
+      "caseFile": "experiments/junction-atlas/2026-10-30/zsd.json"
+    },
+    {
+      "id": "zsd-933974870",
+      "road": "ZSD",
+      "kind": "plaza",
+      "title": "ПВП5 — номер подтверждён OSM, не новым операторским перечнем",
+      "position": {
+        "lat": 59.872213,
+        "lon": 30.2955029
+      },
+      "direction": "northbound",
+      "crossingRoads": [
+        "ЗСД"
+      ],
+      "osm": {
+        "nodeId": "933974870",
+        "wayIds": [
+          "381576632"
+        ]
+      },
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/selected-paid-nodes.osm.gz",
+        "field": "osm/node[@id=\"933974870\"]/@lat,@lon"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=30.2955029%2C59.872213&z=18",
+      "evidence": {
+        "visual": "not independently viewed at this point",
+        "directed": "exact source OSM one-way order plus retained selected-trace witness",
+        "operatorBoundary": "existing complete vector only; point alone is not a tariff endpoint"
+      },
+      "operatorScheme": "experiments/tariff-proof-selection/ZSD_EXPERIMENT6_SOURCE_REVIEW.md",
+      "tariffPair": null,
+      "tariffReason": "Use complete reviewed entry→exit vector, not an isolated node/plaza count.",
+      "caseFile": "experiments/junction-atlas/2026-10-30/zsd.json"
+    },
+    {
+      "id": "zsd-1339782267",
+      "road": "ZSD",
+      "kind": "technical",
+      "title": "Начало направленного выхода к Екатерингофке",
+      "position": {
+        "lat": 59.9004241,
+        "lon": 30.2467344
+      },
+      "direction": "northbound",
+      "crossingRoads": [
+        "ЗСД",
+        "набережная реки Екатерингофки"
+      ],
+      "osm": {
+        "nodeId": "1339782267",
+        "wayIds": [
+          "183902370"
+        ]
+      },
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/exit-way183902370.osm",
+        "field": "osm/node[@id=\"1339782267\"]/@lat,@lon"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=30.2467344%2C59.9004241&z=18",
+      "evidence": {
+        "visual": "exit-area map corroboration only",
+        "directed": "exact source OSM one-way order plus retained selected-trace witness",
+        "operatorBoundary": "existing complete vector only; point alone is not a tariff endpoint"
+      },
+      "operatorScheme": "experiments/tariff-proof-selection/ZSD_EXPERIMENT6_SOURCE_REVIEW.md",
+      "tariffPair": null,
+      "tariffReason": "Use complete reviewed entry→exit vector, not an isolated node/plaza count.",
+      "caseFile": "experiments/junction-atlas/2026-10-30/zsd.json"
+    },
+    {
+      "id": "zsd-25893875",
+      "road": "ZSD",
+      "kind": "exit",
+      "title": "Конец направленного выхода к Екатерингофке",
+      "position": {
+        "lat": 59.9023393,
+        "lon": 30.2493057
+      },
+      "direction": "northbound",
+      "crossingRoads": [
+        "ЗСД",
+        "набережная реки Екатерингофки"
+      ],
+      "osm": {
+        "nodeId": "25893875",
+        "wayIds": [
+          "183902370"
+        ]
+      },
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/exit-way183902370.osm",
+        "field": "osm/node[@id=\"25893875\"]/@lat,@lon"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=30.2493057%2C59.9023393&z=18",
+      "evidence": {
+        "visual": "exit-area map corroboration only",
+        "directed": "exact source OSM one-way order plus retained selected-trace witness",
+        "operatorBoundary": "existing complete vector only; point alone is not a tariff endpoint"
+      },
+      "operatorScheme": "experiments/tariff-proof-selection/ZSD_EXPERIMENT6_SOURCE_REVIEW.md",
+      "tariffPair": null,
+      "tariffReason": "Use complete reviewed entry→exit vector, not an isolated node/plaza count.",
+      "caseFile": "experiments/junction-atlas/2026-10-30/zsd.json"
+    },
+    {
+      "id": "M12-14102954884",
+      "road": "M12",
+      "kind": "technical",
+      "title": "Узел примыкания съезда к М12; текущая доступность не разрешена доказательствами",
+      "position": {
+        "lat": 55.5006404,
+        "lon": 43.5669594
+      },
+      "direction": "retained_selected_M12_to_22Н-0239",
+      "osm": {
+        "nodeId": "14102954884",
+        "wayIds": [
+          "1550561305"
+        ]
+      },
+      "crossingRoads": [
+        "М-12 «Восток»",
+        "22Н-0239"
+      ],
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/c0ab136d60afb7d92ae6.osm",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=43.5669594%2C55.5006404&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "ramp-area raster only, not legal motorway-turn proof",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "caseFile": "experiments/junction-atlas/2026-10-30/m12.json"
+    },
+    {
+      "id": "M12-14102954883",
+      "road": "M12",
+      "kind": "technical",
+      "title": "Промежуточный исходный узел съезда",
+      "position": {
+        "lat": 55.499593,
+        "lon": 43.5665522
+      },
+      "direction": "retained_selected_M12_to_22Н-0239",
+      "osm": {
+        "nodeId": "14102954883",
+        "wayIds": [
+          "1550561305"
+        ]
+      },
+      "crossingRoads": [
+        "М-12 «Восток»",
+        "22Н-0239"
+      ],
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/c0ab136d60afb7d92ae6.osm",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=43.5665522%2C55.4995930&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "ramp-area raster only, not legal motorway-turn proof",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "caseFile": "experiments/junction-atlas/2026-10-30/m12.json"
+    },
+    {
+      "id": "M12-10090995838",
+      "road": "M12",
+      "kind": "exit",
+      "title": "Соединение сохранённого съезда с22Н-0239",
+      "position": {
+        "lat": 55.4981795,
+        "lon": 43.5658384
+      },
+      "direction": "retained_selected_M12_to_22Н-0239",
+      "osm": {
+        "nodeId": "10090995838",
+        "wayIds": [
+          "1550561305"
+        ]
+      },
+      "crossingRoads": [
+        "М-12 «Восток»",
+        "22Н-0239"
+      ],
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/c0ab136d60afb7d92ae6.osm",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=43.5658384%2C55.4981795&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "ramp-area raster only, not legal motorway-turn proof",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "caseFile": "experiments/junction-atlas/2026-10-30/m12.json"
+    },
+    {
+      "id": "M12-10782165529",
+      "road": "M12",
+      "kind": "technical",
+      "title": "Западная регистрационная рамка; операторскийID неизвестен",
+      "position": {
+        "lat": 55.8259863,
+        "lon": 38.7402523
+      },
+      "direction": "not assigned from node alone",
+      "osm": {
+        "nodeId": "10782165529",
+        "wayIds": []
+      },
+      "crossingRoads": [
+        "М-12"
+      ],
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/e421784129ac6308b39c.osm",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=38.7402523%2C55.8259863&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "operatorRegistrationId": null,
+      "caseFile": "experiments/junction-atlas/2026-10-30/m12.json"
+    },
+    {
+      "id": "M12-11214930528",
+      "road": "M12",
+      "kind": "technical",
+      "title": "Западная регистрационная рамка; операторскийID неизвестен",
+      "position": {
+        "lat": 55.9090383,
+        "lon": 39.2843314
+      },
+      "direction": "not assigned from node alone",
+      "osm": {
+        "nodeId": "11214930528",
+        "wayIds": []
+      },
+      "crossingRoads": [
+        "М-12"
+      ],
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/1f1c1ebc00b9a06c10ea.osm",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.2843314%2C55.9090383&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "operatorRegistrationId": null,
+      "caseFile": "experiments/junction-atlas/2026-10-30/m12.json"
+    },
+    {
+      "id": "M12-11157985901",
+      "road": "M12",
+      "kind": "technical",
+      "title": "Западная регистрационная рамка; операторскийID неизвестен",
+      "position": {
+        "lat": 56.0659396,
+        "lon": 40.084432
+      },
+      "direction": "not assigned from node alone",
+      "osm": {
+        "nodeId": "11157985901",
+        "wayIds": []
+      },
+      "crossingRoads": [
+        "М-12"
+      ],
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/039cfde37fa14ee9ffff.osm",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=40.0844320%2C56.0659396&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "operatorRegistrationId": null,
+      "caseFile": "experiments/junction-atlas/2026-10-30/m12.json"
+    },
+    {
+      "id": "M11-8087316065",
+      "road": "M11",
+      "kind": "entry",
+      "title": "ПВП18 ЦКАД47; не виртуальная58",
+      "position": {
+        "lat": 56.0910646,
+        "lon": 37.2128116
+      },
+      "direction": "CKAD_approach_toward_M11_northbound",
+      "osm": {
+        "nodeId": "8087316065",
+        "wayIds": [
+          "954011576"
+        ]
+      },
+      "crossingRoads": [
+        "ЦКАД",
+        "М-11"
+      ],
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-entry/node8087316065.osm",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=37.2128116%2C56.0910646&z=18",
+      "operatorScheme": "experiments/nationwide-tolls/source-documents/m11-head-passage-rules-retrieved-2026-10-14.pdf#page=5",
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "operatorFacilityIdentity": "ПВП18 ЦКАД — подъезд к пусковому комплексу3 ЦКАД, примыкающий к М11 на47км; отличен отММК48/50.",
+      "caseFile": "experiments/junction-atlas/2026-10-30/m11.json"
+    },
+    {
+      "id": "M11-3566326245",
+      "road": "M11",
+      "kind": "technical",
+      "title": "Merge со стороныЦКАД на М11",
+      "position": {
+        "lat": 56.0888728,
+        "lon": 37.2016452
+      },
+      "direction": "toward_M11_northbound",
+      "osm": {
+        "nodeId": "3566326245",
+        "wayIds": [
+          "791520973",
+          "1270188032"
+        ]
+      },
+      "crossingRoads": [
+        "ЦКАД",
+        "М-11"
+      ],
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-entry/way1270188032.osm",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=37.2016452%2C56.0888728&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "caseFile": "experiments/junction-atlas/2026-10-30/m11.json"
+    },
+    {
+      "id": "M11-6588472831",
+      "road": "M11",
+      "kind": "plaza",
+      "title": "Воскресенское147, выходная северного маршрута касса",
+      "position": {
+        "lat": 56.7331188,
+        "lon": 36.2530645
+      },
+      "direction": "from_M11_northbound_to_M10",
+      "osm": {
+        "nodeId": "6588472831",
+        "wayIds": [
+          "1307036920"
+        ]
+      },
+      "crossingRoads": [
+        "М-11",
+        "М-10"
+      ],
+      "coordinateSource": {
+        "path": "experiments/junction-atlas/2026-10-30/raw/m11-exit-way1307036920-full.json",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=36.2530645%2C56.7331188&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "caseFile": "experiments/junction-atlas/2026-10-30/m11.json"
+    },
+    {
+      "id": "M11-5878125873",
+      "road": "M11",
+      "kind": "technical",
+      "title": "Конец кассовой части съезда, не конечный узел М10",
+      "position": {
+        "lat": 56.7317488,
+        "lon": 36.2592182
+      },
+      "direction": "from_M11_northbound_to_M10",
+      "osm": {
+        "nodeId": "5878125873",
+        "wayIds": [
+          "1307036920"
+        ]
+      },
+      "crossingRoads": [
+        "М-11",
+        "М-10"
+      ],
+      "coordinateSource": {
+        "path": "experiments/junction-atlas/2026-10-30/raw/m11-exit-way1307036920-full.json",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=36.2592182%2C56.7317488&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "caseFile": "experiments/junction-atlas/2026-10-30/m11.json"
+    },
+    {
+      "id": "CKAD-9903493812",
+      "road": "CKAD",
+      "kind": "technical",
+      "title": "Начало точного OSMway внутри сохранённого блока",
+      "position": {
+        "lat": 55.6268814,
+        "lon": 37.0111477
+      },
+      "direction": "selected_southbound_A113",
+      "osm": {
+        "nodeId": "9903493812",
+        "wayIds": [
+          "1080462753"
+        ]
+      },
+      "crossingRoads": [
+        "А-113/ЦКАД"
+      ],
+      "coordinateSource": {
+        "path": "experiments/junction-atlas/2026-10-30/raw/ckad-way1080462753-full.json",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=37.0111477%2C55.6268814&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "inspected local A113 raster, not operator free-domain boundary",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "caseFile": "experiments/junction-atlas/2026-10-30/ckad.json"
+    },
+    {
+      "id": "CKAD-12443433262",
+      "road": "CKAD",
+      "kind": "technical",
+      "title": "Рамка по OSM; не доказательство отдельной оплаты",
+      "position": {
+        "lat": 55.6254417,
+        "lon": 37.0099022
+      },
+      "direction": "selected_southbound_A113",
+      "osm": {
+        "nodeId": "12443433262",
+        "wayIds": [
+          "1080462753"
+        ]
+      },
+      "crossingRoads": [
+        "А-113/ЦКАД"
+      ],
+      "coordinateSource": {
+        "path": "experiments/junction-atlas/2026-10-30/raw/ckad-way1080462753-full.json",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=37.0099022%2C55.6254417&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "inspected local A113 raster, not operator free-domain boundary",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "caseFile": "experiments/junction-atlas/2026-10-30/ckad.json"
+    },
+    {
+      "id": "CKAD-9903493803",
+      "road": "CKAD",
+      "kind": "technical",
+      "title": "Конец точного OSMway внутри сохранённого блока",
+      "position": {
+        "lat": 55.6222701,
+        "lon": 37.0105657
+      },
+      "direction": "selected_southbound_A113",
+      "osm": {
+        "nodeId": "9903493803",
+        "wayIds": [
+          "1080462753"
+        ]
+      },
+      "crossingRoads": [
+        "А-113/ЦКАД"
+      ],
+      "coordinateSource": {
+        "path": "experiments/junction-atlas/2026-10-30/raw/ckad-way1080462753-full.json",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=37.0105657%2C55.6222701&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "inspected local A113 raster, not operator free-domain boundary",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "caseFile": "experiments/junction-atlas/2026-10-30/ckad.json"
+    },
+    {
+      "id": "ZSD-3612944330",
+      "road": "ZSD",
+      "kind": "technical",
+      "title": "Планерная: локальная кассовая ветвь",
+      "position": {
+        "lat": 60.0005047,
+        "lon": 30.2329312
+      },
+      "direction": "northbound_exit",
+      "osm": {
+        "nodeId": "3612944330",
+        "wayIds": [
+          "355755817"
+        ]
+      },
+      "crossingRoads": [
+        "ЗСД",
+        "Планерный/Богатырский выход"
+      ],
+      "coordinateSource": {
+        "path": "experiments/junction-atlas/2026-10-30/raw/zsd-planernaya-way355755817-full.json",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=30.2329312%2C60.0005047&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "caseFile": "experiments/junction-atlas/2026-10-30/zsd-extended.json"
+    },
+    {
+      "id": "ZSD-1766158781",
+      "road": "ZSD",
+      "kind": "plaza",
+      "title": "Планерная: локальная кассовая ветвь",
+      "position": {
+        "lat": 60.0005861,
+        "lon": 30.2329495
+      },
+      "direction": "northbound_exit",
+      "osm": {
+        "nodeId": "1766158781",
+        "wayIds": [
+          "355755817"
+        ]
+      },
+      "crossingRoads": [
+        "ЗСД",
+        "Планерный/Богатырский выход"
+      ],
+      "coordinateSource": {
+        "path": "experiments/junction-atlas/2026-10-30/raw/zsd-planernaya-way355755817-full.json",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=30.2329495%2C60.0005861&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "caseFile": "experiments/junction-atlas/2026-10-30/zsd-extended.json"
+    },
+    {
+      "id": "ZSD-13020687195",
+      "road": "ZSD",
+      "kind": "technical",
+      "title": "РВП64/64E на проспектеКрузенштерна; не кассовый шлагбаум",
+      "position": {
+        "lat": 59.9615898,
+        "lon": 30.2224424
+      },
+      "direction": "westbound_toward_ZSD",
+      "osm": {
+        "nodeId": "13020687195",
+        "wayIds": [
+          "351741889"
+        ]
+      },
+      "crossingRoads": [
+        "проспект Крузенштерна",
+        "ЗСД"
+      ],
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-18-shkipersky/way351741889.osm",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=30.2224424%2C59.9615898&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "caseFile": "experiments/junction-atlas/2026-10-30/zsd-extended.json"
+    }
+  ],
+  "interchanges": [
+    {
+      "id": "m4-r298",
+      "kind": "exit",
+      "points": [
+        "m4-3057885096",
+        "m4-3057885104"
+      ],
+      "currentIndependentMapCompatibility": "not tested; original directed OSM and retained trace corroborated"
+    },
+    {
+      "id": "zsd-kad-south",
+      "kind": "entry",
+      "points": [
+        "zsd-10270133471",
+        "zsd-1833109726"
+      ],
+      "currentIndependentMapCompatibility": "not tested; retained original/selected trace"
+    },
+    {
+      "id": "zsd-ekateringofka",
+      "kind": "exit",
+      "points": [
+        "zsd-1339782267",
+        "zsd-25893875"
+      ],
+      "currentIndependentMapCompatibility": "short exit control257m and raster corroboration, exact snapping unavailable"
+    },
+    {
+      "id": "m11-ckad47",
+      "kind": "entry",
+      "points": [
+        "M11-8087316065",
+        "M11-3566326245"
+      ],
+      "currentIndependentMapCompatibility": "UNRESOLVED_DETOUR29900m; physical original still documented"
+    },
+    {
+      "id": "m11-voskresenskoye",
+      "kind": "exit",
+      "points": [
+        "M11-6588472831"
+      ],
+      "currentIndependentMapCompatibility": "not tested; recovered original exit-way and retained selected trace"
+    },
+    {
+      "id": "m12-22Н0239",
+      "kind": "exit",
+      "points": [
+        "M12-14102954884",
+        "M12-10090995838"
+      ],
+      "currentIndependentMapCompatibility": "UNRESOLVED_DETOUR57000m at motorway join; interior165m positive"
+    }
+  ],
+  "mapControls": [
+    {
+      "case": "m4",
+      "direction": "northbound",
+      "meters": 880,
+      "minutes": 2,
+      "status": "SHORT_CONTROL_CONSTRUCTED",
+      "exactSnapOrPolyline": false
+    },
+    {
+      "case": "m4",
+      "direction": "southbound",
+      "meters": 25,
+      "minutes": 1,
+      "status": "SHORT_CONTROL_CONSTRUCTED",
+      "exactSnapOrPolyline": false
+    },
+    {
+      "case": "zsd",
+      "constructed": true,
+      "fromLabel": "ЗСД, съезд С2",
+      "toLabel": "набережная реки Екатерингофки",
+      "meters": 257,
+      "minutes": 1,
+      "exactPolylineOrSnapRetrieved": false,
+      "scope": "exit connector only, not a full-route or toll-payment proof",
+      "exactSnapOrPolyline": false
+    },
+    {
+      "case": "m12",
+      "scope": "mainline junction to22Н-0239",
+      "meters": 57000,
+      "minutes": 53,
+      "status": "UNRESOLVED_DETOUR",
+      "polylineSnapRetrieved": false,
+      "exactSnapOrPolyline": false
+    },
+    {
+      "case": "m12",
+      "scope": "ramp interior to22Н-0239",
+      "meters": 165,
+      "minutes": 1,
+      "status": "SHORT_CONTROL_CONSTRUCTED",
+      "polylineSnapRetrieved": false,
+      "exactSnapOrPolyline": false
+    },
+    {
+      "case": "m11",
+      "scope": "PVP18 approach to merge",
+      "meters": 29900,
+      "minutes": 22,
+      "status": "UNRESOLVED_DETOUR",
+      "polylineSnapRetrieved": false,
+      "exactSnapOrPolyline": false
+    },
+    {
+      "case": "ckad",
+      "meters": 570,
+      "minutes": 1,
+      "fromLabel": "ЦКАД,275-й километр",
+      "toLabel": "ЦКАД,274-й километр",
+      "status": "SHORT_CONTROL_CONSTRUCTED",
+      "operatorChainageCertified": false,
+      "exactSnapOrPolyline": false
+    },
+    {
+      "case": "zsd-extended",
+      "meters": 172,
+      "minutes": 1,
+      "status": "SHORT_CONTROL_CONSTRUCTED",
+      "scope": "gate-area to local urban-fork reference from another saved motif; not the whole Arzamas route or proof of reentry",
+      "polylineSnapRetrieved": false,
+      "exactSnapOrPolyline": false
+    }
+  ],
+  "acquisitions": [
+    {
+      "type": "OSM_PRIMARY",
+      "url": "https://api.openstreetmap.org/api/0.6/node/3057885104.json",
+      "path": "experiments/junction-atlas/2026-10-30/raw/m4-r298-node3057885104.json",
+      "purpose": "new exact R298 coordinate",
+      "date": "2026-10-30",
+      "observedHttpStatus": 200,
+      "bytes": 435,
+      "sha256": "a6391887025ef02d548301351dce25c77f40569e851f00a390f64047d03322b1"
+    },
+    {
+      "type": "OSM_PRIMARY",
+      "url": "https://api.openstreetmap.org/api/0.6/way/301694367/full.json",
+      "path": "experiments/junction-atlas/2026-10-30/raw/m4-r298-way301694367-full.json",
+      "purpose": "new exact R298 parent-node order",
+      "date": "2026-10-30",
+      "observedHttpStatus": 200,
+      "bytes": 3332,
+      "sha256": "3f0f8fe2e390024de359e622475154bf0fc6103cbfcb1caf31c0d44e775f4951"
+    },
+    {
+      "type": "OSM_PRIMARY",
+      "url": "https://api.openstreetmap.org/api/0.6/way/1307036920/full.json",
+      "path": "experiments/junction-atlas/2026-10-30/raw/m11-exit-way1307036920-full.json",
+      "purpose": "recover missing original for already known exit gate",
+      "date": "2026-10-30",
+      "observedHttpStatus": 200,
+      "bytes": 1739,
+      "sha256": "286756e1da0623ca54ce4037664a6b8b11b0592c871244e307e312f93a4053e1"
+    },
+    {
+      "type": "OSM_PRIMARY",
+      "url": "https://api.openstreetmap.org/api/0.6/way/1080462753/full.json",
+      "path": "experiments/junction-atlas/2026-10-30/raw/ckad-way1080462753-full.json",
+      "purpose": "exact local CKAD gantry/way coordinates",
+      "date": "2026-10-30",
+      "observedHttpStatus": 200,
+      "bytes": 2818,
+      "sha256": "f471a35662e894d7f6e81b8de320d0f5512fcb3a3c5be8c7be57bb0ea7942bdf"
+    },
+    {
+      "type": "OSM_PRIMARY",
+      "url": "https://api.openstreetmap.org/api/0.6/way/355755817/full.json",
+      "path": "experiments/junction-atlas/2026-10-30/raw/zsd-planernaya-way355755817-full.json",
+      "purpose": "recover original of already observed Planernaya booth",
+      "date": "2026-10-30",
+      "observedHttpStatus": 200,
+      "bytes": 1077,
+      "sha256": "2080d4d13b07a25ab150eff6bc7f112e34f10735a79c7a663c9927edb236f793"
+    },
+    {
+      "type": "OSM_RASTER",
+      "url": "https://tile.openstreetmap.org/15/19984/10901.png",
+      "path": "experiments/junction-atlas/2026-10-30/raw/m4-osm-z15-19984-10901.png",
+      "purpose": "inspected original overview, south plaza",
+      "date": "2026-10-30",
+      "observedHttpStatus": 200,
+      "bytes": 6521,
+      "sha256": "3adea3faeda907fe1e5bf4b2f193fe0f16412658ca9cb3030cc0784ebf05980c"
+    },
+    {
+      "type": "OSM_RASTER",
+      "url": "https://tile.openstreetmap.org/15/19984/10900.png",
+      "path": "experiments/junction-atlas/2026-10-30/raw/m4-osm-z15-19984-10900.png",
+      "purpose": "inspected original overview, north merge",
+      "date": "2026-10-30",
+      "observedHttpStatus": 200,
+      "bytes": 7876,
+      "sha256": "50e1273ee93e48773f08c29fe40dc2c1328ec27c8439c92091b96dd69bcb0623"
+    },
+    {
+      "type": "OSM_RASTER",
+      "url": "https://tile.openstreetmap.org/16/38274/19067.png",
+      "path": "experiments/junction-atlas/2026-10-30/raw/zsd-exit-osm-z16-38274-19067.png",
+      "purpose": "inspected Ekateringofka exit area",
+      "date": "2026-10-30",
+      "observedHttpStatus": 200,
+      "bytes": 13125,
+      "sha256": "1cf7fcf68b0b1fd119efa2a33d868a6a1cfd993b96c00a856a230b0d29bf45b7"
+    },
+    {
+      "type": "OSM_RASTER",
+      "url": "https://tile.openstreetmap.org/16/40699/20569.png",
+      "path": "experiments/junction-atlas/2026-10-30/raw/m12-ramp-osm-z16-40699-20569.png",
+      "purpose": "inspected M12 ramp area, not legal-turn certification",
+      "date": "2026-10-30",
+      "observedHttpStatus": 200,
+      "bytes": 3799,
+      "sha256": "6309a19676fdbc6acefe93d2cd91fe3ceeb0cf8f54cb674fdf40e05b4cf0cee7"
+    },
+    {
+      "type": "OSM_RASTER",
+      "url": "https://tile.openstreetmap.org/15/19752/10264.png",
+      "path": "experiments/junction-atlas/2026-10-30/raw/ckad-local-osm-z15-19752-10264.png",
+      "purpose": "inspected local A113 corridor",
+      "date": "2026-10-30",
+      "observedHttpStatus": 200,
+      "bytes": 25682,
+      "sha256": "cb60a69d39422765df15664a2caec127ddbe589fb4a5abf803db51399dd2fa1f"
+    }
+  ],
+  "limitations": [
+    "Opera screenshot unavailable; one30second timeout, no fabricated visual/browser actions.",
+    "Only five original OSM raster images inspected; exact coordinates come from source nodes, not map pixels.",
+    "M11 CKAD entry and M12 motorway join have material map-routing disagreement; cause unknown, no runtime workaround applied.",
+    "Virtual58, M12registration identities, exact CKADfree-domain and extendedZSD payment bundle remain unbound.",
+    "OtherM4 Platov/R260 vector4443232947→358467208 is separate and not closed here.",
+    "No push, share link, app/CI/Production/main/Android/backup change or full audit."
+  ],
+  "checksumVerification": "All referenced case source bytes and15 saved focused-check counts verified offline; no test/build rerun."
+}

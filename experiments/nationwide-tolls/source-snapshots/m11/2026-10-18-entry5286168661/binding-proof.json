@@ -1,0 +1,691 @@
+{
+  "status": "DONE_SOURCE_ONLY",
+  "durableStartedCommit": "a6018ad2e74a760edcfb8a428fd83f4265defef0",
+  "requestCount": 3,
+  "httpStatuses": [
+    200,
+    200,
+    200
+  ],
+  "sourceSha256": {
+    "49ccdaf200ac565eaf60.osm": "58553d6fac040e4e12677c4f66b35e0ae916ed2ae5a62470b373fa0d5a793ecf",
+    "9b86f889aee98abe61bb.osm": "ed116749a1f1d74d99dcaac95065e37206617b2144ec5fd0cad94099518b13c0",
+    "d512775be7772bd315e2.osm": "0f4cead69ee9df238f9369180a56dd1bc10cb675eb2686cc3996aa8cbff7c8bb"
+  },
+  "gateTags": {
+    "barrier": "toll_booth",
+    "fee": "yes",
+    "maxwidth": "6 m",
+    "payment:cash": "yes",
+    "payment:mastercard": "yes",
+    "payment:visa": "yes"
+  },
+  "nearbyComplex": {
+    "osmWayId": "655195663",
+    "tags": {
+      "barrier": "toll_booth",
+      "building": "yes",
+      "building:levels": "1",
+      "name": "ПВП «Лихославль» - 214 км"
+    },
+    "polygon": [
+      {
+        "osmNodeId": "6138993487",
+        "coordinate": [
+          35.4309026,
+          56.9831478
+        ]
+      },
+      {
+        "osmNodeId": "7438099259",
+        "coordinate": [
+          35.4309549,
+          56.9831849
+        ]
+      },
+      {
+        "osmNodeId": "7438099260",
+        "coordinate": [
+          35.4311829,
+          56.9832231
+        ]
+      },
+      {
+        "osmNodeId": "6138993486",
+        "coordinate": [
+          35.431276,
+          56.9832084
+        ]
+      },
+      {
+        "osmNodeId": "6138993485",
+        "coordinate": [
+          35.43132,
+          56.9830919
+        ]
+      },
+      {
+        "osmNodeId": "7438099257",
+        "coordinate": [
+          35.431112,
+          56.9830686
+        ]
+      },
+      {
+        "osmNodeId": "6138993484",
+        "coordinate": [
+          35.4311359,
+          56.9830054
+        ]
+      },
+      {
+        "osmNodeId": "7438099258",
+        "coordinate": [
+          35.4309637,
+          56.9829861
+        ]
+      },
+      {
+        "osmNodeId": "6138993487",
+        "coordinate": [
+          35.4309026,
+          56.9831478
+        ]
+      }
+    ]
+  },
+  "physicalWayCount": 5,
+  "corridorPoints": 61,
+  "runtimeChanged": false,
+  "newPricedComponents": 0,
+  "confirmedWholeTripFares": 0,
+  "operatorControlPath": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-12-58-679-category1-a1-current.json",
+  "mappingStatus": "p214_candidate_from_neighboring_complex_214km_label; not yet enabled",
+  "ownCaptureGitBlob": "c4c60b8987cb2ff44be21df4a0359249c90b5cfb",
+  "complete": true,
+  "boothEventCoverage": "complete",
+  "sourceCorridorMatch": {
+    "ordered": true,
+    "maxDistanceKm": 5.544212901339669e-05,
+    "matches": [
+      {
+        "osmNodeId": "7153719524",
+        "coordinate": [
+          35.4303854,
+          56.9836953
+        ],
+        "index": 348.99971213494905,
+        "distanceKm": 2.6260713973815344e-05
+      },
+      {
+        "osmNodeId": "5286168661",
+        "coordinate": [
+          35.4302054,
+          56.9836706
+        ],
+        "index": 349.99883147606414,
+        "distanceKm": 4.870867805110178e-05
+      },
+      {
+        "osmNodeId": "7153719525",
+        "coordinate": [
+          35.4300285,
+          56.9836454
+        ],
+        "index": 350.99633478035656,
+        "distanceKm": 3.487944670814281e-05
+      },
+      {
+        "osmNodeId": "5286168671",
+        "coordinate": [
+          35.4282745,
+          56.9833953
+        ],
+        "index": 351.9996570751641,
+        "distanceKm": 2.4479251866312502e-05
+      },
+      {
+        "osmNodeId": "4886068970",
+        "coordinate": [
+          35.4261467,
+          56.9830808
+        ],
+        "index": 353.0000843458941,
+        "distanceKm": 1.622710194392399e-05
+      },
+      {
+        "osmNodeId": "5286018018",
+        "coordinate": [
+          35.4217138,
+          56.9823816
+        ],
+        "index": 354.0002197206314,
+        "distanceKm": 3.933768655465193e-05
+      },
+      {
+        "osmNodeId": "4886068969",
+        "coordinate": [
+          35.4200104,
+          56.9821211
+        ],
+        "index": 354.9997545257775,
+        "distanceKm": 4.1250216496321114e-06
+      },
+      {
+        "osmNodeId": "7153719560",
+        "coordinate": [
+          35.419621,
+          56.9820579
+        ],
+        "index": 356.0009050997832,
+        "distanceKm": 1.0061815162117983e-05
+      },
+      {
+        "osmNodeId": "7153719547",
+        "coordinate": [
+          35.4195447,
+          56.9820391
+        ],
+        "index": 357.00210176214375,
+        "distanceKm": 1.8392147400254023e-05
+      },
+      {
+        "osmNodeId": "6490783287",
+        "coordinate": [
+          35.4194711,
+          56.9820173
+        ],
+        "index": 357.9958596627523,
+        "distanceKm": 2.6274500070513708e-05
+      },
+      {
+        "osmNodeId": "7153719548",
+        "coordinate": [
+          35.4194006,
+          56.9819927
+        ],
+        "index": 359.00771232857096,
+        "distanceKm": 1.1684009419890724e-05
+      },
+      {
+        "osmNodeId": "7153719561",
+        "coordinate": [
+          35.4193337,
+          56.9819653
+        ],
+        "index": 359.9988987283976,
+        "distanceKm": 3.741509473259711e-05
+      },
+      {
+        "osmNodeId": "7153719549",
+        "coordinate": [
+          35.4192706,
+          56.9819353
+        ],
+        "index": 360.99932376796863,
+        "distanceKm": 4.0956076601315046e-05
+      },
+      {
+        "osmNodeId": "5286168666",
+        "coordinate": [
+          35.4192118,
+          56.9819028
+        ],
+        "index": 362.0048284219458,
+        "distanceKm": 5.250723897143288e-06
+      },
+      {
+        "osmNodeId": "7153719550",
+        "coordinate": [
+          35.4191575,
+          56.9818681
+        ],
+        "index": 362.99448526281884,
+        "distanceKm": 1.5752179789433613e-05
+      },
+      {
+        "osmNodeId": "7153719562",
+        "coordinate": [
+          35.419108,
+          56.9818313
+        ],
+        "index": 363.9946929568549,
+        "distanceKm": 1.949737345600106e-05
+      },
+      {
+        "osmNodeId": "7153719551",
+        "coordinate": [
+          35.4190636,
+          56.9817926
+        ],
+        "index": 365.0098104053268,
+        "distanceKm": 5.21765440002854e-07
+      },
+      {
+        "osmNodeId": "7153719563",
+        "coordinate": [
+          35.4190245,
+          56.9817523
+        ],
+        "index": 365.991528886525,
+        "distanceKm": 1.1087532946114992e-05
+      },
+      {
+        "osmNodeId": "7153719552",
+        "coordinate": [
+          35.418991,
+          56.9817105
+        ],
+        "index": 366.98996045021005,
+        "distanceKm": 2.1884003598852643e-05
+      },
+      {
+        "osmNodeId": "6490783289",
+        "coordinate": [
+          35.4189632,
+          56.9816674
+        ],
+        "index": 367.99094204847796,
+        "distanceKm": 3.454000484627061e-06
+      },
+      {
+        "osmNodeId": "7153719540",
+        "coordinate": [
+          35.4189413,
+          56.9816234
+        ],
+        "index": 368.99059103745293,
+        "distanceKm": 5.849846421039525e-06
+      },
+      {
+        "osmNodeId": "7153719553",
+        "coordinate": [
+          35.4189254,
+          56.9815786
+        ],
+        "index": 370.0080904439024,
+        "distanceKm": 2.8845261799822675e-05
+      },
+      {
+        "osmNodeId": "4886068968",
+        "coordinate": [
+          35.4189156,
+          56.9815333
+        ],
+        "index": 370.99405871204686,
+        "distanceKm": 2.7665262048376993e-05
+      },
+      {
+        "osmNodeId": "7153719554",
+        "coordinate": [
+          35.4189119,
+          56.9814877
+        ],
+        "index": 372.0064896022451,
+        "distanceKm": 6.855197593918165e-06
+      },
+      {
+        "osmNodeId": "7153719564",
+        "coordinate": [
+          35.4189143,
+          56.9814421
+        ],
+        "index": 372.99791260931494,
+        "distanceKm": 1.845632342187616e-05
+      },
+      {
+        "osmNodeId": "7153719555",
+        "coordinate": [
+          35.4189229,
+          56.9813967
+        ],
+        "index": 374.0062352435289,
+        "distanceKm": 1.1934017238389875e-05
+      },
+      {
+        "osmNodeId": "7153719539",
+        "coordinate": [
+          35.4189376,
+          56.9813518
+        ],
+        "index": 375.0031085735226,
+        "distanceKm": 2.8893599474737865e-05
+      },
+      {
+        "osmNodeId": "7153719565",
+        "coordinate": [
+          35.4189583,
+          56.9813076
+        ],
+        "index": 376.0092965407265,
+        "distanceKm": 3.1357982355706264e-06
+      },
+      {
+        "osmNodeId": "7153719556",
+        "coordinate": [
+          35.4189849,
+          56.9812643
+        ],
+        "index": 376.99349883444654,
+        "distanceKm": 4.834360653659986e-06
+      },
+      {
+        "osmNodeId": "7153719566",
+        "coordinate": [
+          35.4190173,
+          56.9812223
+        ],
+        "index": 377.9953136810747,
+        "distanceKm": 2.9582911817905613e-05
+      },
+      {
+        "osmNodeId": "7153719557",
+        "coordinate": [
+          35.4190552,
+          56.9811816
+        ],
+        "index": 379.0087550114479,
+        "distanceKm": 1.251016515311534e-05
+      },
+      {
+        "osmNodeId": "7153719567",
+        "coordinate": [
+          35.4190985,
+          56.9811426
+        ],
+        "index": 380.0104188462824,
+        "distanceKm": 7.819255047965096e-07
+      },
+      {
+        "osmNodeId": "7153719558",
+        "coordinate": [
+          35.419147,
+          56.9811054
+        ],
+        "index": 380.9929843618599,
+        "distanceKm": 2.554290488913294e-05
+      },
+      {
+        "osmNodeId": "4886068967",
+        "coordinate": [
+          35.4192004,
+          56.9810702
+        ],
+        "index": 381.9997006430433,
+        "distanceKm": 3.279540727809787e-05
+      },
+      {
+        "osmNodeId": "7153719538",
+        "coordinate": [
+          35.4192583,
+          56.9810373
+        ],
+        "index": 382.9977808246567,
+        "distanceKm": 3.6125217861874575e-05
+      },
+      {
+        "osmNodeId": "7153719559",
+        "coordinate": [
+          35.4193206,
+          56.9810068
+        ],
+        "index": 383.9992437019697,
+        "distanceKm": 3.2606157064397674e-05
+      },
+      {
+        "osmNodeId": "5286168665",
+        "coordinate": [
+          35.4193867,
+          56.9809788
+        ],
+        "index": 384.99982867849224,
+        "distanceKm": 2.8626596635552605e-05
+      },
+      {
+        "osmNodeId": "4886068966",
+        "coordinate": [
+          35.4199725,
+          56.9807577
+        ],
+        "index": 385.99985622549985,
+        "distanceKm": 4.451805402458148e-05
+      },
+      {
+        "osmNodeId": "7153719602",
+        "coordinate": [
+          35.420099,
+          56.980714
+        ],
+        "index": 387,
+        "distanceKm": 0
+      },
+      {
+        "osmNodeId": "7153719607",
+        "coordinate": [
+          35.4202334,
+          56.9806779
+        ],
+        "index": 388.0029219767337,
+        "distanceKm": 2.1384289498737878e-06
+      },
+      {
+        "osmNodeId": "5286168669",
+        "coordinate": [
+          35.420374,
+          56.9806498
+        ],
+        "index": 389.0005945573969,
+        "distanceKm": 2.144729987675278e-05
+      },
+      {
+        "osmNodeId": "7153719606",
+        "coordinate": [
+          35.4205193,
+          56.98063
+        ],
+        "index": 390.0019776096109,
+        "distanceKm": 2.427076600929031e-06
+      },
+      {
+        "osmNodeId": "7153719609",
+        "coordinate": [
+          35.4206677,
+          56.9806188
+        ],
+        "index": 390.99834579454426,
+        "distanceKm": 2.434431307794472e-05
+      },
+      {
+        "osmNodeId": "7153719605",
+        "coordinate": [
+          35.4208174,
+          56.9806162
+        ],
+        "index": 392.0028288378111,
+        "distanceKm": 2.02917492185279e-05
+      },
+      {
+        "osmNodeId": "7153719608",
+        "coordinate": [
+          35.4209668,
+          56.9806223
+        ],
+        "index": 392.99893812720717,
+        "distanceKm": 3.3966623578102084e-05
+      },
+      {
+        "osmNodeId": "7153719604",
+        "coordinate": [
+          35.4211141,
+          56.980637
+        ],
+        "index": 394.00064017907465,
+        "distanceKm": 1.6957051324994959e-06
+      },
+      {
+        "osmNodeId": "7153719603",
+        "coordinate": [
+          35.4212577,
+          56.9806602
+        ],
+        "index": 394.9987589599434,
+        "distanceKm": 2.6320293298468976e-05
+      },
+      {
+        "osmNodeId": "4886068965",
+        "coordinate": [
+          35.421396,
+          56.9806915
+        ],
+        "index": 395.99763155174986,
+        "distanceKm": 5.092467855250481e-05
+      },
+      {
+        "osmNodeId": "7153719618",
+        "coordinate": [
+          35.4224739,
+          56.9809881
+        ],
+        "index": 396.9999934996164,
+        "distanceKm": 1.2603044092202331e-05
+      },
+      {
+        "osmNodeId": "7153719617",
+        "coordinate": [
+          35.422623,
+          56.9810262
+        ],
+        "index": 398.00076558014644,
+        "distanceKm": 2.0761252444411227e-05
+      },
+      {
+        "osmNodeId": "7153719610",
+        "coordinate": [
+          35.4227775,
+          56.9810573
+        ],
+        "index": 399.00380306150504,
+        "distanceKm": 2.3937422968612156e-05
+      },
+      {
+        "osmNodeId": "5286018016",
+        "coordinate": [
+          35.4229362,
+          56.9810811
+        ],
+        "index": 400.0013986296202,
+        "distanceKm": 8.581126960462627e-06
+      },
+      {
+        "osmNodeId": "7153719616",
+        "coordinate": [
+          35.4230981,
+          56.9810975
+        ],
+        "index": 400.9995572905001,
+        "distanceKm": 5.544212901339669e-05
+      },
+      {
+        "osmNodeId": "7153719615",
+        "coordinate": [
+          35.4232619,
+          56.9811063
+        ],
+        "index": 401.9996892013281,
+        "distanceKm": 3.357909774092468e-05
+      },
+      {
+        "osmNodeId": "7153719611",
+        "coordinate": [
+          35.4234266,
+          56.9811076
+        ],
+        "index": 402.9974793491538,
+        "distanceKm": 4.3682821803018986e-05
+      },
+      {
+        "osmNodeId": "5286018015",
+        "coordinate": [
+          35.4235908,
+          56.9811012
+        ],
+        "index": 403.99861590813794,
+        "distanceKm": 2.1107085162575955e-05
+      },
+      {
+        "osmNodeId": "7153719614",
+        "coordinate": [
+          35.4237535,
+          56.9810872
+        ],
+        "index": 404.9966641113961,
+        "distanceKm": 1.715721554705179e-05
+      },
+      {
+        "osmNodeId": "7153719612",
+        "coordinate": [
+          35.4239134,
+          56.9810658
+        ],
+        "index": 406.0011186818044,
+        "distanceKm": 1.0033724563594933e-05
+      },
+      {
+        "osmNodeId": "7153719613",
+        "coordinate": [
+          35.4243323,
+          56.9809611
+        ],
+        "index": 407.00018506126327,
+        "distanceKm": 1.675325442081233e-05
+      },
+      {
+        "osmNodeId": "5286018481",
+        "coordinate": [
+          35.4254277,
+          56.9807355
+        ],
+        "index": 407.99948628449977,
+        "distanceKm": 4.5349034403998173e-05
+      },
+      {
+        "osmNodeId": "11169124033",
+        "coordinate": [
+          35.4298758,
+          56.9793749
+        ],
+        "index": 408.9999831181893,
+        "distanceKm": 1.5565039851838186e-05
+      }
+    ]
+  },
+  "strictJunctionDistanceKm": 2.8722132076075524e-05,
+  "nearbyComplexDistanceKm": 0.07056155839253701,
+  "exactOwnGate": [
+    {
+      "osmNodeId": "5286168661",
+      "wayId": "766468434",
+      "roadNames": [],
+      "edgeIndex": 0,
+      "edgeToll": false,
+      "beginShapeIndex": 348,
+      "endShapeIndex": 349
+    }
+  ],
+  "networkCallsInVerifier": 0,
+  "nextAction": "Review operator p214 identity and independent p58/CKAD exit proof before runtime integration. No tariff enabled by this source-only block.",
+  "operatorPointReview": {
+    "sourcePath": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-12-58-679-category1-a1-current.json",
+    "sha256": "354068911158c267256cb17982a93b719ba8b6b7788c2d6e4668757c83c8f14b",
+    "point": {
+      "id": "p214",
+      "routeKm": 214,
+      "pvpKm": 214,
+      "label": "км 214 / ПВП км 214",
+      "corridorLabel": "д. Букарево"
+    },
+    "sourceDocumentOrder": "№ 274",
+    "effectiveFrom": "2026-09-04T00:00:00+03:00",
+    "limitation": "Kilometer matches neighboring OSM complex. Corridor label Bukarevo differs from OSM Likhoslavl; no direct operator lane/booth crosswalk or dated receipt checked in this block."
+  }
+}

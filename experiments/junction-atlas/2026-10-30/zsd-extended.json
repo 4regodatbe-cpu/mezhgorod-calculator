@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "road": "ZSD_EXTENDED",
+  "date": "2026-10-30",
+  "mode": "research_only_not_runtime",
+  "sources": [
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/zsd-planernaya-way355755817-full.json",
+      "sha256": "2080d4d13b07a25ab150eff6bc7f112e34f10735a79c7a663c9927edb236f793"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-18-shkipersky/way351741889.osm",
+      "sha256": "6aec3c5445ead26e23437feb4884e6cd1ddcbd1e61ae17d0c890c96429bb8614"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/2026-10-15T23-58-33-171Z-capture.json.gz",
+      "sha256": "e8b5d42fb9b737227c04d195271c4cb4dde444a66f85aa579d238a0cd2769ed0"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-planernaya-no-reentry/geometry.json",
+      "sha256": "4e19e59c5093db591f57ef01c0995fb455974bbb6029e6ae288573eb45e97b21"
+    },
+    {
+      "path": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c4-zsd.json",
+      "sha256": "f7348792ec160f7089461edc702a5a2620daccfe4840309aabd4f8843e170491"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/zsd-planernaya-short-route-accessibility.txt",
+      "sha256": "55b5aeb576dd325d35e3df68239455c1cc7290686d11b8c668e571b4e0f526b9"
+    }
+  ],
+  "points": [
+    {
+      "id": "ZSD-3612944330",
+      "road": "ZSD",
+      "kind": "technical",
+      "title": "Планерная: локальная кассовая ветвь",
+      "position": {
+        "lat": 60.0005047,
+        "lon": 30.2329312
+      },
+      "direction": "northbound_exit",
+      "osm": {
+        "nodeId": "3612944330",
+        "wayIds": [
+          "355755817"
+        ]
+      },
+      "crossingRoads": [
+        "ЗСД",
+        "Планерный/Богатырский выход"
+      ],
+      "coordinateSource": {
+        "path": "experiments/junction-atlas/2026-10-30/raw/zsd-planernaya-way355755817-full.json",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=30.2329312%2C60.0005047&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null
+    },
+    {
+      "id": "ZSD-1766158781",
+      "road": "ZSD",
+      "kind": "plaza",
+      "title": "Планерная: локальная кассовая ветвь",
+      "position": {
+        "lat": 60.0005861,
+        "lon": 30.2329495
+      },
+      "direction": "northbound_exit",
+      "osm": {
+        "nodeId": "1766158781",
+        "wayIds": [
+          "355755817"
+        ]
+      },
+      "crossingRoads": [
+        "ЗСД",
+        "Планерный/Богатырский выход"
+      ],
+      "coordinateSource": {
+        "path": "experiments/junction-atlas/2026-10-30/raw/zsd-planernaya-way355755817-full.json",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=30.2329495%2C60.0005861&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null
+    },
+    {
+      "id": "ZSD-13020687195",
+      "road": "ZSD",
+      "kind": "technical",
+      "title": "РВП64/64E на проспектеКрузенштерна; не кассовый шлагбаум",
+      "position": {
+        "lat": 59.9615898,
+        "lon": 30.2224424
+      },
+      "direction": "westbound_toward_ZSD",
+      "osm": {
+        "nodeId": "13020687195",
+        "wayIds": [
+          "351741889"
+        ]
+      },
+      "crossingRoads": [
+        "проспект Крузенштерна",
+        "ЗСД"
+      ],
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-18-shkipersky/way351741889.osm",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=30.2224424%2C59.9615898&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null
+    }
+  ],
+  "newTariffBindings": 0,
+  "appRuntimeChanged": false,
+  "directedGate": {
+    "wayId": "355755817",
+    "nodeOrder": [
+      "3612944330",
+      "1766158781"
+    ],
+    "tags": {
+      "covered": "yes",
+      "foot": "no",
+      "highway": "secondary_link",
+      "lanes": "6",
+      "oneway": "yes",
+      "source": "http://spb-projects.ru/forum/viewtopic.php?p=147752#147752",
+      "surface": "asphalt",
+      "toll": "yes"
+    }
+  },
+  "rvp64": {
+    "tags": {
+      "description:ru": "Рамка взимания платы RUTOLL FLOW PLUS",
+      "highway": "toll_gantry",
+      "name": "РВП-64",
+      "name:en": "TG-64",
+      "name:ru": "РВП-64",
+      "operator:en": "Nothern Capital Highway",
+      "operator:ru": "Магистраль Северной Столицы",
+      "ref:rutoll": "64E"
+    },
+    "sourceNodeOrder": [
+      "3069387913",
+      "3069387909",
+      "3069387901",
+      "6087796312",
+      "13020687195",
+      "1840647122"
+    ]
+  },
+  "selectedPlanernayaWitness": {
+    "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+    "capturePath": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/2026-10-15T23-58-33-171Z-capture.json.gz",
+    "callIndex": 11,
+    "gateEdgeIndex": 109,
+    "orderedLocalWays": [
+      "252148968",
+      "355755817",
+      "151490266",
+      "355755820",
+      "192140964",
+      "151490260"
+    ]
+  },
+  "mapControl": {
+    "meters": 172,
+    "minutes": 1,
+    "status": "SHORT_CONTROL_CONSTRUCTED",
+    "scope": "gate-area to local urban-fork reference from another saved motif; not the whole Arzamas route or proof of reentry",
+    "polylineSnapRetrieved": false
+  },
+  "operatorGap": "Full entry/exit cash-card zone/payment bundle and any applicable receipt treatment still unknown. RVP64/64E is registration infrastructure; do not import finished600 or isolated300/zero.",
+  "geographyStatus": "Exact Planernaya gate and RVP64 primary coordinates retained; full larger route outer operator boundary and legal/payment scope not inferred."
+}

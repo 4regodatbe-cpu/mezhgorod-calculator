@@ -1,0 +1,66 @@
+{
+  "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+  "mode": "next_group_representative_saved_evidence_review",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-kazan-to-sest/2026-10-15T23-59-05-400Z-capture.json.gz",
+  "captureSha256": "51b8e21059a597bf7797b348f58f2e47ac55ce992d364ef112f7085660e90d90",
+  "priorScopeEvidence": "docs/checkpoints/evidence/2026-10-16-zsd-kazan-sestroretsk-scope.json",
+  "priorScopeEvidenceSha256": "6c85cffd22b0986691686aa2d4f657051890dde259409efafd15af65f406aa47",
+  "fingerprint": "258ee8abe7051eda2e4d11f093e10fa37184adc36cd3c3e12d67823afdd32f08",
+  "groupSize": 7,
+  "checkedRepresentatives": 1,
+  "uncheckedSiblings": 6,
+  "traceComplete": true,
+  "boothCoverage": "complete",
+  "zsdWayCount": 76,
+  "booths": [
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "edgeToll": true
+    },
+    {
+      "osmNodeId": "1766158812",
+      "wayId": "458501101",
+      "edgeToll": true
+    }
+  ],
+  "recordedExitInstructions": [
+    {
+      "instruction": "Сверните на съезде к ЗСД.",
+      "lengthKm": 17,
+      "begin": 8363,
+      "end": 8600,
+      "followingInstructions": [
+        "Держитесь левее, чтобы остаться на ЗСД к Богатырский проспект.",
+        "Сверните на съезде к Левашовское ш./КАД/Приморское ш..",
+        "Держитесь левее, чтобы свернуть на А-118/КАД/Кольцевая автомобильная дорога вокруг г. Санкт-Петербурга."
+      ]
+    },
+    {
+      "instruction": "Держитесь левее, чтобы остаться на ЗСД к Богатырский проспект.",
+      "lengthKm": 14.247,
+      "begin": 8600,
+      "end": 8759,
+      "followingInstructions": [
+        "Сверните на съезде к Левашовское ш./КАД/Приморское ш..",
+        "Держитесь левее, чтобы свернуть на А-118/КАД/Кольцевая автомобильная дорога вокруг г. Санкт-Петербурга.",
+        "Держитесь левее, чтобы остаться на А-118/КАД/Кольцевая автомобильная дорога вокруг г. Санкт-Петербурга."
+      ]
+    }
+  ],
+  "physicalScope": "КАД-юг→КАД-север; выезд к Левашовскому/КАД/Приморскому шоссе, не продолжение доЕ18Скандинавия, несмотря на to-sest вID.",
+  "zoneDefinitionCandidate": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "readyVectorRub": null,
+  "outcome": "blocked_by_missing_reliable_data",
+  "missing": "Первичная направленная область cash/card взимания для ПВП1766158812, точная привязка северного съезда к описанному варианту КАД и готовый вектор от КАД-юг. Только общая ставка300/зона и инструкция движения этого не доказывают.",
+  "noTariffAssigned": true,
+  "newComponentChecks": 0,
+  "newFullRouteReplays": 0,
+  "newLiveRoutes": 0,
+  "nextAction": "Следующая группа1e954c437e46, представительmax-chain-m12-ckad-m11-zsd-sest-to-kazan; сначала сохранённые primary/evidence, не повторять общий поиск тех же ставок."
+}

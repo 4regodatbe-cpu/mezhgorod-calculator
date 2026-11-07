@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:20:38.715Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 116,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 9,
+    "spec": {
+      "caseId": "single-m11-moscow-to-torzhok",
+      "kind": "road",
+      "group": "single-m11"
+    }
+  },
+  "caseId": "single-m11-moscow-to-torzhok",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-20-38-714Z-part9",
+  "parent": "43d18c200dc63606f8823b43a2facd93d9bf6760"
+}

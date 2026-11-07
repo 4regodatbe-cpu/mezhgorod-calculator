@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (3781335 spike-06.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="8996000092" visible="true" version="4" changeset="152716159" timestamp="2024-06-15T11:06:08Z" user="literan" uid="830106" lat="55.4979263" lon="43.6137004"/>
+ <node id="8996000093" visible="true" version="4" changeset="152716159" timestamp="2024-06-15T11:06:08Z" user="literan" uid="830106" lat="55.4994816" lon="43.5906728"/>
+ <node id="10090995797" visible="true" version="3" changeset="169417087" timestamp="2025-07-24T19:00:07Z" user="Anton Cheloshkin" uid="2071484" lat="55.5006475" lon="43.5668032"/>
+ <node id="10090995833" visible="true" version="6" changeset="169417087" timestamp="2025-07-24T19:00:07Z" user="Anton Cheloshkin" uid="2071484" lat="55.5008376" lon="43.5634931">
+  <tag k="highway" v="toll_gantry"/>
+ </node>
+ <node id="10090995978" visible="true" version="5" changeset="187534437" timestamp="2026-08-16T13:00:17Z" user="osm1osm1osm1" uid="24410149" lat="55.5023465" lon="43.5307585"/>
+ <node id="11221977607" visible="true" version="3" changeset="152716159" timestamp="2024-06-15T11:06:08Z" user="literan" uid="830106" lat="55.5021451" lon="43.5349547"/>
+ <node id="11221977609" visible="true" version="3" changeset="152716159" timestamp="2024-06-15T11:06:08Z" user="literan" uid="830106" lat="55.5019520" lon="43.5392241"/>
+ <node id="11221977612" visible="true" version="3" changeset="152716159" timestamp="2024-06-15T11:06:08Z" user="literan" uid="830106" lat="55.5017478" lon="43.5438097"/>
+ <node id="11221977614" visible="true" version="3" changeset="152716159" timestamp="2024-06-15T11:06:08Z" user="literan" uid="830106" lat="55.5015454" lon="43.5482572"/>
+ <node id="11221977616" visible="true" version="3" changeset="152716159" timestamp="2024-06-15T11:06:08Z" user="literan" uid="830106" lat="55.5013207" lon="43.5530671"/>
+ <node id="11221977619" visible="true" version="3" changeset="152716159" timestamp="2024-06-15T11:06:08Z" user="literan" uid="830106" lat="55.5010349" lon="43.5592535"/>
+ <node id="11221977630" visible="true" version="1" changeset="141805855" timestamp="2023-09-27T07:53:35Z" user="Dmitriy Nikolin" uid="20137446" lat="55.5003461" lon="43.5733441"/>
+ <node id="11221977632" visible="true" version="3" changeset="152716159" timestamp="2024-06-15T11:06:08Z" user="literan" uid="830106" lat="55.5001153" lon="43.5780920"/>
+ <node id="11221977633" visible="true" version="3" changeset="152716159" timestamp="2024-06-15T11:06:08Z" user="literan" uid="830106" lat="55.4998614" lon="43.5829342"/>
+ <node id="11221977637" visible="true" version="3" changeset="152716159" timestamp="2024-06-15T11:06:08Z" user="literan" uid="830106" lat="55.4992930" lon="43.5944913"/>
+ <node id="11221977639" visible="true" version="3" changeset="152716159" timestamp="2024-06-15T11:06:08Z" user="literan" uid="830106" lat="55.4991711" lon="43.5968267"/>
+ <node id="11221977640" visible="true" version="3" changeset="152716159" timestamp="2024-06-15T11:06:08Z" user="literan" uid="830106" lat="55.4989385" lon="43.6007125"/>
+ <node id="11221977644" visible="true" version="3" changeset="152716159" timestamp="2024-06-15T11:06:08Z" user="literan" uid="830106" lat="55.4988062" lon="43.6026622"/>
+ <node id="11221977645" visible="true" version="3" changeset="152716159" timestamp="2024-06-15T11:06:08Z" user="literan" uid="830106" lat="55.4984852" lon="43.6067279"/>
+ <node id="11221977646" visible="true" version="3" changeset="152716159" timestamp="2024-06-15T11:06:08Z" user="literan" uid="830106" lat="55.4982003" lon="43.6103505"/>
+ <node id="11222020308" visible="true" version="3" changeset="152716159" timestamp="2024-06-15T11:06:08Z" user="literan" uid="830106" lat="55.4976952" lon="43.6165234"/>
+ <node id="11440192715" visible="true" version="3" changeset="152716159" timestamp="2024-06-15T11:06:08Z" user="literan" uid="830106" lat="55.5003906" lon="43.5724689"/>
+ <node id="11440192718" visible="true" version="3" changeset="152716159" timestamp="2024-06-15T11:06:08Z" user="literan" uid="830106" lat="55.4998112" lon="43.5839564"/>
+ <node id="14098930666" visible="true" version="1" changeset="187534437" timestamp="2026-08-16T13:00:17Z" user="osm1osm1osm1" uid="24410149" lat="55.4975042" lon="43.6189765"/>
+ <node id="14102954884" visible="true" version="1" changeset="187636398" timestamp="2026-08-18T12:24:15Z" user="osm1osm1osm1" uid="24410149" lat="55.5006404" lon="43.5669594"/>
+ <way id="1550135076" visible="true" version="2" changeset="187636398" timestamp="2026-08-18T12:24:15Z" user="osm1osm1osm1" uid="24410149">
+  <nd ref="10090995978"/>
+  <nd ref="11221977607"/>
+  <nd ref="11221977609"/>
+  <nd ref="11221977612"/>
+  <nd ref="11221977614"/>
+  <nd ref="11221977616"/>
+  <nd ref="11221977619"/>
+  <nd ref="10090995833"/>
+  <nd ref="10090995797"/>
+  <nd ref="14102954884"/>
+  <nd ref="11440192715"/>
+  <nd ref="11221977630"/>
+  <nd ref="11221977632"/>
+  <nd ref="11221977633"/>
+  <nd ref="11440192718"/>
+  <nd ref="8996000093"/>
+  <nd ref="11221977637"/>
+  <nd ref="11221977639"/>
+  <nd ref="11221977640"/>
+  <nd ref="11221977644"/>
+  <nd ref="11221977645"/>
+  <nd ref="11221977646"/>
+  <nd ref="8996000092"/>
+  <nd ref="11222020308"/>
+  <nd ref="14098930666"/>
+  <tag k="agricultural" v="no"/>
+  <tag k="bicycle" v="no"/>
+  <tag k="foot" v="no"/>
+  <tag k="highway" v="trunk"/>
+  <tag k="highway:category" v="ru:IБ"/>
+  <tag k="horse" v="no"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="RU:rural"/>
+  <tag k="maxspeed:goods" v="110"/>
+  <tag k="maxspeed:motorcar" v="110"/>
+  <tag k="maxspeed:variable" v="yes"/>
+  <tag k="minspeed" v="40"/>
+  <tag k="moped" v="no"/>
+  <tag k="motorroad" v="yes"/>
+  <tag k="name" v="«Восток»"/>
+  <tag k="name:ru" v="«Восток»"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="ref" v="М-12"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+  <tag k="wikidata" v="Q56742564"/>
+  <tag k="wikipedia" v="ru:Восток (автодорога)"/>
+ </way>
+</osm>

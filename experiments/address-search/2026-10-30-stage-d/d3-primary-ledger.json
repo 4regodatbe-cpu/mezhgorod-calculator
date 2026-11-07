@@ -1,0 +1,173 @@
+{
+  "stage": "D3",
+  "recordedDate": "2026-10-30",
+  "timezone": "Europe/Moscow",
+  "mode": "local-only bounded primary-source research; no route/OSM requests",
+  "m11": {
+    "queries": [
+      {
+        "query": "М-11 ЦКАД граница участка 58 км схема въезд",
+        "domains": "avtodor-tr.ru,unitoll.ru,russianhighways.ru,m11-neva.ru,rosavtodor.gov.ru",
+        "tool": "TinyFish search",
+        "result": "10 results; newly discovered operator appendix2 PDF selected; no retained failed URL repeated"
+      }
+    ],
+    "source": {
+      "url": "https://m11-neva.ru/upload/iblock/70f/edq390enqgr01vuenrs6ctnprii4afox.pdf",
+      "fetchContent": "text:null;errors:[];scanned PDF, not an access-denied response",
+      "download": {
+        "httpStatus": 200,
+        "curlExit": 0,
+        "bytes": 9573142,
+        "sha256": "2d21a764ececd557fc6a352c72633c05d754530f9f14f6d0f18d7855385a5a17",
+        "path": "m11-new-scheme.pdf",
+        "headers": "m11-new-scheme.headers",
+        "retrievedUtc": "2026-10-30T00:11:48Z",
+        "lastModified": "2023-12-03T16:40:51Z"
+      },
+      "document": {
+        "pages": 25,
+        "title": "Приложение 2 к договору организации проезда. Правила организации проезда и сбора платы секции 15–58",
+        "coverOrderDate": "2023-04-07",
+        "documentCodeDate": "2023-04-14",
+        "publicationDate": "unknown; HTTP Last-Modified is not a publication/effective date",
+        "effectiveDate": "not established by this review",
+        "visuallyReviewedPages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          25
+        ],
+        "textExtraction": "25 form feeds; no text layer",
+        "claims": [
+          {
+            "pages": [
+              5
+            ],
+            "scope": "operator facility list only",
+            "fact": "ПВП18 ЦКАД described at M11 km47; MMK South km48 and MMK North km50 are distinct facilities",
+            "confidence": "directly read primary scanned page; corroborates retained distinction"
+          },
+          {
+            "pages": [
+              6
+            ],
+            "scope": "operator facility list only",
+            "fact": "ПВП7 Солнечногорск described northbound Moscow→StPetersburg at M11 km58",
+            "confidence": "directly read primary scanned page; not an exact directed mainline cut"
+          }
+        ]
+      },
+      "admission": "Supplementary facility/direction evidence only. No certified mainline/parent-way crosswalk or CKAD→58→147 complete product binding. No price, matrix, geometry or runtime change.",
+      "status": "BLOCKED_BY_DATA"
+    }
+  },
+  "m12": {
+    "queries": [
+      {
+        "query": "\"М-12\" \"22Н-0239\" \"РВП\"",
+        "domains": "avtodor-tr.ru,russianhighways.ru,government-nnov.ru,government.ru,rosavtodor.gov.ru",
+        "tool": "TinyFish search",
+        "result": "0 results"
+      },
+      {
+        "query": "\"М-12\" \"Арзамас\" \"регистрации\" \"съезд\"",
+        "domains": "avtodor-tr.ru,russianhighways.ru,government-nnov.ru",
+        "tool": "TinyFish search",
+        "result": "3 results; tariff page, opening news, new official PDF lead; snippets do not identify actual registered endpoints"
+      }
+    ],
+    "sourceAttempt": {
+      "url": "https://avtodor-tr.ru/upload/iblock/94d/cavjyj7hszasaiofcodrwxqho0qycllz.pdf",
+      "httpStatus": 403,
+      "curlExit": 22,
+      "primaryBodyBytes": 0,
+      "sanitizedHeaders": "m12-registration-lead.headers",
+      "retrievedUtc": "2026-10-30T00:12:36Z",
+      "publicationDate": "unknown",
+      "sha256": null,
+      "claim": "None; indexed mention of P158 does not bind actual22Н0239 exit",
+      "retry": false
+    },
+    "status": "BLOCKED_BY_DATA_AND_SOURCE_ACCESS"
+  },
+  "ckad": {
+    "queries": [
+      {
+        "query": "\"ЦКАД\" \"Голицыно\" \"ПК-5\" \"схема\" \"границы\"",
+        "domains": "russianhighways.ru,rosavtodor.gov.ru,government.ru,mosreg.ru",
+        "tool": "TinyFish search",
+        "result": "2 leads: general roads magazine and heritage examination; no specific georeferenced free-domain plan identified"
+      },
+      {
+        "query": "\"ЦКАД\" \"Голицыно\" \"координат\" \"план\"",
+        "domains": "rosavtodor.gov.ru,russianhighways.ru,mosreg.ru",
+        "tool": "TinyFish search",
+        "result": "4 leads: generic regulatory index, heritage examination, forestry plan and planning-comments file; no exact PK5 charge/free-boundary evidence"
+      }
+    ],
+    "newSourceOpens": 0,
+    "newPrimaryFacts": 0,
+    "oldBlockedYandexLinkRetried": false,
+    "status": "BLOCKED_BY_DATA"
+  },
+  "zsd": {
+    "researcher": "read-only d3_zsd_primary; main agent sole writer",
+    "queries": [
+      {
+        "query": "site:nch-spb.com Планерная наличными банковской картой тарифные зоны",
+        "domains": [
+          "nch-spb.com"
+        ],
+        "tool": "web search",
+        "result": "combined query batch returned6 historical rules/transponder/payment-processing leads; no directed charge-bundle binding"
+      },
+      {
+        "query": "site:nch-spb.com \"Планерной\" \"тариф\" \"пункт\"",
+        "domains": [
+          "nch-spb.com"
+        ],
+        "tool": "web search",
+        "result": "same combined batch, not6 results independently per query"
+      }
+    ],
+    "leads": [
+      {
+        "url": "https://nch-spb.com/upload/iblock/734/Polnyy-tekst-Pravil.pdf",
+        "scope": "historical rules; indexed Planernaya mention may only be correspondence address",
+        "publicationDate": "not verified",
+        "opened": false
+      },
+      {
+        "url": "https://nch-spb.com/upload/iblock/8f4/b6g07qyzz91fvhx46txlz5m2ldp5unk1/Pravila-s-10.09.2025.pdf",
+        "scope": "historical rules; not preferred over retained order40/2026",
+        "publicationDate": "not verified from new original bytes",
+        "opened": false
+      },
+      {
+        "url": "https://mpayment.nch-spb.com/page/offer",
+        "scope": "payment-processing offer, not actual road-product boundary",
+        "publicationDate": "not verified",
+        "opened": false
+      }
+    ],
+    "newSourceOpens": 0,
+    "newPrimaryFacts": 0,
+    "newProducts": 0,
+    "newChargeBundles": 0,
+    "status": "BLOCKED_BY_DATA"
+  },
+  "conclusion": {
+    "newCompleteOperatorBindings": 0,
+    "newPrices": 0,
+    "routingRequests": 0,
+    "osmRequests": 0,
+    "oldFailedUrlsRetried": 0,
+    "ageAloneUsedAsBlocker": false,
+    "requiresEveryCashLaneCertificate": false,
+    "interpretation": "Unknown retained only for material unresolved geography/product/collection scope, not source age or optional perfection."
+  }
+}

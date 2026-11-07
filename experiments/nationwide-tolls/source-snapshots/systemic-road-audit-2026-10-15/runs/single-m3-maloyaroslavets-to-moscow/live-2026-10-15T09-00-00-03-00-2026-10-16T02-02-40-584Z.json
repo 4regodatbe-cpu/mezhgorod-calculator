@@ -1,0 +1,159 @@
+{
+  "caseId": "single-m3-maloyaroslavets-to-moscow",
+  "mode": "live",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 119961,
+      "seconds": 8517
+    },
+    {
+      "name": "OSRM",
+      "meters": 119943,
+      "seconds": 7045
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 119943,
+  "routeSeconds": 7045,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 36.463,
+          "lat": 55.013
+        },
+        {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "m3"
+    ],
+    "provenRoads": [
+      "m3"
+    ],
+    "missingExpectedRoads": [],
+    "status": "traversal-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "m3",
+      "kind": "selected-paid-edge",
+      "wayId": "1547002689",
+      "names": [
+        "М-3",
+        "E 101",
+        "Киевское шоссе"
+      ]
+    },
+    {
+      "road": "m3",
+      "kind": "selected-paid-edge",
+      "wayId": "1547002690",
+      "names": [
+        "М-3",
+        "E 101",
+        "Киевское шоссе"
+      ]
+    },
+    {
+      "road": "m3",
+      "kind": "selected-paid-edge",
+      "wayId": "1547002692",
+      "names": [
+        "М-3",
+        "E 101",
+        "Киевское шоссе"
+      ]
+    },
+    {
+      "road": "m3",
+      "kind": "selected-booth-name",
+      "osmNodeId": "13310936104"
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "m3": {
+      "occurrences": 29,
+      "uniqueWays": 16
+    }
+  },
+  "replayIntegrity": null,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-maloyaroslavets-to-moscow/2026-10-16T02-02-40-569Z-capture.json.gz",
+  "captureSha256": "f71c2f7455b8a0dc4a119d597535931ef44e4df0d212fca92e79143bb5cbbad7",
+  "detectedRoadComponents": [
+    {
+      "id": "m3",
+      "amount": null,
+      "reason": "m3_engine_not_yet_composed"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-3",
+    "E 101",
+    "Киевское шоссе"
+  ],
+  "tollNodeIds": [
+    "13310936104"
+  ],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m3",
+      "m3: m3_engine_not_yet_composed"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [],
+    "missing": [
+      "m3"
+    ],
+    "components": [
+      {
+        "id": "m3",
+        "detected": true,
+        "tolls": null,
+        "reason": "m3_engine_not_yet_composed"
+      }
+    ]
+  }
+}

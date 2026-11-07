@@ -1,0 +1,9 @@
+# B05 — actual display defects, STARTED LOCAL
+
+Base104ed681a14ff485de68959e5df1d57bc2857ff8; published5558ed8b unchanged/PR14Draft confirmed. Owner prohibits push, Production, CI edits and new share links. Existing owner-supplied access is used only in memory; its token/URL-with-token is deliberately excluded from repository, screenshots of URL bars, logs and browser storage files.
+
+Targeted saved-data inspection (not a new corpus audit) reproduced GeoNames709711 title Донецьке and technical duplicate-label suffixes for709713/811884. Saved source UA alternate-name rows:9199026 uk=Донецьке;20868266 ru=Донецьке. No Cyrillic Russian alternative exists among that ID's saved source aliases. The ru tag is erroneous/conflicting; previous Cyrillic/Latin/Ukrainian-specific-letter screen misses Ukrainian ськ/цьк orthography. Do not invent Донецкое from transliteration. Existing data, ID, aliases and coordinates must remain untouched; questionable display can be withheld.
+
+Second cause is explicit formatter code appending id/lat/lng for identical human labels. Existing pilot already removed unverified lower administrative labels. Preserve distinct endpoints and use verified administrative context where available; otherwise clearly neutral numbered homonym choices with missing-district disclosure, never fabricated districts.
+
+Bounded remainder: shared source-name orthography screen for GeoNames/Photon + regression-first tests; human-only duplicate labels + distinct-ID tests; targeted API/ranking checks, mandatory offline gate, TS/scoped ESLint/local build; then local checkpoint. Separately review existing published Preview via supplied access: real API, desktop/mobile A/B and exactly one Moscow–SPb calculation. Local fixes will not be present in that Preview. Raw safe test results under /tmp; no access secrets in durable evidence.

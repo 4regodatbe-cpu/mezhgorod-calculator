@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "road": "M12",
+  "date": "2026-10-30",
+  "mode": "research_only_not_runtime",
+  "sources": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/c0ab136d60afb7d92ae6.osm",
+      "sha256": "8137333900213085db615cafc7e9a1ebb1eb6da4a0a15b37535528c58acda5fa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/039cfde37fa14ee9ffff.osm",
+      "sha256": "3a9a9c9d9d6c2e4ee4c89dca2cd9f69939f07757512959310f822883b4f91a9f"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/e421784129ac6308b39c.osm",
+      "sha256": "3beb713b329037747d6ef97cd5e223109ae6d486849f075926ed55b737edc1aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/1f1c1ebc00b9a06c10ea.osm",
+      "sha256": "0dfcc097adb908628bcd7e7a0ee0d72823317ff318a853006c31477de035bf4b"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/m12-exit-short-route-accessibility.txt",
+      "sha256": "db7fa30ecadbef2c19d68a0a9af43f17e9b674b6fbfaef81a6ff433d6709060e"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/m12-ramp-interior-short-route-accessibility.txt",
+      "sha256": "c674c669321aa0fe145810d9bc96f509b5392f8cb30c45327d8dd4dd625799ea"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/m12-ramp-osm-z16-40699-20569.png",
+      "sha256": "6309a19676fdbc6acefe93d2cd91fe3ceeb0cf8f54cb674fdf40e05b4cf0cee7"
+    }
+  ],
+  "points": [
+    {
+      "id": "M12-14102954884",
+      "road": "M12",
+      "kind": "technical",
+      "title": "Узел примыкания съезда к М12; текущая доступность не разрешена доказательствами",
+      "position": {
+        "lat": 55.5006404,
+        "lon": 43.5669594
+      },
+      "direction": "retained_selected_M12_to_22Н-0239",
+      "osm": {
+        "nodeId": "14102954884",
+        "wayIds": [
+          "1550561305"
+        ]
+      },
+      "crossingRoads": [
+        "М-12 «Восток»",
+        "22Н-0239"
+      ],
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/c0ab136d60afb7d92ae6.osm",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=43.5669594%2C55.5006404&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "ramp-area raster only, not legal motorway-turn proof",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null
+    },
+    {
+      "id": "M12-14102954883",
+      "road": "M12",
+      "kind": "technical",
+      "title": "Промежуточный исходный узел съезда",
+      "position": {
+        "lat": 55.499593,
+        "lon": 43.5665522
+      },
+      "direction": "retained_selected_M12_to_22Н-0239",
+      "osm": {
+        "nodeId": "14102954883",
+        "wayIds": [
+          "1550561305"
+        ]
+      },
+      "crossingRoads": [
+        "М-12 «Восток»",
+        "22Н-0239"
+      ],
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/c0ab136d60afb7d92ae6.osm",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=43.5665522%2C55.4995930&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "ramp-area raster only, not legal motorway-turn proof",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null
+    },
+    {
+      "id": "M12-10090995838",
+      "road": "M12",
+      "kind": "exit",
+      "title": "Соединение сохранённого съезда с22Н-0239",
+      "position": {
+        "lat": 55.4981795,
+        "lon": 43.5658384
+      },
+      "direction": "retained_selected_M12_to_22Н-0239",
+      "osm": {
+        "nodeId": "10090995838",
+        "wayIds": [
+          "1550561305"
+        ]
+      },
+      "crossingRoads": [
+        "М-12 «Восток»",
+        "22Н-0239"
+      ],
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/c0ab136d60afb7d92ae6.osm",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=43.5658384%2C55.4981795&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "ramp-area raster only, not legal motorway-turn proof",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null
+    },
+    {
+      "id": "M12-10782165529",
+      "road": "M12",
+      "kind": "technical",
+      "title": "Западная регистрационная рамка; операторскийID неизвестен",
+      "position": {
+        "lat": 55.8259863,
+        "lon": 38.7402523
+      },
+      "direction": "not assigned from node alone",
+      "osm": {
+        "nodeId": "10782165529",
+        "wayIds": []
+      },
+      "crossingRoads": [
+        "М-12"
+      ],
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/e421784129ac6308b39c.osm",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=38.7402523%2C55.8259863&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "operatorRegistrationId": null
+    },
+    {
+      "id": "M12-11214930528",
+      "road": "M12",
+      "kind": "technical",
+      "title": "Западная регистрационная рамка; операторскийID неизвестен",
+      "position": {
+        "lat": 55.9090383,
+        "lon": 39.2843314
+      },
+      "direction": "not assigned from node alone",
+      "osm": {
+        "nodeId": "11214930528",
+        "wayIds": []
+      },
+      "crossingRoads": [
+        "М-12"
+      ],
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/1f1c1ebc00b9a06c10ea.osm",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=39.2843314%2C55.9090383&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "operatorRegistrationId": null
+    },
+    {
+      "id": "M12-11157985901",
+      "road": "M12",
+      "kind": "technical",
+      "title": "Западная регистрационная рамка; операторскийID неизвестен",
+      "position": {
+        "lat": 56.0659396,
+        "lon": 40.084432
+      },
+      "direction": "not assigned from node alone",
+      "osm": {
+        "nodeId": "11157985901",
+        "wayIds": []
+      },
+      "crossingRoads": [
+        "М-12"
+      ],
+      "coordinateSource": {
+        "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/039cfde37fa14ee9ffff.osm",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=40.0844320%2C56.0659396&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "not newly viewed as an image",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null,
+      "operatorRegistrationId": null
+    }
+  ],
+  "newTariffBindings": 0,
+  "appRuntimeChanged": false,
+  "directedRamp": {
+    "wayId": "1550561305",
+    "osmNodeOrder": [
+      "10090995838",
+      "14102954885",
+      "14102954883",
+      "14102954884"
+    ],
+    "selectedTraversalNodeOrder": [
+      "14102954884",
+      "14102954883",
+      "14102954885",
+      "10090995838"
+    ],
+    "onewayTag": null,
+    "source": "experiments/tariff-proof-selection/M12_DIRECTIONAL_REGISTRATION_REVIEW.md",
+    "traceCallIndex": 5,
+    "edgesInclusive": [
+      77,
+      79
+    ]
+  },
+  "mapControls": [
+    {
+      "scope": "mainline junction to22Н-0239",
+      "meters": 57000,
+      "minutes": 53,
+      "status": "UNRESOLVED_DETOUR",
+      "polylineSnapRetrieved": false
+    },
+    {
+      "scope": "ramp interior to22Н-0239",
+      "meters": 165,
+      "minutes": 1,
+      "status": "SHORT_CONTROL_CONSTRUCTED",
+      "polylineSnapRetrieved": false
+    }
+  ],
+  "geographyStatus": "Original coordinates/topology and selected traversal confirmed; independent current motorway→ramp routability unresolved. No specific cause established.",
+  "operatorGap": "Three physical frames have no registered operator IDs; actual22Н-0239 is not automatically order302 Арзамас/Р158. No individual frame price or nearest tariff endpoint assigned."
+}

@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Reviewed physical M4 graph endpoint cells extend the existing endpoint quote engine. No duplicated PVP fares. Pending topology records do not authorize a price.",
+  "rows": [],
+  "pending": [
+    {
+      "road": "m4-candidate",
+      "from": "osm-transition:4443232947:447135768>1182567076",
+      "to": "osm-transition:358467208:1211606940>28835034",
+      "profiles": [
+        "monThu",
+        "friSun"
+      ],
+      "rub": null,
+      "fareSource": null,
+      "effectiveFrom": null,
+      "scopeBindingStatus": "unknown",
+      "runtimeEligible": false,
+      "entry": {
+        "id": "osm-transition:4443232947:447135768>1182567076",
+        "kind": "road-transition",
+        "from": {
+          "refs": [],
+          "names": [
+            "подъезд к аэропорту «Платов»",
+            "подъезд от магистрали «Дон» к аэропорту «Платов»"
+          ]
+        },
+        "to": {
+          "refs": [
+            "E-115",
+            "E-50",
+            "М-4"
+          ],
+          "names": [
+            "«Дон»"
+          ]
+        },
+        "coordinate": null,
+        "osmNodeId": "4443232947",
+        "fromWayId": "447135768",
+        "toWayId": "1182567076",
+        "chunkIndex": 1,
+        "sourceIndex": 138,
+        "connectorCount": 0
+      },
+      "exit": {
+        "id": "osm-transition:358467208:1211606940>28835034",
+        "kind": "road-transition",
+        "from": {
+          "refs": [
+            "E-115",
+            "М-4"
+          ],
+          "names": [
+            "«Дон»"
+          ]
+        },
+        "to": {
+          "refs": [
+            "Р-260"
+          ],
+          "names": []
+        },
+        "coordinate": null,
+        "osmNodeId": "358467208",
+        "fromWayId": "1211606940",
+        "toWayId": "28835034",
+        "chunkIndex": 2,
+        "sourceIndex": 35,
+        "connectorCount": 0
+      },
+      "caseIds": [
+        "dnr-гранитное-kazan-center",
+        "dnr-талаковка-kazan-center",
+        "dnr-новоазовск-kazan-center",
+        "dnr-широкино-kazan-center",
+        "zaporizhzhia-розовка-kazan-center",
+        "zaporizhzhia-гуляйполе-kazan-center"
+      ],
+      "topologySources": [
+        {
+          "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/2026-10-15T12-00-00-440Z-capture.json.gz",
+          "sha256": "5c49cbd71433f7200538a5a4526d81f009375d49fce4445546151a8152cb19b9"
+        },
+        {
+          "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-талаковка-kazan-center/2026-10-16T00-41-48-274Z-capture.json.gz",
+          "sha256": "001b73aad0a3ef9cb42ac679ab6652ca17b8fa256d30d80bdd68a1b54c11994a"
+        },
+        {
+          "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-новоазовск-kazan-center/2026-10-16T00-39-28-580Z-capture.json.gz",
+          "sha256": "1774d480c1e4f8dc82d529fb21c2daf87e95ab84be4945bcb9336bb6fc451c0d"
+        },
+        {
+          "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kazan-center/2026-10-15T12-08-35-445Z-capture.json.gz",
+          "sha256": "51dff085bde8c3f9a409146a4d5790c070a33c4ee3d20631c2d83713ba8d36ff"
+        },
+        {
+          "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-kazan-center/2026-10-16T01-15-29-491Z-capture.json.gz",
+          "sha256": "08d30f965aa39414bb5c75919b94012413bad475f06097a5c68f5960ec4e1822"
+        },
+        {
+          "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-гуляйполе-kazan-center/2026-10-15T23-57-04-975Z-capture.json.gz",
+          "sha256": "34148e82f69e87b58eadce3e90ec0965d2c25e4b939213c5106c1059cacbafce"
+        }
+      ],
+      "note": "Exact selected graph transitions are known; operator charge applicability and price remain unknown. Never copy a nearest-booth fare or zero."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "startedAt": "2026-10-16T00:56:31.391Z",
+  "scope": {
+    "region": null,
+    "group": null,
+    "caseId": "kherson-херсон-moscow-center",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "kherson-херсон-moscow-center",
+      "startedAt": "2026-10-16T00:56:31.393Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-16T00-56-51-917Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-moscow-center/2026-10-16T00-56-51-739Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-56-52-657Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-56-53-375Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "a289",
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: a289",
+          "a289: A-289 frames detected but selected-route exits are unresolved"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": 5040,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "a289",
+          "amount": null,
+          "reason": "A-289 frames detected but selected-route exits are unresolved"
+        }
+      ],
+      "finishedAt": "2026-10-16T00:56:53.395Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T00:56:53.398Z"
+}

@@ -1,0 +1,44 @@
+{
+  "status": "EISK_CAPTURE_COMPLETE_MAYKOP_NOT_RUN",
+  "workflowRunId": 40354432433,
+  "sourceCommit": "46e8da7f7700ab3819c3859d427ecfb601afebed",
+  "runner": {
+    "image": "ubuntu-24.04",
+    "imageVersion": "20261012.334.1",
+    "node": "v24.21.0",
+    "pnpm": "11.25.0"
+  },
+  "preflight": {
+    "requestLimitPerProvider": 1,
+    "allValidHttp200": true,
+    "responses": [
+      {"provider":"Valhalla","endpoint":"https://valhalla1.openstreetmap.de/route","status":200,"bytes":93724,"sha256":"50d5c1b305adaae8b0f9b78e2ea810e043543c35bf5af07575e726f72de8f0ae"},
+      {"provider":"OSRM","endpoint":"https://router.project-osrm.org/route/v1/driving/38.276451,46.711524;37.617644,55.755819?overview=false&steps=false","status":200,"bytes":617,"sha256":"50ad0db283ce1dff4c36fc5d14e87cd1929f434aa39c104cf719acb9720c945a"},
+      {"provider":"BRouter","endpoint":"https://brouter.de/brouter","status":200,"bytes":652899,"sha256":"2f5c5c95aac9881101e4844e99d657d162817889de4964a1ed50cb10892cf851"}
+    ]
+  },
+  "yeiskCapture": {
+    "requestCount": 1,
+    "apiStatus": 200,
+    "capturePath":"experiments/nationwide-tolls/source-snapshots/issue2-yeysk-maykop/v2-hosted-40354432433/yeisk-to-moscow/capture.json.gz",
+    "captureBytes":560417,
+    "captureSha256":"19763eed7da92b505668ed8a9eb528baf77add76ec805d1511101b94e6144ca0",
+    "fetchCount":32,
+    "fetchesByHostAndPath":{"valhalla1.openstreetmap.de/route":4,"valhalla1.openstreetmap.de/trace_attributes":26,"router.project-osrm.org/route/v1/driving":1,"brouter.de/brouter":1},
+    "allHttp200":true,
+    "fetchErrors":0
+  },
+  "offlineReplay": {
+    "thursday":{"responseStatus":200,"capturedCalls":32,"consumedCalls":32,"liveNetworkRequests":0,"missingResponses":0,"unusedResponses":0},
+    "saturday":{"responseStatus":200,"capturedCalls":32,"consumedCalls":32,"liveNetworkRequests":0,"missingResponses":0,"unusedResponses":0}
+  },
+  "comparison": {
+    "thursday":{"v2":{"meters":1271780,"seconds":59629,"tollAmount":4920},"v3":{"meters":1271781,"seconds":59629,"tollAmount":4340},"v2MinusV3":{"meters":-1,"seconds":0,"tollAmount":580}},
+    "saturday":{"v2":{"meters":1271780,"seconds":59629,"tollAmount":6770},"v3":{"meters":1271781,"seconds":59629,"tollAmount":5240},"v2MinusV3":{"meters":-1,"seconds":0,"tollAmount":1530}},
+    "note":"Application outputs on project proxy controls; not verified operator tariffs. Null/unknown is never zero."
+  },
+  "artifact":{"id":12666050121,"size":1310819,"sha256":"69e8c2afb18f789cbc20451f0b45ccdea34e3ce258bca3a19e294a2cdf2de3a2","expiresAt":"2027-01-24T15:57:37Z"},
+  "automaticGateFailure":"Expected exactly 5 total calls and exactly 3 Valhalla host calls; actual 32 calls include 4 Valhalla route requests and 26 successful trace_attributes toll-evidence requests. Corrected call-bound validator passed offline against the saved Eisk capture. Workflow exited before Maykop.",
+  "maykopCapture":"NOT_RUN",
+  "applicationOrTariffChanges":false
+}

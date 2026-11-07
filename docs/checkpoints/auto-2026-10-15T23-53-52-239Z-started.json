@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-15T23:53:52.239Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 57,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 5,
+    "spec": {
+      "caseId": "zaporizhzhia-бердянск-saint-petersburg-center",
+      "kind": "regional",
+      "region": "zaporizhzhia"
+    }
+  },
+  "caseId": "zaporizhzhia-бердянск-saint-petersburg-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-53-52-239Z-part5",
+  "parent": "fb763a21dd1f9e3958936dd214508c99eb8089f1"
+}

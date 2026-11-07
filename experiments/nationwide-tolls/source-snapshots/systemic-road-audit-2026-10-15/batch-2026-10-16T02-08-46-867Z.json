@@ -1,0 +1,60 @@
+{
+  "startedAt": "2026-10-16T02:08:46.867Z",
+  "scope": {
+    "region": null,
+    "group": "single-odintsovo",
+    "caseId": "single-odintsovo-moscow-to-lesnoy",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "single-odintsovo-moscow-to-lesnoy",
+      "startedAt": "2026-10-16T02:08:46.870Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-lesnoy/live-2026-10-15T09-00-00-03-00-2026-10-16T02-08-48-333Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-moscow-to-lesnoy/2026-10-16T02-08-48-327Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-08-48-664Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-08-48-980Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "odintsovo"
+        ],
+        "provenRoads": [],
+        "missingExpectedRoads": [
+          "odintsovo"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "weekday": {
+        "amount": 0,
+        "weekdayAmount": 0,
+        "weekendAmount": 0,
+        "period": "понедельник–четверг",
+        "segments": [],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "free"
+      },
+      "weekend": {
+        "amount": 0,
+        "weekdayAmount": 0,
+        "weekendAmount": 0,
+        "period": "пятница–воскресенье",
+        "segments": [],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "free"
+      },
+      "components": [],
+      "finishedAt": "2026-10-16T02:08:48.995Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T02:08:48.998Z"
+}

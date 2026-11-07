@@ -1,0 +1,42 @@
+{
+  "status": "PASS-bounded-preview-smoke",
+  "previewSourceCommit": "5d7043a14bab604aae46dcc131990790683159f6",
+  "recordParentCommit": "16644a3a3bd2e59defb04afd02102fb8f6ebf495",
+  "deploymentId": "dpl_4R2Lqb1f6C9WPHYoheU2mjDU9zss",
+  "previewGetRequests": 3,
+  "productionRequests": 0,
+  "postRequests": 0,
+  "queries": [
+    {
+      "query": "Ростов",
+      "status": 200,
+      "connectorElapsedMs": 7425
+    },
+    {
+      "query": "Красн",
+      "status": 200,
+      "connectorElapsedMs": 4187
+    },
+    {
+      "query": "Донецк",
+      "status": 200,
+      "connectorElapsedMs": 2426
+    }
+  ],
+  "runtimePartial503Observed": true,
+  "runtimeRostovElapsedMs": 236,
+  "phoneBrowserVerified": false,
+  "sameProcessUnder15sSequenceVerifiedLive": false,
+  "sameProcessPartialThenNextCityVerifiedContracts": true,
+  "endToEnd10s": "UNVERIFIED",
+  "localFullTests": 875,
+  "localBuild": "PASS",
+  "runtimeWorkflowBlob": "ecb74694be796b6ef873ecf6e130975e45997655",
+  "appLibDataIdenticalToFixPreview": true,
+  "sha256": {
+    "donetsk.json": "412c820fe352e37c1e7a50cd9ea4f2553ae75025a3be1f3df21cf8499c4b4820",
+    "runtime-logs.txt": "4a8ac65b8029e1f450e3a3af8db5fb7338863db2cf13e50b6294bef9718354f8",
+    "krasn.json": "8c96abfde7d54881f230ee549b7b198f03e428890270c3abce569f50e604d63a",
+    "rostov.json": "6f358701fc45f7c62ec0ec512f0adef6f0203928f5248ab55a1fac06658f22df"
+  }
+}

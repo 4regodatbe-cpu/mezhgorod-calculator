@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:24:40.949Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 126,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 9,
+    "spec": {
+      "caseId": "single-m3-moscow-to-kaluga",
+      "kind": "road",
+      "group": "single-m3"
+    }
+  },
+  "caseId": "single-m3-moscow-to-kaluga",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-24-40-949Z-part9",
+  "parent": "d9147be98cf131701a73e71f9c336a7b9113dc01"
+}

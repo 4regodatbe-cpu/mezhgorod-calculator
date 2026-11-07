@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1321 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="8087316060" visible="true" version="4" changeset="149625664" timestamp="2024-04-05T17:17:42Z" user="Vas111" uid="16951803" lat="56.0915116" lon="37.2148620">
+  <tag k="maxspeed" v="implicit"/>
+  <tag k="traffic_sign" v="maxspeed"/>
+ </node>
+ <node id="8087316064" visible="true" version="3" changeset="144617086" timestamp="2023-11-30T09:03:37Z" user="Aleksandar Matejevic" uid="8724788" lat="56.0903882" lon="37.2129947">
+  <tag k="barrier" v="toll_booth"/>
+  <tag k="fee" v="yes"/>
+ </node>
+ <node id="11385232714" visible="true" version="1" changeset="144617086" timestamp="2023-11-30T09:03:37Z" user="Aleksandar Matejevic" uid="8724788" lat="56.0907673" lon="37.2136799"/>
+ <node id="11385232715" visible="true" version="1" changeset="144617086" timestamp="2023-11-30T09:03:37Z" user="Aleksandar Matejevic" uid="8724788" lat="56.0901295" lon="37.2124447"/>
+ <way id="1270188041" visible="true" version="2" changeset="152419878" timestamp="2024-06-08T15:31:08Z" user="J_Doe" uid="1925053">
+  <nd ref="11385232715"/>
+  <nd ref="8087316064"/>
+  <nd ref="11385232714"/>
+  <nd ref="8087316060"/>
+  <tag k="highway" v="motorway_link"/>
+  <tag k="lanes" v="6"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="30"/>
+  <tag k="name" v="Центральная кольцевая автодорога"/>
+  <tag k="name:ru" v="ЦКАД"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="ref" v="А-113"/>
+  <tag k="shoulder" v="no"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+</osm>

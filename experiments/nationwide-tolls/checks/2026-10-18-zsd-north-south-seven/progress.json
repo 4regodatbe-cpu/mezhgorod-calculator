@@ -1,0 +1,35 @@
+{
+  "status": "DONE",
+  "processed": 7,
+  "expected": 7,
+  "caseResults": [
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-murom",
+      "outcome": "blocked_by_same_missing_owner_collection_and_north_south_tariff_binding"
+    },
+    {
+      "caseId": "pair-m11-zsd-sest-to-moscow",
+      "outcome": "blocked_by_same_missing_owner_collection_and_north_south_tariff_binding"
+    },
+    {
+      "caseId": "single-zsd-sest-to-pushkin",
+      "outcome": "blocked_by_same_missing_owner_collection_and_north_south_tariff_binding"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+      "outcome": "blocked_by_same_missing_owner_collection_and_north_south_tariff_binding"
+    },
+    {
+      "caseId": "pair-m11-zsd-sest-to-novgorod",
+      "outcome": "blocked_by_same_missing_owner_collection_and_north_south_tariff_binding"
+    },
+    {
+      "caseId": "pair-m11-zsd-sest-to-tver",
+      "outcome": "blocked_by_same_missing_owner_collection_and_north_south_tariff_binding"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-sest-to-domodedovo",
+      "outcome": "blocked_by_same_missing_owner_collection_and_north_south_tariff_binding"
+    }
+  ]
+}

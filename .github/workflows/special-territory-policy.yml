@@ -7,12 +7,20 @@ on:
       - 'lib/**'
       - 'data/special-territory-boundaries.json'
       - 'scripts/**'
-      - '.github/workflows/special-territory-policy.yml'
+      - 'experiments/nationwide-tolls/**'
+      - 'experiments/toll-od-matrix/**'
+      - '**/*.test.ts'
+      - '**/*.test.mjs'
+      - '**/*.spec.ts'
+      - '**/*.spec.mjs'
+      - '.github/workflows/**'
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read
 jobs:
   verify:
+    if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,9 +30,37 @@ jobs:
       - run: npm install --global pnpm@11.25.0
       - run: pnpm install --frozen-lockfile
       - run: node --import ./scripts/register-ts-paths.mjs --test scripts/*test.ts
+      - run: node scripts/special-territory-live-push-classifier.test.mjs
+      - run: node scripts/b11-exact-reuse-change.test.mjs
+      - name: Complete mandatory offline gate (no live providers)
+        run: pnpm test:audit
+      - run: node scripts/v2-issue2-github-capture.test.mjs
       - run: node node_modules/typescript/bin/tsc --noEmit
       - run: node node_modules/next/dist/bin/next build
+  classify_live_scope:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run_live: ${{ steps.changed.outputs.should_run_live }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - id: changed
+        name: Compare this PR update with its previous checked head; uncertainty fails open
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/classify-special-territory-live-push.mjs >> "$GITHUB_OUTPUT"
   live_probe:
+    needs: classify_live_scope
+    if: >-
+      ${{
+        always() &&
+        (
+          needs.classify_live_scope.result != 'success' ||
+          needs.classify_live_scope.outputs.should_run_live == 'true'
+        )
+      }}
     runs-on: ubuntu-latest
     continue-on-error: true
     timeout-minutes: 60
@@ -37,11 +73,9 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Probe live provider geometry and per-leg times
         run: node --import ./scripts/register-ts-paths.mjs scripts/special-territory-live-probe.mjs
-      - name: Probe live payment-point-avoiding alternative for Moscow–Krasnodar
-        continue-on-error: true
-        run: node --import ./scripts/register-ts-paths.mjs scripts/payment-point-avoidance-live-probe.mjs
-      - name: Probe live Photon address suggestions
-        run: node --import ./scripts/register-ts-paths.mjs scripts/address-search-live-probe.mjs
+      # Keep live routing checks on the selected fastest route; toll-avoiding alternatives are out of scope.
+      - name: Probe production address collector with bounded requests
+        run: node --import ./scripts/register-ts-paths.mjs scripts/address-search-runtime-probe.mjs
       - name: Audit the fixed 50-settlement route corpus
         run: node --import ./scripts/register-ts-paths.mjs scripts/settlement-random-route-audit.mjs
       - name: Compare six Yandex screenshot routes with live providers
@@ -53,8 +87,40 @@ jobs:
           path: |
             special-territory-live-probe.json
             special-territory-full-flow-probe.json
-            payment-point-avoidance-live-probe.json
             address-search-live-probe.json
+            address-search-live-probe-progress.json
+            address-search-runtime-probe.json
+            address-search-runtime-probe-progress.json
             settlement-random-route-audit.json
             yandex-route-reference-audit.json
           if-no-files-found: ignore
+  calculation_timing:
+    needs: classify_live_scope
+    if: >-
+      ${{
+        always() &&
+        (
+          needs.classify_live_scope.result != 'success' ||
+          needs.classify_live_scope.outputs.should_run_live == 'true'
+        )
+      }}
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install --global pnpm@11.25.0
+      - run: pnpm install --frozen-lockfile
+      - name: Measure one special V3 handler with real routing sources
+        env:
+          CALCULATION_PROBE_CASE: donetsk-moscow
+        run: node scripts/calculation-runtime-probe.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: calculation-runtime-probe-${{ github.run_id }}
+          path: calculation-runtime-probe.json
+          if-no-files-found: error

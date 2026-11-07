@@ -1,0 +1,639 @@
+{
+  "mode": "real local production build/API; actual GeoNames/Photon/routing, no mocks",
+  "sourceRuntimeCommit": "c962fb730c42fd42f192ee55bbba9de20341bbbc",
+  "viewports": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "status": "PASS",
+      "searches": [
+        {
+          "query": "Москва",
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "id": "geonames-524901",
+                "title": "Москва",
+                "label": "Москва — Москва",
+                "region": "Москва",
+                "position": {
+                  "lat": 55.75204,
+                  "lng": 37.61781
+                }
+              },
+              {
+                "id": "geonames-524900",
+                "title": "Москва",
+                "label": "Москва — Тверская Область — Пеновский Район",
+                "region": "Тверская Область",
+                "position": {
+                  "lat": 56.91775,
+                  "lng": 32.16579
+                }
+              }
+            ],
+            "partial": false,
+            "localSource": {
+              "provider": "geonames",
+              "scope": "local-pilot-only",
+              "precision": "settlement-centre",
+              "sourceDate": "2026-10-24",
+              "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+              "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+              "sourceUrl": "https://www.geonames.org/",
+              "semanticAccuracyCertified": false,
+              "omittedExactHomonymsPossible": false
+            }
+          }
+        },
+        {
+          "query": "Санкт-Петербург",
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "id": "geonames-498817",
+                "title": "Санкт-Петербург",
+                "label": "Санкт-Петербург — Санкт-Петербург",
+                "region": "Санкт-Петербург",
+                "position": {
+                  "lat": 59.93863,
+                  "lng": 30.31413
+                }
+              }
+            ],
+            "partial": false,
+            "localSource": {
+              "provider": "geonames",
+              "scope": "local-pilot-only",
+              "precision": "settlement-centre",
+              "sourceDate": "2026-10-24",
+              "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+              "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+              "sourceUrl": "https://www.geonames.org/",
+              "semanticAccuracyCertified": false,
+              "omittedExactHomonymsPossible": false
+            }
+          }
+        },
+        {
+          "query": "Волноваха",
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "id": "geonames-689198",
+                "title": "Волноваха",
+                "label": "Волноваха — ДНР",
+                "region": "ДНР",
+                "position": {
+                  "lat": 47.6008,
+                  "lng": 37.49358
+                }
+              }
+            ],
+            "partial": false,
+            "localSource": {
+              "provider": "geonames",
+              "scope": "local-pilot-only",
+              "precision": "settlement-centre",
+              "sourceDate": "2026-10-24",
+              "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+              "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+              "sourceUrl": "https://www.geonames.org/",
+              "semanticAccuracyCertified": false,
+              "omittedExactHomonymsPossible": false
+            }
+          }
+        },
+        {
+          "query": "Севастополь",
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "id": "geonames-694423",
+                "title": "Севастополь",
+                "label": "Севастополь — Крым — Город Севастополь",
+                "region": "Крым",
+                "position": {
+                  "lat": 44.60795,
+                  "lng": 33.52134
+                }
+              },
+              {
+                "id": "geonames-496443",
+                "title": "Севастополь",
+                "label": "Севастополь — Калужская Область",
+                "region": "Калужская Область",
+                "position": {
+                  "lat": 53.45592,
+                  "lng": 35.188
+                }
+              },
+              {
+                "id": "geonames-496444",
+                "title": "Севастополь",
+                "label": "Севастополь — Оренбургская Область",
+                "region": "Оренбургская Область",
+                "position": {
+                  "lat": 51.7688,
+                  "lng": 59.0399
+                }
+              },
+              {
+                "id": "geonames-496441",
+                "title": "Севастопольский",
+                "label": "Севастопольский — Ростовская Область",
+                "region": "Ростовская Область",
+                "position": {
+                  "lat": 46.45,
+                  "lng": 40.5
+                }
+              },
+              {
+                "id": "geonames-496442",
+                "title": "Севастопольская",
+                "label": "Севастопольская — Адыгея",
+                "region": "Адыгея",
+                "position": {
+                  "lat": 44.3565,
+                  "lng": 40.3053
+                }
+              }
+            ],
+            "partial": false,
+            "localSource": {
+              "provider": "geonames",
+              "scope": "local-pilot-only",
+              "precision": "settlement-centre",
+              "sourceDate": "2026-10-24",
+              "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+              "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+              "sourceUrl": "https://www.geonames.org/",
+              "semanticAccuracyCertified": false,
+              "omittedExactHomonymsPossible": false
+            }
+          }
+        }
+      ],
+      "swap": "PASS",
+      "clearing": "PASS"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "PASS",
+      "searches": [
+        {
+          "query": "Москва",
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "id": "geonames-524901",
+                "title": "Москва",
+                "label": "Москва — Москва",
+                "region": "Москва",
+                "position": {
+                  "lat": 55.75204,
+                  "lng": 37.61781
+                }
+              },
+              {
+                "id": "geonames-524900",
+                "title": "Москва",
+                "label": "Москва — Тверская Область — Пеновский Район",
+                "region": "Тверская Область",
+                "position": {
+                  "lat": 56.91775,
+                  "lng": 32.16579
+                }
+              }
+            ],
+            "partial": false,
+            "localSource": {
+              "provider": "geonames",
+              "scope": "local-pilot-only",
+              "precision": "settlement-centre",
+              "sourceDate": "2026-10-24",
+              "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+              "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+              "sourceUrl": "https://www.geonames.org/",
+              "semanticAccuracyCertified": false,
+              "omittedExactHomonymsPossible": false
+            }
+          }
+        },
+        {
+          "query": "Санкт-Петербург",
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "id": "geonames-498817",
+                "title": "Санкт-Петербург",
+                "label": "Санкт-Петербург — Санкт-Петербург",
+                "region": "Санкт-Петербург",
+                "position": {
+                  "lat": 59.93863,
+                  "lng": 30.31413
+                }
+              }
+            ],
+            "partial": false,
+            "localSource": {
+              "provider": "geonames",
+              "scope": "local-pilot-only",
+              "precision": "settlement-centre",
+              "sourceDate": "2026-10-24",
+              "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+              "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+              "sourceUrl": "https://www.geonames.org/",
+              "semanticAccuracyCertified": false,
+              "omittedExactHomonymsPossible": false
+            }
+          }
+        },
+        {
+          "query": "Волноваха",
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "id": "geonames-689198",
+                "title": "Волноваха",
+                "label": "Волноваха — ДНР",
+                "region": "ДНР",
+                "position": {
+                  "lat": 47.6008,
+                  "lng": 37.49358
+                }
+              }
+            ],
+            "partial": false,
+            "localSource": {
+              "provider": "geonames",
+              "scope": "local-pilot-only",
+              "precision": "settlement-centre",
+              "sourceDate": "2026-10-24",
+              "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+              "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+              "sourceUrl": "https://www.geonames.org/",
+              "semanticAccuracyCertified": false,
+              "omittedExactHomonymsPossible": false
+            }
+          }
+        },
+        {
+          "query": "Севастополь",
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "id": "geonames-694423",
+                "title": "Севастополь",
+                "label": "Севастополь — Крым — Город Севастополь",
+                "region": "Крым",
+                "position": {
+                  "lat": 44.60795,
+                  "lng": 33.52134
+                }
+              },
+              {
+                "id": "geonames-496443",
+                "title": "Севастополь",
+                "label": "Севастополь — Калужская Область",
+                "region": "Калужская Область",
+                "position": {
+                  "lat": 53.45592,
+                  "lng": 35.188
+                }
+              },
+              {
+                "id": "geonames-496444",
+                "title": "Севастополь",
+                "label": "Севастополь — Оренбургская Область",
+                "region": "Оренбургская Область",
+                "position": {
+                  "lat": 51.7688,
+                  "lng": 59.0399
+                }
+              },
+              {
+                "id": "geonames-496441",
+                "title": "Севастопольский",
+                "label": "Севастопольский — Ростовская Область",
+                "region": "Ростовская Область",
+                "position": {
+                  "lat": 46.45,
+                  "lng": 40.5
+                }
+              },
+              {
+                "id": "geonames-496442",
+                "title": "Севастопольская",
+                "label": "Севастопольская — Адыгея",
+                "region": "Адыгея",
+                "position": {
+                  "lat": 44.3565,
+                  "lng": 40.3053
+                }
+              }
+            ],
+            "partial": false,
+            "localSource": {
+              "provider": "geonames",
+              "scope": "local-pilot-only",
+              "precision": "settlement-centre",
+              "sourceDate": "2026-10-24",
+              "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+              "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+              "sourceUrl": "https://www.geonames.org/",
+              "semanticAccuracyCertified": false,
+              "omittedExactHomonymsPossible": false
+            }
+          }
+        }
+      ],
+      "swap": "PASS",
+      "clearing": "PASS"
+    }
+  ],
+  "browser": "154.0.8037.57",
+  "controlRoute": {
+    "httpStatus": 200,
+    "elapsedMs": 4229,
+    "body": {
+      "legs": [
+        {
+          "from": "Москва — Москва",
+          "to": "Санкт-Петербург — Санкт-Петербург",
+          "fast": {
+            "meters": 711430,
+            "seconds": 24889,
+            "m12StrictSpan": null,
+            "m12EndpointSpan": null,
+            "m11RoadEvidence": {
+              "provider": "valhalla",
+              "strictBlocks": [
+                {
+                  "provider": "valhalla",
+                  "legIndex": 0,
+                  "sourceStartIndex": 10,
+                  "sourceEndIndex": 16,
+                  "beginKm": 21.002,
+                  "endKm": 694.095,
+                  "lengthKm": 673.093,
+                  "beginCoordinate": [
+                    37.467541,
+                    55.883302
+                  ],
+                  "endCoordinate": [
+                    30.283506,
+                    59.832743
+                  ],
+                  "labels": [
+                    "М-11",
+                    "«Нева»"
+                  ]
+                }
+              ],
+              "candidateClues": [],
+              "malformedStrictCount": 0
+            },
+            "m4RoadBoundaries": {
+              "provider": "valhalla",
+              "targetRef": "М-4",
+              "routeSignature": "b547d2c89d66752afc3b4124c7feb38e7e0a8c5988a8bb63fe7dae6db5bb7eb1",
+              "precision": "route-maneuver",
+              "status": "not-detected",
+              "reason": "road_ref_not_detected",
+              "entry": null,
+              "exit": null
+            },
+            "quality": {
+              "status": "single",
+              "providers": [
+                "Valhalla"
+              ],
+              "distanceSpreadPercent": null,
+              "timeSpreadPercent": null,
+              "goldenDistanceDeviationPercent": null,
+              "message": "Выбран маршрут с минимальным временем"
+            },
+            "tolls": {
+              "amount": 5724,
+              "weekdayAmount": 5724,
+              "weekendAmount": 6544,
+              "period": "по тарифу отправления М-11 15–58 (monThu)",
+              "segments": [
+                "М-11 15–58: moscow → solnechnogorsk: 1130 ₽",
+                "М-11: p58 → p679",
+                "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽",
+                "ЗСД: КАД (юг) → наб. р. Екатерингофки · 600 ₽ (зоны 1–2)"
+              ],
+              "confidence": "matched",
+              "pricingStatus": "priced"
+            },
+            "tollValidation": {
+              "status": "toll",
+              "source": "Route toll composition",
+              "tollEdgeCount": 4,
+              "checkedEdgeCount": 4,
+              "wayIds": [],
+              "roadNames": [
+                "m11-15-58",
+                "m11-58-679",
+                "m11-679-684",
+                "zsd"
+              ],
+              "message": "Полный итог составлен из дорожных систем: m11-15-58, m11-58-679, m11-679-684, zsd",
+              "complete": true
+            },
+            "m4PvpPreview": {
+              "status": "unknown",
+              "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+              "roadBoundaries": {
+                "provider": "valhalla",
+                "targetRef": "М-4",
+                "routeSignature": "b547d2c89d66752afc3b4124c7feb38e7e0a8c5988a8bb63fe7dae6db5bb7eb1",
+                "precision": "route-maneuver",
+                "status": "not-detected",
+                "reason": "road_ref_not_detected",
+                "entry": null,
+                "exit": null
+              },
+              "roadKilometrage": {
+                "status": "unknown",
+                "direction": "unknown",
+                "diagnosticOnly": true,
+                "entry": {
+                  "status": "unknown",
+                  "reason": "km_boundary_evidence_missing",
+                  "position": null
+                },
+                "exit": {
+                  "status": "unknown",
+                  "reason": "km_boundary_evidence_missing",
+                  "position": null
+                },
+                "stops": [
+                  "km_boundary_evidence_unresolved"
+                ]
+              },
+              "priceRub": null,
+              "verifiedPriceCells": 0,
+              "candidateCount": 0,
+              "confirmedPvps": [],
+              "diagnosticOnly": true
+            },
+            "nationalTollCoverage": {
+              "catalogNetworkCount": 22,
+              "candidateNetworks": [
+                {
+                  "id": "m11",
+                  "name": "М-11 «Нева» (участки 58–679 км)",
+                  "status": "candidate_unverified",
+                  "hasReferenceFare": false,
+                  "operator": "Автодор"
+                }
+              ],
+              "catalogWithReferenceFares": 8,
+              "exactCrossingVerified": false,
+              "newFareApplied": false,
+              "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+              "m1m3GateAudit": {
+                "status": "candidate_needs_osm_operator_node_mapping",
+                "reason": "no_verifiable_m1_m3_booths",
+                "routeId": "selected-fast-route",
+                "candidateRoads": [],
+                "verifiedGates": [],
+                "unmappedPaidNodes": [],
+                "strictPriceAllowed": false
+              },
+              "m3Shadow": {
+                "status": "unknown",
+                "reason": "m3_full_three_gate_proof_incomplete",
+                "amountRub": null,
+                "diagnosticOnly": true,
+                "roadId": "m3"
+              },
+              "m1Shadow": {
+                "status": "unknown",
+                "reason": "m1_exact_gate_proof_not_verified",
+                "amountRub": null,
+                "roadId": "m1",
+                "diagnosticOnly": true
+              }
+            },
+            "pricingByVehicle": {
+              "standard": {
+                "corridor": {
+                  "id": "geometry"
+                },
+                "dualTariff": false,
+                "pricingSegments": [
+                  {
+                    "distanceKm": 711.43,
+                    "tariffType": "normal",
+                    "type": "normal",
+                    "from": "Москва — Москва",
+                    "to": "Санкт-Петербург — Санкт-Петербург",
+                    "ratePerKm": 25,
+                    "amount": 17786,
+                    "reason": "Обычный тариф",
+                    "reviewRequired": false
+                  }
+                ],
+                "totalPrice": 17786,
+                "reviewRequired": false,
+                "requiresSplit": false,
+                "multiplier": 1
+              },
+              "comfort": {
+                "corridor": {
+                  "id": "geometry"
+                },
+                "dualTariff": false,
+                "pricingSegments": [
+                  {
+                    "distanceKm": 711.43,
+                    "tariffType": "normal",
+                    "type": "normal",
+                    "from": "Москва — Москва",
+                    "to": "Санкт-Петербург — Санкт-Петербург",
+                    "ratePerKm": 30,
+                    "amount": 21343,
+                    "reason": "Обычный тариф",
+                    "reviewRequired": false
+                  }
+                ],
+                "totalPrice": 21343,
+                "reviewRequired": false,
+                "requiresSplit": false,
+                "multiplier": 1
+              },
+              "comfort_plus": {
+                "corridor": {
+                  "id": "geometry"
+                },
+                "dualTariff": false,
+                "pricingSegments": [
+                  {
+                    "distanceKm": 711.43,
+                    "tariffType": "normal",
+                    "type": "normal",
+                    "from": "Москва — Москва",
+                    "to": "Санкт-Петербург — Санкт-Петербург",
+                    "ratePerKm": 35,
+                    "amount": 24900,
+                    "reason": "Обычный тариф",
+                    "reviewRequired": false
+                  }
+                ],
+                "totalPrice": 24900,
+                "reviewRequired": false,
+                "requiresSplit": false,
+                "multiplier": 1
+              },
+              "minivan": {
+                "corridor": {
+                  "id": "geometry"
+                },
+                "dualTariff": false,
+                "pricingSegments": [
+                  {
+                    "distanceKm": 711.43,
+                    "tariffType": "normal",
+                    "type": "normal",
+                    "from": "Москва — Москва",
+                    "to": "Санкт-Петербург — Санкт-Петербург",
+                    "ratePerKm": 50,
+                    "amount": 35572,
+                    "reason": "Обычный тариф",
+                    "reviewRequired": false
+                  }
+                ],
+                "totalPrice": 35572,
+                "reviewRequired": false,
+                "requiresSplit": false,
+                "multiplier": 1
+              }
+            }
+          },
+          "free": null,
+          "freeCandidate": null
+        }
+      ],
+      "mode": "standard",
+      "automaticMode": "standard",
+      "specialEndpoint": false
+    }
+  }
+}

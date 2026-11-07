@@ -1,0 +1,92 @@
+{
+  "checkedAtMoscow": "2026-10-31 11:39:25",
+  "sourceLocalHead": "4a71c09302055d1a5f34a72e81f4f86b0d16c411",
+  "remoteHead": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+  "pr14": "open/Draft/unmerged",
+  "scope": "H2 only, preservation and source reconciliation; no push",
+  "fsck": {
+    "mode": "--no-reflogs --unreachable --connectivity-only",
+    "exit": 0,
+    "unreachableCommitCount": 1226,
+    "latestCommitDate": "2026-10-29T05:45:17Z",
+    "gComponentAnalysisFound": false,
+    "fAdapterFoundAmongUnreachable": false,
+    "knownFCommitReachableFromCurrentHead": true,
+    "scopeLimit": "One current shared object database; no claim to inspect unavailable other-session repositories or every historical blob.",
+    "rawReports": [
+      {
+        "path": "/workspace/stage-H2-handoff-4U4VE5/fsck-shared.stdout.log",
+        "sha256": "60394cf91cc5e26ab7d9cec5dbad4838144349a9b2b2ac6cd440779ea03181bf"
+      },
+      {
+        "path": "/workspace/stage-H2-handoff-4U4VE5/fsck-shared.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/workspace/stage-H2-handoff-4U4VE5/unreachable-commits.txt",
+        "sha256": "46f3f92e0c141db762e8c85253170dacac96764d39b133ff681a54792d730faa"
+      },
+      {
+        "path": "/workspace/stage-H2-handoff-4U4VE5/object-probe-results.txt",
+        "sha256": "44fc23d55dd43746e867d94412e99b6811a172c06031613b439c68e62257ea32"
+      }
+    ]
+  },
+  "priorFBundle": {
+    "path": "/workspace/stage-F-local-handoff-LFSPlO/stage-F-local.bundle",
+    "verifyExit": 0,
+    "sha256": "cde5ed86498547a1eab8f5b8a369f9098b1137954cb89ee2094e129c1e9cb314"
+  },
+  "sources": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+      "sha256": "e6b2178c2448f071de92556d1d72237bd0281da9628f4855cb11b2cd32e6f9ca"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-documents/ckad-order56-effective-2026-03-02.pdf",
+      "sha256": "839488fed07f8e611b5304498f22d49626ff0dc7529df67734a2052a49bea3e7"
+    },
+    {
+      "path": "experiments/toll-estimates/practical-recovery.mjs",
+      "sha256": "49c617b30ae64818f759c7c359c83760579e7c5ab9c07e043f375b56a8d31c09"
+    },
+    {
+      "path": "experiments/toll-estimates/checks/2026-10-30-recovery/arzamas-recovery.json",
+      "sha256": "fd7822da48339bd5f3b8820b13d0a54a7f11ccf753bce32ebd5f3e15c2b15e0b"
+    },
+    {
+      "path": "experiments/toll-estimates/checks/2026-10-30-integration/f4-cases.json",
+      "sha256": "0b173909ab4d745bfa7cd587cac24890f05087a6c084fdcbd866cd7cb39eb475"
+    },
+    {
+      "path": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json",
+      "sha256": "f6cad582681d7648aee419742f8ad9cfb8415c9513214ede3c23f83877394ab8"
+    },
+    {
+      "path": "experiments/nationwide-tolls/engine/m11-route-adapter.mjs",
+      "sha256": "2d726412c8fa3356b92083223ad16df25c55941f4773ad16414c4c5220ed5b7a"
+    },
+    {
+      "path": "experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json",
+      "sha256": "eecbc2d4d58c7d4224b5bc302687f1ecfdca18c0d2901fe7233c0264ce675460"
+    }
+  ],
+  "checks": {
+    "node": "v24.19.0",
+    "targeted": 6,
+    "pass": 6,
+    "fail": 0,
+    "skip": 0,
+    "exit": 0,
+    "initialNativeCommandExit": 1,
+    "initialNativeFailure": "Missing existing @ alias loader; no assertions reached. Corrected command uses unchanged scripts/register-ts-paths.mjs.",
+    "externalRequests": 0,
+    "broadAuditRun": false,
+    "buildRepeated": false
+  },
+  "missingSources": [
+    "experiments/nationwide-tolls/yandex-estimation-2026-10-31/component-analysis.json",
+    "experiments/nationwide-tolls/yandex-estimation-2026-10-31/evidence-manifest.json",
+    "YANDEX_PAID_ROADS_REPORT_2026-10-31.md"
+  ]
+}

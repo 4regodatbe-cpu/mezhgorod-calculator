@@ -12,11 +12,13 @@ export function TariffInputs({
   setRates,
   compact = false,
   idPrefix = "rate",
+  releaseCopy = false,
 }: {
   rates: typeof defaults;
   setRates: (rates: typeof defaults) => void;
   compact?: boolean;
   idPrefix?: string;
+  releaseCopy?: boolean;
 }) {
   return (
     <div className="grid min-w-0 grid-cols-2 gap-1.5 sm:grid-cols-4 sm:gap-2">
@@ -28,7 +30,7 @@ export function TariffInputs({
           setRates({ ...rates, [key]: clampNumber(next, 1, 10000, 1) });
         };
         return (
-          <div key={key} className={"min-w-0 rounded-[18px] border border-brand-border/25 bg-brand-surface shadow-sm " + (compact ? "p-1.5" : "p-2")}>
+          <div key={key} className={"min-w-0 rounded-[18px] border bg-brand-surface shadow-sm " + (releaseCopy ? "border-brand-border/70 p-1.5" : "border-brand-border/25 " + (compact ? "p-1.5" : "p-2"))}>
             <div className="grid min-w-0 grid-cols-[minmax(0,1fr)_2.75rem] grid-rows-[2.75rem_2.75rem] items-center gap-x-1">
               <label htmlFor={inputId} className="row-start-1 min-w-0 translate-y-px truncate text-[16.5px] leading-5 font-extrabold text-brand-text">{name}</label>
               <button
@@ -37,7 +39,7 @@ export function TariffInputs({
                 onClick={() => updateRate(0.5)}
                 className="col-start-2 row-start-1 grid h-11 w-11 min-h-11 min-w-11 place-items-center rounded-full border border-brand-border/25 bg-brand-subtle/65 text-brand-action transition hover:bg-brand-subtle active:bg-brand-route/20 focus-visible:outline-2 focus-visible:outline-brand-focus"
               >
-                <ChevronUp className="h-5 w-5" aria-hidden="true" />
+                <ChevronUp className={releaseCopy ? "h-4.5 w-4.5" : "h-5 w-5"} aria-hidden="true" />
               </button>
               <div className="col-start-1 row-start-2 flex min-w-0 items-baseline justify-center gap-1">
                 <input
@@ -64,7 +66,7 @@ export function TariffInputs({
                 onClick={() => updateRate(-0.5)}
                 className="col-start-2 row-start-2 grid h-11 w-11 min-h-11 min-w-11 place-items-center rounded-full border border-brand-border/25 text-brand-action transition hover:bg-brand-subtle active:bg-brand-route/30 focus-visible:outline-2 focus-visible:outline-brand-focus"
               >
-                <ChevronDown className="h-5 w-5" aria-hidden="true" />
+                <ChevronDown className={releaseCopy ? "h-4.5 w-4.5" : "h-5 w-5"} aria-hidden="true" />
               </button>
             </div>
           </div>
@@ -87,16 +89,20 @@ export function PriceRows({
   period,
   manualToll,
   fareOnly = false,
+  emphasizeDual = false,
+  specialOnly = false,
 }: {
   trip: Trip;
   toll?: TollView;
   period: TollPeriod;
   manualToll?: string;
   fareOnly?: boolean;
+  emphasizeDual?: boolean;
+  specialOnly?: boolean;
 }) {
   const hasDualTariff = vehicleKeys.some(([, vehicle]) => trip.pricingByVehicle?.[vehicle]?.dualTariff);
-  if (hasDualTariff) {
-    return <DualTariffPriceRows trip={trip} toll={toll} period={period} manualToll={manualToll} fareOnly={fareOnly} />;
+  if (hasDualTariff && !specialOnly) {
+    return <DualTariffPriceRows trip={trip} toll={toll} period={period} manualToll={manualToll} fareOnly={fareOnly} emphasizeDual={emphasizeDual} />;
   }
 
   if (fareOnly) {
@@ -118,7 +124,7 @@ export function PriceRows({
 
   const tollPrice = resolveTollAmount(toll, period, manualToll);
   return (
-    <div className="mt-2.5 grid min-w-0 grid-cols-1 gap-1.5">
+    <div className={"mt-2.5 grid min-w-0 gap-1.5 " + (emphasizeDual && (tollPrice.amount === null || tollPrice.status === "free") ? "grid-cols-2" : "grid-cols-1")}>
       {vehicleKeys.map(([key, vehicle], index) => {
         const price = trip.pricingByVehicle?.[vehicle];
         const baseFare = price && !price.requiresSplit ? price.totalPrice : null;
@@ -153,7 +159,7 @@ export function PriceRows({
           </article>
         );
       })}
-      {tollPrice.amount === null && <p className="px-1 text-xs leading-snug text-brand-muted">Плата за дороги не подтверждена; суммы указаны без неё.</p>}
+      {tollPrice.amount === null && <p className="px-1 text-xs leading-snug text-brand-muted">Стоимость платных дорог неизвестна; итог указан без неё.</p>}
     </div>
   );
 }
@@ -164,12 +170,14 @@ function DualTariffPriceRows({
   period,
   manualToll,
   fareOnly,
+  emphasizeDual,
 }: {
   trip: Trip;
   toll?: TollView;
   period: TollPeriod;
   manualToll?: string;
   fareOnly: boolean;
+  emphasizeDual: boolean;
 }) {
   const [expandedVehicle, setExpandedVehicle] = useState<PricingVehicle | null>("comfort");
   const listId = useId();
@@ -191,7 +199,7 @@ function DualTariffPriceRows({
           .reduce((sum, segment) => sum + segment.amount, 0) ?? 0;
 
         return (
-          <article key={vehicle} className="min-w-0 overflow-hidden rounded-2xl border border-brand-border/25 bg-brand-surface shadow-sm">
+          <article key={vehicle} className={"min-w-0 overflow-hidden rounded-2xl border shadow-sm " + (emphasizeDual ? expanded ? "border-brand-action bg-brand-subtle/60 ring-2 ring-brand-action/40" : "border-brand-border/70 bg-brand-surface" : "border-brand-border/25 bg-brand-surface")}>
             <button
               type="button"
               aria-expanded={expanded}

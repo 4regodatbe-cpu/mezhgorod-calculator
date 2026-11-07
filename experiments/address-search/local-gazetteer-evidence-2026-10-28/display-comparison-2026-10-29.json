@@ -1,0 +1,131 @@
+{
+  "status": "PASS",
+  "records": 221512,
+  "coordinateIdTypeAndSourceChanges": 0,
+  "titleChanges": 3048,
+  "adminLabelChanges": 4701,
+  "newlyFlaggedRomanizedNames": 1462,
+  "sourceSha256": "64b0af909e526c11e961da65106152ec4ed40511bcbfa8c5d998f759c4428c56",
+  "exampleSourceEvidence": {
+    "archive": "GeoNames alternatenames/UA.zip saved 2026-10-24",
+    "adminId": 694422,
+    "oldAliasId": 9066179,
+    "oldAlias": "Gorod Sevastopol",
+    "selectedExistingAliasId": 16719546,
+    "selectedExistingAlias": "Город Севастополь",
+    "newTranslationCreated": false
+  },
+  "examples": [
+    {
+      "id": 465018,
+      "before": [
+        "Чечня",
+        "Nožaj-Jurtovskij Rajon"
+      ],
+      "after": [
+        "Чечня",
+        "Ножай-Юртовский Район"
+      ]
+    },
+    {
+      "id": 465019,
+      "before": [
+        "Чечня",
+        "Nožaj-Jurtovskij Rajon"
+      ],
+      "after": [
+        "Чечня",
+        "Ножай-Юртовский Район"
+      ]
+    },
+    {
+      "id": 465258,
+      "before": [
+        "Мордовия",
+        "Dubënskiy Rayon"
+      ],
+      "after": [
+        "Мордовия",
+        "Дубенский район"
+      ]
+    },
+    {
+      "id": 480185,
+      "before": [
+        "Чечня",
+        "Nožaj-Jurtovskij Rajon"
+      ],
+      "after": [
+        "Чечня",
+        "Ножай-Юртовский Район"
+      ]
+    },
+    {
+      "id": 486073,
+      "before": [
+        "Нижегородская Область",
+        "Dal’nekonstantinovskiy Rayon"
+      ],
+      "after": [
+        "Нижегородская Область",
+        "Дальнеконстантиновский Район"
+      ]
+    },
+    {
+      "id": 487503,
+      "before": [
+        "Чечня",
+        "Nožaj-Jurtovskij Rajon"
+      ],
+      "after": [
+        "Чечня",
+        "Ножай-Юртовский Район"
+      ]
+    },
+    {
+      "id": 489067,
+      "before": [
+        "Московская область",
+        "Gorodskoy Okrug Shchëlkovo"
+      ],
+      "after": [
+        "Московская область",
+        "Городской Округ Щëлково"
+      ]
+    },
+    {
+      "id": 492871,
+      "before": [
+        "Чечня",
+        "Nožaj-Jurtovskij Rajon"
+      ],
+      "after": [
+        "Чечня",
+        "Ножай-Юртовский Район"
+      ]
+    },
+    {
+      "id": 493719,
+      "before": [
+        "Чечня",
+        "Nožaj-Jurtovskij Rajon"
+      ],
+      "after": [
+        "Чечня",
+        "Ножай-Юртовский Район"
+      ]
+    },
+    {
+      "id": 494993,
+      "before": [
+        "Архангельская Область",
+        "Kargopol’skiy Rayon"
+      ],
+      "after": [
+        "Архангельская Область",
+        "Каргопольский Район"
+      ]
+    }
+  ],
+  "runtimeApproved": false
+}

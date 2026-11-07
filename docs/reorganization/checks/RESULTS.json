@@ -1,0 +1,20 @@
+{
+  "dateMsk": "2026-10-31",
+  "sourceHeadBeforeChecks": "57138b61240ab06d2886a0ee683e34c804977e65",
+  "applicationSourceMatchesProductionCommit": "e3ca3783a8ba9de3271851959eba213bf7a76868",
+  "environment": { "node": "24.19.0", "pnpm": "11.25.0", "next": "16.3.4" },
+  "checks": [
+    { "command": "pnpm install --frozen-lockfile", "exitCode": 254, "status": "ENVIRONMENT_BLOCKED", "cause": "default pnpm store path /home/agent/.local/share/pnpm/store unavailable", "log": "pnpm-install.log" },
+    { "command": "pnpm install --frozen-lockfile --store-dir /workspace/reorg-handoff-2026-10-31/pnpm-store", "exitCode": 0, "status": "PASS", "log": "pnpm-install-workspace-store.log" },
+    { "command": "pnpm test:audit", "exitCode": 0, "status": "PASS", "passed": 1067, "failed": 0, "skipped": 1, "log": "test-audit.log" },
+    { "command": "pnpm exec tsc --noEmit", "exitCode": 0, "status": "PASS", "log": "typescript.log" },
+    { "command": "pnpm lint", "exitCode": 0, "status": "PASS_WITH_WARNINGS", "errors": 0, "warnings": 7, "log": "eslint.log" },
+    { "command": "pnpm exec next build", "exitCode": 0, "status": "PASS", "log": "next-build.log" },
+    { "command": "node docs/reorganization/verify-local-smoke.mjs http://127.0.0.1:3029", "exitCode": 1, "status": "TEST_ASSERTION_ERROR", "cause": "test compared Ростовская Область case-sensitively", "log": "local-smoke.log" },
+    { "command": "node docs/reorganization/verify-local-smoke.mjs http://127.0.0.1:3029", "exitCode": 0, "status": "PASS", "v2Html": 200, "v3Html": 200, "geonamesCityQueries": 8, "log": "local-smoke-corrected.log" }
+  ],
+  "newBrowserDesktopMobile": "NOT_RUN: unchanged UI source, prior RC1 browser evidence reused only with source equivalence",
+  "newLiveRouteCalculations": "NOT_RUN: routing code unchanged, mandatory offline gate covers saved routes",
+  "productionDeployment": "NOT_CHANGED_BY_THIS_WORK",
+  "runtimeDiffFromProductionCommit": []
+}

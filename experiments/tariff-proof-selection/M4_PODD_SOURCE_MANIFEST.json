@@ -1,0 +1,41 @@
+{
+  "experiment": 7,
+  "reviewedAtMoscowDate": "2026-10-27",
+  "status": "BLOCKED_BY_VIEWER_CAPABILITY",
+  "officialIndex": "https://russianhighways.ru/about/regulatory-information/podd/М-4%20Дон%20Воронежская%20область/",
+  "indexRead": true,
+  "indexEntryDate": "2025-03-13",
+  "documents": [
+    {
+      "title": "Существующая дислокация_ВО 464+300-546+000 (часть 1)",
+      "url": "https://russianhighways.ru/upload/iblock/ac0/ac0d3f914d1dbbb1965af9018617ec94.pdf",
+      "indexSizeMiB": 36.74,
+      "reportedContentLengthBytes": 38525744,
+      "readStatus": "web reader rejected content length as too large",
+      "originalBytesRetained": false,
+      "sha256": null,
+      "reviewedPages": []
+    },
+    {
+      "title": "Существующая дислокация_ВО 517+000-544+000 — Альтернативное направление",
+      "url": "https://russianhighways.ru/upload/iblock/963/9632eae064152f4477899207a052bc6b.pdf",
+      "indexSizeMiB": 11.29,
+      "reportedContentLengthBytes": null,
+      "readStatus": "initial timeout; targeted find had no text match, not negative geometric evidence; screenshot PDF type unresolved",
+      "originalBytesRetained": false,
+      "sha256": null,
+      "reviewedPages": []
+    }
+  ],
+  "ordinaryBrowserAttempt": {
+    "target": "alternative PDF page1",
+    "outcome": "UNAUTHORIZED: app connection requires reauthentication",
+    "retried": false,
+    "restrictionBypassed": false
+  },
+  "physicalTarget": {"nodeId": "5818209495", "wayId": "615270691", "recaptured": false},
+  "newPhysicalToTariffBindings": 0,
+  "newFullDirectedFarePairs": 0,
+  "newEligibleMonetaryComponents": 0,
+  "next": "Read public original covers and locate545km leaf/mainline-alternative merge via a functioning PDF viewer or owner-provided extract. Page numbers and coverage not yet known; do not invent them or repeat failed original requests unchanged."
+}

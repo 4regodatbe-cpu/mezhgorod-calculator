@@ -1,0 +1,161 @@
+{
+  "caseId": "dnr-бахмут-kazan-center",
+  "region": "dnr",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 1642168,
+      "seconds": 84066
+    },
+    {
+      "name": "OSRM",
+      "meters": 1452489,
+      "seconds": 83339
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 1452489,
+  "routeSeconds": 83339,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lat": 48.5894123,
+          "lng": 38.0020994
+        },
+        {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [],
+    "provenRoads": [
+      "m12"
+    ],
+    "missingExpectedRoads": [],
+    "status": "not-assigned"
+  },
+  "passageEvidence": [
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "1339540537",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    },
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "1495475358",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    },
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "1224543741",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "m12": {
+      "occurrences": 87,
+      "uniqueWays": 65
+    }
+  },
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-бахмут-kazan-center/2026-10-15T22-18-10-825Z-capture.json.gz",
+  "captureSha256": "03c155aa97de4864fbb54405bb7fcd81c519a50b66c8da29c7aa7c9c06a6d882",
+  "detectedRoadComponents": [
+    {
+      "id": "m12",
+      "amount": 850,
+      "reason": "matrix dated selected-route M12 directed endpoint pair"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-12",
+    "«Восток»"
+  ],
+  "tollNodeIds": [],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": {
+    "beginKm": 1229.792,
+    "endKm": 1381.792
+  },
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": 850,
+    "weekdayAmount": 850,
+    "weekendAmount": 850,
+    "period": "все дни",
+    "segments": [
+      "М-12: shumerlya → ivanovskoe_p241 · Стоимость не подтверждена"
+    ],
+    "confidence": "matched",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "priced"
+  },
+  "audit": {
+    "status": "priced",
+    "priced": [
+      "m12"
+    ],
+    "missing": [],
+    "components": [
+      {
+        "id": "m12",
+        "detected": true,
+        "tolls": {
+          "amount": 850,
+          "weekdayAmount": 850,
+          "weekendAmount": 850,
+          "period": "все дни",
+          "segments": [
+            "М-12: shumerlya → ivanovskoe_p241 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix dated selected-route M12 directed endpoint pair"
+      }
+    ]
+  }
+}

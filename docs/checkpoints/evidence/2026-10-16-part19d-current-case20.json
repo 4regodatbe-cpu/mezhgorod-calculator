@@ -1,0 +1,120 @@
+{
+  "caseId": "single-m4-rostov-to-voronezh",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/2026-10-16T02-05-08-728Z-capture.json.gz",
+  "captureSha256": "8e18a6d8b917f126561a9410631bf6a54ebbc217e994d53e0553e55d349cc874",
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/replay-2026-10-15T09-00-00-03-00-2026-10-16T09-46-20-113Z.json",
+      "sha256": "0882d079ec85d018fbeb30be51921f8662f32c95707a4481145ff32ca03fde72",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "provider": "Valhalla",
+      "routeMeters": 567353,
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "audit": {
+        "status": "unknown",
+        "priced": [],
+        "missing": [
+          "m4"
+        ],
+        "components": [
+          {
+            "id": "m4",
+            "detected": true,
+            "tolls": null,
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          }
+        ]
+      },
+      "m4": {
+        "status": "boundaries_resolved",
+        "reason": null,
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 2,
+        "confirmedPvps": [
+          "m4-911",
+          "m4-545"
+        ],
+        "diagnosticOnly": true
+      }
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T09-46-21-025Z.json",
+      "sha256": "c7ce5d0244bf5333edaf4271f73c4e0d7ca4434a70c1cfb9b897766ed69daf2f",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "provider": "Valhalla",
+      "routeMeters": 567353,
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "audit": {
+        "status": "unknown",
+        "priced": [],
+        "missing": [
+          "m4"
+        ],
+        "components": [
+          {
+            "id": "m4",
+            "detected": true,
+            "tolls": null,
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          }
+        ]
+      },
+      "m4": {
+        "status": "boundaries_resolved",
+        "reason": null,
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 2,
+        "confirmedPvps": [
+          "m4-911",
+          "m4-545"
+        ],
+        "diagnosticOnly": true
+      }
+    }
+  ],
+  "validation": {
+    "complete": true,
+    "boothEventCoverage": "complete",
+    "tollBoothCount": 5,
+    "paidEdgeCount": 403,
+    "paidWaysIfShort": null,
+    "selected545Nodes": [
+      "3504914294"
+    ]
+  },
+  "geometry": null,
+  "previousCount": 19,
+  "nextCase": "single-m4-voronezh-to-moscow",
+  "oldNext": "single-m4-rostov-to-voronezh",
+  "oldPlan": "19D19/22 reviewed, latestpair-m4-a289-voronezh-to-anapa source_gated_physical545_scope_unresolved; nextsingle-m4-rostov-to-voronezh exactsavedcapture/twoofflineprofiles; sourcegapsretained, no newgate",
+  "result": "source_gated_physical545_scope_unresolved",
+  "scopeCheckpoint": "docs/checkpoints/2026-10-16-122949-case9-545-source-gate.md"
+}

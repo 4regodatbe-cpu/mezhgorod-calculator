@@ -1,0 +1,109 @@
+{
+  "status": "LOCAL_SCOPE_DONE_REMOTE_SAVE_BLOCKED_ACTIVE_CI",
+  "sourceHead": "998a11b5891ddbf539c224fce129ede63b6ae754",
+  "activeRun": 39146933232,
+  "codeVerification": "success",
+  "networkVerification": "in_progress",
+  "newNetworkRequests": 0,
+  "newReplays": 0,
+  "newPricedComponents": 0,
+  "confirmedFullTripFares": 0,
+  "nameRecognition": {
+    "А-113": [],
+    "Центральная кольцевая автомобильная дорога": []
+  },
+  "cases": [
+    {
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/2026-10-16T02-07-00-749Z-capture.json.gz",
+      "sha256": "6b774aae7ccc059e02ce7b6b16d9e336c73a635fb3add1f3a0b58949487c64b8",
+      "originalBoothOrder": [
+        {
+          "nodeId": "3109177688",
+          "wayId": "1067836106"
+        },
+        {
+          "nodeId": "3783549013",
+          "wayId": "374972862"
+        }
+      ],
+      "originalTraceComplete": true,
+      "paidCkadEdges": [
+        {
+          "rawEdgeIndex": 46,
+          "wayId": 1080462756,
+          "endNodeId": 9903493823,
+          "endNodeType": "street_intersection"
+        },
+        {
+          "rawEdgeIndex": 47,
+          "wayId": 1080462754,
+          "endNodeId": 9903493812,
+          "endNodeType": "street_intersection"
+        },
+        {
+          "rawEdgeIndex": 48,
+          "wayId": 1080462753,
+          "endNodeId": 12443433262,
+          "endNodeType": "toll_gantry"
+        },
+        {
+          "rawEdgeIndex": 49,
+          "wayId": 1080462753,
+          "endNodeId": 12495639627,
+          "endNodeType": "street_intersection"
+        },
+        {
+          "rawEdgeIndex": 50,
+          "wayId": 1080462753,
+          "endNodeId": 9903493803,
+          "endNodeType": "street_intersection"
+        },
+        {
+          "rawEdgeIndex": 51,
+          "wayId": 1080462751,
+          "endNodeId": 9903493802,
+          "endNodeType": "street_intersection"
+        },
+        {
+          "rawEdgeIndex": 52,
+          "wayId": 1346919149,
+          "endNodeId": 9903493800,
+          "endNodeType": "street_intersection"
+        },
+        {
+          "rawEdgeIndex": 53,
+          "wayId": 1080462767,
+          "endNodeId": 9903493601,
+          "endNodeType": "street_intersection"
+        }
+      ],
+      "gantriesOutsideBoothArray": [
+        "12443433262"
+      ],
+      "newTraversalAssessment": false
+    },
+    {
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/2026-10-16T02-09-24-620Z-capture.json.gz",
+      "sha256": "14ff3bd2aa0daa55de044e69757be17b2632559411ebad074b8b9a4098981522",
+      "originalBoothOrder": [
+        {
+          "nodeId": "3783549015",
+          "wayId": "374972870"
+        },
+        {
+          "nodeId": "3109177690",
+          "wayId": "1067836109"
+        }
+      ],
+      "originalTraceComplete": true,
+      "paidCkadEdges": [],
+      "gantriesOutsideBoothArray": [],
+      "newTraversalAssessment": false
+    }
+  ],
+  "next": [
+    "Persist this completed scope after CI terminates; no remote write during active/queued jobs.",
+    "Separate bounded CODE STARTED for A113/full CKAD name paid-product identity; no prices. Ensure additional paid CKAD cannot be hidden by regional subtotal. Focused regressions+full build.",
+    "Then bounded strict Odintsovo pair traversal/continuity/complete trace/no-reentry, recorded API and existing fare cells. Forward whole fare must remain unknown while CKAD lacks an exact tariff; reverse may be complete only with its own proof."
+  ]
+}

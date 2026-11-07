@@ -1,0 +1,11 @@
+# C4 / M11 — one actual partial traversal, directed exit known / full product unresolved
+
+29.10.2026 MSK;parent6d2e8f61;local-only. Selected retained `pair-m11-ckad-noginsk-to-tver`, SHA2563235c04e3f0d95c30df518d159c3e47bce988a0c4a0b1b5700b5ee9e206f61b1,Valhalla243975m/9976s/complete trace. One read-only agent selected exact M11/M12 source references; only main agent wrote/executed. No new network or old multi-case audit.
+
+`node --import ./scripts/register-ts-paths.mjs experiments/road-ref-boundaries/checks/2026-10-29-stage-c/other-road-review.mjs m11` exit0,0fetchattempts. [Current pure-adapter report](../../experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c4-m11.json): productboundary unresolved/reasonm11_outer_boundaries_unresolved,quote null. No provider/trace/API replay, no fresh full-route time measurement.
+
+Saved directed edges63–72/call4 prove M11way1307036919→junction3742581847→1301779282→1307036921→boothway1307036920/node6588472831→599932042→423187295→599934826→M10way900434333. Voskresenskoye/p147 exit, not reversebooth6588472832. Actual approach is Noginsk→CKAD; do NOT relabel this Пешки→Тверь or assert p58 merely from route/city names. Retained source M11_PHYSICAL_CROSSWALK.md/M11_VIRTUAL_ROUTE_REVIEW.md and m11-crosswalk.test.mjs preserve primarysource/topology and separate virtual58 interface issue.
+
+Existing order274 matrix has p58↔p147610/750 and distinctp124460/570; values not changed, re-certified or called unavailable dueage. Current27–28Octpolicy applies latest retained official price/rule until replaced and does not demand a physicalbooth at a virtualtariffboundary. Materialgap is THIS selected CKADapproach→58head/mainline interface/productdivision plus exactparentnode/path, not lack of an optional lane certificate. Nativefacilitysnapshot lackingp147 is a known evidence-consumption limitation, not justification to infer the missingentry or import an incompletepair for pricing.
+
+Existing supported full58↔679,214→58 and679→258 paths left unchanged; no broad M11rewrite. Status:boundedC4M11reviewDONE; fullselectedoperatorvector/priceBLOCKED_BY_DATA. NextC4M12one retained actual exit, thenCKAD/ZSD. Runner contains prepared branches for those roads but they are not yet markedexecuted. Checkpoint/WORK_STATE/localcommit;no push/data/runtime/CI/Productionchange.

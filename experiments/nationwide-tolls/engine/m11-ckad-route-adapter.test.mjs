@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {matrixM11Component, matrixM11GeometryComponent} from './m11-route-adapter.mjs';
 import {matrixCkadComponent} from './ckad-route-adapter.mjs';
 import core from './quote.cjs';
+import {composeRouteTolls} from '../../../lib/toll-engine/route-toll-composition.ts';
 const date='2026-10-13T12:00:00+03:00';
 const m11 = (from,to) => ({boundaryStatus:'resolved',blockedByMixedRoadEvidence:false,traversal:{entryPointId:from,exitPointId:to},tolls:null});
 test('M11 uses directed current OD even where the old native table is unknown',()=>{
@@ -25,7 +26,19 @@ test('M11 local Moscow Friday profile, missing/expired/profile-transition/mixed 
 test('M11 geometry adapter prices both independent products from matrix, ignores native money',()=>{
  const parts={headAmount:100,headWeekday:100,headWeekend:200,head:{from:'solnechnogorsk',to:'moscow',paymentAt:date,paymentWindowSeconds:0},from:'p147',to:'p58',mainlineAt:date};
  const direct=matrixM11Component(m11('p147','p58'),date,0);
- assert.equal(matrixM11GeometryComponent({exact:true,parts}).tolls.amount,direct.tolls.amount+1130);
+ const combined=matrixM11GeometryComponent({exact:true,parts});
+ assert.deepEqual(combined.components.map(c=>c.id),['m11-15-58','m11-58-679']);
+ assert.equal(combined.components.reduce((sum,c)=>sum+c.tolls.amount,0),combined.tolls.amount);
+ assert.equal(combined.tolls.amount,direct.tolls.amount+1130);
+ const routeTotal=composeRouteTolls(combined.components);
+ assert.equal(routeTotal.status,'priced');assert.equal(routeTotal.tolls.amount,combined.tolls.amount);
+ const duplicatedHead=composeRouteTolls([...combined.components,combined.components[0]]);
+ assert.equal(duplicatedHead.status,'unknown');
+ const legacyAndSplit=composeRouteTolls([{id:'m11',detected:true,tolls:combined.tolls},...combined.components]);
+ assert.equal(legacyAndSplit.status,'unknown');
+ const unresolvedHead=matrixM11GeometryComponent({exact:true,parts:{...parts,head:null,headDetected:true}});
+ assert.equal(unresolvedHead.tolls,null);
+ assert.equal(unresolvedHead.components[0].tolls,null);
  assert.equal(matrixM11GeometryComponent({exact:true,parts:{...parts,to:'missing'}}).tolls,null);
 });
 test('CKAD direct matrix uses actual direction and date, no guessed section sum',()=>{

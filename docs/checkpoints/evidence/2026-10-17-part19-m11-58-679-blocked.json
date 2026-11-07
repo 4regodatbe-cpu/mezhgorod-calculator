@@ -1,0 +1,881 @@
+{
+  "recordedAtUtc": "2026-10-17T02:23:56Z",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "parentCommit": "a7e71c150131f9e8f8e111a398b9340dfed99c50",
+  "parentTree": "ff85704b2557cb40b5672eca70f2e36820bf1a87",
+  "finding": {
+    "code": "m11-58-679:unpriced",
+    "baselineCaseCount": 41,
+    "newResidualCasesChecked": 26,
+    "outcome": "blocked_by_missing_reliable_data"
+  },
+  "observed": {
+    "newRouteCases": 26,
+    "newUniqueWeekdayWeekendProfiles": 52,
+    "replayFileEntries": 74,
+    "duplicateFileEntriesExcluded": 22,
+    "completeTraces": 52,
+    "completeReplayIntegrity": 52,
+    "profilesWithOnlyOneVerifiedM11Crossing": 52,
+    "unknownNullAmountProfiles": 52,
+    "unconfirmedProfiles": 52,
+    "selectedFastestProfiles": 52,
+    "newLiveCalls": 0,
+    "newReplays": 0,
+    "newBuilds": 0,
+    "newTests": 0,
+    "otherMissingComponentProfiles": {
+      "unknown-paid-road": 52,
+      "zsd": 22,
+      "ckad": 28
+    }
+  },
+  "routeCases": [
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "74057b6e56202a220bb4c93a7b5b33a174b4dd0f",
+          "captureSha256": "df4379076a11666c8c30ea95f4068f86304d1477638f7a71e18d3b02e6e1751d",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-voronezh/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-27-29-924Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-voronezh/replay-2026-10-15T09-00-00-03-00-2026-10-16T16-51-58-433Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "a4d3dbd074b1110877fbd0b7482761888680c372",
+          "captureSha256": "df4379076a11666c8c30ea95f4068f86304d1477638f7a71e18d3b02e6e1751d",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-27-30-449Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T16-51-59-285Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "unknown-paid-road",
+        "zsd"
+      ]
+    },
+    {
+      "caseId": "pair-m11-ckad-noginsk-to-tver",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "0bd466b810622861e208602592c52b4443ccea10",
+          "captureSha256": "3235c04e3f0d95c30df518d159c3e47bce988a0c4a0b1b5700b5ee9e206f61b1",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-tver/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-29-30-541Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "58eb549e563acf074dd6dbdc8062359e291896d9",
+          "captureSha256": "3235c04e3f0d95c30df518d159c3e47bce988a0c4a0b1b5700b5ee9e206f61b1",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-29-30-897Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "ckad",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "pair-m11-ckad-ramenskoe-to-torzhok",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "0d720f2fae995ccaebd8af336e8f681e1ad5290f",
+          "captureSha256": "997d836b516306fa31e9d3849b10586f59e4eeb17e1e1b2299d2a4351a0851b7",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-ramenskoe-to-torzhok/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-30-43-503Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "fe44c3105d3a0a7e9e411d4b6752d1f8349e4f3d",
+          "captureSha256": "997d836b516306fa31e9d3849b10586f59e4eeb17e1e1b2299d2a4351a0851b7",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-ramenskoe-to-torzhok/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-30-43-874Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "ckad",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "pair-m11-ckad-torzhok-to-ramenskoe",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "66ed37c070c46176be5ad318ae1b03d1a296a0d0",
+          "captureSha256": "8fe0ec0ac265d465dbeabeed12087a44d105529839c120bf3bc8231a7feeb4d6",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-torzhok-to-ramenskoe/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-05-16-919Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "3778ba9e4cf5e70894e6e91df4bfc674a8cab5a3",
+          "captureSha256": "8fe0ec0ac265d465dbeabeed12087a44d105529839c120bf3bc8231a7feeb4d6",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-torzhok-to-ramenskoe/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-05-17-287Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "ckad",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "pair-m11-ckad-tver-to-noginsk",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "4f3a3d20443dfacfacf3fe1a1fdbd41684b1e980",
+          "captureSha256": "891ee5ad4fb654412d9b9530a6c0e8d0e1e8fa0016e20b3923d63fd0951568ca",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-tver-to-noginsk/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-31-18-432Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "03f6398be695a8ad71b7748d46cbf13c2b7ece74",
+          "captureSha256": "891ee5ad4fb654412d9b9530a6c0e8d0e1e8fa0016e20b3923d63fd0951568ca",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-tver-to-noginsk/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-31-18-792Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "ckad",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "pair-m11-zsd-novgorod-to-sest",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "296cde5491a377f8e0125d17e859739c1e08517e",
+          "captureSha256": "205d1dd3d2b2fabccdc6400065a1fd56861de1d93bd5166652973f26fc57d779",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-novgorod-to-sest/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-31-53-472Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-novgorod-to-sest/replay-2026-10-15T09-00-00-03-00-2026-10-16T16-55-28-337Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "8f4a3fc07b0d13addd91ad7cc79a4465d2fc6534",
+          "captureSha256": "205d1dd3d2b2fabccdc6400065a1fd56861de1d93bd5166652973f26fc57d779",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-novgorod-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-31-53-847Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-novgorod-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T16-55-28-858Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "unknown-paid-road",
+        "zsd"
+      ]
+    },
+    {
+      "caseId": "pair-m11-zsd-prim-to-torzhok",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "1afac36b5bbc29cacf0f630b627fa1be88ad8c07",
+          "captureSha256": "73413ec362a4f55a1219e5c0b2011f464e446d595af37d852434beb76d6df15e",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-torzhok/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-32-28-700Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-torzhok/replay-2026-10-15T09-00-00-03-00-2026-10-16T16-56-45-820Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "53406343375323c41b7b59396512bb5f341d46f8",
+          "captureSha256": "73413ec362a4f55a1219e5c0b2011f464e446d595af37d852434beb76d6df15e",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-torzhok/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-32-29-085Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-torzhok/replay-2026-10-17T09-00-00-03-00-2026-10-16T16-56-46-338Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "unknown-paid-road",
+        "zsd"
+      ]
+    },
+    {
+      "caseId": "pair-m11-zsd-sest-to-novgorod",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "9c305dc21239f0c30a9e6e12f9af052ee293a39c",
+          "captureSha256": "50906f673fa32a6219e678697a823c16806bf8c400f5408a4472f6a2a3f44534",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-novgorod/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-33-04-293Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-novgorod/replay-2026-10-15T09-00-00-03-00-2026-10-16T16-58-55-298Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "803e5fc62703eea2e00170e96a4b87468e810978",
+          "captureSha256": "50906f673fa32a6219e678697a823c16806bf8c400f5408a4472f6a2a3f44534",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-novgorod/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-33-04-648Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-novgorod/replay-2026-10-17T09-00-00-03-00-2026-10-16T16-58-55-956Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "zsd",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "pair-m11-zsd-sest-to-tver",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "9625de38342df9d484d52dee2f459049f7ded69e",
+          "captureSha256": "f345d2c725eefeff29ec7fcfb73d7a510c1e8199e4e04191a1cccb92bcbf35f0",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-tver/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-33-39-796Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-tver/replay-2026-10-15T09-00-00-03-00-2026-10-16T17-00-03-223Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "dba742ee564e147806fe1e31725d4fd43923cc49",
+          "captureSha256": "f345d2c725eefeff29ec7fcfb73d7a510c1e8199e4e04191a1cccb92bcbf35f0",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-33-40-180Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T17-00-03-693Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "zsd",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "pair-m11-zsd-torzhok-to-prim",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "1c3ca509abe10c42b883d44b01d03de40c613177",
+          "captureSha256": "875a7b43b82e9e35432ac2ac76cb116242fb2a646eb745fc82fd85c9981fdb09",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-torzhok-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-34-14-760Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-torzhok-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T17-01-22-219Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "de9222f8d4349555ceb8d353323bec6b6d353b98",
+          "captureSha256": "875a7b43b82e9e35432ac2ac76cb116242fb2a646eb745fc82fd85c9981fdb09",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-torzhok-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-34-15-134Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-torzhok-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T17-01-22-719Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "unknown-paid-road",
+        "zsd"
+      ]
+    },
+    {
+      "caseId": "pair-m11-zsd-tver-to-sest",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "9f3aa162690e40d41a9edd13c5023602a42fe638",
+          "captureSha256": "23569180e6f0281e83966b4269468fb3e022facdede07769ec29b76c8fc01edf",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-tver-to-sest/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-07-09-972Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-tver-to-sest/replay-2026-10-15T09-00-00-03-00-2026-10-16T14-23-15-997Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "481156e6c12f4ecef327856316d1592998ed95b1",
+          "captureSha256": "23569180e6f0281e83966b4269468fb3e022facdede07769ec29b76c8fc01edf",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-tver-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-07-10-360Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-tver-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T14-23-16-336Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "unknown-paid-road",
+        "zsd"
+      ]
+    },
+    {
+      "caseId": "pair-m12-ckad-kazan-to-klin",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "3801ff43103fdb832b91c71c41e27f35d01a888e",
+          "captureSha256": "2adf0ed3480fa6f39517852c63e63a2764245ca929a3d016e3abb5e9632123a5",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-kazan-to-klin/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-08-22-440Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "4038e335ea1722fedf55bea026cecada952322ba",
+          "captureSha256": "2adf0ed3480fa6f39517852c63e63a2764245ca929a3d016e3abb5e9632123a5",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-kazan-to-klin/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-08-22-896Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "ckad",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "pair-m12-ckad-klin-to-kazan",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "1d6b0ba39e74a1d23de335325828a8da1c2ed4d6",
+          "captureSha256": "9dc5f3c3201e45c5ad888fe71de1112daac1a26b510e6410b1d0ca58ba145539",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-08-48-795Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "2d90f318c39ec24538df83c4fbe906f495e58a15",
+          "captureSha256": "9dc5f3c3201e45c5ad888fe71de1112daac1a26b510e6410b1d0ca58ba145539",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-kazan/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-08-49-247Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "ckad",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "pair-m12-ckad-klin-to-vladimir",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "f08788085175503621efc8a15343f043d98c4438",
+          "captureSha256": "46110034583a519fae3dc7ef4330263f313c9d6353ee038264bca964561c716d",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-vladimir/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-36-38-566Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "e9ada92bbda0040b901b88e07f80b209afa7704b",
+          "captureSha256": "46110034583a519fae3dc7ef4330263f313c9d6353ee038264bca964561c716d",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-klin-to-vladimir/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-36-38-943Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "ckad",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "pair-m12-ckad-vladimir-to-klin",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "644a02497b1bacb5be09e63d6cbaf6b15bc3c9d4",
+          "captureSha256": "7ef6d5c26ac800e2f2078e0a3402cdfeda49ce161be931a69e12c3ddc2bed34a",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-vladimir-to-klin/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-09-10-242Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "8cf8ebd7dfe238d54de821aaec20eaa1c2efc41a",
+          "captureSha256": "7ef6d5c26ac800e2f2078e0a3402cdfeda49ce161be931a69e12c3ddc2bed34a",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-vladimir-to-klin/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-09-10-607Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "ckad",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "pair-m4-m11-spb-to-voronezh",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "ce24eeab6224af5161a6cc3dd8c676881cf356d6",
+          "captureSha256": "4d3c6d232c73eab5c662c3532fb85931d3083bfb43f4c5184dfe1b285abebc57",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-voronezh/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-43-04-039Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-voronezh/replay-2026-10-15T09-00-00-03-00-2026-10-16T17-02-35-134Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "d54ec1eca87f51f64f0548c9a3816b7d559d3589",
+          "captureSha256": "4d3c6d232c73eab5c662c3532fb85931d3083bfb43f4c5184dfe1b285abebc57",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-43-04-574Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T17-02-35-798Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "zsd",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "single-ckad-ramenskoe-to-klin",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "defdbd75d299693840d534d0e33359ec7cabdcc8",
+          "captureSha256": "7e51c29bed351d8f5b24dfd4630802d84a04152e5703d677b8edb1e68c297d14",
+          "selectedProvider": "OSRM",
+          "fastestProvider": "OSRM",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-18-06-175Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "5ef169af9638f87dd923a2e81cc4f26f72938429",
+          "captureSha256": "7e51c29bed351d8f5b24dfd4630802d84a04152e5703d677b8edb1e68c297d14",
+          "selectedProvider": "OSRM",
+          "fastestProvider": "OSRM",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-18-06-528Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "single-m11-spb-to-tver",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "597285bb15501b50c300c59c4fd2cfddddb4b4e2",
+          "captureSha256": "dbe832b30cefdedaeca8e818eece65af91461febd941b579cbc2032a94d6db94",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-tver/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-55-50-344Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-tver/replay-2026-10-15T09-00-00-03-00-2026-10-16T17-03-57-712Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "823e3ad9bbff7c67fb98505cd7a60583a6e9c9fe",
+          "captureSha256": "dbe832b30cefdedaeca8e818eece65af91461febd941b579cbc2032a94d6db94",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-55-50-729Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T17-03-58-367Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "zsd",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "single-m11-tver-to-spb",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "6ae37071c70c7f32bb3d2d23d6b7845f68c71b23",
+          "captureSha256": "105e36359823ef4a72a16a9ba7f5892f09d836b461b0726d20a8efc3c4627d0f",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-tver-to-spb/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-57-04-459Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-tver-to-spb/replay-2026-10-15T09-00-00-03-00-2026-10-16T17-05-06-105Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "6f6b613d1fd6555093aec09cebc2aaf769a746f1",
+          "captureSha256": "105e36359823ef4a72a16a9ba7f5892f09d836b461b0726d20a8efc3c4627d0f",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-tver-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-57-04-854Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-tver-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T17-05-06-704Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "unknown-paid-road",
+        "zsd"
+      ]
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-kazan-to-torzhok",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "1393a7db550ca6d7f4f34c7fc4008d4211fb0b3c",
+          "captureSha256": "3435dbbb707f6d1441e92b4783032b2506e79a2021d46963be96120d642434f6",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-torzhok/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-32-57-404Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "9c5d71ce92accb889b65d8e8a72b127b318b954c",
+          "captureSha256": "3435dbbb707f6d1441e92b4783032b2506e79a2021d46963be96120d642434f6",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-torzhok/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-32-57-868Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "ckad",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-murom-to-tver",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "d3d084ef9a12a63a71d8025279b2a7ac9d322863",
+          "captureSha256": "39a3c1a8b884e3dae772918ef5f298c8c55162974bcecdb03096ef61f988fa55",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-murom-to-tver/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-13-48-135Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "41d28ef2d49168646df60afe7bd6f7a3fc2ab8d0",
+          "captureSha256": "39a3c1a8b884e3dae772918ef5f298c8c55162974bcecdb03096ef61f988fa55",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-murom-to-tver/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-13-48-531Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "ckad",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-novgorod-to-vladimir",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "d14fa720f428a0d3f23610329fe43c364094e379",
+          "captureSha256": "8863dbc88b6b83021dc2fbcbcec24faff68645a428c537d83d90885c6d8fe4b4",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-novgorod-to-vladimir/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-14-26-560Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "deec9a0950703bf394a3e0ebb45937da408fa1c0",
+          "captureSha256": "8863dbc88b6b83021dc2fbcbcec24faff68645a428c537d83d90885c6d8fe4b4",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-novgorod-to-vladimir/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-14-26-949Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "ckad",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-torzhok-to-kazan",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "72dfb517d253014b570a29aa0c5468517d1d8ce7",
+          "captureSha256": "da0f293ff4743939866e74b60ea49cae07891b08306b386a58c57da0e058fa6a",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-01-774Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "ad9b4ef164f95413bf6a800dd4237a7650006f0e",
+          "captureSha256": "da0f293ff4743939866e74b60ea49cae07891b08306b386a58c57da0e058fa6a",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-34-02-247Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "ckad",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-tver-to-murom",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "446f4ceeeced2eb4c07e1cbe951693abf4a55371",
+          "captureSha256": "52c526f20f0642c5928210f5dd37ce18e224da9dc1d91f552270f905ed1c04b8",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-tver-to-murom/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-34-27-815Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "1f5943c77d66c3713076479cb81cdbf9a78c7e36",
+          "captureSha256": "52c526f20f0642c5928210f5dd37ce18e224da9dc1d91f552270f905ed1c04b8",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-tver-to-murom/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-34-28-233Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "ckad",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-vladimir-to-novgorod",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "3f45f4c0071711fef15e3b8dd107c3e9406f9984",
+          "captureSha256": "5671de2c63b81379466bdf674937ce80265736c2526e0e526e55a49442c40eb3",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-vladimir-to-novgorod/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-15-50-638Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "9e34f4c3f75570d28ec884466f10f103f6d87df5",
+          "captureSha256": "5671de2c63b81379466bdf674937ce80265736c2526e0e526e55a49442c40eb3",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-vladimir-to-novgorod/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-15-51-042Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "ckad",
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-prim-to-voronezh",
+      "profiles": [
+        {
+          "date": "2026-10-15",
+          "blobSha": "ba39e262870cd5d7af2e0778dbfa7d7ec16cbafb",
+          "captureSha256": "d18c078fdca15034c81382d997906bf81ad42d90f98e25f6b4fc3c3da4384a7a",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-prim-to-voronezh/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-19-07-897Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-prim-to-voronezh/replay-2026-10-15T09-00-00-03-00-2026-10-16T17-36-50-619Z.json"
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "blobSha": "f7e256604014485a7f0caa05c0cd99587dce54f5",
+          "captureSha256": "d18c078fdca15034c81382d997906bf81ad42d90f98e25f6b4fc3c3da4384a7a",
+          "selectedProvider": "Valhalla",
+          "fastestProvider": "Valhalla",
+          "sourcePaths": [
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-prim-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-19-08-438Z.json",
+            "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-prim-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T17-36-51-522Z.json"
+          ]
+        }
+      ],
+      "otherMissingComponents": [
+        "unknown-paid-road",
+        "zsd"
+      ]
+    }
+  ],
+  "earlierSubgroup": {
+    "finding": "m11_58_679_facility_sequence_incomplete",
+    "cases": 15,
+    "uniqueProfiles": 30,
+    "outcome": "blocked_by_missing_reliable_data",
+    "checkpoint": "2026-10-17-part19-m11-facility-sequence-blocked.md"
+  },
+  "sources": {
+    "officialInventory": {
+      "path": "data/tolls/m11/2026-03-02-58-679-facility-evidence.json",
+      "blobSha": "149779e4de5adb6196b5587795a7d78698c2b545",
+      "facilityCount": 21,
+      "facilityIds": [
+        "p58",
+        "p67",
+        "p89",
+        "p97",
+        "p124",
+        "p147",
+        "p159",
+        "p177",
+        "p209",
+        "p214",
+        "p258",
+        "p330",
+        "p348",
+        "p385",
+        "p402",
+        "p444",
+        "p524",
+        "p545",
+        "p647",
+        "p668",
+        "p679"
+      ],
+      "coordinatesPresent": 0,
+      "source": {
+        "kind": "official_operator_pdf",
+        "url": "https://avtodor-tr.ru/upload/iblock/402/k44r7q8jiukdw84ropm7pgd9khjh5o4h.pdf",
+        "approvedBy": "Государственная компания «Российские автомобильные дороги»",
+        "order": "Приказ от 27.02.2026 № 35",
+        "evidence": "Заголовки официальной тарифной матрицы прямо задают точки вида км маршрута / ПВП км; координаты документ не публикует"
+      }
+    },
+    "spatialAnchors": {
+      "path": "data/tolls/m11/2026-10-01-58-679-spatial-anchors.json",
+      "blobSha": "1e9e286bcfcfa866a75410efdf1001089d3247cd",
+      "facilities": [
+        {
+          "tariffPointId": "p58",
+          "anchorCount": 4
+        },
+        {
+          "tariffPointId": "p593",
+          "anchorCount": 2
+        },
+        {
+          "tariffPointId": "p679",
+          "anchorCount": 1
+        }
+      ]
+    },
+    "resolver": {
+      "path": "lib/toll-engine/m11-boundary-resolver.ts",
+      "blobSha": "65eba402c10effe45bd7099686589e1a094f0aa0",
+      "rule": "Requires at least two independently anchored route crossings; one returns only_one_verified_boundary_crossing and unresolved entry/exit."
+    }
+  },
+  "conclusion": "All 26 residual cases show the same M11 unresolved crossing in saved evidence. No material exception or code defect established. Other CKAD/ZSD/unknown-booth causes remain distinct, and known M4/M12 components are partial only.",
+  "tariffStatus": "unconfirmed; keep unknown/null; no full route totals",
+  "next": "All 41 cases of the M11 58–679 finding are now assessed across 82 unique saved weekday/weekend profiles. Next queue cause: arc_not_proven (baseline 34); inspect saved evidence and exceptions only."
+}

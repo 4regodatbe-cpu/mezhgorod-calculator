@@ -1,0 +1,26 @@
+{
+  "status": "PASS_LOCAL_ONLY",
+  "previousHead": "7d1007280e0a0b8ca2673a4d52dcea7023fcc8e2",
+  "testedImplementationCommit": "2750861c68a8182645d35126a251056ad665c89d",
+  "node": "24.19.0",
+  "next": "16.3.4",
+  "workflowChange": "Exactly one snapshot path added to each of push.paths and pull_request.paths; all other bytes unchanged",
+  "trackedPath": "data/address-city-snapshot.json",
+  "beforeFix": {"command": "node scripts/b03-browser-workflow.test.mjs", "pass": 3, "fail": 2, "exit": 1, "log": "before.log"},
+  "afterFix": {"command": "node scripts/b03-browser-workflow.test.mjs", "pass": 5, "fail": 0, "exit": 0, "log": "after.log"},
+  "initialBaseSandboxTestDriver": {"command": "node --test scripts/b03-browser-workflow.test.mjs", "exit": 1, "detail": "file-level failure only; not the missing-path regression result", "log": "sandbox-child-process.log"},
+  "checks": [
+    {"command": "npm run test:audit", "pass": 1063, "fail": 0, "skip": 1, "exit": 0, "quoteAndApiContracts": "PASS", "log": "offline-gate.log"},
+    {"command": "npm run lint", "exit": 0, "errors": 0, "warnings": 7, "log": "lint.log"},
+    {"command": "NEXT_TELEMETRY_DISABLED=1 node node_modules/next/dist/bin/next build --webpack", "exit": 0, "log": "build.log", "warning": "existing preferredRegion deprecation"},
+    {"command": "node node_modules/typescript/bin/tsc --noEmit", "exit": 0, "afterBuild": true, "log": "typecheck.log"}
+  ],
+  "workflowInvariantProof": "workflow-invariants.log",
+  "runtimeAndSnapshotUnchangedFromPreviousHead": true,
+  "freshnessSha256AndBrowserChecksUnchanged": true,
+  "photonAuditRepeated": false,
+  "newActionsRuns": false,
+  "pushPerformed": false,
+  "productionChanged": false,
+  "publicationReadiness": "Local checks pass; explicit publication permission and fresh remote preflight still required. No new GitHub or Preview acceptance claimed."
+}

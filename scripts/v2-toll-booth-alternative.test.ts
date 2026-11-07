@@ -61,7 +61,7 @@ test("an incomplete booth trace is rejected because payment-point avoidance is u
 });
 
 test("a candidate without route geometry is never offered as an unverified detour", async () => {
-  const noGeometry = { ...candidate, coordinates: [[37, 55], [37.1, 55.1]] };
+  const noGeometry: RouteWithGeometry = { ...candidate, coordinates: [[37, 55], [37.1, 55.1]] };
   const selected = await selectFreeRoute(
     { meters: 100_000, seconds: 3_600 },
     [{ name: "candidate", result: { status: "fulfilled", value: noGeometry } }],

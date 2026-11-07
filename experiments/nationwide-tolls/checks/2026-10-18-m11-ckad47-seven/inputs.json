@@ -1,0 +1,83 @@
+{
+  "status": "STARTED",
+  "atMsk": "2026-10-18T12:32:21.990710+03:00",
+  "sourceCodeCommit": "29129946ed7445677332749857f89efbc9ff546b",
+  "sourceCi": {
+    "id": 39115104478,
+    "status": "completed",
+    "conclusion": "success",
+    "verify": "success",
+    "live_probe": "success"
+  },
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "pr": 14,
+  "prDraft": true,
+  "cases": [
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-kazan-to-sest/2026-10-15T23-59-05-400Z-capture.json.gz",
+      "priorReview": "docs/checkpoints/evidence/2026-10-16-m11-case2-boundary-review.json",
+      "captureGitBlob": "71c8372e68a3c7521d95c2410a4a5155b6595874"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-murom-to-sest",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-murom-to-sest/2026-10-15T23-59-30-619Z-capture.json.gz",
+      "priorReview": "docs/checkpoints/evidence/2026-10-16-m11-case3-boundary-review.json",
+      "captureGitBlob": "80a267646f5af3f1fe25f61bf2823bee0d562543"
+    },
+    {
+      "caseId": "pair-m11-ckad-noginsk-to-spb",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-spb/2026-10-16T00-04-08-712Z-capture.json.gz",
+      "priorReview": "docs/checkpoints/evidence/2026-10-16-m11-case4-boundary-review.json",
+      "captureGitBlob": "7bf36b92145eb4cfec0d1bff8e6b9d06ce6e733c"
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-kazan-to-spb",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-kazan-to-spb/2026-10-16T00-32-28-847Z-capture.json.gz",
+      "priorReview": "docs/checkpoints/evidence/2026-10-16-m11-case5-boundary-review.json",
+      "captureGitBlob": "60c9bc47506932b4741441506baec735bf138e4a"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/2026-10-16T01-21-31-631Z-capture.json.gz",
+      "priorReview": "docs/checkpoints/evidence/2026-10-16-m11-case6-boundary-exception.json",
+      "captureGitBlob": "fa8c1b70d52138c59fcc5d8055d09e3eb020a297"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-vladimir-to-sest/2026-10-16T01-24-11-271Z-capture.json.gz",
+      "priorReview": "docs/checkpoints/evidence/2026-10-17-m11-case7-boundary-source-gated.json",
+      "captureGitBlob": "80bf282afa92f210adc7d141bc204ebb48d326df"
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-arzamas-to-spb",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-arzamas-to-spb/2026-10-16T02-13-09-138Z-capture.json.gz",
+      "priorReview": "docs/checkpoints/evidence/2026-10-17-m11-case8-boundary-source-gated.json",
+      "captureGitBlob": "b95d07d9614e5b72621a0cfd264f0936658d55f4"
+    }
+  ],
+  "departureProfiles": [
+    "2026-10-15T09:00:00+03:00",
+    "2026-10-17T09:00:00+03:00"
+  ],
+  "codeSha256": {
+    "lib/v3-calculation/m11-ckad-head-entry.ts": "a31e91bc84594e8e89954e2c16ae832c833f131b956dc4c7bf96120595ffbc68",
+    "lib/v3-calculation/m11-product-boundaries.ts": "a8ff22c2b03492312e727c18b25f095985ce9901d4ce1f3c5651b7641abe0f33",
+    "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-entry/directed-ckad47-entry.json": "9410cc7be1ad3ae26bb0343ad4205d470eef6aafbd54f1c8498da28a35299f7e",
+    "experiments/nationwide-tolls/engine/m11-route-adapter.mjs": "2d726412c8fa3356b92083223ad16df25c55941f4773ad16414c4c5220ed5b7a",
+    "experiments/nationwide-tolls/engine/m11-head-route-adapter.mjs": "45e351fb5ab25d3d079f466c3fdf3aacfe48bce8803e64faadf2ef01c0b1efa1",
+    "experiments/nationwide-tolls/source-snapshots/2026-04-24-15-58-category1.json": "375416b2ab4692ffb744661017e58106ea4167340953e10489912541f064f583"
+  },
+  "limits": {
+    "cases": 7,
+    "profilesPerCase": 2,
+    "maxWorkSeconds": 60,
+    "network": 0,
+    "newRouting": 0,
+    "newTrace": 0,
+    "newSourceGets": 0,
+    "fullPricingReplays": 0
+  },
+  "scope": "Own saved capture identity, complete trace, exact directed physical gate/corridor, mainline bounds and dated M11 head component only. Original representative excluded; no whole-trip pricing or independent fare confirmation.",
+  "recovery": "Atomic per-case result/progress. Reuse DONE case only if input, runner, runtime fingerprints and exact Git blob match; otherwise stop. After interruption continue first unfinished case, do not repeat completed checks."
+}

@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:03:41.472Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 75,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 6,
+    "spec": {
+      "caseId": "pair-m11-ckad-domodedovo-to-spb",
+      "kind": "road",
+      "group": "pair-m11-ckad"
+    }
+  },
+  "caseId": "pair-m11-ckad-domodedovo-to-spb",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-03-41-472Z-part6",
+  "parent": "5ea71ece8b0a614f097c18ba910a2f6ba40f3e8d"
+}

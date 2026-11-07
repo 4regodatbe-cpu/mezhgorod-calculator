@@ -1,0 +1,1610 @@
+[
+  {
+    "stage": 1,
+    "manifestAudited": 23,
+    "readableAudited": 23,
+    "strictAudited": 23,
+    "rows": [
+      {
+        "id": "zaporizhzhia-пришиб-kazan-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "zaporizhzhia-гуляйполе-moscow-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "zaporizhzhia-гуляйполе-saint-petersburg-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "zaporizhzhia-молочанск-kazan-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "zaporizhzhia-молочанск-kerch-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "zaporizhzhia-молочанск-moscow-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "zaporizhzhia-молочанск-saint-petersburg-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "zaporizhzhia-пришиб-kerch-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "dnr-бахмут-kazan-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "dnr-бахмут-kerch-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "dnr-бахмут-moscow-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "dnr-бахмут-saint-petersburg-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "dnr-волноваха-kazan-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "dnr-волноваха-kerch-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "dnr-волноваха-moscow-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "dnr-волноваха-saint-petersburg-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "dnr-донецк-kazan-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "dnr-донецк-kerch-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "dnr-донецк-moscow-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "dnr-донецк-saint-petersburg-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "dnr-краматорск-kazan-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "dnr-краматорск-kerch-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "dnr-краматорск-moscow-center",
+        "status": "audited",
+        "readable": true,
+        "sameDateParity": true,
+        "replaysComplete": true
+      },
+      {
+        "id": "kherson-аскания-нова-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-аскания-нова-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-аскания-нова-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-аскания-нова-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-геническ-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-геническ-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-геническ-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-геническ-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-каховка-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-каховка-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-каховка-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-каховка-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-новая-збурьевка-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-новая-збурьевка-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-новая-збурьевка-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-алчевск-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-алчевск-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-алчевск-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-алчевск-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-антрацит-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-антрацит-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-антрацит-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-антрацит-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-довжанск-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-довжанск-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-довжанск-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-довжанск-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-марковка-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-марковка-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-марковка-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-марковка-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-бердянск-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-бердянск-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-бердянск-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-бердянск-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-васильевка-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-васильевка-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-васильевка-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-васильевка-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-гуляйполе-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-гуляйполе-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-кушугум-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m12-ckad-m11-zsd-murom-to-sest",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m12-ckad-m11-zsd-sest-to-murom",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m4-ckad-m11-zsd-rostov-to-sest",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m4-ckad-m11-zsd-sest-to-krasnodar",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-ckad-domodedovo-to-spb",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-ckad-noginsk-to-spb",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-ckad-spb-to-domodedovo",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-ckad-spb-to-noginsk",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-ckad-torzhok-to-ramenskoe",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-zsd-moscow-to-prim",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-zsd-moscow-to-sest",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-zsd-prim-to-moscow",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-zsd-sest-to-moscow",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-zsd-tver-to-sest",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m12-ckad-dmitrov-to-kazan",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m12-ckad-kazan-to-dmitrov",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m12-ckad-kazan-to-klin",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m12-ckad-klin-to-kazan",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m12-ckad-vladimir-to-klin",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-a289-kerch-to-rostov",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-a289-moscow-to-taman",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-a289-rostov-to-kerch",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-a289-taman-to-voronezh",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-a289-voronezh-to-taman",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-m11-krasnodar-to-spb",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-m11-rostov-to-spb",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-m11-spb-to-krasnodar",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-m11-spb-to-rostov",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-m11-voronezh-to-spb",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-a289-kerch-to-krasnodar",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-a289-krasnodar-to-kerch",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-a289-krasnodar-to-taman",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-a289-krasnodar-to-temryuk",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-a289-taman-to-krasnodar",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-ckad-domodedovo-to-klin",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-ckad-klin-to-domodedovo",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-ckad-noginsk-to-podolsk",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-ckad-podolsk-to-noginsk",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-ckad-ramenskoe-to-klin",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-khabarovsk-knyaze-to-smidovich",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-khabarovsk-smidovich-to-knyaze",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-khabarovsk-smidovich-to-nekrasovka",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-khabarovsk-smidovich-to-vyazemsky",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-khabarovsk-vyazemsky-to-smidovich",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m11-moscow-to-spb",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m11-moscow-to-torzhok",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m11-moscow-to-tver",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m11-spb-to-moscow",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m11-tver-to-moscow",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m12-kazan-to-moscow",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m12-kazan-to-vladimir",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m12-moscow-to-kazan",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m12-murom-to-kazan",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m12-vladimir-to-kazan",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m3-kaluga-to-moscow",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m3-moscow-to-kaluga",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m3-moscow-to-maloyaroslavets",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m3-moscow-to-obninsk",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m3-obninsk-to-moscow",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m4-domodedovo-to-krasnodar",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m4-krasnodar-to-domodedovo",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m4-krasnodar-to-rostov",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m4-krasnodar-to-voronezh",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m4-voronezh-to-krasnodar",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-odintsovo-golitsyno-to-moscow",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-odintsovo-moscow-to-golitsyno",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-odintsovo-moscow-to-kubinka",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-odintsovo-moscow-to-zvenigorod",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-odintsovo-zvenigorod-to-moscow",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-zsd-blag-to-prim",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-zsd-peterhof-to-sest",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-zsd-prim-to-blag",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-zsd-pushkin-to-sest",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-zsd-sest-to-pushkin",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m11-ckad-m12-kazan-to-spb",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m11-ckad-m12-kazan-to-torzhok",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m11-ckad-m12-spb-to-kazan",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m11-ckad-m12-torzhok-to-kazan",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m11-ckad-m12-tver-to-murom",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m4-m11-zsd-krasnodar-to-sest",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m4-m11-zsd-rostov-to-sest",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m4-m11-zsd-sest-to-krasnodar",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m4-m11-zsd-sest-to-rostov",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m4-m11-zsd-voronezh-to-prim",
+        "status": "no-batch",
+        "readable": false
+      }
+    ]
+  },
+  {
+    "stage": 2,
+    "manifestAudited": 1,
+    "readableAudited": 0,
+    "strictAudited": 0,
+    "rows": [
+      {
+        "id": "lnr-лисичанск-moscow-center",
+        "status": "audited",
+        "readable": false,
+        "error": "[Errno 2] No such file or directory: 'experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-лисичанск-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T12-03-20-997Z.json'"
+      },
+      {
+        "id": "dnr-краматорск-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "dnr-новоазовск-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "dnr-новоазовск-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "dnr-новоазовск-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "dnr-новоазовск-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "dnr-талаковка-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "dnr-талаковка-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "dnr-талаковка-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "dnr-талаковка-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "dnr-урзуф-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "dnr-урзуф-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "dnr-харцызск-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "dnr-харцызск-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "dnr-харцызск-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "dnr-харцызск-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-новая-збурьевка-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-скадовск-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-скадовск-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-скадовск-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-скадовск-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-старая-збурьевка-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-старая-збурьевка-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-таврийск-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-таврийск-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-таврийск-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-таврийск-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-херсон-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-херсон-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-херсон-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "kherson-херсон-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-ровеньки-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-ровеньки-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-ровеньки-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-ровеньки-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-рубежное-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-рубежное-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-сорокино-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-сорокино-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-сорокино-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-сорокино-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-старобельск-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-старобельск-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-старобельск-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "lnr-старобельск-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-кушугум-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-кушугум-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-кушугум-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-мелитополь-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-мелитополь-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-мелитополь-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-мелитополь-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-пологи-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-пологи-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-пологи-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-пологи-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-розовка-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-розовка-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-розовка-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-розовка-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-токмак-kazan-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-токмак-kerch-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-токмак-moscow-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "zaporizhzhia-токмак-saint-petersburg-center",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m4-ckad-m11-zsd-krasnodar-to-prim",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m4-ckad-m11-zsd-prim-to-krasnodar",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m4-ckad-m11-zsd-prim-to-rostov",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-ckad-domodedovo-to-novgorod",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-ckad-noginsk-to-tver",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-ckad-novgorod-to-domodedovo",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-ckad-ramenskoe-to-torzhok",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-ckad-tver-to-noginsk",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-zsd-novgorod-to-sest",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-zsd-prim-to-torzhok",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-zsd-sest-to-novgorod",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-zsd-sest-to-tver",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m11-zsd-torzhok-to-prim",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m12-ckad-arzamas-to-domodedovo",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m12-ckad-dmitrov-to-murom",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m12-ckad-domodedovo-to-arzamas",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m12-ckad-klin-to-vladimir",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m12-ckad-murom-to-dmitrov",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-a289-anapa-to-voronezh",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-a289-domodedovo-to-kerch",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-a289-kerch-to-domodedovo",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-a289-taman-to-moscow",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-a289-voronezh-to-anapa",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-m11-krasnodar-to-torzhok",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-m11-rostov-to-tver",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-m11-spb-to-voronezh",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-m11-torzhok-to-krasnodar",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "pair-m4-m11-tver-to-rostov",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-a289-anapa-to-krasnodar",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-a289-krasnodar-to-anapa",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-a289-slavyansk-to-taman",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-a289-taman-to-slavyansk",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-a289-temryuk-to-krasnodar",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-ckad-dmitrov-to-kazan",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-ckad-dmitrov-to-rostov",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-ckad-kazan-to-dmitrov",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-ckad-klin-to-ramenskoe",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-ckad-rostov-to-dmitrov",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-khabarovsk-berezovka-to-vyazemsky",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-khabarovsk-khabarovsk-to-vyazemsky",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-khabarovsk-nekrasovka-to-smidovich",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-khabarovsk-vyazemsky-to-berezovka",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-khabarovsk-vyazemsky-to-khabarovsk",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m11-moscow-to-novgorod",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m11-novgorod-to-moscow",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m11-spb-to-tver",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m11-torzhok-to-moscow",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m11-tver-to-spb",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m12-arzamas-to-moscow",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m12-cheboksary-to-moscow",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m12-kazan-to-murom",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m12-moscow-to-arzamas",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m12-moscow-to-cheboksary",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m3-balabanovo-to-kaluga",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m3-kaluga-to-balabanovo",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m3-kaluga-to-obninsk",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m3-maloyaroslavets-to-moscow",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m3-obninsk-to-kaluga",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m4-moscow-to-voronezh",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m4-rostov-to-krasnodar",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m4-rostov-to-voronezh",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m4-voronezh-to-moscow",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-m4-voronezh-to-rostov",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-odintsovo-golitsyno-to-rublevo",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-odintsovo-kubinka-to-moscow",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-odintsovo-lesnoy-to-moscow",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-odintsovo-moscow-to-lesnoy",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-odintsovo-rublevo-to-golitsyno",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-zsd-blag-to-sest",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-zsd-peterhof-to-prim",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-zsd-prim-to-peterhof",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-zsd-sest-to-blag",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "single-zsd-sest-to-peterhof",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m11-ckad-m12-arzamas-to-spb",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m11-ckad-m12-murom-to-tver",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m11-ckad-m12-novgorod-to-vladimir",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m11-ckad-m12-spb-to-arzamas",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m11-ckad-m12-vladimir-to-novgorod",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m4-m11-zsd-domodedovo-to-sest",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m4-m11-zsd-krasnodar-to-prim",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m4-m11-zsd-prim-to-krasnodar",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m4-m11-zsd-prim-to-voronezh",
+        "status": "no-batch",
+        "readable": false
+      },
+      {
+        "id": "triple-m4-m11-zsd-sest-to-domodedovo",
+        "status": "no-batch",
+        "readable": false
+      }
+    ]
+  }
+]

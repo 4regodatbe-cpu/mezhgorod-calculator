@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:01:55.144Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 37,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 12,
+    "spec": {
+      "caseId": "lnr-сорокино-kazan-center",
+      "kind": "regional",
+      "region": "lnr"
+    }
+  },
+  "caseId": "lnr-сорокино-kazan-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-01-55-144Z-part12",
+  "parent": "5aefac2d957534ed8f59405ed730e8205da44174"
+}

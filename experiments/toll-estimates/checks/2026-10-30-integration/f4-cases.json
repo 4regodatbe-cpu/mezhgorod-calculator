@@ -1,0 +1,532 @@
+{
+  "status": "COMPLETE",
+  "scope": "Four existing selected geometries; actual current component pricing OFF/ON, two departures. Recorded HTTP only; no routing/capture/source audit.",
+  "externalRequests": 0,
+  "results": [
+    {
+      "caseId": "triple-m11-ckad-m12-torzhok-to-kazan",
+      "status": "PASS",
+      "capture": {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/2026-10-16T00-34-01-248Z-capture.json.gz",
+        "sha256": "da0f293ff4743939866e74b60ea49cae07891b08306b386a58c57da0e058fa6a"
+      },
+      "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7",
+      "geometryUnchanged": true,
+      "strictUnchanged": true,
+      "recordedTraceDeliveries": 8,
+      "unrecordedRequests": 0,
+      "rows": [
+        {
+          "departureAt": "2026-10-15T09:00:00+03:00",
+          "status": "estimated",
+          "totalRub": 5904,
+          "knownPartRub": 5904,
+          "strict": {
+            "amount": null,
+            "weekdayAmount": null,
+            "weekendAmount": null,
+            "period": "понедельник–четверг",
+            "segments": [
+              "Обнаружены, но не полностью оценены платные системы: ckad",
+              "ckad: ckad_east_arc_not_proven"
+            ],
+            "confidence": "none",
+            "priceConfirmation": "unconfirmed",
+            "displayLabel": null,
+            "pricingStatus": "unknown"
+          },
+          "warnings": [
+            "М-12: использована рабочая тарифная модель; регистрационные границы не подтверждены независимо. Оценка не является точным тарифом оператора."
+          ],
+          "reasons": [],
+          "components": [
+            {
+              "id": "m11-15-58",
+              "rub": 200,
+              "reason": "m11_head_ready_direct_pair_at_departure"
+            },
+            {
+              "id": "m11-58-679",
+              "rub": 1250,
+              "reason": "matrix dated selected-route M11 direct pair"
+            },
+            {
+              "id": "m12",
+              "rub": 3513,
+              "reason": "matrix dated selected-route M12 directed endpoint pair"
+            },
+            {
+              "id": "ckad",
+              "rub": null,
+              "reason": "ckad_east_arc_not_proven"
+            }
+          ],
+          "text": {
+            "label": "Платные дороги: 5 904 ₽ (ориентировочно)",
+            "partial": null
+          }
+        },
+        {
+          "departureAt": "2026-10-17T09:00:00+03:00",
+          "status": "estimated",
+          "totalRub": 6084,
+          "knownPartRub": 6084,
+          "strict": {
+            "amount": null,
+            "weekdayAmount": null,
+            "weekendAmount": null,
+            "period": "пятница–воскресенье",
+            "segments": [
+              "Обнаружены, но не полностью оценены платные системы: ckad",
+              "ckad: ckad_east_arc_not_proven"
+            ],
+            "confidence": "none",
+            "priceConfirmation": "unconfirmed",
+            "displayLabel": null,
+            "pricingStatus": "unknown"
+          },
+          "warnings": [
+            "М-12: использована рабочая тарифная модель; регистрационные границы не подтверждены независимо. Оценка не является точным тарифом оператора."
+          ],
+          "reasons": [],
+          "components": [
+            {
+              "id": "m11-15-58",
+              "rub": 240,
+              "reason": "m11_head_ready_direct_pair_at_departure"
+            },
+            {
+              "id": "m11-58-679",
+              "rub": 1390,
+              "reason": "matrix dated selected-route M11 direct pair"
+            },
+            {
+              "id": "m12",
+              "rub": 3513,
+              "reason": "matrix dated selected-route M12 directed endpoint pair"
+            },
+            {
+              "id": "ckad",
+              "rub": null,
+              "reason": "ckad_east_arc_not_proven"
+            }
+          ],
+          "text": {
+            "label": "Платные дороги: 6 084 ₽ (ориентировочно)",
+            "partial": null
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "pair-m4-m11-krasnodar-to-spb",
+      "status": "PASS",
+      "capture": {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-krasnodar-to-spb/2026-10-16T00-11-59-083Z-capture.json.gz",
+        "sha256": "0146e84b961b714fcc4e11dcb723285482127efb30bf417c5fc8ccf1215e41c8"
+      },
+      "geometrySha256": "c0507836382807f591a84b7bad8f228fc07164a9c872c880a88f9da1707a7f74",
+      "geometryUnchanged": true,
+      "strictUnchanged": true,
+      "recordedTraceDeliveries": 19,
+      "unrecordedRequests": 0,
+      "rows": [
+        {
+          "departureAt": "2026-10-15T09:00:00+03:00",
+          "status": "estimated",
+          "totalRub": 10464,
+          "knownPartRub": 10464,
+          "strict": {
+            "amount": 10464,
+            "weekdayAmount": 10464,
+            "weekendAmount": 12334,
+            "period": "понедельник–четверг",
+            "segments": [
+              "М-4: m4-1223 → m4-71 · Стоимость не подтверждена",
+              "М-11 15–58: moscow → solnechnogorsk: 1130 ₽ · Стоимость не подтверждена",
+              "М-11: p58 → p679 · Стоимость не подтверждена",
+              "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽",
+              "ЗСД: тарифная зона 1 · 300 ₽"
+            ],
+            "confidence": "matched",
+            "priceConfirmation": "unconfirmed",
+            "displayLabel": null,
+            "pricingStatus": "priced"
+          },
+          "warnings": [],
+          "reasons": [],
+          "components": [
+            {
+              "id": "m4",
+              "rub": 5040,
+              "reason": "matrix exact selected-route M4 vector"
+            },
+            {
+              "id": "m11-15-58",
+              "rub": 1130,
+              "reason": "m11_head_ready_direct_pair_at_departure"
+            },
+            {
+              "id": "m11-58-679",
+              "rub": 3900,
+              "reason": "matrix dated selected-route M11 direct pair"
+            },
+            {
+              "id": "m11-679-684",
+              "rub": 94,
+              "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+            },
+            {
+              "id": "zsd",
+              "rub": 300,
+              "reason": "zsd_zone1_complete_directed_base_tariff"
+            }
+          ],
+          "text": {
+            "label": "Платные дороги: 10 464 ₽ (ориентировочно)",
+            "partial": null
+          }
+        },
+        {
+          "departureAt": "2026-10-17T09:00:00+03:00",
+          "status": "estimated",
+          "totalRub": 12334,
+          "knownPartRub": 12334,
+          "strict": {
+            "amount": 12334,
+            "weekdayAmount": 10464,
+            "weekendAmount": 12334,
+            "period": "пятница–воскресенье",
+            "segments": [
+              "М-4: m4-1223 → m4-71 · Стоимость не подтверждена",
+              "М-11 15–58: moscow → solnechnogorsk: 1650 ₽ · Стоимость не подтверждена",
+              "М-11: p58 → p679 · Стоимость не подтверждена",
+              "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽",
+              "ЗСД: тарифная зона 1 · 300 ₽"
+            ],
+            "confidence": "matched",
+            "priceConfirmation": "unconfirmed",
+            "displayLabel": null,
+            "pricingStatus": "priced"
+          },
+          "warnings": [],
+          "reasons": [],
+          "components": [
+            {
+              "id": "m4",
+              "rub": 6090,
+              "reason": "matrix exact selected-route M4 vector"
+            },
+            {
+              "id": "m11-15-58",
+              "rub": 1650,
+              "reason": "m11_head_ready_direct_pair_at_departure"
+            },
+            {
+              "id": "m11-58-679",
+              "rub": 4200,
+              "reason": "matrix dated selected-route M11 direct pair"
+            },
+            {
+              "id": "m11-679-684",
+              "rub": 94,
+              "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+            },
+            {
+              "id": "zsd",
+              "rub": 300,
+              "reason": "zsd_zone1_complete_directed_base_tariff"
+            }
+          ],
+          "text": {
+            "label": "Платные дороги: 12 334 ₽ (ориентировочно)",
+            "partial": null
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "dnr-гранитное-saint-petersburg-center",
+      "status": "PASS",
+      "capture": {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/2026-10-15T11-56-56-059Z-capture.json.gz",
+        "sha256": "0493305d255cfc779f4d2b7f15e5c4fb7161b80857f3af75a4c57567a6df3cb1",
+        "expectedShaPreviouslyPinned": true
+      },
+      "geometrySha256": "28869d4f49daa96771c06cc729bc571acaed9fc2de111b4f843d6bc37db1fe09",
+      "geometryUnchanged": true,
+      "strictUnchanged": true,
+      "recordedTraceDeliveries": 19,
+      "unrecordedRequests": 0,
+      "rows": [
+        {
+          "departureAt": "2026-10-15T09:00:00+03:00",
+          "status": "estimated",
+          "totalRub": 9534,
+          "knownPartRub": 9534,
+          "strict": {
+            "amount": 9534,
+            "weekdayAmount": 9534,
+            "weekendAmount": 11184,
+            "period": "понедельник–четверг",
+            "segments": [
+              "М-4: m4-911 → m4-71 · Стоимость не подтверждена",
+              "М-11 15–58: moscow → solnechnogorsk: 1130 ₽ · Стоимость не подтверждена",
+              "М-11: p58 → p679 · Стоимость не подтверждена",
+              "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽",
+              "ЗСД: КАД (юг) → наб. р. Екатерингофки · 600 ₽ (зоны 1–2)"
+            ],
+            "confidence": "matched",
+            "priceConfirmation": "unconfirmed",
+            "displayLabel": null,
+            "pricingStatus": "priced"
+          },
+          "warnings": [
+            "ЗСД: 600 ₽ — рабочая зональная модель; состав оплаты конкретного проезда не подтверждён независимо. Это оценочный компонент, не точный тариф оператора."
+          ],
+          "reasons": [],
+          "components": [
+            {
+              "id": "m4",
+              "rub": 3810,
+              "reason": "matrix exact selected-route M4 vector"
+            },
+            {
+              "id": "m11-15-58",
+              "rub": 1130,
+              "reason": "m11_head_ready_direct_pair_at_departure"
+            },
+            {
+              "id": "m11-58-679",
+              "rub": 3900,
+              "reason": "matrix dated selected-route M11 direct pair"
+            },
+            {
+              "id": "m11-679-684",
+              "rub": 94,
+              "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+            },
+            {
+              "id": "zsd",
+              "rub": 600,
+              "reason": "zsd_kad_south_ekateringofka_owner_zone_vector"
+            }
+          ],
+          "text": {
+            "label": "Платные дороги: 9 534 ₽ (ориентировочно)",
+            "partial": null
+          }
+        },
+        {
+          "departureAt": "2026-10-17T09:00:00+03:00",
+          "status": "estimated",
+          "totalRub": 11184,
+          "knownPartRub": 11184,
+          "strict": {
+            "amount": 11184,
+            "weekdayAmount": 9534,
+            "weekendAmount": 11184,
+            "period": "пятница–воскресенье",
+            "segments": [
+              "М-4: m4-911 → m4-71 · Стоимость не подтверждена",
+              "М-11 15–58: moscow → solnechnogorsk: 1650 ₽ · Стоимость не подтверждена",
+              "М-11: p58 → p679 · Стоимость не подтверждена",
+              "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽",
+              "ЗСД: КАД (юг) → наб. р. Екатерингофки · 600 ₽ (зоны 1–2)"
+            ],
+            "confidence": "matched",
+            "priceConfirmation": "unconfirmed",
+            "displayLabel": null,
+            "pricingStatus": "priced"
+          },
+          "warnings": [
+            "ЗСД: 600 ₽ — рабочая зональная модель; состав оплаты конкретного проезда не подтверждён независимо. Это оценочный компонент, не точный тариф оператора."
+          ],
+          "reasons": [],
+          "components": [
+            {
+              "id": "m4",
+              "rub": 4640,
+              "reason": "matrix exact selected-route M4 vector"
+            },
+            {
+              "id": "m11-15-58",
+              "rub": 1650,
+              "reason": "m11_head_ready_direct_pair_at_departure"
+            },
+            {
+              "id": "m11-58-679",
+              "rub": 4200,
+              "reason": "matrix dated selected-route M11 direct pair"
+            },
+            {
+              "id": "m11-679-684",
+              "rub": 94,
+              "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+            },
+            {
+              "id": "zsd",
+              "rub": 600,
+              "reason": "zsd_kad_south_ekateringofka_owner_zone_vector"
+            }
+          ],
+          "text": {
+            "label": "Платные дороги: 11 184 ₽ (ориентировочно)",
+            "partial": null
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+      "status": "PASS",
+      "capture": {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/2026-10-15T23-58-33-171Z-capture.json.gz",
+        "sha256": "e8b5d42fb9b737227c04d195271c4cb4dde444a66f85aa579d238a0cd2769ed0"
+      },
+      "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e",
+      "geometryUnchanged": true,
+      "strictUnchanged": true,
+      "recordedTraceDeliveries": 9,
+      "unrecordedRequests": 0,
+      "rows": [
+        {
+          "departureAt": "2026-10-15T09:00:00+03:00",
+          "status": "unknown",
+          "totalRub": null,
+          "knownPartRub": 6928,
+          "strict": {
+            "amount": null,
+            "weekdayAmount": null,
+            "weekendAmount": null,
+            "period": "понедельник–четверг",
+            "segments": [
+              "Обнаружены, но не полностью оценены платные системы: ckad, zsd",
+              "ckad: ckad_east_arc_not_proven",
+              "zsd: zsd_finished_vector_scope_not_reviewed"
+            ],
+            "confidence": "none",
+            "priceConfirmation": "unconfirmed",
+            "displayLabel": null,
+            "pricingStatus": "unknown"
+          },
+          "warnings": [
+            "М-12: использована рабочая тарифная модель; регистрационные границы не подтверждены независимо. Оценка не является точным тарифом оператора."
+          ],
+          "reasons": [
+            "unassessed_required_products",
+            "zsd:zsd_finished_vector_scope_not_reviewed"
+          ],
+          "components": [
+            {
+              "id": "m11-15-58",
+              "rub": 280,
+              "reason": "m11_head_ready_direct_pair_at_departure"
+            },
+            {
+              "id": "m11-58-679",
+              "rub": 3900,
+              "reason": "matrix dated selected-route M11 direct pair"
+            },
+            {
+              "id": "m11-679-684",
+              "rub": 94,
+              "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+            },
+            {
+              "id": "m12",
+              "rub": 1713,
+              "reason": "matrix dated selected-route M12 directed endpoint pair"
+            },
+            {
+              "id": "ckad",
+              "rub": null,
+              "reason": "ckad_east_arc_not_proven"
+            },
+            {
+              "id": "zsd",
+              "rub": null,
+              "reason": "zsd_finished_vector_scope_not_reviewed"
+            }
+          ],
+          "text": {
+            "label": "Платные дороги: стоимость уточняется",
+            "partial": "Известная часть: 6 928 ₽ (включает оценку); это не полный итог."
+          }
+        },
+        {
+          "departureAt": "2026-10-17T09:00:00+03:00",
+          "status": "unknown",
+          "totalRub": null,
+          "knownPartRub": 7268,
+          "strict": {
+            "amount": null,
+            "weekdayAmount": null,
+            "weekendAmount": null,
+            "period": "пятница–воскресенье",
+            "segments": [
+              "Обнаружены, но не полностью оценены платные системы: ckad, zsd",
+              "ckad: ckad_east_arc_not_proven",
+              "zsd: zsd_finished_vector_scope_not_reviewed"
+            ],
+            "confidence": "none",
+            "priceConfirmation": "unconfirmed",
+            "displayLabel": null,
+            "pricingStatus": "unknown"
+          },
+          "warnings": [
+            "М-12: использована рабочая тарифная модель; регистрационные границы не подтверждены независимо. Оценка не является точным тарифом оператора."
+          ],
+          "reasons": [
+            "unassessed_required_products",
+            "zsd:zsd_finished_vector_scope_not_reviewed"
+          ],
+          "components": [
+            {
+              "id": "m11-15-58",
+              "rub": 320,
+              "reason": "m11_head_ready_direct_pair_at_departure"
+            },
+            {
+              "id": "m11-58-679",
+              "rub": 4200,
+              "reason": "matrix dated selected-route M11 direct pair"
+            },
+            {
+              "id": "m11-679-684",
+              "rub": 94,
+              "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+            },
+            {
+              "id": "m12",
+              "rub": 1713,
+              "reason": "matrix dated selected-route M12 directed endpoint pair"
+            },
+            {
+              "id": "ckad",
+              "rub": null,
+              "reason": "ckad_east_arc_not_proven"
+            },
+            {
+              "id": "zsd",
+              "rub": null,
+              "reason": "zsd_finished_vector_scope_not_reviewed"
+            }
+          ],
+          "text": {
+            "label": "Платные дороги: стоимость уточняется",
+            "partial": "Известная часть: 7 268 ₽ (включает оценку); это не полный итог."
+          }
+        }
+      ]
+    }
+  ],
+  "guards": {
+    "status": "PASS",
+    "reversedGeometryRejected": true,
+    "incompleteTraceRejected": true,
+    "duplicateRejected": true,
+    "invalidDateRejected": true,
+    "differentLongArcRejected": true
+  }
+}

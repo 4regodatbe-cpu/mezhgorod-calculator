@@ -1,0 +1,313 @@
+{
+  "caseId": "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest",
+  "index": 18,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-krasnodar-to-sest/2026-10-16T00-01-04-945Z-capture.json.gz",
+  "captureSha256": "3c29b35159cbdfb9e308db468d0896c19f54e4ebc73591bbf42216cbba0d1175",
+  "selectedProvider": "OSRM",
+  "routeMeters": 2096260,
+  "traceComplete": true,
+  "boothEventCoverage": "complete",
+  "uniqueZsdWays": [
+    "1122966006",
+    "1122966005",
+    "1122966004",
+    "400111354",
+    "400111351",
+    "31369306",
+    "28934684",
+    "465117517",
+    "80056742",
+    "139658547",
+    "461676671",
+    "80056745",
+    "721628540",
+    "80056716",
+    "381576632",
+    "381576631",
+    "123709500",
+    "123709505",
+    "183912267",
+    "397223751",
+    "397223752",
+    "397223749",
+    "183912268",
+    "85763340",
+    "223744446",
+    "721628541",
+    "185060386",
+    "119176950",
+    "119176946",
+    "172999959",
+    "589047642",
+    "589047639",
+    "373871040",
+    "688149995",
+    "222395960",
+    "130062822",
+    "1257246767",
+    "1257246766",
+    "1257246772",
+    "1257246771",
+    "130068396",
+    "721628544",
+    "721628543",
+    "350477988",
+    "165035756",
+    "222395955",
+    "736881673",
+    "589047646",
+    "589047650",
+    "123232666",
+    "123232668",
+    "123303017",
+    "944399839",
+    "493643653",
+    "721839717",
+    "776695123",
+    "776695122",
+    "233006896",
+    "224933668",
+    "776695121",
+    "224933656",
+    "776695119",
+    "776695120",
+    "224933669",
+    "224933672",
+    "224933664",
+    "224933665",
+    "458501110",
+    "458501106",
+    "224933658",
+    "224933662",
+    "224933660",
+    "87072167",
+    "396293737",
+    "86983548",
+    "143207558"
+  ],
+  "selectedZsdBooths": [
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 18,
+      "edgeToll": true,
+      "beginShapeIndex": 593,
+      "endShapeIndex": 594
+    },
+    {
+      "osmNodeId": "1766158809",
+      "wayId": "458501110",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 19,
+      "edgeToll": true,
+      "beginShapeIndex": 910,
+      "endShapeIndex": 911
+    }
+  ],
+  "sameExactZsdWayAndBoothSetAsReviewedFirstCase": false,
+  "sameReviewedScopeCase": null,
+  "scopeFingerprint": [
+    [
+      "1122966004",
+      "1122966005",
+      "1122966006",
+      "119176946",
+      "119176950",
+      "123232666",
+      "123232668",
+      "123303017",
+      "123709500",
+      "123709505",
+      "1257246766",
+      "1257246767",
+      "1257246771",
+      "1257246772",
+      "130062822",
+      "130068396",
+      "139658547",
+      "143207558",
+      "165035756",
+      "172999959",
+      "183912267",
+      "183912268",
+      "185060386",
+      "222395955",
+      "222395960",
+      "223744446",
+      "224933656",
+      "224933658",
+      "224933660",
+      "224933662",
+      "224933664",
+      "224933665",
+      "224933668",
+      "224933669",
+      "224933672",
+      "233006896",
+      "28934684",
+      "31369306",
+      "350477988",
+      "373871040",
+      "381576631",
+      "381576632",
+      "396293737",
+      "397223749",
+      "397223751",
+      "397223752",
+      "400111351",
+      "400111354",
+      "458501106",
+      "458501110",
+      "461676671",
+      "465117517",
+      "493643653",
+      "589047639",
+      "589047642",
+      "589047646",
+      "589047650",
+      "688149995",
+      "721628540",
+      "721628541",
+      "721628543",
+      "721628544",
+      "721839717",
+      "736881673",
+      "776695119",
+      "776695120",
+      "776695121",
+      "776695122",
+      "776695123",
+      "80056716",
+      "80056742",
+      "80056745",
+      "85763340",
+      "86983548",
+      "87072167",
+      "944399839"
+    ],
+    [
+      "933974870",
+      "1766158809"
+    ]
+  ],
+  "status": "current_unknown_needs_distinct_scope_review",
+  "execution": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"max-chain-m4-ckad-m11-zsd-krasnodar-to-sest\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"OSRM\",\"routeMeters\":2096260,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"понедельник–четверг\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: zsd\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m4\",\"amount\":5040,\"reason\":\"matrix exact selected-route M4 vector\"},{\"id\":\"m11-15-58\",\"amount\":1130,\"reason\":\"m11_head_ready_direct_pair_at_departure\"},{\"id\":\"m11-58-679\",\"amount\":3900,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"max-chain-m4-ckad-m11-zsd-krasnodar-to-sest\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"OSRM\",\"routeMeters\":2096260,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"пятница–воскресенье\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: zsd\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m4\",\"amount\":6090,\"reason\":\"matrix exact selected-route M4 vector\"},{\"id\":\"m11-15-58\",\"amount\":1650,\"reason\":\"m11_head_ready_direct_pair_at_departure\"},{\"id\":\"m11-58-679\",\"amount\":4200,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    }
+  ],
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-krasnodar-to-sest/replay-2026-10-15T09-00-00-03-00-2026-10-16T11-24-34-339Z.json",
+      "sha256": "e5c47fd40f5a5cb754cc2129d780095a77b54a9e26982f6ae1912ad116865639",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "missing": [
+        "zsd"
+      ],
+      "components": [
+        {
+          "id": "m4",
+          "amount": 5040,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1130,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ]
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-krasnodar-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T11-24-34-864Z.json",
+      "sha256": "507a138e779802e606c3e14df23de74ac0fc3bdd932e268aec415f8c037398b5",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "missing": [
+        "zsd"
+      ],
+      "components": [
+        {
+          "id": "m4",
+          "amount": 6090,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1650,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ]
+    }
+  ]
+}

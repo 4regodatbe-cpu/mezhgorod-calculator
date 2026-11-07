@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-19",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "sourceHead": "88aef2573e5a2ab027bb2d1e675339eb97f3624d",
+  "sourceTree": "41f285bc3093bbf46553c26d01f5857ed2522456",
+  "pr": 14,
+  "prDraft": true,
+  "ci": {
+    "githubActionsRun": 39208330919,
+    "actions": "success",
+    "vercel": "success"
+  },
+  "newPricedComponents": 0,
+  "codeOrMatrixChanged": false,
+  "evidence": {
+    "operatorRoadPage": "https://www.russianhighways.ru/for_drivers/a-113/",
+    "finding": "The operator states PK-5 travel is toll-free and describes its geography.",
+    "operatorMaintenancePage": "https://www.russianhighways.ru/for_drivers/road-maintenance/?road=1392",
+    "pk5ChainageKm": [
+      252.17,
+      334.44
+    ],
+    "regionLaw": "https://mosoblpravo.ru/zakon/2021/05/26/n-81-2021-oz/",
+    "golitsynoA113ChainageKm": [
+      268.001,
+      273.7
+    ],
+    "includes": "M-1 interchange",
+    "savedCapture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/2026-10-16T02-07-00-749Z-capture.json.gz",
+    "traceEdges": [
+      46,
+      53
+    ],
+    "traceWays": [
+      1080462756,
+      1080462754,
+      1080462753,
+      1080462751,
+      1346919149,
+      1080462767
+    ],
+    "traceCoordinateBounds": {
+      "lon": [
+        37.009077,
+        37.014098
+      ],
+      "lat": [
+        55.618699,
+        55.631242
+      ]
+    },
+    "traceTollFlag": true,
+    "interpretation": "The official chainage range assigned to Golitsyno falls inside PK-5, which the operator says is free. This narrows the likely classification of the saved A-113 block, but no exact coordinate/way-to-chainage crosswalk ties the saved geometry to that stationing. Do not yet assign zero fare in code."
+  },
+  "routeReplayRequests": 0,
+  "sourceDownloads": 0,
+  "runtimeApiRequests": 0,
+  "testsOrBuild": "not run; docs-only"
+}

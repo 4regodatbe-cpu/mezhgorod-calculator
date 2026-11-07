@@ -1,0 +1,72 @@
+{
+  "status": "REFERENCE_POINT_COMPARISON_ONLY",
+  "osmSnapshotId": "positive-cities-2026-10-24",
+  "osmReviewedAt": "2026-10-24T13:17:55.454120+00:00",
+  "noNewSourceCapture": true,
+  "noAcceptanceDistanceThresholdInvented": true,
+  "results": [
+    {
+      "geonamesId": 709717,
+      "osmId": "R-1413957",
+      "geonamesPosition": {
+        "lat": 48.023,
+        "lng": 37.80224
+      },
+      "osmPosition": {
+        "lat": 48.0158753,
+        "lng": 37.8013407
+      },
+      "separationMeters": 795.049007478091,
+      "osmCapture": {
+        "capturePath": "experiments/road-ref-boundaries/checks/2026-10-24-address-live-fixed/donetsk.json",
+        "sha256": "412c820fe352e37c1e7a50cd9ea4f2553ae75025a3be1f3df21cf8499c4b4820",
+        "capturedAt": "Sat, 24 Oct 2026 08:25:42 GMT",
+        "sourceCommit": "5d7043a14bab604aae46dcc131990790683159f6",
+        "sourceId": "R-1413957"
+      },
+      "independentAccuracyCertified": false
+    },
+    {
+      "geonamesId": 565348,
+      "osmId": "R-1517207",
+      "geonamesPosition": {
+        "lat": 48.33711,
+        "lng": 39.95229
+      },
+      "osmPosition": {
+        "lat": 48.3382864,
+        "lng": 39.9509488
+      },
+      "separationMeters": 164.13119205650924,
+      "osmCapture": {
+        "capturePath": "experiments/road-ref-boundaries/checks/2026-10-24-address-live-fixed/donetsk.json",
+        "sha256": "412c820fe352e37c1e7a50cd9ea4f2553ae75025a3be1f3df21cf8499c4b4820",
+        "capturedAt": "Sat, 24 Oct 2026 08:25:42 GMT",
+        "sourceCommit": "5d7043a14bab604aae46dcc131990790683159f6",
+        "sourceId": "R-1517207"
+      },
+      "independentAccuracyCertified": false
+    },
+    {
+      "geonamesId": 542420,
+      "osmId": "R-7373058",
+      "geonamesPosition": {
+        "lat": 45.04534,
+        "lng": 38.98178
+      },
+      "osmPosition": {
+        "lat": 45.0351532,
+        "lng": 38.9772396
+      },
+      "separationMeters": 1187.5702984717254,
+      "osmCapture": {
+        "capturePath": "experiments/road-ref-boundaries/checks/2026-10-24-address-live-fixed/krasn.json",
+        "sha256": "8c96abfde7d54881f230ee549b7b198f03e428890270c3abce569f50e604d63a",
+        "capturedAt": "Sat, 24 Oct 2026 08:25:23 GMT",
+        "sourceCommit": "5d7043a14bab604aae46dcc131990790683159f6",
+        "sourceId": "R-7373058"
+      },
+      "independentAccuracyCertified": false
+    }
+  ]
+}

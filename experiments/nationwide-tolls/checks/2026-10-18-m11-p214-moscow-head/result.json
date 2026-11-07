@@ -1,0 +1,80 @@
+{
+  "status": "DONE_LOCAL_CODE_CI_PENDING",
+  "sourceCommit": "c2d50a2b8774204fef77373488b57b180f1be300",
+  "caseId": "single-m11-torzhok-to-moscow",
+  "focusedTests": 25,
+  "auditTests": 768,
+  "auditFailures": 0,
+  "fullBuildExitCode": 0,
+  "staticPages": "16/16",
+  "typeScript": "PASS",
+  "eslint": "PASS",
+  "quoteAndApiContracts": "PASS",
+  "newPricedHeadComponents": 1,
+  "confirmedWholeTripFares": 0,
+  "profiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "headRub": 1130,
+      "mainlineRub": 1250,
+      "m11SubtotalRub": 2380,
+      "fullAmount": null,
+      "missing": [
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "departureAt": "2026-10-15T23:59:00+03:00",
+      "headRub": 1130,
+      "mainlineRub": 1250,
+      "m11SubtotalRub": 2380,
+      "fullAmount": null,
+      "missing": [
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "departureAt": "2026-10-16T09:00:00+03:00",
+      "headRub": 1260,
+      "mainlineRub": 1390,
+      "m11SubtotalRub": 2650,
+      "fullAmount": null,
+      "missing": [
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "headRub": 1500,
+      "mainlineRub": 1390,
+      "m11SubtotalRub": 2890,
+      "fullAmount": null,
+      "missing": [
+        "unknown-paid-road"
+      ]
+    },
+    {
+      "departureAt": "2026-10-18T09:00:00+03:00",
+      "headRub": 1650,
+      "mainlineRub": 1390,
+      "m11SubtotalRub": 3040,
+      "fullAmount": null,
+      "missing": [
+        "unknown-paid-road"
+      ]
+    }
+  ],
+  "sourceRequests": 0,
+  "routingRequests": 0,
+  "networkAttemptsInOwnTest": 0,
+  "unchangedHeadControls": [
+    "pair-m11-ckad-torzhok-to-ramenskoe",
+    "triple-m11-ckad-m12-torzhok-to-kazan"
+  ],
+  "logsSha256": {
+    "build.log.gz": "b3242d1896d1adf2142796af8406c1dc7fec8d815d11d28db3eb5021d90297fa",
+    "focused.log.gz": "1ae6be67db7f05f89b6f6b239af1e2c9f9293345d52402f516e71a6d4f82507c",
+    "tsc.log.gz": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+    "eslint.log.gz": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec"
+  }
+}

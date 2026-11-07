@@ -1,0 +1,397 @@
+{
+  "head": "a9ad472218b15fc2952304b1fa5d70670ce929a1",
+  "tree": "16f81749670cec8480fc8cfe5ce8b74bda7b4828",
+  "draft": true,
+  "files": [
+    {
+      "path": "docs/WORK_STATE.md",
+      "sha": "a9f5ee8bd9a2d4e780faef96450fa4a9786df30c"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-18-000148-m12-western-boundaries-DONE.md",
+      "sha": "4dd5551210df0a8e7212112b4f30241ccf99b1a4"
+    },
+    {
+      "path": "experiments/nationwide-tolls/NEXT_STEPS.md",
+      "sha": "460cb37dbd47fdf52cb531db88eaae674ba06415"
+    },
+    {
+      "path": "experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json",
+      "sha": "f18db8da9ab67444abf31970c88dbefeb2687d38"
+    },
+    {
+      "path": "experiments/nationwide-tolls/WORK_LOG.md",
+      "sha": "48338e673c06646a1b8a25dab47e46ef89782423"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/README.md",
+      "sha": "8022281fa0cdd905242603c38cb440c60bb31541"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/audit.log.gz",
+      "sha": "629b381f2bd5500b2abae6cfe17a6091d74eb90d"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/build.log.gz",
+      "sha": "a58b64f825d16742682829720eb06bd7ea592474"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/capture-progress-original.json",
+      "sha": "2611761142796c9dbc9b84a708037c49897c71e9"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/eslint.log.gz",
+      "sha": "d4b9926df0b7defceb6caf0b474c4a190c5ca8f0"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/focused-checks.json",
+      "sha": "cd42737c41f76f5cc1964b7dd335e695bd3662d1"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/initial-focused-failure.json",
+      "sha": "77f2a28cc6d3de5866f035402dda95a47b4fb67a"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/max-chain-m12-ckad-m11-zsd-prim-to-arzamas.json",
+      "sha": "283da514e098b12c709f2c2722a7a8acde64419e"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary.json",
+      "sha": "0cd0a8886fa06197cab3e8f10921dd049e567d77"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/missing-started-rejected.log.gz",
+      "sha": "44ca9019d50187dace1e379de6e1a785b258ce91"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/offline-capture-reuse-initial.log.gz",
+      "sha": "c97273082583bc92d8e290e4246244921d659763"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/offline-capture-reuse.log.gz",
+      "sha": "56c3c5a9f007dfbedfe9836cfdc73cd175bcad61"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/operator-retrieval.json",
+      "sha": "ab69a068309500c998d772081de2a240ebbfbef3"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/physical-proof.json",
+      "sha": "0008dcb164c055f3992dcdca3d28de05f5d4a3d3"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/progress.json",
+      "sha": "988e3dfeb75ac72d35a4e068543c80d891e15789"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/required-checks.json",
+      "sha": "c12f764dbaf61b828878a7a363354cd0f3750ded"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/summary.json",
+      "sha": "d853bbbe01a01f22a5269e8d24b8af5a240ba549"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/transport-events.json",
+      "sha": "7a42d6663a6d57bce148f8e77e2ddd35f1bc19a3"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/tsc.log.gz",
+      "sha": "d4b9926df0b7defceb6caf0b474c4a190c5ca8f0"
+    },
+    {
+      "path": "experiments/nationwide-tolls/scripts/capture-m12-western-boundaries.mjs",
+      "sha": "dbafdd448c9f2ecefe01341b6e452aabdc16ff85"
+    },
+    {
+      "path": "experiments/nationwide-tolls/scripts/review-m12-western-boundaries.py",
+      "sha": "162db5dd627b9efc9e8748b8d22294807d2013df"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/039cfde37fa14ee9ffff.metadata.json",
+      "sha": "9eb4cf549c46bce052d28b44d8e72f6113e07553"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/039cfde37fa14ee9ffff.osm",
+      "sha": "d855e4fc76811d1d5cb862b2387dc354ae536da8"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/104baff22d6d3ddb49d9.metadata.json",
+      "sha": "8dc4f5e85673560ec661915769f48ec1ce11fe2d"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/104baff22d6d3ddb49d9.osm",
+      "sha": "7538109976d435f9da1f987bf660cb608fe463ae"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/1f1c1ebc00b9a06c10ea.metadata.json",
+      "sha": "cad23ffbb4a26ad090959620dbd107d2659be119"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/1f1c1ebc00b9a06c10ea.osm",
+      "sha": "f316059cfac78e8024abbda2fe5eb269de2d146a"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/2aa50600164a08549851.metadata.json",
+      "sha": "c74c3c273c86b0d22a0f3a314b60581f07942c9a"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/2aa50600164a08549851.osm",
+      "sha": "7148c411b938204b0faa14430eaf6d9e3cb737d7"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/2fc5f3d1aa94bda63cfe.metadata.json",
+      "sha": "71a6ad46ba151352b80c0e159a699ca584e852fe"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/2fc5f3d1aa94bda63cfe.osm",
+      "sha": "44b1f463994c25b76c446150c57677dfb927c57d"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/54c63c7e7f4a37584cf7.metadata.json",
+      "sha": "048c9fdb817a47c6c1a3a4b1ef7c807e5cc0ed44"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/54c63c7e7f4a37584cf7.osm",
+      "sha": "a261f525c463b288cf67aa10e3965fa124130b2f"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/63df72f8e9d8a1276153.metadata.json",
+      "sha": "e0a67a3d6b5f0bd3cf17d1eab628be9528907781"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/63df72f8e9d8a1276153.osm",
+      "sha": "464ce6dcbdafa38095e4ab9e5bc77dc0188ddc0a"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/c0ab136d60afb7d92ae6.metadata.json",
+      "sha": "8d550f18f9bc1a9bd9bca1d1645f86c28b9a2f2e"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/c0ab136d60afb7d92ae6.osm",
+      "sha": "bec03230341466b3322739a89ed65bc65aabe9f7"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/e421784129ac6308b39c.metadata.json",
+      "sha": "6c302cad29e4a2c1c34df1c77232ad35e4666ad4"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/e421784129ac6308b39c.osm",
+      "sha": "6f76c6874a06f05656d03407274fb0ff43b40660"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/operator/official-m12-track-ajax.metadata.json",
+      "sha": "5a9b800795fa28d1ef4e25f249e6e7f7ddfa51fa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/operator/official-m12-track-ajax.response.gz",
+      "sha": "2f9f226ab211ca55a39229d9e36bb5bbd021cebd"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/operator/official-m12-track.metadata.json",
+      "sha": "3612cf6e8698f57d9ed55c6beb05f83e68e0dd18"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/operator/official-m12-track.response.gz",
+      "sha": "599ce44ca3c444dd6dad6b27acdd474e565561fe"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/operator/operator-m12-page.html.gz",
+      "sha": "0a95ae4a38498e7633bd890d47bd19c6a2712973"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/operator/operator-m12-page.metadata.json",
+      "sha": "daaf5dc87a22de98368e650f6ed1ca5902ae0560"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/progress.json",
+      "sha": "fe081dd7ab02e6d638a3fbe64fecc3bc2ee60030"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/blob-transfer-progress.jsonl",
+      "sha": "ea008007779fa4c79464f163b10c998399b30f16"
+    }
+  ],
+  "outcome": "physical review done; operator binding blocked",
+  "newPricedComponents": 0,
+  "auditPass": 744,
+  "tsc": "PASS",
+  "eslint": "PASS",
+  "build": "PASS16/16",
+  "codeCI": [
+    {
+      "id": 39071021984,
+      "name": "Special territory geometry and pricing",
+      "status": "in_progress",
+      "conclusion": null,
+      "run_number": 1020,
+      "jobs_url": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/actions/runs/39071021984/jobs",
+      "logs_url": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/actions/runs/39071021984/logs",
+      "workflow_id": 374393915
+    }
+  ],
+  "codeCIJobs": {
+    "jobs": [
+      {
+        "id": 117508472379,
+        "name": "verify",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 39071021984,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run npm install --global pnpm@11.25.0",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run pnpm install --frozen-lockfile",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Run node --import ./scripts/register-ts-paths.mjs --test scripts/*test.ts",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Run node node_modules/typescript/bin/tsc --noEmit",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Run node node_modules/next/dist/bin/next build",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 15
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 16
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 17
+          }
+        ]
+      },
+      {
+        "id": 117508472518,
+        "name": "live_probe",
+        "status": "in_progress",
+        "conclusion": null,
+        "run_id": 39071021984,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run npm install --global pnpm@11.25.0",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run pnpm install --frozen-lockfile",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Probe live provider geometry and per-leg times",
+            "status": "in_progress",
+            "conclusion": null,
+            "number": 6
+          },
+          {
+            "name": "Probe live Photon address suggestions",
+            "status": "pending",
+            "conclusion": null,
+            "number": 7
+          },
+          {
+            "name": "Audit the fixed 50-settlement route corpus",
+            "status": "pending",
+            "conclusion": null,
+            "number": 8
+          },
+          {
+            "name": "Compare six Yandex screenshot routes with live providers",
+            "status": "pending",
+            "conclusion": null,
+            "number": 9
+          },
+          {
+            "name": "Run actions/upload-artifact@v4",
+            "status": "pending",
+            "conclusion": null,
+            "number": 10
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "status": "pending",
+            "conclusion": null,
+            "number": 19
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "pending",
+            "conclusion": null,
+            "number": 20
+          }
+        ]
+      }
+    ]
+  },
+  "codeVerify": "completed/success",
+  "liveProbe": "in_progress"
+}

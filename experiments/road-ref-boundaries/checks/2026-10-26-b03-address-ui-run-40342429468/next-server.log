@@ -1,0 +1,18 @@
+▲ Next.js 16.3.4 (Turbopack)
+- Local:         http://127.0.0.1:3000
+- Network:       http://127.0.0.1:3000
+✓ Ready in 269ms
+✓ Running next.config.ts took 34ms
+- Experiments (use with caution):
+  ⨯ useTypeScriptCli
+
+ GET /v2 200 in 2.1s (next.js: 1955ms, application-code: 175ms)
+ GET /v2 200 in 73ms (next.js: 20ms, application-code: 53ms)
+ GET /v2 200 in 78ms (next.js: 32ms, application-code: 45ms)
+ GET /v2 200 in 103ms (next.js: 65ms, application-code: 38ms)
+ GET /v2 200 in 77ms (next.js: 39ms, application-code: 38ms)
+ GET /v2 200 in 69ms (next.js: 36ms, application-code: 33ms)
+ GET /v2 200 in 214ms (next.js: 188ms, application-code: 26ms)
+ GET /v2 200 in 173ms (next.js: 78ms, application-code: 95ms)
+ GET /v2 200 in 106ms (next.js: 53ms, application-code: 52ms)
+[?25h

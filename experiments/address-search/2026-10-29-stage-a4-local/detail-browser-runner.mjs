@@ -1,0 +1,9 @@
+import fs from'node:fs';import assert from'node:assert/strict';import{pathToFileURL}from'node:url';
+const out='/tmp/stage-a4-detail-ui';fs.mkdirSync(out,{recursive:true});const report={mode:'real built local /r with actual Photon; no mocks; no route call',results:[]};
+const{chromium}=await import(pathToFileURL('/opt/codex/cua_node/lib/node_modules/playwright/index.mjs').href);let browser;
+try{browser=await chromium.launch({executablePath:'/usr/bin/chromium',headless:true,chromiumSandbox:true});
+ for(const viewport of[{width:1280,height:900},{width:390,height:844}]){const c=await browser.newContext({viewport,isMobile:viewport.width===390,hasTouch:viewport.width===390}),p=await c.newPage(),r={viewport,status:'RUNNING'};report.results.push(r);
+  try{p.setDefaultTimeout(25000);await p.goto('http://127.0.0.1:3193/v3',{waitUntil:'networkidle'});const a=p.locator('input[placeholder="Откуда"]'),field=a.locator('xpath=ancestor::label[1]');const pending=p.waitForResponse(x=>new URL(x.url()).pathname==='/r');await a.fill('Красная 100 Краснодар');const response=await pending,body=await response.json();r.httpStatus=response.status();r.body=body;assert.equal(response.status(),200);assert.match(body.items[0].label,/Красная улица, 100, Краснодар/);assert.equal(body.localSource,undefined);
+   const choice=field.locator('[role="status"] button').first();await choice.click();assert.equal(await a.inputValue(),body.items[0].label);r.status='PASS';await p.screenshot({path:out+'/'+viewport.width+'.png',fullPage:true});
+  }catch(e){r.status='FAIL';r.error=String(e);process.exitCode=1;}finally{await c.close();}
+ }}catch(e){report.error=String(e);process.exitCode=1;}finally{await browser?.close();fs.writeFileSync(out+'/review.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report.results.map(({viewport,status,httpStatus,error})=>({viewport,status,httpStatus,error}))));}

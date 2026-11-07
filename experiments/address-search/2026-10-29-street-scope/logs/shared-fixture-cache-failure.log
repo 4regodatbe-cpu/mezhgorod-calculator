@@ -1,0 +1,35 @@
+✔ comma plus an explicit region is still a settlement query, not a street request (3.598165ms)
+✔ all requested standalone cities including comma-qualified DNR use admitted data with zero Photon calls (164.355323ms)
+✔ saved real city/street candidates rank correctly without requiring a house (33.08387ms)
+✔ city+street outranks namesake streets in other cities independently of initial order (7.752353ms)
+✔ same-name city street ties retain territorial priority and explicit-region overrides (4.038952ms)
+✔ no confirmed street point: actual settlement remains available, never a silent other-city substitute (39.77914ms)
+✔ invalid/missing street geometry is never invented or copied from another result (0.401207ms)
+✔ a street containing the city word cannot impersonate that city (3.026163ms)
+✖ actual saved street windows serve three confirmed cities, not a substituted Rostov street for DNR (3.88601ms)
+✔ complete provider failure retains an explicitly city-only option; cancellation never returns that stale fallback (11.389648ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 9
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 560.520004
+
+✖ failing tests:
+
+test at scripts/street-address.test.ts:68:1
+✖ actual saved street windows serve three confirmed cities, not a substituted Rostov street for DNR (3.88601ms)
+  AssertionError [ERR_ASSERTION]: Краснодар, Красная улица
+      at file:///workspace/geonames-preview-publish-fc83523/scripts/street-address.test.ts:75:11
+      at async withLocalPilot (file:///workspace/geonames-preview-publish-fc83523/scripts/street-address.test.ts:15:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

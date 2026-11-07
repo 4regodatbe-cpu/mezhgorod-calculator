@@ -30,9 +30,11 @@ expectStatus("58-679 partial", strict(p593, p679), [p593, [31,59.5], p679], "res
 expectStatus("reverse", strict(p679, p58), [p679, [31,59.5], p593, [35,57], p58], "resolved", ["p679","p58"]);
 
 const crossSystem = expectStatus("cross-system must not invent p58 entry", strict(moscowSection, p593), [moscowSection, p58, [35,57], p593], "unresolved");
+assert.equal(crossSystem.status, "unresolved");
 assert.ok(crossSystem.unresolvedReasons.includes("entry_not_proven_at_strict_m11_start"));
 
 const section1558 = expectStatus("15-58 without trusted anchor set", strict(moscowSection, p58), [moscowSection, p58], "unresolved");
+assert.equal(section1558.status, "unresolved");
 assert.ok(section1558.unresolvedReasons.includes("only_one_verified_boundary_crossing"));
 
 const candidateOnly: M11RoadEvidence = { provider: "osrm", strictBlocks: [], candidateClues: [{ provider: "osrm", legIndex: 0, sourceIndex: 0, reasons: ["destination_m11"], beginKm: 0, endKm: 1, beginCoordinate: p58, endCoordinate: p593, labels: ["М-11"] }], malformedStrictCount: 0 };
@@ -46,6 +48,7 @@ const ambiguous: M11FacilitySpatialEvidence[] = [
   { systemId: "m11-58-679-avtodor", facilityId: "ambiguous-control", tariffPointId: "p593", officialIdentitySource: "fixture", anchors: [{ anchorId: "fixture-ambiguous", coordinate: { lat: p679[1], lon: p679[0] }, status: "independently_verified_infrastructure", source: "fixture", sourceObjectId: "fixture:1" }] },
 ];
 const ambiguousResult = expectStatus("ambiguous same-position", strict(p58,p679), [p58,[35,57],p679], "unresolved", undefined, ambiguous);
+assert.equal(ambiguousResult.status, "unresolved");
 assert.ok(ambiguousResult.unresolvedReasons.includes("ambiguous_boundary_crossing"));
 
 console.log("M11_BOUNDARY_FIXTURE_GATE_GREEN controls=8 unsupportedRemainUnresolved=true");

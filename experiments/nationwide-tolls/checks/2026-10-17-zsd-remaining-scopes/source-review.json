@@ -1,0 +1,61 @@
+{
+  "sourceHead": "97d165fe4d071e68d2a30b341babc16fb1c2af56",
+  "primarySourceHashes": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/owner-zones-96.pdf",
+      "sha256": "3651cf7c42ec6530f2d994cd03c2929c94bd45c86b8479ebce98b6688b23975e",
+      "url": "https://whsd.ru/assets/disclosure/70/96.pdf"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/owner-base-32-1.pdf",
+      "sha256": "a8041b8a0b44189fd9f3e8dcd9bf155ec9b1b86c2023445fa2805367f0586413",
+      "url": "https://whsd.ru/assets/disclosure/70/32_1.pdf"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/owner-rules.html",
+      "sha256": "39da1d5dd3a4235c50c09e55736b4939a5c62735464348564a7e606ce4b701c3",
+      "url": "https://whsd.ru/pravila-ispolzovaniya-zsd"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/owner-tariffs.html",
+      "sha256": "02f1f3eb15f566831bc83bfc9599c17a5520a97a752bc2735d832f7a9308aad5",
+      "url": "https://whsd.ru/tarifyi-na-proezd/"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/owner-documents.html",
+      "sha256": "6835764fa317bf622e04b4211321a23dcddacda136c230ecc655b74952a8a02a",
+      "url": "https://whsd.ru/dokumentyi,-svyazannyie-s-platnyim-proezdom-po-zsd"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/exit-way183902370.osm",
+      "sha256": "a0b3d4eb094cc9aae28196a4f4804604c871df0699d179b53b80a3e548d1c37f",
+      "url": "https://api.openstreetmap.org/api/0.6/way/183902370/full"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/owner-zones-96.txt",
+      "sha256": "d07a126f0057e1b361bdb6dff32a4dea40abc68a309d722613d6e1a689bbc6ea",
+      "url": null
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/owner-base-32-1.txt",
+      "sha256": "ac6679929c51343f93b0eeb381b1e545e7230b7fa138092b1ca4567f0ca2052f",
+      "url": null
+    }
+  ],
+  "sourceReview": "Existing directed zone definitions, base cash/card rates, rules5.2/6.2/6.3. No new price derived or activated.",
+  "operatorAccess": [
+    {
+      "url": "https://www.nch-spb.com/",
+      "result": "web403Forbidden"
+    },
+    {
+      "url": "https://whsd.ru/tarifyi-na-proezd/",
+      "result": "web502BadGateway"
+    }
+  ],
+  "boundedSearchOutcome": "Primary search surfaced older operator rules, not the required current directed collection bundle. Non-primary search prices were not used. Search stopped.",
+  "collectionDataNeeded": "Owner directed entry/exit-to-collection-zone mapping or ready cash/card vector for each retained physical scope; recognize receipt exception scope exactly.",
+  "reentryDecision": "Group5733 is multiple traversals separated by urban links, so a single finished vector would be invalid even if a reverse tariff became available.",
+  "interchangeDecision": "Group2c00 starts via Krusenstern/Shkipersky access with recorded node13020687195 type toll_gantry on way351741889 toll=false. Need the separate interchange tariff/product scope from owner; toll=false does not prove free.",
+  "freshLiveRouteRequests": 0
+}

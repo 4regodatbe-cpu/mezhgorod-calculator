@@ -1,0 +1,147 @@
+{
+  "reviewDate": "2026-10-27",
+  "sourceCommit": "9061a5881b8842ba42b6b2c92b0144f63998ebb4",
+  "documents": [
+    {
+      "id": "m11",
+      "path": "experiments/nationwide-tolls/source-documents/m11-head-order0108-effective-2026-04-24.pdf",
+      "url": "https://m11-neva.ru/upload/iblock/c7f/dqr24p9c4pctph5s4897if1r05agru30.pdf",
+      "sha256": "514f8853f9b6fecd587466205fa5f6eef52d4d576c8c0fcff3b4480b4ccc9485",
+      "origin": "Previously retained repository original, not newly downloaded; same document code/approval and table as web PDF.",
+      "visualPages": [
+        1,
+        2
+      ],
+      "effectiveFrom": "2026-04-24T01:00:00+03:00",
+      "effectiveTo": null,
+      "scope": "M11 15–58 only",
+      "conditions": "Night01–06 all days; day06–01 next day; distinct Friday/Saturday/Sunday columns; holiday exceptions in existing data/tolls/m11/2026-04-24-15-58-category1.json match PDF footnote. Exempt vehicle categories stated. Section1 boundary priced as Solnechnogorsk, not a published coordinate."
+    },
+    {
+      "id": "m4",
+      "path": "experiments/nationwide-tolls/source-documents/m4-order58-effective-2026-03-02.pdf",
+      "sha256": "25fdb9a430934f47617c8cc1563f95e49c6ebe41c6303e9bd67465b3c568662d",
+      "origin": "Previously retained original order58, visual pages2/3/4 inspected; source provenance not independently reacquired this run.",
+      "visualPages": [
+        2,
+        3,
+        4
+      ],
+      "scope": "Listed M4 charging sections only; no OSM crosswalk",
+      "conditions": "CategoryI columns monThu/friSun, holiday/preevent footnotes; payment cash/card/listed transponders. Later supersession not excluded."
+    }
+  ],
+  "rows": [
+    {
+      "id": "m11-moscow-sheremetyevo2",
+      "document": "m11",
+      "page": 2,
+      "from": "moscow",
+      "to": "sheremetyevo2",
+      "category": "group1",
+      "payment": "without_transponder_section15_58",
+      "values": {
+        "night": 110,
+        "monThu": 500,
+        "fri": 500,
+        "sat": 500,
+        "sun": 500
+      },
+      "monetarySourceRead": true,
+      "physicalIdentityVerified": false,
+      "routePricingEligible": false,
+      "status": "MONETARY_EVIDENCE_ONLY"
+    },
+    {
+      "id": "m11-sheremetyevo2-moscow",
+      "document": "m11",
+      "page": 2,
+      "from": "sheremetyevo2",
+      "to": "moscow",
+      "category": "group1",
+      "payment": "without_transponder_section15_58",
+      "values": {
+        "night": 110,
+        "monThu": 490,
+        "fri": 490,
+        "sat": 490,
+        "sun": 490
+      },
+      "monetarySourceRead": true,
+      "physicalIdentityVerified": false,
+      "routePricingEligible": false,
+      "status": "MONETARY_EVIDENCE_ONLY"
+    },
+    {
+      "id": "m4-pvp1093",
+      "document": "m4",
+      "page": 3,
+      "sectionKm": [
+        1091,
+        1119.5
+      ],
+      "category": "I",
+      "values": {
+        "monThu": 150,
+        "friSun": 150
+      },
+      "note": "Original order supports150/150; website detailed130/130 is not supported by this document. Not a claim of current2026-10 tariff.",
+      "monetarySourceRead": true,
+      "physicalIdentityVerified": false,
+      "routePricingEligible": false,
+      "status": "MONETARY_EVIDENCE_ONLY"
+    },
+    {
+      "id": "m4-pvp545-first",
+      "document": "m4",
+      "page": 2,
+      "sectionKm": [
+        517,
+        544
+      ],
+      "category": "I",
+      "values": {
+        "monThu": 140,
+        "friSun": 160
+      },
+      "monetarySourceRead": true,
+      "physicalIdentityVerified": false,
+      "routePricingEligible": false,
+      "status": "MONETARY_EVIDENCE_ONLY"
+    },
+    {
+      "id": "m4-pvp545-second",
+      "document": "m4",
+      "page": 2,
+      "sectionKm": [
+        544,
+        589
+      ],
+      "category": "I",
+      "values": {
+        "monThu": 180,
+        "friSun": 250
+      },
+      "note": "Original starts544, not545. No geometry edits.",
+      "monetarySourceRead": true,
+      "physicalIdentityVerified": false,
+      "routePricingEligible": false,
+      "status": "MONETARY_EVIDENCE_ONLY"
+    }
+  ],
+  "counts": {
+    "newOriginalDocuments": 0,
+    "retainedOriginalsChecked": 2,
+    "selectedRowsRevalidated": 5,
+    "newRowsNotPreviouslyPresentProven": 0,
+    "newPhysicalMappings": 0,
+    "newFullyProvenDirectedPairs": 0,
+    "newRealNegativeRegressionFiles": 1,
+    "functionalBlockersResolved": 0
+  },
+  "access": {
+    "curl": "Failed to connect to proxy port8080; no bytes downloaded; did not bypass proxy",
+    "web": "Requested M11 PDF read as4pages; original already available locally"
+  },
+  "next": "Exact directed physical crosswalk for a nonclosed M11 pair; current58–149 source effectiveFrom still unknown; no transplant from15–58."
+}

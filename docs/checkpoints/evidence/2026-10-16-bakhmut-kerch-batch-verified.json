@@ -1,0 +1,48 @@
+{
+  "caseId": "dnr-бахмут-kerch-center",
+  "status": "audited",
+  "commandExit": 0,
+  "stage1Completed": 10,
+  "stage1Planned": 155,
+  "next": {
+    "caseId": "dnr-бахмут-moscow-center",
+    "kind": "regional",
+    "region": "dnr"
+  },
+  "provider": "OSRM",
+  "routeMeters": 802433,
+  "traceComplete": true,
+  "weekday": 2030,
+  "weekend": 2250,
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "components": [
+    {
+      "id": "m4",
+      "amount": 1230,
+      "reason": "matrix exact selected-route M4 vector"
+    },
+    {
+      "id": "a289",
+      "amount": 800,
+      "reason": "A-289 selected-route OD vector"
+    }
+  ],
+  "captureSha256": "267928934ff6abb1d6b5bc0683ccfc1c084fbbbab39ae7f1f1e8fbd537f3cb45",
+  "parity": true,
+  "evidence": {
+    "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T22-21-12-616Z.json",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-бахмут-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-21-40-669Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-бахмут-kerch-center/2026-10-15T22-21-40-610Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T22-21-41-037Z.json",
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T22-21-41-366Z.json",
+    "sameDateParity": true
+  },
+  "commands": {
+    "inventory": 0,
+    "report": 0
+  },
+  "parentRemote": "5fa23028aa573f35d1af566d06cd4fde85e0204c"
+}

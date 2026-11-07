@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../lib/special-territory-boundaries.ts";
-import { analyzeRoute, candidatePlans, endpointPolicy, findPlanLegStretchAnomaly, followsPlan, inCrimea } from "../lib/special-territory-policy.ts";
+import { analyzeRoute, candidatePlans, endpointPolicy, findPlanLegStretchAnomaly, followsPlan, inCrimea, isInternalSpecialRoute } from "../lib/special-territory-policy.ts";
 import { splitRouteByTerritory, type VerifiedTerritory, type GeoPoint } from "../lib/special-territory-geometry.ts";
 import { measureTerritoryLegTimes, territoryTimingPlan } from "../lib/special-territory-time.ts";
 import { selectGeographicTerritoryOption } from "../lib/special-territory-options.ts";
@@ -9,6 +9,9 @@ import { inCrimeaApproachZone } from "../lib/special-territory-approach-zone.ts"
 import { selectLiveRouteCandidates } from "../lib/route-quality.ts";
 import { orderRoutesByTravelTime } from "../app/v2/components/route-utils.ts";
 import { activeOverride, touchSession, SESSION_IDLE_MS } from "../lib/tariff-session.ts";
+import bypassSnapshot from "../experiments/nationwide-tolls/source-snapshots/dzok/2026-10-14-pvp46-physical-gates.json" with {type:"json"};
+const bypassControls=(north:boolean)=>{const g=bypassSnapshot.gates.find(g=>g.from===(north?"51":"0"))!;return [g.before,g.gate,g.after].map(p=>({lat:p.lat,lng:p.lon}));};
+const bridge={lat:45.2117,lng:36.7161},m4={lat:47.12,lng:39.86};
 const k={lat:45.04,lng:38.98},d={lat:48.0156,lng:37.8029},c={lat:44.95,lng:34.1};
 test("real four polygons split transitions, Crimea ordinary, transit excluded",()=>{
   assert.equal(endpointPolicy(k,d,zones).specialEndpoint,true);
@@ -36,13 +39,13 @@ test("geographic route zone selects one corridor without forcing a mainland deto
  const reverse=candidatePlans(melitopol,k,zones);assert.equal(reverse.length,1);assert.equal(reverse[0].corridor,"crimea");assert.deepEqual(reverse[0].positions,[...plans[0].positions].reverse());
  const yalta={lat:44.4987874,lng:34.1689358};assert.equal(inCrimea(yalta),true);
  const yaltaToDonetsk=candidatePlans(yalta,d,zones)[0];
- assert.deepEqual(yaltaToDonetsk.positions,[yalta,{lat:45.2117,lng:36.7161},{lat:45.045,lng:39.15},{lat:47.12,lng:39.86},d]);
- assert.deepEqual(candidatePlans(d,yalta,zones)[0].positions,[...yaltaToDonetsk.positions].reverse());
+ assert.deepEqual(yaltaToDonetsk.positions,[yalta,bridge,...bypassControls(true),m4,d]);
+ assert.deepEqual(candidatePlans(d,yalta,zones)[0].positions,[d,m4,...bypassControls(false),bridge,yalta]);
  const volnovakha={lat:47.6019,lng:37.4968};
  const yaltaToVolnovakha=candidatePlans(yalta,volnovakha,zones)[0];
  assert.equal(yaltaToVolnovakha.corridor,"mainland","Yalta–Volnovakha stays on the agreed bridge/Krasnodar/M-4 mainland corridor");
- assert.deepEqual(yaltaToVolnovakha.positions,[yalta,{lat:45.2117,lng:36.7161},{lat:45.045,lng:39.15},{lat:47.12,lng:39.86},volnovakha]);
- assert.deepEqual(candidatePlans(volnovakha,yalta,zones)[0].positions,[...yaltaToVolnovakha.positions].reverse());
+ assert.deepEqual(yaltaToVolnovakha.positions,[yalta,bridge,...bypassControls(true),m4,volnovakha]);
+ assert.deepEqual(candidatePlans(volnovakha,yalta,zones)[0].positions,[volnovakha,m4,...bypassControls(false),bridge,yalta]);
  const namedPairs=[
   {name:"Волноваха",position:volnovakha,corridor:"mainland" as const},
   {name:"Токмак",position:{lat:47.255,lng:35.706},corridor:"crimea" as const},
@@ -52,7 +55,7 @@ test("geographic route zone selects one corridor without forcing a mainland deto
  for(const pair of namedPairs){
   const forward=candidatePlans(yalta,pair.position,zones)[0];
   assert.equal(forward.corridor,pair.corridor,`Yalta–${pair.name} follows the current approach-zone policy`);
-  assert.deepEqual(candidatePlans(pair.position,yalta,zones)[0].positions,[...forward.positions].reverse(),`${pair.name}–Yalta reverses controls`);
+  assert.deepEqual(candidatePlans(pair.position,yalta,zones)[0].positions,pair.corridor==="mainland"?[pair.position,m4,...bypassControls(false),bridge,yalta]:[...forward.positions].reverse(),`${pair.name}–Yalta reverses controls`);
  }
  const moscow={lat:55.7505412,lng:37.6174782};
  assert.deepEqual(candidatePlans(moscow,d,zones)[0].positions,[moscow,d],"mainland destination does not force M-4/EAST waypoints");
@@ -61,13 +64,31 @@ test("geographic route zone selects one corridor without forcing a mainland deto
  assert.equal(followsPlan([[k.lng,k.lat],[d.lng,d.lat]],donetskPlans[0].positions,"mainland",true),true,"direct mainland route is accepted");
  assert.equal(followsPlan([[k.lng,k.lat],[34.1689,44.4988],[d.lng,d.lat]],donetskPlans[0].positions,"mainland",true),false,"mainland route crossing Crimea is still rejected");
  const kherson={lat:46.6354,lng:32.6169};
- assert.equal(candidatePlans(kherson,d,zones)[0].corridor,"mainland","special destination outside the routing zone selects mainland");
- assert.equal(candidatePlans(d,kherson,zones)[0].corridor,"crimea","reversed trip uses its special destination inside the routing zone");
+ assert.equal(candidatePlans(kherson,d,zones)[0].corridor,"mainland","internal trip has no approach corridor");
+ assert.equal(candidatePlans(d,kherson,zones)[0].corridor,"mainland","reverse internal trip has no Crimea detour");
  assert.equal(candidatePlans(kherson,d,zones).length,1);
  const edgeMidpoint={lng:31.16,lat:46.39};
  assert.equal(inCrimeaApproachZone(edgeMidpoint),true,"a point exactly on the screenshot-traced contour is included");
  assert.equal(inCrimeaApproachZone({lng:31.16,lat:46.389}),false,"a point just outside the contour remains outside");
  assert.equal(inCrimeaApproachZone({lng:31.16,lat:46.391}),true,"a point just inside the contour remains inside");
+});
+test("two special endpoints use direct controls in both directions and across regions",()=>{
+ const volnovakha={lat:47.6019,lng:37.4968};
+ const melitopol={lat:46.848,lng:35.365};
+ const kherson={lat:46.6354,lng:32.6169};
+ for(const [from,to] of [[d,volnovakha],[volnovakha,d],[d,melitopol],[melitopol,d],[d,kherson],[kherson,d]] as const){
+  const policy=endpointPolicy(from,to,zones);
+  assert.ok(policy.fromTerritory&&policy.toTerritory);
+  assert.deepEqual(candidatePlans(from,to,zones),[{corridor:"mainland",positions:[from,to]}]);
+ }
+});
+test("only fully covered internal geometry permits a single special tariff",()=>{
+ const volnovakha={lat:47.6019,lng:37.4968};
+ const internal=analyzeRoute([[d.lng,d.lat],[volnovakha.lng,volnovakha.lat]],60000,3600,d,volnovakha,zones);
+ assert.equal(isInternalSpecialRoute(d,volnovakha,internal,zones),true);
+ const escaped=analyzeRoute([[d.lng,d.lat],[39.2,47.2],[volnovakha.lng,volnovakha.lat]],300000,20000,d,volnovakha,zones);
+ assert.equal(isInternalSpecialRoute(d,volnovakha,escaped,zones),false);
+ assert.equal(isInternalSpecialRoute(k,d,internal,zones),false);
 });
 const synthetic:VerifiedTerritory[]=(["dnr","lnr","zaporizhzhia","kherson"] as const).map((id,i)=>({id,verified:true,source:{url:"https://example.org",title:"test",checkedAt:"2026-10-03"},geometry:{type:"Polygon",coordinates:[[[i*10,-1],[i*10+2,-1],[i*10+2,1],[i*10,1],[i*10,-1]]]}}));
 const legs=[{meters:100000,seconds:900,coordinates:[[-1,0],[0,0]] as GeoPoint[]},{meters:200000,seconds:8000,coordinates:[[0,0],[1,0],[2,0]] as GeoPoint[]},{meters:100000,seconds:1100,coordinates:[[2,0],[3,0]] as GeoPoint[]}];

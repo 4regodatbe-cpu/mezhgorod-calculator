@@ -1,0 +1,13 @@
+✔ both calculate buttons wait until both addresses are entered, and swap control is rendered (87.183058ms)
+✔ rubles per kilometre amount and unit are enlarged and centered (18.838233ms)
+✔ selected snapshot city renders limited coverage and licensed credit in either address field (32.235213ms)
+✔ two selected snapshot cities retain a separate notice and credit for each field (27.499642ms)
+✔ cleared, edited and ordinary places do not display a stale snapshot notice (21.942967ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1275.043405

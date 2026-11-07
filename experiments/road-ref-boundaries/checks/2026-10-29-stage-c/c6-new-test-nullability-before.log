@@ -1,0 +1,10 @@
+scripts/stage-c-boundary-evidence.test.ts(23,92): error TS18047: 'quote' is possibly 'null'.
+scripts/stage-c-boundary-evidence.test.ts(23,168): error TS18047: 'quote' is possibly 'null'.
+scripts/stage-c-boundary-evidence.test.ts(23,233): error TS18047: 'quote' is possibly 'null'.
+scripts/stage-c-boundary-evidence.test.ts(23,296): error TS18047: 'quote' is possibly 'null'.
+scripts/stage-c-boundary-evidence.test.ts(23,351): error TS18047: 'quote' is possibly 'null'.
+scripts/stage-c-boundary-evidence.test.ts(53,15): error TS2531: Object is possibly 'null'.
+scripts/stage-c-boundary-evidence.test.ts(60,68): error TS18047: 'quote' is possibly 'null'.
+scripts/stage-c-boundary-evidence.test.ts(60,147): error TS18047: 'quote' is possibly 'null'.
+scripts/stage-c-boundary-evidence.test.ts(60,200): error TS18047: 'quote' is possibly 'null'.
+scripts/stage-c-boundary-evidence.test.ts(60,200): error TS18047: 'quote.tolls' is possibly 'null'.

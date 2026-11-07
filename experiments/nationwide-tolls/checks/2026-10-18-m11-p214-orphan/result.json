@@ -1,0 +1,74 @@
+{
+  "status": "FIXED_AND_LOCALLY_VERIFIED_CODE_CI_PENDING",
+  "sourceParentCommit": "2ce7b121d83538db67560f5f3c1cd91c44bb96e6",
+  "rootCause": "Exact source-bound p214 gate/way was missing from unnamed paid event road identity classification",
+  "caseId": "single-m11-torzhok-to-moscow",
+  "classifiedTuple": {
+    "nodeId": "5286168661",
+    "wayId": "766468434",
+    "product": "m11"
+  },
+  "focusedTests": 28,
+  "fullAuditTests": 771,
+  "failures": 0,
+  "buildExitCode": 0,
+  "staticPages": "16/16",
+  "typeScript": "PASS",
+  "eslint": "PASS",
+  "apiTests": {
+    "ownRecordedSelectedRoute": {
+      "pricingStatus": "priced",
+      "amount": 2380
+    },
+    "traceUnavailable": {
+      "pricingStatus": "unknown",
+      "amount": null
+    },
+    "realExternalRequests": 0
+  },
+  "profiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "amount": 2380,
+      "missing": [],
+      "priceConfirmation": "unconfirmed"
+    },
+    {
+      "departureAt": "2026-10-15T23:59:00+03:00",
+      "amount": 2380,
+      "missing": [],
+      "priceConfirmation": "unconfirmed"
+    },
+    {
+      "departureAt": "2026-10-16T09:00:00+03:00",
+      "amount": 2650,
+      "missing": [],
+      "priceConfirmation": "unconfirmed"
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "amount": 2890,
+      "missing": [],
+      "priceConfirmation": "unconfirmed"
+    },
+    {
+      "departureAt": "2026-10-18T09:00:00+03:00",
+      "amount": 3040,
+      "missing": [],
+      "priceConfirmation": "unconfirmed"
+    }
+  ],
+  "newVerifiedCompleteEstimates": {
+    "routeCases": 1,
+    "departureProfiles": 5
+  },
+  "confirmedWholeTripFares": 0,
+  "newSourceOrRoutingRequests": 0,
+  "logSha256": {
+    "build.log.gz": "1302d848236eebb10b57c2cb8d9c93a818ee4760bc329fc71de5c0bc4e2cef82",
+    "focused.log.gz": "204f46d5a9beacdc333aac311018946d6f5bcbbea9882c2ba4b0a9b4eded41a7",
+    "diff-check.log.gz": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+    "tsc.log.gz": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+    "eslint.log.gz": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec"
+  }
+}

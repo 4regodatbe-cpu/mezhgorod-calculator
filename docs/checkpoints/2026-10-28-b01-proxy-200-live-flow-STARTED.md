@@ -1,0 +1,11 @@
+# B01 proxy-aware GET received200; actual/rflow STARTED
+
+28.10.2026 МСК. Parentremote1eb6b93455c068dcb37cc3f9534e308948449cfe/treeb38b22571330ebd644deb59c3cbcd27d909e1166. PriorB03/B12/evidencecommit13filesreadbackmatched; CI40647171298special+40647171227B03completedSUCCESS. Runtimecodeequaltested32038tree via correspondinglocal793600f diff(app/lib/scripts/workflows/package/data)empty; B03done.
+
+FirstindependentB01probe completedonce, oneGETordinaryinheritedproxy+Node--use-env-proxy, HTTP200/20features/1128ms. [Raw/status/hash/limits](../../experiments/address-search/checks/2026-10-28-proxy-transport/REVIEW.md). Notproofold502causation or completeoutageresilience; no coordinatecatalogadmission. CurrentHTTP(S)proxyvarssetbutdefaultNodeopt-inwasoff; conditionchangedlegitimately, no auth/TLS/proxybypass.
+
+Next explicitbudgetedunit: install/reuseexactfrozendependencies (existingworkspaceandcurrentlockSHAequalff60cbd9…; Next16.3.4), startupownlocalNextwith`NODE_USE_ENV_PROXY=1 NEXT_TELEMETRY_DISABLED=1 … next dev --webpack --hostname127.0.0.1 --port3014`. Currentcomponentisalready-publishedB03fix; **no app/lib modification**. Use standardcommandnetworkgrant and unchangedproxytrust. Chromiumlaunchgrant is knownworkingcondition; no defaultblockedretry.
+
+Run `B03_BASE_URL=http://127.0.0.1:3014 B03_OUTPUT_DIR=/tmp/b01-live-proxy B01_SERVER_PROXY_OPT_IN=1 node experiments/road-ref-boundaries/scripts/b03-live-replacement.mjs`. Atmost2actual/rlookups(Anapa→clear→Donetsk),30sresponsecap/collector20sbudget, no retries/routes/calculations. Driverrecordsselectedrealresponseposition vs actualclassifyPOSTbody (service responseexplicitmock), refusesfallback; telemetrymocked. Boundaries UI→/r→collector/Photon→UI are verified withverification skill, stopfirstbrokenboundary.
+
+Save report/raw/rstatus/serverlogs/commands/environmentlimits; donotreplaceearlier502orcallProductionfixed. Recoverreadresultbeforerun, donotreruncompletedqueries. No snapshotchange/activation, tariffchanges, othercomponents/main/Production/Android/backup/merge/force. PublicationwaitsCIinactive and usesnormalexpected-parent/tree/allfilesreadback. Stopafterresolvedflow orfirstfailure, no repeatedoldserver/pool/roadtests.

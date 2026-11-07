@@ -1,0 +1,104 @@
+{
+  "at": "2026-10-16T02:27:39.685785+03:00",
+  "case": "kherson-аскания-нова-saint-petersburg-center",
+  "part": 4,
+  "batchExit": 0,
+  "status": "audited",
+  "stageCounts": [
+    27,
+    0
+  ],
+  "reportExit": 0,
+  "inventoryExit": 0,
+  "next": {
+    "caseId": "kherson-геническ-kazan-center",
+    "kind": "regional",
+    "region": "kherson"
+  },
+  "nextPart": 4,
+  "batch": {
+    "caseId": "kherson-аскания-нова-saint-petersburg-center",
+    "startedAt": "2026-10-15T23:26:39.755Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-27-13-176Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-saint-petersburg-center/2026-10-15T23-27-13-024Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-27-13-787Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-27-14-400Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [],
+      "provenRoads": [
+        "a289",
+        "m4",
+        "m11",
+        "zsd"
+      ],
+      "missingExpectedRoads": [],
+      "status": "not-assigned"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: a289",
+        "a289: A-289 frames detected but selected-route exits are unresolved"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: a289",
+        "a289: A-289 frames detected but selected-route exits are unresolved"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "m4",
+        "amount": 5040,
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "a289",
+        "amount": null,
+        "reason": "A-289 frames detected but selected-route exits are unresolved"
+      },
+      {
+        "id": "m11-15-58",
+        "amount": 1130,
+        "reason": "m11_head_ready_direct_pair_at_departure"
+      },
+      {
+        "id": "m11-58-679",
+        "amount": 3900,
+        "reason": "matrix dated selected-route M11 direct pair"
+      },
+      {
+        "id": "m11-679-684",
+        "amount": 94,
+        "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+      },
+      {
+        "id": "zsd",
+        "amount": 300,
+        "reason": "zsd_zone1_complete_directed_base_tariff"
+      }
+    ],
+    "finishedAt": "2026-10-15T23:27:14.424Z"
+  },
+  "log": "docs/checkpoints/evidence/2026-10-15T23-26-39-527Z-part4-batch.log"
+}

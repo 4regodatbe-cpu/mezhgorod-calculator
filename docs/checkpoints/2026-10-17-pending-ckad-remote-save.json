@@ -1,0 +1,37 @@
+{
+  "status": "DONE_CODE_BRANCH_SAVE_AND_READBACK",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "pr": 14,
+  "draft": true,
+  "expectedParent": "fe5f1fc8bd0986e222cb49a4e906a12005513c65",
+  "preparedCodeCommit": "e3c07ac3e09e8be1bbecd482b70974c691681f2b",
+  "preparedTree": "d3e0340c9e352cd858854666c0f225a168f31764",
+  "pathShasReadBack": 62,
+  "activeCI": 39066237658,
+  "sourceCI": {
+    "id": 39065562352,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "durableSourceBundle": "experiments/nationwide-tolls/checks/2026-10-17-ckad-save-recovery/pending-ckad.bundle",
+  "pendingCodeAppliedToBranch": true,
+  "newTestsRun": 0,
+  "resume": "Check actual status of CI39067254489 and matching branch/PR head. Code is saved; do not repeat transfer/audit. Then bounded address-probe timeout fix as a separate step and M12 primary boundary mapping.",
+  "observedCIProblem": {
+    "path": "scripts/address-search-live-probe.mjs",
+    "blob": "deae251b0f199dbe82b6eb5aa4013f435abd1e5c",
+    "finding": "fetch has no per-request AbortSignal timeout; job has 60-minute timeout. Long Photon step is observed; actual hang not proven.",
+    "nextSeparateFix": "Bound request/body time and total probe duration with incremental progress, then test without external network. Do not cancel active CI automatically."
+  },
+  "observedAt": "2026-10-17T20:35:55.929589+00:00",
+  "actualRemoteHead": "e3c07ac3e09e8be1bbecd482b70974c691681f2b",
+  "codeCI": {
+    "id": 39067254489,
+    "verify": "completed/success",
+    "testPass": 284,
+    "testFail": 0,
+    "tsc": "success",
+    "buildStaticPages": "16/16",
+    "live_probe": "in_progress"
+  }
+}

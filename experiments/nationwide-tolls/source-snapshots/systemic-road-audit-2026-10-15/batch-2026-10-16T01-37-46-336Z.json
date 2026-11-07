@@ -1,0 +1,85 @@
+{
+  "startedAt": "2026-10-16T01:37:46.336Z",
+  "scope": {
+    "region": null,
+    "group": "pair-m4-a289",
+    "caseId": "pair-m4-a289-anapa-to-voronezh",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "pair-m4-a289-anapa-to-voronezh",
+      "startedAt": "2026-10-16T01:37:46.338Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-anapa-to-voronezh/live-2026-10-15T09-00-00-03-00-2026-10-16T01-37-51-305Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-anapa-to-voronezh/2026-10-16T01-37-51-243Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-37-51-788Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-37-52-256Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4",
+          "a289"
+        ],
+        "provenRoads": [
+          "a289",
+          "krasnodar-west-bypass",
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+        },
+        {
+          "id": "a289",
+          "amount": 620,
+          "reason": "A-289 Anapa exit inferred from two selected-route frames; estimate"
+        },
+        {
+          "id": "krasnodar-west-bypass",
+          "amount": 410,
+          "reason": "dzok_ready_matrix_pair_unconfirmed_route_binding"
+        }
+      ],
+      "finishedAt": "2026-10-16T01:37:52.273Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T01:37:52.276Z"
+}

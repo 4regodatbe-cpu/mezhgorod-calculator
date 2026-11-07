@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-16T07:47:30.151Z",
+  "phase": "PART19_M4_POLICY_STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38869309675",
+  "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
+  "checked": 9,
+  "total": 25,
+  "next": "dnr-широкино-moscow-center",
+  "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
+  "caseId": "dnr-широкино-moscow-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-moscow-center/2026-10-15T12-03-07-004Z-capture.json.gz",
+  "captureSha256": "a4bd488dd0d777371b49f1f41ef225b65af21d71b0b65b2c2fb83e8cdd549bda",
+  "dates": [
+    "2026-10-15T09:00:00+03:00",
+    "2026-10-17T09:00:00+03:00"
+  ],
+  "parent": "1e252d802a8a40c459d6e330099256b739067c7b",
+  "logPrefix": "docs/checkpoints/evidence/policy-2026-10-16T07-47-30-151Z",
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-47-30-151Z-part19_m4_policy_started.json"
+}

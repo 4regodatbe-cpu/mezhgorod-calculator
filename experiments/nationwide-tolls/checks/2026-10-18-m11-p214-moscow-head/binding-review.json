@@ -1,0 +1,18 @@
+{
+  "status": "DONE_OFFLINE_REVIEW",
+  "sourceCommit": "bddcddb821f591e9dc1ed3bda8b28bf4cc829279",
+  "direction": "solnechnogorsk→moscow",
+  "tariffs": {
+    "night": 880,
+    "monThu": 1130,
+    "fri": 1260,
+    "sat": 1500,
+    "sun": 1650
+  },
+  "sourcePdfPath": "experiments/nationwide-tolls/source-documents/m11-head-order0108-effective-2026-04-24.pdf",
+  "sourcePdfSha256": "514f8853f9b6fecd587466205fa5f6eef52d4d576c8c0fcff3b4480b4ccc9485",
+  "previousIndependentCellAudit": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-14-head-210-cell-pdf-audit.json",
+  "sourceDerivedPhysicalBinding": "Strict M11 coverage from independently anchored p58 through exact southbound paid lane7171624764/502872285 to existing Moscow endpoint area. Gate name/PVP21 not claimed from OSM. Does not prove other head exits.",
+  "endpointPolicy": "Existing Moscow endpoint tolerance1.5km unchanged; additionally exact gate, one strict block, ordered anchors, complete chunks, paid way, strict end after gate, dense selected geometry. No price enabled by review alone.",
+  "newSourceRequests": 0
+}

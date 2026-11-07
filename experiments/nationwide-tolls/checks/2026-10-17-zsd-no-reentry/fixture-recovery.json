@@ -1,0 +1,17 @@
+{
+  "reason": "initial full gate ENOENT in pre-existing A289 test; no runtime regression",
+  "restoredExactSourceBlobs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-kazan-center/2026-10-15T23-18-27-629Z-capture.json.gz",
+      "gitBlobSha": "21b551154ce13ec3c184fccb822e1b3c2837903d"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-moscow-to-taman/2026-10-16T00-10-06-845Z-capture.json.gz",
+      "gitBlobSha": "664b35303e1d095c77a3d708805ced7b43d3cc98"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-moscow/2026-10-16T01-40-05-574Z-capture.json.gz",
+      "gitBlobSha": "bcded86cab586f7aa1d33c309f95118411dceb68"
+    }
+  ]
+}

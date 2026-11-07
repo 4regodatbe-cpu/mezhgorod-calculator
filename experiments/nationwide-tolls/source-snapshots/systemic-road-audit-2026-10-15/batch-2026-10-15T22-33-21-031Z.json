@@ -1,0 +1,68 @@
+{
+  "startedAt": "2026-10-15T22:33:21.031Z",
+  "scope": {
+    "region": null,
+    "group": null,
+    "caseId": "dnr-донецк-moscow-center",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "dnr-донецк-moscow-center",
+      "startedAt": "2026-10-15T22:33:21.032Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-moscow-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-34-03-244Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-moscow-center/2026-10-15T22-34-03-156Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T22-34-03-667Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T22-34-04-089Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "weekday": {
+        "amount": 3050,
+        "weekdayAmount": 3050,
+        "weekendAmount": 3370,
+        "period": "понедельник–четверг",
+        "segments": [
+          "М-4: m4-636 → m4-71 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 3370,
+        "weekdayAmount": 3050,
+        "weekendAmount": 3370,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "М-4: m4-636 → m4-71 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": 3050,
+          "reason": "matrix exact selected-route M4 vector"
+        }
+      ],
+      "finishedAt": "2026-10-15T22:34:04.099Z"
+    }
+  ],
+  "finishedAt": "2026-10-15T22:34:04.101Z"
+}

@@ -1,0 +1,511 @@
+{
+  "capturedAt": "2026-11-01T21:54:56.945Z",
+  "from": {
+    "label": "volnovakha",
+    "position": {
+      "lng": 37.4968,
+      "lat": 47.6019
+    }
+  },
+  "to": {
+    "label": "donetsk",
+    "position": {
+      "lng": 37.8029,
+      "lat": 48.0156
+    }
+  },
+  "summary": {
+    "id": "volnovakha-donetsk",
+    "httpStatus": 200,
+    "elapsedMs": 1996,
+    "meters": 58259,
+    "seconds": 3515,
+    "quality": {
+      "status": "single",
+      "providers": [
+        "OSRM"
+      ],
+      "distanceSpreadPercent": null,
+      "timeSpreadPercent": null,
+      "goldenDistanceDeviationPercent": null,
+      "message": "Выбран маршрут с минимальным временем"
+    },
+    "tolls": {
+      "amount": 0,
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "period": "понедельник–четверг",
+      "segments": [],
+      "confidence": "none",
+      "pricingStatus": "free"
+    }
+  },
+  "body": {
+    "legs": [
+      {
+        "from": "volnovakha",
+        "to": "donetsk",
+        "fast": {
+          "m4RoadBoundaries": {
+            "provider": "osrm",
+            "targetRef": "М-4",
+            "routeSignature": "08c66c1b9754b439c7f34c7d8ef605eadda4e3dfaa66201c3f4aebb9b1c3486a",
+            "precision": "route-maneuver",
+            "status": "not-detected",
+            "reason": "road_ref_not_detected",
+            "entry": null,
+            "exit": null
+          },
+          "m12EndpointSpan": null,
+          "m12StrictSpan": null,
+          "m12Candidate": false,
+          "m12SpanReason": null,
+          "m11RoadEvidence": {
+            "provider": "osrm",
+            "strictBlocks": [],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "meters": 58259,
+          "seconds": 3515,
+          "tolls": {
+            "amount": 0,
+            "weekdayAmount": 0,
+            "weekendAmount": 0,
+            "period": "понедельник–четверг",
+            "segments": [],
+            "confidence": "none",
+            "pricingStatus": "free"
+          },
+          "tollValidation": {
+            "status": "free",
+            "source": "Valhalla map matching",
+            "tollEdgeCount": 0,
+            "checkedEdgeCount": 247,
+            "wayIds": [],
+            "roadNames": [],
+            "paidRoadEdges": [],
+            "message": "Платные дорожные рёбра не обнаружены во всём проверенном маршруте",
+            "tollBoothCount": 0,
+            "tollBooths": [],
+            "chunkCount": 1,
+            "checkedChunkCount": 1,
+            "failedChunkCount": 0,
+            "complete": true,
+            "boothEventCoverage": "complete"
+          },
+          "quality": {
+            "status": "single",
+            "providers": [
+              "OSRM"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "m4PvpPreview": {
+            "status": "unknown",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+            "roadBoundaries": {
+              "provider": "osrm",
+              "targetRef": "М-4",
+              "routeSignature": "08c66c1b9754b439c7f34c7d8ef605eadda4e3dfaa66201c3f4aebb9b1c3486a",
+              "precision": "route-maneuver",
+              "status": "not-detected",
+              "reason": "road_ref_not_detected",
+              "entry": null,
+              "exit": null
+            },
+            "roadKilometrage": {
+              "status": "unknown",
+              "direction": "unknown",
+              "diagnosticOnly": true,
+              "entry": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "exit": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "stops": [
+                "km_boundary_evidence_unresolved"
+              ]
+            },
+            "priceRub": null,
+            "verifiedPriceCells": 0,
+            "candidateCount": 0,
+            "confirmedPvps": [],
+            "diagnosticOnly": true
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "candidate_needs_osm_operator_node_mapping",
+              "reason": "no_verifiable_m1_m3_booths",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 58.259,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "volnovakha",
+                  "to": "donetsk",
+                  "ratePerKm": 70,
+                  "amount": 4078,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 4078,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 58.259,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "volnovakha",
+                  "to": "donetsk",
+                  "ratePerKm": 80,
+                  "amount": 4661,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 4661,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 58.259,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "volnovakha",
+                  "to": "donetsk",
+                  "ratePerKm": 90,
+                  "amount": 5243,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 5243,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 58.259,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "volnovakha",
+                  "to": "donetsk",
+                  "ratePerKm": 110,
+                  "amount": 6408,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 6408,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "options": [
+      {
+        "from": "volnovakha",
+        "to": "donetsk",
+        "fast": {
+          "m4RoadBoundaries": {
+            "provider": "osrm",
+            "targetRef": "М-4",
+            "routeSignature": "08c66c1b9754b439c7f34c7d8ef605eadda4e3dfaa66201c3f4aebb9b1c3486a",
+            "precision": "route-maneuver",
+            "status": "not-detected",
+            "reason": "road_ref_not_detected",
+            "entry": null,
+            "exit": null
+          },
+          "m12EndpointSpan": null,
+          "m12StrictSpan": null,
+          "m12Candidate": false,
+          "m12SpanReason": null,
+          "m11RoadEvidence": {
+            "provider": "osrm",
+            "strictBlocks": [],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "meters": 58259,
+          "seconds": 3515,
+          "tolls": {
+            "amount": 0,
+            "weekdayAmount": 0,
+            "weekendAmount": 0,
+            "period": "понедельник–четверг",
+            "segments": [],
+            "confidence": "none",
+            "pricingStatus": "free"
+          },
+          "tollValidation": {
+            "status": "free",
+            "source": "Valhalla map matching",
+            "tollEdgeCount": 0,
+            "checkedEdgeCount": 247,
+            "wayIds": [],
+            "roadNames": [],
+            "paidRoadEdges": [],
+            "message": "Платные дорожные рёбра не обнаружены во всём проверенном маршруте",
+            "tollBoothCount": 0,
+            "tollBooths": [],
+            "chunkCount": 1,
+            "checkedChunkCount": 1,
+            "failedChunkCount": 0,
+            "complete": true,
+            "boothEventCoverage": "complete"
+          },
+          "quality": {
+            "status": "single",
+            "providers": [
+              "OSRM"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "m4PvpPreview": {
+            "status": "unknown",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+            "roadBoundaries": {
+              "provider": "osrm",
+              "targetRef": "М-4",
+              "routeSignature": "08c66c1b9754b439c7f34c7d8ef605eadda4e3dfaa66201c3f4aebb9b1c3486a",
+              "precision": "route-maneuver",
+              "status": "not-detected",
+              "reason": "road_ref_not_detected",
+              "entry": null,
+              "exit": null
+            },
+            "roadKilometrage": {
+              "status": "unknown",
+              "direction": "unknown",
+              "diagnosticOnly": true,
+              "entry": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "exit": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "stops": [
+                "km_boundary_evidence_unresolved"
+              ]
+            },
+            "priceRub": null,
+            "verifiedPriceCells": 0,
+            "candidateCount": 0,
+            "confirmedPvps": [],
+            "diagnosticOnly": true
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "candidate_needs_osm_operator_node_mapping",
+              "reason": "no_verifiable_m1_m3_booths",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 58.259,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "volnovakha",
+                  "to": "donetsk",
+                  "ratePerKm": 70,
+                  "amount": 4078,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 4078,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 58.259,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "volnovakha",
+                  "to": "donetsk",
+                  "ratePerKm": 80,
+                  "amount": 4661,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 4661,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 58.259,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "volnovakha",
+                  "to": "donetsk",
+                  "ratePerKm": 90,
+                  "amount": 5243,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 5243,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 58.259,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "volnovakha",
+                  "to": "donetsk",
+                  "ratePerKm": 110,
+                  "amount": 6408,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 6408,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "mode": "dual",
+    "automaticMode": "dual",
+    "specialEndpoint": true,
+    "specialOnly": true,
+    "preferredCorridor": "mainland",
+    "routePolicy": "geographic-zone"
+  }
+}

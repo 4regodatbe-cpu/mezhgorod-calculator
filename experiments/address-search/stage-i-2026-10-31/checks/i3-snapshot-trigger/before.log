@@ -1,0 +1,51 @@
+✔ AddressField updates trigger browser checks on PR as well as push (1.617069ms)
+✖ Snapshot changes trigger B03 browser checks on push (0.952585ms)
+✖ Snapshot changes trigger B03 browser checks on pull_request (1.252541ms)
+✔ CI executes new swap/refocus regression and preserves old suite failures (0.432018ms)
+✔ push-only B03 runs retain the original mandatory offline verify commands (0.412435ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 3
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12.388123
+
+✖ failing tests:
+
+test at scripts/b03-browser-workflow.test.mjs:27:3
+✖ Snapshot changes trigger B03 browser checks on push (0.952585ms)
+  AssertionError [ERR_ASSERTION]: push must track the snapshot itself, independently of the other event
+      at TestContext.<anonymous> (file:///workspace/geonames-preview-publish-fc83523/scripts/b03-browser-workflow.test.mjs:28:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts/b03-browser-workflow.test.mjs:27:3
+✖ Snapshot changes trigger B03 browser checks on pull_request (1.252541ms)
+  AssertionError [ERR_ASSERTION]: pull_request must track the snapshot itself, independently of the other event
+      at TestContext.<anonymous> (file:///workspace/geonames-preview-publish-fc83523/scripts/b03-browser-workflow.test.mjs:28:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

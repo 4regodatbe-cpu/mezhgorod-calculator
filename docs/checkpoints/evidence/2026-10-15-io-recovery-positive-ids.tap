@@ -1,0 +1,14 @@
+✔ recording reserves request order even when repeated requests finish out of order (5.218621ms)
+✔ offline replay preserves retry-after and has no fallback for missing responses (1.099519ms)
+✔ capture includes requests made during pricing, after routing (1.176394ms)
+✔ parity compares the complete toll audit, not just the numeric total (0.221561ms)
+✔ planned roads, incomplete traces and partially traversed pairs never count as proven coverage (0.955134ms)
+✔ compaction preserves every exact gate and road family while bounding duplicate paid-edge samples (7.817771ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 105.170484

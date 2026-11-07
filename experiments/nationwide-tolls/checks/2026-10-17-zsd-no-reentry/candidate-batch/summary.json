@@ -1,0 +1,44 @@
+{
+  "sourceHashes": {
+    "lib/v3-calculation/route-candidate.ts": "060548c62fd1ac3f76a811e7fc20137a7ad46aca791657caaa60fcc19bbb3f1b",
+    "lib/v3-calculation/zsd-reentry-policy.ts": "f7ea79476be9bfb0f96a2b26e3bbfeb5bd13fa97f0da128f8ea537942235ddea",
+    "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-planernaya-no-reentry/geometry.json": "4e19e59c5093db591f57ef01c0995fb455974bbb6029e6ae288573eb45e97b21",
+    "experiments/nationwide-tolls/fastest-route-policy.mjs": "e5cc9a6a2aadb3fd62d2ac65c8fa17731026574f3bbc968a5de36d6301c875e5"
+  },
+  "sourceHead": "0cc2c469d5ef0385fe8446983103233ef73606a2",
+  "checkedCases": 6,
+  "rejectedReentryGeometries": 6,
+  "admittedOrdinaryOsrmGeometries": 6,
+  "distinctNegativeControls": 4,
+  "newPricedComponents": 0,
+  "confirmedFullTripFares": 0,
+  "newLiveRequests": 0,
+  "newFullTripReplays": 0,
+  "caseResults": [
+    {
+      "caseId": "pair-m11-zsd-prim-to-moscow",
+      "sha256": "a28c92e11a0c6d760e65b8b633155e00790bdf1ce2e7ed67dde3f3c79b8fec07"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+      "sha256": "c847f59c7511181bfb3a98aae8fc37856b79b4086113c0646fd85d3fc619a598"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+      "sha256": "677f01fe36a91842676e5db9fb43bf5d8a78dd2cd7b3848e445d63cfb31d2527"
+    },
+    {
+      "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+      "sha256": "851dac95d82eaba9c68661e5a0b2a0941e2e8d10d96afe5ae2a5603e5122912b"
+    },
+    {
+      "caseId": "pair-m11-zsd-prim-to-torzhok",
+      "sha256": "89b45a802fb2e140a9be8acbe16a6c7303afaf7365291d787dd396426c5aa549"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-prim-to-voronezh",
+      "sha256": "715cef2d90967811759633176e5861dbe7eaa0642c7d56747279d2c8d3c4cc6a"
+    }
+  ],
+  "scope": "Only the reviewed Planernaya urban-turn motif. Baseline tariff coverage is not recomputed."
+}

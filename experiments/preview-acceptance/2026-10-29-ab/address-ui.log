@@ -1,0 +1,416 @@
+﻿2026-10-29T20:22:44.6132416Z Current runner version: '2.338.0'
+2026-10-29T20:22:44.6180368Z ##[group]Runner Image Provisioner
+2026-10-29T20:22:44.6181184Z Hosted Compute Agent
+2026-10-29T20:22:44.6181749Z Version: 20261021.618
+2026-10-29T20:22:44.6182363Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-10-29T20:22:44.6183063Z Build Date: 2026-10-21T00:45:21Z
+2026-10-29T20:22:44.6183688Z Worker ID: {7e075da0-3797-453d-ab8b-5602acf4bff2}
+2026-10-29T20:22:44.6184364Z Region: westus3
+2026-10-29T20:22:44.6184873Z Cloud: Azure
+2026-10-29T20:22:44.6185386Z ##[endgroup]
+2026-10-29T20:22:44.6186716Z ##[group]Operating System
+2026-10-29T20:22:44.6187264Z Ubuntu
+2026-10-29T20:22:44.6187798Z 24.04.5
+2026-10-29T20:22:44.6188301Z LTS
+2026-10-29T20:22:44.6189219Z ##[endgroup]
+2026-10-29T20:22:44.6189788Z ##[group]Runner Image
+2026-10-29T20:22:44.6190348Z Image: ubuntu-24.04
+2026-10-29T20:22:44.6190932Z Version: 20261025.353.1
+2026-10-29T20:22:44.6192089Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-29T20:22:44.6193533Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+2026-10-29T20:22:44.6194378Z ##[endgroup]
+2026-10-29T20:22:44.6195410Z ##[group]GITHUB_TOKEN Permissions
+2026-10-29T20:22:44.6197361Z Contents: read
+2026-10-29T20:22:44.6197974Z Metadata: read
+2026-10-29T20:22:44.6198796Z ##[endgroup]
+2026-10-29T20:22:44.6201347Z Secret source: Actions
+2026-10-29T20:22:44.6202283Z Cache mode: write
+2026-10-29T20:22:44.6203090Z Prepare workflow directory
+2026-10-29T20:22:44.7324300Z Prepare all required actions
+2026-10-29T20:22:44.7374951Z Getting action download info
+2026-10-29T20:22:45.0715177Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-29T20:22:45.1385981Z Download action repository 'pnpm/action-setup@v4' (SHA:b906affcce14559ad1aafd4ab0e942779e9f58b1)
+2026-10-29T20:22:45.8530096Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-29T20:22:45.9562262Z Download action repository 'browser-actions/setup-chrome@c785b87e244131f27c9f19c1a33e2ead956ab7ce' (SHA:c785b87e244131f27c9f19c1a33e2ead956ab7ce)
+2026-10-29T20:22:46.3797208Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-29T20:22:46.9419282Z Complete job name: address-ui
+2026-10-29T20:22:47.3989000Z ##[group]Run actions/checkout@v4
+2026-10-29T20:22:47.3990354Z with:
+2026-10-29T20:22:47.3991191Z   ref: c2f52ee93cd98a81ecd05efa0358fb38c6704124
+2026-10-29T20:22:47.3992231Z   fetch-depth: 1
+2026-10-29T20:22:47.3993133Z   repository: 4regodatbe-cpu/mezhgorod-calculator
+2026-10-29T20:22:47.4001211Z   token: ***
+2026-10-29T20:22:47.4001965Z   ssh-strict: true
+2026-10-29T20:22:47.4002744Z   ssh-user: git
+2026-10-29T20:22:47.4003539Z   persist-credentials: true
+2026-10-29T20:22:47.4004396Z   clean: true
+2026-10-29T20:22:47.4005197Z   sparse-checkout-cone-mode: true
+2026-10-29T20:22:47.4006140Z   fetch-tags: false
+2026-10-29T20:22:47.4006965Z   show-progress: true
+2026-10-29T20:22:47.4007765Z   lfs: false
+2026-10-29T20:22:47.4008576Z   submodules: false
+2026-10-29T20:22:47.4009370Z   set-safe-directory: true
+2026-10-29T20:22:47.4010271Z   allow-unsafe-pr-checkout: false
+2026-10-29T20:22:47.4011469Z ##[endgroup]
+2026-10-29T20:22:47.7929700Z Syncing repository: 4regodatbe-cpu/mezhgorod-calculator
+2026-10-29T20:22:47.7933170Z ##[group]Getting Git version info
+2026-10-29T20:22:47.7934775Z Working directory is '/home/runner/work/mezhgorod-calculator/mezhgorod-calculator'
+2026-10-29T20:22:47.7937841Z [command]/usr/bin/git version
+2026-10-29T20:22:47.7997597Z git version 2.56.0
+2026-10-29T20:22:47.8024981Z ##[endgroup]
+2026-10-29T20:22:47.8043523Z Temporarily overriding HOME='/home/runner/work/_temp/e4ebd075-a4c6-464e-86bd-c13ee1b6df83' before making global git config changes
+2026-10-29T20:22:47.8046197Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-29T20:22:47.8049206Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mezhgorod-calculator/mezhgorod-calculator
+2026-10-29T20:22:47.8105422Z Deleting the contents of '/home/runner/work/mezhgorod-calculator/mezhgorod-calculator'
+2026-10-29T20:22:47.8112859Z ##[group]Initializing the repository
+2026-10-29T20:22:47.8118925Z [command]/usr/bin/git init /home/runner/work/mezhgorod-calculator/mezhgorod-calculator
+2026-10-29T20:22:47.8232944Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-29T20:22:47.8235324Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-29T20:22:47.8237430Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-29T20:22:47.8239237Z hint: call:
+2026-10-29T20:22:47.8239975Z hint:
+2026-10-29T20:22:47.8240983Z hint: 	git config --global init.defaultBranch <name>
+2026-10-29T20:22:47.8242620Z hint:
+2026-10-29T20:22:47.8244134Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-29T20:22:47.8246963Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-29T20:22:47.8270836Z hint:
+2026-10-29T20:22:47.8272043Z hint: 	git branch -m <name>
+2026-10-29T20:22:47.8272969Z hint:
+2026-10-29T20:22:47.8274176Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-29T20:22:47.8277114Z Initialized empty Git repository in /home/runner/work/mezhgorod-calculator/mezhgorod-calculator/.git/
+2026-10-29T20:22:47.8281652Z [command]/usr/bin/git remote add origin https://github.com/4regodatbe-cpu/mezhgorod-calculator
+2026-10-29T20:22:47.8316005Z ##[endgroup]
+2026-10-29T20:22:47.8319027Z ##[group]Disabling automatic garbage collection
+2026-10-29T20:22:47.8321513Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-29T20:22:47.8349750Z ##[endgroup]
+2026-10-29T20:22:47.8352478Z ##[group]Setting up auth
+2026-10-29T20:22:47.8356098Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-29T20:22:47.8393208Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-29T20:22:47.8766017Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-29T20:22:47.8813976Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-29T20:22:47.9042504Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-29T20:22:47.9076456Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-29T20:22:47.9267702Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-29T20:22:47.9304683Z ##[endgroup]
+2026-10-29T20:22:47.9306188Z ##[group]Fetching the repository
+2026-10-29T20:22:47.9318728Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin c2f52ee93cd98a81ecd05efa0358fb38c6704124
+2026-10-29T20:22:54.7102840Z From https://github.com/4regodatbe-cpu/mezhgorod-calculator
+2026-10-29T20:22:54.7104531Z  * branch            c2f52ee93cd98a81ecd05efa0358fb38c6704124 -> FETCH_HEAD
+2026-10-29T20:22:54.7107378Z ##[endgroup]
+2026-10-29T20:22:54.7108477Z ##[group]Determining the checkout info
+2026-10-29T20:22:54.7109520Z ##[endgroup]
+2026-10-29T20:22:54.7113373Z [command]/usr/bin/git sparse-checkout disable
+2026-10-29T20:22:54.7160021Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-29T20:22:54.7186976Z ##[group]Checking out the ref
+2026-10-29T20:22:54.7190795Z [command]/usr/bin/git checkout --progress --force c2f52ee93cd98a81ecd05efa0358fb38c6704124
+2026-10-29T20:22:55.6369435Z Note: switching to 'c2f52ee93cd98a81ecd05efa0358fb38c6704124'.
+2026-10-29T20:22:55.6370315Z 
+2026-10-29T20:22:55.6370567Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-29T20:22:55.6371101Z changes and commit them, and you can discard any commits you make in this
+2026-10-29T20:22:55.6371611Z state without impacting any branches by switching back to a branch.
+2026-10-29T20:22:55.6371943Z 
+2026-10-29T20:22:55.6372198Z If you want to create a new branch to retain commits you create, you may
+2026-10-29T20:22:55.6372728Z do so (now or later) by using -c with the switch command. Example:
+2026-10-29T20:22:55.6372996Z 
+2026-10-29T20:22:55.6373134Z   git switch -c <new-branch-name>
+2026-10-29T20:22:55.6373334Z 
+2026-10-29T20:22:55.6373487Z Or undo this operation with:
+2026-10-29T20:22:55.6373668Z 
+2026-10-29T20:22:55.6373790Z   git switch -
+2026-10-29T20:22:55.6373967Z 
+2026-10-29T20:22:55.6374205Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-29T20:22:55.6374584Z 
+2026-10-29T20:22:55.6374862Z HEAD is now at c2f52ee docs(preview): checkpoint single authorized A+B publication preflight
+2026-10-29T20:22:55.6425958Z ##[endgroup]
+2026-10-29T20:22:55.6470967Z [command]/usr/bin/git log -1 --format=%H
+2026-10-29T20:22:55.6496750Z c2f52ee93cd98a81ecd05efa0358fb38c6704124
+2026-10-29T20:22:55.9160901Z ##[group]Run pnpm/action-setup@v4
+2026-10-29T20:22:55.9161263Z with:
+2026-10-29T20:22:55.9161535Z   version: 11.25.0
+2026-10-29T20:22:55.9161788Z   dest: ~/setup-pnpm
+2026-10-29T20:22:55.9162043Z   run_install: null
+2026-10-29T20:22:55.9162296Z   cache: false
+2026-10-29T20:22:55.9162569Z   cache_dependency_path: pnpm-lock.yaml
+2026-10-29T20:22:55.9162932Z   package_json_file: package.json
+2026-10-29T20:22:55.9163221Z   standalone: false
+2026-10-29T20:22:55.9163462Z ##[endgroup]
+2026-10-29T20:22:56.0728911Z ##[group]Running self-installer...
+2026-10-29T20:22:56.5148483Z (node:2327) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-29T20:22:56.5150450Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-29T20:22:56.7296723Z Progress: resolved 1, reused 0, downloaded 0, added 0
+2026-10-29T20:22:56.7411861Z Packages: +1
+2026-10-29T20:22:56.7412533Z +
+2026-10-29T20:22:57.0682221Z Progress: resolved 1, reused 0, downloaded 1, added 1, done
+2026-10-29T20:22:57.1157787Z 
+2026-10-29T20:22:57.1158189Z dependencies:
+2026-10-29T20:22:57.1158604Z + pnpm 11.25.0 (12.16.1 is available)
+2026-10-29T20:22:57.1158795Z 
+2026-10-29T20:22:57.1182297Z Done in 843ms
+2026-10-29T20:22:57.1325867Z ##[endgroup]
+2026-10-29T20:22:57.1326383Z Installation Completed!
+2026-10-29T20:22:57.2157333Z ##[group]Run actions/setup-node@v4
+2026-10-29T20:22:57.2157638Z with:
+2026-10-29T20:22:57.2157863Z   node-version: 24.x
+2026-10-29T20:22:57.2158110Z   cache: pnpm
+2026-10-29T20:22:57.2158487Z   always-auth: false
+2026-10-29T20:22:57.2158715Z   check-latest: false
+2026-10-29T20:22:57.2161399Z   token: ***
+2026-10-29T20:22:57.2161593Z env:
+2026-10-29T20:22:57.2161864Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-10-29T20:22:57.2162162Z ##[endgroup]
+2026-10-29T20:22:57.3598732Z (node:2341) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-29T20:22:57.3599647Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-29T20:22:57.3600520Z Found in cache @ /opt/hostedtoolcache/node/24.22.1/x64
+2026-10-29T20:22:57.3601206Z ##[group]Environment details
+2026-10-29T20:22:57.7590718Z node: v24.22.1
+2026-10-29T20:22:57.7591126Z npm: 11.19.1
+2026-10-29T20:22:57.7591452Z yarn: 1.22.22
+2026-10-29T20:22:57.7592274Z ##[endgroup]
+2026-10-29T20:22:57.7612874Z [command]/home/runner/setup-pnpm/node_modules/.bin/pnpm store path --silent
+2026-10-29T20:22:58.6060498Z /home/runner/setup-pnpm/node_modules/.bin/store/v11
+2026-10-29T20:22:58.8493278Z Cache hit for: node-cache-Linux-x64-pnpm-31408df739044fa7ca4cf4d97cb6126bcf08180286ed0f75c609bf0c8b6ff959
+2026-10-29T20:22:58.8605819Z (node:2341) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-29T20:23:00.1251319Z Received 20971520 of 118912875 (17.6%), 20.0 MBs/sec
+2026-10-29T20:23:00.9728052Z Received 118912875 of 118912875 (100.0%), 61.3 MBs/sec
+2026-10-29T20:23:00.9729705Z Cache Size: ~113 MB (118912875 B)
+2026-10-29T20:23:00.9761684Z [command]/usr/bin/tar -xf /home/runner/work/_temp/21ea8cdd-4e35-4598-bbf3-aefbeba3c552/cache.tzst -P -C /home/runner/work/mezhgorod-calculator/mezhgorod-calculator --use-compress-program unzstd
+2026-10-29T20:23:01.8611208Z Cache restored successfully
+2026-10-29T20:23:01.8657113Z Cache restored from key: node-cache-Linux-x64-pnpm-31408df739044fa7ca4cf4d97cb6126bcf08180286ed0f75c609bf0c8b6ff959
+2026-10-29T20:23:01.9073773Z ##[group]Run node scripts/b03-browser-workflow.test.mjs
+2026-10-29T20:23:01.9074316Z [36;1mnode scripts/b03-browser-workflow.test.mjs[0m
+2026-10-29T20:23:01.9096673Z shell: /usr/bin/bash -e {0}
+2026-10-29T20:23:01.9096977Z env:
+2026-10-29T20:23:01.9097254Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-10-29T20:23:01.9097562Z ##[endgroup]
+2026-10-29T20:23:01.9610313Z ✔ AddressField updates trigger browser checks on PR as well as push (0.902448ms)
+2026-10-29T20:23:01.9611385Z ✔ CI executes new swap/refocus regression and preserves old suite failures (0.248512ms)
+2026-10-29T20:23:01.9612222Z ✔ push-only B03 runs retain the original mandatory offline verify commands (0.894142ms)
+2026-10-29T20:23:01.9612743Z ℹ tests 3
+2026-10-29T20:23:01.9619450Z ℹ suites 0
+2026-10-29T20:23:01.9619881Z ℹ pass 3
+2026-10-29T20:23:01.9620243Z ℹ fail 0
+2026-10-29T20:23:01.9620612Z ℹ cancelled 0
+2026-10-29T20:23:01.9621015Z ℹ skipped 0
+2026-10-29T20:23:01.9621387Z ℹ todo 0
+2026-10-29T20:23:01.9621903Z ℹ duration_ms 7.823126
+2026-10-29T20:23:01.9835307Z ##[group]Run pnpm install --frozen-lockfile
+2026-10-29T20:23:01.9835673Z [36;1mpnpm install --frozen-lockfile[0m
+2026-10-29T20:23:01.9849576Z shell: /usr/bin/bash -e {0}
+2026-10-29T20:23:01.9849837Z env:
+2026-10-29T20:23:01.9850106Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-10-29T20:23:01.9850420Z ##[endgroup]
+2026-10-29T20:23:02.5886265Z ? Verifying lockfile against supply-chain policies (504 entries)...
+2026-10-29T20:23:02.5958042Z Lockfile is up to date, resolution step is skipped
+2026-10-29T20:23:02.7261093Z Progress: resolved 1, reused 0, downloaded 0, added 0
+2026-10-29T20:23:02.8010125Z Packages: +429
+2026-10-29T20:23:02.8011363Z ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2026-10-29T20:23:03.7315921Z Progress: resolved 429, reused 391, downloaded 0, added 0
+2026-10-29T20:23:03.8510895Z Packages are hard linked from the content-addressable store to the virtual store.
+2026-10-29T20:23:03.8512470Z   Content-addressable store is at: /home/runner/setup-pnpm/node_modules/.bin/store/v11
+2026-10-29T20:23:03.8518117Z   Virtual store is at:             node_modules/.pnpm
+2026-10-29T20:23:04.7375594Z Progress: resolved 429, reused 429, downloaded 0, added 318
+2026-10-29T20:23:05.0820534Z Progress: resolved 429, reused 429, downloaded 0, added 429, done
+2026-10-29T20:23:07.0441465Z ✓ Lockfile passes supply-chain policies (504 entries in 4.4s)
+2026-10-29T20:23:07.0501266Z .../node_modules/unrs-resolver postinstall$ napi-postinstall unrs-resolver 1.11.1 check
+2026-10-29T20:23:07.1117492Z .../node_modules/unrs-resolver postinstall: Done
+2026-10-29T20:23:07.2082054Z 
+2026-10-29T20:23:07.2082742Z dependencies:
+2026-10-29T20:23:07.2083181Z + class-variance-authority 0.7.1
+2026-10-29T20:23:07.2083547Z + clsx 2.1.1
+2026-10-29T20:23:07.2083883Z + lucide-react 1.31.0
+2026-10-29T20:23:07.2084182Z + next 16.3.4
+2026-10-29T20:23:07.2084462Z + radix-ui 1.6.7
+2026-10-29T20:23:07.2084749Z + react 19.2.6
+2026-10-29T20:23:07.2085073Z + react-dom 19.2.6
+2026-10-29T20:23:07.2085814Z + tailwind-merge 3.6.0
+2026-10-29T20:23:07.2086172Z + tw-animate-css 1.4.0
+2026-10-29T20:23:07.2086309Z 
+2026-10-29T20:23:07.2086411Z devDependencies:
+2026-10-29T20:23:07.2086658Z + @tailwindcss/postcss 4.2.1
+2026-10-29T20:23:07.2086923Z + @types/node 22.19.19
+2026-10-29T20:23:07.2087173Z + @types/react 19.2.14
+2026-10-29T20:23:07.2087417Z + @types/react-dom 19.2.3
+2026-10-29T20:23:07.2087882Z + eslint 9.39.4
+2026-10-29T20:23:07.2088252Z + eslint-config-next 16.3.4
+2026-10-29T20:23:07.2088834Z + tailwindcss 4.2.1
+2026-10-29T20:23:07.2089195Z + typescript 5.9.3
+2026-10-29T20:23:07.2089397Z 
+2026-10-29T20:23:07.2305718Z Done in 5.2s using pnpm v11.25.0
+2026-10-29T20:23:07.3501613Z ##[group]Run npm install --prefix "$RUNNER_TEMP/b03-playwright" --no-save --package-lock=false --no-audit --no-fund playwright@1.56.0
+2026-10-29T20:23:07.3502493Z [36;1mnpm install --prefix "$RUNNER_TEMP/b03-playwright" --no-save --package-lock=false --no-audit --no-fund playwright@1.56.0[0m
+2026-10-29T20:23:07.3516452Z shell: /usr/bin/bash -e {0}
+2026-10-29T20:23:07.3516798Z env:
+2026-10-29T20:23:07.3517076Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-10-29T20:23:07.3517384Z ##[endgroup]
+2026-10-29T20:23:10.0147414Z 
+2026-10-29T20:23:10.0148169Z added 2 packages in 3s
+2026-10-29T20:23:10.0839228Z ##[group]Run browser-actions/setup-chrome@c785b87e244131f27c9f19c1a33e2ead956ab7ce
+2026-10-29T20:23:10.0839975Z with:
+2026-10-29T20:23:10.0840342Z   chrome-version: 156.0.8078.47
+2026-10-29T20:23:10.0840779Z   install-dependencies: true
+2026-10-29T20:23:10.0841202Z   install-chromedriver: false
+2026-10-29T20:23:10.0841603Z   no-sudo: false
+2026-10-29T20:23:10.0841925Z env:
+2026-10-29T20:23:10.0842347Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-10-29T20:23:10.0842882Z ##[endgroup]
+2026-10-29T20:23:10.1558794Z Installing dependencies
+2026-10-29T20:23:10.1613044Z [command]/usr/bin/sudo apt-get update
+2026-10-29T20:23:10.2960188Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-29T20:23:10.3262066Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-10-29T20:23:10.3281813Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-10-29T20:23:10.3329975Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-10-29T20:23:10.3347172Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-10-29T20:23:10.3529170Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-10-29T20:23:10.4425271Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1406 kB]
+2026-10-29T20:23:10.4571553Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [310 kB]
+2026-10-29T20:23:10.4585602Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1707 kB]
+2026-10-29T20:23:10.4657582Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [343 kB]
+2026-10-29T20:23:10.4718240Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1809 kB]
+2026-10-29T20:23:10.4766074Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [411 kB]
+2026-10-29T20:23:10.4794073Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [14.3 kB]
+2026-10-29T20:23:10.5430400Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1146 kB]
+2026-10-29T20:23:10.5494507Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [231 kB]
+2026-10-29T20:23:10.5512151Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1223 kB]
+2026-10-29T20:23:10.5842308Z Get:18 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [607 kB]
+2026-10-29T20:23:10.5969952Z Get:19 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [671 kB]
+2026-10-29T20:23:10.6006151Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [246 kB]
+2026-10-29T20:23:13.6894778Z Fetched 10.5 MB in 1s (9823 kB/s)
+2026-10-29T20:23:14.7484625Z Reading package lists...
+2026-10-29T20:23:14.7708883Z [command]/usr/bin/sudo apt-get install --yes --no-install-recommends libasound2t64 libatk-bridge2.0-0t64 libatk1.0-0t64 libcairo2 libcups2t64 libdbus-1-3 libexpat1 libgbm1 libglib2.0-0t64 libnss3 libpango-1.0-0 libxcomposite1 libxdamage1 libxfixes3 libxkbcommon0 libxrandr2
+2026-10-29T20:23:14.7908539Z Reading package lists...
+2026-10-29T20:23:15.0230718Z Building dependency tree...
+2026-10-29T20:23:15.0236631Z Reading state information...
+2026-10-29T20:23:15.2271233Z libasound2t64 is already the newest version (1.2.11-1ubuntu0.3).
+2026-10-29T20:23:15.2272058Z libasound2t64 set to manually installed.
+2026-10-29T20:23:15.2272948Z libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-29T20:23:15.2273719Z libatk-bridge2.0-0t64 set to manually installed.
+2026-10-29T20:23:15.2274496Z libatk1.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-29T20:23:15.2275214Z libatk1.0-0t64 set to manually installed.
+2026-10-29T20:23:15.2275952Z libcairo2 is already the newest version (1.18.0-3build1).
+2026-10-29T20:23:15.2276587Z libcairo2 set to manually installed.
+2026-10-29T20:23:15.2277990Z libcups2t64 is already the newest version (2.4.7-1.2ubuntu7.14).
+2026-10-29T20:23:15.2279327Z libcups2t64 set to manually installed.
+2026-10-29T20:23:15.2280111Z libdbus-1-3 is already the newest version (1.14.10-4ubuntu4.1).
+2026-10-29T20:23:15.2280789Z libdbus-1-3 set to manually installed.
+2026-10-29T20:23:15.2281574Z libexpat1 is already the newest version (2.6.1-2ubuntu0.6).
+2026-10-29T20:23:15.2282235Z libexpat1 set to manually installed.
+2026-10-29T20:23:15.2282984Z libgbm1 is already the newest version (25.2.8-0ubuntu0.24.04.4).
+2026-10-29T20:23:15.2283625Z libgbm1 set to manually installed.
+2026-10-29T20:23:15.2284435Z libglib2.0-0t64 is already the newest version (2.80.0-6ubuntu3.10).
+2026-10-29T20:23:15.2285154Z libglib2.0-0t64 set to manually installed.
+2026-10-29T20:23:15.2285919Z libnss3 is already the newest version (2:3.98-1ubuntu0.3).
+2026-10-29T20:23:15.2286551Z libnss3 set to manually installed.
+2026-10-29T20:23:15.2287353Z libpango-1.0-0 is already the newest version (1.52.1+ds-1build1).
+2026-10-29T20:23:15.2288036Z libpango-1.0-0 set to manually installed.
+2026-10-29T20:23:15.2289117Z libxcomposite1 is already the newest version (1:0.4.5-1build3).
+2026-10-29T20:23:15.2289821Z libxcomposite1 set to manually installed.
+2026-10-29T20:23:15.2290623Z libxdamage1 is already the newest version (1:1.1.6-1build1).
+2026-10-29T20:23:15.2291283Z libxdamage1 set to manually installed.
+2026-10-29T20:23:15.2292007Z libxfixes3 is already the newest version (1:6.0.0-2build1).
+2026-10-29T20:23:15.2292658Z libxfixes3 set to manually installed.
+2026-10-29T20:23:15.2293474Z libxkbcommon0 is already the newest version (1.6.0-1build1).
+2026-10-29T20:23:15.2294181Z libxkbcommon0 set to manually installed.
+2026-10-29T20:23:15.2295034Z libxrandr2 is already the newest version (2:1.5.2-2build1).
+2026-10-29T20:23:15.2295685Z libxrandr2 set to manually installed.
+2026-10-29T20:23:15.2296529Z 0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+2026-10-29T20:23:15.2297182Z Setup chrome 156.0.8078.47
+2026-10-29T20:23:15.2299553Z Attempting to download chrome 156.0.8078.47...
+2026-10-29T20:23:15.7111044Z Acquiring chrome 156.0.8078.47 from https://storage.googleapis.com/chrome-for-testing-public/156.0.8078.47/linux64/chrome-linux64.zip
+2026-10-29T20:23:17.5447252Z Installing chrome...
+2026-10-29T20:23:17.5487859Z [command]/usr/bin/unzip -o -q /home/runner/work/_temp/dfd84c59-d022-4247-bd5a-4fa73520d4b9
+2026-10-29T20:23:21.5512400Z Successfully Installed chromium to /opt/hostedtoolcache/setup-chrome/chromium/156.0.8078.47/x64
+2026-10-29T20:23:21.5521217Z [command]/opt/hostedtoolcache/setup-chrome/chromium/156.0.8078.47/x64/chrome --version
+2026-10-29T20:23:21.8665986Z Google Chrome for Testing 156.0.8078.47 
+2026-10-29T20:23:21.8911791Z Successfully setup chromium 156.0.8078.47
+2026-10-29T20:23:21.9296243Z ##[group]Run node --input-type=module -e 'import fs from "node:fs"; const {expiresAt}=JSON.parse(fs.readFileSync("data/address-city-snapshot.json","utf8")); const expiry=Date.parse(expiresAt); if (!Number.isFinite(expiry) || Date.now() >= expiry) { console.error(`BLOCKED_BY_EXPIRED_SNAPSHOT expiresAt=${expiresAt}`); process.exit(2); } console.log(JSON.stringify({checkedAt:new Date().toISOString(),expiresAt,validUntil:new Date(expiry).toISOString()}));'
+2026-10-29T20:23:21.9299117Z [36;1mnode --input-type=module -e 'import fs from "node:fs"; const {expiresAt}=JSON.parse(fs.readFileSync("data/address-city-snapshot.json","utf8")); const expiry=Date.parse(expiresAt); if (!Number.isFinite(expiry) || Date.now() >= expiry) { console.error(`BLOCKED_BY_EXPIRED_SNAPSHOT expiresAt=${expiresAt}`); process.exit(2); } console.log(JSON.stringify({checkedAt:new Date().toISOString(),expiresAt,validUntil:new Date(expiry).toISOString()}));'[0m
+2026-10-29T20:23:21.9312828Z shell: /usr/bin/bash -e {0}
+2026-10-29T20:23:21.9313089Z env:
+2026-10-29T20:23:21.9313351Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-10-29T20:23:21.9313657Z ##[endgroup]
+2026-10-29T20:23:21.9619283Z {"checkedAt":"2026-10-29T20:23:21.959Z","expiresAt":"2026-10-31T08:24:54Z","validUntil":"2026-10-31T08:24:54.000Z"}
+2026-10-29T20:23:21.9861028Z ##[group]Run mkdir -p "$B03_OUTPUT_DIR/legacy" "$B03_OUTPUT_DIR/current"
+2026-10-29T20:23:21.9861566Z [36;1mmkdir -p "$B03_OUTPUT_DIR/legacy" "$B03_OUTPUT_DIR/current"[0m
+2026-10-29T20:23:21.9862278Z [36;1mprintf 'branch=%s\ncommit=%s\nnode=%s\nchrome=%s\n' "$GITHUB_REF_NAME" "$GITHUB_SHA" "$(node --version)" "$CHROME_VERSION" > "$B03_OUTPUT_DIR/environment-runner.txt"[0m
+2026-10-29T20:23:21.9862977Z [36;1mgit rev-parse HEAD > "$B03_OUTPUT_DIR/checked-out-sha.txt"[0m
+2026-10-29T20:23:21.9863456Z [36;1mpnpm exec next dev --hostname 127.0.0.1 > "$B03_OUTPUT_DIR/next-server.log" 2>&1 &[0m
+2026-10-29T20:23:21.9863866Z [36;1mserver_pid=$![0m
+2026-10-29T20:23:21.9864166Z [36;1mtrap 'kill "$server_pid" 2>/dev/null || true' EXIT[0m
+2026-10-29T20:23:21.9864470Z [36;1mready=0[0m
+2026-10-29T20:23:21.9864687Z [36;1mfor _ in $(seq 1 60); do[0m
+2026-10-29T20:23:21.9865107Z [36;1m  if curl --silent --fail http://127.0.0.1:3000/v2 >/dev/null; then ready=1; break; fi[0m
+2026-10-29T20:23:21.9865546Z [36;1m  sleep 1[0m
+2026-10-29T20:23:21.9865752Z [36;1mdone[0m
+2026-10-29T20:23:21.9866067Z [36;1mif [ "$ready" -ne 1 ]; then cat "$B03_OUTPUT_DIR/next-server.log"; exit 1; fi[0m
+2026-10-29T20:23:21.9866427Z [36;1mset +e[0m
+2026-10-29T20:23:21.9867115Z [36;1mB03_OUTPUT_DIR="$B03_OUTPUT_DIR/legacy" node experiments/road-ref-boundaries/scripts/b03-address-ui-scenarios.mjs > "$B03_OUTPUT_DIR/legacy.stdout.txt" 2> "$B03_OUTPUT_DIR/legacy.stderr.txt"[0m
+2026-10-29T20:23:21.9867850Z [36;1mlegacy_code=$?[0m
+2026-10-29T20:23:21.9868662Z [36;1mB03_OUTPUT_DIR="$B03_OUTPUT_DIR/current" node experiments/road-ref-boundaries/scripts/b03-current-input-flow.mjs > "$B03_OUTPUT_DIR/current.stdout.txt" 2> "$B03_OUTPUT_DIR/current.stderr.txt"[0m
+2026-10-29T20:23:21.9869401Z [36;1mcurrent_code=$?[0m
+2026-10-29T20:23:21.9869631Z [36;1mset -e[0m
+2026-10-29T20:23:21.9870042Z [36;1mprintf 'legacy=%s\ncurrent=%s\n' "$legacy_code" "$current_code" > "$B03_OUTPUT_DIR/suite-exit-codes.txt"[0m
+2026-10-29T20:23:21.9871450Z [36;1mnode --input-type=module -e 'import fs from "node:fs"; const p="b03-browser-results/current/results.json"; if (fs.existsSync(p)) { const s=JSON.parse(fs.readFileSync(p,"utf8")); console.log(JSON.stringify({sourceSha:s.sourceSha,componentSha256:s.componentSha256,browser:s.browser,results:s.results.map(({id,status,error})=>({id,status,error}))})); }'[0m
+2026-10-29T20:23:21.9872638Z [36;1mcode=0[0m
+2026-10-29T20:23:21.9872944Z [36;1mif [ "$legacy_code" -ne 0 ] || [ "$current_code" -ne 0 ]; then code=1; fi[0m
+2026-10-29T20:23:21.9873387Z [36;1mprintf '%s\n' "$code" > "$B03_OUTPUT_DIR/exit-code.txt"[0m
+2026-10-29T20:23:21.9873709Z [36;1mexit "$code"[0m
+2026-10-29T20:23:21.9888868Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T20:23:21.9889220Z env:
+2026-10-29T20:23:21.9889485Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-10-29T20:23:21.9889922Z   CHROME_PATH: /opt/hostedtoolcache/setup-chrome/chromium/156.0.8078.47/x64/chrome
+2026-10-29T20:23:21.9890332Z   CHROME_VERSION: 156.0.8078.47
+2026-10-29T20:23:21.9890754Z   PLAYWRIGHT_MODULE: /home/runner/work/_temp/b03-playwright/node_modules/playwright/index.mjs
+2026-10-29T20:23:21.9891202Z   B03_BASE_URL: http://127.0.0.1:3000
+2026-10-29T20:23:21.9891481Z   B03_OUTPUT_DIR: b03-browser-results
+2026-10-29T20:23:21.9891747Z   NEXT_TELEMETRY_DISABLED: 1
+2026-10-29T20:23:21.9892056Z   B03_SOURCE_SHA: c2f52ee93cd98a81ecd05efa0358fb38c6704124
+2026-10-29T20:23:21.9892361Z ##[endgroup]
+2026-10-29T20:24:14.3344889Z {"sourceSha":"c2f52ee93cd98a81ecd05efa0358fb38c6704124","componentSha256":"f2f584b2a8df05b43eb2fbf29d699ae8d2bad33265dd297e2c21faca5fbcb78f","browser":"156.0.8078.47","results":[{"id":"01-select-A-and-B","status":"PASS"},{"id":"02-Anapa-clear-Donetsk","status":"PASS"},{"id":"03-fast-typing","status":"PASS"},{"id":"04-late-response-after-replace","status":"PASS"},{"id":"05-clear-active-request","status":"PASS"},{"id":"06-same-name-choice","status":"PASS"},{"id":"07-swap-and-refocus","status":"PASS"},{"id":"08-503-429-empty-recovery","status":"PASS"},{"id":"09-mobile-replace","status":"PASS"},{"id":"10-fields-independent-and-cancel","status":"PASS"}]}
+2026-10-29T20:24:14.4006853Z ##[group]Run actions/upload-artifact@v4
+2026-10-29T20:24:14.4007152Z with:
+2026-10-29T20:24:14.4007383Z   name: b03-address-ui-browser-40948474945
+2026-10-29T20:24:14.4007697Z   path: b03-browser-results/
+2026-10-29T20:24:14.4007957Z   if-no-files-found: warn
+2026-10-29T20:24:14.4008200Z   retention-days: 30
+2026-10-29T20:24:14.4008662Z   compression-level: 6
+2026-10-29T20:24:14.4009003Z   overwrite: false
+2026-10-29T20:24:14.4009319Z   include-hidden-files: false
+2026-10-29T20:24:14.4009706Z env:
+2026-10-29T20:24:14.4010060Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2026-10-29T20:24:14.4010383Z ##[endgroup]
+2026-10-29T20:24:14.5995987Z (node:3966) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-29T20:24:14.5998508Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-29T20:24:14.6186913Z With the provided path, there will be 15 files uploaded
+2026-10-29T20:24:14.6188066Z Artifact name is valid!
+2026-10-29T20:24:14.6188809Z Root directory input is valid!
+2026-10-29T20:24:14.9895926Z Beginning upload of artifact content to blob storage
+2026-10-29T20:24:15.0355519Z (node:3966) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-29T20:24:15.4366587Z Uploaded bytes 293506
+2026-10-29T20:24:15.4953022Z Finished uploading artifact content to blob storage!
+2026-10-29T20:24:15.4954485Z SHA256 digest of uploaded artifact zip is 2dfbaa8d80a7ba210cb7cde55f46f43eadf9b3aabc75981cba3d3ab21e1584f0
+2026-10-29T20:24:15.4955724Z Finalizing artifact upload
+2026-10-29T20:24:15.9941953Z Artifact b03-address-ui-browser-40948474945.zip successfully finalized. Artifact ID 12930068474
+2026-10-29T20:24:15.9943507Z Artifact b03-address-ui-browser-40948474945 has been successfully uploaded! Final size is 293506 bytes. Artifact ID is 12930068474
+2026-10-29T20:24:15.9950188Z Artifact download URL: https://github.com/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40948474945/artifacts/12930068474
+2026-10-29T20:24:16.0754798Z Post job cleanup.
+2026-10-29T20:24:16.1976753Z (node:3995) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-29T20:24:16.1977532Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-29T20:24:16.1980965Z Cache hit occurred on the primary key node-cache-Linux-x64-pnpm-31408df739044fa7ca4cf4d97cb6126bcf08180286ed0f75c609bf0c8b6ff959, not saving cache.
+2026-10-29T20:24:16.2447390Z Post job cleanup.
+2026-10-29T20:24:16.3912378Z Pruning is unnecessary.
+2026-10-29T20:24:16.5012637Z Post job cleanup.
+2026-10-29T20:24:16.5918647Z [command]/usr/bin/git version
+2026-10-29T20:24:16.5967065Z git version 2.56.0
+2026-10-29T20:24:16.6014027Z Temporarily overriding HOME='/home/runner/work/_temp/79cff24a-9f58-435b-a8e8-3122727187d4' before making global git config changes
+2026-10-29T20:24:16.6014837Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-29T20:24:16.6021590Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mezhgorod-calculator/mezhgorod-calculator
+2026-10-29T20:24:16.6143504Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-29T20:24:16.6164555Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-29T20:24:16.6455009Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-29T20:24:16.6481960Z http.https://github.com/.extraheader
+2026-10-29T20:24:16.6518690Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-29T20:24:16.6552068Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-29T20:24:16.6819921Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-29T20:24:16.6881384Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-29T20:24:16.7241263Z Cleaning up orphan processes
+2026-10-29T20:24:16.7528966Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4, browser-actions/setup-chrome@c785b87e244131f27c9f19c1a33e2ead956ab7ce, pnpm/action-setup@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

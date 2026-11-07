@@ -1,0 +1,51 @@
+{
+  "restoredFromLocalGit": [
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-murom/2026-10-16T00-00-27-781Z-capture.json.gz",
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-moscow/2026-10-16T00-06-47-974Z-capture.json.gz",
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-sest-to-pushkin/2026-10-16T00-31-54-560Z-capture.json.gz",
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-vladimir/2026-10-16T01-23-33-921Z-capture.json.gz",
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-novgorod/2026-10-16T01-33-03-898Z-capture.json.gz",
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-tver/2026-10-16T01-33-39-370Z-capture.json.gz",
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-domodedovo/2026-10-16T02-19-47-235Z-capture.json.gz"
+  ],
+  "lazyFetchDisabled": true,
+  "initialObservation": "Capture files absent from sparse worktree; restored exact local Git blobs, never re-requested providers.",
+  "networkRequests": 0,
+  "verifiedCaptureBlobs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-murom/2026-10-16T00-00-27-781Z-capture.json.gz",
+      "gitBlobSha": "7d63b551af97247335bd70ea15df29d1eb9d8013",
+      "sha256": "e216f1a726f777fd77fc40e1422e982cca13bd7afb4418c4e1fb677e9dcbddfd"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-moscow/2026-10-16T00-06-47-974Z-capture.json.gz",
+      "gitBlobSha": "7acf4555659353fc127bcafbbec5d625684bfb80",
+      "sha256": "a30ef881b9290377bf30abc1d75c1a740bcc797762b2447182e2169db6c017cc"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-sest-to-pushkin/2026-10-16T00-31-54-560Z-capture.json.gz",
+      "gitBlobSha": "ffd74d4ec00fe753ae9d2ab2e5678c6e159dc782",
+      "sha256": "826f1e75c2bc9819a50ad7e99a90490fd3353b7eb2230d656b3ad088f79728b4"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-sest-to-vladimir/2026-10-16T01-23-33-921Z-capture.json.gz",
+      "gitBlobSha": "10e3707e21b50cdc3425ed875c5bff8c990cd82d",
+      "sha256": "f65cd0bf4f8e7b05a5f4182be4f7568daded7b31731cedd8b08d5fc2ea557ed7"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-novgorod/2026-10-16T01-33-03-898Z-capture.json.gz",
+      "gitBlobSha": "8bb60b27315a4efe49844854ebc85ba8901d1df8",
+      "sha256": "50906f673fa32a6219e678697a823c16806bf8c400f5408a4472f6a2a3f44534"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-tver/2026-10-16T01-33-39-370Z-capture.json.gz",
+      "gitBlobSha": "80cb43d3e05a292f3da63a5c7fdecc55f373cb7c",
+      "sha256": "f345d2c725eefeff29ec7fcfb73d7a510c1e8199e4e04191a1cccb92bcbf35f0"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-domodedovo/2026-10-16T02-19-47-235Z-capture.json.gz",
+      "gitBlobSha": "3f5213adf13b506ed07cb82d29946b579a19575f",
+      "sha256": "a2173d14fed6e04452f39096e87344095c47341c926639d241c1136cc8e63571"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+✔ exact A113 references and full CKAD name identify paid product including booth aliases (5.130647ms)
+✔ paid trace name without any booth still requires the CKAD component; incomplete trace stays unknown (0.629107ms)
+✔ own forward route retains omitted paid CKAD; reverse does not inherit the other direction evidence (58.785799ms)
+✔ own POST replay keeps unknown with CKAD explanation on forward only, without toll-avoid routing (102.554663ms)
+✔ four product identities retain exact primary booth and one-way source provenance (2.20418ms)
+✔ both own traces classify the separate bypass without a second M1 or anonymous product (5.180943ms)
+✔ wrong tuples, other paid booths, real M1 and partial coverage remain conservative (2.82145ms)
+✔ product identity authorizes no money for either saved selected route (61.838832ms)
+✔ each own continuous named trace and independent physical lanes prove its directed two-plaza pair only (18.067141ms)
+✔ a free city gap with unchanged paid edges and booth order prevents exit-reentry borrowing (6.474951ms)
+✔ incomplete, repeated, unknown or wrong directional context cannot authorize the pair (16.107198ms)
+✔ reversed, shifted, sparse or detouring geometry cannot borrow valid trace context (11.709094ms)
+✔ standalone physical pair proof has not enabled any component price (57.144648ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 636.530278

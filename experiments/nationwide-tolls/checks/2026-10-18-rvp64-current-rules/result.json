@@ -1,0 +1,90 @@
+{
+  "status": "DONE",
+  "atMsk": "2026-10-18T10:52:17.528197+03:00",
+  "startedRemoteHead": "136799461bbb3a1ed8eac1efc0c021ab9f6aa1a9",
+  "source": {
+    "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-18-rvp64-current-rules/current-rules-Pravila0926.pdf",
+    "url": "https://whsd.ru/assets/disclosure/70/Pravila0926.pdf",
+    "atUtc": "2026-10-18T07:49:19.954047+00:00",
+    "httpStatus": 200,
+    "finalUrl": "https://whsd.ru/assets/disclosure/70/Pravila0926.pdf",
+    "contentType": "application/pdf",
+    "bytes": 10558533,
+    "sha256": "659346fb36a6cccb022d5fb61ee5396b82d62b6bbacdac023fe20447192d3bd2",
+    "pdfMagic": true,
+    "elapsedSeconds": 8.038
+  },
+  "pdf": {
+    "pages": 29,
+    "printedPageOffset": 1,
+    "pdftotextNonWhitespaceCharacters": 0,
+    "emptyTextNotUsedAsNegativeEvidence": true,
+    "contactSheetPages": 29,
+    "detailedVisualPdfPages": [
+      1,
+      2,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      28,
+      29
+    ],
+    "scopeNote": "Only listed pages reviewed in detail; contact sheet is not complete text review."
+  },
+  "facts": [
+    {
+      "pdfPage": 1,
+      "clause": "title",
+      "fact": "Appendix 1 to owner order 40 dated 21 September 2026; retained official index states effect from 1 October 2026."
+    },
+    {
+      "pdfPage": 2,
+      "clause": "definitions",
+      "fact": "Ordinary WHSD road excludes Shkipersky, Shuvalovsky and New Highway interchanges as separate products. Barrierless-section definition names Vitebsk-to-Ekateringofka/Makarova/Shkipersky corridors."
+    },
+    {
+      "pdfPage": 17,
+      "clause": "6.2.1-6.2.2",
+      "fact": "Zone payment uses base tariff. Named barrierless corridors use section13; other ordinary-road passages collect cash/card at barrier plazas, subject to rule exceptions. This general rule does not identify RVP64."
+    },
+    {
+      "pdfPage": 28,
+      "clause": "12",
+      "fact": "Scheme depicts Vitebsk interchange barrierless collection, with Kubinskaya and Blagodatnaya streets. It does not identify the captured RVP64/Makarova entry."
+    },
+    {
+      "pdfPage": 29,
+      "clause": "13.6",
+      "fact": "No-transponder Vitebsk barrierless passages use tariff zones and postpayment, not transponder OD prices. Not evidence that this selected RVP64 to KAD-south trip crosses that collection product."
+    }
+  ],
+  "outcome": "blocked_by_missing_reliable_data",
+  "missingProof": [
+    "Official mapping of captured RVP64/ref64E entry to ordinary WHSD tariff-zone/collection scope.",
+    "Complete cash/card charge bundle for exactly RVP64→booth933975069."
+  ],
+  "guardrail": "Do not apply Vitebsk postpayment to RVP64 by shared road label or apply Shkipersky exemption as whole-trip zero.",
+  "counts": {
+    "newExactPrimaryGet": 1,
+    "additionalLinkedSchemeReads": 0,
+    "newSearchQueries": 0,
+    "newRouteRequests": 0,
+    "newTraceRequests": 0,
+    "newReplays": 0,
+    "newPricedComponents": 0,
+    "newConfirmedFullFares": 0
+  },
+  "checks": {
+    "sourceHash": "PASS",
+    "pdfMagic": "PASS",
+    "metadata": "PASS",
+    "visualReview": "PASS listed pages",
+    "json": "PASS",
+    "fullTests": "NOT RUN source-only; no runtime change",
+    "build": "NOT RUN source-only; no runtime change"
+  },
+  "nextAction": "One new bounded exact-identity operator search for RVP64/ref64E and current Makarova access diagram or ordinary-road cash/card receipt, not another generic rules/PDF/route replay pass."
+}

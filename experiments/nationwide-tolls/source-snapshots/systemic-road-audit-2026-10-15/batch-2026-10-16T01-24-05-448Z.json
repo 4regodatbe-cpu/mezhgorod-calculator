@@ -1,0 +1,103 @@
+{
+  "startedAt": "2026-10-16T01:24:05.448Z",
+  "scope": {
+    "region": null,
+    "group": "max-chain-m12-ckad-m11-zsd",
+    "caseId": "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+      "startedAt": "2026-10-16T01:24:05.451Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-vladimir-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-16T01-24-11-322Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-vladimir-to-sest/2026-10-16T01-24-11-271Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-24-11-760Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-24-12-180Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m12",
+          "ckad",
+          "m11",
+          "zsd"
+        ],
+        "provenRoads": [
+          "m11",
+          "zsd",
+          "ckad"
+        ],
+        "missingExpectedRoads": [
+          "m12"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m11-15-58, ckad, zsd",
+          "m11-15-58: m11_partial_head_entry_boundary_unresolved",
+          "ckad: ckad_east_arc_not_proven",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m11-15-58, ckad, zsd",
+          "m11-15-58: m11_partial_head_entry_boundary_unresolved",
+          "ckad: ckad_east_arc_not_proven",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m11-15-58",
+          "amount": null,
+          "reason": "m11_partial_head_entry_boundary_unresolved"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "ckad",
+          "amount": null,
+          "reason": "ckad_east_arc_not_proven"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "finishedAt": "2026-10-16T01:24:12.196Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T01:24:12.199Z"
+}

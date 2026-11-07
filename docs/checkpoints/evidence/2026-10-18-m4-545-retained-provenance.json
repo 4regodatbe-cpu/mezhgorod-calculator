@@ -1,0 +1,45 @@
+{
+  "atUtc": "2026-10-18T03:01:01.198125+00:00",
+  "sourceHead": "fe1076eed5632314790a65143acd6b91af31c695",
+  "sourceTree": "8956f96be938a2dfb85e1cd541b0e00eb5c41341",
+  "outcome": "blocked_by_missing_reliable_data",
+  "reviewKind": "retained source provenance only; no route replay or new PDF visual review",
+  "caseId": "pair-m4-a289-taman-to-voronezh",
+  "physicalNode": "5818209495",
+  "physicalWay": "615270691",
+  "variantA": {
+    "section": "517–544",
+    "pairRub": [
+      3060,
+      3620
+    ]
+  },
+  "variantB": {
+    "section": "544–589",
+    "pairRub": [
+      2920,
+      3460
+    ]
+  },
+  "directObjectHashesChecked": 4,
+  "pdfHashesChecked": [
+    {
+      "path": "experiments/nationwide-tolls/source-documents/m4-order58-effective-2026-03-02.pdf",
+      "sha256": "25fdb9a430934f47617c8cc1563f95e49c6ebe41c6303e9bd67465b3c568662d"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-documents/m4-entry-receipt-rules-uploaded-2026-10-14.pdf",
+      "sha256": "a3ed4b13529e0eae7865bfc4192c6944a0b3ece6c371062a97d5b6dc461c57dc"
+    }
+  ],
+  "priorCompleteReview": "docs/checkpoints/2026-10-16-122949-case9-545-source-gate.md",
+  "priorSelectedScope": "docs/checkpoints/evidence/2026-10-16-case9-545-selected-scope.json",
+  "conclusion": "Retained sources already exhaust geometry and scanned fare-table verification. The selected physical lane is exact, but no operator lane-to-section collection rule binds it to either finished tariff variant. Repeating node lookups, nearby-node radii, PDF rendering or22routes cannot resolve that missing rule.",
+  "nextAction": "New source only: operator collection scheme or direction/lane rule for physical545 and sections517–544/544–589, applicable to trip departure. Bound any retrieval in STARTED; do not repeat the retained403 URLs or select min/max/alias.",
+  "newRouteRuns": 0,
+  "newReplays": 0,
+  "newNetworkRequests": 0,
+  "newPricedComponents": 0,
+  "newFullQuotes": 0,
+  "runtimeChanged": false
+}

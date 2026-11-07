@@ -1,0 +1,73 @@
+{
+  "gateNodeId": "7171624764",
+  "gateWayId": "502872285",
+  "orderedAnchors": [
+    {
+      "nodeId": "4932294633",
+      "coordinate": [
+        37.4500204,
+        55.9355476
+      ]
+    },
+    {
+      "nodeId": "7171624764",
+      "coordinate": [
+        37.4500368,
+        55.9354985
+      ]
+    },
+    {
+      "nodeId": "4932294632",
+      "coordinate": [
+        37.4500537,
+        55.935448
+      ]
+    }
+  ],
+  "wayTags": {
+    "covered": "yes",
+    "highway": "motorway",
+    "highway:category": "ru:I\u0410",
+    "lanes": "5",
+    "lit": "yes",
+    "maxspeed": "40",
+    "maxspeed:designed": "150",
+    "name": "\u00ab\u041d\u0435\u0432\u0430\u00bb",
+    "name:en": "Neva Motorway",
+    "name:ru": "\u00ab\u041d\u0435\u0432\u0430\u00bb",
+    "name:uk": "\u00ab\u041d\u0435\u0432\u0430\u00bb",
+    "old_name:2:ru": "\u0441\u043a\u043e\u0440\u043e\u0441\u0442\u043d\u0430\u044f \u043f\u043b\u0430\u0442\u043d\u0430\u044f \u0430\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u044c\u043d\u0430\u044f \u0434\u043e\u0440\u043e\u0433\u0430 \u041c\u043e\u0441\u043a\u0432\u0430 \u2014 \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433",
+    "old_name:en": "Moscow \u2013 Saint Petersburg Highway",
+    "old_name:ru": "\u041c\u043e\u0441\u043a\u0432\u0430 \u2014 \u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433",
+    "oneway": "yes",
+    "ref": "\u041c-11",
+    "short_name:ru": "\u0421\u041f\u0410\u0414",
+    "surface": "asphalt",
+    "toll": "yes"
+  },
+  "scope": "Exact southbound paid M11 toll plaza lane only; tariff endpoint binding requires separate review",
+  "sources": [
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/node/7171624764",
+      "startedAt": "2026-10-18T11:11:09.292046+00:00",
+      "durableStartedCommit": "e42a00eb23a4e1006a2a39924ac880da79ebb71b",
+      "status": 200,
+      "bodyFile": "node7171624764.osm",
+      "bytes": 525,
+      "sha256": "a0694e1a4a9860a5f7830ef728c23b940d34aef008645b568f3139dead41140b",
+      "contentType": "application/xml; charset=utf-8",
+      "elapsedMs": 4626
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/502872285/full",
+      "startedAt": "2026-10-18T11:11:13.919095+00:00",
+      "durableStartedCommit": "e42a00eb23a4e1006a2a39924ac880da79ebb71b",
+      "status": 200,
+      "bodyFile": "way502872285-full.osm",
+      "bytes": 1900,
+      "sha256": "3f10db930083c10ca7d232957fc3b1e4d0bd7f713a3706ad83434727220a5b40",
+      "contentType": "application/xml; charset=utf-8",
+      "elapsedMs": 5103
+    }
+  ]
+}

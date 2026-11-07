@@ -1,0 +1,28 @@
+✔ Yalta and Anapa to Krasnodar return selected A-289 estimates in both directions (3.53354ms)
+✔ A289 helper never adds a bypass label; missing exits do not invent fare (0.478991ms)
+✔ long-trip recovery accepts only the exact complete directed frame vector (0.578036ms)
+✔ saved long route proves a complete A289 frame vector with both trip ends outside local exits (491.261102ms)
+✔ unbound partial A289 traversal still blocks a long-route price (0.486642ms)
+✔ full A289 physical frames do not bypass fare validity (284.41023ms)
+✔ A289 full-vector recovery cannot hide an unresolved M4 component (26.004758ms)
+✔ returning to an A289 frame remains an unresolved repeated traversal (0.775204ms)
+✔ stored intermediate A289 pairs reach V3 in both directions (12.339744ms)
+✔ physical camera order is independent of shape sampling and reverses with direction (1.49667ms)
+✔ missing intermediate price blocks fallback rather than subtracting unrelated OD tariffs (0.932474ms)
+✔ camera return passage cannot be charged as a single ordinary OD trip (0.603543ms)
+✔ neighboring shape points at a single frame are one passage (0.675458ms)
+✔ Anapa620 and Slavyansk415 use category I, never category-II833/555 (6.987524ms)
+✔ Slavyansk Rostov and Anapa Rostov compose the south M4 vector with actual A289 entry (2.80936ms)
+✔ full Crimea Moscow consumes the supplied matrix rather than native money (0.672814ms)
+✔ missing/partial M4 cannot disappear behind a known A289 price (0.556954ms)
+✔ a mixed legacy M4 payload is rejected instead of charging A289 twice (0.708226ms)
+✔ confirmed M4 on a locally named trip is still included, diagnostic neighbors are not (0.750328ms)
+✔ a legacy exact M4 amount cannot replace an absent or rejected matrix (1.129443ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1345.73769

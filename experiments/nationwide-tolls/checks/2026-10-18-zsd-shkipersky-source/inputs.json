@@ -1,0 +1,42 @@
+{
+  "status": "STARTED",
+  "atUtc": "2026-10-18T06:23:04.436340+00:00",
+  "sourceHead": "fb097de6f52bb1edb1a326f734fd8560f118b746",
+  "sourceTree": "87e90e3bf3e16f96f8f1cb61827f76a352bdadcd",
+  "sourceHeadRuns": [],
+  "prDraft": true,
+  "scope": "Exact interchange identity, payment product and owner cash/card collection rule. No new routing/replay/pricing activation before proof.",
+  "discoveredIn": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/owner-documents.html",
+  "discoverySha256": "6835764fa317bf622e04b4211321a23dcddacda136c230ecc655b74952a8a02a",
+  "sources": [
+    {
+      "name": "shkipersky-tariffs-95-1.pdf",
+      "url": "https://whsd.ru/assets/disclosure/70/95-1.pdf",
+      "observedLabel": "Тарифы Шкиперской развязки, действуют с17.01.2026"
+    },
+    {
+      "name": "interchanges-order47-2025.pdf",
+      "url": "https://whsd.ru/assets/disclosure/70/pr47_26062025.pdf",
+      "observedLabel": "Приказ47 от26.06.2025 об организации проезда поШуваловской иШкиперскойразвязкам"
+    },
+    {
+      "name": "shkipersky-rules-pr8-1.pdf",
+      "url": "https://whsd.ru/assets/disclosure/70/pr8-1.pdf",
+      "observedLabel": "Временные правила Шкиперскойразвязки, действуют с05.02.2024"
+    },
+    {
+      "name": "way351741889.osm",
+      "url": "https://api.openstreetmap.org/api/0.6/way/351741889/full",
+      "purpose": "New exact primary geometry to distinguish Makarova versus Shkipersky access for captured gantry13020687195; no route request."
+    }
+  ],
+  "limits": {
+    "requests": 4,
+    "newSearchQueries": 0,
+    "perRequestMaxSeconds": 20,
+    "perRequestMaxBytes": 12000000,
+    "parallelism": 2
+  },
+  "recovery": "Save eachraw/metadata immediately; skip existing complete matchingURL/hash responses. Do not retry403/502 unchanged or repeatoldgenericratepages. PDF text+visual pages; nodecoordinates from exactOSM topology, no radius widening.",
+  "acceptance": "Prove actual captured interchange identity first; do not attach separateShkiperskyprice based on street label alone. If exact product/scope unproved keepBLOCKED. Save evidence before anycode/data change."
+}

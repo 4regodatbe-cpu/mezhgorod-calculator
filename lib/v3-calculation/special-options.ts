@@ -1,13 +1,14 @@
 import { isUsableRoute } from "./route-candidate";
 import { valhalla, osrmRoute, type Located, type RouteWithGeometry } from "../route-providers";
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../special-territory-boundaries";
-import { analyzeRoute, candidatePlans, findPlanLegStretchAnomaly, followsPlan } from "../special-territory-policy";
+import { analyzeRoute, candidatePlans, endpointPolicy, findPlanLegStretchAnomaly, followsPlan, isInternalSpecialRoute } from "../special-territory-policy";
 import { selectGeographicTerritoryOption } from "../special-territory-options";
 import { selectLiveRouteCandidates } from "../route-quality";
 import { calculateLegTolls } from "./route-leg-pricing";
 import { hasPracticalSavings, tollsForApi, withinDetourLimits } from "../v2-calculation/free-route-selection";
 import { validateTollEdges } from "../toll-validator";
 import { selectFastestRoute } from "@/experiments/nationwide-tolls/fastest-route-policy.mjs";
+import type { CalculationStage, CalculationTiming } from "../calculation-timing";
 
 type PricedCandidate = {
   corridor:"mainland"|"crimea";
@@ -22,17 +23,26 @@ type PricedCandidate = {
     quality:ReturnType<typeof selectLiveRouteCandidates>["quality"];
     m4PvpPreview?:Awaited<ReturnType<typeof calculateLegTolls>>["m4PvpPreview"];
     nationalTollCoverage?:Awaited<ReturnType<typeof calculateLegTolls>>["nationalTollCoverage"];
+    tollEstimate?:Awaited<ReturnType<typeof calculateLegTolls>>["tollEstimate"];
   };
   free:null;
   freeCandidate:null;
 };
 
-export async function calculateSpecialOptions(from:Located,to:Located,departureAt?:string,fastestOnly=false) {
+export async function calculateSpecialOptions(from:Located,to:Located,departureAt?:string,fastestOnly=false,timing?:CalculationTiming,signal?:AbortSignal) {
+  signal?.throwIfAborted();
+  const measure = <T>(stage:CalculationStage,operation:()=>Promise<T>) => timing ? timing.measure(stage,operation) : operation();
   const plans=candidatePlans(from.position,to.position,zones);
+  const endpoints=endpointPolicy(from.position,to.position,zones);
+  const requiresInternalRoute=Boolean(endpoints.fromTerritory&&endpoints.toTerritory);
   const preferredCorridor=plans[0]?.corridor??"mainland";
   const candidates = await Promise.all(plans.map(async plan => {
     const rejectedStretchProviders=new Map<string,number>();
-    const responses=await Promise.allSettled([valhalla(from,to,1,plan.positions),osrmRoute(from,to,plan.positions)]);
+    const responses=await measure("routing",()=>Promise.allSettled([
+      measure("provider_valhalla",()=>valhalla(from,to,1,plan.positions,0,signal)),
+      measure("provider_osrm",()=>osrmRoute(from,to,plan.positions,signal)),
+    ]));
+    signal?.throwIfAborted();
     const routed=responses.map((response,index) => {
       if(response.status!=="fulfilled")return null;
       try {
@@ -43,6 +53,7 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
         if(stretch){rejectedStretchProviders.set(providerName,stretch.stretchRatio);return null;}
         if(!followsPlan(route.coordinates,plan.positions,plan.corridor,true))return null;
         const split=analyzeRoute(route.coordinates,route.meters,route.seconds,from.position,to.position,zones);
+        if(requiresInternalRoute&&!isInternalSpecialRoute(from.position,to.position,split,zones))return null;
         return {corridor:plan.corridor,provider:index===0?"Valhalla":"OSRM",split,from:from.label,to:to.label,route,index,fast:{...route,tolls:{pricingStatus:"unknown" as const},tollValidation:undefined},free:null,freeCandidate:null};
       } catch {return null;}
     });
@@ -67,11 +78,14 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
     const routesToPrice=fastestOnly?rankedRoutes.filter(item=>item.provider===routeChoice.provider):rankedRoutes;
     const selected:PricedCandidate[]=[];
     for(const item of routesToPrice){
-      const selectedRouteValidation=await validateTollEdges(item.route.coordinates);
-      const pricing=await calculateLegTolls({routeGeometry:item.route.coordinates,routeSeconds:item.route.seconds,departureAt,selectedFastProvider:item.index===0?"Valhalla":"OSRM",selectedFastRoute:item.route,valhallaEvidence:item.index===0?item.route:null,confirmedFreeRoute:null,diagnosticFastValidation:selectedRouteValidation});
+      signal?.throwIfAborted();
+      const selectedRouteValidation=await measure("toll_matching",()=>validateTollEdges(item.route.coordinates,signal));
+      signal?.throwIfAborted();
+      const pricing=await measure("toll_pricing",()=>calculateLegTolls({includeTollEstimate:fastestOnly,routeGeometry:item.route.coordinates,routeSeconds:item.route.seconds,departureAt,selectedFastProvider:item.index===0?"Valhalla":"OSRM",selectedFastRoute:item.route,valhallaEvidence:item.index===0?item.route:null,confirmedFreeRoute:null,diagnosticFastValidation:selectedRouteValidation}));
+      signal?.throwIfAborted();
       const {route,index,...candidate}=item;
       void index;
-      selected.push({...candidate,fast:{...route,tolls:tollsForApi(pricing.tolls,pricing.fastValidation),tollValidation:pricing.fastValidation,quality,m4PvpPreview:pricing.m4PvpPreview,nationalTollCoverage:pricing.nationalTollCoverage}});
+      selected.push({...candidate,fast:{...route,tolls:tollsForApi(pricing.tolls,pricing.fastValidation),tollValidation:pricing.fastValidation,quality,m4PvpPreview:pricing.m4PvpPreview,nationalTollCoverage:pricing.nationalTollCoverage,...(pricing.tollEstimate?{tollEstimate:pricing.tollEstimate}:{})}});
     }
     const valid=selected;
     if(!valid.length)return [];
@@ -82,10 +96,10 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
     if(!fastestOnly && selected.length<2){
       for(const penalty of [900,1800]){
         try{
-          const route=await valhalla(from,to,1,plan.positions,penalty);
+          const route=await valhalla(from,to,1,plan.positions,penalty,signal);
           if(!withinDetourLimits(main.fast,route)||!hasPracticalSavings(main.fast,route)||!followsPlan(route.coordinates,plan.positions,plan.corridor,true))continue;
           if(route.coordinates.length<3)continue;
-          const validation=await validateTollEdges(route.coordinates);
+          const validation=await validateTollEdges(route.coordinates,signal);
           if(validation.complete!==true||(validation.tollBoothCount??0)!==0)continue;
           const duplicate=selected.some(item=>Math.abs(item.fast.meters-route.meters)<3000&&Math.abs(item.fast.seconds-route.seconds)<120);
           if(duplicate)continue;
@@ -98,6 +112,7 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
     }
     return selected;
   }));
+  signal?.throwIfAborted();
   const allCandidates=candidates.flat();
   const selection=selectGeographicTerritoryOption(allCandidates,preferredCorridor);
   if(!selection.options.length)throw new Error("PREFERRED_ROUTE_UNAVAILABLE");

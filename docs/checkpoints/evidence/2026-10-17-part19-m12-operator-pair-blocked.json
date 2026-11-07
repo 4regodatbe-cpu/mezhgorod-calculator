@@ -1,0 +1,192 @@
+{
+  "recordedAtUtc": "2026-10-17T05:41:17Z",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "sourceHead": "8582031d0565ebcb6ecd4982a12bfa389ec411ba",
+  "sourceTree": "7fb29e51a6ce5dac755b502684278894034e868c",
+  "pullRequest": {
+    "number": 14,
+    "state": "open",
+    "draft": true,
+    "head": "8582031d0565ebcb6ecd4982a12bfa389ec411ba"
+  },
+  "latestWorkflow": {
+    "runId": "39003295081",
+    "status": "completed",
+    "conclusion": "success",
+    "headSha": "8582031d0565ebcb6ecd4982a12bfa389ec411ba"
+  },
+  "finding": {
+    "code": "m12_current_operator_pair_not_bound",
+    "outcome": "blocked_by_missing_reliable_data",
+    "caseCount": 4,
+    "profileCount": 8,
+    "evidenceOccurrenceCount": 12,
+    "liveCount": 4,
+    "captureCount": 4,
+    "sameDateReplayCount": 4,
+    "weekendReplayCount": 4,
+    "allEvidencePathsExist": true,
+    "allM12AmountsNull": true,
+    "allPricingUnknown": true,
+    "routeEvidence": [
+      {
+        "caseId": "pair-m12-ckad-arzamas-to-domodedovo",
+        "routeMeters": 493717,
+        "routeSeconds": 23511,
+        "selectedM12SpanKm": {
+          "beginKm": 16.082,
+          "endKm": 387.85
+        },
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-arzamas-to-domodedovo/live-2026-10-15T09-00-00-03-00-2026-10-16T01-34-49-528Z.json",
+          "gitBlobSha": "3f3761aa044949c46048eba8ff4c103e0b68077a"
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-arzamas-to-domodedovo/2026-10-16T01-34-49-494Z-capture.json.gz",
+          "gitBlobSha": "9021acabaaff49b300590ac6a366b3dff791c531",
+          "sha256": "edef4936af7490412a5e315a26f9b39f8ed0e78f348e873a531489b8d37e4028"
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-arzamas-to-domodedovo/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-34-49-934Z.json",
+          "gitBlobSha": "756b7ad442ed350b9225195cf8b98640e2571bcc"
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-arzamas-to-domodedovo/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-34-50-333Z.json",
+          "gitBlobSha": "7db8fc00322915cb494234fb2c6589314a547798"
+        },
+        "m12Reason": "m12_current_operator_pair_not_bound",
+        "pricingStatus": "unknown",
+        "amountRub": null,
+        "additionalUnknownComponent": {
+          "id": "ckad",
+          "amount": null,
+          "reason": "ckad_east_arc_not_proven"
+        }
+      },
+      {
+        "caseId": "pair-m12-ckad-domodedovo-to-arzamas",
+        "routeMeters": 491116,
+        "routeSeconds": 23380,
+        "selectedM12SpanKm": {
+          "beginKm": 104.536,
+          "endKm": 475.565
+        },
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/live-2026-10-15T09-00-00-03-00-2026-10-16T01-36-02-122Z.json",
+          "gitBlobSha": "dbd67ead8dcbbc645327b22fee2978ba22ba655b"
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/2026-10-16T01-36-02-089Z-capture.json.gz",
+          "gitBlobSha": "5bdf8b898a7cf81c89fca12f67c2667b615035d2",
+          "sha256": "4a4010becad92e7b9e83530c602678d3b98ef9bb0e540e61c91ded03aa1c21c3"
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-36-02-529Z.json",
+          "gitBlobSha": "f0c4df33c9004a7842f77124722321b125396045"
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-36-02-921Z.json",
+          "gitBlobSha": "5f79aeec4c17a3778f611b24e025ee201efe2dd0"
+        },
+        "m12Reason": "m12_current_operator_pair_not_bound",
+        "pricingStatus": "unknown",
+        "amountRub": null,
+        "additionalUnknownComponent": {
+          "id": "ckad",
+          "amount": null,
+          "reason": "ckad_east_arc_not_proven"
+        }
+      },
+      {
+        "caseId": "single-m12-arzamas-to-moscow",
+        "routeMeters": 448858,
+        "routeSeconds": 23661,
+        "selectedM12SpanKm": {
+          "beginKm": 26.432,
+          "endKm": 420.172
+        },
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-arzamas-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T01-57-41-630Z.json",
+          "gitBlobSha": "f48d3cf59a81af69ba93e9b6cd31a9a4dc69c416"
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-arzamas-to-moscow/2026-10-16T01-57-41-594Z-capture.json.gz",
+          "gitBlobSha": "778f3933eeb6599caecd3ab37d85605ebd32143c",
+          "sha256": "62f6c8398474b2df246790418b453bdad386b2758daed86605c80f55bdc5ebe2"
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-arzamas-to-moscow/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-57-42-039Z.json",
+          "gitBlobSha": "f73f34360bffa52ee892f508aa1573d7d48ee82e"
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-arzamas-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-57-42-442Z.json",
+          "gitBlobSha": "3ac796755f39a5190f61dc2d117306b4119249e7"
+        },
+        "m12Reason": "m12_current_operator_pair_not_bound",
+        "pricingStatus": "unknown",
+        "amountRub": null,
+        "additionalUnknownComponent": null
+      },
+      {
+        "caseId": "single-m12-moscow-to-arzamas",
+        "routeMeters": 445102,
+        "routeSeconds": 23299,
+        "selectedM12SpanKm": {
+          "beginKm": 25.656,
+          "endKm": 419.418
+        },
+        "live": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-arzamas/live-2026-10-15T09-00-00-03-00-2026-10-16T01-59-36-003Z.json",
+          "gitBlobSha": "a7cf2f5d2797407b2c0ff72c2674a46fa73d2747"
+        },
+        "capture": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-arzamas/2026-10-16T01-59-35-968Z-capture.json.gz",
+          "gitBlobSha": "dd6875c43c3cd40cfcd0a268d5f1aef86393714f",
+          "sha256": "5f4671a2236dcd45e4c49a8f6c9ca260e8f9aefaa92c9c33901c2f6535348aec"
+        },
+        "sameDateReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-arzamas/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-59-36-404Z.json",
+          "gitBlobSha": "baa7e479fca5c99a90d7d4bbfdbaa4bfec31e620"
+        },
+        "weekendReplay": {
+          "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-arzamas/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-59-36-815Z.json",
+          "gitBlobSha": "15cca342492203d722a366281e4d54b2f30c18a8"
+        },
+        "m12Reason": "m12_current_operator_pair_not_bound",
+        "pricingStatus": "unknown",
+        "amountRub": null,
+        "additionalUnknownComponent": null
+      }
+    ],
+    "overlappingFindings": {
+      "arc_not_proven": 2,
+      "expected-road-not-proven": 2
+    },
+    "overlapIsNonAdditive": true
+  },
+  "m12RvpEvidence": {
+    "path": "data/tolls/m12-rvp-evidence-2026-09-30.json",
+    "gitBlobSha": "af83efe23fa93a38206edd51fe17e81dc2a36f7b",
+    "scope": "CALIBRATED_PARTIAL_RVP_EVIDENCE",
+    "evidenceDate": "2026-09-30",
+    "calibratedAnchorCount": 9,
+    "warning": "This is traversal evidence, not the tariff source and not a complete M-12 RVP inventory. Only explicitly calibrated high-confidence anchors may be used as direct crossing evidence."
+  },
+  "existingImplementationInvariant": {
+    "sourcePath": "lib/toll-engine/m12-route-core.ts",
+    "rule": "Insufficient calibrated RVP crossing/boundary evidence returns unknown with amountRub=null; supported crossing sequence and official tariff evidence required for priced result."
+  },
+  "cause": "The saved route captures prove M12 traversal/span, but the supported operator RVP evidence is explicitly partial and does not bind these four selected routes to an authoritative charged entry/exit pair. Two pair cases additionally have CKAD east-arc scope unresolved.",
+  "userImpact": "A numeric M12 or full-trip amount cannot safely be shown. The engine stays fail-closed; no zero/free claim is made.",
+  "checks": {
+    "newRouteRuns": 0,
+    "newLiveRequests": 0,
+    "newReplays": 0,
+    "tests": 0,
+    "builds": 0,
+    "codeChanged": false,
+    "tariffConfirmed": false,
+    "formalPlan": "18/20=90%"
+  },
+  "next": "Review engine_not_yet_composed (baseline13) with saved evidence only; check overlap/user impact, avoid broad reruns."
+}

@@ -1,0 +1,281 @@
+{
+  "status": "REFERENCE_COMPARISON_ONLY",
+  "sourceUrl": "https://query.wikidata.org/sparql",
+  "httpStatus": 200,
+  "curlExit": 0,
+  "sourceSha256": "57e4fd01e1bef737ce3c80252646727961d9f6718dd9279d980611e0ef525017",
+  "queryFile": "coordinate-review-2026-10-29.rq",
+  "results": [
+    {
+      "geonamesId": 524901,
+      "name": "Москва",
+      "wikidata": "http://www.wikidata.org/entity/Q649",
+      "geoNamesPosition": {
+        "lat": 55.75204,
+        "lng": 37.61781
+      },
+      "referencePosition": {
+        "lat": 55.750555555,
+        "lng": 37.6175
+      },
+      "separationMeters": 166.19883347933632,
+      "identityLink": "Wikidata P1566 GeoNames identifier",
+      "coordinateClaimProvenance": "P625 statement references NOT reviewed; do not assume independence from GeoNames",
+      "roadAccess": "NOT_CHECKED",
+      "coordinatesReplaced": false
+    },
+    {
+      "geonamesId": 498817,
+      "name": "Санкт-Петербург",
+      "wikidata": "http://www.wikidata.org/entity/Q656",
+      "geoNamesPosition": {
+        "lat": 59.93863,
+        "lng": 30.31413
+      },
+      "referencePosition": {
+        "lat": 59.95,
+        "lng": 30.316666666
+      },
+      "separationMeters": 1272.1544598747223,
+      "identityLink": "Wikidata P1566 GeoNames identifier",
+      "coordinateClaimProvenance": "P625 statement references NOT reviewed; do not assume independence from GeoNames",
+      "roadAccess": "NOT_CHECKED",
+      "coordinatesReplaced": false
+    },
+    {
+      "geonamesId": 542420,
+      "name": "Краснодар",
+      "wikidata": "http://www.wikidata.org/entity/Q3646",
+      "geoNamesPosition": {
+        "lat": 45.04534,
+        "lng": 38.98178
+      },
+      "referencePosition": {
+        "lat": 45.033333333,
+        "lng": 38.983333333
+      },
+      "separationMeters": 1340.6475735786323,
+      "identityLink": "Wikidata P1566 GeoNames identifier",
+      "coordinateClaimProvenance": "P625 statement references NOT reviewed; do not assume independence from GeoNames",
+      "roadAccess": "NOT_CHECKED",
+      "coordinatesReplaced": false
+    },
+    {
+      "geonamesId": 694423,
+      "name": "Севастополь",
+      "wikidata": "http://www.wikidata.org/entity/Q7525",
+      "geoNamesPosition": {
+        "lat": 44.60795,
+        "lng": 33.52134
+      },
+      "referencePosition": {
+        "lat": 44.605,
+        "lng": 33.5225
+      },
+      "separationMeters": 340.6367550344097,
+      "identityLink": "Wikidata P1566 GeoNames identifier",
+      "coordinateClaimProvenance": "P625 statement references NOT reviewed; do not assume independence from GeoNames",
+      "roadAccess": "NOT_CHECKED",
+      "coordinatesReplaced": false
+    },
+    {
+      "geonamesId": 693805,
+      "name": "Симферополь",
+      "wikidata": "http://www.wikidata.org/entity/Q19566",
+      "geoNamesPosition": {
+        "lat": 44.95719,
+        "lng": 34.11079
+      },
+      "referencePosition": {
+        "lat": 44.948376,
+        "lng": 34.100039
+      },
+      "separationMeters": 1294.7112859162053,
+      "identityLink": "Wikidata P1566 GeoNames identifier",
+      "coordinateClaimProvenance": "P625 statement references NOT reviewed; do not assume independence from GeoNames",
+      "roadAccess": "NOT_CHECKED",
+      "coordinatesReplaced": false
+    },
+    {
+      "geonamesId": 712451,
+      "name": "Бердянск",
+      "wikidata": "http://www.wikidata.org/entity/Q33292",
+      "geoNamesPosition": {
+        "lat": 46.75578,
+        "lng": 36.78815
+      },
+      "referencePosition": {
+        "lat": 46.755555555,
+        "lng": 36.788888888
+      },
+      "separationMeters": 61.57373238804115,
+      "identityLink": "Wikidata P1566 GeoNames identifier",
+      "coordinateClaimProvenance": "P625 statement references NOT reviewed; do not assume independence from GeoNames",
+      "roadAccess": "NOT_CHECKED",
+      "coordinatesReplaced": false
+    },
+    {
+      "geonamesId": 701404,
+      "name": "Мелитополь",
+      "wikidata": "http://www.wikidata.org/entity/Q33349",
+      "geoNamesPosition": {
+        "lat": 46.84735,
+        "lng": 35.38196
+      },
+      "referencePosition": {
+        "lat": 46.848888888,
+        "lng": 35.3675
+      },
+      "separationMeters": 1112.9175898905512,
+      "identityLink": "Wikidata P1566 GeoNames identifier",
+      "coordinateClaimProvenance": "P625 statement references NOT reviewed; do not assume independence from GeoNames",
+      "roadAccess": "NOT_CHECKED",
+      "coordinatesReplaced": false
+    },
+    {
+      "geonamesId": 701822,
+      "name": "Мариуполь",
+      "wikidata": "http://www.wikidata.org/entity/Q37133",
+      "geoNamesPosition": {
+        "lat": 47.09514,
+        "lng": 37.54131
+      },
+      "referencePosition": {
+        "lat": 47.130555555,
+        "lng": 37.563888888
+      },
+      "separationMeters": 4292.731868264503,
+      "identityLink": "Wikidata P1566 GeoNames identifier",
+      "coordinateClaimProvenance": "P625 statement references NOT reviewed; do not assume independence from GeoNames",
+      "roadAccess": "NOT_CHECKED",
+      "coordinatesReplaced": false
+    },
+    {
+      "geonamesId": 709717,
+      "name": "Донецк",
+      "wikidata": "http://www.wikidata.org/entity/Q43070",
+      "geoNamesPosition": {
+        "lat": 48.023,
+        "lng": 37.80224
+      },
+      "referencePosition": {
+        "lat": 48.015833333,
+        "lng": 37.802777777
+      },
+      "separationMeters": 797.9001563295922,
+      "identityLink": "Wikidata P1566 GeoNames identifier",
+      "coordinateClaimProvenance": "P625 statement references NOT reviewed; do not assume independence from GeoNames",
+      "roadAccess": "NOT_CHECKED",
+      "coordinatesReplaced": false
+    },
+    {
+      "geonamesId": 565348,
+      "name": "Донецк",
+      "wikidata": "http://www.wikidata.org/entity/Q105433",
+      "geoNamesPosition": {
+        "lat": 48.33711,
+        "lng": 39.95229
+      },
+      "referencePosition": {
+        "lat": 48.336919444,
+        "lng": 39.944891666
+      },
+      "separationMeters": 547.2699647486655,
+      "identityLink": "Wikidata P1566 GeoNames identifier",
+      "coordinateClaimProvenance": "P625 statement references NOT reviewed; do not assume independence from GeoNames",
+      "roadAccess": "NOT_CHECKED",
+      "coordinatesReplaced": false
+    },
+    {
+      "geonamesId": 688533,
+      "name": "Ялта",
+      "wikidata": "http://www.wikidata.org/entity/Q128499",
+      "geoNamesPosition": {
+        "lat": 44.50218,
+        "lng": 34.16624
+      },
+      "referencePosition": {
+        "lat": 44.499444444,
+        "lng": 34.155277777
+      },
+      "separationMeters": 921.076384281548,
+      "identityLink": "Wikidata P1566 GeoNames identifier",
+      "coordinateClaimProvenance": "P625 statement references NOT reviewed; do not assume independence from GeoNames",
+      "roadAccess": "NOT_CHECKED",
+      "coordinatesReplaced": false
+    },
+    {
+      "geonamesId": 702658,
+      "name": "Луганск",
+      "wikidata": "http://www.wikidata.org/entity/Q134279",
+      "geoNamesPosition": {
+        "lat": 48.56814,
+        "lng": 39.30553
+      },
+      "referencePosition": {
+        "lat": 48.5717084,
+        "lng": 39.2973153
+      },
+      "separationMeters": 723.0274069078577,
+      "identityLink": "Wikidata P1566 GeoNames identifier",
+      "coordinateClaimProvenance": "P625 statement references NOT reviewed; do not assume independence from GeoNames",
+      "roadAccess": "NOT_CHECKED",
+      "coordinatesReplaced": false
+    },
+    {
+      "geonamesId": 706524,
+      "name": "Керчь",
+      "wikidata": "http://www.wikidata.org/entity/Q157065",
+      "geoNamesPosition": {
+        "lat": 45.35675,
+        "lng": 36.47542
+      },
+      "referencePosition": {
+        "lat": 45.338611111,
+        "lng": 36.468055555
+      },
+      "separationMeters": 2097.455016267591,
+      "identityLink": "Wikidata P1566 GeoNames identifier",
+      "coordinateClaimProvenance": "P625 statement references NOT reviewed; do not assume independence from GeoNames",
+      "roadAccess": "NOT_CHECKED",
+      "coordinatesReplaced": false
+    },
+    {
+      "geonamesId": 708878,
+      "name": "Геническ",
+      "wikidata": "http://www.wikidata.org/entity/Q761130",
+      "geoNamesPosition": {
+        "lat": 46.16824,
+        "lng": 34.80861
+      },
+      "referencePosition": {
+        "lat": 46.176944444,
+        "lng": 34.798888888
+      },
+      "separationMeters": 1223.5681516005836,
+      "identityLink": "Wikidata P1566 GeoNames identifier",
+      "coordinateClaimProvenance": "P625 statement references NOT reviewed; do not assume independence from GeoNames",
+      "roadAccess": "NOT_CHECKED",
+      "coordinatesReplaced": false
+    },
+    {
+      "geonamesId": 689198,
+      "name": "Волноваха",
+      "wikidata": "http://www.wikidata.org/entity/Q3562943",
+      "geoNamesPosition": {
+        "lat": 47.6008,
+        "lng": 37.49358
+      },
+      "referencePosition": {
+        "lat": 47.599361111,
+        "lng": 37.499861111
+      },
+      "separationMeters": 497.3868467700128,
+      "identityLink": "Wikidata P1566 GeoNames identifier",
+      "coordinateClaimProvenance": "P625 statement references NOT reviewed; do not assume independence from GeoNames",
+      "roadAccess": "NOT_CHECKED",
+      "coordinatesReplaced": false
+    }
+  ],
+  "limits": "No acceptance tolerance invented; city representative points can differ. P1566 links identity, not independent coordinate accuracy or current administration. No raw data was imported into the lookup catalog."
+}

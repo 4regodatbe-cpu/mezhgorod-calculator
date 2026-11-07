@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:18:45.575Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 111,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 8,
+    "spec": {
+      "caseId": "single-khabarovsk-smidovich-to-knyaze",
+      "kind": "road",
+      "group": "single-khabarovsk"
+    }
+  },
+  "caseId": "single-khabarovsk-smidovich-to-knyaze",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-18-45-574Z-part8",
+  "parent": "66a7eb713bcdba463ff0fb255992310209477897"
+}

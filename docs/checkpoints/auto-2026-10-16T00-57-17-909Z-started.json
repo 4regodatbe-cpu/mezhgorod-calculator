@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:57:17.909Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 30,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 12,
+    "spec": {
+      "caseId": "kherson-херсон-saint-petersburg-center",
+      "kind": "regional",
+      "region": "kherson"
+    }
+  },
+  "caseId": "kherson-херсон-saint-petersburg-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-57-17-909Z-part12",
+  "parent": "f85c7f4d872a27f644a7a36bd2bbd5f6e441ff89"
+}

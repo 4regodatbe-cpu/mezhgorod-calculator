@@ -1,0 +1,122 @@
+{
+  "at": "2026-10-16T02:14:15.468Z",
+  "phase": "DONE",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 146,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 18,
+    "spec": {
+      "caseId": "triple-m11-ckad-m12-novgorod-to-vladimir",
+      "kind": "road",
+      "group": "triple-m11-ckad-m12"
+    }
+  },
+  "caseId": "triple-m11-ckad-m12-murom-to-tver",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "triple-m11-ckad-m12-murom-to-tver",
+    "startedAt": "2026-10-16T02:13:44.062Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-murom-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T02-13-47-711Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-murom-to-tver/2026-10-16T02-13-47-673Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T02-13-48-135Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T02-13-48-531Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "m11",
+        "ckad",
+        "m12"
+      ],
+      "provenRoads": [
+        "m12",
+        "m11",
+        "ckad"
+      ],
+      "missingExpectedRoads": [],
+      "status": "traversal-proven"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m11-58-679, ckad, unknown-paid-road",
+        "m11-58-679: only_one_verified_boundary_crossing",
+        "ckad: ckad_east_arc_not_proven",
+        "unknown-paid-road: unmapped_selected_route_paid_booth"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m11-58-679, ckad, unknown-paid-road",
+        "m11-58-679: only_one_verified_boundary_crossing",
+        "ckad: ckad_east_arc_not_proven",
+        "unknown-paid-road: unmapped_selected_route_paid_booth"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "m11-58-679",
+        "amount": null,
+        "reason": "only_one_verified_boundary_crossing"
+      },
+      {
+        "id": "m12",
+        "amount": 892,
+        "reason": "matrix dated selected-route M12 directed endpoint pair"
+      },
+      {
+        "id": "ckad",
+        "amount": null,
+        "reason": "ckad_east_arc_not_proven"
+      },
+      {
+        "id": "unknown-paid-road",
+        "amount": null,
+        "reason": "unmapped_selected_route_paid_booth"
+      }
+    ],
+    "finishedAt": "2026-10-16T02:13:48.546Z"
+  },
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-13-42-586Z-part18",
+  "parent": "accdc4d6e735153d8aa66e9897c8c83cab793537"
+}

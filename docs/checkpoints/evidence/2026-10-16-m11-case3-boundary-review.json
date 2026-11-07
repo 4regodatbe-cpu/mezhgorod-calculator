@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "finding": "m11_partial_head_entry_boundary_unresolved",
+  "caseId": "max-chain-m12-ckad-m11-zsd-murom-to-sest",
+  "reviewStatus": "source_gated_m11_head_entry_boundary_unbound",
+  "reviewedAtUtc": "2026-10-16T19:39:58Z",
+  "capture": {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-murom-to-sest/2026-10-15T23-59-30-619Z-capture.json.gz",
+    "sha256": "7f52b3f094508f3782a3b13b1785b39a0e200123c948ad45771bddc82e76def9",
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "traceComplete": true,
+    "checkedChunks": 8,
+    "totalChunks": 8,
+    "routeMeters": 1052263,
+    "coordinateCount": 6131,
+    "validatedWayCount": 812,
+    "m11StrictBlocks": [
+      {
+        "provider": "valhalla",
+        "legIndex": 0,
+        "sourceStartIndex": 11,
+        "sourceEndIndex": 14,
+        "beginKm": 356.93,
+        "endKm": 694.997,
+        "lengthKm": 338.067,
+        "beginCoordinate": [
+          37.209886,
+          56.089259
+        ],
+        "endCoordinate": [
+          33.669658,
+          58.086935
+        ],
+        "labels": [
+          "М-11",
+          "«Нева»"
+        ]
+      },
+      {
+        "provider": "valhalla",
+        "legIndex": 0,
+        "sourceStartIndex": 16,
+        "sourceEndIndex": 17,
+        "beginKm": 695.272,
+        "endKm": 755.746,
+        "lengthKm": 60.474,
+        "beginCoordinate": [
+          33.670857,
+          58.088199
+        ],
+        "endCoordinate": [
+          32.966256,
+          58.386083
+        ],
+        "labels": [
+          "М-11",
+          "«Нева»"
+        ]
+      },
+      {
+        "provider": "valhalla",
+        "legIndex": 0,
+        "sourceStartIndex": 19,
+        "sourceEndIndex": 21,
+        "beginKm": 755.916,
+        "endKm": 1001.179,
+        "lengthKm": 245.263,
+        "beginCoordinate": [
+          32.967035,
+          58.386222
+        ],
+        "endCoordinate": [
+          30.283506,
+          59.832743
+        ],
+        "labels": [
+          "М-11",
+          "«Нева»"
+        ]
+      }
+    ]
+  },
+  "boundaryReference": {
+    "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-15-mmk-bindings/directed-mmk-north-gates.json",
+    "sha256": "6639a6800c7dde8fefffda56427f94fa914c17a7a87136d36400b575c4b7a77c",
+    "gateWays": [
+      {
+        "gateNodeId": "3499155981",
+        "directedWayId": "795569815",
+        "directedWayInValidatedTrace": false,
+        "nearestRouteDistanceMeters": 26.5,
+        "requiredThresholdMeters": 25,
+        "matched": false
+      },
+      {
+        "gateNodeId": "3499155978",
+        "directedWayId": "795569816",
+        "directedWayInValidatedTrace": false,
+        "nearestRouteDistanceMeters": 41.8,
+        "requiredThresholdMeters": 25,
+        "matched": false
+      }
+    ],
+    "paymentTimeEvidencePath": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-14-head-payment-time-proof.json",
+    "paymentTimeEvidenceSha256": "ba5b553230d306e9a922901a407c1c4d1a32d65e74521f351e2d0d4f74d28faa",
+    "moscowPvp21SpatialAnchor": "unresolved"
+  },
+  "savedProfiles": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-murom-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-15T23-59-30-677Z.json",
+      "sha256": "bebca9bf0061a62e5960cf79e7b99362fd7fba127f8c4ba509d42cc4a4b1bb35",
+      "captureMatch": true,
+      "traceComplete": true,
+      "auditStatus": "unknown",
+      "missing": [
+        "m11-15-58",
+        "ckad",
+        "zsd"
+      ],
+      "priced": [
+        "m11-58-679",
+        "m11-679-684",
+        "m12"
+      ]
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-murom-to-sest/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-59-31-147Z.json",
+      "sha256": "b26d74095398b339798913211c36d01b575e89fc3cd04bcde6b7a7476abf6406",
+      "captureMatch": true,
+      "traceComplete": true,
+      "auditStatus": "unknown",
+      "missing": [
+        "m11-15-58",
+        "ckad",
+        "zsd"
+      ],
+      "priced": [
+        "m11-58-679",
+        "m11-679-684",
+        "m12"
+      ]
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-murom-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-59-31-606Z.json",
+      "sha256": "c99107fb36961d1fc7b87d473d2b1dd737a5d44d3f7ad5224022520a93bfda18",
+      "captureMatch": true,
+      "traceComplete": true,
+      "auditStatus": "unknown",
+      "missing": [
+        "m11-15-58",
+        "ckad",
+        "zsd"
+      ],
+      "priced": [
+        "m11-58-679",
+        "m11-679-684",
+        "m12"
+      ]
+    }
+  ],
+  "decision": "Case3 has no material exception to cases1–2: route trace is complete and M11 traversal is proven, but exact north-gate way IDs are absent and nearest gate nodes remain outside the existing 25m rule. Retain M11 15–58 as unknown; CKAD and ZSD are also unresolved, so no complete fare or free claim.",
+  "testsRun": [],
+  "newLiveCalls": 0,
+  "codeOrTariffChanges": 0,
+  "overallPlanProgress": {
+    "completedParts": 18,
+    "totalParts": 20,
+    "percent": 90,
+    "meaning": "formal plan completion only; not tariff coverage"
+  },
+  "findingReviewCount": {
+    "completedCases": 3,
+    "totalCases": 8
+  },
+  "nextCase": "pair-m11-ckad-noginsk-to-spb"
+}

@@ -1,0 +1,77 @@
+{
+  "atUtc": "2026-10-18T06:27:49.494322+00:00",
+  "sourceHead": "fb097de6f52bb1edb1a326f734fd8560f118b746",
+  "startedHead": "42c3e3101c16a275e7481d01d533351c13fece37",
+  "startedTree": "8fd50939a717d88f5a7631d4b076857ff0e0769f",
+  "requests": 4,
+  "allHttp200": true,
+  "newSearchQueries": 0,
+  "sources": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-18-shkipersky/shkipersky-tariffs-95-1.pdf",
+      "url": "https://whsd.ru/assets/disclosure/70/95-1.pdf",
+      "sha256": "eb9c8628b0fb19ab077d59443acb8dadf0e3132031b129dff7bcee62ccbe73c1",
+      "bytes": 117486
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-18-shkipersky/interchanges-order47-2025.pdf",
+      "url": "https://whsd.ru/assets/disclosure/70/pr47_26062025.pdf",
+      "sha256": "f29d93ff5685a77578de1b272e9d7b25bfc0ef5aa55e525ba3c1b420d64c42ce",
+      "bytes": 389030
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-18-shkipersky/shkipersky-rules-pr8-1.pdf",
+      "url": "https://whsd.ru/assets/disclosure/70/pr8-1.pdf",
+      "sha256": "2ad95bc5f19e82ce9251b5ccf907df80ab1ac5579778d216c626070dc4b5bed1",
+      "bytes": 268435
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-18-shkipersky/way351741889.osm",
+      "url": "https://api.openstreetmap.org/api/0.6/way/351741889/full",
+      "sha256": "6aec3c5445ead26e23437feb4884e6cd1ddcbd1e61ae17d0c890c96429bb8614",
+      "bytes": 2562
+    }
+  ],
+  "pdfReview": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-18-shkipersky/shkipersky-tariffs-95-1.pdf",
+      "pages": 1,
+      "visualPages": [
+        1
+      ],
+      "textExtraction": "PASS",
+      "findings": "Order95 dated29Dec2025; linkedownerindex states effective17Jan2026. Current tariff lists571/581/59/60. Clause2 exempts no-transponder passage from separate Shkiperskyinterchange fee, while ordinary WHSDcharge remains. Clause4 same-trip Shkipersky↔Makarova non-tarification is a separate bounded rule, not appliedto this trip."
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-18-shkipersky/interchanges-order47-2025.pdf",
+      "pages": 1,
+      "visualPages": [
+        1
+      ],
+      "textExtraction": "scanned empty output; visually read",
+      "findings": "Order47 is a one-off exemption27Jun2025 16:00–21:00; not a general2026free rule, excluded from candidate pricing."
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-18-shkipersky/shkipersky-rules-pr8-1.pdf",
+      "pages": 9,
+      "visualPages": [
+        2,
+        5,
+        6
+      ],
+      "textExtraction": "PASS all9pages; only selected pages visually checked",
+      "findings": "2024rules define581/59/60; operator registers separate interchange use by transponder. Older rules are not silently substituted for later tariff conditions."
+    }
+  ],
+  "physicalIdentity": "experiments/nationwide-tolls/checks/2026-10-18-zsd-shkipersky-source/physical-identity.json",
+  "outcome": "physical_identity_refined_billing_still_blocked",
+  "noTransponderShkiperskySeparateFeeExemptionSourceFound": true,
+  "recordedRvp64NotBoundToShkiperskyTariff95": true,
+  "runtimeChanges": 0,
+  "newRouteRequests": 0,
+  "newTraceRequests": 0,
+  "newRouteReplays": 0,
+  "newPricedComponents": 0,
+  "newConfirmedFullFares": 0,
+  "nextAction": "Next exact new source only: owner mapping and ordinary WHSD cash/card billing scope forRVP64/ref64E at30.2224424,59.9615898 onway351741889, to southKAD booth933975069. Do not repeat ShkiperskyPDFpass or completed routes; do not attach95-1fee or0to64 without crosswalk. Persist boundedSTARTED before new source work."
+}

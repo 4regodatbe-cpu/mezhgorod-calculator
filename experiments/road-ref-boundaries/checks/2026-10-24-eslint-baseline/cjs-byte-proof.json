@@ -1,0 +1,59 @@
+{
+  "trackedCjsFiles": 10,
+  "unchangedFiles": 9,
+  "runtimeBodyChanges": 0,
+  "commentOnlyChanges": 1,
+  "files": [
+    {
+      "path": "experiments/nationwide-tolls/engine/api-adapter.cjs",
+      "change": "UNCHANGED",
+      "currentSha256": "b43e520b9ba7d14a82e8ebffe90de0f3b8ef0cbe83edfa9a0434e528ddc5243b"
+    },
+    {
+      "path": "experiments/nationwide-tolls/engine/fare-validity.cjs",
+      "change": "UNCHANGED",
+      "currentSha256": "b9f24c52c67c2eb5de4563aeda9541d07620c84751c0753bb9013cbdc14e9b58"
+    },
+    {
+      "path": "experiments/nationwide-tolls/engine/quote.cjs",
+      "change": "ONLY_OBSOLETE_ESLINT_DIRECTIVE_REMOVED",
+      "currentSha256": "686a1568ee95707ed0ef20bff49c08496dea6dd7df1f8a196f76241f4fe17540"
+    },
+    {
+      "path": "experiments/nationwide-tolls/engine/tariff-product-identity.cjs",
+      "change": "UNCHANGED",
+      "currentSha256": "032ad5798c2181c53306a3edce6589e23a7a196b3c88849a65af88f9e66177e8"
+    },
+    {
+      "path": "experiments/nationwide-tolls/scripts/audit-matrix-provenance.cjs",
+      "change": "UNCHANGED",
+      "currentSha256": "4a68abc951b13742e92ebbdfbbfe7f34cb570f49861aa5cffab1c92eead298f7"
+    },
+    {
+      "path": "experiments/nationwide-tolls/scripts/build-m4-endpoint-register.cjs",
+      "change": "UNCHANGED",
+      "currentSha256": "2ccb4a30e31340a1fbf169d0ff5a174d0c8ffa78645c9e3df335881a3aa59dc6"
+    },
+    {
+      "path": "experiments/nationwide-tolls/scripts/build-release-register.cjs",
+      "change": "UNCHANGED",
+      "currentSha256": "27549d8c15c345683fca5048572aee763df469e6d127ff079cd9493d8dcf86c9"
+    },
+    {
+      "path": "experiments/nationwide-tolls/scripts/build-vector-matrix.cjs",
+      "change": "UNCHANGED",
+      "currentSha256": "8b68d0e2490caac24c466bbaedfad2535ca013fcd928d4a122769aa624011a4e"
+    },
+    {
+      "path": "experiments/nationwide-tolls/scripts/quote.test.cjs",
+      "change": "UNCHANGED",
+      "currentSha256": "47d0dafaf35ac5463838e8a725281301ab7949f6730b57bcb5a2f4d84fe7e795"
+    },
+    {
+      "path": "experiments/nationwide-tolls/scripts/validate-vector-matrix.cjs",
+      "change": "UNCHANGED",
+      "currentSha256": "6759ed9f7ce92bae404ad6097f5f861bf26b21817ef333bcfe7c8e1e67da90cd"
+    }
+  ],
+  "note": "Ten tracked files; STARTED count estimate eight was corrected. Obsolete directive produced one new warning under scoped CommonJS policy and was removed without changing executable body."
+}

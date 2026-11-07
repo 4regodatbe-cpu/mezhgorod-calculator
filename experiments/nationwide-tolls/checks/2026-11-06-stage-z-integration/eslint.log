@@ -1,0 +1,2 @@
+Command: git diff --name-only HEAD -- '*.ts' '*.tsx' '*.mjs' '*.cjs' | xargs ./node_modules/.bin/eslint
+Result: PASS, exit 0; no output (no warnings or errors).

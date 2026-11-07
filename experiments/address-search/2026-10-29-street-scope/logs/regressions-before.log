@@ -1,0 +1,101 @@
+✖ comma plus an explicit region is still a settlement query, not a street request (1.978211ms)
+address_search_unavailable {
+  elapsedMs: 5,
+  sourceCount: 7,
+  failures: { network_error: 7 },
+  budgetExpired: false
+}
+✖ all requested standalone cities including comma-qualified DNR use admitted data with zero Photon calls (149.787058ms)
+✔ saved real city/street candidates rank correctly without requiring a house (30.764356ms)
+✔ city+street outranks namesake streets in other cities independently of initial order (10.074789ms)
+✖ same-name city street ties retain territorial priority and explicit-region overrides (2.018835ms)
+✖ no confirmed street point: actual settlement remains available, never a silent other-city substitute (5.256378ms)
+✔ invalid/missing street geometry is never invented or copied from another result (0.209941ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 3
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 473.481124
+
+✖ failing tests:
+
+test at scripts/street-address.test.ts:18:1
+✖ comma plus an explicit region is still a settlement query, not a street request (1.978211ms)
+  AssertionError [ERR_ASSERTION]: Донецк, ДНР
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///workspace/geonames-preview-publish-fc83523/scripts/street-address.test.ts:19:82)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at scripts/street-address.test.ts:22:1
+✖ all requested standalone cities including comma-qualified DNR use admitted data with zero Photon calls (149.787058ms)
+  AssertionError [ERR_ASSERTION]: Донецк, ДНР
+  
+  502 !== 200
+  
+      at file:///workspace/geonames-preview-publish-fc83523/scripts/street-address.test.ts:26:10
+      at async withLocalPilot (file:///workspace/geonames-preview-publish-fc83523/scripts/street-address.test.ts:15:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 502,
+    expected: 200,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at scripts/street-address.test.ts:46:1
+✖ same-name city street ties retain territorial priority and explicit-region overrides (2.018835ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'W-1' !== 'W-2'
+  
+      at TestContext.<anonymous> (file:///workspace/geonames-preview-publish-fc83523/scripts/street-address.test.ts:49:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'W-1',
+    expected: 'W-2',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at scripts/street-address.test.ts:52:1
+✖ no confirmed street point: actual settlement remains available, never a silent other-city substitute (5.256378ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'W-123'
+  - 'geonames-542420'
+  
+      at file:///workspace/geonames-preview-publish-fc83523/scripts/street-address.test.ts:55:36
+      at async withLocalPilot (file:///workspace/geonames-preview-publish-fc83523/scripts/street-address.test.ts:15:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'W-123',
+    expected: 'geonames-542420',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

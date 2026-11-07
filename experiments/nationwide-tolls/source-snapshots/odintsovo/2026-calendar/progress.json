@@ -1,0 +1,18 @@
+{
+  "responses": [
+    {
+      "file": "order1466.pdf",
+      "url": "https://static.government.ru/media/files/4jeB8hNKm69ggOa9yDiYOli6YoAyM21i.pdf",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 503: Service Unavailable",
+      "seconds": 10.301
+    },
+    {
+      "file": "mintrud1366.html",
+      "url": "https://mintrud.gov.ru/social/social/1366",
+      "status": "FAILED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "seconds": 7.152
+    }
+  ]
+}

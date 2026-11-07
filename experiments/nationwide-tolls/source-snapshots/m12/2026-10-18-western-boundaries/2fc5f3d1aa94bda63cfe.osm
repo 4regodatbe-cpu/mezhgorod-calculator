@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (3814988 spike-06.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="9003577426" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0796987" lon="40.1949060"/>
+ <node id="9003577427" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0795595" lon="40.1944442"/>
+ <node id="9003577429" visible="true" version="3" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0793567" lon="40.1958309"/>
+ <node id="9003577430" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0789802" lon="40.1939588"/>
+ <node id="9003577431" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0791581" lon="40.1939596"/>
+ <node id="9003577432" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0793291" lon="40.1940690"/>
+ <node id="9003577433" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0794625" lon="40.1942468"/>
+ <node id="9003577434" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0792128" lon="40.1959435"/>
+ <node id="9003577435" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0789544" lon="40.1959609"/>
+ <node id="9003577439" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0787748" lon="40.1958446"/>
+ <node id="9003577440" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0786833" lon="40.1957125"/>
+ <node id="9003577441" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0785995" lon="40.1955233"/>
+ <node id="9003577442" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0785511" lon="40.1953410"/>
+ <node id="9003577443" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0785131" lon="40.1950653"/>
+ <node id="9003577444" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0785057" lon="40.1948614"/>
+ <node id="9003577445" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0785324" lon="40.1946565"/>
+ <node id="9003577446" visible="true" version="1" changeset="109618696" timestamp="2021-08-13T09:50:00Z" user="literan" uid="830106" lat="56.0785960" lon="40.1944496"/>
+ <node id="9003577447" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0786520" lon="40.1942576"/>
+ <node id="9003577448" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0787268" lon="40.1941413"/>
+ <node id="9003577449" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0788465" lon="40.1940226"/>
+ <node id="9003577450" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0790881" lon="40.1959797"/>
+ <node id="10026978937" visible="true" version="2" changeset="141713163" timestamp="2023-09-25T05:45:13Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0795595" lon="40.1956488"/>
+ <node id="14216395535" visible="true" version="1" changeset="189564566" timestamp="2026-09-25T22:13:39Z" user="Dmitriy Nikolin" uid="20137446" lat="56.0798240" lon="40.1952024"/>
+ <way id="972809720" visible="true" version="9" changeset="189564566" timestamp="2026-09-25T22:13:39Z" user="Dmitriy Nikolin" uid="20137446">
+  <nd ref="10026978937"/>
+  <nd ref="9003577429"/>
+  <nd ref="9003577434"/>
+  <nd ref="9003577450"/>
+  <nd ref="9003577435"/>
+  <nd ref="9003577439"/>
+  <nd ref="9003577440"/>
+  <nd ref="9003577441"/>
+  <nd ref="9003577442"/>
+  <nd ref="9003577443"/>
+  <nd ref="9003577444"/>
+  <nd ref="9003577445"/>
+  <nd ref="9003577446"/>
+  <nd ref="9003577447"/>
+  <nd ref="9003577448"/>
+  <nd ref="9003577449"/>
+  <nd ref="9003577430"/>
+  <nd ref="9003577431"/>
+  <nd ref="9003577432"/>
+  <nd ref="9003577433"/>
+  <nd ref="9003577427"/>
+  <nd ref="9003577426"/>
+  <nd ref="14216395535"/>
+  <tag k="highway" v="trunk_link"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+</osm>

@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:58:56.015Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 32,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 12,
+    "spec": {
+      "caseId": "lnr-ровеньки-kerch-center",
+      "kind": "regional",
+      "region": "lnr"
+    }
+  },
+  "caseId": "lnr-ровеньки-kerch-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-58-56-015Z-part12",
+  "parent": "a033d859cc01a6dede87202ed4fcebcd7f640ae7"
+}

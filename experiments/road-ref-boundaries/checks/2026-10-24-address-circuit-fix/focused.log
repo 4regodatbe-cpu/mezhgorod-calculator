@@ -1,0 +1,24 @@
+✔ real endpoint/proxy flow survives sequential replacements, shared cancellation and partial outage (124.162181ms)
+✔ global pool caps concurrent requests across different address queries (4.97272ms)
+✔ same URL shares one fetch; cancelling A does not cancel subscriber B (1.545551ms)
+✔ clearing last subscriber aborts request; immediate retyping cannot reuse abandoned task (0.794429ms)
+✔ queued cancelled prefixes never reach the provider and free queue capacity (0.828159ms)
+✔ pre-aborted callers invoke neither pool provider nor low-level fetch (0.499553ms)
+✔ three consecutive503/429 failures pause queue; retry after cooldown works (0.840848ms)
+✔ healthy cached results survive cooldown; TTL/LRU/empty responses stay bounded (0.509569ms)
+✔ one partial503 never blocks next city, and successes reset the failure streak (0.476889ms)
+✔ an in-flight success clears an already-open circuit (0.510169ms)
+✔ the complete failure streak must fit within15seconds, not just each adjacent gap (0.39743ms)
+✔ source cooldown does not block another origin and has bounded diagnostic labels (0.241454ms)
+✔ collector keeps partial positives and every original variant (2.882186ms)
+✔ collector total budget includes queue and does not hang on a non-cooperative fetch (16.930206ms)
+✔ collector preserves the previously observed usable11.3second prefix response (2.136482ms)
+✔ collector caller cancellation stops all queued variants without opening cooldown (2.105275ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 342.050584

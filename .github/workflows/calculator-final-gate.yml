@@ -54,7 +54,6 @@ jobs:
         run: node scripts/v3-freshness-contract.mjs
       - name: Tariff freshness
         env:
-          TARIFF_AS_OF: '2026-10-02'
           TARIFF_STALE_STRICT: '1'
         run: node scripts/check-tariff-freshness.mjs
       - name: M12 recovery replay

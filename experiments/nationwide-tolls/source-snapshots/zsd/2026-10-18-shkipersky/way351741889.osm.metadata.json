@@ -1,0 +1,14 @@
+{
+  "url": "https://api.openstreetmap.org/api/0.6/way/351741889/full",
+  "startedAtUtc": "2026-10-18T06:24:10.414805+00:00",
+  "curlExitCode": 0,
+  "httpStatus": "200",
+  "finalUrl": "https://api.openstreetmap.org/api/0.6/way/351741889/full",
+  "elapsedSeconds": "7.131737",
+  "contentType": "application/xml; charset=utf-8",
+  "stderr": "",
+  "bytes": 2562,
+  "sha256": "6aec3c5445ead26e23437feb4884e6cd1ddcbd1e61ae17d0c890c96429bb8614",
+  "isPdf": false,
+  "sourceInputs": "experiments/nationwide-tolls/checks/2026-10-18-zsd-shkipersky-source/inputs.json"
+}

@@ -13,14 +13,34 @@ test("value is M3 component only, not customer-facing full route price",()=>asse
 test("two verified gates is not a valid whole M3 example",()=>assert.equal(quote(catalog,audit(expected.slice(0,2)),fri,11340).amountRub,null));
 test("dated order 53 permits Oct8 2026 source rate before Oct10 audit",()=>assert.equal(quote(catalog,audit(),"2026-10-08T12:00:00+03:00",7200).amountRub,480));
 test("future Oct11 not automatically covered by Oct10 operator audit",()=>assert.equal(quote(catalog,audit(),"2026-10-11T10:00:00+03:00",7200).amountRub,null));
-test("crossing Moscow midnight refuses single timestamp fare",()=>assert.equal(quote(catalog,audit(),"2026-10-09T23:00:00+03:00",3601).amountRub,null));
+test("crossing Moscow midnight keeps the departure-date M3 shadow fare",()=>assert.equal(quote(catalog,audit(),"2026-10-09T23:00:00+03:00",3601).amountRub,520));
+test("Thursday to Friday keeps Thursday M3 rate in either physical direction",()=>{
+ for(const gates of [expected,[...expected].reverse()]){
+  const q=quote(catalog,audit(gates),"2026-10-08T23:30:00+03:00",7200);
+  assert.equal(q.amountRub,480);assert.equal(q.operatorProfile,"monThu");assert.equal(q.tariffDate,"2026-10-08");assert.equal(q.diagnosticOnly,true);
+ }
+});
+test("Sunday to Monday keeps the Sunday M3 rate using Moscow departure date",()=>{
+ const q=quote(catalog,audit(),"2026-10-04T20:30:00Z",7200);
+ assert.equal(q.amountRub,520);assert.equal(q.operatorProfile,"friSun");assert.equal(q.tariffDate,"2026-10-04");
+});
+test("last verified departure day remains valid when M3 arrival is outside source horizon",()=>{
+ assert.equal(quote(catalog,audit(),"2026-10-10T23:30:00+03:00",7200).amountRub,520);
+ assert.equal(quote(catalog,audit(),"2026-10-11T00:30:00+03:00",7200).amountRub,null);
+});
+test("crossing into the first effective day cannot authorize a pre-effective M3 departure",()=>{
+ assert.equal(quote(catalog,audit(),"2026-03-01T23:30:00+03:00",7200).amountRub,null);
+});
+test("duration >24h remains outside the bounded diagnostic corridor contract",()=>assert.equal(quote(catalog,audit(),fri,90000).amountRub,null));
+test("invalid durations remain unknown with departure-only calendar selection",()=>{
+ for(const seconds of [-1,NaN,Infinity])assert.equal(quote(catalog,audit(),fri,seconds).amountRub,null);
+});
 test("partial route audit is unknown",()=>{const x=audit();x.status="candidate_needs_osm_operator_node_mapping";assert.equal(quote(catalog,x,fri,6000).amountRub,null)});
 test("unmapped physical booth invalidates three-gate quote",()=>{const x=audit();x.unmappedPaidNodes.push({roadId:"m3",osmNodeId:"junk"});assert.equal(quote(catalog,x,fri,6000).amountRub,null)});
 test("fake fourth gate invalidates bounded M3 example",()=>assert.equal(quote(catalog,audit([...expected,gate(200,"12")]),fri,6000).amountRub,null));
 test("random order invalidates corridor",()=>assert.equal(quote(catalog,audit([expected[0],expected[2],expected[1]]),fri,6000).amountRub,null));
 test("foreign paid road cannot be combined into exact M3 physical invoice",()=>{const x=audit();x.verifiedGates[0]={...expected[0],roadId:"m1"};assert.equal(quote(catalog,x,fri,6000).amountRub,null)});
 test("invalid departure timestamps fail closed",()=>assert.equal(quote(catalog,audit(),"2026-10-09T10:00",6000).amountRub,null));
-test("duration >24h not in verified same-day fare scope",()=>assert.equal(quote(catalog,audit(),fri,90000).amountRub,null));
 test("unknown date format also returns null",()=>assert.equal(quote(catalog,audit(),"nonsense",300).amountRub,null));
 
 test("M3 Saturday Oct10 2026 three actual gates yields 520 Rub",()=>assert.equal(quote(catalog,audit(),"2026-10-10T10:00:00+03:00",8000).amountRub,520));
@@ -60,4 +80,11 @@ test("M1 Oct11 cannot inherit Oct10 operator snapshot without re-audit",()=>{
 test("M1 operator Order 54 not applicable before 2026-03-02",()=>{
  const x=audit([{id:"m1-pvp-46",km:46,roadId:"m1",edgeToll:true,osmNodeId:"123",fareRowId:"m1-33-66"}]);
  assert.equal(m1(catalog,x,"2026-03-01T10:00:00+03:00",5400).amountRub,null);
+});
+test("M1 midnight crossing uses a verified departure and keeps source-date guards",()=>{
+ const x=audit([{id:"m1-pvp-46",km:46,roadId:"m1",edgeToll:true,osmNodeId:"123456789",fareRowId:"m1-33-66"}]);
+ const q=m1(catalog,x,"2026-10-10T23:30:00+03:00",7200);
+ assert.equal(q.amountRub,250);assert.equal(q.tariffDate,"2026-10-10");assert.equal(q.diagnosticOnly,true);
+ assert.equal(m1(catalog,x,"2026-10-11T00:30:00+03:00",7200).amountRub,null);
+ assert.equal(m1(catalog,x,"2026-03-01T23:30:00+03:00",7200).amountRub,null);
 });

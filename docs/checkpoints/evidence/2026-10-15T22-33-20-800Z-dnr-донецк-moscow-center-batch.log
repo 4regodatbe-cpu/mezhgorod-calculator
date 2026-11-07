@@ -1,0 +1,5 @@
+START 1/1 dnr-донецк-moscow-center
+DONE dnr-донецк-moscow-center audited parity=true
+{"batchPath":"experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T22-33-21-031Z.json","attempted":1,"audited":1,"stoppedReason":null}
+
+EXIT_CODE=0
