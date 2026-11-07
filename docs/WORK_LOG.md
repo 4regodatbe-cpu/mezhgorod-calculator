@@ -1,5 +1,9 @@
 # Work log
 
+## 07.11.2026 — Stage AE: approval-ready isolated tariff gate patch
+
+Reviewed StageAD proposal against policy27–28Oct. Prepared isolated evaluator and exact unapplied patch: stale observation warns, material proof/date/product/conflict failures block, explicitly accepted working model may retain unknown legal effective date. No artificial validity end, observation edits or new prices. Default source check validates saved file/hash; semantic official-source review remains explicit evidence, not inferred from URL. Missing/duplicate evidence blocks. Tests6/6 new and3/3 targeted files PASS; patch check and isolated applied-copy negative integration PASS(exit2). Active gate/runtime/workflows unchanged. [Checkpoint](checkpoints/2026-11-07-stage-ae-DONE-LOCAL.md).
+
 ## 07.11.2026 — Stage AD local acceptance closure
 
 Resolved external dependency-root symlink by frozen local pnpm install; Node24.19/pnpm11.25.0; unchanged lockfile. Added hard waits around non-cooperative transport/body operations and V3 shared90s budget, preserving provider25s deadlines and geometric selection. Added timeout/body disposal/late response/actual-handler temporal regressions, retained HTTP200 for rejected geometry and corrected geometryUsable. V3 long durations now use days/hours/minutes; V2 output default unchanged.

@@ -1,4 +1,10 @@
-# Текущий handoff — Stage AD DONE LOCAL / RELEASE BLOCKED (07.11.2026)
+# Текущий handoff — Stage AE DONE LOCAL / gate patch awaiting approval (07.11.2026)
+
+Изолированный `/workspace/stage-ae-gate-proposal`, branch `codex/stage-ae-gate-proposal`, база AD8d67d215. Подготовлены isolated evaluator, reviewed-evidence schema, regression tests и `experiments/tariff-gate-proposal/approval.patch`. Активный mandatory gate, workflow, суммы, даты и runtime не менялись. Возраст наблюдения предлагается предупреждением; проверенный источник/денежная ячейка, период применения и существенные противоречия — отдельными blockers. Unknown legal effectiveFrom допускает принятую рабочую модель с обоснованием, согласно28октября.
+
+Новые регрессии6/6, три целевых test files3/3, JS syntax/diff check и git apply --check PASS. Patch применён только к временной копии: strict gate без reviewed evidence даёт ожидаемый exit2. Для текущих registry rows assessment не выдуман; применение patch и заполнение его из сохранённых доказательств остаются следующим review-шагом. Нет push/merge/Production. [Checkpoint](checkpoints/2026-11-07-stage-ae-DONE-LOCAL.md), [контракт и patch](../experiments/tariff-gate-proposal/README.md).
+
+# Предыдущий handoff — Stage AD DONE LOCAL / RELEASE BLOCKED (07.11.2026)
 
 Изолированный `/workspace/stage-ad-reliability`, branch `codex/stage-ad-reliability`, база AC `2400f760…`. Итоговый runtime candidate `e4e070c8fb24b6e415029c31f4e4b2827ef010d0`. Введены реальные ограничения ожидания транспорта/тела и общий бюджет V3 90с, сохранён provider timeout25с. Исправлены точный HTTP-статус отклонённой геометрии и отображение дней/часов/минут V3. Тарифный runtime/данные/workflows не менялись; primary91 HEAD86fd19bd и StageAC HEAD2400f760 сохранены.
 

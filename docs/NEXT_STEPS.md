@@ -1,5 +1,11 @@
 # Next steps
 
+## Stage AE — next review
+
+1. Owner reviews exact `experiments/tariff-gate-proposal/approval.patch` and contract README. Applying mandatory gate change is not yet authorized.
+2. Before activation prepare reviewed evidence for each registry row from existing official files (actual paths/checksums, source cells, period/product basis and conflict assessment). Do not invent defaults; patch without evidence intentionally remains blocked.
+3. After separate approval apply patch and run its strict integration/full CI preparation. No push authorized. Runtime acceptance evidence StageAD remains applicable; no AA–AD rerun needed for this isolated proposal.
+
 ## Stage AD — current handoff
 
 1. Review final local runtime candidate e4e070c8 and [freshness proposal](TARIFF_FRESHNESS_GATE_PROPOSAL.md). Applying the proposed warning/evidence separation to mandatory CI requires explicit owner permission; current strict freshness remains blocked. No push is authorized.

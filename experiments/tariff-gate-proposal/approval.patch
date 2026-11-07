@@ -1,0 +1,25 @@
+diff --git a/scripts/check-tariff-freshness.mjs b/scripts/check-tariff-freshness.mjs
+--- a/scripts/check-tariff-freshness.mjs
++++ b/scripts/check-tariff-freshness.mjs
+@@ -1,5 +1,6 @@
+ import fs from "node:fs";
+ import { pathToFileURL } from "node:url";
++import { assessTariffGate } from "../experiments/tariff-gate-proposal/gate.mjs";
+ 
+ const DAY_MS = 86_400_000;
+ 
+@@ -76,6 +77,13 @@
+   }
+   console.log(`SUMMARY asOf=${report.asOf} snapshots=${report.rows.length} stale=${report.stale} invalid=${report.invalid} effectiveDateUnknown=${report.effectiveDateUnknown}`);
+-  process.exitCode = freshnessExitCode(report);
++  let evidence;
++  try {
++    if (process.env.TARIFF_GATE_EVIDENCE) evidence = JSON.parse(fs.readFileSync(process.env.TARIFF_GATE_EVIDENCE, "utf8"));
++  } catch { /* Missing or malformed assessment must fail closed in strict mode. */ }
++  const assessment = assessTariffGate(report, evidence);
++  for (const warning of assessment.warnings) console.warn(`WARNING\t${warning.id}\t${warning.code}`);
++  for (const error of assessment.errors) console.error(`ERROR\t${error.id ?? "registry"}\t${error.code}`);
++  process.exitCode = process.env.TARIFF_STALE_STRICT === "1" ? assessment.exitCode : 0;
+ }
+ 
+ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) run();

@@ -1,0 +1,15 @@
+FRESH	m12-2026-03-02-category1	age=36d	threshold=45d	effectiveFromStatus=KNOWN	effectiveFrom=2026-03-02
+FRESH	m11-58-679-2026-10-01-a1-current	age=37d	threshold=45d	effectiveFromStatus=UNKNOWN	effectiveFrom=UNKNOWN
+STALE	avtodor-other-roads-2026-10-01-category1-transponder	age=37d	threshold=30d	effectiveFromStatus=UNKNOWN	effectiveFrom=UNKNOWN
+STALE	avtodor-other-roads-2026-10-01-category1-no-transponder	age=37d	threshold=30d	effectiveFromStatus=UNKNOWN	effectiveFrom=UNKNOWN
+SUMMARY asOf=2026-11-07 snapshots=4 stale=2 invalid=0 effectiveDateUnknown=3
+WARNING	m11-58-679-2026-10-01-a1-current	effective_date_not_established
+WARNING	avtodor-other-roads-2026-10-01-category1-transponder	observation_recheck_due
+WARNING	avtodor-other-roads-2026-10-01-category1-transponder	effective_date_not_established
+WARNING	avtodor-other-roads-2026-10-01-category1-no-transponder	observation_recheck_due
+WARNING	avtodor-other-roads-2026-10-01-category1-no-transponder	effective_date_not_established
+ERROR	registry	evidence_missing_or_invalid
+ERROR	m12-2026-03-02-category1	evidence_missing_or_duplicate
+ERROR	m11-58-679-2026-10-01-a1-current	evidence_missing_or_duplicate
+ERROR	avtodor-other-roads-2026-10-01-category1-transponder	evidence_missing_or_duplicate
+ERROR	avtodor-other-roads-2026-10-01-category1-no-transponder	evidence_missing_or_duplicate
