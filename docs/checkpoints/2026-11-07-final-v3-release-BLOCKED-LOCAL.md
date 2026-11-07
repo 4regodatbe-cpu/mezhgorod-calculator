@@ -8,6 +8,7 @@
 - Isolated worktree: `/workspace/stage-ae-gate-proposal`
 - Branch: `codex/stage-ae-gate-proposal`
 - Candidate code SHA tested: `cf8dde540156ce9bef649ef88453f0195b366bae`
+- Local closeout commits: `4edb654b25bb3df1e0c338fcf90d1328fa458798` and `4b82f302a2b77383c0bc44d0447a9368235aca2e`; this final metadata record is documentation-only.
 - Candidate ancestry: 31 commits ahead of remote feature SHA `8fae15c7e5b81ef55492f2b009cbe665e5fdc0fb`; this remains an isolated candidate.
 - 2GIS handoff: exact commit `75808f17b87cb0550f0a6c29735f6c7001b13511` on `handoff/2gis-evidence`.
 - Remote feature readback: `git ls-remote` returned `8fae15c7e5b81ef55492f2b009cbe665e5fdc0fb`.
