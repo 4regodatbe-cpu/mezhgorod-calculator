@@ -45,4 +45,4 @@ The remaining Order54 limitation is narrow: local raw PDF/hash cannot independen
 
 Owner review/approval of the exact isolated product-gate integration and M‑1 base correction is required before applying them to mandatory CI or the active runtime. Preserve the current mandatory gate exit 2 until the stale-observation warning policy is approved and implemented with all fail-closed blockers intact. No push or release is authorized.
 
-Final candidate commit and bundle identities are recorded in the subsequent durable handoff/final report.
+Code/evidence/test candidate commit: `8fc8ff329946c2dd33c5ccdb4f3869624df5d4a8`. The documentation closeout commit and final incremental bundle readback are recorded in the final handoff; bundle prerequisite is `8fae15c7e5b81ef55492f2b009cbe665e5fdc0fb`.
