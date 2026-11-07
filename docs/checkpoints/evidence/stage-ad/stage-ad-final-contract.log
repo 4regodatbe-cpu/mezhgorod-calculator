@@ -1,0 +1,14 @@
+✔ final gate runs on feature-branch push and current PR base without write permissions (1.22086ms)
+✔ workflow calls only scripts available in the checkout and keeps V2 checks separate (0.5481ms)
+✔ live route audit is V3-only, bounded, one-pass, and omits provider geometry (0.494612ms)
+✔ API smoke validates V3 contracts without making successful route-provider requests (0.264677ms)
+✔ V3 readiness requires root V3, retains V2, and fails closed for toll uncertainty (0.205068ms)
+✔ live API route summaries distinguish a strict price, an estimate, and an unknown price (0.422873ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 16.47761

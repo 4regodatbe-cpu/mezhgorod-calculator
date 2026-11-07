@@ -1,4 +1,12 @@
-# Текущий handoff — Stage AC PARTIAL LOCAL (07.11.2026)
+# Текущий handoff — Stage AD DONE LOCAL / RELEASE BLOCKED (07.11.2026)
+
+Изолированный `/workspace/stage-ad-reliability`, branch `codex/stage-ad-reliability`, база AC `2400f760…`. Итоговый runtime candidate `e4e070c8fb24b6e415029c31f4e4b2827ef010d0`. Введены реальные ограничения ожидания транспорта/тела и общий бюджет V3 90с, сохранён provider timeout25с. Исправлены точный HTTP-статус отклонённой геометрии и отображение дней/часов/минут V3. Тарифный runtime/данные/workflows не менялись; primary91 HEAD86fd19bd и StageAC HEAD2400f760 сохранены.
+
+Финал: offline1157 PASS/0 FAIL/1 SKIP; TypeScript/lint(0errors/9warnings), штатный pnpm Turbopack build, API smoke16/16, benchmark61, workflow contract6 PASS. Реальный локальный built UI с controlled API: desktop14/14 и mobile14/14 PASS; проверка версии в results.json. Живые два маршрута на предшествующем runtime176e1d8e HTTP200 через OSRM; прежние причины502 не восстановлены. Из четырёх live street controls два дали улицы, Донецк/Ялта — только partial settlement fallback. Freshness strict по-прежнему exit2 (stale2); подготовлено изолированное предложение, его применение требует решения владельца. Push/Production/Preview не выполнялись, PR14 не менялся.
+
+Подробно: [Stage AD итог](checkpoints/2026-11-07-stage-ad-DONE-LOCAL.md), [freshness proposal](TARIFF_FRESHNESS_GATE_PROPOSAL.md). Следующий шаг: review кандидата и отдельное решение о freshness release-contract/контролируемом push; не повторять закрытые тесты или четыре live запроса без новой причины.
+
+# Предыдущий handoff — Stage AC PARTIAL LOCAL (07.11.2026)
 
 Изолированный `/workspace/stage-ac-reliability`, branch `codex/stage-ac-reliability`, основан на Stage AB `1f4987f9…`. Runtime diagnostics implementation `f3db8239…`, расширенная provider matrix `1fa76aa8…`. Добавлены safe typed provider errors и request-local routing attempt summary; V3 сохраняет один пригодный маршрут при отказах конкурентов. Legacy error messages shared providers для V2 сохранены. Тарифы/геометрия/политика выбора неизменны. Push/Production запрещены; 91-коммитная копия не менялась.
 

@@ -1,5 +1,11 @@
 # Work log
 
+## 07.11.2026 — Stage AD local acceptance closure
+
+Resolved external dependency-root symlink by frozen local pnpm install; Node24.19/pnpm11.25.0; unchanged lockfile. Added hard waits around non-cooperative transport/body operations and V3 shared90s budget, preserving provider25s deadlines and geometric selection. Added timeout/body disposal/late response/actual-handler temporal regressions, retained HTTP200 for rejected geometry and corrected geometryUsable. V3 long durations now use days/hours/minutes; V2 output default unchanged.
+
+Final runtime candidate e4e070c8 preserves exact successful transport status through validation using private metadata (including200/201 regression). Offline1157 PASS/0 FAIL/1 SKIP, standard Turbopack build PASS, TS/lint PASS(9existing warnings), API smoke16, benchmark61, workflow contract6. Local real Chromium controlled API: desktop14/mobile14 PASS; two bounded live routes HTTP200/OSRM on runtime176e; four street searches: Krasnodar/Moscow street results, Donetsk/Yalta settlement-only partial. No historical502 cause inferred. Isolated freshness proposal with tests leaves mandatory30day gate unchanged/blocked. Full results and exact evidence: [Stage AD checkpoint](checkpoints/2026-11-07-stage-ad-DONE-LOCAL.md). No push/publication; primary91 history unchanged.
+
 ## 2026-11-07 — Stage AC reliability implementation, PARTIAL LOCAL
 
 Implemented safe typed provider diagnostics, upstream HTTP status retention, bounded reason codes, request-local validator/selection outcomes; preserved shared legacy messages for V2. V3 now separates homogeneous timeout/corridor/no-route outcomes from generic upstream failure. Added actual-handler controlled partial-failure regressions and ten-city GeoNames controls. Three providers independently survive competing HTTP/timeout/invalid-geometry/slow failures; all invalid geometries yield HTTP 502.

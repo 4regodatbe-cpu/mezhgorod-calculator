@@ -1,0 +1,5 @@
+FRESH	m12-2026-03-02-category1	age=36d	threshold=45d	effectiveFromStatus=KNOWN	effectiveFrom=2026-03-02
+FRESH	m11-58-679-2026-10-01-a1-current	age=37d	threshold=45d	effectiveFromStatus=UNKNOWN	effectiveFrom=UNKNOWN
+STALE	avtodor-other-roads-2026-10-01-category1-transponder	age=37d	threshold=30d	effectiveFromStatus=UNKNOWN	effectiveFrom=UNKNOWN
+STALE	avtodor-other-roads-2026-10-01-category1-no-transponder	age=37d	threshold=30d	effectiveFromStatus=UNKNOWN	effectiveFrom=UNKNOWN
+SUMMARY asOf=2026-11-07 snapshots=4 stale=2 invalid=0 effectiveDateUnknown=3

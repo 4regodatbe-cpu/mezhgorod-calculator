@@ -1,5 +1,11 @@
 # Next steps
 
+## Stage AD — current handoff
+
+1. Review final local runtime candidate e4e070c8 and [freshness proposal](TARIFF_FRESHNESS_GATE_PROPOSAL.md). Applying the proposed warning/evidence separation to mandatory CI requires explicit owner permission; current strict freshness remains blocked. No push is authorized.
+2. After owner decision, authorize an ordinary controlled push of a reviewed exact candidate and inspect hosted mandatory CI/Preview on its exact SHA. Local28 browser checks used controlled API and do not certify hosted/live acceptance.
+3. Revisit Donetsk Artyoma/Yalta Kirova street coverage only with new independent source/provider evidence; current city fallback is usable but not street coverage. No repeated city audit or blind Photon retries.
+
 ## Stage AC remaining acceptance
 
 1. Finish deterministic overall-budget, genuinely stalled-provider, corridor-rejection and timeout-during-body cases; distinguish synthetic provider timeout injections from real expiry. Do not infer historical 502 causes.

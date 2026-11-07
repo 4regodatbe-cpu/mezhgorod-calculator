@@ -1,0 +1,39 @@
+{
+  "kind": "LOCAL_BUILT_UI_CONTROLLED_API",
+  "sourceSha": "176e1d8ef3f38e5b1d3643a5c2d4711ab9766348",
+  "results": [
+    {
+      "viewport": "desktop",
+      "name": "01 empty calculate disabled",
+      "status": "PASS"
+    },
+    {
+      "viewport": "desktop",
+      "name": "02 select A",
+      "status": "PASS"
+    },
+    {
+      "viewport": "desktop",
+      "name": "03 select B",
+      "status": "FAIL",
+      "error": "locator.fill: Error: strict mode violation: getByRole('textbox', { name: 'Куда' }) resolved to 2 elements:\n    1) <input maxlength=\"200\" value=\"Краснодар\" autocomplete=\"off\" aria-label=\"Откуда\" placeholder=\"Откуда\" class=\"h-12 w-full min-w-0 rounded-xl border border-brand-border/20 bg-brand-page pr-12 text-[16px] text-brand-text outline-none transition focus:border-brand-focus focus:ring-2 focus:ring-brand-focus/20 pl-16\"/> aka getByRole('textbox', { name: 'Откуда' })\n    2) <input value=\"\" maxlength=\"200\" aria-label=\"Куда\" placeholder=\"Куда\" autocomplete=\"off\" class=\"h-12 w-full min-w-0 rounded-xl border border-brand-border/20 bg-brand-page pr-12 text-[16px] text-brand-text outline-none transition focus:border-brand-focus focus:ring-2 focus:ring-brand-focus/20 pl-16\"/> aka getByRole('textbox', { name: 'Куда', exact: true })\n\nCall log:\n\u001b[2m  - waiting for getByRole('textbox', { name: 'Куда' })\u001b[22m\n"
+    },
+    {
+      "viewport": "mobile",
+      "name": "01 empty calculate disabled",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile",
+      "name": "02 select A",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile",
+      "name": "03 select B",
+      "status": "FAIL",
+      "error": "locator.fill: Error: strict mode violation: getByRole('textbox', { name: 'Куда' }) resolved to 2 elements:\n    1) <input maxlength=\"200\" value=\"Краснодар\" autocomplete=\"off\" aria-label=\"Откуда\" placeholder=\"Откуда\" class=\"h-12 w-full min-w-0 rounded-xl border border-brand-border/20 bg-brand-page pr-12 text-[16px] text-brand-text outline-none transition focus:border-brand-focus focus:ring-2 focus:ring-brand-focus/20 pl-16\"/> aka getByRole('textbox', { name: 'Откуда' })\n    2) <input value=\"\" maxlength=\"200\" aria-label=\"Куда\" placeholder=\"Куда\" autocomplete=\"off\" class=\"h-12 w-full min-w-0 rounded-xl border border-brand-border/20 bg-brand-page pr-12 text-[16px] text-brand-text outline-none transition focus:border-brand-focus focus:ring-2 focus:ring-brand-focus/20 pl-16\"/> aka getByRole('textbox', { name: 'Куда', exact: true })\n\nCall log:\n\u001b[2m  - waiting for getByRole('textbox', { name: 'Куда' })\u001b[22m\n"
+    }
+  ],
+  "liveProviders": "NOT_RUN"
+}
