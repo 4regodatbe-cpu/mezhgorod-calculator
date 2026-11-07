@@ -1,5 +1,11 @@
 # Work log
 
+## 2026-11-07 — Stage AC reliability implementation, PARTIAL LOCAL
+
+Implemented safe typed provider diagnostics, upstream HTTP status retention, bounded reason codes, request-local validator/selection outcomes; preserved shared legacy messages for V2. V3 now separates homogeneous timeout/corridor/no-route outcomes from generic upstream failure. Added actual-handler controlled partial-failure regressions and ten-city GeoNames controls. Three providers independently survive competing HTTP/timeout/invalid-geometry/slow failures; all invalid geometries yield HTTP 502.
+
+Full offline on implementation: 1148 PASS/0 FAIL/1 SKIP plus subsequent expanded provider test PASS. TypeScript, ESLint (9 warnings), Webpack build, benchmark61, harness6, API smoke16 PASS. Standard Turbopack rejects external node_modules symlink. Real street/browser and the complete temporal matrix remain unverified. No live provider calls, push or Production writes. See [Stage AC detailed checkpoint](checkpoints/2026-11-07-stage-ac-PARTIAL-LOCAL.md).
+
 Append-only summary of substantial project work. Detailed evidence remains in stage checkpoints.
 
 ## 2026-11-07 — Stage AB: offline all-provider failure contract; hosted release remains blocked

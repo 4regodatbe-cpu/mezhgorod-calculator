@@ -1,4 +1,10 @@
-# Текущий handoff — Stage AB V3 blockers: DONE LOCAL / hosted release gate BLOCKED (2026-11-07)
+# Текущий handoff — Stage AC PARTIAL LOCAL (07.11.2026)
+
+Изолированный `/workspace/stage-ac-reliability`, branch `codex/stage-ac-reliability`, основан на Stage AB `1f4987f9…`. Runtime diagnostics implementation `f3db8239…`, расширенная provider matrix `1fa76aa8…`. Добавлены safe typed provider errors и request-local routing attempt summary; V3 сохраняет один пригодный маршрут при отказах конкурентов. Legacy error messages shared providers для V2 сохранены. Тарифы/геометрия/политика выбора неизменны. Push/Production запрещены; 91-коммитная копия не менялась.
+
+Offline 1148 PASS/0 FAIL/1 SKIP, targeted final provider matrix PASS, TypeScript/ESLint PASS (9 warnings), Webpack production build PASS, local API smoke 16/16. Стандартный Turbopack build блокируется внешним node_modules symlink. Browser/Preview NOT_RUN. Исторические два 502 не имеют восстановимых per-provider причин. Полная 12-сценарная failure matrix и реальная browser-приёмка остаются открытыми; Stage AC не объявлен полностью завершённым. Детали: [Stage AC checkpoint](checkpoints/2026-11-07-stage-ac-PARTIAL-LOCAL.md). Следующий шаг: завершить временные/corridor failure scenarios и desktop/mobile browser на exact SHA; не повторять городской/тарифный аудит.
+
+# Предыдущий handoff — Stage AB V3 blockers: DONE LOCAL / hosted release gate BLOCKED (2026-11-07)
 
 Локальный изолированный кандидат `/workspace/final-gate-v3`, ветка `codex/final-gate-v3-repair`, HEAD `9ac745c35500e4bfcb04cf3411806be8a4887d44`, от опубликованной базы `8fae15c7e5b81ef55492f2b009cbe665e5fdc0fb`. PR #14 оставлен Draft. Push/merge/Production/main/Android запрещены. Основная 91-коммитная копия не изменялась.
 

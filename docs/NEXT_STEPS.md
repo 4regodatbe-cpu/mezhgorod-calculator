@@ -1,5 +1,11 @@
 # Next steps
 
+## Stage AC remaining acceptance
+
+1. Finish deterministic overall-budget, genuinely stalled-provider, corridor-rejection and timeout-during-body cases; distinguish synthetic provider timeout injections from real expiry. Do not infer historical 502 causes.
+2. Run actual desktop/mobile A/B browser acceptance on this candidate, using existing harness and accessible app. Current VM hook/unit tests are not browser evidence. Confirm four street controls live without inventing street coverage.
+3. Obtain normal dependency installation inside worktree to run standard Turbopack build (current symlink points outside root); Webpack build already passed. No push authorized. Separate tariff freshness blocker remains Stage AB.
+
 Priority-ordered actions for the next owner/agent. No publication is currently authorized.
 
 ## Stage AB — current blockers
