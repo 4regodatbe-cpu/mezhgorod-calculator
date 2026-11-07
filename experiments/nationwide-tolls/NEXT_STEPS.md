@@ -1,3 +1,11 @@
+# STAGE AB — актуальные безопасные следующие шаги (2026-11-07)
+
+- [ ] Получить датированный актуальный официальный тарифный источник для общего snapshot M‑1/M‑3/ЦКАД/А‑289; до этого не обновлять observedAt/ставки и считать две registry записи stale.
+- [ ] После отдельного разрешения владельца запустить hosted final-gate на точном опубликованном candidate SHA; нет Actions проверки для локального коммита.
+- [ ] Изучить provider-level исход двух уже сохранённых 502 только по hosted logs; exact error types отсутствуют в локальном capture. Не повторять запросы без диагностической необходимости.
+
+Подробности: [Stage AB DONE-LOCAL](../../docs/checkpoints/2026-11-07-stage-ab-blocker-closure-DONE-LOCAL.md). Без push/Preview/Production.
+
 # STAGE AA V3 final-gate repair — DONE LOCAL / RELEASE BLOCKED (2026-11-07)
 
 Completed locally at implementation commit `da4e362013ddbe2e2fb7ed9e3ed44d1ea4f3ab2f`, final documentation commit `5382c06fdeee1da8566704c73766c1a3b5b22104`. Details and all route/check outcomes: [Stage AA terminal checkpoint](../../docs/checkpoints/2026-11-07-stage-aa-v3-final-gate-DONE-LOCAL.md). The old route-monitor failures were generated against V2 and do not establish V3 defects. Four bounded V3 routes returned HTTP 200; Tver→Adler and Golubitskaya→SPB returned HTTP 502 after all three providers failed, with no detailed provider status in the response. M‑12 totals remain `unknown/null` where no direct pair is proven. The strict gate still rejects two stale Avtodor snapshots; no tariff evidence/date was invented.

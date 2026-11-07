@@ -6,6 +6,10 @@ Read only the current handoff, CKAD tariff row names/values and the relevant pro
 
 Полная прежняя история без изменения содержания: [WORK_LOG_HISTORY_2026-10-15_2228.md](WORK_LOG_HISTORY_2026-10-15_2228.md). Новые записи добавляются ниже; подробности каждого малого шага — в docs/checkpoints/.
 
+## 2026-11-07 — Stage AB final-gate regression and tariff freshness blocker
+
+Без повторного route audit добавлен отдельный offline V3 test all providers unavailable: HTTP 503 mocks for Valhalla/OSRM/BRouter must produce API HTTP 502 with no route fallback. Это защищает fail-closed contract и не является доказательством причин двух сохранённых live 502. Тарифный snapshot и route capture не менялись; дополнительных внешних route запросов не делали. Официальный актуальный tariff GET заблокирован HTTP 403 DDoS-Guard, stale metadata остаётся открытой. Результаты/хэши и ограничения: [Stage AB checkpoint](../../docs/checkpoints/2026-11-07-stage-ab-blocker-closure-DONE-LOCAL.md) и [manifest](../../docs/checkpoints/2026-11-07-stage-ab-manifest.json). Только локальное сохранение; push запрещён.
+
 ## 2026-11-07 — Stage Z combined M‑11/M‑4 integration STARTED
 
 Пользователь разрешил один изолированный объединённый кандидат без push/merge/Production. Фактический старт `0dc9560450128f73590c6ca521ef5f176bb62db1` в `/workspace/stage-z-stabilization`; оригинальный Stage Z `40d650a…` и 91-коммитная копия `86fd19b…` сверены и не изменялись. Read-only fetched `origin/handoff/2gis-evidence` at `9c625c4cf5ea89625623fb4ead4bb4980b3e03c6`; branch not merged. В README заявлены 83 manifest files, Stage 8 packet SHA `310d3b70…` и corrected old implementation SHA `136a5a72…`; источники содержат April/November directed matrices, 42 pairs/210 cells, exact `2026-11-02T01:00:00+03:00` effective instant, Nov 3/4 profiles, and exit-PVP selection rule. Эти заявления требуют manifest/source/test verification.
