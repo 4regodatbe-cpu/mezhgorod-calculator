@@ -1,11 +1,11 @@
 # Next steps
 
-## Stage AH — owner/source review required
+## Stage AH — final review and mandatory-gate blocker
 
-1. **Blocked:** obtain the original Order54 PDF bytes through a permitted source (official URL currently returns 403); verify PDF page, tariff columns, payment clause and effective-date clause, then record SHA-256. Do not retry unchanged access or bypass protection; do not invent a hash.
-2. Owner reviews `experiments/tariff-gate-proposal/m1-category-payment-fix.patch`. It is a candidate only: M‑1 Cat I no-transponder 250→230 with regression updates; it is not applied to runtime or active data. Do not apply until the source discrepancy and intended use are accepted.
-3. Owner reviews `experiments/tariff-gate-proposal/product-gate-approval.patch` and `stage-ah-product-evidence-2026-11-07.json`. This product-specific model keeps M‑1 blocked while allowing unrelated proven road products to pass individually; the two aggregate registry rows remain blocked until every in-scope product/payment view is covered.
-4. If approved and source proof is retained, reconcile only the M‑1 product record and rerun the proposal checks. Keep old observation age a warning; invalid/future application date, missing material source, tariff conflict, incomplete product coverage and double-charge risk remain blocking. No runtime, mandatory gate, push or publication without authorization.
+1. **Done locally:** M‑1 Cat-I base 250→230 correction is applied only in the isolated candidate (`data/tolls/...`, experimental `national-registry.json`, focused tests). Official page excerpt and provenance are in `m1-official-news-extract-2026-11-07.json`; its SHA is for the local extract only. Do not claim or invent a SHA for inaccessible Order54 PDF bytes.
+2. Owner reviews `experiments/tariff-gate-proposal/product-gate-approval.patch`, product evidence and source limitation: official page proves passenger base 230 and separates T-pass loyalty price 195.50; formal category and payment-mode binding additionally rely on owner’s visual Order54 reading.
+3. Proposed product gate: 14/14 products PASS, overall PASS_WITH_WARNINGS. **Current mandatory gate still exits 2** because the two aggregate snapshots are 37 days old against the 30-day strict threshold. Do not alter `observedAt` to force PASS.
+4. Owner approval is required before integrating the product-level warning/error policy into mandatory CI or applying the candidate tariff data to active runtime. Keep invalid/future dates, absent material sources, contradictions, incomplete scope and double-charge risk blocking. No push/publication authorized.
 
 ## Stage AG — superseded next evidence step (history)
 

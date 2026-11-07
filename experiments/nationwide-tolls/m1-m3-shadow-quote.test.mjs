@@ -55,10 +55,10 @@ test("test fixture isolation: a deliberately malicious event from a previous tes
 test("M1 no OSM mapping means UNKNOWN, never add an unverified fare in live pricing",()=>{
  const x=audit([]);assert.equal(m1(catalog,x,"2026-10-10T10:00:00+03:00",6000).amountRub,null);
 });
-test("M1 verified physical gate contract yields dated 250-ruble no-transponder component only",()=>{
+test("M1 candidate verified physical gate contract yields dated 230-ruble Cat-I no-transponder component only",()=>{
  const x=audit([{id:"m1-pvp-46",km:46,roadId:"m1",edgeToll:true,osmNodeId:"123456789",fareRowId:"m1-33-66"}]);
  const y=m1(catalog,x,"2026-10-10T10:00:00+03:00",5400);
- assert.equal(y.amountRub,250);assert.equal(y.diagnosticOnly,true);assert.equal(y.kind,"m1_exact_one_gate_component_only");
+ assert.equal(y.amountRub,230);assert.equal(y.diagnosticOnly,true);assert.equal(y.kind,"m1_exact_one_gate_component_only");
 });
 test("M1 false nearby node cannot be billed",()=>{
  const x=audit([{id:"m1-pvp-46",km:46,roadId:"m1",edgeToll:false,osmNodeId:"123456789",fareRowId:"m1-33-66"}]);
@@ -84,7 +84,7 @@ test("M1 operator Order 54 not applicable before 2026-03-02",()=>{
 test("M1 midnight crossing uses a verified departure and keeps source-date guards",()=>{
  const x=audit([{id:"m1-pvp-46",km:46,roadId:"m1",edgeToll:true,osmNodeId:"123456789",fareRowId:"m1-33-66"}]);
  const q=m1(catalog,x,"2026-10-10T23:30:00+03:00",7200);
- assert.equal(q.amountRub,250);assert.equal(q.tariffDate,"2026-10-10");assert.equal(q.diagnosticOnly,true);
+ assert.equal(q.amountRub,230);assert.equal(q.tariffDate,"2026-10-10");assert.equal(q.diagnosticOnly,true);
  assert.equal(m1(catalog,x,"2026-10-11T00:30:00+03:00",7200).amountRub,null);
  assert.equal(m1(catalog,x,"2026-03-01T23:30:00+03:00",7200).amountRub,null);
 });

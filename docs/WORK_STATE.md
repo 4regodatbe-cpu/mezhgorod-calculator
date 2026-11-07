@@ -1,4 +1,12 @@
-# Текущий handoff — Stage AH PARTIAL / M‑1 и обязательный тарифный gate не утверждены (07.11.2026)
+# Текущий handoff — Stage AH M‑1 candidate DONE LOCAL / mandatory CI gate still blocked (07.11.2026)
+
+Продолжение от `0e1a1e1d5e08ba1faaf1b0fbef27581f58d14a2c` в isolated `/workspace/stage-ae-gate-proposal`, branch `codex/stage-ae-gate-proposal`. Официальная страница Автодора [141463](https://russianhighways.ru/press/news/141463/) доступна: M‑1 33–66 км / ПВП46, базовый тариф для легковых 230 ₽, отдельная максимальная T‑pass loyalty цена 195,50 ₽, грузовой 500 ₽, действует с 02.03.2026. PDF Order54 снова недоступен (403); его SHA не заявляется. Сохранена структурированная выписка, SHA выписки `01f746e761b4aeb5d62a2bd26e2604f953a5ed23460175537b1b19288c40e74d`; это не хеш исходной страницы/PDF. Категория I и единая базовая колонка cash/card/listed transponders дополнительно опираются на визуальное чтение владельца.
+
+В изолированной кандидатной копии исправлено M‑1 Cat-I no-transponder 250→230 ₽, обновлены экспериментальный реестр и M‑1 regression expectations; transponder base остаётся 230, лояльностная цена не включена. Это не изменение route geometry или иных тарифных систем. Product gate: 14/14 product PASS, агрегированные `avtodor-other-roads` views PASS, overall `PASS_WITH_WARNINGS`, exit 0/15 warnings. Отдельно неизменённый обязательный freshness gate в strict mode остаётся exit 2: два aggregate snapshot STALE (37d/30d), unknown effective-date metadata 3. Не обновлять `observedAt` задним числом и не ослаблять gate.
+
+Результаты и source caveats: [Stage AH M‑1 follow-up checkpoint](checkpoints/2026-11-07-stage-ah-m1-official-announcement-DONE-LOCAL.md); [source extract](../experiments/tariff-gate-proposal/m1-official-news-extract-2026-11-07.json). Нужно решение владельца по применению продуктового gate и M‑1 correction к обязательному CI/runtime. Push/merge/Production запрещены.
+
+# Предыдущий handoff — Stage AH PARTIAL до официального пресс-релиза (07.11.2026)
 
 Продолжение от `7201d28d410e48d58f1d91bfb4d0b19d50582792`, isolated `/workspace/stage-ae-gate-proposal`, branch `codex/stage-ae-gate-proposal`. Новый product-level evaluator/evidence/test и два review-only patch сохранены в `experiments/tariff-gate-proposal/`. Официальный Order54 PDF URL и web-preview вернули 403; локальных PDF/image bytes нет, SHA не заявляется. Владелец сообщил независимое визуальное чтение: M‑1 PVP46 Cat I–IV = 230/250/320/500 ₽, весь week, одна таблица способов оплаты, effective 02.03.2026. Это делает нынешние M‑1 Cat-I 250 ₽ (no-transponder) вероятной ошибочной привязкой категории, но первичный артефакт не сохранён/не проверен локально.
 

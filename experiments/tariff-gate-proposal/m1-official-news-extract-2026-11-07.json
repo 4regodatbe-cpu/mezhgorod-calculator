@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "official_page_rendered_text_extract",
+  "source": {
+    "url": "https://russianhighways.ru/press/news/141463/",
+    "title": "На М-12 «Восток» вводятся новые абонементы на проезд по участку обхода Нижнекамска и Набережных Челнов",
+    "publisher": "Государственная компания «Российские автомобильные дороги» (Автодор)",
+    "retrievedOn": "2026-11-07",
+    "retrievalMethod": "Official page rendered through web reader; source lines 114–118",
+    "sourcePublicationDate": null,
+    "originalPageBytesAvailable": false,
+    "originalPageSha256": null
+  },
+  "tariffRows": [
+    {
+      "road": "M-1 Belarus",
+      "section": "km 33–66",
+      "pvpKm": 46,
+      "vehicleClassAsPrinted": "passenger cars",
+      "baseTariffRub": 230,
+      "maxTpassLoyaltyDiscountTariffRub": 195.5,
+      "effectiveFrom": "2026-03-02"
+    },
+    {
+      "road": "M-1 Belarus",
+      "section": "km 33–66",
+      "pvpKm": 46,
+      "vehicleClassAsPrinted": "freight vehicles",
+      "baseTariffRub": 500,
+      "maxTpassLoyaltyDiscountTariffRub": 425,
+      "effectiveFrom": "2026-03-02"
+    }
+  ],
+  "interpretation": {
+    "basePassengerTariffIsRub": 230,
+    "loyaltyDiscountIsSeparateFromBase": true,
+    "formalCategoryIMappingBasis": "The official page calls the class passenger cars; the owner reports Order54 visually maps Category I to 230 RUB. The inaccessible PDF bytes are not locally verified or hashed.",
+    "paymentModeBasis": "The page distinguishes standard tariff from the maximum T-pass loyalty discount. Equal base tariff across cash/card/listed transponders is owner-reported from the Order54 visual reading, not independently confirmed from retained PDF bytes.",
+    "limitations": [
+      "This is a structured extract of rendered official-page text, not original HTML bytes or the Order54 PDF.",
+      "No source-byte SHA-256 is available.",
+      "Do not apply 195.50 RUB as the base transponder tariff; it is explicitly the maximum loyalty-discount amount."
+    ]
+  }
+}

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
-import {assessTariffProducts, verifyProductTableEvidence} from '../experiments/tariff-gate-proposal/product-gate.mjs';
+import {assessTariffProducts, verifyProductSource, verifyProductTableEvidence} from '../experiments/tariff-gate-proposal/product-gate.mjs';
 import {evaluateTariffFreshness} from './check-tariff-freshness.mjs';
 
 const readJson = file => JSON.parse(fs.readFileSync(file, 'utf8'));
@@ -20,26 +20,37 @@ test('product evidence records exact source and matrix hashes where bytes are re
       const bytes = fs.readFileSync(row.source.path);
       assert.equal(createHash('sha256').update(bytes).digest('hex'), row.source.sha256, row.id);
     }
+    if (row.source?.sourceKind === 'official_page_rendered_excerpt') {
+      const bytes = fs.readFileSync(row.source.capturePath);
+      assert.equal(createHash('sha256').update(bytes).digest('hex'), row.source.captureSha256, row.id);
+      assert.equal(row.source.originalPageSha256, null);
+      assert.equal(verifyProductSource(row.source), true, row.id);
+    }
     if (row.fareTable?.path) assert.equal(verifyProductTableEvidence(row.fareTable), true, row.id);
   }
   assert.equal(evidence.m1OwnerVisualReading.status, 'OWNER_REPORTED_VISUAL_READ_ORIGINAL_PDF_BYTES_UNAVAILABLE');
   assert.equal(evidence.m1OwnerVisualReading.sha256, null);
 });
 
-test('current product assessment isolates missing M-1 proof; M-3/CKAD/A-289/M-11/M-12 are individually supported', () => {
+test('official release closes M-1 Cat-I base fare; all listed products pass independently', () => {
   const result = assessTariffProducts(report, evidence);
-  assert.equal(result.status, 'BLOCKED');
-  assert.equal(result.exitCode, 2);
-  assert(result.products.filter(row => row.id.startsWith('m1-')).every(row => row.status === 'BLOCKED'));
-  for (const prefix of ['m3-', 'ckad-', 'a289-', 'm11-', 'm12-']) {
+  assert.equal(result.status, 'PASS_WITH_WARNINGS');
+  assert.equal(result.exitCode, 0);
+  assert(result.products.filter(row => row.id.startsWith('m1-')).every(row => row.status === 'PASS'));
+  for (const prefix of ['m1-', 'm3-', 'ckad-', 'a289-', 'm11-', 'm12-']) {
     assert(result.products.filter(row => row.id.startsWith(prefix)).every(row => row.status === 'PASS'), prefix);
   }
-  assert(result.registryAssessments.find(row => row.id.endsWith('category1-transponder')).status === 'BLOCKED');
-  assert(result.registryAssessments.find(row => row.id.endsWith('category1-no-transponder')).status === 'BLOCKED');
+  assert(result.registryAssessments.find(row => row.id.endsWith('category1-transponder')).status === 'PASS');
+  assert(result.registryAssessments.find(row => row.id.endsWith('category1-no-transponder')).status === 'PASS');
   assert(result.registryAssessments.find(row => row.id.startsWith('m11-')).status === 'PASS');
   assert(result.registryAssessments.find(row => row.id.startsWith('m12-')).status === 'PASS');
   assert(result.warnings.some(row => row.code === 'observation_recheck_due'));
   assert(!result.errors.some(row => row.code === 'observation_recheck_due'));
+  assert.equal(evidence.m1OfficialNewsEvidence.status, 'OFFICIAL_PRIMARY_PAGE_CONFIRMS_CATEGORY_I_BASE_FARE');
+  const capture = readJson(evidence.m1OfficialNewsEvidence.extractPath);
+  assert.equal(capture.tariffRows[0].baseTariffRub, 230);
+  assert.equal(capture.tariffRows[0].maxTpassLoyaltyDiscountTariffRub, 195.5);
+  assert.equal(capture.source.originalPageSha256, null);
 });
 
 test('a stale observation is a warning, not a blocker, when product evidence is otherwise complete', () => {

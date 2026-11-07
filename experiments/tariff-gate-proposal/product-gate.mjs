@@ -20,6 +20,19 @@ export function verifyProductTableEvidence(table) {
   } catch { return false; }
 }
 
+export function verifyProductSource(source) {
+  if (source?.sourceKind !== 'official_page_rendered_excerpt') return verifySavedOfficialSource(source);
+  if (source.url !== 'https://russianhighways.ru/press/news/141463/' || source.originalPageSha256 !== null || source.originalPageBytesAvailable !== false) return false;
+  const capture = {officialDocumentReviewed:true, url:source.url, path:source.capturePath, sha256:source.captureSha256};
+  if (!verifySavedOfficialSource(capture)) return false;
+  try {
+    const data = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), source.capturePath), 'utf8'));
+    return data.artifactType === 'official_page_rendered_text_extract' &&
+      data.source?.url === source.url && data.source?.originalPageSha256 === null &&
+      data.tariffRows?.some(row => row.road === 'M-1 Belarus' && row.section === 'km 33–66' && row.pvpKm === 46 && row.vehicleClassAsPrinted === 'passenger cars' && row.baseTariffRub === 230 && row.maxTpassLoyaltyDiscountTariffRub === 195.5 && row.effectiveFrom === '2026-03-02');
+  } catch { return false; }
+}
+
 function hasFareEvidence(row) {
   if (Number.isFinite(row.fareRub) && row.fareRub >= 0) return true;
   if (row.fareByPeriod && Object.values(row.fareByPeriod).length && Object.values(row.fareByPeriod).every(value => Number.isFinite(value) && value >= 0)) return true;
@@ -29,7 +42,7 @@ function hasFareEvidence(row) {
 
 /** Experimental product-level gate. A bad M-1 record blocks that product and
  * its registry payment view, not unrelated M-3/CKAD/A-289 products. */
-export function assessTariffProducts(report, evidence, verifySource = verifySavedOfficialSource) {
+export function assessTariffProducts(report, evidence, verifySource = verifyProductSource) {
   const errors = [], warnings = [], products = [], registryIds = new Set((report?.rows ?? []).map(row => row.id));
   const error = (id, code) => errors.push({id, code});
   if (!Array.isArray(report?.rows) || report.rows.length === 0) error(null, 'registry_empty');
