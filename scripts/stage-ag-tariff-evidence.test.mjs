@@ -80,4 +80,3 @@ test('proposed gate rejects invalid/future evidence dates, missing source, tarif
   assert(assess({contradiction: 'material'}).errors.some((error) => error.code === 'material_or_unresolved_contradiction'));
   assert(assess({doubleChargeRisk: true}).errors.some((error) => error.code === 'double_charge_risk_unresolved'));
 });
-
