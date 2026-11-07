@@ -45,4 +45,4 @@ Owner review required before applying either proposal: (1) provide or accept a r
 
 ## Durable state
 
-Work to be committed locally on the current isolated branch. Bundle verification/readback will be recorded after the local commit. Push remains forbidden.
+Local implementation/evidence/docs commit: `52255191d086f72df124c99f033517f75c9e2a9e` (parent is Stage AG HEAD `7201d28d410e48d58f1d91bfb4d0b19d50582792`). After this checkpoint closure, an incremental bundle will be regenerated for the final HEAD at `/workspace/stage-ah-tariff-gate-2026-11-07.bundle`; the bundle requires prerequisite `8fae15c7e5b81ef55492f2b009cbe665e5fdc0fb`. SHA-256 is supplied in the final handoff. `git bundle verify` and committed file readback must pass. Push remains forbidden.
