@@ -1,13 +1,18 @@
 # Next steps
 
-## Final V3 release — BLOCKED until owner-approved gate resolution
+## Final V3 release — owner authorization active; local gates PASS, hosted checks pending
 
-1. Review the exact product-level policy/gate proposal at `experiments/tariff-gate-proposal/product-gate-approval.patch` alongside `experiments/tariff-gate-proposal/stage-ah-product-evidence-2026-11-07.json`. The current mandatory strict gate still exits 2 for two stale aggregate rows (37d/30d) and three unknown effective-date metadata. Do not edit `observedAt`, extend the threshold, or apply the proposal to required CI without explicit approval.
-2. After the gate decision, run the unchanged mandatory gate or the explicitly approved exact patch and its negative tests. Required invariant: missing material evidence, invalid/future dates, conflicting tariffs, incomplete applicable scope and double-charge risk remain errors; unknown remains fail-closed.
-3. The bounded local live route audit on candidate SHA `cf8dde540156ce9bef649ef88453f0195b366bae` got six HTTP 502 responses; all three route providers were classified network failure with HTTP null. Do not repeat in this sandbox. Once a releasable exact candidate is permitted, rely on the hosted final gate diagnostics to determine whether this was environment egress or an upstream/provider failure.
-4. Only if all mandatory local gates and the exact-SHA hosted Actions/Preview acceptance pass, continue with the already authorized single ordinary fast-forward push, readback, Vercel Preview and controlled Production release. Current remote feature head is `8fae15c7e5b81ef55492f2b009cbe665e5fdc0fb`; recheck immediately before any write. PR #14 remains Draft; never merge/main/Android/V2 changes.
+1. Create the final local commit and verified bundle from the current isolated candidate. Confirm clean diff scope: product gate/evidence tests/docs/workflow only; no tariff runtime, main, Android, V2, or production files.
+2. Immediately before publication re-read GitHub feature-branch HEAD and confirm it equals `8fae15c7e5b81ef55492f2b009cbe665e5fdc0fb` and is the direct ancestor of candidate. Push once normally (non-force); stop if ancestry differs or branch protection rejects it.
+3. Verify GitHub readback and PR #14 remains Draft. Wait for all Actions on exact SHA; inspect the final-gate tariff step, offline tests, TS/lint/build/API smoke and V3 live-route report/artifact. Local live provider 502/network-null is not a substitute for hosted diagnostics.
+4. Inspect exact-SHA Vercel Preview readiness and run address, representative route, duration, toll/unknown and V2-preservation checks. A P0/P1 or failed required CI blocks Production.
+5. If exact-SHA Actions and Preview are successful, no P0/P1 is found, and V2 remains intact, use the already authorized standard Production release mechanism. Then confirm `/api/version`, `/v3`, API smoke/read-only route behavior, and retain Production SHA/deployment ID. Do not touch main/Android/reserve refs or merge PR #14.
+
+Gate behavior and evidence are recorded in [Stage AI checkpoint](checkpoints/2026-11-07-stage-ai-product-gate-applied-DONE-LOCAL.md). Historical Stage AH/AA–AD entries below are preserved, not active blockers.
 
 See the current [WORK_STATE](WORK_STATE.md) and [Final V3 release BLOCKED checkpoint](checkpoints/2026-11-07-final-v3-release-BLOCKED-LOCAL.md).
+
+## Historical records below — current Stage AI authorization supersedes old blockers
 
 ## Stage AH — final review and mandatory-gate blocker
 

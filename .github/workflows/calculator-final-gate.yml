@@ -120,6 +120,7 @@ jobs:
         continue-on-error: true
         env:
           TARIFF_STALE_STRICT: '1'
+          TARIFF_PRODUCT_EVIDENCE: experiments/tariff-gate-proposal/stage-ah-product-evidence-2026-11-07.json
         run: node scripts/check-tariff-freshness.mjs
       - name: Final aggregate gate
         if: always()

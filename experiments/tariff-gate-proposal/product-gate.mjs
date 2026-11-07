@@ -48,6 +48,7 @@ export function assessTariffProducts(report, evidence, verifySource = verifyProd
   if (!Array.isArray(report?.rows) || report.rows.length === 0) error(null, 'registry_empty');
   if (evidence?.schemaVersion !== 1 || !Array.isArray(evidence.products)) error(null, 'product_evidence_missing_or_invalid');
   const rows = Array.isArray(evidence?.products) ? evidence.products : [];
+  const reviewedEditions = new Map((Array.isArray(evidence?.reviewedEditions) ? evidence.reviewedEditions : []).map(item => [item.edition, item]));
   const productKeys = new Set(), seenRegistry = new Set();
   for (const row of report?.rows ?? []) {
     if (row.status === 'STALE') warnings.push({id:row.id, code:'observation_recheck_due'});
@@ -72,6 +73,15 @@ export function assessTariffProducts(report, evidence, verifySource = verifyProd
     if (effective == null) fail('effective_date_unproven_or_invalid');
     else if (effective > report.asOf) fail('tariff_not_yet_effective');
     if (!verifySource(row.source)) fail('official_source_missing_or_unverified');
+    const reviewedEdition = reviewedEditions.get(row.edition);
+    if (!reviewedEdition) fail('reviewed_edition_binding_missing');
+    else {
+      const sourceHash = row.source?.sha256 ?? row.source?.captureSha256;
+      if (!Array.isArray(reviewedEdition.categories) || !reviewedEdition.categories.includes(row.category)) fail('vehicle_category_source_mismatch');
+      if (day(reviewedEdition.effectiveFrom) == null || day(row.effectiveFrom) !== day(reviewedEdition.effectiveFrom)) fail('effective_date_source_mismatch');
+      if (!Array.isArray(reviewedEdition.sourceSha256s) || !reviewedEdition.sourceSha256s.includes(sourceHash)) fail('reviewed_edition_source_mismatch');
+      if (row.source?.sourceKind === 'official_page_rendered_excerpt' && Number.isFinite(reviewedEdition.categoryIFareRub) && row.category === 'I' && row.fareRub !== reviewedEdition.categoryIFareRub) fail('official_fare_source_mismatch');
+    }
     if (row.source?.sourceKind === 'official_page_rendered_excerpt' && row.source.originalPageBytesAvailable === false) warnings.push({id:row.id, code:'original_source_bytes_unavailable'});
     if (row.fareKnown !== true || !hasFareEvidence(row)) fail('official_fare_unproven');
     if (row.coverageComplete !== true) fail('product_coverage_incomplete');

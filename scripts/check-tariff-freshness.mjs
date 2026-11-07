@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import { pathToFileURL } from "node:url";
+import { assessTariffProducts } from "../experiments/tariff-gate-proposal/product-gate.mjs";
 
 const DAY_MS = 86_400_000;
 
@@ -68,7 +69,14 @@ function run() {
     console.log(`${row.status}\t${row.id}\tage=${row.ageDays ?? "UNKNOWN"}d\tthreshold=${row.staleAfterDays}d\teffectiveFromStatus=${row.effectiveDateStatus}\teffectiveFrom=${row.effectiveFrom ?? "UNKNOWN"}`);
   }
   console.log(`SUMMARY asOf=${report.asOf} snapshots=${report.rows.length} stale=${report.stale} invalid=${report.invalid} effectiveDateUnknown=${report.effectiveDateUnknown}`);
-  process.exitCode = freshnessExitCode(report);
+  let evidence;
+  try {
+    if (process.env.TARIFF_PRODUCT_EVIDENCE) evidence = JSON.parse(fs.readFileSync(process.env.TARIFF_PRODUCT_EVIDENCE, "utf8"));
+  } catch { /* Missing or malformed evidence must fail closed in strict mode. */ }
+  const assessment = assessTariffProducts(report, evidence);
+  for (const warning of assessment.warnings) console.warn(`WARNING\t${warning.id}\t${warning.code}`);
+  for (const error of assessment.errors) console.error(`ERROR\t${error.id ?? "registry"}\t${error.code}`);
+  process.exitCode = process.env.TARIFF_STALE_STRICT === "1" ? assessment.exitCode : 0;
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) run();

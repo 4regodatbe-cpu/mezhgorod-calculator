@@ -31,6 +31,7 @@ test("workflow calls only scripts available in the checkout and keeps V2 checks 
   assert.match(workflow, /Current V3 live route audit/);
   assert.match(workflow, /id: v3_live\n\s*continue-on-error: true/);
   assert.match(workflow, /id: tariff_freshness\n\s*continue-on-error: true/);
+  assert.match(workflow, /TARIFF_PRODUCT_EVIDENCE:\s*experiments\/tariff-gate-proposal\/stage-ah-product-evidence-2026-11-07\.json/);
   assert.match(workflow, /name: Final aggregate gate[\s\S]*LIVE_OUTCOME[\s\S]*FRESHNESS_OUTCOME/);
   assert.doesNotMatch(workflow, /scripts\/(?:segment3-free-truth|live-user-route-audit|route-monitor)\.mjs/);
   assert.match(workflow, /pnpm test:route-benchmark/);

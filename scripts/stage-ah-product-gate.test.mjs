@@ -57,32 +57,30 @@ test('official release closes M-1 Cat-I base fare; all listed products pass inde
 
 test('a stale observation is a warning, not a blocker, when product evidence is otherwise complete', () => {
   const complete = clone(evidence);
-  for (const row of complete.products) {
-    if (!row.id.startsWith('m1-')) continue;
-    row.source = {officialDocumentReviewed:true, url:evidence.m1OwnerVisualReading.officialUrl, testSource:true};
-    row.fareKnown = true;
-    row.coverageComplete = true;
-    row.paymentBinding = {status:'verified', basis:'Synthetic evaluator control only; not retained-source evidence.'};
-    row.contradiction = 'none';
-    row.doubleChargeRisk = false;
-  }
-  const result = assessTariffProducts(report, complete, source => source?.testSource === true || Boolean(source?.path));
+  for (const row of complete.products) if (row.id.startsWith('m1-')) row.observedAt = '2026-09-01';
+  const result = assessTariffProducts(report, complete);
   assert.equal(result.status, 'PASS_WITH_WARNINGS');
   assert.equal(result.exitCode, 0);
   assert(result.warnings.some(row => row.code === 'observation_recheck_due'));
   assert.equal(result.errors.length, 0);
 });
 
-test('invalid/future effective date, missing official source, unresolved fare conflict and double-charge risk block the affected product', () => {
+test('invalid and source-mismatched dates, category or fare, missing source, conflict and double-charge risk block product', () => {
   const base = m1('m1-33-66|order54|I|noTransponder');
   const evaluate = changes => {
-    const fixture = {schemaVersion:1, products:[{...clone(base), ...changes}]};
+    const synthetic = clone(base);
+    const digest = 'a'.repeat(64);
+    synthetic.source = {sourceKind:'official_page_rendered_excerpt', testSource:true, captureSha256:digest};
+    const fixture = {schemaVersion:1, reviewedEditions:[{edition:base.edition, categories:['I'], effectiveFrom:'2026-03-02', categoryIFareRub:230, sourceSha256s:[digest]}], products:[{...synthetic, ...changes}]};
     const syntheticReport = {asOf:'2026-11-07', rows:[{id:base.registryId, status:'FRESH', effectiveDateStatus:'KNOWN'}]};
     return assessTariffProducts(syntheticReport, fixture, source => source?.testSource === true);
   };
   for (const [changes, expected] of [
     [{effectiveFrom:'not-a-date'}, 'effective_date_unproven_or_invalid'],
     [{effectiveFrom:'2026-12-01'}, 'tariff_not_yet_effective'],
+    [{effectiveFrom:'2026-03-01'}, 'effective_date_source_mismatch'],
+    [{category:'II'}, 'vehicle_category_source_mismatch'],
+    [{fareRub:250}, 'official_fare_source_mismatch'],
     [{source:null}, 'official_source_missing_or_unverified'],
     [{contradiction:'material'}, 'material_or_unresolved_contradiction'],
     [{doubleChargeRisk:true}, 'double_charge_risk_unresolved'],
@@ -92,6 +90,20 @@ test('invalid/future effective date, missing official source, unresolved fare co
     assert.equal(result.status, 'BLOCKED');
     assert(result.errors.some(row => row.code === expected), expected);
   }
+});
+
+test('reviewed evidence is edition- and source-bound; an unlisted experimental product does not enter release scope', () => {
+  const complete = clone(evidence);
+  const activeIds = new Set(complete.products.map(row => row.id));
+  complete.products = complete.products.filter(row => activeIds.has(row.id));
+  complete.experimentalProducts = [{id:'unused-experimental-product', releaseScope:'experimental'}];
+  const result = assessTariffProducts(report, complete);
+  assert.equal(result.exitCode, 0);
+  const altered = clone(evidence);
+  altered.reviewedEditions.find(row => row.edition === 'Order54 2026-02-27').sourceSha256s = ['0'.repeat(64)];
+  const blocked = assessTariffProducts(report, altered);
+  assert.equal(blocked.status, 'BLOCKED');
+  assert(blocked.errors.some(row => row.code === 'reviewed_edition_source_mismatch'));
 });
 
 test('malformed null product evidence is reported rather than crashing the assessor', () => {

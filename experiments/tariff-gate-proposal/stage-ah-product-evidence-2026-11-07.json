@@ -1,6 +1,14 @@
 {
   "schemaVersion": 1,
   "preparedOn": "2026-11-07",
+  "reviewedEditions": [
+    {"edition":"Order54 2026-02-27","categories":["I"],"effectiveFrom":"2026-03-02","categoryIFareRub":230,"sourceSha256s":["01f746e761b4aeb5d62a2bd26e2604f953a5ed23460175537b1b19288c40e74d"]},
+    {"edition":"Order53 2026-02-27","categories":["I"],"effectiveFrom":"2026-03-02","sourceSha256s":["d5344fd6bb54329466c5236e3d1657a14dd87ca8c3eddf2529276fbe1fa9d3a3"]},
+    {"edition":"Order56 2026-02-27","categories":["I"],"effectiveFrom":"2026-03-02","sourceSha256s":["839488fed07f8e611b5304498f22d49626ff0dc7529df67734a2052a49bea3e7"]},
+    {"edition":"Order55 2026-02-27","categories":["I"],"effectiveFrom":"2026-03-02","sourceSha256s":["da558d538e5a9e2ef8d36d46e0aec69c43b987f81c10d2186733a19aaca933bd"]},
+    {"edition":"Order274 2026-09-03","categories":["I"],"effectiveFrom":"2026-09-04","sourceSha256s":["6b52ca130ee7e8a7948c2b39982c00d82174e4e45ec5dcd3983355238c403b91"]},
+    {"edition":"Order302 2026-10-02","categories":["I"],"effectiveFrom":"2026-10-08","sourceSha256s":["25226467bed5d36691085e03ce706e49bb15b6e67607d0ebd4df420a9b07d213"]}
+  ],
   "m1OwnerVisualReading": {
     "status": "OWNER_REPORTED_VISUAL_READ_ORIGINAL_PDF_BYTES_UNAVAILABLE",
     "officialUrl": "https://avtodor-tr.ru/upload/iblock/8c4/835txjvncev45htfd0x1ws6fjq1wjckl.pdf",

@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {assessTariffGate,verifySavedOfficialSource} from '../experiments/tariff-gate-proposal/gate.mjs';
+import {assessTariffProducts} from '../experiments/tariff-gate-proposal/product-gate.mjs';
 import {evaluateTariffFreshness,freshnessExitCode} from './check-tariff-freshness.mjs';
 const report={asOf:'2026-11-07',rows:[{id:'synthetic',status:'STALE',effectiveFrom:null,effectiveDateStatus:'UNKNOWN'}]};
 const entry={id:'synthetic',source:{},fareKnown:true,versionBasis:'latest_available_official_document',coverageComplete:true,applicability:{status:'accepted_working_calculation',basis:'Synthetic owner-accepted latest edition; exact legal date unknown'},contradiction:'none',productBinding:'accepted_working_calculation',doubleChargeRisk:false};
@@ -28,10 +29,15 @@ test('source verifier checks real saved bytes; fixture is not certified as an ac
  assert.equal(verifySavedOfficialSource(source),true);
  for(const change of [{sha256:'0'.repeat(64)},{officialDocumentReviewed:false},{path:'/etc/passwd'},{path:'missing-source'}])assert.equal(verifySavedOfficialSource({...source,...change}),false);
 });
-test('real registry still has current mandatory stale blockers; absent source assessment stays blocked',()=>{
+test('mandatory product gate accepts evidenced active products with stale/fact-date warnings; absent evidence stays blocked',()=>{
  const real=evaluateTariffFreshness(fs.readFileSync('lib/toll-engine/tariff-registry.ts','utf8'),'2026-11-07');
  assert.equal(real.stale,2);assert.equal(freshnessExitCode(real,true),2);
- assert.equal(assessTariffGate(real,undefined).exitCode,2);
+ const productEvidence=JSON.parse(fs.readFileSync('experiments/tariff-gate-proposal/stage-ah-product-evidence-2026-11-07.json','utf8'));
+ const assessment=assessTariffProducts(real,productEvidence);
+ assert.equal(assessment.exitCode,0);assert.equal(assessment.status,'PASS_WITH_WARNINGS');
+ assert(assessment.warnings.some(row=>row.code==='observation_recheck_due'));
+ assert(assessment.warnings.some(row=>row.code==='effective_date_not_established'));
+ assert.equal(assessTariffProducts(real,undefined).exitCode,2);
 });
 test('prepared Avtodor rows verify only retained primary PDFs and stay blocked on the missing M1 artifact',()=>{
  const evidence=JSON.parse(fs.readFileSync('experiments/tariff-gate-proposal/avtodor-other-roads-evidence-2026-11-07.json','utf8'));
