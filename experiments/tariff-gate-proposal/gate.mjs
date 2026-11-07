@@ -3,6 +3,17 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 
+function evidenceDateDay(value) {
+  if (typeof value !== 'string') return null;
+  const match = /^(\d{4}-\d{2}-\d{2})(?:T(.+))?$/.exec(value);
+  if (!match) return null;
+  const day = match[1];
+  const parsedDay = Date.parse(`${day}T00:00:00Z`);
+  if (!Number.isFinite(parsedDay) || new Date(parsedDay).toISOString().slice(0, 10) !== day) return null;
+  if (match[2] && !Number.isFinite(Date.parse(value))) return null;
+  return day;
+}
+
 export function verifySavedOfficialSource(source) {
   try {
     if (!source || source.officialDocumentReviewed !== true || !/^https:\/\//.test(source.url ?? '') || !/^[a-f0-9]{64}$/.test(source.sha256 ?? '')) return false;
@@ -38,7 +49,16 @@ export function assessTariffGate(report, evidence, verifySource = verifySavedOff
     // Aggregated snapshots must account for every road/system in their declared scope.
     if (entry.coverageComplete !== true) error(row.id, 'official_source_coverage_incomplete');
     // Unknown legal effectiveFrom is not an automatic refusal of an accepted working model.
-    if (!['verified','accepted_working_calculation'].includes(entry.applicability?.status) || !entry.applicability?.basis?.trim()) error(row.id, 'application_date_unproven_or_wrong');
+    const applicationStatus = entry.applicability?.status;
+    const evidenceEffectiveFrom = entry.applicability?.effectiveFrom;
+    if (!['verified','accepted_working_calculation'].includes(applicationStatus) || !entry.applicability?.basis?.trim()) error(row.id, 'application_date_unproven_or_wrong');
+    if (evidenceEffectiveFrom != null) {
+      const effectiveDay = evidenceDateDay(evidenceEffectiveFrom);
+      if (effectiveDay == null) error(row.id, 'invalid_evidence_effective_date');
+      else if (report.asOf && effectiveDay > report.asOf) error(row.id, 'tariff_not_yet_effective');
+    } else if (applicationStatus === 'verified') {
+      error(row.id, 'application_date_unproven_or_wrong');
+    }
     if (entry.contradiction !== 'none') error(row.id, 'material_or_unresolved_contradiction');
     if (!['verified','accepted_working_calculation'].includes(entry.productBinding)) error(row.id, 'product_binding_unproven');
     if (entry.doubleChargeRisk !== false) error(row.id, 'double_charge_risk_unresolved');

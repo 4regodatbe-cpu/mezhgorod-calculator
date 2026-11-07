@@ -1,10 +1,13 @@
 # Next steps
 
-## Stage AF — next evidence step
+## Stage AG — next evidence step
 
-1. Recover the official M‑1 Order54 PDF from its already recorded URL `https://avtodor-tr.ru/upload/iblock/8c4/835txjvncev45htfd0x1ws6fjq1wjckl.pdf`, or preserve a byte-exact original official tariff-page response. Verify the M‑1 33–66 category-I fare, payment basis and effective clause; do not alter the observation date just because it is old.
-2. Prepare reviewed M‑11 and M‑12 rows from retained official files. M‑11 source: `experiments/nationwide-tolls/source-snapshots/m11/2026-09-04-avtodor-order274-current.pdf` plus `experiments/nationwide-tolls/source-snapshots/m11/2026-10-12-58-679-category1-a1-current.json`; M‑12 source: `experiments/nationwide-tolls/source-documents/m12-order302-effective-2026-10-08.pdf` plus `experiments/nationwide-tolls/source-snapshots/m12-order302-2026-10-08-category1-direct-pair-matrix.json`. The proposed strict contract needs exactly one evidence record per all four registry IDs; the two other-roads records cannot make it pass alone.
-3. Keep the two aggregate records blocked until primary-source coverage is complete. Then present `experiments/tariff-gate-proposal/approval.patch` and the reviewed evidence package for owner approval. Do not apply it to mandatory CI before approval.
+1. **Blocked:** obtain the exact official Order54 PDF bytes via an allowed source. Its saved official URL returned HTTP403 anti-bot once; do not retry/bypass. Verify PVP46 table headings, Cat I–IV 230/250/320/500, period/payment clause and effective 2026-03-02. Reconcile the conflict with the AF-derived M‑1 interpretation; never change `observedAt` to hide age.
+2. Re-evaluate the two aggregate records after Order54 verification; add a saved source path/SHA, source-backed category and payment mapping for M‑1, mark complete only if all four declared road systems and both payment views are covered. Keep transponder/no-transponder alternatives non-additive.
+3. Review the Stage AG M‑11/M‑12 evidence and its noted M‑11 stale metadata caveat. The proposed strict evaluator currently accepts their saved document/date/matrix rows; it does not certify an individual route crossing or complete journey price.
+4. The combined temporary strict run should be repeated only after M‑1 is resolved. Then present the unchanged `experiments/tariff-gate-proposal/approval.patch` and complete evidence package for owner approval. Do not apply it to mandatory CI before approval.
+
+## Stage AF — historical next evidence step
 
 ## Stage AE — superseded by Stage AF (historical next-step record)
 
