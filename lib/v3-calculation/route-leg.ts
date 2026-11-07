@@ -8,19 +8,25 @@ import { selectFreeRoute, tollsForApi } from "../v2-calculation/free-route-selec
 import { calculateLegTolls } from "./route-leg-pricing";
 import { selectFastestRoute } from "@/experiments/nationwide-tolls/fastest-route-policy.mjs";
 import type { CalculationTiming, CalculationStage } from "@/lib/calculation-timing";
+import { routingFailure, type RoutingAttempt } from "../routing-attempt";
 
 export async function calculateLeg(from: Located, to: Located, departureAt?: string, diagnostics = false, positions?: Array<{ lat:number; lng:number }>, fastestOnly = false, timing?: CalculationTiming, signal?: AbortSignal) {
   signal?.throwIfAborted();
   const measure = <T>(stage: CalculationStage, operation: () => Promise<T>) => timing ? timing.measure(stage, operation) : operation();
   const rejectedStretchProviders = new Map<string, number>();
+  const started = performance.now();
+  const elapsed: number[] = [];
+  const observed = async <T>(index: number, operation: () => Promise<T>) => {
+    const at = performance.now();
+    try { return await operation(); } finally { elapsed[index] = performance.now() - at; }
+  };
   const rawResults = await measure("routing", () => Promise.allSettled([
-    measure("provider_valhalla", () => valhalla(from, to, 1, positions, 0, signal)),
+    observed(0, () => measure("provider_valhalla", () => valhalla(from, to, 1, positions, 0, signal))),
     fastestOnly ? Promise.reject(new Error("FASTEST_ONLY_SKIP_BYPASS")) : valhalla(from, to, 1, positions, 900, signal), // V2-only payment-point bypass candidate.
     fastestOnly ? Promise.reject(new Error("FASTEST_ONLY_SKIP_BYPASS")) : valhalla(from, to, 1, positions, 1_200, signal), // V2-only partial M-4 bypass candidate.
-    measure("provider_osrm", () => osrmRoute(from, to, positions, signal)),
-    measure("provider_brouter", () => brouterFast(from, to, positions, signal)),
+    observed(3, () => measure("provider_osrm", () => osrmRoute(from, to, positions, signal))),
+    observed(4, () => measure("provider_brouter", () => brouterFast(from, to, positions, signal))),
   ]));
-  signal?.throwIfAborted();
   const resultNames = ["Valhalla", "Valhalla 900s bypass", "Valhalla 1,200s bypass", "OSRM", "BRouter"];
   const [fastResult, valhallaModerateAvoidResult, valhallaPartialTollResult, osrmResult, brouterFastResult] = rawResults.map((result, index) => {
     if (result.status === "rejected") return result;
@@ -39,6 +45,19 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     } catch(reason) { return {status:"rejected" as const,reason}; }
   });
 
+  const validated = [fastResult, valhallaModerateAvoidResult, valhallaPartialTollResult, osrmResult, brouterFastResult];
+  const attempts: RoutingAttempt[] = validated.flatMap((result, index) => {
+    if (fastestOnly && (index === 1 || index === 2)) return [];
+    const raw = rawResults[index];
+    return [{ provider: resultNames[index], kind: index === 1 || index === 2 ? "bypass" : "primary",
+      status: result.status === "fulfilled" ? "accepted" : "rejected",
+      ...(result.status === "rejected" ? routingFailure(result.reason) : { failure: null, httpStatus: 200 }),
+      elapsedMs: Math.round(elapsed[index] ?? performance.now() - started), geometryUsable: raw.status === "fulfilled",
+      validator: raw.status === "rejected" ? "not_run" : result.status === "fulfilled" ? "accepted" : "rejected", selected: false }];
+  });
+  attempts.forEach(attempt => timing?.recordRoutingAttempt(attempt));
+  signal?.throwIfAborted();
+
   const routeCandidates = [
     ...(fastResult.status === "fulfilled" ? [{ name: "Valhalla", route: fastResult.value }] : []),
     ...(valhallaModerateAvoidResult.status === "fulfilled" ? [{ name: "Valhalla local routing candidate", route: valhallaModerateAvoidResult.value }] : []),
@@ -46,6 +65,12 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     ...(osrmResult.status === "fulfilled" ? [{ name: "OSRM", route: osrmResult.value }] : []),
     ...(brouterFastResult.status === "fulfilled" ? [{ name: "BRouter", route: brouterFastResult.value }] : []),
   ];
+  if (!routeCandidates.length) {
+    if (attempts.every(attempt => attempt.failure === "no_route")) throw new Error("ROUTE_NOT_FOUND");
+    if (attempts.every(attempt => attempt.failure === "timeout")) throw new Error("ROUTE_TIMEOUT");
+    if (attempts.every(attempt => attempt.failure === "corridor_rejected")) throw new Error("ROUTE_CORRIDOR_UNCONFIRMED");
+    throw new Error("ROUTE_UNAVAILABLE");
+  }
   const selectedFast = fastestOnly
     ? (() => {
         const winner = selectFastestRoute(routeCandidates.map((candidate) => ({
@@ -76,6 +101,8 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     providers: [...new Set([...selectedFast.quality.providers, ...rejectedStretchProviders.keys()])],
     message: `Отклонены чрезмерно длинные контрольные плечи: ${[...rejectedStretchProviders].map(([name, ratio]) => `${name} (${ratio.toFixed(1)}×)`).join(", ")}. Проверьте выбранный маршрут перед поездкой`,
   } : selectedFast.quality;
+  const selectedAttempt = attempts.find(attempt => attempt.provider === selectedFast.provider);
+  if (selectedAttempt) selectedAttempt.selected = true;
 
   // Keep pricing evidence attached to the exact candidate chosen by the fastest-only selector.
   // Provider labels alone are insufficient: there are multiple Valhalla candidates with different geometry.

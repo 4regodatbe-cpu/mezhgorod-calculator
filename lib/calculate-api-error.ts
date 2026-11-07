@@ -12,6 +12,8 @@ const KNOWN_ERRORS: Record<string, CalculationApiError> = {
   SPECIAL_TRANSIT_EXCLUDED: { category: "user_input", status: 400, message: "Маршрут проходит через особую тарифную зону и исключён." },
   GEOCODE_UNAVAILABLE: { category: "upstream", status: 502, message: "Поиск адресов временно недоступен." },
   ROUTE_UNAVAILABLE: { category: "upstream", status: 502, message: "Сервис маршрутов временно недоступен. Попробуйте позже." },
+  ROUTE_TIMEOUT: { category: "upstream", status: 502, message: "Превышено время ожидания маршрута. Повторите расчёт позже." },
+  ROUTE_CORRIDOR_UNCONFIRMED: { category: "upstream", status: 502, message: "Не удалось подтвердить обязательное направление маршрута. Попробуйте позже." },
   PREFERRED_ROUTE_UNAVAILABLE: { category: "upstream", status: 502, message: "Не удалось построить маршрут выбранного направления. Попробуйте позже." },
   MAINLAND_UNAVAILABLE: { category: "upstream", status: 502, message: "Не удалось выполнить расчёт." },
 };

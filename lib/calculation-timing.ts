@@ -1,4 +1,5 @@
 import switches from "../data/toll-feature-switches.json";
+import type { RoutingAttempt } from "./routing-attempt";
 
 const STAGES = ["request_body", "geocoding", "special_options", "route_leg", "routing", "provider_valhalla",
   "provider_osrm", "provider_brouter", "toll_matching", "toll_pricing", "response_pricing"] as const;
@@ -7,6 +8,7 @@ type StageTiming = { stage: CalculationStage; calls: number; errors: number; tot
 export type CalculationTimingSummary = {
   status: number; handlerElapsedMs: number | null; targetMs: number; overTarget: boolean | null;
   stages: StageTiming[]; stops: string[];
+  routingAttempts?: RoutingAttempt[];
 };
 const round = (n: number) => Math.round(n * 1000) / 1000;
 
@@ -18,6 +20,7 @@ export function createCalculationTiming({ enabled = switches.calculationTiming, 
   } = {}) {
   const rows = new Map<CalculationStage, StageTiming>();
   const stops = new Set<string>();
+  const routingAttempts: RoutingAttempt[] = [];
   let finished: { header: string | null; summary: CalculationTimingSummary } | null = null;
   function read(): number | null {
     try { const n = clock(); if (Number.isFinite(n)) return n; } catch { /* Optional timing cannot break a calculation. */ }
@@ -58,12 +61,12 @@ export function createCalculationTiming({ enabled = switches.calculationTiming, 
     });
     const summary: CalculationTimingSummary = { status, handlerElapsedMs: elapsed === null ? null : round(elapsed),
       targetMs: target, overTarget: elapsed === null || stops.has("timing_clock_unavailable") ? null : elapsed > target,
-      stages, stops: [...stops] };
+      stages, stops: [...stops], ...(routingAttempts.length ? { routingAttempts: routingAttempts.map(row => ({ ...row })) } : {}) };
     const parts = [...(elapsed === null ? [] : [`calc_total;dur=${round(elapsed)}`]), ...stages.map(row => `${row.stage};dur=${row.totalMs}`)];
     finished = { summary, header: parts.length ? parts.join(", ") : null };
     try { logger(summary); } catch { summary.stops.push("timing_log_unavailable"); }
     return finished;
   }
-  return { enabled, measure, measureSync, finish };
+  return { enabled, measure, measureSync, finish, recordRoutingAttempt: (attempt: RoutingAttempt) => { if (enabled && !finished) routingAttempts.push(attempt); } };
 }
 export type CalculationTiming = ReturnType<typeof createCalculationTiming>;

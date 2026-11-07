@@ -1,4 +1,5 @@
 import type { Coordinate } from "./tolls";
+import { RoutingProviderError } from "./routing-attempt";
 
 export function hasValidProviderRouteGeometry(value: unknown): value is Coordinate[] {
   return Array.isArray(value)
@@ -16,5 +17,5 @@ export function hasValidProviderRouteGeometry(value: unknown): value is Coordina
 }
 
 export function requireProviderRouteGeometry(value: unknown): asserts value is Coordinate[] {
-  if (!hasValidProviderRouteGeometry(value)) throw new Error("ROUTE_UNAVAILABLE");
+  if (!hasValidProviderRouteGeometry(value)) throw new RoutingProviderError("insufficient_geometry");
 }

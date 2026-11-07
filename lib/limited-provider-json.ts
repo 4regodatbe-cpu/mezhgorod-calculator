@@ -33,8 +33,8 @@ export async function readLimitedProviderJson<T>(response: Response, limitBytes 
       offset += chunk.byteLength;
     }
     return JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(bytes)) as T;
-  } catch {
-    throw new Error("ROUTE_UNAVAILABLE");
+  } catch (cause) {
+    throw new Error("ROUTE_UNAVAILABLE", { cause });
   } finally {
     reader.releaseLock();
   }

@@ -1,4 +1,5 @@
 import {deriveM12FromOsrm} from "@/lib/toll-engine/m12-osrm-span";
+import { routingFetch, RoutingProviderError } from "./routing-attempt";
 import { safeRoutePositions } from "@/lib/safe-route";
 import { roadBoundariesFromOsrm, roadBoundariesFromValhalla, type RoadBoundaryResolution } from "@/lib/toll-engine/road-boundaries";
 import type { Coordinate } from "@/lib/tolls";
@@ -96,7 +97,7 @@ export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, posi
       : { directions_type: "none" }),
   };
   url.searchParams.set("json", JSON.stringify(query));
-  const response = await fetch(url, {
+  const response = await routingFetch(url, {
     headers: { Accept: "application/json", "User-Agent": "MezhgorodCalc/2.0" },
     cache: "force-cache",
     next: { revalidate: 21_600 },
@@ -110,7 +111,7 @@ export async function valhalla(from: Located, to: Located, useTolls: 0 | 1, posi
     };
   }>(response);
   const summary = data.trip?.summary;
-  if (!summary?.length || !summary.time) throw new Error("ROUTE_NOT_FOUND");
+  if (!summary?.length || !summary.time) throw new RoutingProviderError("invalid_response", 200, "ROUTE_NOT_FOUND");
   const decodedLegs = (data.trip?.legs ?? []).map((item) => ({
     coordinates: item.shape ? decodePolyline(item.shape) : [],
     maneuvers: item.maneuvers,
@@ -140,7 +141,7 @@ async function brouterRoute(from: Located, to: Located, avoidTolls: boolean, pos
   if (avoidTolls) url.searchParams.set("profile:avoid_toll", "1");
   url.searchParams.set("alternativeidx", "0");
   url.searchParams.set("format", "geojson");
-  const response = await fetch(url, {
+  const response = await routingFetch(url, {
     headers: { Accept: "application/geo+json", "User-Agent": "MezhgorodCalc/2.0" },
     cache: "force-cache",
     next: { revalidate: 21_600 },
@@ -157,7 +158,7 @@ async function brouterRoute(from: Located, to: Located, avoidTolls: boolean, pos
   const properties = feature?.properties;
   const meters = Number(properties?.["track-length"]);
   const seconds = Number(properties?.["total-time"]);
-  if (!Number.isFinite(meters) || !Number.isFinite(seconds) || meters <= 0 || seconds <= 0) throw new Error("ROUTE_NOT_FOUND");
+  if (!Number.isFinite(meters) || !Number.isFinite(seconds) || meters <= 0 || seconds <= 0) throw new RoutingProviderError("invalid_response", 200, "ROUTE_NOT_FOUND");
   const coordinates = feature?.geometry?.coordinates;
   requireProviderRouteGeometry(coordinates);
   return { meters: Math.round(meters), seconds: Math.round(seconds), coordinates };
@@ -177,16 +178,17 @@ export async function osrmRoute(from: Located, to: Located, positions = safeRout
   url.searchParams.set("overview", "full");
   url.searchParams.set("steps", "true");
   url.searchParams.set("geometries", "geojson");
-  const response = await fetch(url, {
+  const response = await routingFetch(url, {
     headers: { Accept: "application/json", "User-Agent": "MezhgorodCalc/2.0" },
     cache: "force-cache",
     next: { revalidate: 21_600 },
     signal: providerSignal(callerSignal),
   });
   if (!response.ok) throw new Error("ROUTE_UNAVAILABLE");
-  const data = await readLimitedProviderJson<{ routes?: Array<{ distance?: number; duration?: number; geometry?: { coordinates?: Coordinate[] }; legs?: Array<{ distance?: number; duration?: number; steps?: M11OsrmStep[] }> }> }>(response);
+  const data = await readLimitedProviderJson<{ code?: string; routes?: Array<{ distance?: number; duration?: number; geometry?: { coordinates?: Coordinate[] }; legs?: Array<{ distance?: number; duration?: number; steps?: M11OsrmStep[] }> }> }>(response);
+  if (data.code === "NoRoute") throw new RoutingProviderError("no_route", 200, "ROUTE_NOT_FOUND");
   const route = data.routes?.[0];
-  if (!route?.distance || !route.duration) throw new Error("ROUTE_NOT_FOUND");
+  if (!route?.distance || !route.duration) throw new RoutingProviderError("invalid_response", 200, "ROUTE_NOT_FOUND");
   const coordinates = route.geometry?.coordinates;
   requireProviderRouteGeometry(coordinates);
   const m12 = deriveM12FromOsrm(route.legs ?? [], route.geometry?.coordinates ?? []);
