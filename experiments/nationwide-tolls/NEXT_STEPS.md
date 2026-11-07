@@ -1,22 +1,22 @@
-# STAGE Z combined M‑11/M‑4 — IN PROGRESS, local only
+# STAGE Z combined M‑11/M‑4 — IMPLEMENTED; FULL OFFLINE GATE BLOCKED, local only
 
-Candidate start HEAD `0dc9560450128f73590c6ca521ef5f176bb62db1`, branch/worktree `/workspace/stage-z-stabilization` / `codex/stage-z-stabilization`; prior stabilization is complete and committed, new integration is not yet implemented. Original Stage Z worktree and main local 91-commit tree are untouched. No push/merge/Production/Preview/main/Android/V2 change. Handoff ref is fetched read-only at `9c625c4cf5ea89625623fb4ead4bb4980b3e03c6`.
+Candidate start HEAD `0dc9560450128f73590c6ca521ef5f176bb62db1`, final implementation before final documentation save `7d9310d8a131b1191b0f91d1b6b48e5296af762f`, branch/worktree `/workspace/stage-z-stabilization` / `codex/stage-z-stabilization`; M‑11 integration is implemented and targeted suites pass. Original Stage Z worktree and main local 91-commit tree are untouched. No push/merge/Production/Preview/main/Android/V2 change. Handoff ref is fetched read-only at `9c625c4cf5ea89625623fb4ead4bb4980b3e03c6`.
 
 **Current progress (2026-11-07):**
 
 - M‑11 handoff verified: manifest 83/83, checksums 84/84, six source tests pass; details in `docs/checkpoints/2026-11-07-stage-z-handoff-evidence-DONE.md`.
 - M‑11 15–58 dated adapter implemented. Historical April and current November matrices remain separate, selection is exact to the Moscow effective instant, direction, and supported tariff profile. Unsupported point pairs remain unknown. Actual exit-PVP time is not available, so returned amounts remain departure-time estimates and explicitly state the operator's exit-time rule.
 - New adapter tests 6/6 PASS; saved M‑11 boundary suites 7/7 PASS; existing M‑11/CKAD adapter suites 2/2 PASS; M‑11 matrix composition tests check unique split products and fail closed on duplicate/legacy overlap.
-- Next: M‑4/combined API regressions, then static/type/lint/build/full offline gate. No push/publication.
+- M‑4/combined API regressions, TypeScript, ESLint, Webpack build and quote/API checks passed. Full offline equivalent is 192/195; three sandbox subprocess failures remain, and `pnpm test:audit` cannot initialize its store outside the writable sandbox. Exact statuses: [final gate checkpoint](../../docs/checkpoints/2026-11-07-stage-z-final-gates-BLOCKED.md).
 
 **Next actions, in order:**
 
 1. DONE: handoff license/data-use notes reviewed; `MANIFEST.json` 83/83, `SHA256SUMS` 84/84, Stage 8 packet hash verified, six source/evidence tests PASS. Historical implementation SHA metadata conflicts with the packet README and the old object is unavailable; no historical patch applied. Details: `docs/checkpoints/2026-11-07-stage-z-handoff-evidence-DONE.md`.
 2. DONE: current V3 head lookup uses preserved April and verified November editions, exact directed pair/profile. Unsupported pair returns null. Source/model and tests are in `checks/2026-11-07-stage-z-m11-m4/README.md`.
-3. Confirm no reliable predicted PVP exit time exists. If only departure instant is available, treat the output explicitly as a departure-time estimate; around the 2026-11-02 01:00 boundary where output could represent different edition, return unknown if the supported policy cannot choose safely. Add exact ±1-second tests; do not claim exact operator charge time.
-4. DONE (M‑11 minimum): saved route-boundary tests, official tariff-profile tests, unsupported-boundary unknowns and duplicate/legacy-overlap composition guards pass. NEXT: verify M‑4 62/71, selected trace, A‑289, multi-road API and unknown/null contracts without editing M‑4 data.
-5. NEXT: run six source/evidence tests again with the final candidate, M‑11/M‑4/composition targets, full offline gate, TypeScript, ESLint and Webpack build. Record actual results; do not weaken tests or repeat known sandbox subprocess failures unchanged. No Production browser repeat.
-6. Then save final local commit, update state/log/NEXT_STEPS/checkpoints and a verified bundle. Push remains forbidden; unpublished commits cannot receive GitHub Actions results.
+3. DONE: no reliable predicted PVP exit time exists in the current runtime. Output remains explicitly a departure-time estimate; do not claim exact operator charge time. Exact boundary and special-day tests pass.
+4. DONE: M‑11 minimum and M‑4 62/71, selected trace, A‑289, multi-road API, unknown/null contracts and composition guards verified without changing route geometry.
+5. DONE: six source/evidence tests 6/6; M‑11/M‑4/composition 14/14; API/estimate/unknown/render 8/8; adapter 6/6; boundaries 7/7; legacy adapter 2/2; quote/API PASS; TypeScript, ESLint and Webpack build PASS. Full offline 192/195 with three environment-related subprocess failures. Do not weaken tests or repeat unchanged sandbox failures.
+6. NEXT: run the full required gates on this exact committed SHA in the existing GitHub Actions runner after a separately authorized ordinary fast-forward push. Compare the published SHA/readback and inspect all required jobs; do not infer remote verification from local results. Push is currently forbidden.
 
 Historical Stage X/Y/Stage W sections below are preserved; Stage W's intermediate tariff interpretation remains superseded for correctness.
 
