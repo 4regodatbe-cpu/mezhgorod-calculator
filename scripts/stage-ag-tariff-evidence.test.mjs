@@ -22,7 +22,6 @@ test('Stage AG records M1 owner claim without certifying unavailable Order 54 by
     assert.equal(row.roadCoverage.find((road) => road.road === 'm1-33-66').status, 'MISSING_PRIMARY_ARTIFACT');
   }
 });
-
 test('M11 source and current matrix metadata provide complete direct-pair coverage for Cat I', () => {
   const ag = readJson('experiments/tariff-gate-proposal/stage-ag-evidence-2026-11-07.json');
   const row = ag.rows.find((entry) => entry.id.startsWith('m11-'));
