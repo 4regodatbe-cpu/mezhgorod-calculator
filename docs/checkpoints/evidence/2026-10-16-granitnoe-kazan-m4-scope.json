@@ -1,0 +1,132 @@
+{
+  "observedAt": "2026-10-16T08:26:49.720Z",
+  "caseId": "dnr-гранитное-kazan-center",
+  "provider": "Valhalla",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/2026-10-15T12-00-00-440Z-capture.json.gz",
+  "captureSha256": "5c49cbd71433f7200538a5a4526d81f009375d49fce4445546151a8152cb19b9",
+  "trace": {
+    "callIndex": 4,
+    "requestKey": "7c8af97339520fd064e1d90ed7e29387b2b36ef7e3f4426820defa8bee63db63",
+    "status": 200,
+    "requestPointCount": 320,
+    "responseEdgeCount": 236,
+    "responseShapePresent": false,
+    "edges": [
+      {
+        "edgeIndex": 138,
+        "wayId": "1182567076",
+        "toll": true,
+        "beginShapeIndex": 737,
+        "endShapeIndex": 739,
+        "endNodeId": "10981360743",
+        "endNodeType": "street_intersection"
+      },
+      {
+        "edgeIndex": 139,
+        "wayId": "31984600",
+        "toll": true,
+        "beginShapeIndex": 739,
+        "endShapeIndex": 746,
+        "endNodeId": "2339659032",
+        "endNodeType": "street_intersection"
+      }
+    ],
+    "warning": "Trace output shape indices are NOT indices into 320 request points or the full selected route; output shape omitted by current filters."
+  },
+  "primaryWays": [
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/1182567076/full.json",
+      "path": "docs/checkpoints/evidence/2026-10-16-osm-way-1182567076.json",
+      "sha256": "bc5ba367c011758bd680f08fb5f376c12c4b92d3015adf192be7ec5dcb602b25",
+      "version": 2,
+      "timestamp": "2026-02-04T13:33:33Z",
+      "toll": "yes",
+      "oneway": "yes",
+      "approxLengthKm": 0.24635479955845663,
+      "selectedVertexIndices": [
+        1877,
+        1879
+      ],
+      "from": [
+        39.9708171,
+        47.5105556
+      ],
+      "to": [
+        39.9708084,
+        47.512775
+      ]
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/31984600/full.json",
+      "path": "docs/checkpoints/evidence/2026-10-16-osm-way-31984600.json",
+      "sha256": "1b01792ac4e52e009e12a0b216999961dd076250c77141ccac03a38b2d2306f2",
+      "version": 68,
+      "timestamp": "2026-02-04T13:33:33Z",
+      "toll": "yes",
+      "oneway": "yes",
+      "approxLengthKm": 1.7200414162639102,
+      "selectedVertexIndices": [
+        1879,
+        1886
+      ],
+      "from": [
+        39.9708084,
+        47.512775
+      ],
+      "to": [
+        39.9700242,
+        47.5282521
+      ]
+    }
+  ],
+  "geometry": {
+    "approxTotalPaidLengthKm": 1.966396215822367,
+    "maxEndpointToSelectedVertexMeters": 0.0451,
+    "method": "Local equirectangular 111km/degree; approximate lengths and nearest route vertices, not payment applicability proof.",
+    "selectedManeuver": {
+      "instruction": "Сверните на съезде.",
+      "streetNames": [
+        "М-4",
+        "E 50",
+        "E 115",
+        "«Дон»"
+      ],
+      "lengthKm": 25.395,
+      "begin": 1745,
+      "end": 1914,
+      "from": [
+        39.838698,
+        47.378414
+      ],
+      "to": [
+        39.967851,
+        47.566445
+      ]
+    }
+  },
+  "physicalEvidence": {
+    "traceComplete": true,
+    "boothEventCoverage": "complete",
+    "tollBoothCount": 0,
+    "knownM4CandidateCount": 0,
+    "nearestSavedPlaza": {
+      "km": 1046,
+      "approxNearestVertexKm": 8.6380454318762,
+      "vertexIndex": 1766,
+      "coordinate": [
+        39.845385,
+        47.377528
+      ]
+    },
+    "warning": "No known PVP crossing does not alone establish independently confirmed zero fare."
+  },
+  "operatorEvidence": {
+    "attemptedUrl": "https://avtodor-tr.ru/transponder/abonementy/",
+    "directOpenStatus": 403,
+    "searchSnippetOnly": "Official indexed page associates section1024–1091km with PVP1046; no exact selected subsegment zero-fare applicability established.",
+    "acceptedForNewFareOrFreeClaim": false
+  },
+  "result": "source_gated_unknown_preserved",
+  "runtimeChange": false,
+  "next": "Defer this same-scope fare/free decision pending independent operator collection applicability; continue next m4:unpriced case separately."
+}

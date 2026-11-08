@@ -1,0 +1,7 @@
+# Сводка после Бахмут→Казань
+
+DONE2026-10-16: audit-evidence-availability.py exit0 и build-systemic-audit-report.mjs exit0. Stdout evidence/2026-10-16-report-inventory.log. Availability:43raw captures в41OD, повреждённых0;40OD имеют четыре файла, Лисичанск→Москва original summary по-прежнему утрачен. REPORT:41distinct attempts/40полных auditable summaries, traceComplete40/parity40.55исторических missing references остаются в старых manifests; это не55новых отсутствующих captures. Stage1=9/155. Parent remote0d35069719a0a54130ef88c24b1bab54d5b1b42e.
+
+Важно: findings m4_crossing_profile_changes25 относятся к старым results до departure-policy; текущая реализация их убирает, но нет25новых повторов и нельзя объявлять25актуальных дефектов или25подтверждённых исправлений. Новый Бахмут→Казань полон/850/850 и не имеет этого finding.
+
+STARTED следующий один case dnr-бахмут-kerch-center через single-case batch runner, limit1. Один неделимый маршрут включает live capture + same-date/weekend replays, сохраняемые runner в файлы; после него отдельный checkpoint/commit/GitHub/readback до следующего case. Тарифы departure15.10/17.10, координаты/политика из corpus, разрешение Valhalla/OSRM/BRouter текущего чата действует. Стандартный stdout evidence/2026-10-16-bakhmut-kerch-batch.log. После case обновить report/inventory в том же checkpoint. Fullgate658PASS не повторяется без изменений кода. Main/merge/Production/Android не разрешены.

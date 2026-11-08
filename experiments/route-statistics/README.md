@@ -1,0 +1,17 @@
+# Route statistics repair candidate — 2026-11-08
+
+Status: LOCAL CANDIDATE; the actual deployed Apps Script has NOT been read in this session and this file must not be pasted over it until its current content is compared. Production V3 remains at b2b34d24440c018d887ada5db60d5f0062443b79. The existing `google-apps-script/Code.gs` in the repo is an older source and is not evidence of the deployed script.
+
+## Root cause
+The previously installed script, as recorded in the user's prior conversation, expects `durationMin` and a migration marker, but the released `/api/collect` does not forward duration. Existing route sheet has 15 populated headers A:O: H Version, I route type, J:M fares, N:O toll amounts. Prior proposed migrations targeting H or I are incompatible; DO NOT RUN them. V3 also skips sending routes if any fare is unknown. Feedback/visits currently work; preserve and test them before rollout.
+
+## Candidate
+`Code.gs` derives from the previously supplied full script saved in Library file `libfile_9c794a4bfc148191959a1766f77628e0`, not a read of the live deployment. It replaces route write logic only with strict exact A:O header matching, appends new 15-column rows without altering existing headers/data, retains feedback/visits implementation from that historical script, and reports saved confirmation. There is no duration migration. Unknown fares stay blank; duration stays numeric in E; no existing columns are repurposed. The website candidate forwards duration and version with the existing coarse route fields without modifying route/tariff computation; it records calculations with unknown fares and keeps analytics non-blocking. City/region extraction continues to omit street/house details; this does not add raw search-query logging.
+
+## Verification
+`node --import ./scripts/register-ts-paths.mjs --test experiments/route-statistics/route-statistics.test.mjs`: 7 PASS. `eslint app/api/collect/route.ts app/v3/components/use-v3-calculation.ts experiments/route-statistics/route-statistics.test.mjs`: exit 0. `node --check < experiments/route-statistics/Code.gs`: exit 0. These are local mock tests, not deployment or Google execution.
+
+## Deployment prerequisite
+Obtain exact live `Code.gs` and current deployment identity from the owner-authorized Apps Script environment, compare feedback, visit and authentication behavior and current H:O. Merge route fix into the actual live script; retain the existing deployment URL and token. Test against a disposable test spreadsheet and script before production use. Safest rollout is compatible Apps Script first, then publish the web candidate and verify an explicitly marked route followed by feedback, visit and unknown-fare behavior. Do not expose tokens or URLs. The owner requested a fix but did not explicitly request production deployment in this turn; ask for direct publication instruction after candidate and checks are ready. Do not touch historical rows; no manual migration functions.
+
+Final full local `npm run build` after moving the existing dependencies into the isolated worktree: 1184 PASS / 0 FAIL / 1 SKIP, standard Next.js Turbopack compilation and static pages 16/16 PASS. `tsc --noEmit` and scoped ESLint PASS. An earlier test fixture was corrected to return the newly required `{ok:true,saved:true}` for routes; its no-street/no-toll telemetry assertions remain. Test wrapper `scripts/route-statistics.test.mjs` integrates all seven candidate tests into the normal `test:audit` suite.

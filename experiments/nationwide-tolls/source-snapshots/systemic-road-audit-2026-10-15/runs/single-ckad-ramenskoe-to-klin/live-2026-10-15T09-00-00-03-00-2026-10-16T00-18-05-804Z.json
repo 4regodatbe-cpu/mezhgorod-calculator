@@ -1,0 +1,171 @@
+{
+  "caseId": "single-ckad-ramenskoe-to-klin",
+  "mode": "live",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 202911,
+      "seconds": 8514
+    },
+    {
+      "name": "OSRM",
+      "meters": 156844,
+      "seconds": 7624
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 156844,
+  "routeSeconds": 7624,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 38.225,
+          "lat": 55.568
+        },
+        {
+          "lng": 36.727,
+          "lat": 56.333
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "ckad"
+    ],
+    "provenRoads": [
+      "m11"
+    ],
+    "missingExpectedRoads": [
+      "ckad"
+    ],
+    "status": "expected-road-not-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "1198418227",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "186659709",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "249866646",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-booth-name",
+      "osmNodeId": "7171625012"
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "m11": {
+      "occurrences": 120,
+      "uniqueWays": 86
+    }
+  },
+  "replayIntegrity": null,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/2026-10-16T00-18-05-785Z-capture.json.gz",
+  "captureSha256": "7e51c29bed351d8f5b24dfd4630802d84a04152e5703d677b8edb1e68c297d14",
+  "detectedRoadComponents": [
+    {
+      "id": "m11-58-679",
+      "amount": null,
+      "reason": "only_one_verified_boundary_crossing"
+    },
+    {
+      "id": "unknown-paid-road",
+      "amount": null,
+      "reason": "unmapped_selected_route_paid_booth"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-11",
+    "«Нева»"
+  ],
+  "tollNodeIds": [
+    "7171625012",
+    "5709360884"
+  ],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m11-58-679, unknown-paid-road",
+      "m11-58-679: only_one_verified_boundary_crossing",
+      "unknown-paid-road: unmapped_selected_route_paid_booth"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [],
+    "missing": [
+      "m11-58-679",
+      "unknown-paid-road"
+    ],
+    "components": [
+      {
+        "id": "m11-58-679",
+        "detected": true,
+        "tolls": null,
+        "reason": "only_one_verified_boundary_crossing"
+      },
+      {
+        "id": "unknown-paid-road",
+        "detected": true,
+        "tolls": null,
+        "reason": "unmapped_selected_route_paid_booth"
+      }
+    ]
+  }
+}

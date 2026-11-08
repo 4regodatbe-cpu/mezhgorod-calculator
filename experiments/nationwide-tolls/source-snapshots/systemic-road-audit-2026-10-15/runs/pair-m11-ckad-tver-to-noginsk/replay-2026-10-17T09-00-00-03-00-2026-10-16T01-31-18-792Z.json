@@ -1,0 +1,189 @@
+{
+  "caseId": "pair-m11-ckad-tver-to-noginsk",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-17T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-17T09:00:00+03:00"
+  },
+  "provider": "Valhalla",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 244004,
+      "seconds": 10000
+    },
+    {
+      "name": "OSRM",
+      "meters": 244371,
+      "seconds": 11157
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 244004,
+  "routeSeconds": 10000,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 35.9176,
+          "lat": 56.8587
+        },
+        {
+          "lng": 38.442,
+          "lat": 55.854
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "m11",
+      "ckad"
+    ],
+    "provenRoads": [
+      "m11",
+      "ckad"
+    ],
+    "missingExpectedRoads": [],
+    "status": "traversal-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "1307036914",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "734735086",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "734735085",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "ckad",
+      "kind": "selected-booth-name",
+      "osmNodeId": "8087316064"
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "m11": {
+      "occurrences": 102,
+      "uniqueWays": 83
+    }
+  },
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-tver-to-noginsk/2026-10-16T01-31-18-037Z-capture.json.gz",
+  "captureSha256": "891ee5ad4fb654412d9b9530a6c0e8d0e1e8fa0016e20b3923d63fd0951568ca",
+  "detectedRoadComponents": [
+    {
+      "id": "m11-58-679",
+      "amount": null,
+      "reason": "only_one_verified_boundary_crossing"
+    },
+    {
+      "id": "ckad",
+      "amount": null,
+      "reason": "ckad_east_arc_not_proven"
+    },
+    {
+      "id": "unknown-paid-road",
+      "amount": null,
+      "reason": "unmapped_selected_route_paid_booth"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-11",
+    "«Нева»",
+    "А-113",
+    "Центральная кольцевая автомобильная дорога"
+  ],
+  "tollNodeIds": [
+    "6588472832",
+    "8087316064"
+  ],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "пятница–воскресенье",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m11-58-679, ckad, unknown-paid-road",
+      "m11-58-679: only_one_verified_boundary_crossing",
+      "ckad: ckad_east_arc_not_proven",
+      "unknown-paid-road: unmapped_selected_route_paid_booth"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [],
+    "missing": [
+      "m11-58-679",
+      "ckad",
+      "unknown-paid-road"
+    ],
+    "components": [
+      {
+        "id": "m11-58-679",
+        "detected": true,
+        "tolls": null,
+        "reason": "only_one_verified_boundary_crossing"
+      },
+      {
+        "id": "ckad",
+        "detected": true,
+        "tolls": null,
+        "reason": "ckad_east_arc_not_proven"
+      },
+      {
+        "id": "unknown-paid-road",
+        "detected": true,
+        "tolls": null,
+        "reason": "unmapped_selected_route_paid_booth"
+      }
+    ]
+  }
+}

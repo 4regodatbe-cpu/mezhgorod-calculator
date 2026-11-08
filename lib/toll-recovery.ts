@@ -65,9 +65,9 @@ function pathDistance(route: Coordinate[], fromIndex: number, toIndex: number) {
   return total;
 }
 
-function matches(route: Coordinate[], segment: RecoverySegment) {
-  const startIndex = nearestIndex(route, segment.start);
-  const endIndex = nearestIndex(route, segment.end);
+function matches(route: Coordinate[], segment: RecoverySegment, nearest: (point: Coordinate) => number) {
+  const startIndex = nearest(segment.start);
+  const endIndex = nearest(segment.end);
   if (startIndex < 0 || endIndex < 0 || startIndex === endIndex) return false;
 
   const direct = distanceKm(segment.start, segment.end);
@@ -88,11 +88,11 @@ function longestRun(indexes: number[]) {
   return best;
 }
 
-function recoverRoad(route: Coordinate[], road: RecoveryRoad, mapMatched: boolean, routeDifferenceConfirmed: boolean) {
+function recoverRoad(route: Coordinate[], road: RecoveryRoad, mapMatched: boolean, routeDifferenceConfirmed: boolean, nearest: (point: Coordinate) => number) {
   const matchedIndexes: number[] = [];
   const matched: RecoverySegment[] = [];
   road.segments.forEach((segment, index) => {
-    if (matches(route, segment)) {
+    if (matches(route, segment, nearest)) {
       matchedIndexes.push(index);
       matched.push(segment);
     }
@@ -114,10 +114,25 @@ export function recoverCorridorTolls(
 ): RecoveredTolls | null {
   if (route.length < 3) return null;
   const dense = densify(route);
-  const mapMatched = validation.status === "toll";
+  // Adjacent recovery sections share endpoints. Cache only within this call:
+  // another route must always perform its own nearest-point search.
+  const nearestByPoint = new Map<string, number>();
+  const nearest = (point: Coordinate) => {
+    const key = `${point[0]},${point[1]}`;
+    const cached = nearestByPoint.get(key);
+    if (cached !== undefined) return cached;
+    const index = nearestIndex(dense, point);
+    nearestByPoint.set(key, index);
+    return index;
+  };
+  // Only a complete toll trace may select the more permissive recovery run.
+  // A partial/legacy result remains diagnostic evidence, never a full match.
+  const mapMatched = validation.status === "toll"
+    && validation.complete === true
+    && validation.boothEventCoverage === "complete";
 
   const candidates = ROADS
-    .map((road) => recoverRoad(dense, road, mapMatched, routeDifferenceConfirmed))
+    .map((road) => recoverRoad(dense, road, mapMatched, routeDifferenceConfirmed, nearest))
     .filter((candidate): candidate is NonNullable<typeof candidate> => Boolean(candidate))
     .sort((a, b) => b.run - a.run || b.matched.length - a.matched.length);
 
@@ -132,7 +147,11 @@ export function recoverCorridorTolls(
   const validDate = Number.isNaN(date.getTime()) ? new Date() : date;
   const day = validDate.getDay();
   const weekend = day === 0 || day === 5 || day === 6;
-  const evidence = mapMatched ? "map matching + геометрия" : "геометрия + сравнение маршрутов";
+  const evidence = mapMatched
+    ? "полный map matching + геометрия"
+    : validation.status === "toll"
+      ? "геометрия (trace не подтверждена как полная; строгий порог восстановления)"
+      : "геометрия + сравнение маршрутов";
 
   return {
     amount: weekend ? weekendAmount : weekdayAmount,

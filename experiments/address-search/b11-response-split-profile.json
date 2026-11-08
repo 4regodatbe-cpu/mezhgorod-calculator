@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "node": "v24.19.0",
+  "source": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-moscow-center/2026-10-15T22-34-03-156Z-capture.json.gz",
+  "sourceSha256": "8b168610a9b6e899b6ca4074e64cfbea2f52bc6ccafddc09f63c28716df2f630",
+  "providerBodySha256": "962cffab6aee5287ffb2c4e87599c3364b23668403572f0dfba78b9aabce85bf",
+  "geometrySha256": "383e326dbd1187be5b30a80d20fc05d488ea00ad5820edbcdb6cd0e0671d7b48",
+  "coordinateCount": 9046,
+  "boundaryFileSha256": "2c61b01d9ee8b938cd8f3baee1efcd6f27043f6479ab7b3ac05a63586d935ea9",
+  "networkRequests": 0,
+  "samples": [
+    {
+      "baselineMs": 1792.800736,
+      "candidateMs": 869.0934049999996
+    },
+    {
+      "candidateMs": 864.2404309999997,
+      "baselineMs": 1736.761356
+    },
+    {
+      "baselineMs": 1748.9634890000007,
+      "candidateMs": 1141.2417719999994
+    }
+  ],
+  "baselineMedianMs": 1748.9634890000007,
+  "candidateMedianMs": 869.0934049999996,
+  "medianSavedMs": 879.870084000001,
+  "analysisCallsPerCandidate": {
+    "before": 2,
+    "proposed": 1
+  },
+  "resultSha256": "2459249c83886e00c114638ae9de25df2593c796bc017c2b65d12be433d763ac",
+  "resultParity": "MATCH",
+  "runtimeChanged": false,
+  "limitations": [
+    "one historical geometry, not current route selection or pricing",
+    "three paired samples are descriptive, not an SLA",
+    "proposed reuse not deployed or integrated",
+    "no direct attribution of historical server elapsed time to these CPU samples"
+  ]
+}

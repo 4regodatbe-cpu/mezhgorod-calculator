@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (3964113 spike-06.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="510600342" visible="true" version="1" changeset="2652869" timestamp="2009-09-27T14:46:18Z" user="Bowser" uid="24363" lat="55.4921714" lon="43.5864515"/>
+ <node id="510600343" visible="true" version="1" changeset="2652869" timestamp="2009-09-27T14:46:18Z" user="Bowser" uid="24363" lat="55.4914797" lon="43.5874283"/>
+ <node id="510600344" visible="true" version="1" changeset="2652869" timestamp="2009-09-27T14:46:19Z" user="Bowser" uid="24363" lat="55.4907376" lon="43.5880277"/>
+ <node id="510600345" visible="true" version="1" changeset="2652869" timestamp="2009-09-27T14:46:19Z" user="Bowser" uid="24363" lat="55.4825186" lon="43.5920483"/>
+ <node id="510600346" visible="true" version="1" changeset="2652869" timestamp="2009-09-27T14:46:19Z" user="Bowser" uid="24363" lat="55.4823374" lon="43.5922614"/>
+ <node id="510600347" visible="true" version="1" changeset="2652869" timestamp="2009-09-27T14:46:19Z" user="Bowser" uid="24363" lat="55.4822066" lon="43.5928120"/>
+ <node id="510600349" visible="true" version="2" changeset="141041270" timestamp="2023-09-09T21:54:08Z" user="म्यापर" uid="17365610" lat="55.4818649" lon="43.5959492"/>
+ <node id="510600350" visible="true" version="1" changeset="2652869" timestamp="2009-09-27T14:46:19Z" user="Bowser" uid="24363" lat="55.4816028" lon="43.5965771"/>
+ <node id="510600351" visible="true" version="2" changeset="141041270" timestamp="2023-09-09T21:54:08Z" user="म्यापर" uid="17365610" lat="55.4809401" lon="43.5968973"/>
+ <node id="510600353" visible="true" version="2" changeset="127914586" timestamp="2022-10-22T09:31:56Z" user="freeExec" uid="499800" lat="55.4738066" lon="43.5987604"/>
+ <node id="2665467911" visible="true" version="2" changeset="141041270" timestamp="2023-09-09T21:54:08Z" user="म्यापर" uid="17365610" lat="55.4817211" lon="43.5964294"/>
+ <node id="5728630970" visible="true" version="1" changeset="60282388" timestamp="2018-06-29T15:22:23Z" user="Silver Ghost" uid="158067" lat="55.4916237" lon="43.5872249"/>
+ <node id="10090995838" visible="true" version="4" changeset="187636398" timestamp="2026-08-18T12:24:15Z" user="osm1osm1osm1" uid="24410149" lat="55.4981795" lon="43.5658384"/>
+ <node id="10120508730" visible="true" version="1" changeset="127914586" timestamp="2022-10-22T09:31:56Z" user="freeExec" uid="499800" lat="55.4758346" lon="43.5982400"/>
+ <node id="10120508731" visible="true" version="1" changeset="127914586" timestamp="2022-10-22T09:31:56Z" user="freeExec" uid="499800" lat="55.4740909" lon="43.5987228"/>
+ <node id="11179562738" visible="true" version="2" changeset="141805855" timestamp="2023-09-27T07:53:35Z" user="Dmitriy Nikolin" uid="20137446" lat="55.4982080" lon="43.5692996"/>
+ <node id="11179562739" visible="true" version="2" changeset="141805855" timestamp="2023-09-27T07:53:35Z" user="Dmitriy Nikolin" uid="20137446" lat="55.4981938" lon="43.5682046"/>
+ <node id="11179562762" visible="true" version="1" changeset="141041270" timestamp="2023-09-09T21:54:08Z" user="म्यापर" uid="17365610" lat="55.4820742" lon="43.5943545"/>
+ <node id="11179562763" visible="true" version="1" changeset="141041270" timestamp="2023-09-09T21:54:08Z" user="म्यापर" uid="17365610" lat="55.4814623" lon="43.5966680"/>
+ <node id="11179562768" visible="true" version="1" changeset="141041270" timestamp="2023-09-09T21:54:08Z" user="म्यापर" uid="17365610" lat="55.4736299" lon="43.5987435"/>
+ <node id="11179562779" visible="true" version="1" changeset="141041270" timestamp="2023-09-09T21:54:08Z" user="म्यापर" uid="17365610" lat="55.4751196" lon="43.5984380"/>
+ <node id="11221977624" visible="true" version="1" changeset="141805855" timestamp="2023-09-27T07:53:35Z" user="Dmitriy Nikolin" uid="20137446" lat="55.4979830" lon="43.5710408"/>
+ <node id="11221977625" visible="true" version="1" changeset="141805855" timestamp="2023-09-27T07:53:35Z" user="Dmitriy Nikolin" uid="20137446" lat="55.4981583" lon="43.5700830"/>
+ <node id="11221977626" visible="true" version="1" changeset="141805855" timestamp="2023-09-27T07:53:35Z" user="Dmitriy Nikolin" uid="20137446" lat="55.4974627" lon="43.5725870"/>
+ <node id="11221977627" visible="true" version="1" changeset="141805855" timestamp="2023-09-27T07:53:35Z" user="Dmitriy Nikolin" uid="20137446" lat="55.4968461" lon="43.5741438"/>
+ <node id="13442331532" visible="true" version="1" changeset="177020281" timestamp="2026-01-09T10:49:35Z" user="Corsa5" uid="7731115" lat="55.4817800" lon="43.5962327">
+  <tag k="bus" v="yes"/>
+  <tag k="public_transport" v="stop_position"/>
+ </node>
+ <node id="14099003553" visible="true" version="1" changeset="187536438" timestamp="2026-08-16T13:39:24Z" user="osm1osm1osm1" uid="24410149" lat="55.4824068" lon="43.5921798"/>
+ <node id="14107601599" visible="true" version="1" changeset="187747916" timestamp="2026-08-20T14:30:43Z" user="osm1osm1osm1" uid="24410149" lat="55.4737153" lon="43.5987517"/>
+ <way id="1206479738" visible="true" version="5" changeset="187747916" timestamp="2026-08-20T14:30:43Z" user="osm1osm1osm1" uid="24410149">
+  <nd ref="10090995838"/>
+  <nd ref="11179562739"/>
+  <nd ref="11179562738"/>
+  <nd ref="11221977625"/>
+  <nd ref="11221977624"/>
+  <nd ref="11221977626"/>
+  <nd ref="11221977627"/>
+  <nd ref="510600342"/>
+  <nd ref="5728630970"/>
+  <nd ref="510600343"/>
+  <nd ref="510600344"/>
+  <nd ref="510600345"/>
+  <nd ref="14099003553"/>
+  <nd ref="510600346"/>
+  <nd ref="510600347"/>
+  <nd ref="11179562762"/>
+  <nd ref="510600349"/>
+  <nd ref="13442331532"/>
+  <nd ref="2665467911"/>
+  <nd ref="510600350"/>
+  <nd ref="11179562763"/>
+  <nd ref="510600351"/>
+  <nd ref="10120508730"/>
+  <nd ref="11179562779"/>
+  <nd ref="10120508731"/>
+  <nd ref="510600353"/>
+  <nd ref="14107601599"/>
+  <nd ref="11179562768"/>
+  <tag k="highway" v="tertiary"/>
+  <tag k="lanes" v="2"/>
+  <tag k="maxspeed" v="90"/>
+  <tag k="ref" v="22Н-0239"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+</osm>

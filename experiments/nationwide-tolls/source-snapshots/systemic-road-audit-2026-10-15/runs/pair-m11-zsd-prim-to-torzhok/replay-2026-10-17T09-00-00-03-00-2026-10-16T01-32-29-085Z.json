@@ -1,0 +1,224 @@
+{
+  "caseId": "pair-m11-zsd-prim-to-torzhok",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-17T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-17T09:00:00+03:00"
+  },
+  "provider": "Valhalla",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 491847,
+      "seconds": 16578
+    },
+    {
+      "name": "OSRM",
+      "meters": 478358,
+      "seconds": 21098
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 491847,
+  "routeSeconds": 16578,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        {
+          "lng": 34.962,
+          "lat": 57.041
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "m11",
+      "zsd"
+    ],
+    "provenRoads": [
+      "zsd",
+      "m11"
+    ],
+    "missingExpectedRoads": [],
+    "status": "traversal-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "zsd",
+      "kind": "selected-paid-edge",
+      "wayId": "944399839",
+      "names": [
+        "ЗСД"
+      ]
+    },
+    {
+      "road": "zsd",
+      "kind": "selected-paid-edge",
+      "wayId": "493643653",
+      "names": [
+        "ЗСД"
+      ]
+    },
+    {
+      "road": "zsd",
+      "kind": "selected-paid-edge",
+      "wayId": "721839717",
+      "names": [
+        "ЗСД"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "241668022",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "1395997593",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "1395997592",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "zsd",
+      "kind": "selected-booth-name",
+      "osmNodeId": "933975069"
+    },
+    {
+      "road": "m11",
+      "kind": "selected-booth-name",
+      "osmNodeId": "2492861243"
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "zsd": {
+      "occurrences": 54,
+      "uniqueWays": 50
+    },
+    "m11": {
+      "occurrences": 492,
+      "uniqueWays": 359
+    }
+  },
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-torzhok/2026-10-16T01-32-28-268Z-capture.json.gz",
+  "captureSha256": "73413ec362a4f55a1219e5c0b2011f464e446d595af37d852434beb76d6df15e",
+  "detectedRoadComponents": [
+    {
+      "id": "m11-58-679",
+      "amount": null,
+      "reason": "only_one_verified_boundary_crossing"
+    },
+    {
+      "id": "unknown-paid-road",
+      "amount": null,
+      "reason": "unmapped_selected_route_paid_booth"
+    },
+    {
+      "id": "zsd",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "ЗСД",
+    "М-11",
+    "«Нева»"
+  ],
+  "tollNodeIds": [
+    "1766158781",
+    "1766158787",
+    "933975069",
+    "2492861243",
+    "3183012434"
+  ],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "пятница–воскресенье",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m11-58-679, unknown-paid-road, zsd",
+      "m11-58-679: only_one_verified_boundary_crossing",
+      "unknown-paid-road: unmapped_selected_route_paid_booth",
+      "zsd: zsd_trip_extends_outside_reviewed_zone1"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [],
+    "missing": [
+      "m11-58-679",
+      "unknown-paid-road",
+      "zsd"
+    ],
+    "components": [
+      {
+        "id": "m11-58-679",
+        "detected": true,
+        "tolls": null,
+        "reason": "only_one_verified_boundary_crossing"
+      },
+      {
+        "id": "unknown-paid-road",
+        "detected": true,
+        "tolls": null,
+        "reason": "unmapped_selected_route_paid_booth"
+      },
+      {
+        "id": "zsd",
+        "detected": true,
+        "tolls": null,
+        "reason": "zsd_trip_extends_outside_reviewed_zone1"
+      }
+    ]
+  }
+}

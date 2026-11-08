@@ -1,5 +1,6 @@
 // Independent selected-route gate audit for M1/M3.
 // Operator km labels are NOT exact OSM node IDs; never price by proximity/label.
+import {isOdintsovoLane} from './odintsovo-lane-identity.mjs';
 function validateM1M3Inventory(inventory) {
  if(!inventory || inventory.schemaVersion!==1 || !Array.isArray(inventory.gates)||inventory.gates.length!==4)throw Error("bad_gate_inventory");
  const expectedGates = {"m1-pvp-46":["m1",46,"m1-33-66"],"m3-pvp-86":["m3",86,"m3-65-86"],"m3-pvp-136":["m3",136,"m3-112-150"],"m3-pvp-168":["m3",168,"m3-150-194"]};
@@ -44,6 +45,8 @@ function auditM1M3SelectedRoute(inventory,validation,routeId) {
  const known=new Map(inventory.gates.flatMap(g=>g.verifiedOsmNodeIds.map(n=>[n,g])));
  for(const b of validation.tollBooths){
    if(!b||b.edgeToll!==true)continue;
+   // The separately operated bypass also carries the M-1 road reference.
+   if(isOdintsovoLane(b))continue;
    const id=b.osmNodeId===null||b.osmNodeId===undefined?null:String(b.osmNodeId);
    const g=id?known.get(id):undefined;
    const family=g?.roadId??roadFamily(b.roadNames);

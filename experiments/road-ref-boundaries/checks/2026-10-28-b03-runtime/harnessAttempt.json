@@ -1,0 +1,135 @@
+{
+  "startedAt": "2026-10-27T21:46:42.969Z",
+  "node": "v24.19.0",
+  "browser": "154.0.8037.57",
+  "sourceSha": "75d55b8a257d6e9685e13c9da179b3385f7ca7d6",
+  "componentSha256": "1ad0808c05368c7962a911dec2607f48170f1795e4ef5209371e8f3d8d0285cd",
+  "snapshotExpiresAt": "2026-10-31T08:24:54Z",
+  "mode": "browser mocked API, no external-service verification",
+  "results": [
+    {
+      "id": "01-select-A-and-B",
+      "status": "PASS",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "addressRequests": [
+        "Краснодар",
+        "Анапа"
+      ],
+      "classifications": [
+        {
+          "positions": [
+            {
+              "lat": 45.0351532,
+              "lng": 38.9772396
+            }
+          ]
+        },
+        {
+          "positions": [
+            {
+              "lat": 45.0351532,
+              "lng": 38.9772396
+            },
+            {
+              "lat": 44.895,
+              "lng": 37.315
+            }
+          ]
+        }
+      ],
+      "calculations": [],
+      "addressAbortEvents": 2
+    },
+    {
+      "id": "02-Anapa-clear-Donetsk",
+      "status": "PASS",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "addressRequests": [
+        "Краснодар",
+        "Анапа",
+        "Донецк"
+      ],
+      "classifications": [
+        {
+          "positions": [
+            {
+              "lat": 45.0351532,
+              "lng": 38.9772396
+            }
+          ]
+        },
+        {
+          "positions": [
+            {
+              "lat": 45.0351532,
+              "lng": 38.9772396
+            },
+            {
+              "lat": 44.895,
+              "lng": 37.315
+            }
+          ]
+        },
+        {
+          "positions": [
+            {
+              "lat": 45.0351532,
+              "lng": 38.9772396
+            }
+          ]
+        },
+        {
+          "positions": [
+            {
+              "lat": 45.0351532,
+              "lng": 38.9772396
+            },
+            {
+              "lat": 48.0158753,
+              "lng": 37.8013407
+            }
+          ]
+        }
+      ],
+      "calculations": [],
+      "addressAbortEvents": 3
+    },
+    {
+      "id": "03-fast-typing",
+      "status": "PASS",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "addressRequests": [
+        "Донецк"
+      ],
+      "classifications": [],
+      "calculations": [],
+      "addressAbortEvents": 0
+    },
+    {
+      "id": "04-late-response-after-replace",
+      "status": "FAIL",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(requests.includes('Анапа'))\n",
+      "addressRequests": [
+        "Анапа"
+      ],
+      "classifications": [],
+      "calculations": [],
+      "addressAbortEvents": 0
+    }
+  ],
+  "stoppedAtFirstFailure": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(requests.includes('Анапа'))\n",
+  "finishedAt": "2026-10-27T21:47:02.647Z"
+}

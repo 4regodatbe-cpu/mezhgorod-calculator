@@ -1,0 +1,15 @@
+# CALENDAR DONE / CODE STARTED — тариф Одинцово по строгой паре
+
+18.10.2026. Durable recoverySTARTED e310359d418c5fb036d00a53208bc774bf40da12/tree8895c56f/readback verified; PR14draft. СтараяветкаCI39149617219completed/success,docsSTARTEDбезновогокода.
+
+Выполнен boundedпроход:2domain-filteredqueries (одинbatch),2directprimaryGET. Поиск далофициальнуюстатьюМинтруда/social/social/1366 со всеми2026диапазонами иофициальныйadoptedPDFпостановления24.09.2025№1466:перенос03.01→09.01,04.01→31.12. Полныйсодержательныйтексткороткогопостановленияприведёнвпоисковомизвлечении,официальныйURL. СтатьяМинтруда01.07.2025 самаproposal; трансферы подтверждаютсяпозднейшимadopteddecree. DirectPDF503,MintrudHTML403,безretry/обхода. СкачанныхPDF/HTMLнет. Индексированнаяофициальнаятекстоваявыдачасохранена в source-snapshots/odintsovo/2026-calendar/search-results.json, rawfailure/progressотдельно. ПопыткалокальногопарсингаHTMLвыявилаотсутствиеbs4; HTMLнеполучен,новыезависимостинеставились. Это не прочитанныйPDF и не операторскийчек.
+
+Решение: принять source-derivednationalcalendar2026 издвухофициальныхиндексированныхтекстов; этоявнаяинференция,непереносM11customholidayrules. calendar-2026.jsonсодержитSat/Sunиadditionaldates,transferredworkingdates[],ссылки/ограничения/SHAвыдачи. Вычисленнаясверка365дней:118nonworking/247working (арифметическаяпроверка,не независимыйисточник). ТарифСООweekendHolidayсемантикаужесохранена вoperatorcandidate; Птвыбираетсяweekdayпоегоroadcalendar,непереноситьМ4calendar. Матрица/ценынеменяются. Новыхpriced0.
+
+CODE STARTED bounded: standalonecalendar/profile resolver EuropeMoscow только2026,ночь01:00–04:59:59=night;05:00–23:59:59день,weekdaytowardpeak07–13,awaypeak16–22,weekend/holidaydayпоcalendar. 00:00–00:59:59unknown:таблица05–01неописываетнадёжноcalendartransition,ценупоаналогии невыбирать. Время/датавсейпоездкизамораживатьвотправлении черезdepartureTariffContext,никакихper-PVParrivalclock.
+
+ПодключитьinspectOdintsovoPairкрегиональномуcomponentadapter,exactmatrixcellsотготовыхfrom/to/profileсpvpVector17,7↔6,9. Двеодинаковыепрофильныеклассификацииповектору,непересчитатьфактическиевременаоплаты. Старыйvalidationбезctx→unknown. Onlystrictpairразрешаетцену;дополнительныеплатныекомпонентысохраняются,forwardCKADwholeamountnull;reverseприknownprofileполныйunconfirmedestimate. Готовыеsources/strictmatcherбезповтора. Тарифы650/700/20изматрицы,неменять.
+
+Проверки≤60сfocused:own5date/timeprofilesвобоихнаправлениях,границы01/05/07/13/16/22/24,timezoneequivalence,праздник04.11/перенос31.12,год2027/pre-effectiveunknown,invaliddate,00–01unknown,negativecontext/reentry;ownPOSTrecordedresponsesreadyreverse650/forwardnullCKAD,trace503→null,безexternalrequests/avoidroutes. Fullbuild≤300s,TS/ESLint/diff. Сохранитьevidence/DONE/remote/readback/codeCI. Никакихmain/merge/Production/Android.
+
+NEXT: durablecalendarDONE/CODESTARTED,затемтолькоэтотadapter/profileblock. Ограниченияполученияcalendarисточниковне скрывать.

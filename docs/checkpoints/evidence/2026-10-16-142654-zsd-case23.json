@@ -1,0 +1,191 @@
+{
+  "caseId": "pair-m11-ckad-domodedovo-to-spb",
+  "index": 23,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-domodedovo-to-spb/2026-10-16T00-03-47-831Z-capture.json.gz",
+  "captureSha256": "0e26ddd23e2542a907122ee95c662cb03d857abbff4a64225d040de69888e28f",
+  "selectedProvider": "Valhalla",
+  "routeMeters": 757880,
+  "traceComplete": true,
+  "boothEventCoverage": "complete",
+  "uniqueZsdWays": [
+    "1122966006",
+    "1122966005",
+    "1122966004",
+    "400111354",
+    "400111351",
+    "31369306",
+    "28934684",
+    "465117517",
+    "80056742",
+    "139658547",
+    "461676671",
+    "80056745",
+    "721628540",
+    "80056716",
+    "381576632",
+    "381576631",
+    "123709500",
+    "123709505",
+    "183912267",
+    "397223751",
+    "397223752",
+    "397223749",
+    "183912268",
+    "85763340",
+    "223744446",
+    "721628541"
+  ],
+  "selectedZsdBooths": [
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 2,
+      "edgeToll": true,
+      "beginShapeIndex": 465,
+      "endShapeIndex": 466
+    }
+  ],
+  "sameExactZsdWayAndBoothSetAsReviewedFirstCase": true,
+  "sameReviewedScopeCase": "lnr-брянка-saint-petersburg-center",
+  "scopeFingerprint": [
+    [
+      "1122966004",
+      "1122966005",
+      "1122966006",
+      "123709500",
+      "123709505",
+      "139658547",
+      "183912267",
+      "183912268",
+      "223744446",
+      "28934684",
+      "31369306",
+      "381576631",
+      "381576632",
+      "397223749",
+      "397223751",
+      "397223752",
+      "400111351",
+      "400111354",
+      "461676671",
+      "465117517",
+      "721628540",
+      "721628541",
+      "80056716",
+      "80056742",
+      "80056745",
+      "85763340"
+    ],
+    [
+      "933974870"
+    ]
+  ],
+  "status": "source_gated_same_reviewed_zsd_scope",
+  "execution": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"pair-m11-ckad-domodedovo-to-spb\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":757880,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"понедельник–четверг\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: zsd\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m11-15-58\",\"amount\":1130,\"reason\":\"m11_head_ready_direct_pair_at_departure\"},{\"id\":\"m11-58-679\",\"amount\":3900,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"pair-m11-ckad-domodedovo-to-spb\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":757880,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"пятница–воскресенье\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: zsd\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m11-15-58\",\"amount\":1650,\"reason\":\"m11_head_ready_direct_pair_at_departure\"},{\"id\":\"m11-58-679\",\"amount\":4200,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    }
+  ],
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-domodedovo-to-spb/replay-2026-10-15T09-00-00-03-00-2026-10-16T11-26-53-959Z.json",
+      "sha256": "a5af3d8f38fe4eabeb3bf4b8a88e43728459ec7e65fe84bac60d136d49aa8023",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "missing": [
+        "zsd"
+      ],
+      "components": [
+        {
+          "id": "m11-15-58",
+          "amount": 1130,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ]
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-domodedovo-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T11-26-54-299Z.json",
+      "sha256": "5319b401ef22241f77926c39d185d275bf6141f63ad49721e7cf4205289bf228",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "missing": [
+        "zsd"
+      ],
+      "components": [
+        {
+          "id": "m11-15-58",
+          "amount": 1650,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ]
+    }
+  ]
+}

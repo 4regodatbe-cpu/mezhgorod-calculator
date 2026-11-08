@@ -1,0 +1,702 @@
+{
+  "sourceCommit": "63fd9ee5fbda27ef42164a3379b9ed53de2127e0",
+  "mode": "actual built local HTTP /r and V3; real GeoNames; controlled Photon outage; one live routing request",
+  "startedAt": "2026-10-31T16:14:31.767Z",
+  "cities": [
+    {
+      "query": "Доне",
+      "status": 200,
+      "elapsedMs": 275.46922,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-709717",
+            "title": "Донецк",
+            "label": "Донецк — ДНР",
+            "region": "ДНР",
+            "position": {
+              "lat": 48.023,
+              "lng": 37.80224
+            }
+          },
+          {
+            "id": "geonames-709713",
+            "title": "Донецкий",
+            "label": "Донецкий — ЛНР (1 из 2); район не уточнён",
+            "region": "ЛНР",
+            "position": {
+              "lat": 48.6996,
+              "lng": 38.67627
+            }
+          },
+          {
+            "id": "geonames-709714",
+            "title": "Донецкий",
+            "label": "Донецкий — ДНР (1 из 2); район не уточнён",
+            "region": "ДНР",
+            "position": {
+              "lat": 47.71556,
+              "lng": 38.40889
+            }
+          },
+          {
+            "id": "geonames-709715",
+            "title": "Донецкий",
+            "label": "Донецкий — ДНР (2 из 2); район не уточнён",
+            "region": "ДНР",
+            "position": {
+              "lat": 47.41667,
+              "lng": 37.95
+            }
+          },
+          {
+            "id": "geonames-811884",
+            "title": "Донецкий",
+            "label": "Донецкий — ЛНР (2 из 2); район не уточнён",
+            "region": "ЛНР",
+            "position": {
+              "lat": 48.96667,
+              "lng": 39.16694
+            }
+          },
+          {
+            "id": "geonames-565348",
+            "title": "Донецк",
+            "label": "Донецк — Ростовская Область",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 48.33711,
+              "lng": 39.95229
+            }
+          },
+          {
+            "id": "geonames-11763020",
+            "title": "Донецкий Лесхоз",
+            "label": "Донецкий Лесхоз — Ростовская Область",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 49.03511,
+              "lng": 40.55049
+            }
+          },
+          {
+            "id": "geonames-1507246",
+            "title": "Донец",
+            "label": "Донец — Новосибирская Область",
+            "region": "Новосибирская Область",
+            "position": {
+              "lat": 54.92554,
+              "lng": 75.60433
+            }
+          },
+          {
+            "id": "geonames-565343",
+            "title": "Донетское",
+            "label": "Донетское — Оренбургская Область",
+            "region": "Оренбургская Область",
+            "position": {
+              "lat": 51.8987,
+              "lng": 54.41266
+            }
+          },
+          {
+            "id": "geonames-565344",
+            "title": "Донец",
+            "label": "Донец — Белгородская Область",
+            "region": "Белгородская Область",
+            "position": {
+              "lat": 50.96151,
+              "lng": 37.02789
+            }
+          },
+          {
+            "id": "geonames-565345",
+            "title": "Донецкий",
+            "label": "Донецкий — Ростовская Область (1 из 2)",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 48.7168,
+              "lng": 39.9838
+            }
+          },
+          {
+            "id": "geonames-565346",
+            "title": "Донецкий",
+            "label": "Донецкий — Ростовская Область (2 из 2)",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 47.3136,
+              "lng": 42.4969
+            }
+          },
+          {
+            "id": "geonames-565351",
+            "title": "Донец",
+            "label": "Донец — Ленинградская область",
+            "region": "Ленинградская область",
+            "position": {
+              "lat": 58.93333,
+              "lng": 30.75
+            }
+          },
+          {
+            "id": "geonames-565352",
+            "title": "Донец",
+            "label": "Донец — Новгородская Область",
+            "region": "Новгородская Область",
+            "position": {
+              "lat": 58.21025,
+              "lng": 30.29159
+            }
+          },
+          {
+            "id": "geonames-565353",
+            "title": "Донец",
+            "label": "Донец — Смоленская Область",
+            "region": "Смоленская Область",
+            "position": {
+              "lat": 55.14792,
+              "lng": 31.95125
+            }
+          },
+          {
+            "id": "geonames-565354",
+            "title": "Донец",
+            "label": "Донец — Рязанская Область",
+            "region": "Рязанская Область",
+            "position": {
+              "lat": 53.55294,
+              "lng": 41.14021
+            }
+          },
+          {
+            "id": "geonames-565355",
+            "title": "Донец",
+            "label": "Донец — Орловская область",
+            "region": "Орловская область",
+            "position": {
+              "lat": 52.12719,
+              "lng": 37.45436
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      },
+      "serverTiming": null
+    },
+    {
+      "query": "Донецк ДНР",
+      "status": 200,
+      "elapsedMs": 12.551525000000026,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-709717",
+            "title": "Донецк",
+            "label": "Донецк — ДНР",
+            "region": "ДНР",
+            "position": {
+              "lat": 48.023,
+              "lng": 37.80224
+            }
+          },
+          {
+            "id": "geonames-709714",
+            "title": "Донецкий",
+            "label": "Донецкий — ДНР (1 из 2); район не уточнён",
+            "region": "ДНР",
+            "position": {
+              "lat": 47.71556,
+              "lng": 38.40889
+            }
+          },
+          {
+            "id": "geonames-709715",
+            "title": "Донецкий",
+            "label": "Донецкий — ДНР (2 из 2); район не уточнён",
+            "region": "ДНР",
+            "position": {
+              "lat": 47.41667,
+              "lng": 37.95
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      },
+      "serverTiming": null
+    },
+    {
+      "query": "Донецк Ростовская область",
+      "status": 200,
+      "elapsedMs": 7.764929999999993,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-565348",
+            "title": "Донецк",
+            "label": "Донецк — Ростовская Область",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 48.33711,
+              "lng": 39.95229
+            }
+          },
+          {
+            "id": "geonames-11763020",
+            "title": "Донецкий Лесхоз",
+            "label": "Донецкий Лесхоз — Ростовская Область",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 49.03511,
+              "lng": 40.55049
+            }
+          },
+          {
+            "id": "geonames-565345",
+            "title": "Донецкий",
+            "label": "Донецкий — Ростовская Область (1 из 2)",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 48.7168,
+              "lng": 39.9838
+            }
+          },
+          {
+            "id": "geonames-565346",
+            "title": "Донецкий",
+            "label": "Донецкий — Ростовская Область (2 из 2)",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 47.3136,
+              "lng": 42.4969
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      },
+      "serverTiming": null
+    },
+    {
+      "query": "Волноваха",
+      "status": 200,
+      "elapsedMs": 17.102581999999984,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-689198",
+            "title": "Волноваха",
+            "label": "Волноваха — ДНР",
+            "region": "ДНР",
+            "position": {
+              "lat": 47.6008,
+              "lng": 37.49358
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      },
+      "serverTiming": null
+    },
+    {
+      "query": "Ялта Крым",
+      "status": 200,
+      "elapsedMs": 9.14220400000005,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-688533",
+            "title": "Ялта",
+            "label": "Ялта — Крым",
+            "region": "Крым",
+            "position": {
+              "lat": 44.50218,
+              "lng": 34.16624
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      },
+      "serverTiming": null
+    },
+    {
+      "query": "Луганск ЛНР",
+      "status": 200,
+      "elapsedMs": 11.678787999999997,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-702658",
+            "title": "Луганск",
+            "label": "Луганск — ЛНР",
+            "region": "ЛНР",
+            "position": {
+              "lat": 48.56814,
+              "lng": 39.30553
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      },
+      "serverTiming": null
+    },
+    {
+      "query": "Мариуполь ДНР",
+      "status": 200,
+      "elapsedMs": 15.673374000000024,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-701822",
+            "title": "Мариуполь",
+            "label": "Мариуполь — ДНР",
+            "region": "ДНР",
+            "position": {
+              "lat": 47.09514,
+              "lng": 37.54131
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      },
+      "serverTiming": null
+    },
+    {
+      "query": "Краснодар",
+      "status": 200,
+      "elapsedMs": 52.31057500000003,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-542420",
+            "title": "Краснодар",
+            "label": "Краснодар — Краснодарский край",
+            "region": "Краснодарский край",
+            "position": {
+              "lat": 45.04534,
+              "lng": 38.98178
+            }
+          },
+          {
+            "id": "geonames-808966",
+            "title": "Краснодар",
+            "label": "Краснодар — Воронежская Область",
+            "region": "Воронежская Область",
+            "position": {
+              "lat": 49.8958,
+              "lng": 40.24376
+            }
+          },
+          {
+            "id": "geonames-705177",
+            "title": "Краснодарка",
+            "label": "Краснодарка — Крым",
+            "region": "Крым",
+            "position": {
+              "lat": 45.60648,
+              "lng": 34.08541
+            }
+          },
+          {
+            "id": "geonames-1502124",
+            "title": "Краснодарка",
+            "label": "Краснодарка — Омская Область",
+            "region": "Омская Область",
+            "position": {
+              "lat": 54.2511,
+              "lng": 74.0239
+            }
+          },
+          {
+            "id": "geonames-542416",
+            "title": "Краснодарский",
+            "label": "Краснодарский — Ставрополье",
+            "region": "Ставрополье",
+            "position": {
+              "lat": 45.39248,
+              "lng": 41.21793
+            }
+          },
+          {
+            "id": "geonames-542418",
+            "title": "Краснодаровский",
+            "label": "Краснодаровский — Ростовская Область",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 47.5888,
+              "lng": 38.40151
+            }
+          },
+          {
+            "id": "geonames-7892189",
+            "title": "Краснодарское",
+            "label": "Краснодарское — Алтайский Край",
+            "region": "Алтайский Край",
+            "position": {
+              "lat": 52.1156,
+              "lng": 83.7924
+            }
+          },
+          {
+            "id": "geonames-840922",
+            "title": "Краснодарский",
+            "label": "Краснодарский — Краснодарский край (1 из 3)",
+            "region": "Краснодарский край",
+            "position": {
+              "lat": 45.15459,
+              "lng": 39.12815
+            }
+          },
+          {
+            "id": "geonames-840941",
+            "title": "Краснодарский",
+            "label": "Краснодарский — Краснодарский край (2 из 3)",
+            "region": "Краснодарский край",
+            "position": {
+              "lat": 45.08668,
+              "lng": 39.04356
+            }
+          },
+          {
+            "id": "geonames-872135",
+            "title": "Краснодарский",
+            "label": "Краснодарский — Краснодарский край (3 из 3)",
+            "region": "Краснодарский край",
+            "position": {
+              "lat": 45.28598,
+              "lng": 38.31711
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      },
+      "serverTiming": null
+    },
+    {
+      "query": "Москва",
+      "status": 200,
+      "elapsedMs": 8.845915000000048,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-524901",
+            "title": "Москва",
+            "label": "Москва — Москва",
+            "region": "Москва",
+            "position": {
+              "lat": 55.75204,
+              "lng": 37.61781
+            }
+          },
+          {
+            "id": "geonames-524900",
+            "title": "Москва",
+            "label": "Москва — Тверская Область — Пеновский Район",
+            "region": "Тверская Область",
+            "position": {
+              "lat": 56.91775,
+              "lng": 32.16579
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      },
+      "serverTiming": null
+    },
+    {
+      "query": "Санкт-Петербург",
+      "status": 200,
+      "elapsedMs": 7.955080000000066,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-498817",
+            "title": "Санкт-Петербург",
+            "label": "Санкт-Петербург — Санкт-Петербург",
+            "region": "Санкт-Петербург",
+            "position": {
+              "lat": 59.93863,
+              "lng": 30.31413
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      },
+      "serverTiming": null
+    },
+    {
+      "query": "Анапа",
+      "status": 200,
+      "elapsedMs": 6.019509000000085,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-582182",
+            "title": "Анапа",
+            "label": "Анапа — Краснодарский край",
+            "region": "Краснодарский край",
+            "position": {
+              "lat": 44.89497,
+              "lng": 37.31623
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      },
+      "serverTiming": null
+    }
+  ],
+  "checks": [
+    {
+      "name": "eleven real city HTTP queries with Photon denied",
+      "status": "PASS",
+      "photonAttempts": 0
+    },
+    {
+      "name": "HTTP SSR /v3",
+      "status": "PASS",
+      "note": "Not browser hydration or mobile interaction"
+    },
+    {
+      "name": "HTTP SSR /v2",
+      "status": "PASS",
+      "note": "Not browser hydration or mobile interaction"
+    },
+    {
+      "name": "unsafe tariff input rejected before routing",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS",
+  "liveRoute": {
+    "status": "PASS",
+    "elapsedMs": 2280.669019,
+    "serverTiming": "calc_total;dur=2274.04, request_body;dur=0.224, geocoding;dur=0.117, route_leg;dur=2269.196, routing;dur=1493.836, provider_valhalla;dur=1191.71, provider_osrm;dur=1491.497, provider_brouter;dur=1201.191, toll_matching;dur=669.959, toll_pricing;dur=72.388, response_pricing;dur=3.402",
+    "meters": 166347,
+    "seconds": 8713,
+    "tollStatus": "priced",
+    "tollAmount": 620,
+    "tariffIndependentlyCertified": false
+  },
+  "completedAt": "2026-10-31T16:14:34.598Z"
+}

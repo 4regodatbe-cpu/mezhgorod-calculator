@@ -1,0 +1,151 @@
+{
+  "reference": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+  "persistence": "LOCAL ONLY, no push permitted",
+  "files": [
+    {
+      "path": "c3-eslint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "c3-tests.log",
+      "bytes": 1013,
+      "sha256": "b5790ce01270af988d7ad478901335505655d626b0bd8209b81318ebdb778ef3"
+    },
+    {
+      "path": "c4-ckad.json",
+      "bytes": 2247,
+      "sha256": "d3413dd00418d1aa698e4d0ca33cb516b418696f9873c1a1ef116f5357ae6ec8"
+    },
+    {
+      "path": "c4-m11.json",
+      "bytes": 2091,
+      "sha256": "7c94c020e27bb0fed8fe1c560c04aa41c80b6ae63ef68e0163bdd08d2163b1c0"
+    },
+    {
+      "path": "c4-m12.json",
+      "bytes": 2561,
+      "sha256": "b2664e3923cfd2d873129240a0c5e81bf987a15875784138937199fa865a1fc7"
+    },
+    {
+      "path": "c4-zsd.json",
+      "bytes": 3608,
+      "sha256": "f7348792ec160f7089461edc702a5a2620daccfe4840309aabd4f8843e170491"
+    },
+    {
+      "path": "c5-composition.json",
+      "bytes": 14876,
+      "sha256": "f6cad582681d7648aee419742f8ad9cfb8415c9513214ede3c23f83877394ab8"
+    },
+    {
+      "path": "c5-composition.log",
+      "bytes": 1831,
+      "sha256": "c595a194fd57333a771434e4b016da66ad7adf142fda1a7a8eb542a4f8ef3c19"
+    },
+    {
+      "path": "c5-composition.mjs",
+      "bytes": 6258,
+      "sha256": "360abb1073dcca1dcdb7e665bbf713bae7b0e94625dd104340291391038764ee"
+    },
+    {
+      "path": "c5-context-diagnostic.log",
+      "bytes": 1164,
+      "sha256": "bd9f145f002de79880949ea18978493e35511b0ae90918904e834991d356e097"
+    },
+    {
+      "path": "c5-full-trace-only-failure.log",
+      "bytes": 1164,
+      "sha256": "c548c44e19cfe1b8da99488b1a83c71cae2d1c2ae84b3737a4d6a34d21f68041"
+    },
+    {
+      "path": "c5-initial-context-failure.log",
+      "bytes": 451,
+      "sha256": "f9d745c98eee8e02715f1ebb1b53be908e44a4b352bec3abb3fba0b8502205fd"
+    },
+    {
+      "path": "c5-wrong-missing-expectation.log",
+      "bytes": 1516,
+      "sha256": "90e6fb328ce8eed62c3eb68b7bf651ca3dc3f42232e80ead443e6cd364f5c4c0"
+    },
+    {
+      "path": "c6-audit.log",
+      "bytes": 158319,
+      "sha256": "569cc396e058c36a0eeb82877ce4d25fb8e3c1105f10b36fcd6fb94f18d85045"
+    },
+    {
+      "path": "c6-build.log",
+      "bytes": 1200,
+      "sha256": "3e51bdbf94ea8895938e87b852ba37e0860237bbffa0156581b877da5bc7ef47"
+    },
+    {
+      "path": "c6-eslint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "c6-final-eight-tests.log",
+      "bytes": 1013,
+      "sha256": "18d4c81a558232577424cb34c83f320a11e5123f019edd1a73dc61e21e07f4d0"
+    },
+    {
+      "path": "c6-new-test-nullability-before.log",
+      "bytes": 941,
+      "sha256": "cbc53acdac9bfa8925f187365a9c985f66894133cab23d40a91de52aa5483564"
+    },
+    {
+      "path": "c6-new-test-tsc.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "c6-portable-test-tsc.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "c6-test-typecheck-config.json",
+      "bytes": 255,
+      "sha256": "9a512817fafe8db66553bc91425cfe64fdff75b550727ca58373cb1c01792c29"
+    },
+    {
+      "path": "c6-tsc.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "c6-type-config-initial-failure.log",
+      "bytes": 165,
+      "sha256": "22d754e33e5e414d820e237c9e477c81ec8db495c45ab51f7665351a89a3c783"
+    },
+    {
+      "path": "final-review.json",
+      "bytes": 6763,
+      "sha256": "d7c12138891154d8e1468757e9f4d5f676318be1cc4b10f0a0d59309f77d8160"
+    },
+    {
+      "path": "finalize.mjs",
+      "bytes": 5136,
+      "sha256": "dc4e995227377b4e7fa94667871e4cd1b87a8c22fafedba8fa2e186f6185d7ea"
+    },
+    {
+      "path": "m4-evidence.json",
+      "bytes": 10395,
+      "sha256": "b911551a2c33a66a57d9be487eb7e119de5b2d6eafc6f104b0384e1758bf5fac"
+    },
+    {
+      "path": "m4-evidence.mjs",
+      "bytes": 6358,
+      "sha256": "0d503469f43f04d44ce26e2919524d116c6c315d5d1c71618f0dd99735818503"
+    },
+    {
+      "path": "other-road-review.mjs",
+      "bytes": 7297,
+      "sha256": "d6a422567b8851f94522ba2a91e6050ae0dabfd1e08b8ec6f1b4759cf7d1b853"
+    },
+    {
+      "path": "remote-readback.json",
+      "bytes": 168,
+      "sha256": "2fe509636ce0d87887078d655b1e67d22f10a533e5d45e0ade13d791395d2354"
+    }
+  ]
+}

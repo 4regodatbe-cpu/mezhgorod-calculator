@@ -1,0 +1,62 @@
+{
+  "sources": [
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/node/1766158781.json",
+      "status": 200,
+      "path": "docs/checkpoints/evidence/2026-10-16-zsd-node-1766158781.json",
+      "sha256": "af1985508ad21348bf07a20b6570e9641db0199221970cee27052dd4f362db37"
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/355755817/full.json",
+      "status": 200,
+      "path": "docs/checkpoints/evidence/2026-10-16-zsd-way-355755817.json",
+      "sha256": "600e493444353832eee4cc3d494b54020e9ec10a9a329b20eebf22e628bf49c1"
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/node/3612944330/ways.json",
+      "path": "docs/checkpoints/evidence/2026-10-16-zsd-node-3612944330-ways.json",
+      "status": 200,
+      "sha256": "385671b261932ac7eececf0e2741207ff84148ad5f91682978c2df9d0a7a5677"
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/node/1766158781/ways.json",
+      "path": "docs/checkpoints/evidence/2026-10-16-zsd-node-1766158781-ways.json",
+      "status": 200,
+      "sha256": "a25181911e5e23acc823f2fd144c80d0c86d23581278143611a4c7ad25e7ca8a"
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/node/2027026364/ways.json",
+      "path": "docs/checkpoints/evidence/2026-10-16-zsd-node-2027026364-ways.json",
+      "status": 200,
+      "sha256": "339d429bc7bda8ba3940af8dd3e1f430ad3589fcdfc95386c0b56c4eede7da0c"
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/node/1375515657/ways.json",
+      "path": "docs/checkpoints/evidence/2026-10-16-zsd-node-1375515657-ways.json",
+      "status": 200,
+      "sha256": "8129c144c762df6f38cd1701653b26e83ccae3feee2f80dd59beec20c45f5f4f"
+    }
+  ],
+  "productId": "zsd",
+  "osmNodeId": "1766158781",
+  "directedTopology": [
+    "721839717:6771351212→1375515657 name=ЗСД toll=yes",
+    "165031082:1375515657→2027026364 toll=yes oneway=yes destination=Богатырский/Планерная",
+    "252148968:2027026364→3612944330 toll=yes oneway=yes",
+    "355755817:3612944330→1766158781 toll=yes oneway=yes",
+    "1766158781 barrier=toll_booth cash/card=yes"
+  ],
+  "selectedTrace": {
+    "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+    "paidWaysInOrder": [
+      "721839717",
+      "165031082",
+      "252148968",
+      "355755817"
+    ],
+    "boothNodeId": "1766158781",
+    "selectedBoothWay": "355755817"
+  },
+  "proves": "physical road identity only, NOT fare/zone count/direction price",
+  "noFareActivated": true
+}

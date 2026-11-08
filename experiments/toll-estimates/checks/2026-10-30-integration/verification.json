@@ -1,0 +1,830 @@
+{
+  "dateMsk": "2026-10-30",
+  "status": "LOCAL_READY_FOR_SEPARATE_PREVIEW_PERMISSION",
+  "blocks": {
+    "F1": "DONE_LOCAL",
+    "F2": "DONE_LOCAL",
+    "F3": "DONE_LOCAL",
+    "F4": "DONE_LOCAL",
+    "F5": "DONE_LOCAL"
+  },
+  "node": "v24.19.0",
+  "sources": {
+    "initialVerifiedSha": "48d685a767010aa9011fc27f03f2e0736fcb973a",
+    "initialTree": "a3546bca1eb1b900d977ce4ebd309561cc0a7b19",
+    "finalGateSha": "77c9ce8b8deeb5aa77bb48c881ad7b8042d63182",
+    "finalGateTree": "726e39b95dd7e966b1605d846c35eb4718715dd7",
+    "files": [
+      {
+        "path": "experiments/toll-estimates/estimate.ts",
+        "sha256": "e813566b81d47e40ffae8c55b9402557a053309d12fffe942f4f19b30cb98dc9"
+      },
+      {
+        "path": "lib/toll-estimate-view.ts",
+        "sha256": "52365ff66f3827b0ba814dec124c045f38330a82ec2ec486f884d60b62d30159"
+      },
+      {
+        "path": "lib/v3-calculation/toll-estimate-switch.ts",
+        "sha256": "960a6d672a789a11d433183021b539ad429f36df344ff424ccf85efb656055c0"
+      },
+      {
+        "path": "lib/v3-calculation/toll-estimate-adapter.ts",
+        "sha256": "c56e8b4d2146b779a1b46c5acf88e7ab8e6d90231e56ff05bf2d15415fd798b7"
+      },
+      {
+        "path": "lib/v3-calculation/route-leg-pricing.ts",
+        "sha256": "05a5ca98976a5db33faded844afc83bc23198cc8be40f688cd8b16566c29f82f"
+      },
+      {
+        "path": "lib/v3-calculation/route-leg.ts",
+        "sha256": "ca3b9bb5964f7faa3826c9282bc4edc3c29423376fd97034c491a7c52fb43a7e"
+      },
+      {
+        "path": "lib/v3-calculation/special-options.ts",
+        "sha256": "358f5f1b4a677479268e04b82f2650cf122e5cbfc579ebbba66d889525196b5b"
+      },
+      {
+        "path": "app/api/v3/calculate/route.ts",
+        "sha256": "d142aaf6978bd619879228f3aab97da417a7895b64b66826089fb8e55eea96c5"
+      },
+      {
+        "path": "app/v2/components/types.ts",
+        "sha256": "baf61680905881390b9871b8db287ca3c0844c846135fe66df43958cd773d2a2"
+      },
+      {
+        "path": "app/v2/components/route-card.tsx",
+        "sha256": "8fc474712edcb5e1051e3c9a14d77e5301165eae8e09957a4d9971f0c522137a"
+      },
+      {
+        "path": "app/v3/components/response-validation.ts",
+        "sha256": "5b85b6155858289d89147c56b43cbf97f404cb748cf10f95e29d9dc159ccd2aa"
+      },
+      {
+        "path": "app/v3/components/use-v3-calculation.ts",
+        "sha256": "a2742281f076c195563de95d02751ae470f253ae29356e7e8aa6d58ee9b15465"
+      },
+      {
+        "path": "scripts/v3-api-audit.test.ts",
+        "sha256": "9ee7e153e90562c384cb03f06effeedcf650d5d06116a4fe62f96359073f9ecb"
+      },
+      {
+        "path": "scripts/v2-unknown-result-render.test.mjs",
+        "sha256": "184fa116f5ea3a261412a88f5fd4c13d97840693b4f9fc933cfdc940ebd6b8d6"
+      },
+      {
+        "path": "scripts/v3-result-render-audit.test.mjs",
+        "sha256": "63d4ca445e6a322dd28645f726a4cfcc2b94d024c854eaaba6020d7004561533"
+      },
+      {
+        "path": "scripts/v3-hook-race-audit.test.mjs",
+        "sha256": "0e2396dc01e418cddfe6b8de4e5aac296a70ee386691c276062b8c92c4fc4685"
+      },
+      {
+        "path": "lib/v3-calculation/toll-estimate-adapter.test.ts",
+        "sha256": "7ce9aefc0c8ab5597ebfcee00e9e4fee1035119a91c2b826857daa08a3557842"
+      },
+      {
+        "path": "lib/v3-calculation/toll-estimate-ui.test.ts",
+        "sha256": "a172482dcb8e3d971f3c2220d50e400fc773a0ce485ce39b98ee6e9affdf80f9"
+      },
+      {
+        "path": "experiments/toll-estimates/integration-cases.test.ts",
+        "sha256": "f57383a9266de16d268108b1fd008a9ee7e768281d6cbe3720c21f52335dbf41"
+      }
+    ]
+  },
+  "checks": {
+    "exits": {
+      "f5-typecheck": 0,
+      "f5-lint-final": 0,
+      "f5-focused": 0,
+      "f5-offline-gate-final": 0,
+      "f5-build": 0,
+      "f5-loader-targeted-final": 0,
+      "f5-loader-lint": 0,
+      "f5-build-app-equivalence": 0,
+      "f5-pure-core-equivalence": 0
+    },
+    "focused": {
+      "pass": 53,
+      "fail": 0
+    },
+    "fullOfflineGate": {
+      "pass": 1057,
+      "fail": 0,
+      "skip": 1,
+      "contracts": "PASS",
+      "skipReason": "Existing real admitted-GeoNames GET requires GEONAMES_TEST_DIR; not executed, not PASS"
+    },
+    "loaderRegression": {
+      "pass": 14,
+      "fail": 0,
+      "assertionsWeakened": false
+    },
+    "eslint": {
+      "errors": 0,
+      "warnings": 7
+    },
+    "build": {
+      "exit": 0,
+      "next": "16.3.4",
+      "source": "48d685a767010aa9011fc27f03f2e0736fcb973a",
+      "started": "2026-10-30T17:22:37Z",
+      "finished": "2026-10-30T17:22:58Z",
+      "staticPages": "16/16",
+      "reusedAfterTestOnlyRepair": true,
+      "appSourceEquivalenceExit": 0,
+      "warning": "preferredRegion deprecated",
+      "note": "Whole Git trees differ; only identical application/config/data/dependency source is claimed built. stdout/stderr separate."
+    },
+    "runtimeTrace": {
+      "manifest": ".next/server/app/api/v3/calculate/route.js.nft.json",
+      "sha256": "003bcfeea1e221426b6f191b9a6e8e33b501dc976cb5ad4933567e90df1388f7",
+      "files": 48,
+      "offlineFixtureDependencies": []
+    }
+  },
+  "controlCases": [
+    {
+      "caseId": "triple-m11-ckad-m12-torzhok-to-kazan",
+      "capture": {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/2026-10-16T00-34-01-248Z-capture.json.gz",
+        "sha256": "da0f293ff4743939866e74b60ea49cae07891b08306b386a58c57da0e058fa6a"
+      },
+      "geometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7",
+      "legacyStrictUnchanged": true,
+      "rows": [
+        {
+          "departureAt": "2026-10-15T09:00:00+03:00",
+          "status": "estimated",
+          "totalRub": 5904,
+          "knownPartRub": 5904,
+          "warnings": [
+            "М-12: использована рабочая тарифная модель; регистрационные границы не подтверждены независимо. Оценка не является точным тарифом оператора."
+          ]
+        },
+        {
+          "departureAt": "2026-10-17T09:00:00+03:00",
+          "status": "estimated",
+          "totalRub": 6084,
+          "knownPartRub": 6084,
+          "warnings": [
+            "М-12: использована рабочая тарифная модель; регистрационные границы не подтверждены независимо. Оценка не является точным тарифом оператора."
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "pair-m4-m11-krasnodar-to-spb",
+      "capture": {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-krasnodar-to-spb/2026-10-16T00-11-59-083Z-capture.json.gz",
+        "sha256": "0146e84b961b714fcc4e11dcb723285482127efb30bf417c5fc8ccf1215e41c8"
+      },
+      "geometrySha256": "c0507836382807f591a84b7bad8f228fc07164a9c872c880a88f9da1707a7f74",
+      "legacyStrictUnchanged": true,
+      "rows": [
+        {
+          "departureAt": "2026-10-15T09:00:00+03:00",
+          "status": "estimated",
+          "totalRub": 10464,
+          "knownPartRub": 10464,
+          "warnings": []
+        },
+        {
+          "departureAt": "2026-10-17T09:00:00+03:00",
+          "status": "estimated",
+          "totalRub": 12334,
+          "knownPartRub": 12334,
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "caseId": "dnr-гранитное-saint-petersburg-center",
+      "capture": {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/2026-10-15T11-56-56-059Z-capture.json.gz",
+        "sha256": "0493305d255cfc779f4d2b7f15e5c4fb7161b80857f3af75a4c57567a6df3cb1",
+        "expectedShaPreviouslyPinned": true
+      },
+      "geometrySha256": "28869d4f49daa96771c06cc729bc571acaed9fc2de111b4f843d6bc37db1fe09",
+      "legacyStrictUnchanged": true,
+      "rows": [
+        {
+          "departureAt": "2026-10-15T09:00:00+03:00",
+          "status": "estimated",
+          "totalRub": 9534,
+          "knownPartRub": 9534,
+          "warnings": [
+            "ЗСД: 600 ₽ — рабочая зональная модель; состав оплаты конкретного проезда не подтверждён независимо. Это оценочный компонент, не точный тариф оператора."
+          ]
+        },
+        {
+          "departureAt": "2026-10-17T09:00:00+03:00",
+          "status": "estimated",
+          "totalRub": 11184,
+          "knownPartRub": 11184,
+          "warnings": [
+            "ЗСД: 600 ₽ — рабочая зональная модель; состав оплаты конкретного проезда не подтверждён независимо. Это оценочный компонент, не точный тариф оператора."
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+      "capture": {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/2026-10-15T23-58-33-171Z-capture.json.gz",
+        "sha256": "e8b5d42fb9b737227c04d195271c4cb4dde444a66f85aa579d238a0cd2769ed0"
+      },
+      "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e",
+      "legacyStrictUnchanged": true,
+      "rows": [
+        {
+          "departureAt": "2026-10-15T09:00:00+03:00",
+          "status": "unknown",
+          "totalRub": null,
+          "knownPartRub": 6928,
+          "warnings": [
+            "М-12: использована рабочая тарифная модель; регистрационные границы не подтверждены независимо. Оценка не является точным тарифом оператора."
+          ]
+        },
+        {
+          "departureAt": "2026-10-17T09:00:00+03:00",
+          "status": "unknown",
+          "totalRub": null,
+          "knownPartRub": 7268,
+          "warnings": [
+            "М-12: использована рабочая тарифная модель; регистрационные границы не подтверждены независимо. Оценка не является точным тарифом оператора."
+          ]
+        }
+      ]
+    }
+  ],
+  "guards": {
+    "status": "PASS",
+    "reversedGeometryRejected": true,
+    "incompleteTraceRejected": true,
+    "duplicateRejected": true,
+    "invalidDateRejected": true,
+    "differentLongArcRejected": true
+  },
+  "defaultEnabled": false,
+  "productionHardDenied": true,
+  "previewFlag": "V3_TOLL_ESTIMATE=1, VERCEL_ENV=preview, exact permitted VERCEL_GIT_COMMIT_REF",
+  "strictAlgorithmChanged": false,
+  "tariffMatrixChanged": false,
+  "routeGeometryChanged": false,
+  "kilometrePricingChanged": false,
+  "fastestSelectionChanged": false,
+  "push": false,
+  "deployment": false,
+  "ciRunStarted": false,
+  "browserPreviewAcceptance": false,
+  "preservedFailures": [
+    {
+      "exit": 2,
+      "file": "f3-typecheck.log",
+      "cause": "JS coverageKeys union, fixed by property narrowing"
+    },
+    {
+      "exit": 1,
+      "file": "f4-tests.log",
+      "cause": "Test incorrectly expected wholeGran600;600 is only ZSD component, full strict9534/11184 preserved"
+    },
+    {
+      "exit": 1,
+      "file": "f5-offline-gate.stdout.log",
+      "pass": 1043,
+      "fail": 10,
+      "cause": "Three old VM loaders lacked real @/ TS alias support; fixed tests only, no assertion weakening"
+    }
+  ],
+  "limitations": [
+    "No push/Preview/Production or real browser/cloud acceptance performed.",
+    "Extra CKAD M11/M7 working binding needs selected provider decoded sections and complete trace; unsupported metadata stays unknown, no slower route substitution.",
+    "M12 registration-boundary and ZSD source-derived component warnings remain; exact extended ZSD bundle is unresolved.",
+    "Named saved samples/captures are tests only; Gran600 is a component, never the complete trip.",
+    "Independent address live street/Photon/mobile/hosted D1 acceptance tasks are not closed by F."
+  ],
+  "artifacts": [
+    {
+      "path": "f2-lint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f2-lint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f2-tests-final.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f2-tests-final.log",
+      "bytes": 506,
+      "sha256": "a8c770d73182fd9cc3dda1e421dc1fefe22e6fb2e4c92fc2c77d1eab43c91837"
+    },
+    {
+      "path": "f2-tests.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f2-tests.log",
+      "bytes": 509,
+      "sha256": "6f839d1356c4b28491fb76c90db900a4882b0e8ce735f2a9361133067f9159e7"
+    },
+    {
+      "path": "f2-typecheck.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f2-typecheck.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f3-lint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f3-lint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f3-tests-final.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f3-tests-final.log",
+      "bytes": 922,
+      "sha256": "7360a31a719eb1f74dd273f95c3ee3d64ba824e9383f1f4f77f92f97f3ae4dc0"
+    },
+    {
+      "path": "f3-tests.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f3-tests.log",
+      "bytes": 820,
+      "sha256": "f91d52d7ef39d8037669ddbed4b89b9db10b6c39c5136dae8b227ca0cfdf273e"
+    },
+    {
+      "path": "f3-typecheck-final.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f3-typecheck-final.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f3-typecheck.exit",
+      "bytes": 2,
+      "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3"
+    },
+    {
+      "path": "f3-typecheck.log",
+      "bytes": 530,
+      "sha256": "65a37986ab01d3d9c8e75e834df2fabfed9cde0dfa8aca08e0a8d11f5e0fcf81"
+    },
+    {
+      "path": "f4-all-lint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f4-all-lint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f4-api-post.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f4-api-post.log",
+      "bytes": 17869,
+      "sha256": "a1b44037781c95bcd38a72781ceb2da97e275f39bdc0930e881d19885a8f930b"
+    },
+    {
+      "path": "f4-cases-initial.json",
+      "bytes": 19163,
+      "sha256": "f6fe597ff69324660119d412323b3d02b6365bf3219fc74040adf924ec645dde"
+    },
+    {
+      "path": "f4-cases.json",
+      "bytes": 20710,
+      "sha256": "0b173909ab4d745bfa7cd587cac24890f05087a6c084fdcbd866cd7cb39eb475"
+    },
+    {
+      "path": "f4-controls-and-guards.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f4-controls-and-guards.log",
+      "bytes": 1005,
+      "sha256": "51a77ca88eecb4f78d712ef9fa670c2d54850d6759d1436a940d93bcf199b825"
+    },
+    {
+      "path": "f4-domain-final.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f4-domain-final.log",
+      "bytes": 1001,
+      "sha256": "b1c0bfefe6ea80ae5648db6c6e8b073e5ee502d9ec4b020fac6cb0add188b436"
+    },
+    {
+      "path": "f4-final-lint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f4-final-lint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f4-final-targeted.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f4-final-targeted.log",
+      "bytes": 1002,
+      "sha256": "4dabf422e15e77b0a62217742a4c6909f1d753824fc11b399768af706fc633a8"
+    },
+    {
+      "path": "f4-lint-final.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f4-lint-final.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f4-lint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f4-lint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f4-tests-final.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f4-tests-final.log",
+      "bytes": 891,
+      "sha256": "404cb3fb3beeae461f56bb913923e0f74eb90828e9203b75e2bc5cf16f7b9d87"
+    },
+    {
+      "path": "f4-tests.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "f4-tests.log",
+      "bytes": 2533,
+      "sha256": "733d75ba95efe029d63ee33b913e59656c0d3656a50692b69075b17db961bd27"
+    },
+    {
+      "path": "f4-typecheck-final.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f4-typecheck-final.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f4-typecheck.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f4-typecheck.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f5-build-app-equivalence.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f5-build.command.txt",
+      "bytes": 83,
+      "sha256": "df11d7d14004c335819f64a4d423c03f5c37b5fbf305aa188df2d133551b5bc9"
+    },
+    {
+      "path": "f5-build.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f5-build.finished",
+      "bytes": 21,
+      "sha256": "b1985f03454fa201f593dfdfddb5656218ba449d3c32e646f8e2648def34687c"
+    },
+    {
+      "path": "f5-build.started",
+      "bytes": 21,
+      "sha256": "8af074473635f20ff7484e2a21e176a5a7c9160db46d61b2034b2790e9f967f8"
+    },
+    {
+      "path": "f5-build.stderr.log",
+      "bytes": 135,
+      "sha256": "aaae98601d7417d7576895e0feb36e488a0be1b277a811a2e5fa93824b63e507"
+    },
+    {
+      "path": "f5-build.stdout.log",
+      "bytes": 1065,
+      "sha256": "2094980c6c099b9e913d257e5ade3db04ab9402a52559826d0207b4224b5d038"
+    },
+    {
+      "path": "f5-focused.command.txt",
+      "bytes": 494,
+      "sha256": "21693d683d54405d447efe209ba4d9be552b28cd2e64252ab6e70b25cb2f4cd9"
+    },
+    {
+      "path": "f5-focused.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f5-focused.finished",
+      "bytes": 21,
+      "sha256": "d1271fb10ef3f2b5195d34af21fe807b8f071789e0ed802a9b4dbceb463b08a5"
+    },
+    {
+      "path": "f5-focused.started",
+      "bytes": 21,
+      "sha256": "6404a8965112a6b3a4602fb4efc878f9aebcb4aa328f62b2caaad8c84e782524"
+    },
+    {
+      "path": "f5-focused.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f5-focused.stdout.log",
+      "bytes": 5488,
+      "sha256": "289a02b5ac494c544baf9814d5bde54ba81951f585046270b2ade8e911c7cbfd"
+    },
+    {
+      "path": "f5-lint-final.command.txt",
+      "bytes": 13,
+      "sha256": "358a7ae8113981253043b4a59ac928a6ce48e9fb8c3c019d4705fa03009ca5c4"
+    },
+    {
+      "path": "f5-lint-final.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f5-lint-final.finished",
+      "bytes": 21,
+      "sha256": "973125764ac6f9c3cdfd72c5effc1e16cddec82a7a5c08b757e32e7b773aafed"
+    },
+    {
+      "path": "f5-lint-final.started",
+      "bytes": 21,
+      "sha256": "f2dbe60b82a18d68de74399b8496f8959f69f3bfd5cb8d826ef6f5edc35a798a"
+    },
+    {
+      "path": "f5-lint-final.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f5-lint-final.stdout.log",
+      "bytes": 1401,
+      "sha256": "8476fcf9162732208c695dd651c164a512c04a14de73c46b709da76088f74dd9"
+    },
+    {
+      "path": "f5-lint.command.txt",
+      "bytes": 13,
+      "sha256": "358a7ae8113981253043b4a59ac928a6ce48e9fb8c3c019d4705fa03009ca5c4"
+    },
+    {
+      "path": "f5-lint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f5-lint.finished",
+      "bytes": 21,
+      "sha256": "6404a8965112a6b3a4602fb4efc878f9aebcb4aa328f62b2caaad8c84e782524"
+    },
+    {
+      "path": "f5-lint.started",
+      "bytes": 21,
+      "sha256": "95775e0e55a8ad10b593856f47c51ac4f57ce8feec6cd323cae103a4e8df0ebe"
+    },
+    {
+      "path": "f5-lint.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f5-lint.stdout.log",
+      "bytes": 1401,
+      "sha256": "8476fcf9162732208c695dd651c164a512c04a14de73c46b709da76088f74dd9"
+    },
+    {
+      "path": "f5-loader-lint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f5-loader-lint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f5-loader-targeted-final.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f5-loader-targeted-final.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f5-loader-targeted-final.stdout.log",
+      "bytes": 1401,
+      "sha256": "717ffb4a4327bce78b04a797df6388907c6b31883f64f1efbb30b676ca3cf101"
+    },
+    {
+      "path": "f5-loader-targeted.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f5-loader-targeted.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f5-loader-targeted.stdout.log",
+      "bytes": 1292,
+      "sha256": "2bc72523424156585e962ebabfc76d93eb79ed3ac42a4076988a20c7fc38abff"
+    },
+    {
+      "path": "f5-node.version",
+      "bytes": 9,
+      "sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41"
+    },
+    {
+      "path": "f5-offline-gate-final.command.txt",
+      "bytes": 19,
+      "sha256": "22a59c38fbe51e2c712ac58181ee96c60f7de62932cc697ee92a9b0e5710acfc"
+    },
+    {
+      "path": "f5-offline-gate-final.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f5-offline-gate-final.finished",
+      "bytes": 21,
+      "sha256": "9315506e2dd0cb7c94cb11dc72128b8f8abdd05aa860449250f7a1d1e99320c6"
+    },
+    {
+      "path": "f5-offline-gate-final.started",
+      "bytes": 21,
+      "sha256": "973125764ac6f9c3cdfd72c5effc1e16cddec82a7a5c08b757e32e7b773aafed"
+    },
+    {
+      "path": "f5-offline-gate-final.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f5-offline-gate-final.stdout.log",
+      "bytes": 167917,
+      "sha256": "e0ebd3cc79b739b2908e8d00e9346e759a1ebe6fa844ad3249288f5be8cbbffd"
+    },
+    {
+      "path": "f5-offline-gate.command.txt",
+      "bytes": 19,
+      "sha256": "22a59c38fbe51e2c712ac58181ee96c60f7de62932cc697ee92a9b0e5710acfc"
+    },
+    {
+      "path": "f5-offline-gate.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "f5-offline-gate.finished",
+      "bytes": 21,
+      "sha256": "8af074473635f20ff7484e2a21e176a5a7c9160db46d61b2034b2790e9f967f8"
+    },
+    {
+      "path": "f5-offline-gate.started",
+      "bytes": 21,
+      "sha256": "d1271fb10ef3f2b5195d34af21fe807b8f071789e0ed802a9b4dbceb463b08a5"
+    },
+    {
+      "path": "f5-offline-gate.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f5-offline-gate.stdout.log",
+      "bytes": 180305,
+      "sha256": "7d4e1601a7807b164415236a98b2d1888ef426ab7466eb478bddec08d1146e03"
+    },
+    {
+      "path": "f5-pure-core-equivalence.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f5-retry-source.sha",
+      "bytes": 41,
+      "sha256": "17f5346aa6e824a8042a9886d8ce8f94a615b5bbaf712c576b119ee412c5f8bb"
+    },
+    {
+      "path": "f5-retry-source.tree",
+      "bytes": 41,
+      "sha256": "eccf0436a27d3f8ffee9ce18ea57ee4d285244eb384ec6bdde3e4a1d1f22421f"
+    },
+    {
+      "path": "f5-source.sha",
+      "bytes": 41,
+      "sha256": "d402de36510e4a3d6b09e89c253da55536238a4dd80502322db4fe30e11a73c9"
+    },
+    {
+      "path": "f5-source.tree",
+      "bytes": 41,
+      "sha256": "feac0d7eb49269a22991913a1eb99127d8756a0883f1c18c9398679d7c5a8c51"
+    },
+    {
+      "path": "f5-typecheck.command.txt",
+      "bytes": 66,
+      "sha256": "b7e051eb7b9d772000d2904c590b726e06b43f2da52661353b867fe92e04564a"
+    },
+    {
+      "path": "f5-typecheck.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "f5-typecheck.finished",
+      "bytes": 21,
+      "sha256": "95775e0e55a8ad10b593856f47c51ac4f57ce8feec6cd323cae103a4e8df0ebe"
+    },
+    {
+      "path": "f5-typecheck.started",
+      "bytes": 21,
+      "sha256": "787ad3b2c0590fc2bd86b75a9571e729267d9ca3387bf647a560f12177af7f6c"
+    },
+    {
+      "path": "f5-typecheck.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f5-typecheck.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "f5-worktree-before.txt",
+      "bytes": 324,
+      "sha256": "f4216f5e37584726c5c763e95f8cd893fcff8ff6af9cb6293ffddccb46470b5e"
+    },
+    {
+      "path": "metadata-lint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "metadata-lint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

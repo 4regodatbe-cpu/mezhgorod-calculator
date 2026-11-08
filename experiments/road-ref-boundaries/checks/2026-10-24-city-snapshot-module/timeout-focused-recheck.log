@@ -1,0 +1,16 @@
+✔ hanging headers are bounded and the source is aborted even if it ignores cancellation (30.266314ms)
+✔ headers arriving successfully cannot bypass the deadline while JSON body hangs (28.764663ms)
+✔ expired total budget starts no source request; invalid time limits fail promptly (0.574695ms)
+✔ HTTP and malformed JSON failures remain explicit and abort unread response work (2.17034ms)
+✔ successful source JSON and original report array/ranking contract survive incremental writes (99.081604ms)
+✔ global budget bounds concurrent stalled sources, saves partial results and stops later cities (48.907671ms)
+✔ budget exhaustion on the final city is still reported instead of a false DONE (32.634023ms)
+✔ one unavailable source is a recorded failure, while the other source and following city still finish (60.019194ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 643.687816

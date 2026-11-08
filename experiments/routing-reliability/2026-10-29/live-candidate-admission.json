@@ -1,0 +1,35 @@
+{
+  "source": "krasnodar-moscow-current.json.gz",
+  "sourceSha256": "8edfb11ae0da2f014d7b98989fc292114bb98b6ae77bd1fa3cb88d7a3491679a",
+  "networkRequests": 0,
+  "mode": "decode only actual saved provider bodies, same admission functions/controls and stable ETA minimum; no tariff recomputation",
+  "candidates": [
+    {
+      "provider": "Valhalla",
+      "admissible": true,
+      "meters": 1346445,
+      "seconds": 64394,
+      "geometrySha256": "9e478e284b3d54f0e5a684f99275e52816fab1bdf427477c4bb9e6b4d039ac36"
+    },
+    {
+      "provider": "OSRM",
+      "admissible": true,
+      "meters": 1348582,
+      "seconds": 65630,
+      "geometrySha256": "b05241e5d684da00193394fb0c64640ddc5cec772b91a9f809e64c177bb952c7"
+    },
+    {
+      "provider": "BRouter",
+      "admissible": false,
+      "reason": "ROUTE_UNAVAILABLE"
+    }
+  ],
+  "winner": {
+    "provider": "Valhalla",
+    "admissible": true,
+    "meters": 1346445,
+    "seconds": 64394,
+    "geometrySha256": "9e478e284b3d54f0e5a684f99275e52816fab1bdf427477c4bb9e6b4d039ac36"
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1292 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="3183012434" visible="true" version="6" changeset="52809395" timestamp="2017-10-11T00:34:48Z" user="AlexTheTux" uid="367643" lat="57.2256978" lon="34.9162673">
+  <tag k="barrier" v="toll_booth"/>
+  <tag k="comment" v="Пункт &quot;ТОРЖОК - ПВП8&quot;"/>
+  <tag k="payment:cash" v="yes"/>
+  <tag k="payment:mastercard" v="yes"/>
+  <tag k="payment:visa" v="yes"/>
+  <tag k="ref" v="ПВП8"/>
+ </node>
+ <node id="3214701836" visible="true" version="2" changeset="65826721" timestamp="2018-12-27T22:37:00Z" user="OrionX" uid="388977" lat="57.2260194" lon="34.9153880"/>
+ <node id="7438063578" visible="true" version="1" changeset="84001068" timestamp="2020-04-23T12:08:48Z" user="mosstreet" uid="3674775" lat="57.2265450" lon="34.9144632"/>
+ <way id="795246101" visible="true" version="1" changeset="84001068" timestamp="2020-04-23T12:08:48Z" user="mosstreet" uid="3674775">
+  <nd ref="7438063578"/>
+  <nd ref="3214701836"/>
+  <nd ref="3183012434"/>
+  <tag k="destination" v="Тверь;Москва"/>
+  <tag k="destination:int_ref" v="E105"/>
+  <tag k="destination:ref" v="M10"/>
+  <tag k="highway" v="trunk_link"/>
+  <tag k="lanes" v="4"/>
+  <tag k="lit" v="yes"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="toll" v="yes"/>
+ </way>
+</osm>

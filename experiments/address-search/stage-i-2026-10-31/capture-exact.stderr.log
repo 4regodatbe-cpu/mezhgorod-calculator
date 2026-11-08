@@ -1,0 +1,6 @@
+address_search_partial {
+  elapsedMs: 831,
+  sourceCount: 7,
+  failures: { http_503: 1 },
+  budgetExpired: false
+}

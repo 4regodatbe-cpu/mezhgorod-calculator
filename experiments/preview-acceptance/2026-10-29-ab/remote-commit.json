@@ -1,0 +1,35 @@
+{
+  "sha": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+  "node_id": "C_kwDOUknb29oAKGMyZjUyZWU5M2NkOThhODFlY2QwNWVmYTAzNThmYjM4YzY3MDQxMjQ",
+  "url": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/git/commits/c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+  "html_url": "https://github.com/4regodatbe-cpu/mezhgorod-calculator/commit/c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+  "author": {
+    "name": "Богдан Евгеньевич T.",
+    "email": "4regoda.tbe@gmail.com",
+    "date": "2026-10-29T20:22:16Z"
+  },
+  "committer": {
+    "name": "Богдан Евгеньевич T.",
+    "email": "4regoda.tbe@gmail.com",
+    "date": "2026-10-29T20:22:16Z"
+  },
+  "tree": {
+    "sha": "81b4edaee4ffb6a17c3c93308b87ec52fe08d054",
+    "url": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/git/trees/81b4edaee4ffb6a17c3c93308b87ec52fe08d054"
+  },
+  "message": "docs(preview): checkpoint single authorized A+B publication preflight",
+  "parents": [
+    {
+      "sha": "eea9351234e2f5b9d3f506b53a4e46bfd4bfd746",
+      "url": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/git/commits/eea9351234e2f5b9d3f506b53a4e46bfd4bfd746",
+      "html_url": "https://github.com/4regodatbe-cpu/mezhgorod-calculator/commit/eea9351234e2f5b9d3f506b53a4e46bfd4bfd746"
+    }
+  ],
+  "verification": {
+    "verified": false,
+    "reason": "unsigned",
+    "signature": null,
+    "payload": null,
+    "verified_at": null
+  }
+}

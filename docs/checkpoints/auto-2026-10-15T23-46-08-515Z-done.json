@@ -1,0 +1,95 @@
+{
+  "at": "2026-10-15T23:46:08.515Z",
+  "phase": "DONE",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 39,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 5,
+    "spec": {
+      "caseId": "lnr-алчевск-kerch-center",
+      "kind": "regional",
+      "region": "lnr"
+    }
+  },
+  "caseId": "lnr-алчевск-kazan-center",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "lnr-алчевск-kazan-center",
+    "startedAt": "2026-10-15T23:45:46.138Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T23-45-58-117Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-алчевск-kazan-center/2026-10-15T23-45-58-016Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T23-45-58-685Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T23-45-59-241Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [],
+      "provenRoads": [
+        "m12"
+      ],
+      "missingExpectedRoads": [],
+      "status": "not-assigned"
+    },
+    "weekday": {
+      "amount": 850,
+      "weekdayAmount": 850,
+      "weekendAmount": 850,
+      "period": "все дни",
+      "segments": [
+        "М-12: shumerlya → ivanovskoe_p241 · Стоимость не подтверждена"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "weekend": {
+      "amount": 850,
+      "weekdayAmount": 850,
+      "weekendAmount": 850,
+      "period": "все дни",
+      "segments": [
+        "М-12: shumerlya → ivanovskoe_p241 · Стоимость не подтверждена"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "components": [
+      {
+        "id": "m12",
+        "amount": 850,
+        "reason": "matrix dated selected-route M12 directed endpoint pair"
+      }
+    ],
+    "finishedAt": "2026-10-15T23:45:59.262Z"
+  },
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-45-44-855Z-part5",
+  "parent": "70eb0a702dfeee397ba9ab2f917f89b25162a0c7"
+}

@@ -1,0 +1,22 @@
+{
+  "status": "STARTED",
+  "atMsk": "2026-10-18T11:23:44.288166+03:00",
+  "sourceHead": "e5e3042b6f7aacf0c95b604fa731c5111ac5763d",
+  "pr": 14,
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "queries": [
+    "\"РВП-64\" ЗСД",
+    "site:nch-spb.com \"Макарова\" \"без транспондера\""
+  ],
+  "limits": {
+    "queries": 2,
+    "newPrimaryReads": 2,
+    "perGetSeconds": 20,
+    "perGetMaxBytes": 3000000,
+    "routing": 0,
+    "trace": 0,
+    "replay": 0
+  },
+  "recovery": "Resume from saved query/page responses and progress. Do not repeat completed current-rules PDF, old source passes, 74 component or 20 boundary checks. If only old sources returned, keep BLOCKED and record exact missing data.",
+  "acceptance": "Primary operator diagram or collection proof binds RVP64/ref64E to ordinary WHSD product and exact cash/card bundle; a same-road label alone does not suffice."
+}

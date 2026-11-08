@@ -1,0 +1,60 @@
+{
+  "caseId": "pair-m4-a289-taman-to-voronezh",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-voronezh/2026-10-16T00-10-53-930Z-capture.json.gz",
+  "captureSha256": "db7ce8f0d256d7e2583644611c3a00adae58c5367735a146a4f9005867b9404a",
+  "selected": {
+    "provider": "OSRM",
+    "routeMeters": 1026560,
+    "confirmedPvps": [
+      "m4-1223",
+      "m4-545"
+    ],
+    "booth545": "5818209495",
+    "validationComplete": true,
+    "boothEventCoverage": "complete",
+    "exactBoothCount": 10,
+    "paidEdgeCount": 784
+  },
+  "matrix": {
+    "physicalEndpointPair": [
+      "m4-1223",
+      "m4-545"
+    ],
+    "matchingRows": [],
+    "separateSectionPairs": [
+      {
+        "to": "m4-545-a",
+        "weekday": 3060,
+        "weekend": 3620,
+        "includes": [
+          "m4-545-b",
+          "m4-545-a"
+        ]
+      },
+      {
+        "to": "m4-545-b",
+        "weekday": 2920,
+        "weekend": 3460,
+        "includes": [
+          "m4-545-b"
+        ]
+      }
+    ],
+    "sourceRows": {
+      "m4-545-a": {
+        "sectionKm": "517-544",
+        "weekday": 140,
+        "weekend": 160
+      },
+      "m4-545-b": {
+        "sectionKm": "544-589",
+        "weekday": 180,
+        "weekend": 250
+      }
+    },
+    "source": "experiments/nationwide-tolls/source-snapshots/m4-order58-2026-03-02-category1-verified.json"
+  },
+  "result": "physical545_tariff_section_scope_unresolved",
+  "prohibited": "No blind alias545 to545-a/b, no min/max/reverse fare/subtraction, no legacy sum as exact price",
+  "next": "Inspect selected geometry/paid-edge source around545 towards Voronezh and bind exact operator tariff rows/collection applicability independently; source labels in lib/m4-data differ by1km for secondrow start so primaryPDF wins"
+}

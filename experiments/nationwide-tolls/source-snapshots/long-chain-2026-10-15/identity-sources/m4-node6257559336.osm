@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1314 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="6257559336" visible="true" version="5" changeset="123759582" timestamp="2022-07-18T11:29:52Z" user="Bloodmage" uid="149719" lat="51.6629369" lon="39.3018793">
+  <tag k="barrier" v="toll_booth"/>
+  <tag k="fee" v="50 RUR @ (class:1 AND 7:00-0:00);30 RUR @ (class:1 AND 0:00-7:00);200 RUR @ (class:4 AND 7:00-0:00);100 RUR @ (class:4 AND 0:00-7:00)"/>
+  <tag k="name" v="ПВП 515 км"/>
+  <tag k="operator" v="ООО «Автодор-Платные Дороги»"/>
+  <tag k="phone" v="+7 800 7072323"/>
+  <tag k="website" v="https://avtodor-tr.ru/"/>
+ </node>
+</osm>

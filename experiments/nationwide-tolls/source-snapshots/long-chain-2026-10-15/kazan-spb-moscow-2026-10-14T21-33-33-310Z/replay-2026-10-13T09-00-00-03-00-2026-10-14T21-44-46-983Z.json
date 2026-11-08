@@ -1,0 +1,146 @@
+{
+  "name": "kazan-spb-moscow",
+  "mode": "offline-recorded-response-replay",
+  "provider": "Valhalla",
+  "departureAt": "2026-10-13T09:00:00+03:00",
+  "meters": 1532929,
+  "seconds": 66182,
+  "traceComplete": false,
+  "expected": [
+    "m12",
+    "m11"
+  ],
+  "missingExpected": [],
+  "pricingElapsedMs": 174,
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m11-679-684, zsd, unknown-paid-road",
+      "m11-679-684: m11_679_684_continuation_not_priced",
+      "zsd: ЗСД",
+      "unknown-paid-road: selected_route_payment_trace_incomplete"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": "Стоимость не подтверждена",
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [
+      "m11-15-58",
+      "m11-58-679",
+      "m12"
+    ],
+    "missing": [
+      "m11-679-684",
+      "zsd",
+      "unknown-paid-road"
+    ],
+    "components": [
+      {
+        "id": "m11-15-58",
+        "detected": true,
+        "tolls": {
+          "amount": 880,
+          "weekdayAmount": 1130,
+          "weekendAmount": 1650,
+          "period": "по расчётному времени оплаты М-11 15–58 (night)",
+          "confidence": "matched",
+          "segments": [
+            "М-11 15–58: moscow → solnechnogorsk: 880 ₽ · Стоимость не подтверждена"
+          ]
+        },
+        "reason": "m11_head_ready_direct_pair_at_exit_payment"
+      },
+      {
+        "id": "m11-58-679",
+        "detected": true,
+        "tolls": {
+          "amount": 3900,
+          "weekdayAmount": 3900,
+          "weekendAmount": 4200,
+          "period": "понедельник–четверг",
+          "segments": [
+            "М-11: p58 → p679 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix dated selected-route M11 direct pair"
+      },
+      {
+        "id": "m11-679-684",
+        "detected": true,
+        "tolls": null,
+        "reason": "m11_679_684_continuation_not_priced"
+      },
+      {
+        "id": "m12",
+        "detected": true,
+        "tolls": {
+          "amount": 3513,
+          "weekdayAmount": 3513,
+          "weekendAmount": 3513,
+          "period": "все дни",
+          "segments": [
+            "М-12: ivanovskoe_p241 → vladimir · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix dated selected-route M12 directed endpoint pair"
+      },
+      {
+        "id": "zsd",
+        "detected": true,
+        "tolls": null,
+        "reason": "ЗСД"
+      },
+      {
+        "id": "unknown-paid-road",
+        "detected": true,
+        "tolls": null,
+        "reason": "selected_route_payment_trace_incomplete"
+      }
+    ]
+  },
+  "booths": [
+    {
+      "osmNodeId": "7171625012",
+      "wayId": "319360670",
+      "roadNames": [
+        "М-11",
+        "«Нева»"
+      ],
+      "edgeIndex": 0,
+      "edgeToll": true,
+      "beginShapeIndex": 143,
+      "endShapeIndex": 144
+    },
+    {
+      "osmNodeId": "2492861246",
+      "wayId": "1395997597",
+      "roadNames": [
+        "М-11",
+        "«Нева»"
+      ],
+      "edgeIndex": 1,
+      "edgeToll": true,
+      "beginShapeIndex": 499,
+      "endShapeIndex": 501
+    },
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 2,
+      "edgeToll": true,
+      "beginShapeIndex": 689,
+      "endShapeIndex": 690
+    }
+  ]
+}

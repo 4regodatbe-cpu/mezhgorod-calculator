@@ -1,0 +1,11 @@
+# E5 — performed checks complete locally / original gate exit metadata limited
+
+30.10.2026 MSK; checked TS/runtime source **86185310a3bd2ef9d3028fe8666b1756233a0ba6**. [Structured results/sourcechecksums](../../experiments/toll-estimates/checks/2026-10-30/e5-gate-status.json), [metadatafailure explanation](../../experiments/toll-estimates/checks/2026-10-30/e5-status-writer-failure.md). No publication/activation.
+
+28distinct prototype regressionsPASS/0FAIL; finalscopedstrictTS/scopedESLintPASS, combined command exit0. One mandated existingofflinegate actually ran:1047PASS/0FAIL/1SKIP, quote/APIcontractsPASS. Projecttsc ran, then directNext16.3.4webpackbuild compiled/typechecked/generated16/16/finalized/traced and emitted complete route table. Node24.19.0. ExistingpreferredRegiondeprecation only.
+
+**Recording limitation:** the post-check inline JSON writer had a syntax error and the overallshellreturned1 for that error. The original audit/projecttsc/build per-command exit variables were lost before persistence; no inventedexit0. Original audit/build `exit=null`, status based on full positive logs, not a recorded code. Projecttsc independently reverified with capturedexit0; repairedmetadata verifierexit0. Heavy audit/build not rerun merely for bookkeeping. The failure and raw original logs are preserved. This is not a failed test or proven application failure; neither is an unknown exit silently represented as0.
+
+Source/data guards: app/lib/data/public/scripts/CI/dependencies byte-unchanged vsEsourcee6a8a2fe; prototypeTSbyte-unchanged vsverified86185310; no app/lib/data/CI imports ofnewprototype. Raw source/matrix hashes reverified. No strict or business rule altered, no new route/geocoder/trace/source audit or workflow dispatch. Newtuple/candidate fixtures remain separate from3actualsavedroutes/6dateevaluations. Current sample1confirmed600/1estimated10464Thu12334Sat/1unknown/CKAD-ZSDmissing;0newlyunblockednumericroutes.
+
+StatusLOCAL_CHECKS_COMPLETE_WITH_EXIT_RECORDING_LIMITATION, not a hostedCI/Preview acceptance. E1causesremainblocked; E2–E4prototypeoff. Next finalreport/optional-module inventory/WORK_STATE/localcommit/recoverybundle. Any liveadapter/CI wiring/Previewpublication requires separate step and approval; no push/Production/main/Android/backup/PRchange.

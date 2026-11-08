@@ -1,0 +1,282 @@
+{
+  "caseId": "single-m4-domodedovo-to-krasnodar",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-17T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-17T09:00:00+03:00"
+  },
+  "provider": "Valhalla",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 1305856,
+      "seconds": 60891
+    },
+    {
+      "name": "OSRM",
+      "meters": 1303784,
+      "seconds": 63114
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 1305856,
+  "routeSeconds": 60891,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 37.766,
+          "lat": 55.436
+        },
+        {
+          "lng": 38.975313,
+          "lat": 45.03547
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "m4"
+    ],
+    "provenRoads": [
+      "m4"
+    ],
+    "missingExpectedRoads": [],
+    "status": "traversal-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "461450930",
+      "names": [
+        "М-4",
+        "E 115",
+        "E 119",
+        "AH8",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "461450925",
+      "names": [
+        "М-4",
+        "E 115",
+        "E 119",
+        "AH8",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "1051304958",
+      "names": [
+        "М-4",
+        "E 115",
+        "E 119",
+        "AH8",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "3036681112"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "4341143826"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "3598939357"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "2486362587"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "3598837929"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "1051218390"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "1051205779"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "3200592308"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "3842564088"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "9620404676"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "7678126301"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "11838757138"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "11838466121"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "11295106601"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "5325424715"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "9620386263"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "9772717211"
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "m4": {
+      "occurrences": 857,
+      "uniqueWays": 633
+    }
+  },
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-domodedovo-to-krasnodar/2026-10-16T00-26-25-324Z-capture.json.gz",
+  "captureSha256": "b31fb096e2b7e4258cabae9e058774b4be15ab7128cb943a2dcb47887a3ed125",
+  "detectedRoadComponents": [
+    {
+      "id": "m4",
+      "amount": 6090,
+      "reason": "matrix exact selected-route M4 vector"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-4",
+    "E 115",
+    "E 119",
+    "AH8",
+    "«Дон»",
+    "Дон",
+    "улица Изыскателей",
+    "AH61",
+    "E 50",
+    "Самарское шоссе"
+  ],
+  "tollNodeIds": [
+    "3036681112",
+    "4341143826",
+    "3598939357",
+    "2486362587",
+    "3598837929",
+    "1051218390",
+    "1051205779",
+    "3200592308",
+    "3842564088",
+    "9620404676",
+    "7678126301",
+    "11838757138",
+    "11838466121",
+    "11295106601",
+    "5325424715",
+    "9620386263",
+    "9772717211"
+  ],
+  "m4PvpPreview": {
+    "status": "boundaries_resolved",
+    "reason": null,
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 3,
+    "confirmedPvps": [
+      "m4-71",
+      "m4-1223"
+    ],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": 6090,
+    "weekdayAmount": 5040,
+    "weekendAmount": 6090,
+    "period": "пятница–воскресенье",
+    "segments": [
+      "М-4: m4-71 → m4-1223 · Стоимость не подтверждена"
+    ],
+    "confidence": "matched",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "priced"
+  },
+  "audit": {
+    "status": "priced",
+    "priced": [
+      "m4"
+    ],
+    "missing": [],
+    "components": [
+      {
+        "id": "m4",
+        "detected": true,
+        "tolls": {
+          "amount": 6090,
+          "weekdayAmount": 5040,
+          "weekendAmount": 6090,
+          "period": "пятница–воскресенье",
+          "segments": [
+            "М-4: m4-71 → m4-1223 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix exact selected-route M4 vector"
+      }
+    ]
+  }
+}

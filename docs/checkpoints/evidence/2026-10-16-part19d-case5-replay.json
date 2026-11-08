@@ -1,0 +1,120 @@
+{
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-бахмут-moscow-center/2026-10-15T22-24-31-910Z-capture.json.gz",
+  "captureSha256": "f2d806e59d7c139ab6d0875757ee76c55abf1b85b9e909e12e4673a40147ea44",
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-бахмут-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T08-50-11-421Z.json",
+      "sha256": "98f01018c57deb83e46123e834ee86b1324f05905792b377baea9eda96c17323",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "provider": "OSRM",
+      "routeMeters": 991458,
+      "tolls": {
+        "amount": 1830,
+        "weekdayAmount": 1830,
+        "weekendAmount": 2300,
+        "period": "понедельник–четверг",
+        "segments": [
+          "М-4: m4-460 → m4-71 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "audit": {
+        "status": "priced",
+        "priced": [
+          "m4"
+        ],
+        "missing": [],
+        "components": [
+          {
+            "id": "m4",
+            "detected": true,
+            "tolls": {
+              "amount": 1830,
+              "weekdayAmount": 1830,
+              "weekendAmount": 2300,
+              "period": "понедельник–четверг",
+              "segments": [
+                "М-4: m4-460 → m4-71 · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix exact selected-route M4 vector"
+          }
+        ]
+      },
+      "m4": {
+        "status": "boundaries_resolved",
+        "reason": null,
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 3,
+        "confirmedPvps": [
+          "m4-460",
+          "m4-71"
+        ],
+        "diagnosticOnly": true
+      }
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-бахмут-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T08-50-12-320Z.json",
+      "sha256": "3885bf85ceb2b54bdba7887c1af0dbc843b29838edb06724c71f21234762d6dd",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "provider": "OSRM",
+      "routeMeters": 991458,
+      "tolls": {
+        "amount": 2300,
+        "weekdayAmount": 1830,
+        "weekendAmount": 2300,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "М-4: m4-460 → m4-71 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "audit": {
+        "status": "priced",
+        "priced": [
+          "m4"
+        ],
+        "missing": [],
+        "components": [
+          {
+            "id": "m4",
+            "detected": true,
+            "tolls": {
+              "amount": 2300,
+              "weekdayAmount": 1830,
+              "weekendAmount": 2300,
+              "period": "пятница–воскресенье",
+              "segments": [
+                "М-4: m4-460 → m4-71 · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix exact selected-route M4 vector"
+          }
+        ]
+      },
+      "m4": {
+        "status": "boundaries_resolved",
+        "reason": null,
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 3,
+        "confirmedPvps": [
+          "m4-460",
+          "m4-71"
+        ],
+        "diagnosticOnly": true
+      }
+    }
+  ],
+  "next": "dnr-бахмут-moscow-center",
+  "checked": 4
+}

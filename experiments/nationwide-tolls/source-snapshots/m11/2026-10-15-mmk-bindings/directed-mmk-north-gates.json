@@ -1,0 +1,93 @@
+{
+  "retrievedAt": "2026-10-15",
+  "productId": "m11-15-58",
+  "scope": "MMK(A107) north plaza physical directed carriageways, not the distinct CKAD47 PVP18",
+  "sourceURL": "https://www.openstreetmap.org/api/0.6/map?bbox=37.155,56.085,37.20,56.12",
+  "rawFile": "osm-mmk-48-50.osm.gz",
+  "rawSHA256": "2eddf369db99eb360a91ffd527fbacd272a8a4b1a3bc8656aa3116e54f755c96",
+  "archiveSHA256": "a3a3ff48c573cd40224647c42ebd12db7b57a60e3f707c85631bf70284b50dbe",
+  "operatorIdentitySource": "experiments/nationwide-tolls/source-documents/m11-head-passage-rules-retrieved-2026-10-14.pdf",
+  "operatorIdentityPage": 5,
+  "operatorPdfSHA256": "c4c86c9fd92faddaaa4ab4628542185f48e6ea25ed2dff460960650ab48b9f5a",
+  "operatorFact": "MMK SOUTH PVP6B1 at48km and MMK NORTH PVP6B2 at50km are distinct from CKAD PVP18 at47km. Current directed MMK–Solnechnogorsk fares already in210-cell head matrix.",
+  "gates": [
+    {
+      "from": "mmk_a107",
+      "to": "solnechnogorsk",
+      "facilityId": "pvp50-mmk-north",
+      "wayId": "795569815",
+      "wayTags": {
+        "highway": "trunk_link",
+        "lanes": "2",
+        "lit": "yes",
+        "maxspeed": "30",
+        "note": "approximate position",
+        "oneway": "yes",
+        "ref": "М-11",
+        "surface": "asphalt",
+        "toll": "yes"
+      },
+      "gate": {
+        "id": "3499155981",
+        "lon": 37.1629715,
+        "lat": 56.1006669
+      },
+      "gateTags": {
+        "barrier": "toll_booth",
+        "fee": "yes"
+      },
+      "before": {
+        "id": "6301877923",
+        "lon": 37.1637999,
+        "lat": 56.1005155
+      },
+      "after": {
+        "id": "3499139982",
+        "lon": 37.1619952,
+        "lat": 56.1007626
+      }
+    },
+    {
+      "from": "solnechnogorsk",
+      "to": "mmk_a107",
+      "facilityId": "pvp50-mmk-north",
+      "wayId": "795569816",
+      "wayTags": {
+        "destination": "Икша;Ногинск;Бронницы;Голицино;Истра",
+        "destination:ref": "А-107",
+        "highway": "trunk_link",
+        "lanes": "2",
+        "lit": "yes",
+        "maxspeed": "30",
+        "note": "approximate position",
+        "oneway": "yes",
+        "ref": "М-11",
+        "surface": "asphalt"
+      },
+      "gate": {
+        "id": "3499155978",
+        "lon": 37.1627033,
+        "lat": 56.1000685
+      },
+      "gateTags": {
+        "barrier": "toll_booth",
+        "fee": "yes"
+      },
+      "before": {
+        "id": "6301877910",
+        "lon": 37.1618342,
+        "lat": 56.1002121
+      },
+      "after": {
+        "id": "3499139978",
+        "lon": 37.1639907,
+        "lat": 56.099895
+      }
+    }
+  ],
+  "limits": [
+    "OSM ways contain note=approximate position; matcher requires exact directed25m lane flanks plus strict mainlinep58/p679 proof.",
+    "No new monetary amount or fee tag imported.",
+    "This binding is not an identity for the separate directCKAD47 entry."
+  ]
+}

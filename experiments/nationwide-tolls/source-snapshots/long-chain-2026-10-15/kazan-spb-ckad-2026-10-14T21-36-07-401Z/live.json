@@ -1,0 +1,105 @@
+{
+  "name": "kazan-spb-ckad",
+  "mode": "live",
+  "provider": "Valhalla",
+  "departureAt": "2026-10-13T09:00:00+03:00",
+  "meters": 1663348,
+  "seconds": 80354,
+  "traceComplete": true,
+  "expected": [
+    "m12",
+    "ckad",
+    "m11"
+  ],
+  "missingExpected": [],
+  "pricingElapsedMs": 220,
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m11-58-679, m12, ckad, zsd",
+      "m11-58-679: entry_not_proven_at_strict_m11_start,exit_not_proven_at_strict_m11_end",
+      "m12: m12_current_operator_pair_not_bound",
+      "ckad: ckad_east_arc_not_proven",
+      "zsd: ЗСД"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": "Стоимость не подтверждена",
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [],
+    "missing": [
+      "m11-58-679",
+      "m12",
+      "ckad",
+      "zsd"
+    ],
+    "components": [
+      {
+        "id": "m11-58-679",
+        "detected": true,
+        "tolls": null,
+        "reason": "entry_not_proven_at_strict_m11_start,exit_not_proven_at_strict_m11_end"
+      },
+      {
+        "id": "m12",
+        "detected": true,
+        "tolls": null,
+        "reason": "m12_current_operator_pair_not_bound"
+      },
+      {
+        "id": "ckad",
+        "detected": true,
+        "tolls": null,
+        "reason": "ckad_east_arc_not_proven"
+      },
+      {
+        "id": "zsd",
+        "detected": true,
+        "tolls": null,
+        "reason": "ЗСД"
+      }
+    ]
+  },
+  "booths": [
+    {
+      "osmNodeId": "3499155981",
+      "wayId": "795569815",
+      "roadNames": [
+        "М-11"
+      ],
+      "edgeIndex": 0,
+      "edgeToll": true,
+      "beginShapeIndex": 347,
+      "endShapeIndex": 348
+    },
+    {
+      "osmNodeId": "2492861246",
+      "wayId": "1395997597",
+      "roadNames": [
+        "М-11",
+        "«Нева»"
+      ],
+      "edgeIndex": 1,
+      "edgeToll": true,
+      "beginShapeIndex": 467,
+      "endShapeIndex": 469
+    },
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 2,
+      "edgeToll": true,
+      "beginShapeIndex": 657,
+      "endShapeIndex": 658
+    }
+  ]
+}

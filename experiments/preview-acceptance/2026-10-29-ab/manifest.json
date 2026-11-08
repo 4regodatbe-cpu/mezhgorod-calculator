@@ -1,0 +1,107 @@
+{
+  "source": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+  "tree": "81b4edaee4ffb6a17c3c93308b87ec52fe08d054",
+  "persistence": "Follow-up evidence LOCAL ONLY; one authorized push consumed",
+  "files": [
+    {
+      "path": "address-ui.log",
+      "bytes": 35269,
+      "sha256": "77e264198822abf51c9f25fbd6fbdeebec20a61ee36c5ee355943d403dec2f00"
+    },
+    {
+      "path": "all-workflow-runs.json",
+      "bytes": 51638,
+      "sha256": "a6d656a330d8898337c1201851e09a95b28dc61da891ede668d90ed69a63f7dc"
+    },
+    {
+      "path": "b03-ui.zip",
+      "bytes": 293506,
+      "sha256": "2dfbaa8d80a7ba210cb7cde55f46f43eadf9b3aabc75981cba3d3ab21e1584f0"
+    },
+    {
+      "path": "calculation-runtime.zip",
+      "bytes": 2850,
+      "sha256": "58240175dae152ce89564ea544825a3b98172695f442579174636979474596e5"
+    },
+    {
+      "path": "calculation-timing.log",
+      "bytes": 22254,
+      "sha256": "80d88cc8d7838772ba7a123067a900926ecd2f9bf48478aa4cc8ec9f3a89df7e"
+    },
+    {
+      "path": "ci-merge-commit.json",
+      "bytes": 2941,
+      "sha256": "991191b48610f8179b2095703c56570cdc58e1458255e7aca88a72e60b5fc695"
+    },
+    {
+      "path": "classifier.log",
+      "bytes": 12992,
+      "sha256": "0f918ea951f9a227371928d5c25430d5916c90d2ec8e6ba4ab63b9526b7d0a5a"
+    },
+    {
+      "path": "final-metadata.json",
+      "bytes": 24946,
+      "sha256": "94eddb1a4694ca094934ac9ebe24755ee15be647a0b4c38fc561977e79ebadf6"
+    },
+    {
+      "path": "final-review.json",
+      "bytes": 8504,
+      "sha256": "f35f95a47ebbbb3671808e77efc525bbcf7fce91d7ad77bcc32c02ea3465e9d0"
+    },
+    {
+      "path": "final-review.mjs",
+      "bytes": 6033,
+      "sha256": "d7b68b2acc925a92a9fe91d2441dabed94dfea3ecc3824f3768b83bcdfee3e46"
+    },
+    {
+      "path": "live-probe.log",
+      "bytes": 95344,
+      "sha256": "5f1b61a052efd64f0a6cd0b503e299067f25c94c3110e41460f82d681309c161"
+    },
+    {
+      "path": "live-probe.zip",
+      "bytes": 22002,
+      "sha256": "050b606409c506e181217463891fd8c1ca95194d09b7483bf2b2bbb6183d10c4"
+    },
+    {
+      "path": "preflight.json",
+      "bytes": 36707,
+      "sha256": "8fe5acfc0da94722c30ac1f146b06c6841d04b124b6f671c0b38455e481e828f"
+    },
+    {
+      "path": "preflight.mjs",
+      "bytes": 3667,
+      "sha256": "6dbbaba73c55d661699ed0678295b1a6d6c331f42c2a5d90d768b3701a6a1387"
+    },
+    {
+      "path": "preview-access.json",
+      "bytes": 2101,
+      "sha256": "61d75654475b2acc9f5ae97a27bc8fae9234cfce86d8c86d365e801f2e00a1ca"
+    },
+    {
+      "path": "remote-commit.json",
+      "bytes": 1458,
+      "sha256": "2a8f323b97e8205f96425954a484816f1c6cec7d8645bb723ea9ec0b97ab2a3b"
+    },
+    {
+      "path": "route-quality.log",
+      "bytes": 325833,
+      "sha256": "bc0fb9d3c0f1809a8bb029dfc62b5b1229507ae757084b2e2c9f9beed8b7b3ad"
+    },
+    {
+      "path": "vercel-build-tail.json",
+      "bytes": 9474,
+      "sha256": "b67810ba541ee36582d6dcfe73a808074b6b7c19ebde746364897d1e1260dd51"
+    },
+    {
+      "path": "verify-b03.log",
+      "bytes": 567200,
+      "sha256": "9f358f6d774d0b5490c953fa1147f4eeb931927f70619bc5a3d933f7240749fe"
+    },
+    {
+      "path": "verify-special.log",
+      "bytes": 567852,
+      "sha256": "fda730144c339babd90b44e717a29ac587154d24e329c58076233627d1f93e43"
+    }
+  ]
+}

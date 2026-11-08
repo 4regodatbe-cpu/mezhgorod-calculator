@@ -1,0 +1,50 @@
+{
+  "source": "Photon actual street-layer requests, no mocks; initial four-query bounded sample",
+  "sourceRuntimeBase": "d7cc05f68f3950ceb2178324b89b25927bb4f249",
+  "requests": [
+    {
+      "query": "Краснодар, Красная улица",
+      "url": "https://photon.komoot.io/api/?q=%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B4%D0%B0%D1%80%2C+%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%B0%D1%8F+%D1%83%D0%BB%D0%B8%D1%86%D0%B0&layer=street&limit=20",
+      "startedAt": "2026-10-29T16:07:58.192Z",
+      "httpStatus": 200,
+      "file": "street-0.body",
+      "bytes": 2738,
+      "sha256": "a5f69a75fd7dc9ad19d88781cbc7aa526fbf2177cf8ff757e00c619d053ed99e",
+      "featureCount": 5,
+      "elapsedMs": 6190
+    },
+    {
+      "query": "Москва, Тверская улица",
+      "url": "https://photon.komoot.io/api/?q=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C+%D0%A2%D0%B2%D0%B5%D1%80%D1%81%D0%BA%D0%B0%D1%8F+%D1%83%D0%BB%D0%B8%D1%86%D0%B0&layer=street&limit=20",
+      "startedAt": "2026-10-29T16:08:04.384Z",
+      "httpStatus": 200,
+      "file": "street-1.body",
+      "bytes": 2636,
+      "sha256": "18dd592f36d6190a44dc9a94fb8e89f9f9a01ce9f88214fa126f4ea3342d96ae",
+      "featureCount": 6,
+      "elapsedMs": 9484
+    },
+    {
+      "query": "Донецк, улица Артёма",
+      "url": "https://photon.komoot.io/api/?q=%D0%94%D0%BE%D0%BD%D0%B5%D1%86%D0%BA%2C+%D1%83%D0%BB%D0%B8%D1%86%D0%B0+%D0%90%D1%80%D1%82%D1%91%D0%BC%D0%B0&layer=street&limit=20",
+      "startedAt": "2026-10-29T16:08:13.869Z",
+      "httpStatus": 200,
+      "file": "street-2.body",
+      "bytes": 485,
+      "sha256": "2b231e2c13b7f27c4419d0e8d19994c3168d3c640580abc3a7a36f763fcb4634",
+      "featureCount": 1,
+      "elapsedMs": 5561
+    },
+    {
+      "query": "Ялта, улица Кирова",
+      "url": "https://photon.komoot.io/api/?q=%D0%AF%D0%BB%D1%82%D0%B0%2C+%D1%83%D0%BB%D0%B8%D1%86%D0%B0+%D0%9A%D0%B8%D1%80%D0%BE%D0%B2%D0%B0&layer=street&limit=20",
+      "startedAt": "2026-10-29T16:08:19.430Z",
+      "httpStatus": 200,
+      "file": "street-3.body",
+      "bytes": 4551,
+      "sha256": "780e90339e28e11de61ba61dd30248ed032a47f7338a00980cdfd9c21543edb7",
+      "featureCount": 9,
+      "elapsedMs": 7217
+    }
+  ]
+}

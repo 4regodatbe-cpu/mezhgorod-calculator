@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "measuredAt": "2026-10-24T06:13:24.225Z",
+  "node": "v24.22.1",
+  "liveRequests": 0,
+  "scope": "Local module CPU only; no cold server startup, network, full route or end-to-end10s claim",
+  "indexBuildMs": 2.843570999999997,
+  "syntheticStoredSegments": 4096,
+  "syntheticLookupSegmentsPerBoundary": 4096,
+  "measurements": [
+    {
+      "name": "actual-local-named-plaza-index",
+      "iterations": 10000,
+      "firstCallMs": 0.31257200000000296,
+      "p50Ms": 0.002463000000005877,
+      "p95Ms": 0.00410599999999306,
+      "maxMs": 0.4110469999999964,
+      "resultStatus": "resolved"
+    },
+    {
+      "name": "retained-pending-nodes-no-anchors",
+      "iterations": 10000,
+      "firstCallMs": 0.08374399999999582,
+      "p50Ms": 0.0023630000000025575,
+      "p95Ms": 0.0031749999999988177,
+      "maxMs": 0.3179100000000119,
+      "resultStatus": "unknown"
+    },
+    {
+      "name": "projection-at4096segment-budget-ambiguous",
+      "iterations": 1000,
+      "firstCallMs": 2.181623000000002,
+      "p50Ms": 0.48654899999996815,
+      "p95Ms": 0.6594749999999863,
+      "maxMs": 1.2221949999999993,
+      "resultStatus": "unknown"
+    }
+  ]
+}

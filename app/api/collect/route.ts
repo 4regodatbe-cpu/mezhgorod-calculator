@@ -1,25 +1,27 @@
 import { NextRequest, NextResponse } from "next/server";
+import { MAX_COLLECT_REQUEST_BYTES, readLimitedJsonObject, RequestBodyError } from "@/lib/limited-json-body";
 
 type RouteEvent = { type: "route"; fromRegion: string; toRegion: string; distanceKm: number; durationMin: number; rate: number; total: number };
-type RouteV2Event = { type: "route_v2"; version?: string; fromRegion: string; toRegion: string; distanceKm: number; durationMin: number; routeType: string; totals: { standard: number; comfort: number; comfortPlus: number; minivan: number }; tollWeekday: number | null; tollWeekend: number | null; tollPricingStatus?: "priced" | "free" | "unknown" };
+type RouteV2Event = { type: "route_v2"; version?: string; fromRegion: string; toRegion: string; distanceKm: number; durationMin: number; routeType: string; totals: { standard: number | null; comfort: number | null; comfortPlus: number | null; minivan: number | null }; tollWeekday: number | null; tollWeekend: number | null; tollPricingStatus?: "priced" | "free" | "unknown" };
 type FeedbackEvent = { type: "feedback"; category: string; message: string; website?: string };
 type VisitEvent = { type: "visit"; visitorId: string; version?: string };
+const WEBHOOK_TIMEOUT_MS = 8_000;
 
 const clean = (value: unknown, max: number) => typeof value === "string" ? value.trim().slice(0, max) : "";
-const ADDRESS_PART = /(?:\b\d{1,6}[а-яa-z]?\b|\b(?:ул(?:ица)?|просп(?:ект)?|пр-т|пер(?:еулок)?|шоссе|наб(?:ережная)?|бульвар|бул\.?|проезд|дом|д\.|корп(?:ус)?|кв\.)\b)/i;
+const ADDRESS_PART = /(?<![\p{L}\p{N}_])(?:\d{1,6}[а-яa-z]?|ул(?:ица)?|просп(?:ект)?|пр-т|пер(?:еулок)?|шоссе|наб(?:ережная)?|бульвар|бул\.?|проезд|дом|д\.|корп(?:ус)?|кв\.)(?![\p{L}\p{N}_])/iu;
 function coarseRegion(value: unknown) {
   const parts = clean(value, 240).split(",").map((part) => part.trim()).filter(Boolean);
   const safe = parts.filter((part) => !ADDRESS_PART.test(part) && !/^\d{5,6}$/.test(part));
   return safe.slice(-3).join(", ").slice(0, 120);
 }
-function effectiveRate(distanceKm: number, total: number) {
-  if (!Number.isFinite(distanceKm) || distanceKm <= 0 || !Number.isFinite(total) || total < 0) return 0;
+function effectiveRate(distanceKm: number, total: number | null) {
+  if (!Number.isFinite(distanceKm) || distanceKm <= 0 || total === null || !Number.isFinite(total) || total < 0) return null;
   return Math.round((total / distanceKm) * 100) / 100;
 }
 
 export async function POST(request: NextRequest) {
   try {
-    const body = (await request.json()) as RouteEvent | RouteV2Event | FeedbackEvent | VisitEvent;
+    const body = (await readLimitedJsonObject(request, MAX_COLLECT_REQUEST_BYTES)) as RouteEvent | RouteV2Event | FeedbackEvent | VisitEvent;
     if (body.type === "feedback") {
       if (body.website) return NextResponse.json({ ok: true });
       const message = clean(body.message, 1000);
@@ -29,7 +31,8 @@ export async function POST(request: NextRequest) {
       const numbers = [body.distanceKm, body.durationMin, body.rate, body.total];
       if (!coarseRegion(body.fromRegion) || !coarseRegion(body.toRegion) || numbers.some((n) => !Number.isFinite(n) || n < 0)) return NextResponse.json({ error: "Некорректные данные" }, { status: 400 });
     } else if (body.type === "route_v2") {
-      const baseNumbers = [body.distanceKm, body.durationMin, ...Object.values(body.totals ?? {})];
+      const baseNumbers = [body.distanceKm, body.durationMin];
+      const totalValues = Object.values(body.totals ?? {});
       const tollValues = [body.tollWeekday, body.tollWeekend];
       const pricingStatus = body.tollPricingStatus;
       const validTotalKeys = body.totals && typeof body.totals === "object" && Object.keys(body.totals).length === 4 && ["standard", "comfort", "comfortPlus", "minivan"].every((key) => Object.prototype.hasOwnProperty.call(body.totals, key));
@@ -38,7 +41,7 @@ export async function POST(request: NextRequest) {
         ? tollValues.some((value) => value !== null)
         : tollValues.some((value) => typeof value !== "number" || !Number.isFinite(value) || value < 0);
       const invalidFree = pricingStatus === "free" && tollValues.some((value) => value !== 0);
-      if (!coarseRegion(body.fromRegion) || !coarseRegion(body.toRegion) || !clean(body.routeType, 30) || !validTotalKeys || baseNumbers.length !== 6 || baseNumbers.some((n) => !Number.isFinite(n) || n < 0) || invalidStatus || invalidTolls || invalidFree) return NextResponse.json({ error: "Некорректные данные" }, { status: 400 });
+      if (!coarseRegion(body.fromRegion) || !coarseRegion(body.toRegion) || !clean(body.routeType, 30) || !validTotalKeys || baseNumbers.some((n) => typeof n !== "number" || !Number.isFinite(n) || n < 0) || totalValues.some((n) => n !== null && (typeof n !== "number" || !Number.isFinite(n) || n < 0)) || invalidStatus || invalidTolls || invalidFree) return NextResponse.json({ error: "Некорректные данные" }, { status: 400 });
     } else if (body.type === "visit") {
       if (!/^[a-zA-Z0-9-]{16,64}$/.test(clean(body.visitorId, 64))) return NextResponse.json({ error: "Некорректный идентификатор" }, { status: 400 });
     } else return NextResponse.json({ error: "Неизвестный тип данных" }, { status: 400 });
@@ -48,22 +51,25 @@ export async function POST(request: NextRequest) {
     if (!endpoint || !token) return NextResponse.json({ error: "Сбор данных ещё настраивается" }, { status: 503 });
 
     const webhookBody = body.type === "route_v2"
-      ? { type: "route", version: clean(body.version, 20) || "2.0", fromRegion: coarseRegion(body.fromRegion), toRegion: coarseRegion(body.toRegion), distanceKm: body.distanceKm, rate: effectiveRate(body.distanceKm, body.totals.standard), total: body.totals.standard }
+      ? { type: "route", version: clean(body.version, 20) || "2.0", fromRegion: coarseRegion(body.fromRegion), toRegion: coarseRegion(body.toRegion), distanceKm: body.distanceKm, durationMin: body.durationMin, rate: effectiveRate(body.distanceKm, body.totals.standard), total: body.totals.standard }
       : body.type === "route"
-        ? { type: "route", fromRegion: coarseRegion(body.fromRegion), toRegion: coarseRegion(body.toRegion), distanceKm: body.distanceKm, rate: body.rate, total: body.total }
+        ? { type: "route", fromRegion: coarseRegion(body.fromRegion), toRegion: coarseRegion(body.toRegion), distanceKm: body.distanceKm, durationMin: body.durationMin, rate: body.rate, total: body.total }
         : body.type === "feedback"
           ? { type: "feedback", category: clean(body.category, 40), message: clean(body.message, 1000) }
           : { type: "visit", visitorId: clean(body.visitorId, 64), version: clean(body.version, 20) };
+    const signal = AbortSignal.timeout(WEBHOOK_TIMEOUT_MS);
     const response = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify({ token, ...webhookBody }),
       cache: "no-store",
+      signal,
     });
     const result = await response.json().catch(() => ({ ok: false }));
-    if (!response.ok || !result.ok) throw new Error("WEBHOOK_FAILED");
+    if (!response.ok || !result.ok || ((body.type === "route" || body.type === "route_v2") && result.saved !== true)) throw new Error("WEBHOOK_FAILED");
     return NextResponse.json({ ok: true });
   } catch (error) {
+    if (error instanceof RequestBodyError) return NextResponse.json({ error: error.message }, { status: error.status });
     if (error instanceof SyntaxError) return NextResponse.json({ error: "Некорректный JSON" }, { status: 400 });
     return NextResponse.json({ error: "Не удалось сохранить данные. Попробуйте позже." }, { status: 502 });
   }

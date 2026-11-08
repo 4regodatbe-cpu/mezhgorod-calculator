@@ -1,0 +1,95 @@
+{
+  "caseId": "dnr-урзуф-kerch-center",
+  "region": "dnr",
+  "mode": "live",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 543643,
+      "seconds": 29880
+    },
+    {
+      "name": "OSRM",
+      "meters": 526087,
+      "seconds": 28203
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 526087,
+  "routeSeconds": 28203,
+  "controls": [
+    {
+      "corridor": "crimea",
+      "positions": [
+        {
+          "lat": 46.9153594,
+          "lng": 37.0984904
+        },
+        {
+          "lat": 45.708,
+          "lng": 34.395
+        },
+        {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [],
+    "provenRoads": [],
+    "missingExpectedRoads": [],
+    "status": "not-assigned"
+  },
+  "passageEvidence": [],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {},
+  "replayIntegrity": null,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-kerch-center/2026-10-16T00-44-48-785Z-capture.json.gz",
+  "captureSha256": "1088985fb85fab9b7ca49415f44f8772e5531fad2885af9816bd99224f517638",
+  "detectedRoadComponents": [],
+  "paidRoadEdgeNames": [],
+  "tollNodeIds": [],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": 0,
+    "weekdayAmount": 0,
+    "weekendAmount": 0,
+    "period": "понедельник–четверг",
+    "segments": [],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "free"
+  },
+  "audit": {
+    "status": "none",
+    "priced": [],
+    "missing": [],
+    "components": []
+  }
+}

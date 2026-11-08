@@ -1,0 +1,40 @@
+{
+  "status": "PASS_SSR_ONLY",
+  "sourceRemote": "c51dd81a1a0107e3e46fb6ba2dced79ea8f5d551",
+  "checks": {
+    "focused": {
+      "pass": 5,
+      "fail": 0
+    },
+    "full": {
+      "pass": 898,
+      "fail": 0,
+      "skipped": 0
+    },
+    "quoteAPI": "PASS",
+    "eslint": {
+      "errors": 0,
+      "warnings": 5
+    },
+    "webpack": "PASS",
+    "typescript": "PASS",
+    "staticPages": "16/16"
+  },
+  "commands": [
+    "node --test scripts/v3-calculator-form-ui.test.mjs",
+    "node --import ./scripts/register-ts-paths.mjs --test --test-concurrency=2 scripts/*test.ts scripts/*.test.mjs lib/v3-calculation/*.test.ts experiments/toll-od-matrix/*.test.mjs experiments/nationwide-tolls/*.test.mjs experiments/nationwide-tolls/engine/*.test.mjs",
+    "node experiments/nationwide-tolls/scripts/quote.test.cjs",
+    "./node_modules/.bin/eslint . --ignore-pattern .next",
+    "./node_modules/.bin/next build --webpack"
+  ],
+  "logSHA256": {
+    "build.log": "99900c1da8c425e25a333d54bc34047dbdbe8fc5dccca724f3526f9fc4a2681b",
+    "eslint.log": "72b9e8da45dcc50bc4da234f4e92ffbf36a3d3861bd9724ec71d9f452e8e8d5c",
+    "focused.log": "3c313bd8804ccdd16de4bb5e77144893fbbd2fcef04c1093333ed5b7114ccf44",
+    "full-tests.log": "63bd9b609a51cfee51e6ecb0c8fb65d0e9e4d489595400a33582a9cb7c1ca4ef",
+    "quote-api.log": "22f3fb8fd4d4481c5eeb44e2bceecf00919d98cbe1b3738345b52035b7be39ef"
+  },
+  "liveRequests": 0,
+  "browserE2E": "NOT_RUN",
+  "addressCitySnapshot": false
+}

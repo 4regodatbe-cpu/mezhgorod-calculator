@@ -1,0 +1,7 @@
+# Part19B — full gate DONE
+
+16.10.2026, working branch/PR14draft. Implementation remote commit79df66d86b20cb339c2f96d377fed5a5277a2d01, exact local/remote tree8dab735a0370bc51cf4324ecdb4cc7c2e2f22521 verified. No other writer started.
+
+`pnpm build` exited0: **676tests/676pass/0fail**, quote and API adapter checks PASS; Next16.3.4 optimized build compiled, TypeScript PASS, static16/16 generated. Scoped ESLint exited0/no diagnostics for connector helper, a289-short-route and three changed tests; `git diff --check` PASS. Transient save preflight earlier rejected extra blank EOF in WORK_LOG/NEXT_STEPS; fixed whitespace, save then succeeded. No runtime changes after validated implementation.
+
+STARTED next single case: offline whole-engine `pair-m4-a289-moscow-to-taman`, source `experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-moscow-to-taman/2026-10-16T00-10-06-845Z-capture.json.gz` (rawSHA3a49571931bdfe0afedfa1f2bbefff81b6c265dd85ab51fd7e52f1a638c5ab66). Run existing `run-systemic-route-case.mjs --replay <capture>` separately for2026-10-15T09:00:00+03:00 and2026-10-17T09:00:00+03:00, registered TS imports. Runner writes new timestamped replays; preserve existing ones. Inspect actual integrity missingResponses, selectedprovider, components/tolls and SHA; do not infer total from helper385 or call this fresh live/external tariff proof. If interrupted inspect uncommitted new replays then re-run only missing profile. Persist before reverse-direction case.

@@ -1,0 +1,294 @@
+{
+  "sourceSha": "5558ed8bdec347361b2b5749c370d6d3c31d83c1",
+  "mode": "fresh mobile context; real protected Preview, no mocks; no additional calculation",
+  "searches": [
+    {
+      "query": "Ялта Крым",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-688533",
+            "title": "Ялта",
+            "label": "Ялта — Крым",
+            "region": "Крым",
+            "position": {
+              "lat": 44.50218,
+              "lng": 34.16624
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      }
+    },
+    {
+      "query": "Санкт-Петербург",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-498817",
+            "title": "Санкт-Петербург",
+            "label": "Санкт-Петербург — Санкт-Петербург",
+            "region": "Санкт-Петербург",
+            "position": {
+              "lat": 59.93863,
+              "lng": 30.31413
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      }
+    },
+    {
+      "query": "Волноваха",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-689198",
+            "title": "Волноваха",
+            "label": "Волноваха — ДНР",
+            "region": "ДНР",
+            "position": {
+              "lat": 47.6008,
+              "lng": 37.49358
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      }
+    },
+    {
+      "query": "Донецк",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-709717",
+            "title": "Донецк",
+            "label": "Донецк — ДНР",
+            "region": "ДНР",
+            "position": {
+              "lat": 48.023,
+              "lng": 37.80224
+            }
+          },
+          {
+            "id": "geonames-565348",
+            "title": "Донецк",
+            "label": "Донецк — Ростовская Область",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 48.33711,
+              "lng": 39.95229
+            }
+          },
+          {
+            "id": "geonames-709713",
+            "title": "Донецкий",
+            "label": "Донецкий — ЛНР · geonames-709713 · 48.6996, 38.67627",
+            "region": "ЛНР",
+            "position": {
+              "lat": 48.6996,
+              "lng": 38.67627
+            }
+          },
+          {
+            "id": "geonames-709714",
+            "title": "Донецкий",
+            "label": "Донецкий — ДНР · geonames-709714 · 47.71556, 38.40889",
+            "region": "ДНР",
+            "position": {
+              "lat": 47.71556,
+              "lng": 38.40889
+            }
+          },
+          {
+            "id": "geonames-709715",
+            "title": "Донецкий",
+            "label": "Донецкий — ДНР · geonames-709715 · 47.41667, 37.95",
+            "region": "ДНР",
+            "position": {
+              "lat": 47.41667,
+              "lng": 37.95
+            }
+          },
+          {
+            "id": "geonames-811884",
+            "title": "Донецкий",
+            "label": "Донецкий — ЛНР · geonames-811884 · 48.96667, 39.16694",
+            "region": "ЛНР",
+            "position": {
+              "lat": 48.96667,
+              "lng": 39.16694
+            }
+          },
+          {
+            "id": "geonames-11763020",
+            "title": "Донецкий Лесхоз",
+            "label": "Донецкий Лесхоз — Ростовская Область",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 49.03511,
+              "lng": 40.55049
+            }
+          },
+          {
+            "id": "geonames-565343",
+            "title": "Донетское",
+            "label": "Донетское — Оренбургская Область",
+            "region": "Оренбургская Область",
+            "position": {
+              "lat": 51.8987,
+              "lng": 54.41266
+            }
+          },
+          {
+            "id": "geonames-565345",
+            "title": "Донецкий",
+            "label": "Донецкий — Ростовская Область · geonames-565345 · 48.7168, 39.9838",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 48.7168,
+              "lng": 39.9838
+            }
+          },
+          {
+            "id": "geonames-565346",
+            "title": "Донецкий",
+            "label": "Донецкий — Ростовская Область · geonames-565346 · 47.3136, 42.4969",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 47.3136,
+              "lng": 42.4969
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      }
+    },
+    {
+      "query": "Севастополь",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-694423",
+            "title": "Севастополь",
+            "label": "Севастополь — Крым — Город Севастополь",
+            "region": "Крым",
+            "position": {
+              "lat": 44.60795,
+              "lng": 33.52134
+            }
+          },
+          {
+            "id": "geonames-496443",
+            "title": "Севастополь",
+            "label": "Севастополь — Калужская Область",
+            "region": "Калужская Область",
+            "position": {
+              "lat": 53.45592,
+              "lng": 35.188
+            }
+          },
+          {
+            "id": "geonames-496444",
+            "title": "Севастополь",
+            "label": "Севастополь — Оренбургская Область",
+            "region": "Оренбургская Область",
+            "position": {
+              "lat": 51.7688,
+              "lng": 59.0399
+            }
+          },
+          {
+            "id": "geonames-496441",
+            "title": "Севастопольский",
+            "label": "Севастопольский — Ростовская Область",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 46.45,
+              "lng": 40.5
+            }
+          },
+          {
+            "id": "geonames-496442",
+            "title": "Севастопольская",
+            "label": "Севастопольская — Адыгея",
+            "region": "Адыгея",
+            "position": {
+              "lat": 44.3565,
+              "lng": 40.3053
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      }
+    }
+  ],
+  "steps": [
+    "selected Ялта Крым",
+    "selected Санкт-Петербург",
+    "selected Волноваха",
+    "selected Донецк",
+    "selected Севастополь"
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "parentCommit": "05e62815651608c5fc583e52d494b03325e9d272",
+  "parentActions": {
+    "runId": 39994185252,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "checks": {
+    "auditCommand": "pnpm test:audit",
+    "passed": 840,
+    "failed": 0,
+    "quoteContract": "PASS",
+    "apiContract": "PASS",
+    "eslint": "PASS",
+    "webpackBuild": "PASS",
+    "staticPages": "16/16"
+  },
+  "scope": {
+    "retainedCases": 6,
+    "directedPhysicalVectors": 1,
+    "resolvedCases": 6,
+    "profilesPerCase": 2,
+    "pricedCases": 0,
+    "liveRequests": 0
+  },
+  "completePipelineReplay": {
+    "providerResponses": 1,
+    "traceChunks": 13,
+    "totalConsumed": 14,
+    "profiles": 2,
+    "apiAmount": null,
+    "apiStatus": "unknown"
+  },
+  "correction": "Maneuver labels began before the true M4 merge. Tariff selection now requires matched OSM node + directed way-pair identities; maneuver geometry remains diagnostic only.",
+  "compatibilityFix": "Initial graph gate exposed thirteen old unrelated-road validation snapshot assertions because of an empty M4 field. Emit M4 context only when M4 is actually observed; archived tests/data left unchanged; final840PASS.",
+  "limitations": [
+    "Exact graph transitions do not prove operator charging scope or a tariff.",
+    "Six actual selected captures are Valhalla; provider-independent BRouter input is covered by a synthetic contract test.",
+    "Output shape coordinates are absent; node IDs are exact and coordinate stays null.",
+    "Unproven chunk joins or multiple target blocks remain unknown."
+  ],
+  "evidenceSha256": {
+    "six-cases.json": "3e559f5ebfe138849f54b48be62d9da95b91af6d811e7a144ce7d2d4f29e2728",
+    "selected-vector.json": "1a7607ed56f837ee686feb7bf010cc31881adde26a3d0165ae0c49c41c56b53e",
+    "build.log": "7a068582dac0e238621eaf53b657aef69b22f20df51702d2b661380b7b7d00c5",
+    "eslint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full-audit.log": "1c780f093a6bad899161fa47cc4944b3cf9ea02ce67f748f336274255fc705d6"
+  }
+}

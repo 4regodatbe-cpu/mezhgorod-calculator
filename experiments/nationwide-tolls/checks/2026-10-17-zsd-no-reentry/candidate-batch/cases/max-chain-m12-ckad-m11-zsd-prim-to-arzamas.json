@@ -1,0 +1,36 @@
+{
+  "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/2026-10-16T01-22-12-554Z-capture.json.gz",
+  "captureSha256": "c7fe6e20ebaf1854e7dba96db30bac54b2c929be4482f9f2144c686b17d104a4",
+  "sourceHashes": {
+    "lib/v3-calculation/route-candidate.ts": "060548c62fd1ac3f76a811e7fc20137a7ad46aca791657caaa60fcc19bbb3f1b",
+    "lib/v3-calculation/zsd-reentry-policy.ts": "f7ea79476be9bfb0f96a2b26e3bbfeb5bd13fa97f0da128f8ea537942235ddea",
+    "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-planernaya-no-reentry/geometry.json": "4e19e59c5093db591f57ef01c0995fb455974bbb6029e6ae288573eb45e97b21",
+    "experiments/nationwide-tolls/fastest-route-policy.mjs": "e5cc9a6a2aadb3fd62d2ac65c8fa17731026574f3bbc968a5de36d6301c875e5"
+  },
+  "mode": "saved_ordinary_candidate_admission_exception_check",
+  "candidates": [
+    {
+      "provider": "Valhalla",
+      "admitted": false,
+      "reviewedReentry": true,
+      "meters": 1161885,
+      "seconds": 44435
+    },
+    {
+      "provider": "OSRM",
+      "admitted": true,
+      "reviewedReentry": false,
+      "meters": 1153741,
+      "seconds": 52323
+    }
+  ],
+  "selectedProvider": "OSRM",
+  "shownRouteCount": 1,
+  "priceUsedToSelectRoute": false,
+  "fullTripFare": "not_recomputed_unconfirmed",
+  "newLiveRequests": 0,
+  "newFullTripReplays": 0,
+  "newFareCalculations": 0,
+  "outcome": "fixed_and_verified_scoped_candidate_admission"
+}

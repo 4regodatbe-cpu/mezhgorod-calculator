@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { GET as getSuggestions } from "../api/suggest/route";
+import { createSuggestionForwardRequest } from "../../lib/address-search-proxy";
+
+export const preferredRegion = "fra1";
 
 export async function POST(request: NextRequest) {
   let body: unknown;
@@ -16,9 +19,5 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Не указан поисковый запрос" }, { status: 400 });
   }
 
-  const url = new URL(request.url);
-  url.pathname = "/api/suggest";
-  url.search = "";
-  url.searchParams.set("q", query);
-  return getSuggestions(new NextRequest(url));
+  return getSuggestions(createSuggestionForwardRequest(request, query));
 }

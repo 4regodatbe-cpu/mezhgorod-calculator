@@ -1,0 +1,21 @@
+{
+  "checkedAtUtc": "2026-10-17T14:36:20.852653+00:00",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "expectedHead": "dbb5a1ef669e3ce5179d35b59f22378602b766c8",
+  "expectedTree": "6042eb4100736f0e1989fef87c7cebd0d5781c0f",
+  "pr": {
+    "number": 14,
+    "state": "open",
+    "draft": true,
+    "head": "dbb5a1ef669e3ce5179d35b59f22378602b766c8"
+  },
+  "ci": {
+    "runId": 39040459995,
+    "status": "completed",
+    "conclusion": "success",
+    "verify": "completed/success",
+    "live_probe": "completed/success"
+  },
+  "lastFiveRunsAllCompleted": true,
+  "newPostSaveCi": "must check after new commit; not yet created"
+}

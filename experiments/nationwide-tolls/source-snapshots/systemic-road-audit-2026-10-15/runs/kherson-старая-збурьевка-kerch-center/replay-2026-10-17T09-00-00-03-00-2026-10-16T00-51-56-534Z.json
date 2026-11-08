@@ -1,0 +1,98 @@
+{
+  "caseId": "kherson-старая-збурьевка-kerch-center",
+  "region": "kherson",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-17T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-17T09:00:00+03:00"
+  },
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 435596,
+      "seconds": 24341
+    },
+    {
+      "name": "OSRM",
+      "meters": 435821,
+      "seconds": 23507
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 435821,
+  "routeSeconds": 23507,
+  "controls": [
+    {
+      "corridor": "crimea",
+      "positions": [
+        {
+          "lat": 46.4727289,
+          "lng": 32.420034
+        },
+        {
+          "lat": 45.708,
+          "lng": 34.395
+        },
+        {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [],
+    "provenRoads": [],
+    "missingExpectedRoads": [],
+    "status": "not-assigned"
+  },
+  "passageEvidence": [],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {},
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-старая-збурьевка-kerch-center/2026-10-16T00-51-55-672Z-capture.json.gz",
+  "captureSha256": "f1b8139cb2320540f20aa6f3835b20de82a548f3bc0f075c6588a6231d843f18",
+  "detectedRoadComponents": [],
+  "paidRoadEdgeNames": [],
+  "tollNodeIds": [],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": 0,
+    "weekdayAmount": 0,
+    "weekendAmount": 0,
+    "period": "пятница–воскресенье",
+    "segments": [],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "free"
+  },
+  "audit": {
+    "status": "none",
+    "priced": [],
+    "missing": [],
+    "components": []
+  }
+}

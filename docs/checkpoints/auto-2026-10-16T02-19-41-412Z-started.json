@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T02:19:41.412Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 153,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 18,
+    "spec": {
+      "caseId": "triple-m4-m11-zsd-sest-to-domodedovo",
+      "kind": "road",
+      "group": "triple-m4-m11-zsd"
+    }
+  },
+  "caseId": "triple-m4-m11-zsd-sest-to-domodedovo",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-19-41-411Z-part18",
+  "parent": "5cfe21c8714ab473a235c8790dcacadce4cdea44"
+}

@@ -1,0 +1,22 @@
+{
+  "sourceParent": "4ecc0fbaaa071032ddbc09d78a94e3880bbac28f",
+  "focused": {
+    "pass": 22,
+    "fail": 0
+  },
+  "full": {
+    "pass": 887,
+    "fail": 0
+  },
+  "quoteApi": "PASS",
+  "eslint": "PASS",
+  "webpackTypeScriptStatic16": "PASS",
+  "localLiveAttempts": 0,
+  "logs": {
+    "full-audit.log": "dfc25d48ef87a880597d953707b65b96ce3675c16aff818ecf545d4e33e6eecd",
+    "build.log": "a113684d9986db89d2dac3a5f8275daede0e150fbb0831b117aab173e32a1858",
+    "eslint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "focused.log": "ccca5ed42b6e9f3e11771e8e9a1219b12f68142964435a25f923f031500824ce",
+    "quote.log": "22f3fb8fd4d4481c5eeb44e2bceecf00919d98cbe1b3738345b52035b7be39ef"
+  }
+}

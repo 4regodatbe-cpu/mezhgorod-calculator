@@ -1,0 +1,74 @@
+[
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T10-58-05-056Z.json",
+    "sha256": "39c2478e41f67fc00e4bb754055109437b9fb79461033042a3e281ec423b6f8d",
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "captureSha256": "0493305d255cfc779f4d2b7f15e5c4fb7161b80857f3af75a4c57567a6df3cb1",
+    "missing": [
+      "zsd"
+    ],
+    "components": [
+      {
+        "id": "m4",
+        "amount": 3810,
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "m11-15-58",
+        "amount": 1130,
+        "reason": "m11_head_ready_direct_pair_at_departure"
+      },
+      {
+        "id": "m11-58-679",
+        "amount": 3900,
+        "reason": "matrix dated selected-route M11 direct pair"
+      },
+      {
+        "id": "m11-679-684",
+        "amount": 94,
+        "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+      },
+      {
+        "id": "zsd",
+        "amount": null,
+        "reason": "zsd_trip_extends_outside_reviewed_zone1"
+      }
+    ]
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T10-58-05-550Z.json",
+    "sha256": "5efe351da9722baae2432d288a488e4022144a8b57cbcb0f85f10c6cd995149d",
+    "departureAt": "2026-10-17T09:00:00+03:00",
+    "captureSha256": "0493305d255cfc779f4d2b7f15e5c4fb7161b80857f3af75a4c57567a6df3cb1",
+    "missing": [
+      "zsd"
+    ],
+    "components": [
+      {
+        "id": "m4",
+        "amount": 4640,
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "m11-15-58",
+        "amount": 1650,
+        "reason": "m11_head_ready_direct_pair_at_departure"
+      },
+      {
+        "id": "m11-58-679",
+        "amount": 4200,
+        "reason": "matrix dated selected-route M11 direct pair"
+      },
+      {
+        "id": "m11-679-684",
+        "amount": 94,
+        "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+      },
+      {
+        "id": "zsd",
+        "amount": null,
+        "reason": "zsd_trip_extends_outside_reviewed_zone1"
+      }
+    ]
+  }
+]

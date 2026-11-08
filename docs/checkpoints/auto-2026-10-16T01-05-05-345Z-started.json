@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:05:05.345Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 42,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 13,
+    "spec": {
+      "caseId": "lnr-старобельск-kerch-center",
+      "kind": "regional",
+      "region": "lnr"
+    }
+  },
+  "caseId": "lnr-старобельск-kerch-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-05-05-345Z-part13",
+  "parent": "03c71976c043abb54adef020a92387bafc3e7d6c"
+}

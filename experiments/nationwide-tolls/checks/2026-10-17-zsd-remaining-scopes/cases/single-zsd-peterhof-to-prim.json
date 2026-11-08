@@ -1,0 +1,114 @@
+{
+  "caseId": "single-zsd-peterhof-to-prim",
+  "sourceHead": "97d165fe4d071e68d2a30b341babc16fb1c2af56",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-peterhof-to-prim/2026-10-16T02-10-37-044Z-capture.json.gz",
+  "captureSha256": "a6094dac09cb047abc904962c94db56d59e9a96b43303aed84ef6dd59f54fbc3",
+  "priorResultPath": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/single-zsd-peterhof-to-prim.json",
+  "priorResultSha256": "55fd4da51a7eff4491447c26c9be691b8c546c8173780906f658f55b8e00708d",
+  "fingerprint": "31bded062e92f96393dd7de5e5a1a584708bc469c2146c274175d3e41bae75c1",
+  "selectedProvider": "OSRM",
+  "selectedProviderGeometryIdentity": "exact",
+  "coordinateCount": 827,
+  "selectedProviderSteps": [
+    {
+      "name": "КАД",
+      "maneuver": {
+        "bearing_after": 122,
+        "bearing_before": 125,
+        "location": [
+          30.148553,
+          59.801299
+        ],
+        "modifier": "slight left",
+        "type": "fork"
+      },
+      "distance": 7753.3
+    },
+    {
+      "name": "",
+      "destinations": "ЗСД",
+      "maneuver": {
+        "bearing_after": 73,
+        "bearing_before": 64,
+        "location": [
+          30.263151,
+          59.832936
+        ],
+        "modifier": "slight right",
+        "type": "off ramp"
+      },
+      "distance": 535
+    },
+    {
+      "name": "ЗСД",
+      "maneuver": {
+        "bearing_after": 108,
+        "bearing_before": 115,
+        "location": [
+          30.272184,
+          59.832729
+        ],
+        "modifier": "straight",
+        "type": "new name"
+      },
+      "distance": 22299.6
+    },
+    {
+      "name": "",
+      "destinations": "Богатырский проспект, Планерная улица",
+      "maneuver": {
+        "bearing_after": 21,
+        "bearing_before": 2,
+        "location": [
+          30.231695,
+          59.997206
+        ],
+        "modifier": "slight right",
+        "type": "off ramp"
+      },
+      "distance": 556.5
+    }
+  ],
+  "traceComplete": true,
+  "boothCoverage": "complete",
+  "recordedZsdBooths": [
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "edgeToll": true
+    },
+    {
+      "osmNodeId": "1766158781",
+      "wayId": "355755817",
+      "edgeToll": true
+    }
+  ],
+  "scopeReview": "КАД-юг со стороны Петергофа/Таллинского → Богатырский/Планерная",
+  "ownerZoneCandidateOnly": "entry1-west-approach–exit3",
+  "outcome": "blocked_by_missing_reliable_data",
+  "readyTariffRub": null,
+  "newPricedComponents": 0,
+  "priorComponentProfiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_finished_vector_scope_not_reviewed",
+      "componentResult": "unknown",
+      "segments": []
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_finished_vector_scope_not_reviewed",
+      "componentResult": "unknown",
+      "segments": []
+    }
+  ],
+  "newComponentDateChecks": 0,
+  "newLiveRouteRequests": 0,
+  "newFullRouteReplays": 0,
+  "reentryProof": [],
+  "separateInterchangeGantryEvidence": [],
+  "traceIndexLimit": "Do not apply trace end_shape_index to input shape: matched trace indices differ. No such coordinate mapping used.",
+  "missing": "Primary directed cash/card collection bundle for these entry/exit boundaries; separate interchange fee where applicable."
+}

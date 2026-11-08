@@ -4,6 +4,7 @@ import {resolve} from 'node:path';
 import {createRequire} from 'node:module';
 import {load,root} from './helpers/load-ts.mjs';
 import {matrixM4Component} from '../experiments/nationwide-tolls/engine/m4-route-adapter.mjs';
+import bypassSnapshot from '../experiments/nationwide-tolls/source-snapshots/dzok/2026-10-14-pvp46-physical-gates.json' with {type:'json'};
 const require=createRequire(import.meta.url);
 const {composeSelectedM4A289:compose}=await import('../lib/v3-calculation/m4-a289-composition.ts');
 const {priceA289Route}=load(resolve(root,'lib/toll-engine/a289-engine.ts'));
@@ -17,6 +18,22 @@ function production(ids,exact=true){
  if(matrix)placeholder.tolls=matrix.tolls;
  return {p:placeholder,m:exact?matrix:null};
 }
+
+test('Crimea Rostov composes A289800 + M4850 + DZOK410 once, including the return carriageway',()=>{
+ const {p,m}=production(['m4-1223','m4-1184','m4-1093']);
+ for(const north of [true,false]) {
+  const gate=bypassSnapshot.gates.find(g=>g.from===(north?'51':'0'));
+  const crossing=[gate.before,gate.gate,gate.after].map(p=>[p.lon,p.lat]);
+  const route=north?[yalta,gate103,gate82,gate23,...crossing,rostov]:[rostov,...crossing,gate23,gate82,gate103,yalta];
+  const result=compose(route,p,m,[],date);
+  assert.equal(result.tolls.amount,2060);
+  assert.equal(result.tolls.weekendAmount,2210);
+  assert.equal(result.components.find(c=>c.id==='krasnodar-west-bypass').tolls.amount,410);
+  assert.equal(result.tolls.segments.filter(s=>s.startsWith(BYPASS)).length,1);
+ }
+ // No payment-point crossing means no invented +410, even on a Crimea/M4 OD.
+ assert.equal(compose([yalta,gate103,gate82,gate23,rostov],p,m,[],date).tolls.amount,1650);
+});
 
 test('Anapa620 and Slavyansk415 use category I, never category-II833/555',()=>{
  const {p,m}=production([]);

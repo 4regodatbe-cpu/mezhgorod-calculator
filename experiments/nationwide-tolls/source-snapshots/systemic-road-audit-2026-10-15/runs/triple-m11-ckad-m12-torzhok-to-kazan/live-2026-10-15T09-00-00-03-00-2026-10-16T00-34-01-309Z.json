@@ -1,0 +1,246 @@
+{
+  "caseId": "triple-m11-ckad-m12-torzhok-to-kazan",
+  "mode": "live",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "Valhalla",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 1068385,
+      "seconds": 47841
+    },
+    {
+      "name": "OSRM",
+      "meters": 1081001,
+      "seconds": 52860
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 1068385,
+  "routeSeconds": 47841,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 34.962,
+          "lat": 57.041
+        },
+        {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "m11",
+      "ckad",
+      "m12"
+    ],
+    "provenRoads": [
+      "m11",
+      "m12",
+      "ckad"
+    ],
+    "missingExpectedRoads": [],
+    "status": "traversal-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "1205158257",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "596233803",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "598405257",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "1236253486",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    },
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "972809736",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    },
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "972809735",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    },
+    {
+      "road": "ckad",
+      "kind": "selected-booth-name",
+      "osmNodeId": "8087316064"
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "m11": {
+      "occurrences": 153,
+      "uniqueWays": 125
+    },
+    "m12": {
+      "occurrences": 296,
+      "uniqueWays": 203
+    }
+  },
+  "replayIntegrity": null,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-torzhok-to-kazan/2026-10-16T00-34-01-248Z-capture.json.gz",
+  "captureSha256": "da0f293ff4743939866e74b60ea49cae07891b08306b386a58c57da0e058fa6a",
+  "detectedRoadComponents": [
+    {
+      "id": "m11-58-679",
+      "amount": null,
+      "reason": "only_one_verified_boundary_crossing"
+    },
+    {
+      "id": "m12",
+      "amount": 3513,
+      "reason": "matrix dated selected-route M12 directed endpoint pair"
+    },
+    {
+      "id": "ckad",
+      "amount": null,
+      "reason": "ckad_east_arc_not_proven"
+    },
+    {
+      "id": "unknown-paid-road",
+      "amount": null,
+      "reason": "unmapped_selected_route_paid_booth"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-11",
+    "«Нева»",
+    "А-113",
+    "Центральная кольцевая автомобильная дорога",
+    "М-12",
+    "«Восток»"
+  ],
+  "tollNodeIds": [
+    "5286168661",
+    "8087316064"
+  ],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": {
+    "beginKm": 417.002,
+    "endKm": 999.078
+  },
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m11-58-679, ckad, unknown-paid-road",
+      "m11-58-679: only_one_verified_boundary_crossing",
+      "ckad: ckad_east_arc_not_proven",
+      "unknown-paid-road: unmapped_selected_route_paid_booth"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [
+      "m12"
+    ],
+    "missing": [
+      "m11-58-679",
+      "ckad",
+      "unknown-paid-road"
+    ],
+    "components": [
+      {
+        "id": "m11-58-679",
+        "detected": true,
+        "tolls": null,
+        "reason": "only_one_verified_boundary_crossing"
+      },
+      {
+        "id": "m12",
+        "detected": true,
+        "tolls": {
+          "amount": 3513,
+          "weekdayAmount": 3513,
+          "weekendAmount": 3513,
+          "period": "все дни",
+          "segments": [
+            "М-12: vladimir → ivanovskoe_p241 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix dated selected-route M12 directed endpoint pair"
+      },
+      {
+        "id": "ckad",
+        "detected": true,
+        "tolls": null,
+        "reason": "ckad_east_arc_not_proven"
+      },
+      {
+        "id": "unknown-paid-road",
+        "detected": true,
+        "tolls": null,
+        "reason": "unmapped_selected_route_paid_booth"
+      }
+    ]
+  }
+}

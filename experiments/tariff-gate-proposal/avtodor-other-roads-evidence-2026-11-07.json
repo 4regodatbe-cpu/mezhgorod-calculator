@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "preparedAt": "2026-11-07",
+  "status": "INCOMPLETE_SOURCE_COVERAGE",
+  "rows": [
+    {
+      "id": "avtodor-other-roads-2026-10-01-category1-transponder",
+      "paymentMode": "transponder",
+      "category": "I",
+      "observedAt": "2026-10-01",
+      "observationBasis": "Date recorded in the saved tariff transcription; original HTML/response bytes are not retained. Age is a recheck warning and is not treated as tariff expiry.",
+      "source": null,
+      "fareKnown": false,
+      "versionBasis": "latest_available_official_document",
+      "applicability": {
+        "status": "accepted_working_calculation",
+        "basis": "Owner policy of 2026-10-27/28 carries forward the best available official edition without inventing an end date. This is not a claim that the aggregate source package is complete."
+      },
+      "contradiction": "unknown",
+      "productBinding": "unknown",
+      "doubleChargeRisk": null,
+      "roadCoverage": [
+        {"road":"m1-33-66","status":"MISSING_PRIMARY_ARTIFACT","order":"2026-02-27 No.54 (as cited in saved national registry)","effectiveFrom":"2026-03-02 (registry metadata only; not independently checked against retained order)","category":"I","mode":"230 RUB with transponder is reported by saved audit; original Order 54 and source-page bytes are absent; exact row and scope cannot be rechecked.","sourceUrl":"https://avtodor-tr.ru/upload/iblock/8c4/835txjvncev45htfd0x1ws6fjq1wjckl.pdf","missing":"Retain/retrieve the official Order 54 PDF or byte-preserved official tariff-page response containing the M-1 33–66 km row, payment mode, category, and effective clause."},
+        {"road":"m3","status":"PRIMARY_DOCUMENT_REVIEWED","order":"No.53 dated 2026-02-27","effectiveFrom":"2026-03-02T00:00:00+03:00","effectiveTo":null,"category":"I","mode":"The order groups cash/card and listed transponder products in the same fare column; Category I is a separate vehicle row. Category-I fare cells: PVP86 100/100, PVP136 190/190, PVP168 190/230 RUB Mon–Thu/Fri–Sun.","sourceUrl":"https://avtodor-tr.ru/upload/iblock/cb5/9ag98rhzi0t9m0ix75q4o45e4urml5sf.pdf","sourcePath":"experiments/nationwide-tolls/source-documents/m3-order53-effective-2026-03-02.pdf","sourceSha256":"d5344fd6bb54329466c5236e3d1657a14dd87ca8c3eddf2529276fbe1fa9d3a3","limitations":"PDF supports tariff cells and period, not selected-route traversal or completeness of a whole journey."},
+        {"road":"ckad","status":"PRIMARY_DOCUMENT_REVIEWED","order":"No.56 dated 2026-02-27","effectiveFrom":"2026-03-02T00:00:00+03:00","effectiveTo":null,"category":"I; passenger car, height up to 2 m, at least 2 axles","mode":"One direct entry/exit matrix is stated for post-payment and listed transponder systems; no separate transponder discount column. The same source applies to either selected payment-mode row in this snapshot.","sourceUrl":"https://tskad.ru/stoimost-proezda/tarifs-ckad/","sourcePath":"experiments/nationwide-tolls/source-documents/ckad-order56-effective-2026-03-02.pdf","sourceSha256":"839488fed07f8e611b5304498f22d49626ff0dc7529df67734a2052a49bea3e7","transcribedMatrixPath":"experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json","transcribedMatrixSha256":"e6b2178c2448f071de92556d1d72237bd0281da9628f4855cb11b2cd32e6f9ca","limitations":"Matrix values are direct OD products; do not add rows or infer a route price from this source alone."},
+        {"road":"a289","status":"PRIMARY_DOCUMENT_REVIEWED","order":"No.55 dated 2026-02-27","effectiveFrom":"2026-03-02T00:00:00+03:00","effectiveTo":null,"category":"I","mode":"Post-payment and listed transponders use the same published category-I table; no payment-mode discount is specified in this appendix.","fareCellsRub":{"Maryanskaya-Slavyansk":415,"Slavyansk-Varenikovskaya":205,"Maryanskaya-Varenikovskaya":620,"Varenikovskaya-Temryuk":180,"Maryanskaya-Temryuk":800,"Slavyansk-Temryuk":385},"sourceUrl":"https://tskad.ru/stoimost-proezda/tarifs-a-289/","sourcePath":"experiments/nationwide-tolls/source-documents/a289-order55-effective-2026-03-02.pdf","sourceSha256":"da558d538e5a9e2ef8d36d46e0aec69c43b987f81c10d2186733a19aaca933bd","limitations":"Direct OD tariff table, not proof that a selected route traverses the corresponding product."}
+      ],
+      "coverageComplete": false,
+      "limitations": ["Shared snapshot contains four road systems; M-1 primary source artifact is missing.","Original 2026-10-01 HTML observation bytes are absent; do not recreate or re-date that observation.","No source here proves a particular route crosses a paid product or that unrelated road charges are complete.","Transponder/no-transponder records are alternate payment views and must not be added together."]
+    },
+    {
+      "id": "avtodor-other-roads-2026-10-01-category1-no-transponder",
+      "paymentMode": "noTransponder",
+      "category": "I",
+      "observedAt": "2026-10-01",
+      "observationBasis": "Date recorded in the saved tariff transcription; original HTML/response bytes are not retained. Age is a recheck warning and is not treated as tariff expiry.",
+      "source": null,
+      "fareKnown": false,
+      "versionBasis": "latest_available_official_document",
+      "applicability": {
+        "status": "accepted_working_calculation",
+        "basis": "Owner policy of 2026-10-27/28 carries forward the best available official edition without inventing an end date. This is not a claim that the aggregate source package is complete."
+      },
+      "contradiction": "unknown",
+      "productBinding": "unknown",
+      "doubleChargeRisk": null,
+      "roadCoverage": [
+        {"road":"m1-33-66","status":"MISSING_PRIMARY_ARTIFACT","order":"2026-02-27 No.54 (as cited in saved national registry)","effectiveFrom":"2026-03-02 (registry metadata only; not independently checked against retained order)","category":"I","mode":"250 RUB without transponder is reported by saved audit; original Order 54 and source-page bytes are absent; exact row and scope cannot be rechecked.","sourceUrl":"https://avtodor-tr.ru/upload/iblock/8c4/835txjvncev45htfd0x1ws6fjq1wjckl.pdf","missing":"Retain/retrieve the official Order 54 PDF or byte-preserved official tariff-page response containing the M-1 33–66 km row, payment mode, category, and effective clause."},
+        {"road":"m3","status":"PRIMARY_DOCUMENT_REVIEWED","order":"No.53 dated 2026-02-27","effectiveFrom":"2026-03-02T00:00:00+03:00","effectiveTo":null,"category":"I","mode":"Cash/card and listed transponder products share the same tariff cells; no separate discount column. Category-I fare cells: PVP86 100/100, PVP136 190/190, PVP168 190/230 RUB Mon–Thu/Fri–Sun.","sourceUrl":"https://avtodor-tr.ru/upload/iblock/cb5/9ag98rhzi0t9m0ix75q4o45e4urml5sf.pdf","sourcePath":"experiments/nationwide-tolls/source-documents/m3-order53-effective-2026-03-02.pdf","sourceSha256":"d5344fd6bb54329466c5236e3d1657a14dd87ca8c3eddf2529276fbe1fa9d3a3","limitations":"PDF supports tariff cells and period, not selected-route traversal or completeness of a whole journey."},
+        {"road":"ckad","status":"PRIMARY_DOCUMENT_REVIEWED","order":"No.56 dated 2026-02-27","effectiveFrom":"2026-03-02T00:00:00+03:00","effectiveTo":null,"category":"I; passenger car, height up to 2 m, at least 2 axles","mode":"One direct entry/exit matrix is stated for post-payment and listed transponder systems; no separate transponder discount column. The same source applies to either selected payment-mode row in this snapshot.","sourceUrl":"https://tskad.ru/stoimost-proezda/tarifs-ckad/","sourcePath":"experiments/nationwide-tolls/source-documents/ckad-order56-effective-2026-03-02.pdf","sourceSha256":"839488fed07f8e611b5304498f22d49626ff0dc7529df67734a2052a49bea3e7","transcribedMatrixPath":"experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json","transcribedMatrixSha256":"e6b2178c2448f071de92556d1d72237bd0281da9628f4855cb11b2cd32e6f9ca","limitations":"Matrix values are direct OD products; do not add rows or infer a route price from this source alone."},
+        {"road":"a289","status":"PRIMARY_DOCUMENT_REVIEWED","order":"No.55 dated 2026-02-27","effectiveFrom":"2026-03-02T00:00:00+03:00","effectiveTo":null,"category":"I","mode":"Post-payment and listed transponders use the same published category-I table; no payment-mode discount is specified in this appendix.","fareCellsRub":{"Maryanskaya-Slavyansk":415,"Slavyansk-Varenikovskaya":205,"Maryanskaya-Varenikovskaya":620,"Varenikovskaya-Temryuk":180,"Maryanskaya-Temryuk":800,"Slavyansk-Temryuk":385},"sourceUrl":"https://tskad.ru/stoimost-proezda/tarifs-a-289/","sourcePath":"experiments/nationwide-tolls/source-documents/a289-order55-effective-2026-03-02.pdf","sourceSha256":"da558d538e5a9e2ef8d36d46e0aec69c43b987f81c10d2186733a19aaca933bd","limitations":"Direct OD tariff table, not proof that a selected route traverses the corresponding product."}
+      ],
+      "coverageComplete": false,
+      "limitations": ["Shared snapshot contains four road systems; M-1 primary source artifact is missing.","Original 2026-10-01 HTML observation bytes are absent; do not recreate or re-date that observation.","No source here proves a particular route crosses a paid product or that unrelated road charges are complete.","Transponder/no-transponder records are alternate payment views and must not be added together."]
+    }
+  ]
+}

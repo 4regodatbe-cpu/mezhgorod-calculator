@@ -1,0 +1,9 @@
+# B03 stage1 RED confirmed; push-only mandatory gate added
+
+28.10.2026 МСК. Parentremote2518e7de87f7080f8120b38607e0710583ba96bc/tree6df57ee9d0d514737b5d01cb40c91aa9c1836520. Stage1eightfiles readbackmatched. No apppatch yet; originalcomponentSHA1ad0808c05368c7962a911dec2607f48170f1795e4ef5209371e8f3d8d0285cd.
+
+Actualpushrun40643922713address-uijob122668209815completedFAILURE at expected07swap/refocus (6newPASS/1FAIL/3NOT_RUN). Node24/Chrome156.0.8078.47 actualnewrunnerexecuted. Artifact12796956685/365805bytes fetched via authorizedConnectorfiledownload, normalreturneddownloadURL, archiveSHA256885d69e50ee4546be0bdc7b2ef40aff2def2b0f5063e05d91c42197b20bd9e83verified. Parsed actualarchivechecked-out-sha/exitcodes/legacy/currentJSON; not just metadata. Selectedproof [stage1-red.json](../../experiments/road-ref-boundaries/checks/2026-10-28-b03-ci/stage1-red.json); fullZIPlocal/tmp/b03-ci1.zip, GitHubartifact30days. No source/auth/proxybypass.
+
+Observed **onlypush B03**, noPRspecialworkflowfornewhead. Cannotclaimoriginalverify/type/buildran. Safe correction: mirror the exactmandatoryofflineverify commands in B03workflow`verify`job, preservingoriginalspecialworkflowunaltered. Add workflowcontracttest for gatecommands/no broadscript. Node24/frozenpnpm, exactheadcheckout; no live_probe/calculation_timing in B03workflow, no realgeocoder/router calls. Originalclassifierfail-openmetadata policy stays; no simulatedPRpayload or skip-ci workaround.
+
+Localchecks: classifier12/12 +workflowcontract3/3PASS, diff--check/YAMLparse required. HostedCIexpected verifyPASS and browserREDonoldcomponent beforepatch. Next inspectallactualjobs, keepB01external502separate, thenapplyexact3linepatchonlyafterstage1verification. No branchupdatewhileactiveCI; no main/Production/Android/backup/merge/force.

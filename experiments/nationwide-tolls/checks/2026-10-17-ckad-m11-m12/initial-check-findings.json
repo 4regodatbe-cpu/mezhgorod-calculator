@@ -1,0 +1,15 @@
+{
+  "status": "CORRECTED_BEFORE_ACCEPTANCE",
+  "scope": "independent Voronezh control only; not either target CKAD case",
+  "observed": "The second focused run passed8/8 but quote(control) could call the local M4 trace with real global fetch. The invocation was not instrumented; no raw response was retained.",
+  "affectedControlInvocationCount": 1,
+  "actualHttpAttemptCount": "not measured; do not report zero",
+  "usedAsAcceptedEvidence": false,
+  "correction": "Install a deny-by-default fetch guard for the whole focused file and replay the exact previously saved auxiliary M4 response. Re-run focused and required gates.",
+  "targetCaseTraceReplays": "19 exact recorded main-route requests; no target-case new routing/trace",
+  "initialTestFailures": [
+    "XML regex accidentally matched uid rather than way id",
+    "a misleading historical Voronezh case name was incorrectly assumed to prove CKAD; actual selected OSRM does not use CKAD",
+    "public API intentionally does not expose componentAudit; test now uses public unknown reasons plus separate internal quote assertions"
+  ]
+}

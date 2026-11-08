@@ -1,0 +1,23 @@
+{
+  "status": "DONE_SOURCE_PROOF",
+  "atMsk": "2026-10-18T12:12:21.313653+03:00",
+  "sourceStartedCommit": "8419f997f25c8bc52e9ed26c83ec77a25812bfe5",
+  "proofPath": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-entry/directed-ckad47-entry.json",
+  "primaryGets": 3,
+  "allHttp200": true,
+  "operatorPage": 5,
+  "operatorVisualReviewed": true,
+  "routeCaseChecks": 1,
+  "newRouteRequests": 0,
+  "newTraceRequests": 0,
+  "newReplays": 0,
+  "directedConnections": 3,
+  "onewayLinks": 4,
+  "orderedAnchors": 7,
+  "maxAnalysisAnchorDistanceMeters": 0.041,
+  "exactGateInOwnValidation": true,
+  "runtimeChanged": false,
+  "newPricedComponents": 0,
+  "confirmedFullFares": 0,
+  "next": "Implement strictly northbound CKAD47 head boundary with selected own gate/way and ordered7anchors, then focused regression/full gate. Do not enable reverse direction or credit all8cases."
+}

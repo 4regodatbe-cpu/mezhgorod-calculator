@@ -1,0 +1,12 @@
+✔ F2 switch is defaultOFF, local opt-in only, exact Preview branch, always denied in Production (0.82043ms)
+✔ F2 OFF is absent and leaves strict inputs byte-identical (0.463847ms)
+✔ F2 ON confirmed/estimated/partial remain separate and cannot mutate strict totals (3.519ms)
+✔ F2 client view rejects numeric unknown and separates partial from full and approximate labels (3.783977ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 214.752456

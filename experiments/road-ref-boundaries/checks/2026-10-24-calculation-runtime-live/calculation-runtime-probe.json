@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "mode": "production-handler-with-network",
+  "request": {
+    "from": {
+      "label": "Анапа",
+      "position": {
+        "lng": 37.32,
+        "lat": 44.9
+      }
+    },
+    "to": {
+      "label": "Краснодар",
+      "position": {
+        "lng": 38.98,
+        "lat": 45.04
+      }
+    },
+    "departureAt": "2026-10-13T09:00:00+03:00"
+  },
+  "importedMs": 325.410093,
+  "status": "PASS",
+  "httpStatus": 200,
+  "elapsedMs": 2230.925194,
+  "handlerElapsedMs": 2225.425,
+  "targetMs": 10000,
+  "overTarget": false,
+  "meters": 165009,
+  "seconds": 8657,
+  "tollPricingStatus": "priced",
+  "tollAmount": 620,
+  "tariffIndependentlyVerified": false,
+  "deployedBrowserEndToEnd": false,
+  "serverTiming": "calc_total;dur=2225.425, request_body;dur=0.802, geocoding;dur=0.126, route_leg;dur=2166.925, routing;dur=1437.258, provider_valhalla;dur=1184.76, provider_osrm;dur=931.007, provider_brouter;dur=1422.401, toll_matching;dur=659.43, toll_pricing;dur=48.794, response_pricing;dur=10.387",
+  "body": {
+    "legs": [
+      {
+        "from": "Анапа",
+        "to": "Краснодар",
+        "fast": {
+          "m4RoadBoundaries": {
+            "provider": "osrm",
+            "targetRef": "М-4",
+            "routeSignature": "9db4e5d7fd85cf5dc91d0e56747d3d1c1ec867412c1e4060b87af0e798d5e57f",
+            "precision": "route-maneuver",
+            "status": "not-detected",
+            "reason": "road_ref_not_detected",
+            "entry": null,
+            "exit": null
+          },
+          "m12EndpointSpan": null,
+          "m12StrictSpan": null,
+          "m12Candidate": false,
+          "m12SpanReason": null,
+          "m11RoadEvidence": {
+            "provider": "osrm",
+            "strictBlocks": [],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "meters": 165009,
+          "seconds": 8657,
+          "quality": {
+            "status": "single",
+            "providers": [
+              "OSRM"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "tolls": {
+            "amount": 620,
+            "weekdayAmount": 620,
+            "weekendAmount": 620,
+            "period": "все дни",
+            "segments": [
+              "А-289: AnapaExit → Maryanskaya: 620 ₽"
+            ],
+            "confidence": "matched",
+            "pricingStatus": "priced"
+          },
+          "tollValidation": {
+            "status": "toll",
+            "source": "Route toll composition",
+            "tollEdgeCount": 1,
+            "checkedEdgeCount": 1,
+            "wayIds": [],
+            "roadNames": [
+              "a289"
+            ],
+            "message": "Полный итог составлен из дорожных систем: a289",
+            "complete": true
+          },
+          "m4PvpPreview": {
+            "status": "unknown",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+            "roadBoundaries": {
+              "provider": "osrm",
+              "targetRef": "М-4",
+              "routeSignature": "9db4e5d7fd85cf5dc91d0e56747d3d1c1ec867412c1e4060b87af0e798d5e57f",
+              "precision": "route-maneuver",
+              "status": "not-detected",
+              "reason": "road_ref_not_detected",
+              "entry": null,
+              "exit": null
+            },
+            "roadKilometrage": {
+              "status": "unknown",
+              "direction": "unknown",
+              "diagnosticOnly": true,
+              "entry": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "exit": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "stops": [
+                "km_boundary_evidence_unresolved"
+              ]
+            },
+            "priceRub": null,
+            "verifiedPriceCells": 0,
+            "candidateCount": 0,
+            "confirmedPvps": [],
+            "diagnosticOnly": true
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "candidate_needs_osm_operator_node_mapping",
+              "reason": "no_verifiable_m1_m3_booths",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 165.009,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Анапа",
+                  "to": "Краснодар",
+                  "ratePerKm": 35,
+                  "amount": 5775,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 5775,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 165.009,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Анапа",
+                  "to": "Краснодар",
+                  "ratePerKm": 40,
+                  "amount": 6600,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 6600,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 165.009,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Анапа",
+                  "to": "Краснодар",
+                  "ratePerKm": 45,
+                  "amount": 7425,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 7425,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 165.009,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Анапа",
+                  "to": "Краснодар",
+                  "ratePerKm": 55,
+                  "amount": 9075,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 9075,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "mode": "standard",
+    "automaticMode": "standard",
+    "specialEndpoint": false
+  },
+  "supervisorElapsedMs": 2621.0432699999997,
+  "timeoutMs": 60000
+}

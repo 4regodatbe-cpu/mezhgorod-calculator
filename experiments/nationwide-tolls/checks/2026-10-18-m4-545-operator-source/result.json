@@ -1,0 +1,53 @@
+{
+  "atUtc": "2026-10-18T05:41:30.875493+00:00",
+  "outcome": "blocked_by_missing_reliable_data",
+  "discoveryStartedHead": "0856aaa5513177839b1d642214147cccbd3215df",
+  "linkedSectionStartedHead": "0330c5b0fdb3f39be7a9c1defa10fb46624f425e",
+  "sourceTree": "f101553fdc6e51c0c201dbf140041e3599284c8d",
+  "totalSearchQueries": 4,
+  "totalPageReads": 6,
+  "phase1": {
+    "queries": 4,
+    "reads": 4,
+    "budgetMet": true
+  },
+  "phase2": {
+    "queries": 0,
+    "sectionPageReads": 2,
+    "linkedSchemeReads": 0,
+    "budgetMet": true
+  },
+  "sectionPages": [
+    {
+      "url": "https://russianhighways.ru/for_drivers/m-4/pay_sites/obkhod-sel-novaya-usman-i-rogachevka-km-517-km-544_2",
+      "observedBody": "Элемент не найден!",
+      "operatorLaneRuleFound": false
+    },
+    {
+      "url": "https://russianhighways.ru/for_drivers/m-4/pay_sites/km-544-km-633-voronezhskaya-oblast",
+      "observedBody": "Элемент не найден!",
+      "operatorLaneRuleFound": false
+    }
+  ],
+  "historicalLead": {
+    "url": "https://avtodor-tr.ru/press-center/news/rezhim-platnosti-vveden-na-uchastke-avtomobilnoy-dorogi-m-4-don-v-obkhod-sela-novaya-usman-i-sela-ro/",
+    "published": "2016-12-26",
+    "access": "Search-indexed primary text; direct page403",
+    "meaning": "One/two paid sections are collected at545 according to the chosen route; helps define missing scope proof, does not establish current selected lane/date.",
+    "fareImported": false
+  },
+  "sourceLimitations": [
+    "Unrelated first-engine search results excluded",
+    "Three new direct operator reads403; no bypass or repeat via alternate transport",
+    "Both exact owner linked section pages report missing element",
+    "No new current physical-lane-to-paid-section crosswalk found in inspected pages; not proof that no independent source exists"
+  ],
+  "retainedLinkedOutputSha256": "d7ac854bfba407861e068f1d69e530d1106ba7185add0f837a3d3f963ae5a116",
+  "newRuntimeChanges": 0,
+  "newRouteRuns": 0,
+  "newReplays": 0,
+  "newPricedComponents": 0,
+  "newConfirmedFullFares": 0,
+  "bindingDecision": "Keep physical545 unresolved; do not choose variantA/B bymin/max/alias/radius or import2016prices.",
+  "nextAction": "Hold M4 physical545 until an independent current operator collection scheme/receipt is available. Do not revisit six attempted URLs or old PDFs/geometry. Next bounded work: inspect saved M3 tariff verification dates/provenance to determine whether a new official effective-date source can close that separate blocker, without route replay."
+}

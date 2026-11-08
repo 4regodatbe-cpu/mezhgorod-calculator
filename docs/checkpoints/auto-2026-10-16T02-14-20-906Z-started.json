@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T02:14:20.906Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 146,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 18,
+    "spec": {
+      "caseId": "triple-m11-ckad-m12-novgorod-to-vladimir",
+      "kind": "road",
+      "group": "triple-m11-ckad-m12"
+    }
+  },
+  "caseId": "triple-m11-ckad-m12-novgorod-to-vladimir",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-14-20-906Z-part18",
+  "parent": "bcdc96f19d4621126089cf6871ecf064196c1ade"
+}

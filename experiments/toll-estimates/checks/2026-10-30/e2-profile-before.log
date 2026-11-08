@@ -1,0 +1,30 @@
+✖ E2 resolved component profile at departure cannot be replaced by another quote profile (2.989981ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 156.039208
+
+✖ failing tests:
+
+test at experiments/toll-estimates/estimate.test.ts:66:1
+✖ E2 resolved component profile at departure cannot be replaced by another quote profile (2.989981ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  610 !== null
+  
+      at TestContext.<anonymous> (file:///workspace/geonames-preview-publish-fc83523/experiments/toll-estimates/estimate.test.ts:67:115)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 610,
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

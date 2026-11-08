@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "node": "v24.19.0",
+  "routeId": "maykop",
+  "source": "experiments/nationwide-tolls/source-snapshots/issue2-yeysk-maykop/2026-10-19/maykop-to-moscow.json.gz",
+  "sourceSha256": "97465139af01510b4439ac494d56fb008b78177ce15efd05edb8996b66934366",
+  "warmup": 2,
+  "repeats": 10,
+  "networkRequests": 0,
+  "limitations": [
+    "heap delta is noisy retained heap, not allocation peak",
+    "synthetic slices/reversal are workloads, not observed routes",
+    "provider decoding/direction matcher/full API pipeline not instrumented",
+    "multi-road and missing-tariff real fixture coverage pending"
+  ],
+  "fixtures": [
+    {
+      "id": "saved-long-maykop",
+      "kind": "real saved first Valhalla provider geometry; selection not asserted",
+      "coordinateCount": 9677,
+      "geometrySha256": "086f162a7802af547a1d23774736befd1436cc18cb9a7de3f0c7b65cf5106a10",
+      "operations": [
+        {
+          "name": "geometryAndLegacyRecognition",
+          "calls": 12,
+          "medianMs": 64.92214000000013,
+          "p95Ms": 68.18281399999995,
+          "heapDeltaBytes": 16527816,
+          "resultSha256": "da3c2a542840355b5b16c1b9b5daab9cb588f6efbe9853ec33aab3fd2e20814b"
+        },
+        {
+          "name": "corridorRecovery",
+          "calls": 12,
+          "medianMs": 17.83936000000017,
+          "p95Ms": 19.56498099999999,
+          "heapDeltaBytes": 9419184,
+          "resultSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "name": "composition",
+          "calls": 12,
+          "medianMs": 0.0048580000000129075,
+          "p95Ms": 0.01138200000013967,
+          "heapDeltaBytes": 27720,
+          "resultSha256": "2d19d4246987fcced1fea16dd89ef9251e3ec36370b3c2e02e9d12cdb14a2cd0"
+        },
+        {
+          "name": "apiSerialization",
+          "calls": 12,
+          "medianMs": 0.0013910000000123546,
+          "p95Ms": 0.09425800000008167,
+          "heapDeltaBytes": 22080,
+          "resultSha256": "98d8250c5a067ffb39205eca5d92567410a9484f61c7c2a2b05b0a601c5a49f5"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-short-prefix",
+      "kind": "synthetic workload slice; not a captured OD",
+      "coordinateCount": 50,
+      "geometrySha256": "54dca0c1e03ac0f316bea0741c10784ba23d0cee1185b6aa9725c51f657665d9",
+      "operations": [
+        {
+          "name": "geometryAndLegacyRecognition",
+          "calls": 12,
+          "medianMs": 0.3661960000001727,
+          "p95Ms": 0.516050999999834,
+          "heapDeltaBytes": 1454392,
+          "resultSha256": "da3c2a542840355b5b16c1b9b5daab9cb588f6efbe9853ec33aab3fd2e20814b"
+        },
+        {
+          "name": "corridorRecovery",
+          "calls": 12,
+          "medianMs": 0.09656199999994897,
+          "p95Ms": 0.3678130000000692,
+          "heapDeltaBytes": 523888,
+          "resultSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "name": "composition",
+          "calls": 12,
+          "medianMs": 0.0009880000000066502,
+          "p95Ms": 0.003785000000107175,
+          "heapDeltaBytes": 27032,
+          "resultSha256": "2d19d4246987fcced1fea16dd89ef9251e3ec36370b3c2e02e9d12cdb14a2cd0"
+        },
+        {
+          "name": "apiSerialization",
+          "calls": 12,
+          "medianMs": 0.000779000000193264,
+          "p95Ms": 0.0011359999998603598,
+          "heapDeltaBytes": 11952,
+          "resultSha256": "98d8250c5a067ffb39205eca5d92567410a9484f61c7c2a2b05b0a601c5a49f5"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-medium-prefix",
+      "kind": "synthetic workload slice; not a captured OD",
+      "coordinateCount": 3226,
+      "geometrySha256": "7bd200e50be9c71226f1a53c5315c67b6d41c6a3fda6fb0cfb7923fec24f2f54",
+      "operations": [
+        {
+          "name": "geometryAndLegacyRecognition",
+          "calls": 12,
+          "medianMs": 21.2487950000002,
+          "p95Ms": 22.79357700000014,
+          "heapDeltaBytes": -6608848,
+          "resultSha256": "da3c2a542840355b5b16c1b9b5daab9cb588f6efbe9853ec33aab3fd2e20814b"
+        },
+        {
+          "name": "corridorRecovery",
+          "calls": 12,
+          "medianMs": 6.21156800000017,
+          "p95Ms": 10.852102000000059,
+          "heapDeltaBytes": 7424656,
+          "resultSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "name": "composition",
+          "calls": 12,
+          "medianMs": 0.0009780000000318978,
+          "p95Ms": 0.0014830000000074506,
+          "heapDeltaBytes": 26776,
+          "resultSha256": "2d19d4246987fcced1fea16dd89ef9251e3ec36370b3c2e02e9d12cdb14a2cd0"
+        },
+        {
+          "name": "apiSerialization",
+          "calls": 12,
+          "medianMs": 0.0007049999999253487,
+          "p95Ms": 0.0010940000001937733,
+          "heapDeltaBytes": 11816,
+          "resultSha256": "98d8250c5a067ffb39205eca5d92567410a9484f61c7c2a2b05b0a601c5a49f5"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-complex-reverse",
+      "kind": "synthetic reversed workload; not a real route",
+      "coordinateCount": 9677,
+      "geometrySha256": "368dda84485661e77171eb27661d600392054702e89ffc613277cdd3e4575abe",
+      "operations": [
+        {
+          "name": "geometryAndLegacyRecognition",
+          "calls": 12,
+          "medianMs": 61.341523999999936,
+          "p95Ms": 73.30401600000005,
+          "heapDeltaBytes": -6092536,
+          "resultSha256": "da3c2a542840355b5b16c1b9b5daab9cb588f6efbe9853ec33aab3fd2e20814b"
+        },
+        {
+          "name": "corridorRecovery",
+          "calls": 12,
+          "medianMs": 18.794122999999672,
+          "p95Ms": 22.668213999999807,
+          "heapDeltaBytes": 4404288,
+          "resultSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+        },
+        {
+          "name": "composition",
+          "calls": 12,
+          "medianMs": 0.0008769999999458378,
+          "p95Ms": 0.0013280000002851011,
+          "heapDeltaBytes": 26792,
+          "resultSha256": "2d19d4246987fcced1fea16dd89ef9251e3ec36370b3c2e02e9d12cdb14a2cd0"
+        },
+        {
+          "name": "apiSerialization",
+          "calls": 12,
+          "medianMs": 0.0006750000002284651,
+          "p95Ms": 0.0010059999999612046,
+          "heapDeltaBytes": 11768,
+          "resultSha256": "98d8250c5a067ffb39205eca5d92567410a9484f61c7c2a2b05b0a601c5a49f5"
+        }
+      ]
+    }
+  ]
+}

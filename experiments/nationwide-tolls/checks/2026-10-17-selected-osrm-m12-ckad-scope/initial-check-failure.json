@@ -1,0 +1,9 @@
+{
+  "command": "node --import ./scripts/register-ts-paths.mjs experiments/nationwide-tolls/scripts/review-selected-osrm-m12-ckad-scope.mjs experiments/nationwide-tolls/checks/2026-10-17-selected-osrm-m12-ckad-scope",
+  "exitCode": 1,
+  "observedAssertion": "lib/v3-calculation/route-leg-pricing.ts historical hash was incorrectly compared to current bytes",
+  "actualCurrentSha256": "2b8c640e740ffdc24958d9ffa63c21cab2835ebdc756d4c65f1b2cf44f4a7eaf",
+  "expectedHistoricalSha256": "58d7aa0a6e7049c99c40aeb251bc163b45cd29c3971b23a50ddfff607f818ab7",
+  "resolution": "The previously saved Torzhok change explains the difference. Verify frozen original bytes via git show5281fa01:path and record both versions. This review does not replay old pricing.",
+  "finalResult": "PASS; all45 source hashes recorded, including verified historical code version"
+}

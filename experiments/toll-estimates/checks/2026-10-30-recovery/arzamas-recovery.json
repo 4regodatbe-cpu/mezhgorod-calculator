@@ -1,0 +1,1035 @@
+{
+  "evidence": {
+    "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+    "capture": {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/2026-10-15T23-58-33-171Z-capture.json.gz",
+      "sha256": "e8b5d42fb9b737227c04d195271c4cb4dde444a66f85aa579d238a0cd2769ed0"
+    },
+    "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e",
+    "destination": {
+      "label": "Санкт-Петербург, Приморский проспект, контроль",
+      "position": {
+        "lng": 30.24,
+        "lat": 59.982
+      },
+      "kind": "fixed-city-control"
+    },
+    "notPrimorskTown": true,
+    "networkRequests": 0,
+    "newRouteOrTraceReplays": 0,
+    "ckad": {
+      "entry": "М-7 Волга",
+      "exit": "М-11 Нева",
+      "direction": "westbound/north arc",
+      "shapeRange": [
+        2952,
+        3547
+      ],
+      "entryCoordinate": [
+        38.554201,
+        55.855543
+      ],
+      "exitCoordinate": [
+        37.209886,
+        56.089259
+      ],
+      "traceExit": {
+        "call": 6,
+        "way": 791520973,
+        "endNode": 3566326245
+      },
+      "operatorProduct": "direct pair, category I, post-payment",
+      "rub": 941,
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "source": "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+      "operatorPdf": "experiments/nationwide-tolls/source-documents/ckad-order56-effective-2026-03-02.pdf",
+      "sourceSha256": "839488fed07f8e611b5304498f22d49626ff0dc7529df67734a2052a49bea3e7",
+      "footnote120Applies": false,
+      "reason": "M7→M11 does not traverse the M12–Nosovikhinskoe initial/final segment; not M12→M11=981"
+    },
+    "zsd": {
+      "entry": {
+        "call": 11,
+        "edge": 48,
+        "way": 1122966006,
+        "label": "KAD south northbound"
+      },
+      "booths": [
+        {
+          "call": 11,
+          "edge": 62,
+          "node": 933974870
+        },
+        {
+          "call": 11,
+          "edge": 109,
+          "node": 1766158781
+        }
+      ],
+      "exit": {
+        "call": 11,
+        "edge": 109,
+        "way": 355755817,
+        "afterWay": 151490266,
+        "label": "Bogatyrsky/Planernaya northbound ramp"
+      },
+      "source": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/owner-base-32-1.txt",
+      "zoneRates": [
+        {
+          "zone": 1,
+          "rub": 300
+        },
+        {
+          "zone": 2,
+          "rub": 300
+        },
+        {
+          "zone": 3,
+          "rub": 300
+        }
+      ],
+      "conditionalZoneSumRub": 900,
+      "admittedFareRub": null,
+      "status": "unknown",
+      "missing": "Exact directional cash/card collection bundle: which zones each of the two barriers collects, and applicable credit/non-duplication rule. No exact operator row or exhaustive alternative bundle domain retained.",
+      "restriction": "900 is conditional arithmetic under one-charge-per-geographic-zone hypothesis, NOT an admitted whole-component estimate or upper bound. Do not sum booth count or borrow Ekateringofka600."
+    }
+  },
+  "rows": [
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "strict": {
+        "pricingStatus": "unknown",
+        "amount": null,
+        "priceConfirmation": "unconfirmed"
+      },
+      "oldAssessedSubtotalRub": 5987,
+      "input": {
+        "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+        "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e",
+        "departureAt": "2026-10-15T09:00:00+03:00",
+        "coverageComplete": true,
+        "requiredCoverage": [
+          "m11-15-58",
+          "m11-58-679",
+          "m11-679-684",
+          "m12",
+          "ckad",
+          "zsd"
+        ],
+        "components": [
+          {
+            "id": "m11-15-58",
+            "conditions": {
+              "road": "M11",
+              "operator": "m11-neva",
+              "product": "m11-15-58",
+              "direction": "northbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "monThu"
+            },
+            "entry": "tskad",
+            "exit": "solnechnogorsk",
+            "family": "M11",
+            "aggregate": false,
+            "coverageKeys": [
+              "m11-15-58"
+            ],
+            "scope": {
+              "proven": true,
+              "reference": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-15-58; retained model scope, not a new operator crosswalk",
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e"
+            },
+            "quote": {
+              "conditions": {
+                "road": "M11",
+                "operator": "m11-neva",
+                "product": "m11-15-58",
+                "direction": "northbound",
+                "category": "I",
+                "payment": "cash/card",
+                "profile": "monThu"
+              },
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e",
+              "departureAt": "2026-10-15T09:00:00+03:00",
+              "rub": 280,
+              "profile": "monThu",
+              "validity": "resolved",
+              "source": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-15-58",
+              "assurance": "confirmed"
+            }
+          },
+          {
+            "id": "m11-58-679",
+            "conditions": {
+              "road": "M11",
+              "operator": "Avtodor",
+              "product": "m11-58-679",
+              "direction": "northbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "monThu"
+            },
+            "entry": "p58",
+            "exit": "p679",
+            "family": "M11",
+            "aggregate": false,
+            "coverageKeys": [
+              "m11-58-679"
+            ],
+            "scope": {
+              "proven": true,
+              "reference": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-58-679; retained model scope, not a new operator crosswalk",
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e"
+            },
+            "quote": {
+              "conditions": {
+                "road": "M11",
+                "operator": "Avtodor",
+                "product": "m11-58-679",
+                "direction": "northbound",
+                "category": "I",
+                "payment": "cash/card",
+                "profile": "monThu"
+              },
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e",
+              "departureAt": "2026-10-15T09:00:00+03:00",
+              "rub": 3900,
+              "profile": "monThu",
+              "validity": "resolved",
+              "source": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-58-679",
+              "assurance": "confirmed"
+            }
+          },
+          {
+            "id": "m11-679-684",
+            "conditions": {
+              "road": "M11",
+              "operator": "Avtodor",
+              "product": "m11-679-684",
+              "direction": "northbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "allDays"
+            },
+            "entry": "p679",
+            "exit": "p684",
+            "family": "M11",
+            "aggregate": false,
+            "coverageKeys": [
+              "m11-679-684"
+            ],
+            "scope": {
+              "proven": true,
+              "reference": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-679-684; retained model scope, not a new operator crosswalk",
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e"
+            },
+            "quote": {
+              "conditions": {
+                "road": "M11",
+                "operator": "Avtodor",
+                "product": "m11-679-684",
+                "direction": "northbound",
+                "category": "I",
+                "payment": "cash/card",
+                "profile": "allDays"
+              },
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e",
+              "departureAt": "2026-10-15T09:00:00+03:00",
+              "rub": 94,
+              "profile": "allDays",
+              "validity": "resolved",
+              "source": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-679-684",
+              "assurance": "confirmed"
+            }
+          },
+          {
+            "id": "m12",
+            "conditions": {
+              "road": "M12",
+              "operator": "Avtodor",
+              "product": "m12",
+              "direction": "westbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "allDays"
+            },
+            "entry": "model:arzamas_p158",
+            "exit": "model:vladimir",
+            "family": "m12",
+            "aggregate": false,
+            "coverageKeys": [
+              "m12"
+            ],
+            "scope": {
+              "proven": true,
+              "reference": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m12; retained model scope, not a new operator crosswalk",
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e"
+            },
+            "quote": {
+              "conditions": {
+                "road": "M12",
+                "operator": "Avtodor",
+                "product": "m12",
+                "direction": "westbound",
+                "category": "I",
+                "payment": "cash/card",
+                "profile": "allDays"
+              },
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e",
+              "departureAt": "2026-10-15T09:00:00+03:00",
+              "rub": 1713,
+              "profile": "allDays",
+              "validity": "resolved",
+              "source": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m12",
+              "assurance": "working_estimate"
+            }
+          },
+          {
+            "id": "ckad",
+            "conditions": {
+              "road": "CKAD",
+              "operator": "Avtodor",
+              "product": "M7-Volga→M11-Neva",
+              "direction": "westbound/north arc",
+              "category": "I",
+              "payment": "post-payment",
+              "profile": "allDays"
+            },
+            "entry": "М-7 Волга",
+            "exit": "М-11 Нева",
+            "family": "ckad",
+            "aggregate": false,
+            "coverageKeys": [
+              "ckad"
+            ],
+            "scope": {
+              "proven": true,
+              "reference": "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e"
+            },
+            "quote": {
+              "conditions": {
+                "road": "CKAD",
+                "operator": "Avtodor",
+                "product": "M7-Volga→M11-Neva",
+                "direction": "westbound/north arc",
+                "category": "I",
+                "payment": "post-payment",
+                "profile": "allDays"
+              },
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e",
+              "departureAt": "2026-10-15T09:00:00+03:00",
+              "rub": 941,
+              "profile": "allDays",
+              "validity": "resolved",
+              "source": "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+              "assurance": "working_estimate"
+            }
+          },
+          {
+            "id": "zsd",
+            "conditions": {
+              "road": "ZSD",
+              "operator": "NCH",
+              "product": "zsd",
+              "direction": "northbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "allDays"
+            },
+            "entry": null,
+            "exit": null,
+            "family": "zsd",
+            "aggregate": false,
+            "coverageKeys": [
+              "zsd"
+            ],
+            "scope": {
+              "proven": false,
+              "reference": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/zsd; retained model scope, not a new operator crosswalk",
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e"
+            },
+            "stopReason": "zsd_cash_card_collection_bundle_unproven"
+          }
+        ],
+        "strict": {
+          "pricingStatus": "unknown",
+          "amount": null,
+          "priceConfirmation": "unconfirmed"
+        }
+      },
+      "result": {
+        "status": "insufficient",
+        "totalRub": null,
+        "confirmedSubtotalRub": 4274,
+        "assessedSubtotalRub": 6928,
+        "missingCoverage": [
+          "zsd"
+        ],
+        "components": [
+          {
+            "id": "m11-15-58",
+            "conditions": {
+              "road": "M11",
+              "operator": "m11-neva",
+              "product": "m11-15-58",
+              "direction": "northbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "monThu"
+            },
+            "entry": "tskad",
+            "exit": "solnechnogorsk",
+            "coverageKeys": [
+              "m11-15-58"
+            ],
+            "status": "confirmed",
+            "rub": 280,
+            "range": {
+              "min": 280,
+              "max": 280
+            },
+            "method": "direct_quote",
+            "sources": [
+              "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-15-58",
+              "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-15-58; retained model scope, not a new operator crosswalk"
+            ],
+            "reason": "source_bound_quote_at_departure"
+          },
+          {
+            "id": "m11-58-679",
+            "conditions": {
+              "road": "M11",
+              "operator": "Avtodor",
+              "product": "m11-58-679",
+              "direction": "northbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "monThu"
+            },
+            "entry": "p58",
+            "exit": "p679",
+            "coverageKeys": [
+              "m11-58-679"
+            ],
+            "status": "confirmed",
+            "rub": 3900,
+            "range": {
+              "min": 3900,
+              "max": 3900
+            },
+            "method": "direct_quote",
+            "sources": [
+              "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-58-679",
+              "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-58-679; retained model scope, not a new operator crosswalk"
+            ],
+            "reason": "source_bound_quote_at_departure"
+          },
+          {
+            "id": "m11-679-684",
+            "conditions": {
+              "road": "M11",
+              "operator": "Avtodor",
+              "product": "m11-679-684",
+              "direction": "northbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "allDays"
+            },
+            "entry": "p679",
+            "exit": "p684",
+            "coverageKeys": [
+              "m11-679-684"
+            ],
+            "status": "confirmed",
+            "rub": 94,
+            "range": {
+              "min": 94,
+              "max": 94
+            },
+            "method": "direct_quote",
+            "sources": [
+              "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-679-684",
+              "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-679-684; retained model scope, not a new operator crosswalk"
+            ],
+            "reason": "source_bound_quote_at_departure"
+          },
+          {
+            "id": "m12",
+            "conditions": {
+              "road": "M12",
+              "operator": "Avtodor",
+              "product": "m12",
+              "direction": "westbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "allDays"
+            },
+            "entry": "model:arzamas_p158",
+            "exit": "model:vladimir",
+            "coverageKeys": [
+              "m12"
+            ],
+            "status": "estimated",
+            "rub": 1713,
+            "range": {
+              "min": 1713,
+              "max": 1713
+            },
+            "method": "retained_working_quote",
+            "sources": [
+              "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m12",
+              "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m12; retained model scope, not a new operator crosswalk"
+            ],
+            "reason": "existing_numeric_working_quote_not_promoted_to_confirmation"
+          },
+          {
+            "id": "ckad",
+            "conditions": {
+              "road": "CKAD",
+              "operator": "Avtodor",
+              "product": "M7-Volga→M11-Neva",
+              "direction": "westbound/north arc",
+              "category": "I",
+              "payment": "post-payment",
+              "profile": "allDays"
+            },
+            "entry": "М-7 Волга",
+            "exit": "М-11 Нева",
+            "coverageKeys": [
+              "ckad"
+            ],
+            "status": "estimated",
+            "rub": 941,
+            "range": {
+              "min": 941,
+              "max": 941
+            },
+            "method": "retained_working_quote",
+            "sources": [
+              "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+              "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json"
+            ],
+            "reason": "existing_numeric_working_quote_not_promoted_to_confirmation"
+          },
+          {
+            "id": "zsd",
+            "conditions": {
+              "road": "ZSD",
+              "operator": "NCH",
+              "product": "zsd",
+              "direction": "northbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "allDays"
+            },
+            "entry": null,
+            "exit": null,
+            "coverageKeys": [
+              "zsd"
+            ],
+            "status": "unknown",
+            "rub": null,
+            "range": null,
+            "method": null,
+            "sources": [],
+            "reason": "zsd_cash_card_collection_bundle_unproven"
+          }
+        ],
+        "strict": {
+          "pricingStatus": "unknown",
+          "amount": null,
+          "priceConfirmation": "unconfirmed"
+        },
+        "reasons": [
+          "unassessed_required_products",
+          "zsd:zsd_cash_card_collection_bundle_unproven"
+        ]
+      },
+      "geometryUnchanged": true,
+      "conditionalNotAdmittedTotalRub": 7828
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "strict": {
+        "pricingStatus": "unknown",
+        "amount": null,
+        "priceConfirmation": "unconfirmed"
+      },
+      "oldAssessedSubtotalRub": 6327,
+      "input": {
+        "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+        "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e",
+        "departureAt": "2026-10-17T09:00:00+03:00",
+        "coverageComplete": true,
+        "requiredCoverage": [
+          "m11-15-58",
+          "m11-58-679",
+          "m11-679-684",
+          "m12",
+          "ckad",
+          "zsd"
+        ],
+        "components": [
+          {
+            "id": "m11-15-58",
+            "conditions": {
+              "road": "M11",
+              "operator": "m11-neva",
+              "product": "m11-15-58",
+              "direction": "northbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "sat"
+            },
+            "entry": "tskad",
+            "exit": "solnechnogorsk",
+            "family": "M11",
+            "aggregate": false,
+            "coverageKeys": [
+              "m11-15-58"
+            ],
+            "scope": {
+              "proven": true,
+              "reference": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-15-58; retained model scope, not a new operator crosswalk",
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e"
+            },
+            "quote": {
+              "conditions": {
+                "road": "M11",
+                "operator": "m11-neva",
+                "product": "m11-15-58",
+                "direction": "northbound",
+                "category": "I",
+                "payment": "cash/card",
+                "profile": "sat"
+              },
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e",
+              "departureAt": "2026-10-17T09:00:00+03:00",
+              "rub": 320,
+              "profile": "sat",
+              "validity": "resolved",
+              "source": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-15-58",
+              "assurance": "confirmed"
+            }
+          },
+          {
+            "id": "m11-58-679",
+            "conditions": {
+              "road": "M11",
+              "operator": "Avtodor",
+              "product": "m11-58-679",
+              "direction": "northbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "friSun"
+            },
+            "entry": "p58",
+            "exit": "p679",
+            "family": "M11",
+            "aggregate": false,
+            "coverageKeys": [
+              "m11-58-679"
+            ],
+            "scope": {
+              "proven": true,
+              "reference": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-58-679; retained model scope, not a new operator crosswalk",
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e"
+            },
+            "quote": {
+              "conditions": {
+                "road": "M11",
+                "operator": "Avtodor",
+                "product": "m11-58-679",
+                "direction": "northbound",
+                "category": "I",
+                "payment": "cash/card",
+                "profile": "friSun"
+              },
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e",
+              "departureAt": "2026-10-17T09:00:00+03:00",
+              "rub": 4200,
+              "profile": "friSun",
+              "validity": "resolved",
+              "source": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-58-679",
+              "assurance": "confirmed"
+            }
+          },
+          {
+            "id": "m11-679-684",
+            "conditions": {
+              "road": "M11",
+              "operator": "Avtodor",
+              "product": "m11-679-684",
+              "direction": "northbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "allDays"
+            },
+            "entry": "p679",
+            "exit": "p684",
+            "family": "M11",
+            "aggregate": false,
+            "coverageKeys": [
+              "m11-679-684"
+            ],
+            "scope": {
+              "proven": true,
+              "reference": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-679-684; retained model scope, not a new operator crosswalk",
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e"
+            },
+            "quote": {
+              "conditions": {
+                "road": "M11",
+                "operator": "Avtodor",
+                "product": "m11-679-684",
+                "direction": "northbound",
+                "category": "I",
+                "payment": "cash/card",
+                "profile": "allDays"
+              },
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e",
+              "departureAt": "2026-10-17T09:00:00+03:00",
+              "rub": 94,
+              "profile": "allDays",
+              "validity": "resolved",
+              "source": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-679-684",
+              "assurance": "confirmed"
+            }
+          },
+          {
+            "id": "m12",
+            "conditions": {
+              "road": "M12",
+              "operator": "Avtodor",
+              "product": "m12",
+              "direction": "westbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "allDays"
+            },
+            "entry": "model:arzamas_p158",
+            "exit": "model:vladimir",
+            "family": "m12",
+            "aggregate": false,
+            "coverageKeys": [
+              "m12"
+            ],
+            "scope": {
+              "proven": true,
+              "reference": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m12; retained model scope, not a new operator crosswalk",
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e"
+            },
+            "quote": {
+              "conditions": {
+                "road": "M12",
+                "operator": "Avtodor",
+                "product": "m12",
+                "direction": "westbound",
+                "category": "I",
+                "payment": "cash/card",
+                "profile": "allDays"
+              },
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e",
+              "departureAt": "2026-10-17T09:00:00+03:00",
+              "rub": 1713,
+              "profile": "allDays",
+              "validity": "resolved",
+              "source": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m12",
+              "assurance": "working_estimate"
+            }
+          },
+          {
+            "id": "ckad",
+            "conditions": {
+              "road": "CKAD",
+              "operator": "Avtodor",
+              "product": "M7-Volga→M11-Neva",
+              "direction": "westbound/north arc",
+              "category": "I",
+              "payment": "post-payment",
+              "profile": "allDays"
+            },
+            "entry": "М-7 Волга",
+            "exit": "М-11 Нева",
+            "family": "ckad",
+            "aggregate": false,
+            "coverageKeys": [
+              "ckad"
+            ],
+            "scope": {
+              "proven": true,
+              "reference": "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e"
+            },
+            "quote": {
+              "conditions": {
+                "road": "CKAD",
+                "operator": "Avtodor",
+                "product": "M7-Volga→M11-Neva",
+                "direction": "westbound/north arc",
+                "category": "I",
+                "payment": "post-payment",
+                "profile": "allDays"
+              },
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e",
+              "departureAt": "2026-10-17T09:00:00+03:00",
+              "rub": 941,
+              "profile": "allDays",
+              "validity": "resolved",
+              "source": "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+              "assurance": "working_estimate"
+            }
+          },
+          {
+            "id": "zsd",
+            "conditions": {
+              "road": "ZSD",
+              "operator": "NCH",
+              "product": "zsd",
+              "direction": "northbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "allDays"
+            },
+            "entry": null,
+            "exit": null,
+            "family": "zsd",
+            "aggregate": false,
+            "coverageKeys": [
+              "zsd"
+            ],
+            "scope": {
+              "proven": false,
+              "reference": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/zsd; retained model scope, not a new operator crosswalk",
+              "routeId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+              "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e"
+            },
+            "stopReason": "zsd_cash_card_collection_bundle_unproven"
+          }
+        ],
+        "strict": {
+          "pricingStatus": "unknown",
+          "amount": null,
+          "priceConfirmation": "unconfirmed"
+        }
+      },
+      "result": {
+        "status": "insufficient",
+        "totalRub": null,
+        "confirmedSubtotalRub": 4614,
+        "assessedSubtotalRub": 7268,
+        "missingCoverage": [
+          "zsd"
+        ],
+        "components": [
+          {
+            "id": "m11-15-58",
+            "conditions": {
+              "road": "M11",
+              "operator": "m11-neva",
+              "product": "m11-15-58",
+              "direction": "northbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "sat"
+            },
+            "entry": "tskad",
+            "exit": "solnechnogorsk",
+            "coverageKeys": [
+              "m11-15-58"
+            ],
+            "status": "confirmed",
+            "rub": 320,
+            "range": {
+              "min": 320,
+              "max": 320
+            },
+            "method": "direct_quote",
+            "sources": [
+              "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-15-58",
+              "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-15-58; retained model scope, not a new operator crosswalk"
+            ],
+            "reason": "source_bound_quote_at_departure"
+          },
+          {
+            "id": "m11-58-679",
+            "conditions": {
+              "road": "M11",
+              "operator": "Avtodor",
+              "product": "m11-58-679",
+              "direction": "northbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "friSun"
+            },
+            "entry": "p58",
+            "exit": "p679",
+            "coverageKeys": [
+              "m11-58-679"
+            ],
+            "status": "confirmed",
+            "rub": 4200,
+            "range": {
+              "min": 4200,
+              "max": 4200
+            },
+            "method": "direct_quote",
+            "sources": [
+              "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-58-679",
+              "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-58-679; retained model scope, not a new operator crosswalk"
+            ],
+            "reason": "source_bound_quote_at_departure"
+          },
+          {
+            "id": "m11-679-684",
+            "conditions": {
+              "road": "M11",
+              "operator": "Avtodor",
+              "product": "m11-679-684",
+              "direction": "northbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "allDays"
+            },
+            "entry": "p679",
+            "exit": "p684",
+            "coverageKeys": [
+              "m11-679-684"
+            ],
+            "status": "confirmed",
+            "rub": 94,
+            "range": {
+              "min": 94,
+              "max": 94
+            },
+            "method": "direct_quote",
+            "sources": [
+              "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-679-684",
+              "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m11-679-684; retained model scope, not a new operator crosswalk"
+            ],
+            "reason": "source_bound_quote_at_departure"
+          },
+          {
+            "id": "m12",
+            "conditions": {
+              "road": "M12",
+              "operator": "Avtodor",
+              "product": "m12",
+              "direction": "westbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "allDays"
+            },
+            "entry": "model:arzamas_p158",
+            "exit": "model:vladimir",
+            "coverageKeys": [
+              "m12"
+            ],
+            "status": "estimated",
+            "rub": 1713,
+            "range": {
+              "min": 1713,
+              "max": 1713
+            },
+            "method": "retained_working_quote",
+            "sources": [
+              "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m12",
+              "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.json#max-chain-m12-ckad-m11-zsd-arzamas-to-prim/componentAudit/m12; retained model scope, not a new operator crosswalk"
+            ],
+            "reason": "existing_numeric_working_quote_not_promoted_to_confirmation"
+          },
+          {
+            "id": "ckad",
+            "conditions": {
+              "road": "CKAD",
+              "operator": "Avtodor",
+              "product": "M7-Volga→M11-Neva",
+              "direction": "westbound/north arc",
+              "category": "I",
+              "payment": "post-payment",
+              "profile": "allDays"
+            },
+            "entry": "М-7 Волга",
+            "exit": "М-11 Нева",
+            "coverageKeys": [
+              "ckad"
+            ],
+            "status": "estimated",
+            "rub": 941,
+            "range": {
+              "min": 941,
+              "max": 941
+            },
+            "method": "retained_working_quote",
+            "sources": [
+              "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+              "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json"
+            ],
+            "reason": "existing_numeric_working_quote_not_promoted_to_confirmation"
+          },
+          {
+            "id": "zsd",
+            "conditions": {
+              "road": "ZSD",
+              "operator": "NCH",
+              "product": "zsd",
+              "direction": "northbound",
+              "category": "I",
+              "payment": "cash/card",
+              "profile": "allDays"
+            },
+            "entry": null,
+            "exit": null,
+            "coverageKeys": [
+              "zsd"
+            ],
+            "status": "unknown",
+            "rub": null,
+            "range": null,
+            "method": null,
+            "sources": [],
+            "reason": "zsd_cash_card_collection_bundle_unproven"
+          }
+        ],
+        "strict": {
+          "pricingStatus": "unknown",
+          "amount": null,
+          "priceConfirmation": "unconfirmed"
+        },
+        "reasons": [
+          "unassessed_required_products",
+          "zsd:zsd_cash_card_collection_bundle_unproven"
+        ]
+      },
+      "geometryUnchanged": true,
+      "conditionalNotAdmittedTotalRub": 8168
+    }
+  ],
+  "newFullEstimatedRoutes": 0
+}

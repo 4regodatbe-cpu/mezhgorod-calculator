@@ -1,0 +1,91 @@
+{
+  "caseId": "kherson-раденск-kerch-center",
+  "region": "kherson",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-13T09:00:00+03:00",
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 384596,
+      "seconds": 21096
+    },
+    {
+      "name": "OSRM",
+      "meters": 384567,
+      "seconds": 20512
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 384567,
+  "routeSeconds": 20512,
+  "controls": [
+    {
+      "corridor": "crimea",
+      "positions": [
+        {
+          "lat": 46.551144,
+          "lng": 32.925629
+        },
+        {
+          "lat": 45.708,
+          "lng": 34.395
+        },
+        {
+          "lng": 36.4689,
+          "lat": 45.3568
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [],
+    "provenRoads": [],
+    "missingExpectedRoads": [],
+    "status": "not-assigned"
+  },
+  "passageEvidence": [],
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-раденск-kerch-center/2026-10-15T12-02-49-106Z-capture.json.gz",
+  "captureSha256": "66b7db419dd6ab6f6337e47afd2206b8ce1559fe1fd724555ff5e1af651fd9bc",
+  "detectedRoadComponents": [],
+  "paidRoadEdgeNames": [],
+  "tollNodeIds": [],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": 0,
+    "weekdayAmount": 0,
+    "weekendAmount": 0,
+    "period": "понедельник–четверг",
+    "segments": [],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "free"
+  },
+  "audit": {
+    "status": "none",
+    "priced": [],
+    "missing": [],
+    "components": []
+  }
+}

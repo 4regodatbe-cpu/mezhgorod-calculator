@@ -1,0 +1,14 @@
+✔ stale observation warns; unknown legal date permits explicitly accepted working application (4.453097ms)
+✔ missing official fare/source, wrong application date, conflict and double charge block (0.452774ms)
+✔ future/invalid dates block; freshness alone never manufactures validity (0.187761ms)
+✔ missing, duplicate, unrelated and empty evidence cannot silently pass (0.197962ms)
+✔ source verifier checks real saved bytes; fixture is not certified as an actual operator source (3.232484ms)
+✔ real registry still has current mandatory stale blockers; absent source assessment stays blocked (2.257642ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 31.063413

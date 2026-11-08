@@ -1,0 +1,16 @@
+{
+  "mode": "actual current V3 handler with controlled immediate upstream failures; no network",
+  "calls": [
+    {
+      "host": "valhalla1.openstreetmap.de",
+      "callerAborted": true,
+      "providerSignalAborted": true
+    }
+  ],
+  "source": "current working runtime; compare pinned before/after report",
+  "finding": "CALLER_ABORT_REACHES_PROVIDER",
+  "httpStatus": 400,
+  "response": {
+    "error": "Расчёт отменён"
+  }
+}

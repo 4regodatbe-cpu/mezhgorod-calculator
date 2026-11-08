@@ -1,0 +1,13 @@
+✔ AddressField updates trigger browser checks on PR as well as push (1.217869ms)
+✔ Snapshot changes trigger B03 browser checks on push (0.196947ms)
+✔ Snapshot changes trigger B03 browser checks on pull_request (1.121861ms)
+✔ CI executes new swap/refocus regression and preserves old suite failures (0.305487ms)
+✔ push-only B03 runs retain the original mandatory offline verify commands (0.22318ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10.58385

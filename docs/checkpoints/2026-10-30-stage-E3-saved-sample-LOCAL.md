@@ -1,0 +1,13 @@
+# E3 — small saved-route matrix projection, no new capture
+
+30.10.2026 MSK; parent338dacad. [Exact samples/inputs/component grades/sourceSHA](../../experiments/toll-estimates/checks/2026-10-30/e3-samples.json). Two saved complex C5routes plus finished ZSDcontrol, each evaluated for15OctThursday and17OctSaturday: **3distinct routes/6evaluations**, not6routes. Only existing pure tariff adapters/currentmatrix/date calendars invoked; no provider/trace/API replay, no routing or atlas audit. Original compressed capture and selected-geometry SHA verified, provider/geometry never changed.
+
+Krasnodar→SPb: **10464Thursday/12334Saturday, estimated**, same existing full numeric totals. M4candidate/working aggregate is explicitly estimated5040/6090; other source-backed components retain native values1130/1650(head),3900/4200(mainline),94tail,300zone1. Confirmed subtotals5424/6244, full estimate includes all required products. This improves uncertainty labelling, **does not unlock a previously unknown numeric route**.
+
+Arzamas→Primorsk: **unknown/null** both days, missingCKAD/ZSD. Assessed portions5987/6327 are not full totals; confirmed portions4274/4614 exclude model-only M121713. M12current reverse420→184 native quote stays explicitly working-estimated, not a newly certified22Н registration mapping. New model does not invent missing operator products or inherit600/300. Existing ZSDKADsouth→Ekateringofka **600confirmed** both days unchanged.
+
+Current source road calendars resolve each component at departure, including M11head-specific profiles; saved weekend display amounts are not blindly used as every Friday/Sunday price. Current pure quotes checked against saved Thursday values. M4atomic sectionVector preserved, ZSDzone1 and finishedzones1–2 use atomic zone coverage plus aggregate guard, preventing future duplicate partial/full combinations.
+
+Actual checks: **5sample testsPASS**, including zero attempted fetches, exact totals, null/subtotals, sourcegeometry and honest route counts. StrictTS initially failed because existing JSadapter confidence inferredstring; original error logsretained. Runtime assertion validates matched before normalizing the literal at the local adapter boundary (M4/M12), no unsafe assertion or existingadapterchange. Final scopedstrictTS/ESLintPASS, final projection exits0 and rechecks all6 matrix totals/sourcehashes. E5 will run the combined final regressions/gate once. Controlled candidate-set E2fixtures remain separate from these real saved-route results.
+
+Local-only commit/WORK_STATE; no app/lib/data/tariff/CI/Production/push or mandatoryassertionchange. Next E4isolated toll-only presentation for confirmed/estimated/insufficient, keep base transfer fare untouched, then E5finalchecks.

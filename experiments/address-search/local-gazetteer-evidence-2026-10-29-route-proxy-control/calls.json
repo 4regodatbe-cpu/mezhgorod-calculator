@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://valhalla1.openstreetmap.de/route?json=%7B%22locations%22%3A%5B%7B%22lat%22%3A55.75204%2C%22lon%22%3A37.61781%2C%22type%22%3A%22break%22%7D%2C%7B%22lat%22%3A59.93863%2C%22lon%22%3A30.31413%2C%22type%22%3A%22break%22%7D%5D%2C%22costing%22%3A%22auto%22%2C%22costing_options%22%3A%7B%22auto%22%3A%7B%22use_tolls%22%3A1%7D%7D%2C%22units%22%3A%22kilometers%22%2C%22shape_format%22%3A%22polyline6%22%2C%22directions_options%22%3A%7B%22language%22%3A%22ru-RU%22%2C%22units%22%3A%22kilometers%22%7D%7D",
+    "startedAt": "2026-10-29T04:34:56.177Z",
+    "httpStatus": 200,
+    "elapsedMs": 1108
+  },
+  {
+    "url": "https://router.project-osrm.org/route/v1/driving/37.61781,55.75204;30.31413,59.93863?overview=full&steps=true&geometries=geojson",
+    "startedAt": "2026-10-29T04:34:56.189Z",
+    "httpStatus": 200,
+    "elapsedMs": 1132
+  },
+  {
+    "url": "https://brouter.de/brouter?lonlats=37.61781%2C55.75204%7C30.31413%2C59.93863&profile=car-vario&alternativeidx=0&format=geojson",
+    "startedAt": "2026-10-29T04:34:56.191Z",
+    "httpStatus": 400,
+    "elapsedMs": 1134
+  },
+  {
+    "url": "https://valhalla1.openstreetmap.de/trace_attributes",
+    "startedAt": "2026-10-29T04:34:57.604Z",
+    "httpStatus": 200,
+    "elapsedMs": 573
+  },
+  {
+    "url": "https://valhalla1.openstreetmap.de/trace_attributes",
+    "startedAt": "2026-10-29T04:34:57.606Z",
+    "httpStatus": 200,
+    "elapsedMs": 1127
+  },
+  {
+    "url": "https://valhalla1.openstreetmap.de/trace_attributes",
+    "startedAt": "2026-10-29T04:34:58.313Z",
+    "httpStatus": 200,
+    "elapsedMs": 636
+  },
+  {
+    "url": "https://valhalla1.openstreetmap.de/trace_attributes",
+    "startedAt": "2026-10-29T04:34:58.735Z",
+    "httpStatus": 200,
+    "elapsedMs": 313
+  },
+  {
+    "url": "https://valhalla1.openstreetmap.de/trace_attributes",
+    "startedAt": "2026-10-29T04:34:58.950Z",
+    "httpStatus": 200,
+    "elapsedMs": 429
+  },
+  {
+    "url": "https://valhalla1.openstreetmap.de/trace_attributes",
+    "startedAt": "2026-10-29T04:34:59.180Z",
+    "httpStatus": 200,
+    "elapsedMs": 337
+  }
+]

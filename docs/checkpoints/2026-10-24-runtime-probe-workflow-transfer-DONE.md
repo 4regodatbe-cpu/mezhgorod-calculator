@@ -1,0 +1,7 @@
+# DONE — восстановление сохранения workflow, 24.10.2026 МСК
+
+Остановка на сохранении блокаactualruntimeprobe. Remote5203f3aeb665d32409b4beb766a617828335ad0d/tree682346b98dd901c856b803ffa81025534da464b8 содержалscript/tests/docs, но `.github/workflows/special-territory-policy.yml` осталсяunstaged:gitaddсообщилoutside sparse-checkout. Ошибкузаметилипоtooloutput,доliveблока. Не считатьпервыйcommitполнымподключениемCI; предыдущийDONEуточняетсяэтойзаписью.
+
+Ни код/probe/live расчёты не запускались повторно. Сохраняется готовыйworkflow через git add --sparse, затемотдельныйnonforcecommit/remote/tree/pathreadback. SourcefileSHA256ужеестьвchecks/2026-10-24-runtime-address-probe/verification.json;читатьегообратнои сравнитьсremoteGitblob. Тесты875/buildранееPASS,sourceнеизменён;этотшагтолькоисправляетнезавершённуюпередачу. SourcePRhead5203f3aподтверждёнпередисправлением,PR14draft. Другиеworktreesсохраняются.
+
+Следующийшагтолькоопослеexactworkflowreadback—заключительный≤3GETsmokeпоSTARTEDиз2026-10-24-runtime-address-probe-DONE-livefix-STARTED.md. Вэтомrecoverylive0. Приошибкепередачине расширятьработу;приуспехепродолжитьбезповтора875tests/старогоsmoke. Main/Production/merge/backupнетронуты. Этотcheckpointиактуальныйhandoffявноотличаютчастичносохранённый5203f3aотпоследующегополногоcommit.

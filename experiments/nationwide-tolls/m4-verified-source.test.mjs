@@ -16,13 +16,13 @@ test('operator355 receipt semantics link to the second unchanged uploaded PDF',(
  assert.equal(createHash('sha256').update(readFileSync(new URL(rules.sourceFile,root))).digest('hex'),rules.sha256);
  assert.equal(rules.rule355.entry,'m4-355');assert.equal(rules.rule355.nextGate,'m4-339');
 });
-test('no-transponder636/672 fare never picks the slash transponder-only value',()=>{
+test('category-I636/672 values use the weekday/weekend columns and not other vehicle classes',()=>{
  for(const[id,weekday,weekend]of [['m4-636',570,640],['m4-672',350,440]]){
   assert.equal(matrixM4Component(boundary(id),'2026-10-15T10:00:00+03:00',0).tolls.amount,weekday);
   assert.equal(matrixM4Component(boundary(id),'2026-10-17T10:00:00+03:00',0).tolls.amount,weekend);
  }
 });
-test('verified tariff start excludes pre-March2 endpoint fares and retains unconfirmed OD status',()=>{
+test('Order 58 effective date excludes earlier fare versions and retains unconfirmed OD status',()=>{
  assert.equal(matrixM4Component(boundary('m4-71'),'2026-03-01T10:00:00+03:00',0).tolls,null);
  const q=matrixM4Component(boundary('m4-71'),'2026-03-02T10:00:00+03:00',0);
  assert.equal(q.tolls.amount,310);assert.equal(q.priceConfirmation,'unconfirmed');

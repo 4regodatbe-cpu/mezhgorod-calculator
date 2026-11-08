@@ -1,0 +1,33 @@
+## Runtime Logs
+
+**Project:** prj_JbuIKFQNjD3FvAcX2I65Dm5OBKie
+**Deployment:** dpl_3oCZcqnjbj8BKWtbzDN7YvcT9VXx
+**Time range:** 2026-10-24T07:54:30.058Z → 2026-10-24T08:09:30.058Z
+
+### 2026-10-24T08:08:46.600Z GET /api/suggest [error/function]
+dep=dpl_3oCZcqnjbj8BKWtbzDN7YvcT9VXx branch=fix/v3-missing-route-prices-2026-10-15 request=jb7tp-1792829326444-25eb52a791ea domain=mezhgorod-calculator-bdpmxktze-4regodatbe-5310.vercel.app environment=preview region=iad1 runtime=nodejs24.x stream=stderr
+    address_search_unavailable {
+      elapsedMs: 16,
+      sourceCount: 7,
+      failures: { source_cooldown: 7 },
+      budgetExpired: false
+    }
+
+### 2026-10-24T08:08:33.625Z GET /api/suggest [warn/function]
+dep=dpl_3oCZcqnjbj8BKWtbzDN7YvcT9VXx branch=fix/v3-missing-route-prices-2026-10-15 request=fgx7s-1792829313337-9069d51606ad domain=mezhgorod-calculator-bdpmxktze-4regodatbe-5310.vercel.app environment=preview region=iad1 runtime=nodejs24.x stream=stderr
+    address_search_partial {
+      elapsedMs: 159,
+      sourceCount: 7,
+      failures: { http_503: 1 },
+      budgetExpired: false
+    }
+
+### 2026-10-24T08:08:03.190Z GET /api/suggest [warn/function]
+dep=dpl_3oCZcqnjbj8BKWtbzDN7YvcT9VXx branch=fix/v3-missing-route-prices-2026-10-15 request=vwzdn-1792829281567-8c8cb39e24dc domain=mezhgorod-calculator-bdpmxktze-4regodatbe-5310.vercel.app environment=preview region=iad1 runtime=nodejs24.x stream=stderr
+    address_search_partial {
+      elapsedMs: 578,
+      sourceCount: 7,
+      failures: { http_503: 1 },
+      budgetExpired: false
+    }
+

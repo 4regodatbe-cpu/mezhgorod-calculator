@@ -1,0 +1,19 @@
+# DONE runtime probe / STARTED live fix smoke — 24.10.2026 МСК
+
+Parent5d7043a14bab604aae46dcc131990790683159f6/tree2f1c6407051c56900371a4a5551c94ffa8eff92f exactremote/PR14draft проверен передблоком. [Предыдущий STARTED](2026-10-24-address-circuit-fix-DONE-runtime-probe-STARTED.md). Тарифы/километраж/Production/main/merge не менялись.
+
+## Actual-runtime probe DONE
+
+Добавлены scripts/address-search-runtime-probe.mjs и scripts/address-runtime-probe.test.ts. DefaultCLI вызывает productioncollectAddressFeatures/pool, затем тотжеrankPhotonFeatures. Legacy address-search-live-probe.mjsнеизменён. В special-territory-policy.yml заменён только Photonstep и добавлены2artifactpaths, остальныеroutechecks/числокейсов/permissionsнеизменены.
+
+Limits:1–3queries(defaultРостов,Красн,Донецк), perquery≤20с,totalbudget≤60ссучётомqueryloop; атомарные result/progress доработыипослекаждойquery. Rawcollectorfeatures сохраняютсядо500сфлагомtruncation, items/checks/sourcefailures/budget/remainingqueriesсохраняютсяявно. Этонеполные сырыеHTTPответывсехupstreamsources:сохраняетсяresultcollector. Transport/cooperative/noncooperativecollector/body ограниченrace+abort; I/Oсохраненияможетдобавитьнебольшоеwallвремясверхуnetworkbudget. Есливесьsourceнедоступен,следующиеqueriesнеотправляются; невернаявыдачаделаетCHECK_FAILED,неPASS. CLIexit1кромесостоянияPASS. Нетретраев/обходаcooldown/новыхproviders/широкогоживогокорпусавручную.
+
+Focused31/31PASS(новые8contracts+legacytimeout/pool), full875/875PASS,0fail/skip,quote/APIcontractsPASS,ESLint2filesexit0,webpackTypeScript/static16/16exit0. Logs/SHA:checks/2026-10-24-runtime-address-probe/verification.json. Провереныprogressмеждукейсами,stopнаsourcefailure,positivewrongcityCHECK_FAILED,globalbudget/remaining,noncooperativetimeout,ошибкиprivacylabels,limits,defaultrealcollectorpipelineсmockfetch21/peak2/live0. Новыйscriptвэтойчастиliveне запускался; обычныйCIпокажетфактическийsourceотдельноотunitchecks.
+
+## Заключительный live блок STARTED
+
+Vercel list_deployments exactfixSHA5d7043a: dpl_4R2Lqb1f6C9WPHYoheU2mjDU9zssREADY,targetnull,PreviewURL https://mezhgorod-calculator-bvtpbupm6-4regodatbe-5310.vercel.app. FixAPI/collector/pool/runtimeData в этомcodeсовпадаютсновымprobecommit:новыйблокизменялтолькоscripts/workflow/docs. ПередзаявлениемравенствапроверитьGitdiffпоapp/lib/data. Этонеexactфинальныйdochead,нужнапрозрачнаяпривязкакфиксSHA,неподменятьстарый849102c.
+
+Послепромежуточногоdurablecodeсохранениясskipci сделать≤3GET/api/suggest?q=Ростов,Красн,ДонецкпоследовательновэтомPreview,безретраев. Сохранятьsafeheader/APIbody/connectorElapsedпослекаждого. Припервомsource502/transportfailurestop,лог/источникread-onlyпринадобности. НеожидаемыйрезультатнеPASS. ЭтоGET/Preview,неPOST/phone/browser/Production. Вэтомблоке0старыхroutecaptures/тарифныхпроверок. Короткийreadlogsразрешён,секретыsharelink/cookieне сохранять.
+
+Послеlive сохранитьотдельныйDONE/FAILEDcheckpointиобычныйCIcommitвэтомжесеансе. ПланобычногоCIсразунаprobecommitуточнёнрадиboundedlivefixproofдофинальногоконтрольногокоммита:всепромежуточныелокальныеgatesпрошли,workflowchecksнеослаблены. ЭтоизбегаетbranchwriteвпараллельactiveCIиоставляетодинобычныйCIнаитогсерии. Приsourcefailureнепытатьсябесконечнолечитьвнешнийсервис;сохранитьblockerиитог. Следующийшагпослеэтойсерии—проверитьactualCIjobstatuses,непридумыватьценыприKM/TARIFFgaps.

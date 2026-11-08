@@ -1,0 +1,88 @@
+{
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kazan-center/2026-10-15T12-08-35-445Z-capture.json.gz",
+  "captureSha256": "51dff085bde8c3f9a409146a4d5790c070a33c4ee3d20631c2d83713ba8d36ff",
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T08-46-07-960Z.json",
+      "sha256": "ffe4a848f55582057f2c7df751785c02bf8c0b294e80301f759bf987d28c51c2",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "m4": {
+        "status": "unknown",
+        "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 0,
+        "confirmedPvps": [],
+        "diagnosticOnly": true
+      }
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T08-46-08-887Z.json",
+      "sha256": "cf8592973e449457555bdb19ab2a6919dd846a0e8fcf2e918141e671fc54baa5",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "m4": {
+        "status": "unknown",
+        "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 0,
+        "confirmedPvps": [],
+        "diagnosticOnly": true
+      }
+    }
+  ],
+  "selected": {
+    "complete": true,
+    "boothEventCoverage": "complete",
+    "tollBoothCount": 0,
+    "paidEdges": [
+      {
+        "wayId": "1182567076",
+        "keys": [
+          "wayId",
+          "roadNames"
+        ]
+      },
+      {
+        "wayId": "31984600",
+        "keys": [
+          "wayId",
+          "roadNames"
+        ]
+      }
+    ]
+  },
+  "geometry": {
+    "endpoints": [
+      {
+        "wayId": "1182567076",
+        "from": {
+          "index": 1719,
+          "distanceKm": 0.00004502858131882864
+        },
+        "to": {
+          "index": 1721,
+          "distanceKm": 0.000029988906011819833
+        }
+      },
+      {
+        "wayId": "31984600",
+        "from": {
+          "index": 1721,
+          "distanceKm": 0.000029988906011819833
+        },
+        "to": {
+          "index": 1728,
+          "distanceKm": 0.000018652372335047468
+        }
+      }
+    ],
+    "saved1046": {
+      "index": 1608,
+      "distanceKm": 8.640217589226765
+    }
+  },
+  "caseId": "dnr-широкино-kazan-center",
+  "result": "source_gated_unknown_retained",
+  "reusedPrimaryWayEvidence": "docs/checkpoints/evidence/2026-10-16-granitnoe-kazan-m4-scope.json"
+}

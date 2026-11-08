@@ -1,0 +1,89 @@
+{
+  "status": "FIXED_LOCALLY_VERIFIED_CODE_CI_PENDING",
+  "sourceParentCommit": "5a6bef2d0a61bbcb9c3c4a6ec4f8574cafcef7a8",
+  "focusedTests": 27,
+  "auditTests": 777,
+  "failures": 0,
+  "fullBuildExitCode": 0,
+  "staticPages": "16/16",
+  "typeScript": "PASS",
+  "eslint": "PASS",
+  "quoteApiContracts": "PASS",
+  "ownRamenskoeProfiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "headRub": 200,
+      "m11SubtotalRub": 1450,
+      "fullAmount": null,
+      "missing": [
+        "ckad"
+      ]
+    },
+    {
+      "departureAt": "2026-10-15T23:59:00+03:00",
+      "headRub": 200,
+      "m11SubtotalRub": 1450,
+      "fullAmount": null,
+      "missing": [
+        "ckad"
+      ]
+    },
+    {
+      "departureAt": "2026-10-16T09:00:00+03:00",
+      "headRub": 220,
+      "m11SubtotalRub": 1610,
+      "fullAmount": null,
+      "missing": [
+        "ckad"
+      ]
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "headRub": 240,
+      "m11SubtotalRub": 1630,
+      "fullAmount": null,
+      "missing": [
+        "ckad"
+      ]
+    },
+    {
+      "departureAt": "2026-10-18T09:00:00+03:00",
+      "headRub": 320,
+      "m11SubtotalRub": 1710,
+      "fullAmount": null,
+      "missing": [
+        "ckad"
+      ]
+    }
+  ],
+  "ownKazanM11ComponentControls": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "m11SubtotalRub": 1450
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "m11SubtotalRub": 1630
+    }
+  ],
+  "newPricedHeadComponents": 2,
+  "confirmedWholeTripFares": 0,
+  "newRoutingRequests": 0,
+  "newTraceRequests": 0,
+  "sourceGetsInPrecedingSourceBlock": 4,
+  "sourceGetsInCodeBlock": 0,
+  "networkAttemptsInOwnComposerTest": 0,
+  "negativeOwnControls": [
+    "single-m11-torzhok-to-moscow",
+    "pair-m4-m11-torzhok-to-krasnodar"
+  ],
+  "initialFailure": "26/27: test incorrectly assumed Krasnodar used the CKAD exit; its own source capture proves Moscow gate and strict end. Test corrected to a negative CKAD control; runtime guards were not relaxed.",
+  "logsSha256": {
+    "tsc.log.gz": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+    "eslint.log.gz": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+    "focused.log.gz": "af18fc69ca66a20473b497f1b27d8a9c7f37b21a521a6eac5bb08b407b0eb063",
+    "build.log.gz": "b5834e9d1b1383a12e8bfae0274daf6a8477436a8d566ec9475578bef93355c0",
+    "diff-check.log.gz": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+    "focused-initial-m4-assumption-failure.log.gz": "36717f0f8e2678517048a70c9a6d611d59acb99f1df7f2ab1382743a8f79cc34"
+  }
+}

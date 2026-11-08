@@ -1,0 +1,166 @@
+{
+  "caseId": "single-a289-slavyansk-to-taman",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 126297,
+      "seconds": 7566
+    },
+    {
+      "name": "OSRM",
+      "meters": 131007,
+      "seconds": 6495
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 131007,
+  "routeSeconds": 6495,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 38.125,
+          "lat": 45.26
+        },
+        {
+          "lng": 36.716,
+          "lat": 45.211
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "a289"
+    ],
+    "provenRoads": [
+      "a289"
+    ],
+    "missingExpectedRoads": [],
+    "status": "traversal-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "a289",
+      "kind": "selected-paid-edge",
+      "wayId": "1307766289",
+      "names": [
+        "А-289"
+      ]
+    },
+    {
+      "road": "a289",
+      "kind": "selected-paid-edge",
+      "wayId": "1381198717",
+      "names": [
+        "А-289"
+      ]
+    },
+    {
+      "road": "a289",
+      "kind": "selected-paid-edge",
+      "wayId": "1381198722",
+      "names": [
+        "А-289"
+      ]
+    },
+    {
+      "road": "a289",
+      "kind": "selected-geometry-exact-frames",
+      "frames": [
+        "82",
+        "103"
+      ]
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "a289": {
+      "occurrences": 85,
+      "uniqueWays": 77
+    }
+  },
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-slavyansk-to-taman/2026-10-16T01-46-25-864Z-capture.json.gz",
+  "captureSha256": "1d34ed443ac48f906368bce2fd6a23e4326bc66ab3ba06c3ec740bc9384bc279",
+  "detectedRoadComponents": [
+    {
+      "id": "a289",
+      "amount": 385,
+      "reason": "A-289 selected-route OD vector"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "А-289"
+  ],
+  "tollNodeIds": [],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [
+    "82",
+    "103"
+  ],
+  "tolls": {
+    "amount": 385,
+    "weekdayAmount": 385,
+    "weekendAmount": 385,
+    "period": "все дни",
+    "segments": [
+      "А-289: Slavyansk → TamanBridge: 385 ₽"
+    ],
+    "confidence": "matched",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "priced"
+  },
+  "audit": {
+    "status": "priced",
+    "priced": [
+      "a289"
+    ],
+    "missing": [],
+    "components": [
+      {
+        "id": "a289",
+        "detected": true,
+        "tolls": {
+          "amount": 385,
+          "weekdayAmount": 385,
+          "weekendAmount": 385,
+          "period": "все дни",
+          "segments": [
+            "А-289: Slavyansk → TamanBridge: 385 ₽"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "A-289 selected-route OD vector"
+      }
+    ]
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "caseId": "lnr-брянка-kazan-center",
+  "region": "lnr",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-17T09:00:00+03:00",
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 1601086,
+      "seconds": 79960
+    },
+    {
+      "name": "OSRM",
+      "meters": 1436094,
+      "seconds": 79910
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 1436094,
+  "routeSeconds": 79910,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lat": 48.50361,
+          "lng": 38.66432
+        },
+        {
+          "lng": 49.1221,
+          "lat": 55.7887
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [],
+    "provenRoads": [
+      "m12"
+    ],
+    "missingExpectedRoads": [],
+    "status": "not-assigned"
+  },
+  "passageEvidence": [
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "1339540537",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    },
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "1495475358",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    },
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "1224543741",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    }
+  ],
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-kazan-center/2026-10-15T12-00-26-371Z-capture.json.gz",
+  "captureSha256": "699cd5d95c51ffa51b62ef8dfa135e005c13097c2f96115449e0d3349704f116",
+  "detectedRoadComponents": [
+    {
+      "id": "m12",
+      "amount": 850,
+      "reason": "matrix dated selected-route M12 directed endpoint pair"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-12",
+    "«Восток»"
+  ],
+  "tollNodeIds": [],
+  "tolls": {
+    "amount": 850,
+    "weekdayAmount": 850,
+    "weekendAmount": 850,
+    "period": "все дни",
+    "segments": [
+      "М-12: shumerlya → ivanovskoe_p241 · Стоимость не подтверждена"
+    ],
+    "confidence": "matched",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "priced"
+  },
+  "audit": {
+    "status": "priced",
+    "priced": [
+      "m12"
+    ],
+    "missing": [],
+    "components": [
+      {
+        "id": "m12",
+        "detected": true,
+        "tolls": {
+          "amount": 850,
+          "weekdayAmount": 850,
+          "weekendAmount": 850,
+          "period": "все дни",
+          "segments": [
+            "М-12: shumerlya → ivanovskoe_p241 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix dated selected-route M12 directed endpoint pair"
+      }
+    ]
+  },
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "m12": {
+      "occurrences": 87,
+      "uniqueWays": 65
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "checked": [
+    "incomplete",
+    "partial-booths",
+    "failed-chunk",
+    "unchecked-chunk",
+    "missing-context",
+    "second-block",
+    "repeat-way",
+    "wrong-entry",
+    "wrong-exit",
+    "wrong-before-way",
+    "wrong-before-node",
+    "wrong-link",
+    "wrong-link-direction",
+    "incomplete-links",
+    "missing-M12-name",
+    "missing-paid-exit",
+    "missing-paid-M12",
+    "missing-plaza",
+    "wrong-plaza-way",
+    "repeated-plaza"
+  ],
+  "count": 20
+}

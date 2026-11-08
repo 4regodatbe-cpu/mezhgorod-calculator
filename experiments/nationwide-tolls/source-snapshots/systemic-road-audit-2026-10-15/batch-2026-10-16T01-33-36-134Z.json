@@ -1,0 +1,88 @@
+{
+  "startedAt": "2026-10-16T01:33:36.134Z",
+  "scope": {
+    "region": null,
+    "group": "pair-m11-zsd",
+    "caseId": "pair-m11-zsd-sest-to-tver",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "pair-m11-zsd-sest-to-tver",
+      "startedAt": "2026-10-16T01:33:36.137Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-tver/live-2026-10-15T09-00-00-03-00-2026-10-16T01-33-39-402Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-sest-to-tver/2026-10-16T01-33-39-370Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-33-39-796Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-33-40-180Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m11",
+          "zsd"
+        ],
+        "provenRoads": [
+          "zsd",
+          "m11"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m11-58-679, zsd, unknown-paid-road",
+          "m11-58-679: only_one_verified_boundary_crossing",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1",
+          "unknown-paid-road: unmapped_selected_route_paid_booth"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m11-58-679, zsd, unknown-paid-road",
+          "m11-58-679: only_one_verified_boundary_crossing",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1",
+          "unknown-paid-road: unmapped_selected_route_paid_booth"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m11-58-679",
+          "amount": null,
+          "reason": "only_one_verified_boundary_crossing"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        },
+        {
+          "id": "unknown-paid-road",
+          "amount": null,
+          "reason": "unmapped_selected_route_paid_booth"
+        }
+      ],
+      "finishedAt": "2026-10-16T01:33:40.197Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T01:33:40.200Z"
+}

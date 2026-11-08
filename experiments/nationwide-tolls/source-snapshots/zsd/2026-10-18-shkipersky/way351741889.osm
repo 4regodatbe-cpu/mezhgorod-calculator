@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1313 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="1840647122" visible="true" version="7" changeset="79765875" timestamp="2020-01-19T21:28:10Z" user="Alfonso RG" uid="3313579" lat="59.9612328" lon="30.2204329"/>
+ <node id="3069387901" visible="true" version="4" changeset="138521726" timestamp="2023-07-14T19:50:06Z" user="mini-me" uid="3846961" lat="59.9618537" lon="30.2240016"/>
+ <node id="3069387909" visible="true" version="4" changeset="138521726" timestamp="2023-07-14T19:50:06Z" user="mini-me" uid="3846961" lat="59.9619397" lon="30.2245854"/>
+ <node id="3069387913" visible="true" version="3" changeset="64843692" timestamp="2018-11-24T12:46:27Z" user="Владимир К" uid="2853561" lat="59.9620440" lon="30.2254393"/>
+ <node id="6087796312" visible="true" version="1" changeset="64843692" timestamp="2018-11-24T12:46:26Z" user="Владимир К" uid="2853561" lat="59.9617618" lon="30.2234101"/>
+ <node id="13020687195" visible="true" version="1" changeset="169390879" timestamp="2025-07-24T10:44:00Z" user="Anton Cheloshkin" uid="2071484" lat="59.9615898" lon="30.2224424">
+  <tag k="description:ru" v="Рамка взимания платы RUTOLL FLOW PLUS"/>
+  <tag k="highway" v="toll_gantry"/>
+  <tag k="name" v="РВП-64"/>
+  <tag k="name:en" v="TG-64"/>
+  <tag k="name:ru" v="РВП-64"/>
+  <tag k="operator:en" v="Nothern Capital Highway"/>
+  <tag k="operator:ru" v="Магистраль Северной Столицы"/>
+  <tag k="ref:rutoll" v="64E"/>
+ </node>
+ <way id="351741889" visible="true" version="27" changeset="169390879" timestamp="2025-07-24T10:44:00Z" user="Anton Cheloshkin" uid="2071484">
+  <nd ref="3069387913"/>
+  <nd ref="3069387909"/>
+  <nd ref="3069387901"/>
+  <nd ref="6087796312"/>
+  <nd ref="13020687195"/>
+  <nd ref="1840647122"/>
+  <tag k="destination" v="ЗСД;набережная Обводного канала"/>
+  <tag k="destination:symbol" v="motorway;"/>
+  <tag k="foot" v="no"/>
+  <tag k="highway" v="secondary"/>
+  <tag k="lanes" v="3"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="RU:urban"/>
+  <tag k="name" v="проспект Крузенштерна"/>
+  <tag k="name:etymology:wikidata" v="Q160888"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="turn:lanes" v="merge_to_right|merge_to_right|none"/>
+ </way>
+</osm>

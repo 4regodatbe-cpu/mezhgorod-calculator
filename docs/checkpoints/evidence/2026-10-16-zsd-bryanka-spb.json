@@ -1,0 +1,142 @@
+{
+  "caseId": "lnr-брянка-saint-petersburg-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/2026-10-15T11-57-59-642Z-capture.json.gz",
+  "captureSha256": "bb720239367689bf2c68a22c3c2277cf3c34cd48a80a3d8052464c1f68a71815",
+  "routeMeters": 1827396,
+  "uniqueZsdWays": [
+    "1122966006",
+    "1122966005",
+    "1122966004",
+    "400111354",
+    "400111351",
+    "31369306",
+    "28934684",
+    "465117517",
+    "80056742",
+    "139658547",
+    "461676671",
+    "80056745",
+    "721628540",
+    "80056716",
+    "381576632",
+    "381576631",
+    "123709500",
+    "123709505",
+    "183912267",
+    "397223751",
+    "397223752",
+    "397223749",
+    "183912268",
+    "85763340",
+    "223744446",
+    "721628541"
+  ],
+  "selectedZsdBooths": [
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 15,
+      "edgeToll": true,
+      "beginShapeIndex": 732,
+      "endShapeIndex": 733
+    }
+  ],
+  "sameZsdWaySetAsFirstCase": true,
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T11-02-04-834Z.json",
+      "sha256": "da6ecaffcb5e994f44f514fbee7ef016d26dab043040b086eb4d11643ba5aa23",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": 3810,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1130,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ]
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T11-02-05-296Z.json",
+      "sha256": "4c12724b78840e9a8b7cbe0ce7027832c357ba859b76219b13b8b882a0b694f5",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": 4640,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1650,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ]
+    }
+  ]
+}

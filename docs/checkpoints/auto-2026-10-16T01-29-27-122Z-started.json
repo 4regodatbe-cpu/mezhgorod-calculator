@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:29:27.122Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 75,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 14,
+    "spec": {
+      "caseId": "pair-m11-ckad-noginsk-to-tver",
+      "kind": "road",
+      "group": "pair-m11-ckad"
+    }
+  },
+  "caseId": "pair-m11-ckad-noginsk-to-tver",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-29-27-122Z-part14",
+  "parent": "eb41212435dc4135877c6148aaa4062c83cb9f14"
+}

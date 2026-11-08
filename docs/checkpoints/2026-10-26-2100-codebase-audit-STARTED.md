@@ -1,0 +1,7 @@
+# Codebase audit — STARTED — 26.10.2026 21:00 МСК
+
+Remote source: `fix/v3-missing-route-prices-2026-10-15`, SHA `f1ca4d2662e8937a6f7a74f1168a2e9c15910d3d`; PR #14 Draft; no active Actions. The repo has 7,240 tree entries. Local checkout `82faf1b7bf6634271563dc01dbf504ec889e4b59` is 89 commits behind and dirty; do not use its contents as current source. Audit is read-only; no tests/build/live requests/route audits.
+
+18 blocks: (1) repo architecture/import graph; (2) address lookup/geocoding; (3) cache/pool/cancellation; (4) routing API input and flow; (5) Valhalla/OSRM/BRouter adapters; (6) candidate generation/fastest selection; (7) V2/V3 contracts and saved Eisk/Maykop only; (8) toll geometry/direction/boundaries, no road audit; (9) tariff aggregation/unknown/partial; (10) V2 UI state/forms; (11) V3 UI lifecycle/validation; (12) API output/error contracts; (13) security/abuse/privacy; (14) performance/resource use by inspection only; (15) dependencies/build/supply chain; (16) tests/assertions; (17) CI/workflows; (18) data/docs/module governance and synthesis. Each block records paths/lines, evidence, confidence/classification, severity, impacts, fix-risk/benefit/isolation, and checked/unverified scope.
+
+Done = representative source path review plus focused existing-test/evidence inspection, without repeating prior mass audits. Report file: `docs/CODEBASE_AUDIT.md`. Start at 0/18; don't reuse historical route-plan percent. Next: block 1, exact-head repository inventory and dependency map.

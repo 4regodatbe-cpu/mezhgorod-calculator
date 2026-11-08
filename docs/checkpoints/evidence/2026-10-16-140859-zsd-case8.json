@@ -1,0 +1,167 @@
+{
+  "caseId": "dnr-донецк-saint-petersburg-center",
+  "index": 8,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-saint-petersburg-center/2026-10-15T22-35-07-667Z-capture.json.gz",
+  "captureSha256": "e46d6bee84222d17700ed46e0f6233f99170f83090ea1f070446e9445979d5ec",
+  "selectedProvider": "Valhalla",
+  "routeMeters": 1930307,
+  "traceComplete": true,
+  "boothEventCoverage": "complete",
+  "uniqueZsdWays": [
+    "1122966006",
+    "1122966005",
+    "1122966004",
+    "400111354",
+    "400111351",
+    "31369306",
+    "28934684",
+    "465117517",
+    "80056742",
+    "139658547",
+    "461676671",
+    "80056745",
+    "721628540",
+    "80056716",
+    "381576632",
+    "381576631",
+    "123709500",
+    "123709505",
+    "183912267",
+    "397223751",
+    "397223752",
+    "397223749",
+    "183912268",
+    "85763340",
+    "223744446",
+    "721628541"
+  ],
+  "selectedZsdBooths": [
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 15,
+      "edgeToll": true,
+      "beginShapeIndex": 613,
+      "endShapeIndex": 614
+    }
+  ],
+  "sameExactZsdWayAndBoothSetAsReviewedFirstCase": true,
+  "status": "source_gated_same_exact_way_set",
+  "execution": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"dnr-донецк-saint-petersburg-center\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":1930307,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"понедельник–четверг\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: zsd\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m4\",\"amount\":3810,\"reason\":\"matrix exact selected-route M4 vector\"},{\"id\":\"m11-15-58\",\"amount\":1130,\"reason\":\"m11_head_ready_direct_pair_at_departure\"},{\"id\":\"m11-58-679\",\"amount\":3900,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"dnr-донецк-saint-petersburg-center\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":1930307,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"пятница–воскресенье\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: zsd\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m4\",\"amount\":4640,\"reason\":\"matrix exact selected-route M4 vector\"},{\"id\":\"m11-15-58\",\"amount\":1650,\"reason\":\"m11_head_ready_direct_pair_at_departure\"},{\"id\":\"m11-58-679\",\"amount\":4200,\"reason\":\"matrix dated selected-route M11 direct pair\"},{\"id\":\"m11-679-684\",\"amount\":94,\"reason\":\"user_approved_m11_tail_94_rub_for_both_directions\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"}]}\n",
+      "stderr": ""
+    }
+  ],
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T11-08-58-635Z.json",
+      "sha256": "62a42512e788de5d83bf655065307bcf9afd87059a87fffccec30883af906338",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "missing": [
+        "zsd"
+      ],
+      "components": [
+        {
+          "id": "m4",
+          "amount": 3810,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1130,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ]
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T11-08-59-125Z.json",
+      "sha256": "d011173d468fb2ca0e15dae566181fb8baf5c0709d0ef5f4a9167bc598415ae6",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "missing": [
+        "zsd"
+      ],
+      "components": [
+        {
+          "id": "m4",
+          "amount": 4640,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "m11-15-58",
+          "amount": 1650,
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "amount": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ]
+    }
+  ]
+}

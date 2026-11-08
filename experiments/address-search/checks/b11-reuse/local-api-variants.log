@@ -1,0 +1,14 @@
+B11_SAVED_HANDLER {"source":"experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-moscow-center/2026-10-15T22-34-03-156Z-capture.json.gz","networkRequests":0,"beforeMs":3100.27658,"afterMs":2015.159444,"parity":"MATCH","requestsPerRun":12,"misses":0}
+(node:9037) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ before/after full API parity: ordinary/special, both modes, all vehicle fares, paid/unknown/incomplete (235.865045ms)
+✔ input errors, cancelled transport and upstream failures retain safe status/body (3.015774ms)
+✔ retained Donetsk OSRM capture: selected fastest geometry, requests and complete API response unchanged (5137.664375ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5406.556921

@@ -1,0 +1,9 @@
+# DONE — Word задание внешнему исполнителю, 24.10.2026 МСК
+
+По запросу пользователя создан самостоятельный русский Word16страниц/12пакетов/62ссылки. Durable STARTEDd9ab52d06d4cf9774bad78568dac5240b3b88f89/tree29370c726fb4509b10f1007127a9272fa615c2e8. Sourcec959bc2, Productionda77f96, PR14draft.
+
+Пакеты охватывают текущие road-ref blockers и незакрытые nationwide rootcauses: Photon outage, reserve catalog/labels/accuracy, UI/freshness, newM4directedpair/km, M4legacy545/shortscope, M11partialproducts, M12operatorbinding, CKADA113/PK5, ZSD/RVP64cashcard, nationalcoverage/issue2versiondiagnostics, performance, environment/evidence. Описаны architecture/roles/priorities/own-case work/source directions/code paths/acceptance/deliverables. Закрытые причины, пересекающиеся исторические counts и DATA_BLOCKED не выданы за новые ошибки. Старый массовый аудит/скачивание данных не повторены.
+
+Source/генератор/JSON/README/verification в docs/contractor-brief. Word сохранён как libfile_5f2c099b85388191b3676dd00fdc9f4d, exact filename/SHA в verification.json. DOCX render16pages, каждая страница просмотрена; исключены title border и orphan/blank pages; bounds/link/style/ZIP/count assertions PASS. Промежуточные PDF/PNG только QA, пользователю выдаётся DOCX. Кодовые gates/runtime/матrices/switches/Production/main/Android/backup не менялись, новых routequeries0. Исторические gates898 относятся к коду, не пересчитаны ради документа.
+
+Следующий шаг: передать файл выбранному исполнителю; назначить конкретный пакет и проверять его результат по критериям задания. Сам документ не является разрешением стороннему человеку писать в Production или активировать fallback. Дальнейшая разработка — при доступном браузере/новом надёжном первичном источнике, по текущему NEXT. Перед завершением сохранить документы exact remote tree/readback в разрешённой ветке.

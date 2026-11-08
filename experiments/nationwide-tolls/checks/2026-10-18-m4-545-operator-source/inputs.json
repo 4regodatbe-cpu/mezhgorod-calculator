@@ -1,0 +1,28 @@
+{
+  "status": "STARTED",
+  "atUtc": "2026-10-18T05:38:35.458521+00:00",
+  "sourceHead": "874bcd8e7a8ff5854f76c342fb3bfafed4ed2656",
+  "sourceTree": "0b01ca33dd0093cef536121ef9378fbd894c369b",
+  "pr": 14,
+  "prDraft": true,
+  "sourceHeadRuns": [],
+  "purpose": "New official operator lane/direction collection proof for physical M4 plaza545 vs semantic sections517–544/544–589",
+  "budget": {
+    "searchQueries": 4,
+    "sourceReads": 4,
+    "directRequestTimeoutSeconds": 15,
+    "directRequestMaxTimeSeconds": 20,
+    "directRequestMaxBytes": 4000000
+  },
+  "domains": [
+    "avtodor-tr.ru",
+    "russianhighways.ru",
+    "donroad.ru"
+  ],
+  "excludePreviouslyRead": [
+    "https://avtodor-tr.ru/press-center/news/rezhim-platnosti-na-uchastke--/",
+    "https://avtodor-tr.ru/upload/iblock/0aa/0vjf9h6sh29m07onagxuv1sg2voyf853.pdf"
+  ],
+  "noRepeat": "No old PDFs, OSM node queries,22/74/76/309routes or routing/trace replay. No min/max/reverse/alias.",
+  "recovery": "Retain each search/page response immediately. Resume from saved progress, never repeat completed requests. If crosswalk insufficient, record exact gap and stop this source pass."
+}

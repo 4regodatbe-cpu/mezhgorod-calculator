@@ -1,0 +1,8 @@
+# Experiment11 B01 — review DONE / adapter prepared / public fallback BLOCKED
+
+- Baseline remote ea2fd912c3ec046065c19896b411bf1abb2f34fa, tree ce167e568a6dfaaa2b7eb85a70c38be37c780677; PR14 open/Draft, no active CI at entry. Clean separate checkout `/tmp/exp11-current`, allowed branch only.
+- Exactly three official-source reviews: public Nominatim rejected for autocomplete; Geoapify documentary candidate; DaData conditional two-stage candidate. [Review/URLs/limits](../../experiments/address-search/EXPERIMENT11_SOURCES.md). No provider credential binding in current cloud environment; none extracted/provisioned, no account/purchase/API capture.
+- Added isolated default-off Geoapify research adapter and synthetic tests. No app/lib imports, production switch or admitted coordinates. Exact full-primary-failure gate; successful empty/partial preserved; one 2s-or-remaining-budget city request, cancellation, structured failures, explicit unreviewed/centroid semantics. Not a production streaming/quota transport. Availability/coverage/precision remain unverified.
+- Checks: `node experiments/address-search/geoapify-fallback-experiment.test.mjs` —9/9 PASS, synthetic/injected transport,0 external geocoding calls; syntax and diff checks PASS. Changed-path classifier predicts no live jobs; actual CI must be inspected after publication. No closed B03/GeoNames/route tests manually repeated.
+- Public B01 remains PARTIAL, B02 not closed. New deliverable is an executable isolated outage experiment, not activated backup. Snapshot false/expiry unchanged; tariff policy untouched.
+- Save this bounded unit with expected-parent/nonforce update and exact tree/file readback. Next: B11 saved profiles, separating external wait from application CPU, no wide live audit.

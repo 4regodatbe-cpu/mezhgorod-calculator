@@ -1,0 +1,169 @@
+{
+  "runtimeCommit": "e6142b18f1d41dae25e43a0a859a36cd247cdb81",
+  "mode": "local built V3; cities use actual POST/r and admitted database; street responses explicitly replay current handler outputs derived from saved actual Photon captures; no new live Photon/route calls",
+  "viewports": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "status": "PASS",
+      "responses": [
+        {
+          "query": "Краснодар, Красная улица",
+          "mode": "controlled saved-response replay",
+          "httpStatus": 200,
+          "first": {
+            "id": "W-259081047",
+            "title": "Красная улица",
+            "label": "Красная улица, Краснодар, Западный округ, городской округ Краснодар, Краснодарский край, Россия (ориентировочная точка улицы)",
+            "region": "Краснодар, Западный округ, городской округ Краснодар, Краснодарский край, Россия",
+            "position": {
+              "lat": 45.0389088,
+              "lng": 38.9752136
+            }
+          }
+        },
+        {
+          "query": "Донецк, улица Артёма",
+          "mode": "controlled saved-response replay",
+          "httpStatus": 200,
+          "first": {
+            "id": "geonames-709717",
+            "title": "Донецк",
+            "label": "Донецк — ДНР",
+            "region": "ДНР",
+            "position": {
+              "lat": 48.023,
+              "lng": 37.80224
+            }
+          },
+          "streetSearch": {
+            "status": "unconfirmed",
+            "precision": "settlement-centre",
+            "message": "Улица не подтверждена. Можно выбрать населённый пункт."
+          }
+        },
+        {
+          "query": "Москва",
+          "mode": "actual local HTTP city API",
+          "httpStatus": 200,
+          "provider": "geonames",
+          "first": {
+            "id": "geonames-524901",
+            "title": "Москва",
+            "label": "Москва — Москва",
+            "region": "Москва",
+            "position": {
+              "lat": 55.75204,
+              "lng": 37.61781
+            }
+          }
+        },
+        {
+          "query": "Ялта",
+          "mode": "actual local HTTP city API",
+          "httpStatus": 200,
+          "provider": "geonames",
+          "first": {
+            "id": "geonames-688533",
+            "title": "Ялта",
+            "label": "Ялта — Крым",
+            "region": "Крым",
+            "position": {
+              "lat": 44.50218,
+              "lng": 34.16624
+            }
+          }
+        }
+      ],
+      "pageErrors": [],
+      "newRouteRequests": 0,
+      "streetAndCityFallback": "PASS",
+      "swapAndRefocus": "PASS",
+      "clearBothAndPreserveOther": "PASS"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "PASS",
+      "responses": [
+        {
+          "query": "Краснодар, Красная улица",
+          "mode": "controlled saved-response replay",
+          "httpStatus": 200,
+          "first": {
+            "id": "W-259081047",
+            "title": "Красная улица",
+            "label": "Красная улица, Краснодар, Западный округ, городской округ Краснодар, Краснодарский край, Россия (ориентировочная точка улицы)",
+            "region": "Краснодар, Западный округ, городской округ Краснодар, Краснодарский край, Россия",
+            "position": {
+              "lat": 45.0389088,
+              "lng": 38.9752136
+            }
+          }
+        },
+        {
+          "query": "Донецк, улица Артёма",
+          "mode": "controlled saved-response replay",
+          "httpStatus": 200,
+          "first": {
+            "id": "geonames-709717",
+            "title": "Донецк",
+            "label": "Донецк — ДНР",
+            "region": "ДНР",
+            "position": {
+              "lat": 48.023,
+              "lng": 37.80224
+            }
+          },
+          "streetSearch": {
+            "status": "unconfirmed",
+            "precision": "settlement-centre",
+            "message": "Улица не подтверждена. Можно выбрать населённый пункт."
+          }
+        },
+        {
+          "query": "Москва",
+          "mode": "actual local HTTP city API",
+          "httpStatus": 200,
+          "provider": "geonames",
+          "first": {
+            "id": "geonames-524901",
+            "title": "Москва",
+            "label": "Москва — Москва",
+            "region": "Москва",
+            "position": {
+              "lat": 55.75204,
+              "lng": 37.61781
+            }
+          }
+        },
+        {
+          "query": "Ялта",
+          "mode": "actual local HTTP city API",
+          "httpStatus": 200,
+          "provider": "geonames",
+          "first": {
+            "id": "geonames-688533",
+            "title": "Ялта",
+            "label": "Ялта — Крым",
+            "region": "Крым",
+            "position": {
+              "lat": 44.50218,
+              "lng": 34.16624
+            }
+          }
+        }
+      ],
+      "pageErrors": [],
+      "newRouteRequests": 0,
+      "streetAndCityFallback": "PASS",
+      "swapAndRefocus": "PASS",
+      "clearBothAndPreserveOther": "PASS"
+    }
+  ],
+  "browser": "154.0.8037.57"
+}

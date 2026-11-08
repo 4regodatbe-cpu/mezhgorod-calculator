@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "finding": "m4:unpriced",
+  "classification": "source_gated_collection_scope_unbound",
+  "reviewedEvaluations": 22,
+  "totalEvaluations": 22,
+  "counts": {
+    "wholeRouteEstimateOperatorFareUnconfirmed": 5,
+    "m4ComponentKnownOtherProductUnknown": 3,
+    "physical545CollectionScopeUnresolved": 8,
+    "shortOpenCollectionScopeUnresolved": 6
+  },
+  "caseIds": {
+    "wholeRouteEstimateOperatorFareUnconfirmed": [
+      "single-m4-voronezh-to-moscow",
+      "dnr-краматорск-moscow-center",
+      "dnr-бахмут-moscow-center",
+      "lnr-рубежное-moscow-center",
+      "lnr-лисичанск-moscow-center"
+    ],
+    "m4ComponentKnownOtherProductUnknown": [
+      "triple-m4-m11-zsd-voronezh-to-prim",
+      "pair-m4-m11-voronezh-to-spb",
+      "max-chain-m4-ckad-m11-zsd-voronezh-to-prim"
+    ],
+    "physical545CollectionScopeUnresolved": [
+      "single-m4-voronezh-to-rostov",
+      "single-m4-rostov-to-voronezh",
+      "pair-m4-a289-voronezh-to-anapa",
+      "pair-m4-a289-anapa-to-voronezh",
+      "single-m4-voronezh-to-krasnodar",
+      "single-m4-krasnodar-to-voronezh",
+      "pair-m4-a289-voronezh-to-taman",
+      "pair-m4-a289-taman-to-voronezh"
+    ],
+    "shortOpenCollectionScopeUnresolved": [
+      "zaporizhzhia-розовка-kazan-center",
+      "dnr-талаковка-kazan-center",
+      "dnr-новоазовск-kazan-center",
+      "zaporizhzhia-гуляйполе-kazan-center",
+      "dnr-широкино-kazan-center",
+      "dnr-гранитное-kazan-center"
+    ]
+  },
+  "evidence": [
+    {
+      "path": "experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json",
+      "meaning": "Per-case saved evaluations and source/evidence paths; all 22 checked"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m4-355-receipt-rule-verified-2026-10-14.json",
+      "sha256": "82929c13f8eab841722c191afe2c7b6d7bd22c0e784387d7eaf35c4aa3f4f421",
+      "meaning": "General open-collection rule record; effectiveFrom is null; does not prove exact selected-way finished scope"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-16-1358-short-m4-proof-review.md",
+      "sha256": "cf0fb1e472001789bdb1f8a4bbd5577b71c18e68d5c9784311d8ab95d0ecd2d7",
+      "meaning": "Short M4 exact-way scope remains unknown"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-16-part19d-case9-545-scope-diagnosis.md",
+      "sha256": "772efff837e6b910c1e2e565d5a58122ba459e0344a622f56afae1648e792e7f",
+      "meaning": "Physical 545 boundary is ambiguous across distinct existing finished variants"
+    },
+    {
+      "path": "docs/checkpoints/evidence/2026-10-16-m4-1223-545-scope-gap.json",
+      "sha256": "b2c2ca1737a32a2b23d42aa9cf2d432aaf3099a25ebf2f78e66a12c88d451927",
+      "meaning": "Exact physical-vs-semantic endpoint and tariff-span evidence"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-16-part19d-granitnoe-kazan-unknown-reproduced.md",
+      "meaning": "Short selected-route evidence remains source gated"
+    }
+  ],
+  "decision": "Do not invent/assign a price, route allowlist zero, or free status. Classify the 22-case finding source-gated because the current operator evidence does not bind the exact finished M4 collection span; retain the per-case unknowns and known components as recorded.",
+  "runtimeChanged": false,
+  "testsRun": [],
+  "overallPlanProgress": "90% (18/20 fully completed parts); not tariff coverage"
+}

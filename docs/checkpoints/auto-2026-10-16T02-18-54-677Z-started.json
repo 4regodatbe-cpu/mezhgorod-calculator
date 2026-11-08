@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T02:18:54.677Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 152,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 18,
+    "spec": {
+      "caseId": "triple-m4-m11-zsd-prim-to-voronezh",
+      "kind": "road",
+      "group": "triple-m4-m11-zsd"
+    }
+  },
+  "caseId": "triple-m4-m11-zsd-prim-to-voronezh",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-18-54-677Z-part18",
+  "parent": "3c4b95277d1d4605a5bfab83b26bc171b0f76815"
+}

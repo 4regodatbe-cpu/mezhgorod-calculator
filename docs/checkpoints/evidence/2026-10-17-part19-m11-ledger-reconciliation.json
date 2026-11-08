@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "reviewedAtUtc": "2026-10-16T23:31:29Z",
+  "reviewedAtMsk": "2026-10-17 02:31:29 MSK",
+  "task": "Part19 findings-ledger reconciliation after M11 case8",
+  "sourceCommit": "3e61db433146a9449576c6c7c51073992d96be28",
+  "sourceTree": "297ded73d27cc0e1b351aa9b97ed4e642cbb4686",
+  "successfulCiRun": {
+    "runId": 38977636786,
+    "status": "completed",
+    "conclusion": "success",
+    "headSha": "3e61db433146a9449576c6c7c51073992d96be28"
+  },
+  "pr14": {
+    "state": "open",
+    "draft": true,
+    "headSha": "3e61db433146a9449576c6c7c51073992d96be28"
+  },
+  "changedLedger": "experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json",
+  "ledgerSourceSha": "098b0cfde3ad56c2310715e2facd8a2500fefc3a",
+  "priorM11": {
+    "status": "diagnosis_started",
+    "reviewStatus": "4_of_8_saved_cases_reviewed_case4_checked_no_material_exception_same_source_gated_cause",
+    "currentCasesChecked": 4
+  },
+  "currentM11": {
+    "status": "blocked_by_missing_reliable_data",
+    "reviewStatus": "8_of_8_saved_cases_reviewed_no_material_exception_same_boundary_source_gated",
+    "currentCasesChecked": 8,
+    "cases": [
+      {
+        "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+        "result": "source_gated_m11_head_entry_boundary_unbound",
+        "profiles": 2,
+        "checkpoint": "../../docs/checkpoints/2026-10-16-part19-m11-case1-boundary-source-gated.md",
+        "evidence": "../../docs/checkpoints/evidence/2026-10-16-m11-case1-boundary-review.json"
+      },
+      {
+        "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+        "result": "source_gated_m11_head_entry_boundary_unbound",
+        "profiles": 2,
+        "checkpoint": "../../docs/checkpoints/2026-10-16-part19-m11-case2-boundary-source-gated.md",
+        "evidence": "../../docs/checkpoints/evidence/2026-10-16-m11-case2-boundary-review.json"
+      },
+      {
+        "caseId": "max-chain-m12-ckad-m11-zsd-murom-to-sest",
+        "result": "source_gated_m11_head_entry_boundary_unbound_no_material_exception",
+        "profiles": 3,
+        "checkpoint": "../../docs/checkpoints/2026-10-16-part19-m11-case3-boundary-source-gated.md",
+        "evidence": "../../docs/checkpoints/evidence/2026-10-16-m11-case3-boundary-review.json"
+      },
+      {
+        "caseId": "pair-m11-ckad-noginsk-to-spb",
+        "result": "source_gated_m11_head_entry_boundary_unbound_no_material_exception",
+        "profiles": 3,
+        "checkpoint": "../../docs/checkpoints/2026-10-16-part19-m11-case4-boundary-source-gated.md",
+        "evidence": "../../docs/checkpoints/evidence/2026-10-16-m11-case4-boundary-review.json"
+      },
+      {
+        "caseId": "triple-m11-ckad-m12-kazan-to-spb",
+        "result": "source_gated_m11_head_entry_boundary_unbound_no_material_exception",
+        "profiles": 3,
+        "checkpoint": "../../docs/checkpoints/2026-10-16-part19-m11-case5-boundary-source-gated.md",
+        "evidence": "../../docs/checkpoints/evidence/2026-10-16-m11-case5-boundary-review.json"
+      },
+      {
+        "caseId": "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+        "result": "source_gated_m11_head_entry_boundary_unbound_no_material_exception",
+        "profiles": 5,
+        "checkpoint": "../../docs/checkpoints/2026-10-16-part19-m11-case6-boundary-exception.md",
+        "evidence": "../../docs/checkpoints/evidence/2026-10-16-m11-case6-boundary-exception.json"
+      },
+      {
+        "caseId": "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+        "result": "source_gated_m11_head_entry_boundary_unbound_no_material_exception",
+        "profiles": 3,
+        "checkpoint": "../../docs/checkpoints/2026-10-17-part19-m11-case7-boundary-source-gated.md",
+        "evidence": "../../docs/checkpoints/evidence/2026-10-17-m11-case7-boundary-source-gated.json"
+      },
+      {
+        "caseId": "triple-m11-ckad-m12-arzamas-to-spb",
+        "result": "source_gated_m11_head_entry_boundary_unbound_no_material_exception",
+        "profiles": 3,
+        "checkpoint": "../../docs/checkpoints/2026-10-17-part19-m11-case8-boundary-source-gated.md",
+        "evidence": "../../docs/checkpoints/evidence/2026-10-17-m11-case8-boundary-source-gated.json"
+      }
+    ],
+    "checkpoints": [
+      "../../docs/checkpoints/2026-10-16-part19-m11-case1-boundary-source-gated.md",
+      "../../docs/checkpoints/2026-10-16-part19-m11-case2-boundary-source-gated.md",
+      "../../docs/checkpoints/2026-10-16-part19-m11-case3-boundary-source-gated.md",
+      "../../docs/checkpoints/2026-10-16-part19-m11-case4-boundary-source-gated.md",
+      "../../docs/checkpoints/2026-10-16-part19-m11-case5-boundary-source-gated.md",
+      "../../docs/checkpoints/2026-10-16-part19-m11-case6-boundary-exception.md",
+      "../../docs/checkpoints/2026-10-17-part19-m11-case7-boundary-source-gated.md",
+      "../../docs/checkpoints/2026-10-17-part19-m11-case8-boundary-source-gated.md"
+    ]
+  },
+  "nextCause": {
+    "id": "unknown-paid-road:unpriced",
+    "baselineCaseCount": 64,
+    "reason": "Largest unresolved explicit user-impact bucket in current queue; compare overlap with expected-road-not-proven (also64); do not claim unique cases.",
+    "status": "needs_diagnosis"
+  },
+  "otherCauseStatuses": {
+    "m4_crossing_profile_changes": {
+      "status": "not_reproduced_current_engine",
+      "checked": 25
+    },
+    "a289_unpriced": {
+      "status": "component_binding_resolved",
+      "scope": "57 helper-only recoveries plus two whole-engine cases; not 59 whole-route fares"
+    },
+    "zsd_unpriced": {
+      "status": "source_gated_collection_span_unbound",
+      "checked": 76
+    },
+    "m4_unpriced": {
+      "status": "source_gated_collection_scope_unbound",
+      "checked": 22
+    }
+  },
+  "noNewRuns": {
+    "live": 0,
+    "replay": 0,
+    "tests": 0,
+    "builds": 0
+  },
+  "planProgress": {
+    "completedParts": 18,
+    "totalParts": 20,
+    "percent": 90,
+    "meaning": "formal plan only; not tariff coverage"
+  },
+  "decision": "Reconciled stale current-state fields only; no new cause assessment or tariff confirmation."
+}

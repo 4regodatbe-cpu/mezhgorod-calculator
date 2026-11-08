@@ -1,0 +1,167 @@
+{
+  "caseId": "pair-m12-ckad-murom-to-dmitrov",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "Valhalla",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 351327,
+      "seconds": 16917
+    },
+    {
+      "name": "OSRM",
+      "meters": 353398,
+      "seconds": 17933
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 351327,
+  "routeSeconds": 16917,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 42.052,
+          "lat": 55.572
+        },
+        {
+          "lng": 37.517,
+          "lat": 56.344
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "m12",
+      "ckad"
+    ],
+    "provenRoads": [
+      "m12"
+    ],
+    "missingExpectedRoads": [
+      "ckad"
+    ],
+    "status": "expected-road-not-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "1000304040",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    },
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "1000304037",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    },
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "1000304036",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "m12": {
+      "occurrences": 143,
+      "uniqueWays": 47
+    }
+  },
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-murom-to-dmitrov/2026-10-16T01-37-13-778Z-capture.json.gz",
+  "captureSha256": "42f8df17647a37778561d3a328fde01af855c7d32468ed1f55e34da20acbb0ce",
+  "detectedRoadComponents": [
+    {
+      "id": "m12",
+      "amount": 892,
+      "reason": "matrix dated selected-route M12 directed endpoint pair"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-12",
+    "«Восток»",
+    "А-113",
+    "Центральная кольцевая автомобильная дорога"
+  ],
+  "tollNodeIds": [],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": {
+    "beginKm": 9.316,
+    "endKm": 144.747
+  },
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": 892,
+    "weekdayAmount": 892,
+    "weekendAmount": 892,
+    "period": "все дни",
+    "segments": [
+      "М-12: murom → vladimir · Стоимость не подтверждена"
+    ],
+    "confidence": "matched",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "priced"
+  },
+  "audit": {
+    "status": "priced",
+    "priced": [
+      "m12"
+    ],
+    "missing": [],
+    "components": [
+      {
+        "id": "m12",
+        "detected": true,
+        "tolls": {
+          "amount": 892,
+          "weekdayAmount": 892,
+          "weekendAmount": 892,
+          "period": "все дни",
+          "segments": [
+            "М-12: murom → vladimir · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix dated selected-route M12 directed endpoint pair"
+      }
+    ]
+  }
+}

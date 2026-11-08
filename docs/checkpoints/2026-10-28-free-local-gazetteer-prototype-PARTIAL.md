@@ -1,0 +1,13 @@
+# Free local gazetteer — prototype PASS / public admission PARTIAL
+
+28.10.2026 MSK. No publication. Source remote fc83523d/PR14Draft. e231637/12e105e/d5c68b6 remain ancestors. Geoapify adapter untouched; no paid API/account, app/lib/data/CI/Production/Android/backup change.
+
+Selected own GeoNames index for free mandatory core; full real RU+UA sources recovered from existing artifacts with matching SHA. General compiler, local search, tests, resource/coverage/reference-point measurements implemented under experiments/address-search/local-gazetteer*. Original93candidate/19group audit and downloads not repeated. New processing is the universal active-record index, not closure of earlier quality blockers.
+
+221512active source records/456518alias postings;42.76MB JSON/7.36MB gzip. Final measured process initialization1.796s, heapdelta207MiB, RSS509MiB, searchp95=2.54ms/maximum100.65ms (first geometry warm-up included). Real searches find both Donetsk IDs, Volnovakha689198, control Krasnodar, Crimea and four priority regions; unknown query returnsnone. No lookup network requests. Measured metadata/source/compiler inputs/results retained in experiments/address-search/local-gazetteer-evidence-2026-10-28. DatasetSHA2860aaeca95ff9b97f6778cbbaf64912b42e94ba47ceabc0bb409e4845d2b6f1.
+
+3Python source-manifest integrity+6Node search testsPASS; scoped ESLintPASS/diff-checkPASS. Properly reports duplicateIDs, aliases, omitted inactive/subdivision types, source coordinates/IDs, scan incompleteness and quality flags. Real-point coverage counts and3retained OSM comparisons are diagnostics, not an all-record accuracy certification.
+
+Admission remainsPARTIAL:25043ru-name-unverified,31347some-admin-ru-unverified,524adminbindingmissing; sourcepoint completeness unproved. GeoNames/retainedOSM reference points differ164–1188m in3control pairs: no arbitrary acceptance tolerance or coordinate substitution. No public city or route-point accuracy claim. Vercel feasibility by documented250MB/2GB limits and localbaseline/standalone measurements is plausible, not deployed acceptance. Hobby noncommercial/quota restrictions documented; no unlimited-free-hosting promise.
+
+Detailed comparison, exact actual results/limits/licences/rebuild commands and next admission steps: experiments/address-search/LOCAL_GAZETTEER_PROTOTYPE.md. Free core policy supersedes any earlier suggestion that Geoapify key is mandatory. Optional provider experiment remains intact, not required for this path. Next: automated quality/label admission plus independent selected-place checks, then separately authorized Preview integration. No new commit publication without owner permission.

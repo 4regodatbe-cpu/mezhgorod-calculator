@@ -1,0 +1,53 @@
+{
+  "atUtc": "2026-10-18T05:40:13.277762+00:00",
+  "status": "DONE_SOURCE_DISCOVERY_BINDING_BLOCKED",
+  "startedHead": "0856aaa5513177839b1d642214147cccbd3215df",
+  "searchQueries": 4,
+  "sourceReads": 4,
+  "readResults": [
+    "operator2016article403",
+    "operator2015article403",
+    "operatorM4roadpage403",
+    "ownerpay-sites200"
+  ],
+  "found": "2016 operator indexed article explicitly states one/two paid sections at545 according to chosen route; this historical indexed text is not current lane/date proof. Owner pay-sites index links two exact section pages.",
+  "excluded": "First search engine produced unrelated results despite site terms. They are not source evidence and do not establish absent operator data. Repeated historicalPDF URL in results not opened.",
+  "missing": "Still no current operator mapping of selected physical lane5818209495/way615270691 to517–544 vs544–589 for trip date. No new fare applies.",
+  "newRouteRuns": 0,
+  "newReplays": 0,
+  "newPrices": 0,
+  "sourceSnapshots": [
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m4-545-operator-source/search1.json.gz",
+      "uncompressedSha256": "4f09fd27c74a8eca19c79eb4c769a3f8f550423a1e8cad0d45f5525cc69cdd0d",
+      "uncompressedBytes": 44071
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m4-545-operator-source/search2.json.gz",
+      "uncompressedSha256": "ebe2b2515c267243636b9e0efa4bcee57dd8b51cd39810291d8a866b4cb2b405",
+      "uncompressedBytes": 39318
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m4-545-operator-source/pages1.json.gz",
+      "uncompressedSha256": "4d4ae196dd1f6b65fdbe698c37226bb40167df1abf6138624205ecfee3e4d789",
+      "uncompressedBytes": 1112
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m4-545-operator-source/pages2.json.gz",
+      "uncompressedSha256": "1140c50c2556ce7753ab34a3a8e8c8d330899c8e7030538fb2691b39e9d4dd86",
+      "uncompressedBytes": 7568
+    }
+  ],
+  "newObservedLinks": [
+    {
+      "page": "https://russianhighways.ru/for_drivers/pay-sites.php",
+      "linkId": 54,
+      "label": "Обход сел Новая Усмань и Рогачевка (км517–544)"
+    },
+    {
+      "page": "https://russianhighways.ru/for_drivers/pay-sites.php",
+      "linkId": 55,
+      "label": "км544–633 (Воронежская область)"
+    }
+  ]
+}

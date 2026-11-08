@@ -1,0 +1,23 @@
+{
+  "capturedAt": "2026-10-15",
+  "primarySources": [
+    {
+      "url": "https://www.openstreetmap.org/api/0.6/node/5818209495",
+      "file": "pvp-5818209495.osm",
+      "sha256": "6886fc92656b6aafacd7dbf440cdaf99a6ca17638dce91cdf1985bd9c2726a62",
+      "fact": "Exact OSM toll_booth, ПВП 545 км, Автодор operator; matches existing M4 inventory ID"
+    },
+    {
+      "url": "https://www.openstreetmap.org/api/0.6/way/615270691/full",
+      "file": "pvp-way-615270691.osm",
+      "sha256": "16a3a7dc183869f3231246684663af75726e02d4f8da4c9abc361e3b27f8e287",
+      "fact": "Selected unnamed one-way toll=yes lane contains that exact node"
+    }
+  ],
+  "limitations": [
+    "Road identity only, no new tariff amounts and no new entry/exit proof.",
+    "ZSD original base tariff PDF and Prilozhenie-2 both returned403 using curl/search; no tariff imported.",
+    "M11 September order274 original pages9/10 rendered/visually reread:56/38/94 sources available, exact mainline frame identity remains unbound. No runtime activation.",
+    "Live representative city coordinates are not exact user screenshot addresses."
+  ]
+}

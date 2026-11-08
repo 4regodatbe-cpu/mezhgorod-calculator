@@ -1,0 +1,28 @@
+{
+  "atUtc": "2026-10-18T05:43:04.560076+00:00",
+  "status": "STARTED",
+  "sourceHead": "369df969ab363ccada5e6af17c70997108c497ef",
+  "sourceTree": "69b5dab0d520b10f14968eb4cafaa19a13d1ac88",
+  "cause": "M1/M3 diagnostic shadow rejects crossing Moscow midnight in conflict with15Oct trip-departure policy",
+  "sourceReview": "Shadow uses end timestamp/date/profile; official fares verifiedThrough2026-10-10 still constrain departure date. Existing14OctPDF confirms numbers/effectiveFrom, not extension of verification horizon.",
+  "scope": [
+    "experiments/nationwide-tolls/m1-m3-shadow-quote.mjs",
+    "experiments/nationwide-tolls/m1-m3-shadow-quote.test.mjs"
+  ],
+  "keep": [
+    "physical gate order and same-route completeness",
+    "source effectiveFrom/verifiedThrough",
+    "diagnosticOnly; no customer-price cutover",
+    "bounded duration input contract"
+  ],
+  "checks": [
+    "focused shadow tests including Thu→Fri, last verified departure across midnight, future/preeffective departure negative guards",
+    "full npm run test:audit",
+    "tsc --noEmit",
+    "targeted ESLint",
+    "Next build",
+    "git diff --check"
+  ],
+  "limits": "Offline only; no new routes/sources/trace. Run each check with timeout120s, save logs/progress immediately. Resume completed results rather than rerun on save interruption.",
+  "next": "If checks pass, publish code final without skip-ci and exacttree/path/headreadback. Otherwise fix only this departure-policy defect."
+}

@@ -1,0 +1,425 @@
+{
+  "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-rostov",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-17T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-17T09:00:00+03:00"
+  },
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "OSRM",
+      "meters": 1799703,
+      "seconds": 81879
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "Valhalla",
+      "error": "Error: ROUTE_UNAVAILABLE"
+    },
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 1799703,
+  "routeSeconds": 81879,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        {
+          "lng": 39.7233,
+          "lat": 47.2225
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "m4",
+      "ckad",
+      "m11",
+      "zsd"
+    ],
+    "provenRoads": [
+      "zsd",
+      "m11",
+      "m4"
+    ],
+    "missingExpectedRoads": [
+      "ckad"
+    ],
+    "status": "expected-road-not-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "zsd",
+      "kind": "selected-paid-edge",
+      "wayId": "81348980",
+      "names": [
+        "ЗСД"
+      ]
+    },
+    {
+      "road": "zsd",
+      "kind": "selected-paid-edge",
+      "wayId": "721628539",
+      "names": [
+        "ЗСД"
+      ]
+    },
+    {
+      "road": "zsd",
+      "kind": "selected-paid-edge",
+      "wayId": "1090759975",
+      "names": [
+        "ЗСД"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "241668022",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "1395997593",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "1395997592",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "461450930",
+      "names": [
+        "М-4",
+        "E 115",
+        "E 119",
+        "AH8",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "461450925",
+      "names": [
+        "М-4",
+        "E 115",
+        "E 119",
+        "AH8",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "1051304958",
+      "names": [
+        "М-4",
+        "E 115",
+        "E 119",
+        "AH8",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "zsd",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "318102347"
+    },
+    {
+      "road": "m11",
+      "kind": "selected-booth-name",
+      "osmNodeId": "2492861243"
+    },
+    {
+      "road": "m11",
+      "kind": "selected-booth-name",
+      "osmNodeId": "7171624764"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "3036681112"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "4341143826"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "5061777334"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "3598837929"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "2401530844"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "1051205779"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "6257559336"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "3842564088"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "9620404676"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "7678126301"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "11838757138"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "11838466121"
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "zsd": {
+      "occurrences": 10,
+      "uniqueWays": 10
+    },
+    "m11": {
+      "occurrences": 765,
+      "uniqueWays": 573
+    },
+    "m4": {
+      "occurrences": 682,
+      "uniqueWays": 484
+    }
+  },
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-rostov/2026-10-16T01-26-44-471Z-capture.json.gz",
+  "captureSha256": "ff1c9f594bc3bc1df83133fdad003dbbed7227aeb734aac63a1d1936dc998007",
+  "detectedRoadComponents": [
+    {
+      "id": "m4",
+      "amount": 4640,
+      "reason": "matrix exact selected-route M4 vector"
+    },
+    {
+      "id": "m11-15-58",
+      "amount": 1500,
+      "reason": "m11_head_ready_direct_pair_at_departure"
+    },
+    {
+      "id": "m11-58-679",
+      "amount": 4200,
+      "reason": "matrix dated selected-route M11 direct pair"
+    },
+    {
+      "id": "m11-679-684",
+      "amount": 94,
+      "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+    },
+    {
+      "id": "zsd",
+      "amount": 300,
+      "reason": "zsd_zone1_complete_directed_base_tariff"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "ЗСД",
+    "М-11",
+    "«Нева»",
+    "М-4",
+    "E 115",
+    "E 119",
+    "AH8",
+    "«Дон»",
+    "Дон",
+    "улица Изыскателей",
+    "AH61",
+    "E 50"
+  ],
+  "tollNodeIds": [
+    "318102347",
+    "2492861243",
+    "7171624764",
+    "3036681112",
+    "4341143826",
+    "5061777334",
+    "3598837929",
+    "2401530844",
+    "1051205779",
+    "6257559336",
+    "3842564088",
+    "9620404676",
+    "7678126301",
+    "11838757138",
+    "11838466121"
+  ],
+  "m4PvpPreview": {
+    "status": "boundaries_resolved",
+    "reason": null,
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 3,
+    "confirmedPvps": [
+      "m4-71",
+      "m4-911"
+    ],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": 10734,
+    "weekdayAmount": 9234,
+    "weekendAmount": 10884,
+    "period": "пятница–воскресенье",
+    "segments": [
+      "М-4: m4-71 → m4-911 · Стоимость не подтверждена",
+      "М-11 15–58: solnechnogorsk → moscow: 1500 ₽ · Стоимость не подтверждена",
+      "М-11: p679 → p58 · Стоимость не подтверждена",
+      "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽",
+      "ЗСД: тарифная зона 1 · 300 ₽"
+    ],
+    "confidence": "matched",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "priced"
+  },
+  "audit": {
+    "status": "priced",
+    "priced": [
+      "m4",
+      "m11-15-58",
+      "m11-58-679",
+      "m11-679-684",
+      "zsd"
+    ],
+    "missing": [],
+    "components": [
+      {
+        "id": "m4",
+        "detected": true,
+        "tolls": {
+          "amount": 4640,
+          "weekdayAmount": 3810,
+          "weekendAmount": 4640,
+          "period": "пятница–воскресенье",
+          "segments": [
+            "М-4: m4-71 → m4-911 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "m11-15-58",
+        "detected": true,
+        "tolls": {
+          "amount": 1500,
+          "weekdayAmount": 1130,
+          "weekendAmount": 1650,
+          "period": "по тарифу отправления М-11 15–58 (sat)",
+          "confidence": "matched",
+          "segments": [
+            "М-11 15–58: solnechnogorsk → moscow: 1500 ₽ · Стоимость не подтверждена"
+          ]
+        },
+        "reason": "m11_head_ready_direct_pair_at_departure"
+      },
+      {
+        "id": "m11-58-679",
+        "detected": true,
+        "tolls": {
+          "amount": 4200,
+          "weekdayAmount": 3900,
+          "weekendAmount": 4200,
+          "period": "пятница–воскресенье",
+          "segments": [
+            "М-11: p679 → p58 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix dated selected-route M11 direct pair"
+      },
+      {
+        "id": "m11-679-684",
+        "detected": true,
+        "tolls": {
+          "amount": 94,
+          "weekdayAmount": 94,
+          "weekendAmount": 94,
+          "period": "пн–вс, приказ №274 с 04.09.2026",
+          "segments": [
+            "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+      },
+      {
+        "id": "zsd",
+        "detected": true,
+        "reason": "zsd_zone1_complete_directed_base_tariff",
+        "tolls": {
+          "amount": 300,
+          "weekdayAmount": 300,
+          "weekendAmount": 300,
+          "period": "все дни, без транспондера",
+          "confidence": "matched",
+          "segments": [
+            "ЗСД: тарифная зона 1 · 300 ₽"
+          ]
+        }
+      }
+    ]
+  }
+}

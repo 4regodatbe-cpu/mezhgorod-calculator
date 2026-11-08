@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:04:05.018Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 76,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 6,
+    "spec": {
+      "caseId": "pair-m11-ckad-noginsk-to-spb",
+      "kind": "road",
+      "group": "pair-m11-ckad"
+    }
+  },
+  "caseId": "pair-m11-ckad-noginsk-to-spb",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-04-05-017Z-part6",
+  "parent": "8b3b88bf3212cb58807c251b432190ba2401db33"
+}

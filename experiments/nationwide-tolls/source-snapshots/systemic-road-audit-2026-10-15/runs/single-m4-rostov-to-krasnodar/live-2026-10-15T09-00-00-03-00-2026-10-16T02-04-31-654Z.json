@@ -1,0 +1,187 @@
+{
+  "caseId": "single-m4-rostov-to-krasnodar",
+  "mode": "live",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 273453,
+      "seconds": 16919
+    },
+    {
+      "name": "OSRM",
+      "meters": 273224,
+      "seconds": 14765
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 273224,
+  "routeSeconds": 14765,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 39.7233,
+          "lat": 47.2225
+        },
+        {
+          "lng": 38.975313,
+          "lat": 45.03547
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "m4"
+    ],
+    "provenRoads": [
+      "m4"
+    ],
+    "missingExpectedRoads": [],
+    "status": "traversal-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "1474145881",
+      "names": [
+        "М-4",
+        "E 50",
+        "E 115",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "1012606734",
+      "names": [
+        "М-4",
+        "E 50",
+        "E 115",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "97687973",
+      "names": [
+        "М-4",
+        "E 50",
+        "E 115",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "5325424715"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "9620386263"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "9772717211"
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "m4": {
+      "occurrences": 90,
+      "uniqueWays": 79
+    }
+  },
+  "replayIntegrity": null,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-rostov-to-krasnodar/2026-10-16T02-04-31-635Z-capture.json.gz",
+  "captureSha256": "38ddaef1b413a6e7975351d3c49d735d8807acfbaf7e98bddd8edb69655150c0",
+  "detectedRoadComponents": [
+    {
+      "id": "m4",
+      "amount": 850,
+      "reason": "matrix exact selected-route M4 vector"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-4",
+    "E 50",
+    "E 115",
+    "«Дон»",
+    "Самарское шоссе"
+  ],
+  "tollNodeIds": [
+    "5325424715",
+    "9620386263",
+    "9772717211"
+  ],
+  "m4PvpPreview": {
+    "status": "boundaries_resolved",
+    "reason": null,
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 2,
+    "confirmedPvps": [
+      "m4-1093",
+      "m4-1223"
+    ],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": 850,
+    "weekdayAmount": 850,
+    "weekendAmount": 1000,
+    "period": "понедельник–четверг",
+    "segments": [
+      "М-4: m4-1093 → m4-1223 · Стоимость не подтверждена"
+    ],
+    "confidence": "matched",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "priced"
+  },
+  "audit": {
+    "status": "priced",
+    "priced": [
+      "m4"
+    ],
+    "missing": [],
+    "components": [
+      {
+        "id": "m4",
+        "detected": true,
+        "tolls": {
+          "amount": 850,
+          "weekdayAmount": 850,
+          "weekendAmount": 1000,
+          "period": "понедельник–четверг",
+          "segments": [
+            "М-4: m4-1093 → m4-1223 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix exact selected-route M4 vector"
+      }
+    ]
+  }
+}

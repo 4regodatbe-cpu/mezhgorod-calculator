@@ -1,0 +1,168 @@
+{
+  "caseId": "single-zsd-blag-to-sest",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 46279,
+      "seconds": 2477
+    },
+    {
+      "name": "OSRM",
+      "meters": 44311,
+      "seconds": 2404
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 44311,
+  "routeSeconds": 2404,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 30.304,
+          "lat": 59.875
+        },
+        {
+          "lng": 29.963,
+          "lat": 60.093
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "zsd"
+    ],
+    "provenRoads": [
+      "zsd"
+    ],
+    "missingExpectedRoads": [],
+    "status": "traversal-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "zsd",
+      "kind": "selected-paid-edge",
+      "wayId": "397223751",
+      "names": [
+        "ЗСД"
+      ]
+    },
+    {
+      "road": "zsd",
+      "kind": "selected-paid-edge",
+      "wayId": "397223752",
+      "names": [
+        "ЗСД"
+      ]
+    },
+    {
+      "road": "zsd",
+      "kind": "selected-paid-edge",
+      "wayId": "397223749",
+      "names": [
+        "ЗСД"
+      ]
+    },
+    {
+      "road": "zsd",
+      "kind": "selected-booth-name",
+      "osmNodeId": "1766158809"
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "zsd": {
+      "occurrences": 61,
+      "uniqueWays": 57
+    }
+  },
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-sest/2026-10-16T02-10-00-890Z-capture.json.gz",
+  "captureSha256": "77a2eb49ca1cf11d3ec016d2ae428a727d3c92e1fa9a481caf859f73c643dd0e",
+  "detectedRoadComponents": [
+    {
+      "id": "unknown-paid-road",
+      "amount": null,
+      "reason": "unmapped_selected_route_paid_booth"
+    },
+    {
+      "id": "zsd",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "ЗСД"
+  ],
+  "tollNodeIds": [
+    "6428471634",
+    "1766158809"
+  ],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: unknown-paid-road, zsd",
+      "unknown-paid-road: unmapped_selected_route_paid_booth",
+      "zsd: zsd_trip_extends_outside_reviewed_zone1"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [],
+    "missing": [
+      "unknown-paid-road",
+      "zsd"
+    ],
+    "components": [
+      {
+        "id": "unknown-paid-road",
+        "detected": true,
+        "tolls": null,
+        "reason": "unmapped_selected_route_paid_booth"
+      },
+      {
+        "id": "zsd",
+        "detected": true,
+        "tolls": null,
+        "reason": "zsd_trip_extends_outside_reviewed_zone1"
+      }
+    ]
+  }
+}

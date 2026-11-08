@@ -1,0 +1,55 @@
+{
+  "observedAt": "2026-10-17T18:22:54.393Z",
+  "head": "a666fb4887ea54a328a29fb3bfc2dfa5102e5499",
+  "tree": "0e04b98cc6140027c7fb076ecfd97f8ff0551c76",
+  "pr": {
+    "number": 14,
+    "head": "a666fb4887ea54a328a29fb3bfc2dfa5102e5499",
+    "state": "open",
+    "draft": true
+  },
+  "runs": [
+    {
+      "id": 39056837838,
+      "head": "a666fb4887ea54a328a29fb3bfc2dfa5102e5499",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39055898864,
+      "head": "f010d847765874573a52ef1926f3ca82dc1a44c4",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39054871192,
+      "head": "54f4cccccd0d4b70ae34f063ac4db351b013acba",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39044745179,
+      "head": "5b000b5ff6220ffab307b835feabb7764a661b89",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39043652263,
+      "head": "5281fa019eda95128035be5a0a1d2d1d95f34425",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "jobs": [
+    {
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "live_probe",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ]
+}

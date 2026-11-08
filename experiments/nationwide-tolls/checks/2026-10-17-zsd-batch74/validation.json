@@ -1,0 +1,20 @@
+{
+  "atUtc": "2026-10-17T12:07:41.235442+00:00",
+  "result": "PASS",
+  "caseFiles": 74,
+  "dateChecks": 148,
+  "captureHashChecks": 74,
+  "priced600Cases": 24,
+  "unknownNullCases": 50,
+  "physicalScopeGroups": 12,
+  "sourceHashesVerified": true,
+  "manifestHashesVerified": true,
+  "allTracesAndBoothCoverageComplete": true,
+  "noZeroOrPartialWholeTotals": true,
+  "syntaxCheck": "node --check PASS",
+  "fullAudit": "704/704 PASS + quote/API adapter checks PASS",
+  "tsc": "PASS exit0",
+  "build": "PASS exit0",
+  "initialAuditFailure": "ENOENT sparse-checkout A289 fixture; exact tracked fixtures restored, final audit passed",
+  "transportRecovery": "bulk fetch of blob IDs failed with bad revision; bounded git show readers retrieved all74 exact tracked captures, total32691411bytes; no router requests"
+}

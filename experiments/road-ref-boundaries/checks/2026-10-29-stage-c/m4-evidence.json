@@ -1,0 +1,333 @@
+{
+  "caseId": "dnr-гранитное-kazan-center",
+  "capture": {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/2026-10-15T12-00-00-440Z-capture.json.gz",
+    "sha256": "5c49cbd71433f7200538a5a4526d81f009375d49fce4445546151a8152cb19b9"
+  },
+  "inputs": {
+    "from": {
+      "label": "Гранітне — ДНР",
+      "position": {
+        "lat": 47.4593941,
+        "lng": 37.866983
+      },
+      "kind": "village",
+      "sourceRequested": "Гранитное"
+    },
+    "to": {
+      "id": "kazan-center",
+      "label": "Казань, центр",
+      "position": {
+        "lng": 49.1221,
+        "lat": 55.7887
+      }
+    },
+    "positions": [
+      {
+        "lat": 47.4593941,
+        "lng": 37.866983
+      },
+      {
+        "lng": 49.1221,
+        "lat": 55.7887
+      }
+    ]
+  },
+  "scope": "one retained selected-route graph extraction, not a new provider/trace/API replay or six-case audit",
+  "networkRequests": 0,
+  "traceResponses": [
+    {
+      "index": 0,
+      "httpStatus": 200,
+      "bodySha256": "9a20a51a8a893181b15ea186d851e30c68525fd27868d2ddda5fbc8c45033902"
+    },
+    {
+      "index": 1,
+      "httpStatus": 200,
+      "bodySha256": "fb667c13a56cefc5e16036ddaf76e9ae9ca565d582969375122e0cfd0c9f6146"
+    },
+    {
+      "index": 2,
+      "httpStatus": 200,
+      "bodySha256": "15bf511da09216ed7a3a3b336a54099a1850dd17bbafc8818e50e5710e4b8cdd"
+    },
+    {
+      "index": 3,
+      "httpStatus": 200,
+      "bodySha256": "e879b9527b3c30aabd98972ae116430dff530ba758f635b64c3d44081a072fe5"
+    },
+    {
+      "index": 4,
+      "httpStatus": 200,
+      "bodySha256": "92d974a829e1c2da72b1346d19e8166c88306fb36f4245816fa1239aca8e0a9f"
+    },
+    {
+      "index": 5,
+      "httpStatus": 200,
+      "bodySha256": "8851400d27ca5ec4ee7ab45c7faa478f3e4068c1a5e97b7bbb2a0d4afa1ea353"
+    },
+    {
+      "index": 6,
+      "httpStatus": 200,
+      "bodySha256": "85d5dd072a8872cfd9da19cb24a0d095bdbeda3b878f628c89be471af9b58863"
+    },
+    {
+      "index": 7,
+      "httpStatus": 200,
+      "bodySha256": "0e3cc5e0d067acdbc7243760433a3863d22215e455e4cd35ed85eaa7ca304433"
+    },
+    {
+      "index": 8,
+      "httpStatus": 200,
+      "bodySha256": "754ad31a0d72ec774437a60c75f6c1a356ed98f85fd2bf52b43ff7727a691599"
+    },
+    {
+      "index": 9,
+      "httpStatus": 200,
+      "bodySha256": "40962bef98c38d98a17458b46de5aea011f849c1e9745491fb53e4575389f2b4"
+    },
+    {
+      "index": 10,
+      "httpStatus": 200,
+      "bodySha256": "ce80dffd5942393a2d20da5ab8d22684ea899f83ee9f001cb351eb2da861c9cb"
+    },
+    {
+      "index": 11,
+      "httpStatus": 200,
+      "bodySha256": "c3595e3d7df115a66a3a4bf499a35bc96bc3acc9d39ffea4e2a969d25a094cd3"
+    },
+    {
+      "index": 12,
+      "httpStatus": 200,
+      "bodySha256": "472e01ef491248516e38f3b8fae8ec59a70d748647bdf5c9904ede373cf563f8"
+    }
+  ],
+  "selectedGeometrySha256": "a1d3ba1d21bf5d15c4cc153aefdc0069f53ac087ab3f54ea3183236f3d91790d",
+  "boundary": {
+    "provider": "valhalla-trace",
+    "targetRef": "М-4",
+    "routeSignature": "a1d3ba1d21bf5d15c4cc153aefdc0069f53ac087ab3f54ea3183236f3d91790d",
+    "precision": "matched-road-edge",
+    "status": "resolved",
+    "reason": "directed_graph_transitions_resolved",
+    "entry": {
+      "id": "osm-transition:4443232947:447135768>1182567076",
+      "kind": "road-transition",
+      "from": {
+        "refs": [],
+        "names": [
+          "подъезд к аэропорту «Платов»",
+          "подъезд от магистрали «Дон» к аэропорту «Платов»"
+        ]
+      },
+      "to": {
+        "refs": [
+          "E-115",
+          "E-50",
+          "М-4"
+        ],
+        "names": [
+          "«Дон»"
+        ]
+      },
+      "coordinate": null,
+      "osmNodeId": "4443232947",
+      "fromWayId": "447135768",
+      "toWayId": "1182567076",
+      "chunkIndex": 1,
+      "sourceIndex": 138,
+      "connectorCount": 0
+    },
+    "exit": {
+      "id": "osm-transition:358467208:1211606940>28835034",
+      "kind": "road-transition",
+      "from": {
+        "refs": [
+          "E-115",
+          "М-4"
+        ],
+        "names": [
+          "«Дон»"
+        ]
+      },
+      "to": {
+        "refs": [
+          "Р-260"
+        ],
+        "names": []
+      },
+      "coordinate": null,
+      "osmNodeId": "358467208",
+      "fromWayId": "1211606940",
+      "toWayId": "28835034",
+      "chunkIndex": 2,
+      "sourceIndex": 35,
+      "connectorCount": 0
+    }
+  },
+  "coordinates": [
+    {
+      "role": "entry",
+      "id": "osm-transition:4443232947:447135768>1182567076",
+      "coordinate": [
+        39.9708171,
+        47.5105556
+      ],
+      "coordinateSource": "experiments/road-ref-boundaries/checks/2026-10-24-b04-osm-coordinate-intake/raw/node-4443232947.json",
+      "nodeTags": {},
+      "directedMembership": true,
+      "nearestSelectedVertex": {
+        "index": 1877,
+        "distanceMeters": 0.045
+      },
+      "meaning": "exact OSM graph transition; not an identified payment gate/operator fare endpoint",
+      "officialKilometre": null
+    },
+    {
+      "role": "exit",
+      "id": "osm-transition:358467208:1211606940>28835034",
+      "coordinate": [
+        40.265878,
+        48.186303
+      ],
+      "coordinateSource": "experiments/road-ref-boundaries/checks/2026-10-24-b04-osm-coordinate-intake/raw/node-358467208.json",
+      "nodeTags": {
+        "highway": "motorway_junction"
+      },
+      "directedMembership": true,
+      "nearestSelectedVertex": {
+        "index": 2328,
+        "distanceMeters": 0
+      },
+      "meaning": "exact OSM graph transition; not an identified payment gate/operator fare endpoint",
+      "officialKilometre": null
+    }
+  ],
+  "continuity": {
+    "resolverReason": "directed_graph_transitions_resolved",
+    "uniqueEdgeCount": 133,
+    "paidEdges": 2,
+    "observedPaidEdges": [
+      {
+        "chunkIndex": 1,
+        "sourceIndex": 138,
+        "wayId": "1182567076",
+        "endNodeId": "10981360743",
+        "names": [
+          "М-4",
+          "E 50",
+          "E 115",
+          "«Дон»"
+        ]
+      },
+      {
+        "chunkIndex": 1,
+        "sourceIndex": 139,
+        "wayId": "31984600",
+        "endNodeId": "2339659032",
+        "names": [
+          "М-4",
+          "E 50",
+          "E 115",
+          "«Дон»"
+        ]
+      }
+    ],
+    "nonPaidEdges": 131,
+    "unknownTollFlags": 0,
+    "scope": "selected continuous M4-ref traversal; toll flag is not an operator fare applicability/crosswalk certificate"
+  },
+  "kilometrage": {
+    "status": "unknown",
+    "direction": "unknown",
+    "diagnosticOnly": true,
+    "entry": {
+      "status": "unknown",
+      "reason": "km_coordinate_and_anchor_missing",
+      "position": null
+    },
+    "exit": {
+      "status": "unknown",
+      "reason": "km_coordinate_and_anchor_missing",
+      "position": null
+    },
+    "stops": [
+      "entry:km_coordinate_and_anchor_missing",
+      "exit:km_coordinate_and_anchor_missing"
+    ]
+  },
+  "profiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "tariffVector": {
+        "from": "osm-transition:4443232947:447135768>1182567076",
+        "to": "osm-transition:358467208:1211606940>28835034",
+        "profile": "monThu",
+        "selectionBasis": "selected-road-transitions",
+        "priceStatus": "unknown"
+      },
+      "reason": "m4_road_vector_price_unknown",
+      "tolls": null
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "tariffVector": {
+        "from": "osm-transition:4443232947:447135768>1182567076",
+        "to": "osm-transition:358467208:1211606940>28835034",
+        "profile": "friSun",
+        "selectionBasis": "selected-road-transitions",
+        "priceStatus": "unknown"
+      },
+      "reason": "m4_road_vector_price_unknown",
+      "tolls": null
+    }
+  ],
+  "operatorTariffVector": {
+    "status": "BLOCKED_BY_DATA",
+    "reason": "exact graph vector is known, but no reviewed operator endpoint/product crosswalk or applicable fare row",
+    "required": [
+      "operator diagram/register linking each exact directed access to charge/product boundary and branch/scale",
+      "applicable charge rule for this partial path, not a nearest PVP assumption",
+      "official directed matrix cell/source/date for the verified product; no new price needed merely to recognize geometry"
+    ],
+    "priceRub": null
+  },
+  "verifiedSources": [
+    {
+      "path": "experiments/road-ref-boundaries/checks/2026-10-24-b04-osm-coordinate-intake/raw/node-358467208.json",
+      "sha256": "e6deb4ad47726ea90d9c3a7f863c15f9df11b1e4a109e88146fe6adad55229d2"
+    },
+    {
+      "path": "experiments/road-ref-boundaries/checks/2026-10-24-b04-osm-coordinate-intake/raw/node-4443232947.json",
+      "sha256": "3ebfa2eebc97fc2d79f54de8955da40f9e1d5a5f1c14aff96cf4936154f221da"
+    },
+    {
+      "path": "experiments/road-ref-boundaries/checks/2026-10-24-b04-osm-coordinate-intake/raw/way-1182567076.json",
+      "sha256": "08dbe65c03a0c477970979106c9ccef7e83fa262c45438cad54e8dceb47c3209"
+    },
+    {
+      "path": "experiments/road-ref-boundaries/checks/2026-10-24-b04-osm-coordinate-intake/raw/way-1211606940.json",
+      "sha256": "78836f6eb4b1ffe8fc33f6d97b60c6b60d07b9c0a1fb9444501f85761409f405"
+    },
+    {
+      "path": "experiments/road-ref-boundaries/checks/2026-10-24-b04-osm-coordinate-intake/raw/way-28835034.json",
+      "sha256": "e38e0a66ca4be214ce69405c8b9a46df07b78347d697ffaa1f2fb5fcb2f43d2e"
+    },
+    {
+      "path": "experiments/road-ref-boundaries/checks/2026-10-24-b04-osm-coordinate-intake/raw/way-447135768.json",
+      "sha256": "bb7d3c3f80669fa933fed7b3a67d6313434a3bae75b0c6093901bbe553fcc9c2"
+    },
+    {
+      "path": "experiments/road-ref-boundaries/checks/2026-10-24-b04-osm-coordinate-intake/capture-metadata.json",
+      "sha256": "7ff78bb8708efbbc877bf584b9a61ab5f75410589b161c1c2f3bea0b43c3dc44"
+    },
+    {
+      "path": "experiments/road-ref-boundaries/checks/2026-10-24-b04-osm-coordinate-intake/reviewed-identity.json",
+      "sha256": "8a3b7793631ba3f7b1ba232fab80dd93d89a8bac35b241b186619d104d365357"
+    },
+    {
+      "path": "experiments/road-ref-boundaries/checks/2026-10-24-b04-osm-coordinate-intake/verify.mjs",
+      "sha256": "b786cfc168c3354ae78454f50741ea9ebd832ec263325c26948df8a22c45feda"
+    }
+  ]
+}

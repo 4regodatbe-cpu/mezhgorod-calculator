@@ -1,0 +1,93 @@
+{
+  "status": "DONE_PRIMARY_CHAIN",
+  "sources": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-entry/entry-local-map.osm",
+      "sha256": "4c67bf668d770e1c2f2925bf19d622cea4a4deca37db7a1d010415bbef7dc85c",
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=37.2028116,56.0810646,37.2228116,56.1010646"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/1148492112.osm",
+      "sha256": "a088eb154929a068aaf664dbae2e6cbed50648736e7fafe6d76a2d2203d4d0b6",
+      "url": "https://api.openstreetmap.org/api/0.6/way/1148492112/full"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/1148492111.osm",
+      "sha256": "b35459c8e0d788ba89736620d885bc260c648b1b61723d2fccf3f04f5163901e",
+      "url": "https://api.openstreetmap.org/api/0.6/way/1148492111/full"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/791520971.osm",
+      "sha256": "d179d319980af6c442b3be93aecca63a7c48b67554a0acf2658cc2c33a95559c",
+      "url": "https://api.openstreetmap.org/api/0.6/way/791520971/full"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-exit/620063414.osm",
+      "sha256": "6e90de609b9b6051e3f7fa4e1571c8f6681f46b357154ddbb2a25cfc125170a7",
+      "url": "https://api.openstreetmap.org/api/0.6/way/620063414/full"
+    }
+  ],
+  "directedWayConnectivity": [
+    {
+      "wayId": "1148492112",
+      "firstNode": "9556466755",
+      "lastNode": "10685667960",
+      "oneway": "yes"
+    },
+    {
+      "wayId": "1148492111",
+      "firstNode": "10685667960",
+      "lastNode": "10685667959",
+      "oneway": "yes"
+    },
+    {
+      "wayId": "791520971",
+      "firstNode": "10685667959",
+      "lastNode": "4697496088",
+      "oneway": "yes"
+    },
+    {
+      "wayId": "620063414",
+      "firstNode": "4697496088",
+      "lastNode": "5858822526",
+      "oneway": "yes"
+    },
+    {
+      "wayId": "476099617",
+      "firstNode": "5858822526",
+      "lastNode": "5858822524",
+      "oneway": "yes"
+    },
+    {
+      "wayId": "620063413",
+      "firstNode": "5858822524",
+      "lastNode": "3566328298",
+      "oneway": "yes"
+    },
+    {
+      "wayId": "1270188044",
+      "firstNode": "3566328298",
+      "lastNode": "11793817147",
+      "oneway": "yes"
+    },
+    {
+      "wayId": "1270188043",
+      "firstNode": "11793817147",
+      "lastNode": "9336952521",
+      "oneway": "yes"
+    },
+    {
+      "wayId": "1270188042",
+      "firstNode": "9336952521",
+      "lastNode": "11385232715",
+      "oneway": "yes"
+    },
+    {
+      "wayId": "1270188041",
+      "firstNode": "11385232715",
+      "lastNode": "8087316060",
+      "oneway": "yes"
+    }
+  ],
+  "operatorIdentity": "Same PVP18 CKAD47 facility as retained official page5; direction-specific lane is primary mapped southbound exit, not the northbound entry."
+}

@@ -12,7 +12,7 @@ type SelectedFree = {
   truth: "confirmed_payment_point_avoiding";
 };
 export type TollEstimate = ReturnType<typeof estimateTolls>;
-type ApiTolls = Omit<TollEstimate, "amount" | "weekdayAmount" | "weekendAmount"> & {
+type ApiTolls<T extends TollEstimate = TollEstimate> = Omit<T, "amount" | "weekdayAmount" | "weekendAmount" | "pricingStatus"> & {
   amount: number | null;
   weekdayAmount: number | null;
   weekendAmount: number | null;
@@ -45,7 +45,7 @@ export function compositionValidation(priced: RouteTollComponentId[], message: s
   };
 }
 
-export function tollsForApi(tolls: TollEstimate, validation: TollValidation): ApiTolls {
+export function tollsForApi<T extends TollEstimate>(tolls: T, validation: TollValidation): ApiTolls<T> {
   const hasPositivePrice = tolls.amount > 0 || tolls.weekdayAmount > 0 || tolls.weekendAmount > 0;
   if (hasPositivePrice) return { ...tolls, pricingStatus: "priced" };
   if (validation.status === "free") return { ...tolls, pricingStatus: "free" };

@@ -1,0 +1,66 @@
+{
+  "stage": "AB",
+  "status": "DONE_LOCAL_HOSTED_RELEASE_BLOCKED",
+  "dateUtc": "2026-11-07",
+  "repository": "4regodatbe-cpu/mezhgorod-calculator",
+  "worktree": "/workspace/final-gate-v3",
+  "branch": "codex/final-gate-v3-repair",
+  "publishedDevelopmentBase": "8fae15c7e5b81ef55492f2b009cbe665e5fdc0fb",
+  "implementationCommit": "9ac745c35500e4bfcb04cf3411806be8a4887d44",
+  "remoteAtLastRead": "8fae15c7e5b81ef55492f2b009cbe665e5fdc0fb",
+  "pr14": "OPEN_DRAFT",
+  "source": {
+    "url": "https://avtodor-tr.ru/road/tariffs/",
+    "checkedDateUtc": "2026-11-07",
+    "httpStatus": 403,
+    "response": "DDoS-Guard",
+    "indexedCopyAge": "approximately 2 months; not current evidence",
+    "registryRows": [
+      "avtodor-other-roads-2026-10-01-category1-transponder",
+      "avtodor-other-roads-2026-10-01-category1-no-transponder"
+    ],
+    "observedAt": "2026-10-01",
+    "effectiveFrom": null,
+    "freshnessDays": 30,
+    "tariffValuesChanged": false
+  },
+  "sha256": {
+    "lib/toll-engine/tariff-registry.ts": "a614e2c77c31557659a41788e3ae81b12d401d31c9ec70b56d9b23159cf0f49b",
+    "data/tolls/2026-10-01-avtodor-other-roads-category1.json": "0be176e80a089c6aca618b3b8f417ff64c92b1bda905a14c7e7a404620432618",
+    "app/api/v3/calculate/route.ts": "fd1368a13110132a932b42b490470cc9e46d22e06223efb841bebd9441835066",
+    "lib/route-providers.ts": "f09102ecf0f0591bef0e107a0d30407f4979694ab33009be3d175b63cf11197cd",
+    "scripts/v3-all-routing-providers-unavailable.test.ts": "a07e54752f42a5207def08ca9f388b6ebabbee609de78e8e0950620f138e0f8f",
+    ".github/workflows/calculator-final-gate.yml": "5466afc96fa6442dd9cd1bcb34d0305cf813f985330077d1fb17e4e8dab909a8"
+  },
+  "savedRouteResults": {
+    "newRequestsMade": 0,
+    "http200": 4,
+    "http502": 2,
+    "records": [
+      { "route": "Yalta-Krasnodar", "provider": "OSRM", "km": 501.2, "durationMin": 416, "toll": "priced component A-289: 800 RUB" },
+      { "route": "Yalta-Moscow", "provider": "Valhalla", "km": 1817.8, "durationMin": 1476.8, "toll": "4725 weekday / 5625 weekend; M-4 plus A-289" },
+      { "route": "Donetsk-Kazan", "provider": null, "km": 1534.9, "durationMin": 1424.4, "toll": "unknown/null; no direct proven M-12 pair" },
+      { "route": "Moscow-Kazan", "provider": "Valhalla", "km": 820.2, "durationMin": 687.9, "toll": "unknown/null; no direct proven M-12 pair" },
+      { "route": "Tver-Adler", "httpStatus": 502, "providerErrors": "aggregate only; individual statuses not preserved" },
+      { "route": "Golubitskaya-Saint-Petersburg", "httpStatus": 502, "providerErrors": "aggregate only; individual statuses not preserved" }
+    ]
+  },
+  "testResults": {
+    "providerUnavailableAndErrorMapping": "2/2 PASS",
+    "finalGateHarness": "6/6 PASS",
+    "v3Readiness": "PASS",
+    "routeBenchmark": "61 records PASS",
+    "typescript": "PASS",
+    "eslint": "exit 0; 9 existing warnings",
+    "pnpmBuild": "1143 PASS / 0 FAIL / 1 SKIP",
+    "localApiSmoke": "16/16 PASS after allowed local access; not hosted CI evidence",
+    "strictFreshness": "BLOCKED as expected: 2 stale, 0 invalid, 3 effective-date unknown; exit 2",
+    "hostedActionsOnCandidate": "NOT_RUN; no push authorization"
+  },
+  "limitations": [
+    "Historical provider-level causes for the two saved HTTP 502 responses cannot be recovered from stored evidence.",
+    "No current official tariff source/effective date could be verified due to HTTP 403 DDoS-Guard; stale metadata was not refreshed.",
+    "No hosted Actions run exists for the unpushed local candidate.",
+    "No push, merge, Preview, Production, main, Android, or PR state change was made."
+  ]
+}

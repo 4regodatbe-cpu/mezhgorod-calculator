@@ -1,0 +1,43 @@
+{
+  "capturedAt": "2026-10-15T11:11:00+03:00",
+  "source": "Yandex Maps interactive car route planner, detailed selected fastest route",
+  "vehicleProfile": "Car under 2 m, no transponder, as stated in route details",
+  "departureContext": "Live query on 2026-10-15; displayed route departure 11:11 MSK",
+  "routes": [
+    {
+      "id": "spb-to-krasnodar-city-centres",
+      "fromCoordinate": [30.314494, 59.938676],
+      "toCoordinate": [38.975313, 45.03547],
+      "fastestRoute": true,
+      "displayedDistance": "1,290 mi",
+      "displayedDuration": "1 day 1 h 3 min",
+      "displayedTollRub": 11325,
+      "displayedAsApproximate": true,
+      "routeEvidence": ["Detailed steps show AH9, MSD, MKAD, E115, Rostov bypass and A-136"]
+    },
+    {
+      "id": "krasnodar-to-spb-city-centres",
+      "fromCoordinate": [38.975313, 45.03547],
+      "toCoordinate": [30.314494, 59.938676],
+      "fastestRoute": true,
+      "displayedDistance": "1,280 mi",
+      "displayedDuration": "23 h 57 min",
+      "displayedTollRub": 10240,
+      "displayedAsApproximate": true,
+      "routeEvidence": ["Detailed steps show M-4, E115, MKAD, M-11 and ZSD"]
+    }
+  ],
+  "policy": "The displayed amounts are accepted and used as estimates for these exact selected Yandex routes and this capture context. They replace older observations for current comparison only; no amount is transferred to another direction or decomposed into toll products.",
+  "comparison": {
+    "v3ApiComparison": {
+      "http": 200,
+      "reverseRouteKm": 2061.4,
+      "reverseRouteMinutes": 1581,
+      "tollRub": null,
+      "pricingStatus": "unknown",
+      "segments": ["Обнаружены, но не полностью оценены платные системы: m4", "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"],
+      "result": "Local V3 POST used the same exact endpoints and departureAt 2026-10-15T11:09:00+03:00; response completed HTTP 200."
+    },
+    "traceGeometry": "Yandex route details expose road names and totals but no route polyline or toll-gate IDs. Similar endpoints or road names alone do not prove full trace equivalence."
+  }
+}

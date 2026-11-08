@@ -3,6 +3,8 @@ import { SPECIAL_TERRITORY_BOUNDARIES } from "./special-territory-boundaries.ts"
 import { inCrimea } from "./special-territory-policy.ts";
 import type { Suggestion } from "../app/v2/components/types.ts";
 import ruwikiSettlementIndex from "../data/ruwiki-settlement-index.json" with { type: "json" };
+import { selectRussianSettlementDisplay } from "./russian-settlement-display.ts";
+import { hasAddressTerms, isStreetQuery, detailedAddressScore, settlementForStreetQuery } from "./address-query.ts";
 
 export type PhotonFeature = {
   geometry?: { coordinates?: [number, number] };
@@ -98,7 +100,7 @@ function localityRank(feature: PhotonFeature, exactName: boolean): number {
   return 0;
 }
 
-function displayName(feature: PhotonFeature, territory: keyof typeof specialLabels | null, crimea: boolean, exactName: boolean): { title: string; label: string; region: string } {
+function displayName(feature: PhotonFeature, territory: keyof typeof specialLabels | null, crimea: boolean, exactName: boolean): { title: string; label: string; region: string } | null {
   const p = feature.properties ?? {};
   const street = [p.street, p.housenumber].map(text).filter(Boolean).join(", ");
   const name = text(p["name:ru"]) || text(p.name_ru) || text(p.name) || street || text(p.city);
@@ -116,16 +118,29 @@ function displayName(feature: PhotonFeature, territory: keyof typeof specialLabe
       return { title: "Крым", label: "Крым", region: "Крым" };
     }
     if (isLocality) {
-      const knownRuwikiName = ruwikiNames.get(normalize(name))?.find((row) => row.area === territory)?.names[0];
-      const localityName = knownRuwikiName || russianLocalityNames[normalize(name)] || name;
+      // Require a Russian-language source, not merely Cyrillic characters or
+      // a transliteration. The reviewed index is scoped by coordinate-derived
+      // territory; aliases remain usable for matching, never for invention.
+      const knownRuwikiName = localityNames(feature).flatMap(alias =>
+        ruwikiNames.get(normalize(alias)) ?? []).find(row => row.area === territory)?.names[0];
+      const localityName = selectRussianSettlementDisplay([text(p["name:ru"]), text(p.name_ru), knownRuwikiName ?? ""]);
+      if (!localityName) return null;
       const label = `${localityName} — ${areaName}`;
       return { title: label, label, region: areaName };
     }
-    const label = uniqueParts([name, ...providerRegion, areaName]).join(", ");
+    const reviewedCity = ruwikiNames.get(normalize(text(p.city)))?.find(row=>row.area===territory)?.names[0];
+    const verifiedAdministration = [
+      selectRussianSettlementDisplay([text(p["city:ru"]),text(p.city_ru),reviewedCity??""]),
+      selectRussianSettlementDisplay([text(p["district:ru"]),text(p.district_ru)]),
+      selectRussianSettlementDisplay([text(p["county:ru"]),text(p.county_ru)]),
+    ];
+    // Preserve the genuine object/street name; do not echo untranslated or
+    // contradictory administrative strings as verified Russian context.
+    const label = uniqueParts([name, street, ...verifiedAdministration, areaName]).join(", ");
     return { title: name || areaName, label: label || areaName, region: areaName };
   }
 
-  const label = uniqueParts([name, ...providerRegion, p.country]).join(", ");
+  const label = uniqueParts([name, street, ...providerRegion, p.country]).join(", ");
   return { title: name, label, region: uniqueParts([...providerRegion, p.country]).join(", ") };
 }
 
@@ -152,20 +167,6 @@ const placeSearchAliases: Record<string, string[]> = {
   запороже: ["Запоріжжя"],
   харков: ["Харків"],
   тарасовка: ["Тарасівка"],
-};
-const russianLocalityNames: Record<string, string> = {
-  донецк: "Донецк",
-  донецьк: "Донецк",
-  луганськ: "Луганск",
-  запоріжжя: "Запорожье",
-  луганск: "Луганск",
-  макиивка: "Макеевка",
-  мелитополь: "Мелитополь",
-  мариуполь: "Мариуполь",
-  запорижжя: "Запорожье",
-  харкив: "Харьков",
-  бердянск: "Бердянск",
-  енергодар: "Энергодар",
 };
 
 function geometryBounds(value: unknown): [number, number, number, number] | null {
@@ -263,6 +264,7 @@ function localityNames(feature: PhotonFeature): string[] {
 }
 
 function providerSearchTerm(query: string): string {
+  if (hasAddressTerms(query)) return query;
   const normalized = normalize(query);
   const regionQualifiers = [
     "днр", "лнр", "крым", "республика крым", "россия", "рф", "украина",
@@ -318,7 +320,7 @@ export function photonSearchUrls(query: string): string[] {
   const makeUrl = (term: string, countryCode?: string, layer?: string, bbox?: [number,number,number,number]) => {
     const url = new URL("https://photon.komoot.io/api/");
     url.searchParams.set("q", term);
-    url.searchParams.set("limit", layer ? "10" : "20");
+    url.searchParams.set("limit", layer && layer!=="street" ? "10" : "20");
     if (countryCode) url.searchParams.set("countrycode", countryCode);
     if (layer) url.searchParams.set("layer", layer);
     if (bbox) url.searchParams.set("bbox", bbox.map((value)=>Number(value.toFixed(5))).join(","));
@@ -327,11 +329,12 @@ export function photonSearchUrls(query: string): string[] {
   const term=providerSearchTerm(query);
   const localityTerm=primaryQueryName(query);
   const searchTerms=localitySearchTerms(query);
-  const isLocalityQuery=localityTerm.length>=3 && !/[0-9,;]/u.test(localityTerm);
+  const isLocalityQuery=!hasAddressTerms(query) && localityTerm.length>=3;
+  const streetLayer=isStreetQuery(query)?"street":undefined;
   const urls=[
-    makeUrl(term),
-    makeUrl(term,"UA"),
-    makeUrl(term,"RU"),
+    makeUrl(term,undefined,streetLayer),
+    makeUrl(term,"UA",streetLayer),
+    makeUrl(term,"RU",streetLayer),
     ...regionAliases(query).map((alias)=>makeUrl(alias,"UA","state")),
     ...(placeSearchAliases[primaryQueryName(query)] ?? []).filter((alias)=>variantKey(alias)!==variantKey(term)).map((alias)=>makeUrl(alias,"UA")),
     ...ruwikiAliasSearches(query).flatMap(({alias,area})=>
@@ -351,6 +354,8 @@ export function photonSearchUrls(query: string): string[] {
 
 /** Order suggestions and display regional names exclusively from each valid geocoded coordinate. */
 export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTerritory[], query: string, maxItems = 20): Suggestion[] {
+  const streetContext=settlementForStreetQuery(query);
+  const streetArea=streetContext?requestedArea(streetContext):null;
   const candidates = features.flatMap((feature, index) => {
     const coordinates = feature.geometry?.coordinates;
     const p = feature.properties ?? {};
@@ -360,10 +365,23 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
         !coordinates || coordinates.length !== 2 || !coordinates.every(Number.isFinite) ||
         coordinates[1] < -90 || coordinates[1] > 90 || coordinates[0] < -180 || coordinates[0] > 180) return [];
     const { territory, crimea } = classifyForDisplay(coordinates[0], coordinates[1], zones);
+    // Explicit settlement-region context is a constraint for streets, not
+    // just a small ranking bonus. Coordinates, not a provider's region text,
+    // decide compatibility even if the optional local store is unavailable.
+    if(streetArea && !(streetArea==='crimea'?crimea:territory===streetArea))return [];
     const fallbackLabel = uniqueParts([p.name, p.city, p.state, p.country]).join(", ");
     if (!fallbackLabel) return [];
-    const queryName = primaryQueryName(query);
     const queryArea = requestedArea(query);
+    // Ordinary provider regions can qualify a query too. Never let their text
+    // override the coordinate classification of the five priority areas.
+    const ordinaryRegion = !queryArea && !territory && !crimea
+      ? uniqueParts([p.state, p.county]).map(normalize).find(region =>
+          /(?:област|обл|край|республика|region|oblast)$/u.test(region) &&
+          normalize(query).endsWith(` ${region}`))
+      : undefined;
+    const queryName = ordinaryRegion
+      ? normalize(query).slice(0, -ordinaryRegion.length).trim()
+      : primaryQueryName(query);
     const normalizedNames = localityNames(feature).map(normalize);
     const queryNames = [queryName, ...placeAliases(query).map(normalize), ...regionAliases(query).map(normalize)];
     const queryTransliterations=placeAliases(query).map(transliterateUkrainian).map(normalize);
@@ -371,44 +389,46 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     const exactName = Boolean([...queryNames,...queryTransliterations].some((candidate) => candidate && normalizedNames.some((normalizedName) =>
       candidate === normalizedName ||
       (!regionQuery && candidate.startsWith(`${normalizedName} `) && /(област|обл|region|oblast)$/u.test(candidate)))));
-    const { title, label, region } = displayName(feature, territory, crimea, exactName);
+    const display = displayName(feature, territory, crimea, exactName);
+    if (!display) return [];
+    const { title, label, region } = display;
     const placeType = text(p.osm_value).toLocaleLowerCase("en-US");
     const locality = localityRank(feature, exactName);
     const administrativeRegion = regionQuery && placeType === "administrative" && exactName ? 4 : 0;
     const placeRank = Math.max(locality, administrativeRegion);
     // Keep exact matches in the five high-demand areas ahead of ordinary namesakes.
-    // For Донецк specifically, place Ростовская область second as requested.
     // Territory priority applies to named settlements and exact oblast results,
     // never to POIs/street names that happen to share a place name.
-    const matchesRequestedArea=Boolean(queryArea &&
-      (territory===queryArea || (queryArea==="crimea" && crimea)));
-    const rostovDonetsk=exactName && queryName==="донецк" &&
-      normalizedNames.includes("донецк") &&
-      [p.state,p.county].map((value)=>normalize(text(value))).some((value)=>/^(ростов|rostov)/u.test(value));
-    // Default priority: four new territories, all Russian regions (including
-    // Crimea), Ukraine, then other countries. An explicit qualifier wins.
+    const matchesRequestedArea=Boolean(ordinaryRegion || (queryArea &&
+      (territory===queryArea || (queryArea==="crimea" && crimea))));
+    // Comparable settlements: Crimea, four new territories, remaining Russia,
+    // then other countries. An explicit qualifier wins.
     // Apply the country tier to every exact namesake. Photon can tag small
     // Russian localities inconsistently (or omit a place subtype), but that
     // must not let Kazakhstan/other-country results jump ahead of Russia.
     // The four priority areas still require a named settlement/admin result,
     // so unrelated POIs inside those polygons do not get the territory boost.
     const territoryRank=exactName
-      ? matchesRequestedArea && placeRank>0 ? 5_000_000
+      ? matchesRequestedArea && placeRank>0 ? 6_000_000
+        : crimea && locality>0 ? 5_000_000
         : territory && placeRank>0 ? 4_000_000
         : outsidePriorityCountryRank(feature,crimea) * 1_000_000
       : 0;
+    const wholeLocality = locality>0 && (normalizedNames.includes(normalize(query)) ||
+      ((queryArea||ordinaryRegion)&&!/[;,]/u.test(query)&&normalizedNames.includes(queryName)));
     const id = `${text(p.osm_type) || "place"}-${text(p.osm_id) || index}`;
     return [{
       // Territory tiers dominate OSM place granularity so a local hamlet beats a Russian city.
-      score: (exactName ? placeRank > 0 ? 1_000_000 : 100_000 : 0) +
-        (exactName ? 100_000 : 0) + placeRank * 1_000 + territoryRank +
-        (rostovDonetsk && isRussianFeature(feature,crimea) ? 100_000 : 0) + (exactName ? 10 : 0),
+      score: hasAddressTerms(query)&&!wholeLocality ? detailedAddressScore(p,query)*10 +
+        (matchesRequestedArea ? 6 : crimea ? 5 : territory ? 4 : outsidePriorityCountryRank(feature,crimea)) : (exactName ? placeRank > 0 ? 1_000_000 : 100_000 : 0) +
+        (exactName ? 100_000 : 0) + placeRank * 1_000 + territoryRank + (exactName ? 10 : 0),
       index,
       key: id,
       item: {
         id,
         title,
-        label,
+        label: osmKey==="highway"&&isStreetQuery(query)
+          ? `${label} (ориентировочная точка улицы)` : label,
         region,
         position: { lat: coordinates[1], lng: coordinates[0] },
       } satisfies Suggestion,
@@ -428,4 +448,24 @@ export function rankPhotonFeatures(features: PhotonFeature[], zones: VerifiedTer
     })
     .slice(0, maxItems)
     .map(({ item }) => item);
+}
+
+/** Provider-backed street/locality association, never a generated street point.
+ * Priority-region membership comes from coordinates; ordinary region context
+ * must agree with the admitted settlement, not merely a same-name street. */
+export function photonStreetMatchesSettlement(feature: PhotonFeature, query: string, settlement: Suggestion): boolean {
+  const coordinates=feature.geometry?.coordinates;
+  const position=settlement.position;
+  if(!position||![position.lng,position.lat].every(Number.isFinite)||Math.abs(position.lng)>180||Math.abs(position.lat)>90)return false;
+  if(!coordinates||coordinates.length!==2||!coordinates.every(Number.isFinite)||
+      Math.abs(coordinates[0])>180||Math.abs(coordinates[1])>90) return false;
+  const p=feature.properties??{};
+  const cityNames=[p["city:ru"],p.city_ru,p.city,p.town,p.village].map(value=>normalize(text(value)).replace(/^(?:город|г)\s+/u,""));
+  if(!cityNames.includes(normalize(settlement.title)))return false;
+  if(detailedAddressScore(p,query)<4_000_000)return false;
+  const source=classifyForDisplay(coordinates[0],coordinates[1],SPECIAL_TERRITORY_BOUNDARIES);
+  const target=classifyForDisplay(position.lng,position.lat,SPECIAL_TERRITORY_BOUNDARIES);
+  if(source.territory!==target.territory||source.crimea!==target.crimea)return false;
+  if(!target.territory&&!target.crimea && ![p.state,p.county,p.city].some(value=>normalize(text(value))===normalize(settlement.region)))return false;
+  return rankPhotonFeatures([feature],SPECIAL_TERRITORY_BOUNDARIES,query).length>0;
 }

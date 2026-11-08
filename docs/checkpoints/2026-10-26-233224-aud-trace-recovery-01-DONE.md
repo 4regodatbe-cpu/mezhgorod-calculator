@@ -1,0 +1,8 @@
+# AUD-TRACE-RECOVERY-01 — evidence DONE; policy unchanged — 26.10.2026 23:32 МСК
+
+- Allowed branch; parent ee8d14bdcb869eeb74041c728167337765ea137f; PR #14 Draft; Actions idle at analysis preflight.
+- Evidence/recommendation: ../codebase-audit/AUD-TRACE-RECOVERY-01.md. Incomplete validation can have status "toll"; recovery gates on status alone and uses lower map-match thresholds. V2 serialization maps a positive recovery output to priced without a completeness guard.
+- Offline bounded reproducer using existing synthetic M12 fixture: explicitly complete:false, 1/2 trace chunks, partial booth coverage returned helper amount995 / two approximate sections, and tollsForApi produced pricingStatus:"priced". This is not an official fare, real capture, or actual user-route reproduction. V3 currently marks its recovered fragments diagnostic-only/unknown.
+- No dedicated incomplete-trace recovery regression found; existing V3 coverage test uses complete validation. Recommendation: add focused incomplete trace test and preserve unknown status for incomplete evidence; threshold/policy change needs separate approval.
+- No manual network query, route capture, B03/B10 test, or code/recovery/fare modification was part of this analysis. This completes evidence block6/6; P2 fix items are4/4, evidence reviews2/2.
+- Operational note: while this block was being documented, PR run40396491540 unexpectedly ran from the cumulative PR path filter and stale classifier baseline. Its route-geometry step passed; address runtime ended SOURCE_UNAVAILABLE (Ростов/Красн passed, Донецк HTTP503/cooldown); 50-settlement and Yandex steps were skipped. The run ended SUCCESS because live_probe is continue-on-error. Do not repeat; no branch writes were made during the active run.

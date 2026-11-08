@@ -1,0 +1,89 @@
+{
+  "atUtc": "2026-10-17T14:28:10.018071+00:00",
+  "sourceHead": "a49470b7b9ebf4065c44890bc5e516a74dbe0166",
+  "startedHead": "dbb5a1ef669e3ce5179d35b59f22378602b766c8",
+  "startedCheckpoint": "docs/checkpoints/2026-10-17-172148-zsd-selected-osrm-trace-STARTED.md",
+  "doneCheckpoint": "docs/checkpoints/2026-10-17-172810-zsd-selected-osrm-trace-DONE.md",
+  "checks": {
+    "syntax": "PASS two scripts",
+    "strictOwnCaptureReplay": "PASS zero misses/network",
+    "sourceHashes": 7,
+    "rawResponses": 6,
+    "negativeChecks": 5,
+    "auditPassed": 721,
+    "auditFailed": 0,
+    "quoteApi": "PASS",
+    "tsc": "PASS",
+    "nextBuild": "PASS static16/16"
+  },
+  "runtimeCi": {
+    "runId": 39038119987,
+    "conclusion": "success"
+  },
+  "postStartedCi": {
+    "runId": 39040459995,
+    "statusAtCaseCompletion": "in_progress",
+    "statusBeforeSave": "completed",
+    "conclusionBeforeSave": "success",
+    "verify": "completed/success",
+    "live_probe": "completed/success"
+  },
+  "counts": {
+    "checkedCases": 1,
+    "newRoutingRequests": 0,
+    "selectedGeometryTraceRuns": 1,
+    "attemptedNetworkRequests": 6,
+    "pricedComponents": 4,
+    "pricedZsdComponents": 1,
+    "confirmedFullTripFares": 0
+  },
+  "sha256": {
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/README.md": "99508da47fec32bf46f86d32d03758dffb169afefa382f137bc9b546622e2540",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/STARTED.json": "7613765a4f93ddae4fd330e6e11452886e8ad272d00f9d13c8c2d55db9bbec88",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/audit.log.gz": "5addb937a8881f8b5a0a3d91b6602817f2988f9364052e93e528efb3c0de0a27",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/boundary-proof.json": "484bf6530c114766b55a87ca28f93c1f0416f682ef8f7b66d9e9e9d1c51164b2",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/build.log.gz": "b4819434ffb7e17192a8b728bc9d4ef767243ff058ea55a44f113f8fabdbba74",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/capture.json.gz": "e920e57e3e296d51b0f3e3461f150e10fe697d3643d5aff05828e9a47f1cf69b",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/entry-approach.json": "50f6a77d6ad6a1dc944f26f3e632d52bb7b52ea17152ce00d029db2a61bb5ad8",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/integrity.log": "d83abd5362e21d1134e605933e731285601b7a6f8ff2bd58fe52ea6076db407f",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/pre-save-readback.json": "09d2d1a4bb53e551ffc1181a7bc218afec88173c924e6d76c38fb99bd4c4dec5",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/progress.json": "00b3084038a7c3a1d63f6a72b66a58c300aaf7afe60db58cf4d85cc390a8f586",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/replay.log": "9fea238d1af837b9cec2c837a546afd76e7a3d4655042f0aac34b5ab6c0eb7e8",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/requests/001.json.gz": "e55323831232962f6447ef9c832fea31e1bf9d428598b7a3a8a584ec1ca9e928",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/requests/002.json.gz": "9fe5921531234933d2506329aa3520855c2b447d9d8de8617f50d3b8f9b9eb57",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/requests/003.json.gz": "fe31058f6ad951301d737ab3945ae459346178bde369a0cd9a8d8e45fddeca34",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/requests/004.json.gz": "bc36f194242879bf01f15e1373b6f4c7e796285360e2ecc027a12facdf5c4dcd",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/requests/005.json.gz": "4fa4393def447e8c99ef93c39ad09863dca860cfab16b70aae77d8b6a3874edd",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/requests/006.json.gz": "25132d68d5b6bb03e409f5fdf90fa1b4586c6b8b49b1423a5965a245d93cd05a",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/required-checks.json": "c3b7c98a969aa18fd05ab9e411f52b00623c6365186e46100beebbd43d68c606",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/result.json": "9303b7fe53a835d6d06ac5028a6d2519ac6ddfddecee1a07f0d1218e97a100c4",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/selected-route.json.gz": "b49ad4833700c429556358d7dcadd8c138f291489a3ecced6ef60e661d8dea26",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-selected-osrm-trace/tsc.log.gz": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+    "experiments/nationwide-tolls/scripts/trace-selected-zsd-osrm.mjs": "39fd1f3c035de618add5b30f0e5a8f9d2a4ae00ca688e82443034b65b768804c",
+    "experiments/nationwide-tolls/scripts/check-selected-zsd-osrm.mjs": "78013f0313316b9c878ff61d382b3d2315220794fa2a1380cd51bda78a3d4ea8"
+  },
+  "requiredChecks": [
+    {
+      "name": "audit",
+      "exitCode": 0,
+      "seconds": 10.41,
+      "log": "audit.log.gz",
+      "bytes": 61185
+    },
+    {
+      "name": "tsc",
+      "exitCode": 0,
+      "seconds": 6.39,
+      "log": "tsc.log.gz",
+      "bytes": 0
+    },
+    {
+      "name": "build",
+      "exitCode": 0,
+      "seconds": 8.16,
+      "log": "build.log.gz",
+      "bytes": 1038
+    }
+  ],
+  "runtimeChanged": false
+}

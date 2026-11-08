@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-15T23:49:06.684Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 46,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 5,
+    "spec": {
+      "caseId": "lnr-довжанск-kazan-center",
+      "kind": "regional",
+      "region": "lnr"
+    }
+  },
+  "caseId": "lnr-довжанск-kazan-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-49-06-684Z-part5",
+  "parent": "25e1d119176dc1171630eaef1d7ecddc51c556bd"
+}

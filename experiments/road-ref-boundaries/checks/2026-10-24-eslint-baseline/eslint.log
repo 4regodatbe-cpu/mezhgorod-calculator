@@ -1,0 +1,18 @@
+
+/workspace/scratch/6a7402161c9f/calculator/app/v2/components/use-v2-calculation.ts
+  24:141  warning  'analyticsVersion' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/scratch/6a7402161c9f/calculator/experiments/toll-od-matrix/m4-pvp-compiler.test.mjs
+  9:7  warning  'clone' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/scratch/6a7402161c9f/calculator/lib/photon-address-search.ts
+  421:16  warning  'key' is defined but never used  @typescript-eslint/no-unused-vars
+
+/workspace/scratch/6a7402161c9f/calculator/lib/toll-engine/m12-route-evidence.ts
+  16:7  warning  'amountByMarker' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/scratch/6a7402161c9f/calculator/lib/v2-calculation/special-options.ts
+  71:20  warning  'index' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+✖ 5 problems (0 errors, 5 warnings)
+

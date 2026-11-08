@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:06:19.793Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 82,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 7,
+    "spec": {
+      "caseId": "pair-m11-zsd-prim-to-moscow",
+      "kind": "road",
+      "group": "pair-m11-zsd"
+    }
+  },
+  "caseId": "pair-m11-zsd-prim-to-moscow",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-06-19-793Z-part7",
+  "parent": "1b855900681c93a38df4901158927e6a90c75663"
+}

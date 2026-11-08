@@ -1,0 +1,56 @@
+{
+  "observedAt": "2026-10-17T17:54:55.476Z",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "head": "54f4cccccd0d4b70ae34f063ac4db351b013acba",
+  "tree": "d28efcdc61f6bcfb3c6681cdce078a89eb2b60ce",
+  "pr": {
+    "number": 14,
+    "state": "open",
+    "draft": true,
+    "head": "54f4cccccd0d4b70ae34f063ac4db351b013acba"
+  },
+  "runs": [
+    {
+      "id": 39054871192,
+      "head": "54f4cccccd0d4b70ae34f063ac4db351b013acba",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39044745179,
+      "head": "5b000b5ff6220ffab307b835feabb7764a661b89",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39043652263,
+      "head": "5281fa019eda95128035be5a0a1d2d1d95f34425",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39042535356,
+      "head": "d9a96ec04875078fefb0ec2b487dc6446ede220f",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39041543624,
+      "head": "8fecbab5245fed3b7bff644eb0ccce4f2efa2c33",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "jobs": [
+    {
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "live_probe",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ]
+}

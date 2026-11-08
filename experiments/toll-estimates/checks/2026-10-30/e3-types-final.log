@@ -1,0 +1,4 @@
+experiments/toll-estimates/saved-samples.ts(48,3): error TS2322: Type '{ amount: any; weekdayAmount: any; weekendAmount: any; period: string; segments: string[]; confidence: string; } | null' is not assignable to type 'Value | null'.
+  Type '{ amount: any; weekdayAmount: any; weekendAmount: any; period: string; segments: string[]; confidence: string; }' is not assignable to type 'Value'.
+    Types of property 'confidence' are incompatible.
+      Type 'string' is not assignable to type '"matched"'.

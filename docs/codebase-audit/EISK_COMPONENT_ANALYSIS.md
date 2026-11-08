@@ -1,0 +1,11 @@
+# Block19 / B10 Eisk — DONE
+
+Source: artifact12666050121, run40354432433, source46e8da7f7700ab3819c3859d427ecfb601afebed. Existing local artifact extraction reused; no capture/replay/provider call repeated. Extracted evidence and original replay hashes: EISK_COMPONENT_EVIDENCE.json. Capture hash matches retained review19763eed7da92b505668ed8a9eb528baf77add76ec805d1511101b94e6144ca0.
+
+V2 public output contains one M4 component represented by13 priced plaza records. Sum of their weekday values=4920; weekend=6770 (mechanically asserted). V3 saved capture `experiments/nationwide-tolls/source-snapshots/issue2-yeysk-maykop/2026-10-19/yeisk-to-moscow.json.gz`, apiResponseText/legs/0/fast/tolls, contains one M4 endpoint vector m4-1093→m4-71:4340/5240. No other road price appears in either toll breakdown. Distance differs1m; duration identical; identical full geometry is not established by these aggregate measurements.
+
+Concrete mechanism: `lib/toll-engine/m4-production.ts:109–128` sums priced plaza amounts unless fullM4RouteTariff applies. Eisk output says local-PVP pricing, not full Moscow–Krasnodar override. `lib/v2-calculation/route-leg-pricing.ts` uses productionM4.tolls in composition. V3 `lib/v3-calculation/route-leg-pricing.ts:62–66` calls matrixM4Component; `experiments/nationwide-tolls/engine/m4-route-adapter.mjs:55` returns actual/weekday/weekend endpoint-cell rub values. Thus differences4920−4340=580 and6770−5240=1530 arise from plaza sum versus endpoint matrix cell, not arithmetic/rounding or an extra priced road.
+
+The V2 labels include unknown direction, 460→416, 517→589 and636→undefined. These are retained diagnostic limitations, not proof a given entry is overcharged. V3 vector price has no authoritative per-PVP allocation. Assigning580/1530 to any individual plaza would require independent operator decomposition/scope proof. The captures also originate at different times/code versions, so this establishes saved-output attribution, not a controlled same-geometry proof or either algorithm's tariff correctness. No tariff or rule changes justified here.
+
+Acceptance: both saved period totals and all V2 components recovered, exact arithmetic reconciled, responsible code paths identified, missing allocation/geometry evidence explicit. Next22 selective CI with saved event metadata.

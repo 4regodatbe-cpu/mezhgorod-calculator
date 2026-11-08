@@ -1,0 +1,238 @@
+{
+  "status": 200,
+  "elapsedMs": 2279.616638,
+  "body": {
+    "legs": [
+      {
+        "from": "Краснодар — Краснодарский край",
+        "to": "Анапа — Краснодарский край",
+        "fast": {
+          "m4RoadBoundaries": {
+            "provider": "osrm",
+            "targetRef": "М-4",
+            "routeSignature": "0c936ba6fe43727e05e790be794359bfa270f43ffa063272215c2785d579bb37",
+            "precision": "route-maneuver",
+            "status": "not-detected",
+            "reason": "road_ref_not_detected",
+            "entry": null,
+            "exit": null
+          },
+          "m12EndpointSpan": null,
+          "m12StrictSpan": null,
+          "m12Candidate": false,
+          "m12SpanReason": null,
+          "m11RoadEvidence": {
+            "provider": "osrm",
+            "strictBlocks": [],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "meters": 166347,
+          "seconds": 8713,
+          "quality": {
+            "status": "single",
+            "providers": [
+              "OSRM"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "tolls": {
+            "amount": 620,
+            "weekdayAmount": 620,
+            "weekendAmount": 620,
+            "period": "все дни",
+            "segments": [
+              "А-289: Maryanskaya → AnapaExit: 620 ₽"
+            ],
+            "confidence": "matched",
+            "pricingStatus": "priced"
+          },
+          "tollValidation": {
+            "status": "toll",
+            "source": "Route toll composition",
+            "tollEdgeCount": 1,
+            "checkedEdgeCount": 1,
+            "wayIds": [],
+            "roadNames": [
+              "a289"
+            ],
+            "message": "Полный итог составлен из дорожных систем: a289",
+            "complete": true
+          },
+          "m4PvpPreview": {
+            "status": "unknown",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+            "roadBoundaries": {
+              "provider": "osrm",
+              "targetRef": "М-4",
+              "routeSignature": "0c936ba6fe43727e05e790be794359bfa270f43ffa063272215c2785d579bb37",
+              "precision": "route-maneuver",
+              "status": "not-detected",
+              "reason": "road_ref_not_detected",
+              "entry": null,
+              "exit": null
+            },
+            "roadKilometrage": {
+              "status": "unknown",
+              "direction": "unknown",
+              "diagnosticOnly": true,
+              "entry": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "exit": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "stops": [
+                "km_boundary_evidence_unresolved"
+              ]
+            },
+            "priceRub": null,
+            "verifiedPriceCells": 0,
+            "candidateCount": 0,
+            "confirmedPvps": [],
+            "diagnosticOnly": true
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "candidate_needs_osm_operator_node_mapping",
+              "reason": "no_verifiable_m1_m3_booths",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 166.347,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Краснодар — Краснодарский край",
+                  "to": "Анапа — Краснодарский край",
+                  "ratePerKm": 25,
+                  "amount": 4159,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 4159,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 166.347,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Краснодар — Краснодарский край",
+                  "to": "Анапа — Краснодарский край",
+                  "ratePerKm": 30,
+                  "amount": 4990,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 4990,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 166.347,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Краснодар — Краснодарский край",
+                  "to": "Анапа — Краснодарский край",
+                  "ratePerKm": 35,
+                  "amount": 5822,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 5822,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 166.347,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Краснодар — Краснодарский край",
+                  "to": "Анапа — Краснодарский край",
+                  "ratePerKm": 50,
+                  "amount": 8317,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 8317,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "mode": "standard",
+    "automaticMode": "standard",
+    "specialEndpoint": false
+  },
+  "serverTiming": "calc_total;dur=2274.04, request_body;dur=0.224, geocoding;dur=0.117, route_leg;dur=2269.196, routing;dur=1493.836, provider_valhalla;dur=1191.71, provider_osrm;dur=1491.497, provider_brouter;dur=1201.191, toll_matching;dur=669.959, toll_pricing;dur=72.388, response_pricing;dur=3.402",
+  "capturedAt": "2026-10-31T16:14:34.597Z"
+}

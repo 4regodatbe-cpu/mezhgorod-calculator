@@ -1,0 +1,135 @@
+[
+  {
+    "query": "Краснодар",
+    "httpStatus": 200,
+    "elapsedMs": 262,
+    "controlledProviderFetches": 0,
+    "first": {
+      "id": "geonames-542420",
+      "title": "Краснодар",
+      "label": "Краснодар — Краснодарский край",
+      "region": "Краснодарский край",
+      "position": {
+        "lat": 45.04534,
+        "lng": 38.98178
+      }
+    }
+  },
+  {
+    "query": "Краснодар, Красная улица",
+    "httpStatus": 200,
+    "elapsedMs": 71,
+    "controlledProviderFetches": 3,
+    "first": {
+      "id": "W-259081047",
+      "title": "Красная улица",
+      "label": "Красная улица, Краснодар, Западный округ, городской округ Краснодар, Краснодарский край, Россия (ориентировочная точка улицы)",
+      "region": "Краснодар, Западный округ, городской округ Краснодар, Краснодарский край, Россия",
+      "position": {
+        "lat": 45.0389088,
+        "lng": 38.9752136
+      }
+    }
+  },
+  {
+    "query": "Москва",
+    "httpStatus": 200,
+    "elapsedMs": 5,
+    "controlledProviderFetches": 0,
+    "first": {
+      "id": "geonames-524901",
+      "title": "Москва",
+      "label": "Москва — Москва",
+      "region": "Москва",
+      "position": {
+        "lat": 55.75204,
+        "lng": 37.61781
+      }
+    }
+  },
+  {
+    "query": "Москва, Тверская улица",
+    "httpStatus": 200,
+    "elapsedMs": 56,
+    "controlledProviderFetches": 3,
+    "first": {
+      "id": "W-427579341",
+      "title": "Тверская улица",
+      "label": "Тверская улица, Москва, Тверской, Россия (ориентировочная точка улицы)",
+      "region": "Москва, Тверской, Россия",
+      "position": {
+        "lat": 55.7687933,
+        "lng": 37.59786
+      }
+    }
+  },
+  {
+    "query": "Донецк, ДНР",
+    "httpStatus": 200,
+    "elapsedMs": 7,
+    "controlledProviderFetches": 0,
+    "first": {
+      "id": "geonames-709717",
+      "title": "Донецк",
+      "label": "Донецк — ДНР",
+      "region": "ДНР",
+      "position": {
+        "lat": 48.023,
+        "lng": 37.80224
+      }
+    }
+  },
+  {
+    "query": "Донецк, улица Артёма",
+    "httpStatus": 200,
+    "elapsedMs": 5,
+    "controlledProviderFetches": 3,
+    "first": {
+      "id": "geonames-709717",
+      "title": "Донецк",
+      "label": "Донецк — ДНР",
+      "region": "ДНР",
+      "position": {
+        "lat": 48.023,
+        "lng": 37.80224
+      }
+    },
+    "streetSearch": {
+      "status": "unconfirmed",
+      "precision": "settlement-centre",
+      "message": "Улица не подтверждена. Можно выбрать населённый пункт."
+    }
+  },
+  {
+    "query": "Ялта",
+    "httpStatus": 200,
+    "elapsedMs": 2,
+    "controlledProviderFetches": 0,
+    "first": {
+      "id": "geonames-688533",
+      "title": "Ялта",
+      "label": "Ялта — Крым",
+      "region": "Крым",
+      "position": {
+        "lat": 44.50218,
+        "lng": 34.16624
+      }
+    }
+  },
+  {
+    "query": "Ялта, улица Кирова",
+    "httpStatus": 200,
+    "elapsedMs": 74,
+    "controlledProviderFetches": 3,
+    "first": {
+      "id": "W-130707262",
+      "title": "улица Кирова",
+      "label": "улица Кирова, Крым (ориентировочная точка улицы), Ялта",
+      "region": "Крым",
+      "position": {
+        "lat": 44.4929406,
+        "lng": 34.1554909
+      }
+    }
+  }
+]

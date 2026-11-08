@@ -1,0 +1,787 @@
+{
+  "sourceSha": "5558ed8bdec347361b2b5749c370d6d3c31d83c1",
+  "base": "https://mezhgorod-calculator-exz5glade-4regodatbe-5310.vercel.app",
+  "mode": "existing published Preview, real API and browser, no mocks",
+  "queries": [
+    {
+      "query": "Доне",
+      "status": 200,
+      "elapsedMs": 1333.3000000044703,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-709717",
+            "title": "Донецк",
+            "label": "Донецк — ДНР",
+            "region": "ДНР",
+            "position": {
+              "lat": 48.023,
+              "lng": 37.80224
+            }
+          },
+          {
+            "id": "geonames-709713",
+            "title": "Донецкий",
+            "label": "Донецкий — ЛНР · geonames-709713 · 48.6996, 38.67627",
+            "region": "ЛНР",
+            "position": {
+              "lat": 48.6996,
+              "lng": 38.67627
+            }
+          },
+          {
+            "id": "geonames-709711",
+            "title": "Донецьке",
+            "label": "Донецьке — ДНР",
+            "region": "ДНР",
+            "position": {
+              "lat": 48.93347,
+              "lng": 37.69006
+            }
+          },
+          {
+            "id": "geonames-709714",
+            "title": "Донецкий",
+            "label": "Донецкий — ДНР · geonames-709714 · 47.71556, 38.40889",
+            "region": "ДНР",
+            "position": {
+              "lat": 47.71556,
+              "lng": 38.40889
+            }
+          },
+          {
+            "id": "geonames-709715",
+            "title": "Донецкий",
+            "label": "Донецкий — ДНР · geonames-709715 · 47.41667, 37.95",
+            "region": "ДНР",
+            "position": {
+              "lat": 47.41667,
+              "lng": 37.95
+            }
+          },
+          {
+            "id": "geonames-811884",
+            "title": "Донецкий",
+            "label": "Донецкий — ЛНР · geonames-811884 · 48.96667, 39.16694",
+            "region": "ЛНР",
+            "position": {
+              "lat": 48.96667,
+              "lng": 39.16694
+            }
+          },
+          {
+            "id": "geonames-565348",
+            "title": "Донецк",
+            "label": "Донецк — Ростовская Область",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 48.33711,
+              "lng": 39.95229
+            }
+          },
+          {
+            "id": "geonames-11763020",
+            "title": "Донецкий Лесхоз",
+            "label": "Донецкий Лесхоз — Ростовская Область",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 49.03511,
+              "lng": 40.55049
+            }
+          },
+          {
+            "id": "geonames-1507246",
+            "title": "Донец",
+            "label": "Донец — Новосибирская Область",
+            "region": "Новосибирская Область",
+            "position": {
+              "lat": 54.92554,
+              "lng": 75.60433
+            }
+          },
+          {
+            "id": "geonames-565343",
+            "title": "Донетское",
+            "label": "Донетское — Оренбургская Область",
+            "region": "Оренбургская Область",
+            "position": {
+              "lat": 51.8987,
+              "lng": 54.41266
+            }
+          },
+          {
+            "id": "geonames-565344",
+            "title": "Донец",
+            "label": "Донец — Белгородская Область",
+            "region": "Белгородская Область",
+            "position": {
+              "lat": 50.96151,
+              "lng": 37.02789
+            }
+          },
+          {
+            "id": "geonames-565345",
+            "title": "Донецкий",
+            "label": "Донецкий — Ростовская Область · geonames-565345 · 48.7168, 39.9838",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 48.7168,
+              "lng": 39.9838
+            }
+          },
+          {
+            "id": "geonames-565346",
+            "title": "Донецкий",
+            "label": "Донецкий — Ростовская Область · geonames-565346 · 47.3136, 42.4969",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 47.3136,
+              "lng": 42.4969
+            }
+          },
+          {
+            "id": "geonames-565351",
+            "title": "Донец",
+            "label": "Донец — Ленинградская область",
+            "region": "Ленинградская область",
+            "position": {
+              "lat": 58.93333,
+              "lng": 30.75
+            }
+          },
+          {
+            "id": "geonames-565352",
+            "title": "Донец",
+            "label": "Донец — Новгородская Область",
+            "region": "Новгородская Область",
+            "position": {
+              "lat": 58.21025,
+              "lng": 30.29159
+            }
+          },
+          {
+            "id": "geonames-565353",
+            "title": "Донец",
+            "label": "Донец — Смоленская Область",
+            "region": "Смоленская Область",
+            "position": {
+              "lat": 55.14792,
+              "lng": 31.95125
+            }
+          },
+          {
+            "id": "geonames-565354",
+            "title": "Донец",
+            "label": "Донец — Рязанская Область",
+            "region": "Рязанская Область",
+            "position": {
+              "lat": 53.55294,
+              "lng": 41.14021
+            }
+          },
+          {
+            "id": "geonames-565355",
+            "title": "Донец",
+            "label": "Донец — Орловская область",
+            "region": "Орловская область",
+            "position": {
+              "lat": 52.12719,
+              "lng": 37.45436
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      }
+    },
+    {
+      "query": "Донецк",
+      "status": 200,
+      "elapsedMs": 313.90000000596046,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-709717",
+            "title": "Донецк",
+            "label": "Донецк — ДНР",
+            "region": "ДНР",
+            "position": {
+              "lat": 48.023,
+              "lng": 37.80224
+            }
+          },
+          {
+            "id": "geonames-565348",
+            "title": "Донецк",
+            "label": "Донецк — Ростовская Область",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 48.33711,
+              "lng": 39.95229
+            }
+          },
+          {
+            "id": "geonames-709713",
+            "title": "Донецкий",
+            "label": "Донецкий — ЛНР · geonames-709713 · 48.6996, 38.67627",
+            "region": "ЛНР",
+            "position": {
+              "lat": 48.6996,
+              "lng": 38.67627
+            }
+          },
+          {
+            "id": "geonames-709714",
+            "title": "Донецкий",
+            "label": "Донецкий — ДНР · geonames-709714 · 47.71556, 38.40889",
+            "region": "ДНР",
+            "position": {
+              "lat": 47.71556,
+              "lng": 38.40889
+            }
+          },
+          {
+            "id": "geonames-709715",
+            "title": "Донецкий",
+            "label": "Донецкий — ДНР · geonames-709715 · 47.41667, 37.95",
+            "region": "ДНР",
+            "position": {
+              "lat": 47.41667,
+              "lng": 37.95
+            }
+          },
+          {
+            "id": "geonames-811884",
+            "title": "Донецкий",
+            "label": "Донецкий — ЛНР · geonames-811884 · 48.96667, 39.16694",
+            "region": "ЛНР",
+            "position": {
+              "lat": 48.96667,
+              "lng": 39.16694
+            }
+          },
+          {
+            "id": "geonames-11763020",
+            "title": "Донецкий Лесхоз",
+            "label": "Донецкий Лесхоз — Ростовская Область",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 49.03511,
+              "lng": 40.55049
+            }
+          },
+          {
+            "id": "geonames-565343",
+            "title": "Донетское",
+            "label": "Донетское — Оренбургская Область",
+            "region": "Оренбургская Область",
+            "position": {
+              "lat": 51.8987,
+              "lng": 54.41266
+            }
+          },
+          {
+            "id": "geonames-565345",
+            "title": "Донецкий",
+            "label": "Донецкий — Ростовская Область · geonames-565345 · 48.7168, 39.9838",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 48.7168,
+              "lng": 39.9838
+            }
+          },
+          {
+            "id": "geonames-565346",
+            "title": "Донецкий",
+            "label": "Донецкий — Ростовская Область · geonames-565346 · 47.3136, 42.4969",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 47.3136,
+              "lng": 42.4969
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      }
+    },
+    {
+      "query": "Волноваха",
+      "status": 200,
+      "elapsedMs": 300.20000000298023,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-689198",
+            "title": "Волноваха",
+            "label": "Волноваха — ДНР",
+            "region": "ДНР",
+            "position": {
+              "lat": 47.6008,
+              "lng": 37.49358
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      }
+    },
+    {
+      "query": "Донецк Ростовская область",
+      "status": 200,
+      "elapsedMs": 996.1999999955297,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-565348",
+            "title": "Донецк",
+            "label": "Донецк — Ростовская Область",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 48.33711,
+              "lng": 39.95229
+            }
+          },
+          {
+            "id": "geonames-11763020",
+            "title": "Донецкий Лесхоз",
+            "label": "Донецкий Лесхоз — Ростовская Область",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 49.03511,
+              "lng": 40.55049
+            }
+          },
+          {
+            "id": "geonames-565345",
+            "title": "Донецкий",
+            "label": "Донецкий — Ростовская Область · geonames-565345 · 48.7168, 39.9838",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 48.7168,
+              "lng": 39.9838
+            }
+          },
+          {
+            "id": "geonames-565346",
+            "title": "Донецкий",
+            "label": "Донецкий — Ростовская Область · geonames-565346 · 47.3136, 42.4969",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 47.3136,
+              "lng": 42.4969
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      }
+    },
+    {
+      "query": "Севастополь",
+      "status": 200,
+      "elapsedMs": 1040.2000000029802,
+      "body": {
+        "items": [
+          {
+            "id": "geonames-694423",
+            "title": "Севастополь",
+            "label": "Севастополь — Крым — Город Севастополь",
+            "region": "Крым",
+            "position": {
+              "lat": 44.60795,
+              "lng": 33.52134
+            }
+          },
+          {
+            "id": "geonames-496443",
+            "title": "Севастополь",
+            "label": "Севастополь — Калужская Область",
+            "region": "Калужская Область",
+            "position": {
+              "lat": 53.45592,
+              "lng": 35.188
+            }
+          },
+          {
+            "id": "geonames-496444",
+            "title": "Севастополь",
+            "label": "Севастополь — Оренбургская Область",
+            "region": "Оренбургская Область",
+            "position": {
+              "lat": 51.7688,
+              "lng": 59.0399
+            }
+          },
+          {
+            "id": "geonames-496441",
+            "title": "Севастопольский",
+            "label": "Севастопольский — Ростовская Область",
+            "region": "Ростовская Область",
+            "position": {
+              "lat": 46.45,
+              "lng": 40.5
+            }
+          },
+          {
+            "id": "geonames-496442",
+            "title": "Севастопольская",
+            "label": "Севастопольская — Адыгея",
+            "region": "Адыгея",
+            "position": {
+              "lat": 44.3565,
+              "lng": 40.3053
+            }
+          }
+        ],
+        "partial": false,
+        "localSource": {
+          "provider": "geonames",
+          "scope": "local-pilot-only",
+          "precision": "settlement-centre",
+          "sourceDate": "2026-10-24",
+          "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "sourceUrl": "https://www.geonames.org/",
+          "semanticAccuracyCertified": false,
+          "omittedExactHomonymsPossible": false
+        }
+      }
+    }
+  ],
+  "viewports": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "status": "PASS"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "RUNNING"
+    }
+  ],
+  "browser": "154.0.8037.57",
+  "access": "PASS",
+  "reproduced": {
+    "foreignDisplay": true,
+    "technicalLabels": true
+  },
+  "route": {
+    "case": "Москва—Санкт-Петербург",
+    "httpStatus": 200,
+    "elapsedMs": 4484,
+    "body": {
+      "legs": [
+        {
+          "from": "Москва — Москва",
+          "to": "Санкт-Петербург — Санкт-Петербург",
+          "fast": {
+            "meters": 711430,
+            "seconds": 24889,
+            "m12StrictSpan": null,
+            "m12EndpointSpan": null,
+            "m11RoadEvidence": {
+              "provider": "valhalla",
+              "strictBlocks": [
+                {
+                  "provider": "valhalla",
+                  "legIndex": 0,
+                  "sourceStartIndex": 10,
+                  "sourceEndIndex": 16,
+                  "beginKm": 21.002,
+                  "endKm": 694.095,
+                  "lengthKm": 673.093,
+                  "beginCoordinate": [
+                    37.467541,
+                    55.883302
+                  ],
+                  "endCoordinate": [
+                    30.283506,
+                    59.832743
+                  ],
+                  "labels": [
+                    "М-11",
+                    "«Нева»"
+                  ]
+                }
+              ],
+              "candidateClues": [],
+              "malformedStrictCount": 0
+            },
+            "m4RoadBoundaries": {
+              "provider": "valhalla",
+              "targetRef": "М-4",
+              "routeSignature": "b547d2c89d66752afc3b4124c7feb38e7e0a8c5988a8bb63fe7dae6db5bb7eb1",
+              "precision": "route-maneuver",
+              "status": "not-detected",
+              "reason": "road_ref_not_detected",
+              "entry": null,
+              "exit": null
+            },
+            "quality": {
+              "status": "single",
+              "providers": [
+                "Valhalla"
+              ],
+              "distanceSpreadPercent": null,
+              "timeSpreadPercent": null,
+              "goldenDistanceDeviationPercent": null,
+              "message": "Выбран маршрут с минимальным временем"
+            },
+            "tolls": {
+              "amount": 5724,
+              "weekdayAmount": 5724,
+              "weekendAmount": 6544,
+              "period": "по тарифу отправления М-11 15–58 (monThu)",
+              "segments": [
+                "М-11 15–58: moscow → solnechnogorsk: 1130 ₽",
+                "М-11: p58 → p679",
+                "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽",
+                "ЗСД: КАД (юг) → наб. р. Екатерингофки · 600 ₽ (зоны 1–2)"
+              ],
+              "confidence": "matched",
+              "pricingStatus": "priced"
+            },
+            "tollValidation": {
+              "status": "toll",
+              "source": "Route toll composition",
+              "tollEdgeCount": 4,
+              "checkedEdgeCount": 4,
+              "wayIds": [],
+              "roadNames": [
+                "m11-15-58",
+                "m11-58-679",
+                "m11-679-684",
+                "zsd"
+              ],
+              "message": "Полный итог составлен из дорожных систем: m11-15-58, m11-58-679, m11-679-684, zsd",
+              "complete": true
+            },
+            "m4PvpPreview": {
+              "status": "unknown",
+              "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+              "roadBoundaries": {
+                "provider": "valhalla",
+                "targetRef": "М-4",
+                "routeSignature": "b547d2c89d66752afc3b4124c7feb38e7e0a8c5988a8bb63fe7dae6db5bb7eb1",
+                "precision": "route-maneuver",
+                "status": "not-detected",
+                "reason": "road_ref_not_detected",
+                "entry": null,
+                "exit": null
+              },
+              "roadKilometrage": {
+                "status": "unknown",
+                "direction": "unknown",
+                "diagnosticOnly": true,
+                "entry": {
+                  "status": "unknown",
+                  "reason": "km_boundary_evidence_missing",
+                  "position": null
+                },
+                "exit": {
+                  "status": "unknown",
+                  "reason": "km_boundary_evidence_missing",
+                  "position": null
+                },
+                "stops": [
+                  "km_boundary_evidence_unresolved"
+                ]
+              },
+              "priceRub": null,
+              "verifiedPriceCells": 0,
+              "candidateCount": 0,
+              "confirmedPvps": [],
+              "diagnosticOnly": true
+            },
+            "nationalTollCoverage": {
+              "catalogNetworkCount": 22,
+              "candidateNetworks": [
+                {
+                  "id": "m11",
+                  "name": "М-11 «Нева» (участки 58–679 км)",
+                  "status": "candidate_unverified",
+                  "hasReferenceFare": false,
+                  "operator": "Автодор"
+                }
+              ],
+              "catalogWithReferenceFares": 8,
+              "exactCrossingVerified": false,
+              "newFareApplied": false,
+              "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+              "m1m3GateAudit": {
+                "status": "candidate_needs_osm_operator_node_mapping",
+                "reason": "no_verifiable_m1_m3_booths",
+                "routeId": "selected-fast-route",
+                "candidateRoads": [],
+                "verifiedGates": [],
+                "unmappedPaidNodes": [],
+                "strictPriceAllowed": false
+              },
+              "m3Shadow": {
+                "status": "unknown",
+                "reason": "m3_full_three_gate_proof_incomplete",
+                "amountRub": null,
+                "diagnosticOnly": true,
+                "roadId": "m3"
+              },
+              "m1Shadow": {
+                "status": "unknown",
+                "reason": "m1_exact_gate_proof_not_verified",
+                "amountRub": null,
+                "roadId": "m1",
+                "diagnosticOnly": true
+              }
+            },
+            "pricingByVehicle": {
+              "standard": {
+                "corridor": {
+                  "id": "geometry"
+                },
+                "dualTariff": false,
+                "pricingSegments": [
+                  {
+                    "distanceKm": 711.43,
+                    "tariffType": "normal",
+                    "type": "normal",
+                    "from": "Москва — Москва",
+                    "to": "Санкт-Петербург — Санкт-Петербург",
+                    "ratePerKm": 25,
+                    "amount": 17786,
+                    "reason": "Обычный тариф",
+                    "reviewRequired": false
+                  }
+                ],
+                "totalPrice": 17786,
+                "reviewRequired": false,
+                "requiresSplit": false,
+                "multiplier": 1
+              },
+              "comfort": {
+                "corridor": {
+                  "id": "geometry"
+                },
+                "dualTariff": false,
+                "pricingSegments": [
+                  {
+                    "distanceKm": 711.43,
+                    "tariffType": "normal",
+                    "type": "normal",
+                    "from": "Москва — Москва",
+                    "to": "Санкт-Петербург — Санкт-Петербург",
+                    "ratePerKm": 30,
+                    "amount": 21343,
+                    "reason": "Обычный тариф",
+                    "reviewRequired": false
+                  }
+                ],
+                "totalPrice": 21343,
+                "reviewRequired": false,
+                "requiresSplit": false,
+                "multiplier": 1
+              },
+              "comfort_plus": {
+                "corridor": {
+                  "id": "geometry"
+                },
+                "dualTariff": false,
+                "pricingSegments": [
+                  {
+                    "distanceKm": 711.43,
+                    "tariffType": "normal",
+                    "type": "normal",
+                    "from": "Москва — Москва",
+                    "to": "Санкт-Петербург — Санкт-Петербург",
+                    "ratePerKm": 35,
+                    "amount": 24900,
+                    "reason": "Обычный тариф",
+                    "reviewRequired": false
+                  }
+                ],
+                "totalPrice": 24900,
+                "reviewRequired": false,
+                "requiresSplit": false,
+                "multiplier": 1
+              },
+              "minivan": {
+                "corridor": {
+                  "id": "geometry"
+                },
+                "dualTariff": false,
+                "pricingSegments": [
+                  {
+                    "distanceKm": 711.43,
+                    "tariffType": "normal",
+                    "type": "normal",
+                    "from": "Москва — Москва",
+                    "to": "Санкт-Петербург — Санкт-Петербург",
+                    "ratePerKm": 50,
+                    "amount": 35572,
+                    "reason": "Обычный тариф",
+                    "reviewRequired": false
+                  }
+                ],
+                "totalPrice": 35572,
+                "reviewRequired": false,
+                "requiresSplit": false,
+                "multiplier": 1
+              }
+            }
+          },
+          "free": null,
+          "freeCandidate": null
+        }
+      ],
+      "mode": "standard",
+      "automaticMode": "standard",
+      "specialEndpoint": false
+    }
+  },
+  "status": "BLOCKED_OR_FAILED",
+  "error": "TimeoutError: locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[placeholder=\"Откуда\"]').locator('xpath=ancestor::label[1]').locator('[role=\"status\"] button').filter({ hasText: 'Москва' }).first() to be visible\u001b[22m\n"
+}

@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:52:08.099Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 110,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 16,
+    "spec": {
+      "caseId": "single-khabarovsk-khabarovsk-to-vyazemsky",
+      "kind": "road",
+      "group": "single-khabarovsk"
+    }
+  },
+  "caseId": "single-khabarovsk-khabarovsk-to-vyazemsky",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-52-08-099Z-part16",
+  "parent": "5ff4809f6d3f447d3fcc592fd670c270cc9d3684"
+}

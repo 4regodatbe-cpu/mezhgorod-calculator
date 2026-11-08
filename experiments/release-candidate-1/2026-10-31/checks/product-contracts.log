@@ -1,0 +1,1926 @@
+✔ F2 switch is defaultOFF, local opt-in only, exact Preview branch, always denied in Production (0.814415ms)
+✔ F2 OFF is absent and leaves strict inputs byte-identical (0.552614ms)
+✔ F2 ON confirmed/estimated/partial remain separate and cannot mutate strict totals (5.286256ms)
+✔ F2 client view rejects numeric unknown and separates partial from full and approximate labels (3.961347ms)
+✔ F3 real React card renders confirmed and explicitly estimated toll-only states (58.916467ms)
+✔ F3 incomplete total cannot become a numeric full fare; input strict fields stay unchanged (4.811097ms)
+✔ F3 absent overlay keeps legacy unknown/manual UI and responsive markup; escaped warnings (17.70075ms)
+✔ F3 API keeps legacy contract OFF and accepts only a well-formed optional estimate ON (3.0481ms)
+✔ real four polygons split transitions, Crimea ordinary, transit excluded (164.005649ms)
+✔ rejects an anomalously long leg between required route controls (2.577232ms)
+✔ geographic route zone selects one corridor without forcing a mainland detour (12.697687ms)
+✔ uses real leg seconds, never proportional route duration (1.890429ms)
+✔ timing plan merges adjacent special administrative polygons as one tariff class (0.654366ms)
+✔ sub-meter boundary fragment creates no zero-length leg and counts whole leg conservatively (0.64788ms)
+✔ manual override survives calculations/activity, expires only after idle/new session (2.293665ms)
+✔ special route providers surface material distance disagreement (0.824162ms)
+✔ geographic selector puts the fastest valid route first (1.652341ms)
+✔ geographic selector ignores elapsed-time evidence and preserves toll uncertainty (2.677584ms)
+✔ geographic selector returns main and distinct alternative only from preferred corridor (1.659926ms)
+✔ geographic selector skips invalid durations and keeps toll/provider preference only for ties (0.296767ms)
+✔ route cards are ordered fastest to slowest without mutating the source list (0.420286ms)
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 106.354,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 9.15,
+      maxMs: 9.15
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.194,
+      maxMs: 0.194
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 29.39,
+      maxMs: 29.39
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.976,
+      maxMs: 4.976
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.906,
+      maxMs: 4.906
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 1.493,
+      maxMs: 1.493
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.849,
+      maxMs: 0.849
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.399,
+      maxMs: 2.399
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 20.047,
+      maxMs: 20.047
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.995,
+      maxMs: 0.995
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 14.984,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.098,
+      maxMs: 0.098
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.028,
+      maxMs: 0.028
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 13.547,
+      maxMs: 13.547
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.996,
+      maxMs: 1.996
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.986,
+      maxMs: 1.986
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 1.107,
+      maxMs: 1.107
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.879,
+      maxMs: 0.879
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.125,
+      maxMs: 1.125
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 9.793,
+      maxMs: 9.793
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.836,
+      maxMs: 0.836
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 5.622,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.152,
+      maxMs: 0.152
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.018,
+      maxMs: 0.018
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.955,
+      maxMs: 4.955
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.179,
+      maxMs: 1.179
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.171,
+      maxMs: 1.171
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.247,
+      maxMs: 0.247
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.152,
+      maxMs: 0.152
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.873,
+      maxMs: 0.873
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.733,
+      maxMs: 2.733
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.228,
+      maxMs: 0.228
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.16,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.064,
+      maxMs: 0.064
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.277,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.125,
+      maxMs: 0.125
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.476,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.1,
+      maxMs: 0.1
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.486,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.18,
+      maxMs: 0.18
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.169,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.071,
+      maxMs: 0.071
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.168,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.06,
+      maxMs: 0.06
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.382,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.048,
+      maxMs: 0.048
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 6.85,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.088,
+      maxMs: 0.088
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.017,
+      maxMs: 0.017
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 6.387,
+      maxMs: 6.387
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.19,
+      maxMs: 1.19
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.182,
+      maxMs: 1.182
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.443,
+      maxMs: 0.443
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.172,
+      maxMs: 0.172
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.551,
+      maxMs: 0.551
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.227,
+      maxMs: 4.227
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.114,
+      maxMs: 0.114
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 6.515,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.106,
+      maxMs: 0.106
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.058,
+      maxMs: 0.058
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 5.899,
+      maxMs: 5.899
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.086,
+      maxMs: 1.086
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.08,
+      maxMs: 1.08
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.295,
+      maxMs: 0.295
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.19,
+      maxMs: 0.19
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.496,
+      maxMs: 0.496
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.627,
+      maxMs: 3.627
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.156,
+      maxMs: 0.156
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 6.484,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.092,
+      maxMs: 0.092
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.019,
+      maxMs: 0.019
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 5.19,
+      maxMs: 5.19
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.65,
+      maxMs: 0.65
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.644,
+      maxMs: 0.644
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.261,
+      maxMs: 0.261
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.191,
+      maxMs: 0.191
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.49,
+      maxMs: 0.49
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.852,
+      maxMs: 3.852
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.114,
+      maxMs: 0.114
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 6.847,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.089,
+      maxMs: 0.089
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.017,
+      maxMs: 0.017
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 6.262,
+      maxMs: 6.262
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.645,
+      maxMs: 0.645
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.637,
+      maxMs: 0.637
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.269,
+      maxMs: 0.269
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.141,
+      maxMs: 0.141
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.005,
+      maxMs: 1.005
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.437,
+      maxMs: 4.437
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.166,
+      maxMs: 0.166
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 6.412,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.08,
+      maxMs: 0.08
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.02,
+      maxMs: 0.02
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 5.91,
+      maxMs: 5.91
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.636,
+      maxMs: 0.636
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.631,
+      maxMs: 0.631
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.232,
+      maxMs: 0.232
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.13,
+      maxMs: 0.13
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.438,
+      maxMs: 0.438
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.69,
+      maxMs: 4.69
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.118,
+      maxMs: 0.118
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 5.422,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.096,
+      maxMs: 0.096
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.022,
+      maxMs: 0.022
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.791,
+      maxMs: 4.791
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.963,
+      maxMs: 0.963
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.955,
+      maxMs: 0.955
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.504,
+      maxMs: 0.504
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.202,
+      maxMs: 0.202
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.381,
+      maxMs: 0.381
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.227,
+      maxMs: 3.227
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.204,
+      maxMs: 0.204
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 15.093,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.048,
+      maxMs: 0.048
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.029,
+      maxMs: 0.029
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 14.33,
+      maxMs: 14.33
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.784,
+      maxMs: 0.784
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.778,
+      maxMs: 0.778
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.289,
+      maxMs: 0.289
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.171,
+      maxMs: 0.171
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.545,
+      maxMs: 0.545
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 12.429,
+      maxMs: 12.429
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.426,
+      maxMs: 0.426
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 19.29,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.044,
+      maxMs: 0.044
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.016,
+      maxMs: 0.016
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 18.541,
+      maxMs: 18.541
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.576,
+      maxMs: 0.576
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.57,
+      maxMs: 0.57
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.258,
+      maxMs: 0.258
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.19,
+      maxMs: 0.19
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.357,
+      maxMs: 2.357
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 15.226,
+      maxMs: 15.226
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.367,
+      maxMs: 0.367
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 16.947,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.053,
+      maxMs: 0.053
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.016,
+      maxMs: 0.016
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 16.445,
+      maxMs: 16.445
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.758,
+      maxMs: 1.758
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.748,
+      maxMs: 1.748
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.158,
+      maxMs: 0.158
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.101,
+      maxMs: 0.101
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.478,
+      maxMs: 0.478
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 13.853,
+      maxMs: 13.853
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.158,
+      maxMs: 0.158
+    }
+  ],
+  stops: []
+}
+✔ V3 Anapa and Yalta requests expose numeric A289 price without confirmation labels (131.007175ms)
+✔ omitted departure date is normalized; malformed rates are rejected (7.5171ms)
+✔ invalid calendar and ambiguous dates fail before any external request (8.677322ms)
+✔ valid leap day and explicit timezone dates remain accepted (22.996214ms)
+✔ F4 actual V3 POST keeps legacy body OFF/ON and production-denies the optional layer in standard/dual modes (79.405975ms)
+✔ late response ignoring abort cannot replace a newer calculation (205.511039ms)
+✔ reset and unmount prevent late response commitment (46.974831ms)
+✔ clipboard failure is handled and never reports success (37.652599ms)
+✔ clipboard contains the same actual toll and warning as the displayed quote (18.456337ms)
+✔ F5 clipboard appends a labelled estimate without substituting the strict transfer total (22.808837ms)
+✔ a late clipboard completion cannot mark a reset quote copied (16.973044ms)
+✔ unknown road charge preserves a calculated special fare in copied text (22.542317ms)
+✔ V3 preserves safe HTTP errors, hides unexpected network details, and permits retry (82.791143ms)
+✔ V3 rejects malformed successful JSON with a safe incomplete-route message (15.881914ms)
+✔ V3 actual amount preserves night/holiday/mixed crossing price, instead of schedule maxima (2.708711ms)
+✔ unknown cannot become zero through the actual period (0.16832ms)
+✔ V3 accepts unknown toll only with null amounts and keeps a missing tariff distinct from free (0.921786ms)
+✔ valid complete and explicitly unavailable commercial fares pass the response guard (0.22359ms)
+✔ malformed nested money, arrays, route statistics and contradictory status fail before rendering (0.49684ms)
+✔ combined displayed fare and manual toll cannot overflow integer money (0.144511ms)
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 78.796,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.744,
+      maxMs: 3.744
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.241,
+      maxMs: 0.241
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 27.368,
+      maxMs: 27.368
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.911,
+      maxMs: 4.911
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.833,
+      maxMs: 4.833
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.936,
+      maxMs: 2.936
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.248,
+      maxMs: 2.248
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.642,
+      maxMs: 2.642
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 17.726,
+      maxMs: 17.726
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.303,
+      maxMs: 1.303
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 6.85,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.119,
+      maxMs: 0.119
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.022,
+      maxMs: 0.022
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 5.945,
+      maxMs: 5.945
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.389,
+      maxMs: 1.389
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.379,
+      maxMs: 1.379
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.021,
+      maxMs: 1.021
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.396,
+      maxMs: 0.396
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.958,
+      maxMs: 0.958
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.421,
+      maxMs: 3.421
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.352,
+      maxMs: 0.352
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 4.942,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.137,
+      maxMs: 0.137
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.021,
+      maxMs: 0.021
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.348,
+      maxMs: 4.348
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.912,
+      maxMs: 0.912
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.76,
+      maxMs: 0.76
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.629,
+      maxMs: 0.629
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.269,
+      maxMs: 0.269
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.472,
+      maxMs: 0.472
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.788,
+      maxMs: 2.788
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.137,
+      maxMs: 0.137
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 8.742,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.095,
+      maxMs: 0.095
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.013,
+      maxMs: 0.013
+    },
+    {
+      stage: 'special_options',
+      calls: 1,
+      errors: 0,
+      totalMs: 5.838,
+      maxMs: 5.838
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.985,
+      maxMs: 0.985
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.96,
+      maxMs: 0.96
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.399,
+      maxMs: 0.399
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.57,
+      maxMs: 0.57
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.428,
+      maxMs: 1.428
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.249,
+      maxMs: 0.249
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 4.84,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.144,
+      maxMs: 0.144
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.016,
+      maxMs: 0.016
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.328,
+      maxMs: 4.328
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.656,
+      maxMs: 0.656
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.647,
+      maxMs: 0.647
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.429,
+      maxMs: 0.429
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.129,
+      maxMs: 0.129
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.474,
+      maxMs: 0.474
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.947,
+      maxMs: 2.947
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.109,
+      maxMs: 0.109
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 4.901,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.054,
+      maxMs: 0.054
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.014,
+      maxMs: 0.014
+    },
+    {
+      stage: 'special_options',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.27,
+      maxMs: 4.27
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.837,
+      maxMs: 0.837
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.822,
+      maxMs: 0.822
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.38,
+      maxMs: 0.38
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.432,
+      maxMs: 0.432
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1,
+      maxMs: 1
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.068,
+      maxMs: 0.068
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 502,
+  handlerElapsedMs: 2.516,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.123,
+      maxMs: 0.123
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.014,
+      maxMs: 0.014
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 1,
+      totalMs: 2.093,
+      maxMs: 2.093
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.071,
+      maxMs: 2.071
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 1,
+      totalMs: 2.007,
+      maxMs: 2.007
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 1.895,
+      maxMs: 1.895
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 1.723,
+      maxMs: 1.723
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 4.361,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.136,
+      maxMs: 0.136
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.013,
+      maxMs: 0.013
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.764,
+      maxMs: 3.764
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.467,
+      maxMs: 0.467
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.382,
+      maxMs: 0.382
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.274,
+      maxMs: 0.274
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.109,
+      maxMs: 0.109
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.524,
+      maxMs: 0.524
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.592,
+      maxMs: 2.592
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.173,
+      maxMs: 0.173
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 99.638,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.124,
+      maxMs: 0.124
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.015,
+      maxMs: 0.015
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 96.227,
+      maxMs: 96.227
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 11.195,
+      maxMs: 11.195
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 11.182,
+      maxMs: 11.182
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 9.807,
+      maxMs: 9.807
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.22,
+      maxMs: 0.22
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.823,
+      maxMs: 3.823
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 61.773,
+      maxMs: 61.773
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.934,
+      maxMs: 2.934
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 3.874,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.12,
+      maxMs: 0.12
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.052,
+      maxMs: 0.052
+    },
+    {
+      stage: 'special_options',
+      calls: 1,
+      errors: 0,
+      totalMs: 3.108,
+      maxMs: 3.108
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.594,
+      maxMs: 0.594
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.585,
+      maxMs: 0.585
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.342,
+      maxMs: 0.342
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.336,
+      maxMs: 0.336
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.993,
+      maxMs: 0.993
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.091,
+      maxMs: 0.091
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 502,
+  handlerElapsedMs: 6.058,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.071,
+      maxMs: 0.071
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.013,
+      maxMs: 0.013
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 1,
+      totalMs: 5.775,
+      maxMs: 5.775
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.467,
+      maxMs: 4.467
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 4.457,
+      maxMs: 4.457
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.299,
+      maxMs: 0.299
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.162,
+      maxMs: 0.162
+    }
+  ],
+  stops: []
+}
+✔ fastest OSRM geometry owns the A289 quote; slower Valhalla evidence cannot replace it (87.549787ms)
+✔ ordinary V3 skips malformed fast distance and keeps the valid provider route (8.201293ms)
+✔ a failed upstream provider does not suppress a valid competing route (6.196174ms)
+✔ special-zone V3 filters invalid time before choosing and pricing the winning route (10.476722ms)
+✔ equal ETA keeps provider order in both ordinary and special V3 chains (12.152737ms)
+✔ route candidate requires finite positive totals, valid coordinates and matching endpoints (0.311351ms)
+✔ incomplete geometry never becomes a straight line priced as a real road (3.363576ms)
+✔ unresolved A289 vector stays unknown instead of reviving a legacy numeric total (5.213476ms)
+✔ ordinary V3 excludes the recorded faster reentry before ranking and validates only the admitted OSRM geometry (103.181517ms)
+✔ special-zone V3 uses the same admission guard before ETA and cannot promote an invalid reentry (5.192583ms)
+✔ ordinary V3 reports routing unavailable when only the forbidden reentry is returned (6.816088ms)
+ℹ tests 52
+ℹ suites 0
+ℹ pass 52
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4289.848703

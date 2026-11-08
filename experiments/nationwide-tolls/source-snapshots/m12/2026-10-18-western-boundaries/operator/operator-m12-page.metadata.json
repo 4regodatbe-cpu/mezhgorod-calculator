@@ -1,0 +1,44 @@
+{
+  "url": "https://russianhighways.ru/for_drivers/?tab=6",
+  "startedAt": "2026-10-17T21:10:49.199Z",
+  "purpose": "Final planned operator page read: inspect original HTML for embedded boundary coordinates/identities",
+  "pageReadNumber": 4,
+  "maxPageReads": 4,
+  "status": 200,
+  "finalUrl": "https://russianhighways.ru/for_drivers/?tab=6",
+  "bytes": 89907,
+  "sha256": "2c5a33fc5d6a163a624e094fcd86e2f5ede12e38daf9ed0b5f0a4be53bed44d7",
+  "bodyFile": "operator-m12-page.html.gz",
+  "boundaryNeedleContexts": [
+    {
+      "needle": "421",
+      "context": "27h-.49v-.54h.49v.27zm.771 0v.27h-.49v-.54h.49v.27zm.818 0v.27h-.49v-.54h.49v.27zm-27.41 1.28v.635h.421v-1.27h.398v1.27h.49v-1.27h.304v1.27h.468v-1.27h.303v1.27h.491v-1.27h.396l.007.63.006.628.24.006.239.007v-1.27h.304v1.269h.467v-1.27h.304v1.27h.49v-1.27h.397l.006.63.006.628.24.006.24.007v-1.27h.303v1.27l.24-.007.24-.006.005-.629.007-.628h.28v1.26"
+    },
+    {
+      "needle": "М-12",
+      "context": "main__drop-item\">\n                        <a class=\"nav-main__drop-link\" href=\"/for_drivers/?tab=6\">М-12 «Восток»</a>\n                    </div>\n                \n            \n        \n        \n    \n        \n        \n            \n                                    <div class=\"nav-main__drop-item\">\n                        <a class=\"nav-main__drop-li"
+    }
+  ],
+  "scriptSources": [
+    "/app/js/jquery-3.4.1.min.js",
+    "/app/js/plugins/jquery-file-upload/jquery.ui.widget.js",
+    "/app/js/plugins/jquery-file-upload/jquery.iframe-transport.js",
+    "/app/js/plugins/jquery-file-upload/jquery.fileupload.js",
+    "/app/js/plugins/jquery-file-upload/jquery.fileupload-process.js",
+    "/app/js/plugins/jquery-file-upload/jquery.fileupload-validate.js",
+    "/app/js/plugins/accordion/jquery.responsiveTabs.min.js",
+    "/app/js/plugins/inputmask/jquery.inputmask.bundle.min.js",
+    "/app/js/plugins/swiper/swiper.min.js",
+    "/app/js/plugins/svg4everybody/svg4everybody.min.js",
+    "/app/js/plugins/fancybox/jquery.fancybox.min.js",
+    "/app/js/plugins/select2/select2.full.min.js",
+    "/app/js/plugins/jsshare/jsshare.js?v=2",
+    "/app/js/plugins/scrollbar/jquery.mCustomScrollbar.concat.min.js",
+    "/app/js/plugins/countdown/jquery.countdown.min.js"
+  ],
+  "bodyCompression": "gzip",
+  "storedSha256": "6305f1df65012980b2175f1ea0ad2fb95153c760a84dec362fe34690db07c022",
+  "storedBytes": 22778,
+  "identitiesProven": 0,
+  "numeric421ContextIsSvgNotChainage": true
+}

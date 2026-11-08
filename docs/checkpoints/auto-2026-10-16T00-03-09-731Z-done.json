@@ -1,0 +1,126 @@
+{
+  "at": "2026-10-16T00:03:09.731Z",
+  "phase": "DONE",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 74,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 6,
+    "spec": {
+      "caseId": "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
+      "kind": "road",
+      "group": "max-chain-m4-ckad-m11-zsd"
+    }
+  },
+  "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
+  "batch": {
+    "code": 0,
+    "signal": null
+  },
+  "report": {
+    "code": 0,
+    "signal": null
+  },
+  "inventory": {
+    "code": 0,
+    "signal": null
+  },
+  "evidence": {
+    "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
+    "startedAt": "2026-10-16T00:02:38.744Z",
+    "status": "audited",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-sest-to-rostov/live-2026-10-15T09-00-00-03-00-2026-10-16T00-02-55-579Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-sest-to-rostov/2026-10-16T00-02-55-469Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-02-56-198Z.json",
+    "sameDateParity": true,
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-02-56-811Z.json",
+    "replayErrors": [],
+    "traceComplete": true,
+    "roadCoverage": {
+      "expectedRoads": [
+        "m4",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "provenRoads": [
+        "zsd",
+        "m11",
+        "m4"
+      ],
+      "missingExpectedRoads": [
+        "ckad"
+      ],
+      "status": "expected-road-not-proven"
+    },
+    "weekday": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: zsd",
+        "zsd: zsd_trip_extends_outside_reviewed_zone1"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "weekend": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: zsd",
+        "zsd: zsd_trip_extends_outside_reviewed_zone1"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "components": [
+      {
+        "id": "m4",
+        "amount": 3810,
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "m11-15-58",
+        "amount": 1130,
+        "reason": "m11_head_ready_direct_pair_at_departure"
+      },
+      {
+        "id": "m11-58-679",
+        "amount": 3900,
+        "reason": "matrix dated selected-route M11 direct pair"
+      },
+      {
+        "id": "m11-679-684",
+        "amount": 94,
+        "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+      },
+      {
+        "id": "zsd",
+        "amount": null,
+        "reason": "zsd_trip_extends_outside_reviewed_zone1"
+      }
+    ],
+    "finishedAt": "2026-10-16T00:02:56.830Z"
+  },
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-02-37-408Z-part6",
+  "parent": "e07b6853a1f28ec5af24dba674ebd1546a6bad14"
+}

@@ -1,0 +1,3 @@
+# UI-10 — одноразовая прокрутка dual, LOCAL
+
+01.11.2026 МСК. Base `f495c9204a30220311319cb50b7e91e8e36577b6`. На V1 Release эффект реагирует только на переход `standard→dual` после фактического React render (rAF), прокручивает к форме; не реагирует на ставки/обычные re-render, отменяет frame при cleanup, уважает reduced-motion и не вмешивается при активном текстовом вводе. Переключатель mode общий для ручного и автоматического включения; V2 не менялся. Статический контракт + SSR form15/15, TypeScript/scoped lint/diff PASS. Фактическая browser проверка с клавиатурой и разными высотами NOT_RUN; поэтому поведение остаётся provisional до Preview. Только local commit/bundle, no push.

@@ -1,0 +1,301 @@
+{
+  "parent": "1b9e70731087949f46be5e454b52878ea827b6c6",
+  "caseId": "triple-m4-m11-zsd-prim-to-voronezh",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-prim-to-voronezh/2026-10-16T02-19-07-294Z-capture.json.gz",
+  "captureSha256": "d18c078fdca15034c81382d997906bf81ad42d90f98e25f6b4fc3c3da4384a7a",
+  "provider": "Valhalla",
+  "execution": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--import",
+        "./scripts/register-ts-paths.mjs",
+        "experiments/nationwide-tolls/scripts/run-systemic-route-case.mjs",
+        "--replay",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-prim-to-voronezh/2026-10-16T02-19-07-294Z-capture.json.gz",
+        "2026-10-15T09:00:00+03:00"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"triple-m4-m11-zsd-prim-to-voronezh\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":1271240,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"понедельник–четверг\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: m11-58-679, zsd, unknown-paid-road\",\"m11-58-679: only_one_verified_boundary_crossing\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\",\"unknown-paid-road: unmapped_selected_route_paid_booth\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m4\",\"amount\":1830,\"reason\":\"matrix exact selected-route M4 vector\"},{\"id\":\"m11-58-679\",\"amount\":null,\"reason\":\"only_one_verified_boundary_crossing\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"},{\"id\":\"unknown-paid-road\",\"amount\":null,\"reason\":\"unmapped_selected_route_paid_booth\"}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--import",
+        "./scripts/register-ts-paths.mjs",
+        "experiments/nationwide-tolls/scripts/run-systemic-route-case.mjs",
+        "--replay",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-prim-to-voronezh/2026-10-16T02-19-07-294Z-capture.json.gz",
+        "2026-10-17T09:00:00+03:00"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"caseId\":\"triple-m4-m11-zsd-prim-to-voronezh\",\"mode\":\"offline-recorded-response-replay\",\"provider\":\"Valhalla\",\"routeMeters\":1271240,\"traceComplete\":true,\"tolls\":{\"amount\":null,\"weekdayAmount\":null,\"weekendAmount\":null,\"period\":\"пятница–воскресенье\",\"segments\":[\"Обнаружены, но не полностью оценены платные системы: m11-58-679, zsd, unknown-paid-road\",\"m11-58-679: only_one_verified_boundary_crossing\",\"zsd: zsd_trip_extends_outside_reviewed_zone1\",\"unknown-paid-road: unmapped_selected_route_paid_booth\"],\"confidence\":\"none\",\"priceConfirmation\":\"unconfirmed\",\"displayLabel\":null,\"pricingStatus\":\"unknown\"},\"detectedRoadComponents\":[{\"id\":\"m4\",\"amount\":2300,\"reason\":\"matrix exact selected-route M4 vector\"},{\"id\":\"m11-58-679\",\"amount\":null,\"reason\":\"only_one_verified_boundary_crossing\"},{\"id\":\"zsd\",\"amount\":null,\"reason\":\"zsd_trip_extends_outside_reviewed_zone1\"},{\"id\":\"unknown-paid-road\",\"amount\":null,\"reason\":\"unmapped_selected_route_paid_booth\"}]}\n",
+      "stderr": ""
+    }
+  ],
+  "scope": {
+    "ways": [
+      "1053072562",
+      "1090759975",
+      "1120339785",
+      "119176958",
+      "123232667",
+      "123232674",
+      "1257246768",
+      "1257246769",
+      "1257246773",
+      "1257246774",
+      "129780705",
+      "130062824",
+      "130068395",
+      "139658546",
+      "165035750",
+      "172999960",
+      "183912265",
+      "183912266",
+      "183912269",
+      "183921952",
+      "183921953",
+      "189271976",
+      "222395953",
+      "233006897",
+      "27462206",
+      "350477987",
+      "351741888",
+      "375574640",
+      "375646973",
+      "397223750",
+      "400111352",
+      "400111353",
+      "46948905",
+      "493643653",
+      "589047640",
+      "589047641",
+      "589047643",
+      "589047648",
+      "688149996",
+      "721628539",
+      "721628542",
+      "721628545",
+      "721839717",
+      "736306923",
+      "736881674",
+      "80056721",
+      "80056729",
+      "80056747",
+      "81348980",
+      "944399839"
+    ],
+    "gates": [
+      "1766158781",
+      "933975069"
+    ]
+  },
+  "sameReviewedScopeCase": "pair-m11-zsd-prim-to-moscow",
+  "status": "source_gated_same_reviewed_zsd_scope",
+  "missing": [
+    "m11-58-679",
+    "unknown-paid-road",
+    "zsd"
+  ],
+  "uniqueZsdWays": [
+    "1053072562",
+    "1090759975",
+    "1120339785",
+    "119176958",
+    "123232667",
+    "123232674",
+    "1257246768",
+    "1257246769",
+    "1257246773",
+    "1257246774",
+    "129780705",
+    "130062824",
+    "130068395",
+    "139658546",
+    "165035750",
+    "172999960",
+    "183912265",
+    "183912266",
+    "183912269",
+    "183921952",
+    "183921953",
+    "189271976",
+    "222395953",
+    "233006897",
+    "27462206",
+    "350477987",
+    "351741888",
+    "375574640",
+    "375646973",
+    "397223750",
+    "400111352",
+    "400111353",
+    "46948905",
+    "493643653",
+    "589047640",
+    "589047641",
+    "589047643",
+    "589047648",
+    "688149996",
+    "721628539",
+    "721628542",
+    "721628545",
+    "721839717",
+    "736306923",
+    "736881674",
+    "80056721",
+    "80056729",
+    "80056747",
+    "81348980",
+    "944399839"
+  ],
+  "selectedZsdBooths": [
+    {
+      "osmNodeId": "1766158781",
+      "wayId": "355755817",
+      "roadNames": [],
+      "edgeIndex": 0,
+      "edgeToll": true,
+      "beginShapeIndex": 170,
+      "endShapeIndex": 171
+    },
+    {
+      "osmNodeId": "933975069",
+      "wayId": "375574640",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 2,
+      "edgeToll": true,
+      "beginShapeIndex": 447,
+      "endShapeIndex": 448
+    }
+  ],
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-prim-to-voronezh/replay-2026-10-15T09-00-00-03-00-2026-10-16T17-36-50-619Z.json",
+      "sha256": "b6e451f4b8c5f453afb0ab976b3dd11ba6e9204bbf076271976c64566b8e825d",
+      "caseId": "triple-m4-m11-zsd-prim-to-voronezh",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "provider": "Valhalla",
+      "captureSha256": "d18c078fdca15034c81382d997906bf81ad42d90f98e25f6b4fc3c3da4384a7a",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m11-58-679, zsd, unknown-paid-road",
+          "m11-58-679: only_one_verified_boundary_crossing",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1",
+          "unknown-paid-road: unmapped_selected_route_paid_booth"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "detectedRoadComponents": [
+        {
+          "id": "m4",
+          "amount": 1830,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": null,
+          "reason": "only_one_verified_boundary_crossing"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        },
+        {
+          "id": "unknown-paid-road",
+          "amount": null,
+          "reason": "unmapped_selected_route_paid_booth"
+        }
+      ],
+      "audit": {
+        "status": "unknown",
+        "missing": [
+          "m11-58-679",
+          "zsd",
+          "unknown-paid-road"
+        ]
+      },
+      "traceComplete": true,
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      }
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-prim-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T17-36-51-522Z.json",
+      "sha256": "eb1eee27cf7a9179e87a22842b4d71c18c7b3038afca4b2f2a1ee0d6bb9b28f1",
+      "caseId": "triple-m4-m11-zsd-prim-to-voronezh",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "provider": "Valhalla",
+      "captureSha256": "d18c078fdca15034c81382d997906bf81ad42d90f98e25f6b4fc3c3da4384a7a",
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m11-58-679, zsd, unknown-paid-road",
+          "m11-58-679: only_one_verified_boundary_crossing",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1",
+          "unknown-paid-road: unmapped_selected_route_paid_booth"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "detectedRoadComponents": [
+        {
+          "id": "m4",
+          "amount": 2300,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "m11-58-679",
+          "amount": null,
+          "reason": "only_one_verified_boundary_crossing"
+        },
+        {
+          "id": "zsd",
+          "amount": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        },
+        {
+          "id": "unknown-paid-road",
+          "amount": null,
+          "reason": "unmapped_selected_route_paid_booth"
+        }
+      ],
+      "audit": {
+        "status": "unknown",
+        "missing": [
+          "m11-58-679",
+          "zsd",
+          "unknown-paid-road"
+        ]
+      },
+      "traceComplete": true,
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      }
+    }
+  ],
+  "note": "Case75: both profiles exit0/complete/SHA/departure verified. Status source_gated_same_reviewed_zsd_scope; whole-route missing m11-58-679,unknown-paid-road,zsd. Scope equivalence reuses diagnosis only, never a fare.",
+  "at": "2026-10-16T17:36:52.511Z",
+  "checkpoint": "docs/checkpoints/zsd-2026-10-16T17-36-52-510Z.md",
+  "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T17-36-52-510Z.json",
+  "overallPlanPercent": 90
+}

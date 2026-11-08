@@ -1,0 +1,81 @@
+{
+  "startedAt": "2026-10-16T00:18:03.319Z",
+  "scope": {
+    "region": null,
+    "group": "single-ckad",
+    "caseId": "single-ckad-ramenskoe-to-klin",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "single-ckad-ramenskoe-to-klin",
+      "startedAt": "2026-10-16T00:18:03.321Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/live-2026-10-15T09-00-00-03-00-2026-10-16T00-18-05-804Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-ckad-ramenskoe-to-klin/2026-10-16T00-18-05-785Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-18-06-175Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-18-06-528Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "ckad"
+        ],
+        "provenRoads": [
+          "m11"
+        ],
+        "missingExpectedRoads": [
+          "ckad"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m11-58-679, unknown-paid-road",
+          "m11-58-679: only_one_verified_boundary_crossing",
+          "unknown-paid-road: unmapped_selected_route_paid_booth"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m11-58-679, unknown-paid-road",
+          "m11-58-679: only_one_verified_boundary_crossing",
+          "unknown-paid-road: unmapped_selected_route_paid_booth"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m11-58-679",
+          "amount": null,
+          "reason": "only_one_verified_boundary_crossing"
+        },
+        {
+          "id": "unknown-paid-road",
+          "amount": null,
+          "reason": "unmapped_selected_route_paid_booth"
+        }
+      ],
+      "finishedAt": "2026-10-16T00:18:06.546Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T00:18:06.548Z"
+}

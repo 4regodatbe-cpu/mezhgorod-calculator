@@ -1,0 +1,27 @@
+{
+  "atUtc": "2026-10-17T14:51:42.051Z",
+  "input": {
+    "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/2026-10-16T01-22-12-554Z-capture.json.gz",
+    "sha256": "c7fe6e20ebaf1854e7dba96db30bac54b2c929be4482f9f2144c686b17d104a4"
+  },
+  "routeSha256": "5a64525ac31cece284d759d57ea520269c3b0bbf7e14219f718d731a19c6cd2a",
+  "geometrySha256": "d29cc3c89e493835aa215f8254cad83f225a235b9803a390f734018a50a6e4a3",
+  "candidates": [
+    {
+      "provider": "Valhalla",
+      "admitted": false,
+      "seconds": 44435
+    },
+    {
+      "provider": "OSRM",
+      "admitted": true,
+      "seconds": 52323
+    },
+    {
+      "provider": "BRouter",
+      "admitted": false,
+      "seconds": 49626
+    }
+  ]
+}

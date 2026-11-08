@@ -1,0 +1,7 @@
+[243561:243561:1030/065839.590078:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:208] open /home/agent/.config/chromium/Crash Reports/settings.dat: Read-only file system (30)
+[243561:243561:1030/065839.590190:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:208] open /home/agent/.config/chromium/Crash Reports/settings.dat: Read-only file system (30)
+[243561:243561:1030/065839.594680:FATAL:sandbox/linux/suid/client/setuid_sandbox_host.cc:172] The SUID sandbox helper binary was found, but is not configured correctly. Rather than run without sandboxing I'm aborting now. You need to make sure that /usr/lib/chromium/chrome-sandbox is owned by root and has mode 4755.
+[1030/065839.602579:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:208] open /home/agent/.config/chromium/Crash Reports/settings.dat: Read-only file system (30)
+[1030/065839.603030:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:153] open /home/agent/.config/chromium/Crash Reports/new/29a81b77-cfa7-4273-bd57-c5b5d530ed0e.dmp: Read-only file system (30)
+[1030/065839.603049:ERROR:third_party/crashpad/crashpad/handler/linux/crash_report_exception_handler.cc:209] PrepareNewCrashReport failed
+[243583:243583:0100/000000.643963:ERROR:content/zygote/zygote_linux.cc:662] write: Broken pipe (32)

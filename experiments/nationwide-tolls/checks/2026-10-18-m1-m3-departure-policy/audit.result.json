@@ -1,0 +1,14 @@
+{
+  "name": "audit",
+  "command": [
+    "npm",
+    "run",
+    "test:audit"
+  ],
+  "startedAtUtc": "2026-10-18T05:44:32.428551+00:00",
+  "elapsedSeconds": 10.051,
+  "exitCode": 0,
+  "status": "PASS",
+  "log": "experiments/nationwide-tolls/checks/2026-10-18-m1-m3-departure-policy/audit.log.gz",
+  "uncompressedSha256": "a7356d2b09eb6f9e755233dd6b21b9e6d8c8274ab6b6752645c45be37c1a952e"
+}

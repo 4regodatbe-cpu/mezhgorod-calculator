@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:38:22.888Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 90,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 15,
+    "spec": {
+      "caseId": "pair-m4-a289-domodedovo-to-kerch",
+      "kind": "road",
+      "group": "pair-m4-a289"
+    }
+  },
+  "caseId": "pair-m4-a289-domodedovo-to-kerch",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-38-22-887Z-part15",
+  "parent": "044abce7ec9e979a77fddaa1e89861c665d668a7"
+}

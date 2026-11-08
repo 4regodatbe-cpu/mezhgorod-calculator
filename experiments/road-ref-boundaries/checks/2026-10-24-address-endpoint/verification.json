@@ -1,0 +1,38 @@
+{
+  "sourceCommit": "479f9dc636c5330d48a9750eef8c8fca20b682c0",
+  "status": "deterministic-endpoint-regression-PASS",
+  "focused": {
+    "pass": 48,
+    "fail": 0
+  },
+  "fullAudit": {
+    "pass": 864,
+    "fail": 0,
+    "skipped": 0
+  },
+  "quoteApi": "PASS",
+  "eslintExit": 0,
+  "webpackTypeScriptBuildExit": 0,
+  "static": "16/16",
+  "liveRequests": 0,
+  "mockUpstreamFetches": 40,
+  "peakUpstream": 2,
+  "initialFailure": "fixture did not recognize lowercase bbox query variants; fixed fixture, retained initial log, assertions unchanged",
+  "externalAvailability": "UNVERIFIED",
+  "mobileBOnlyReproduction": "UNVERIFIED",
+  "endToEnd10s": "UNVERIFIED",
+  "sha256": {
+    "scripts/address-search-endpoint.test.ts": "5d9066bc81d51ef2a80a4620f979743fa6ab0f77365c6652515b67538c974ca3",
+    "lib/photon-request-pool.ts": "532d11a52455e1d9fcfc456a0477d6afefb355b64e054f6183140fb51d3b9a21",
+    "lib/address-search-service.ts": "aeaeef4a2c171c7e143ba1bba549ba785137fd216a642ff4cedfaf26f72f64b3",
+    "lib/photon-fetch.ts": "153faab3b918fa748e2e048eaf16811a3edc7ab29093f65b7fd1dae0495037d7",
+    "app/api/suggest/route.ts": "c45ee1e6b666d8c55d3cd3eec99c72c0442ebafa914457c222875c318fcc1971",
+    "data/toll-feature-switches.json": "7deffdc1d4c1ea71c9f48731c83de4175efdb879cd12e3c309ba1e0b31070ca1",
+    "experiments/road-ref-boundaries/checks/2026-10-24-address-endpoint/build.log": "f76e7426e9fc495dbf8b1af0e16c6a59695782f53230d1f44c1b95570ba291e4",
+    "experiments/road-ref-boundaries/checks/2026-10-24-address-endpoint/eslint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experiments/road-ref-boundaries/checks/2026-10-24-address-endpoint/focused.log": "8fb8fc8c5544797de8da8815faff9088f741aab3ff8ad2db90762b4001de1e7d",
+    "experiments/road-ref-boundaries/checks/2026-10-24-address-endpoint/full-audit.log": "68072ecd6a40c2bcd8806a1fda63aba73746802f54094453a6bd104a345507eb",
+    "experiments/road-ref-boundaries/checks/2026-10-24-address-endpoint/initial-fixture-failure.log": "053b0219159af94a06c4639acdc654a51de50cf77d6fc3fcf6fa6198d7fb96cb",
+    "experiments/road-ref-boundaries/checks/2026-10-24-address-endpoint/sequence.json": "df482ddfc6ddab7161eb89fcc581c72049ce89fb76ba8e54e1def7be89d540ec"
+  }
+}

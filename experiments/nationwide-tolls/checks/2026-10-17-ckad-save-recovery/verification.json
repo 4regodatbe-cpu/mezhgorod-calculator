@@ -1,0 +1,434 @@
+{
+  "status": "PASS",
+  "sourceRemote": "a666fb4887ea54a328a29fb3bfc2dfa5102e5499",
+  "pendingCommit": "a9f2bf98106bc798cc3536a7c920cd2c4dbd10a2",
+  "files": [
+    {
+      "path": "docs/WORK_STATE.md",
+      "blob": "9b3dcd7fed24459f03cef58c748500f4eb1a2f49",
+      "bytes": 58079,
+      "sha256": "6ebc5a3abf4f9891f671fe2c9ed8b7edb11c1a2182bc126439722b692c1b93c2"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-17-212016-ckad-m11-m12-DONE.md",
+      "blob": "7a761691f71038f651ce3b7ca0d60ceab3a387e3",
+      "bytes": 7831,
+      "sha256": "40306526e6a4344f4f85821cf3b1c67ede2199c27551b80683594c670d0ca127"
+    },
+    {
+      "path": "experiments/nationwide-tolls/NEXT_STEPS.md",
+      "blob": "8926227d932a623b95279d26684f6d673d2630b9",
+      "bytes": 228831,
+      "sha256": "af49ded70b76864b79e3a16aaa5fe4b125a23198ef728a1fd7bea4202efe629f"
+    },
+    {
+      "path": "experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json",
+      "blob": "3641a61bfff1001f99990fec55131a0a9075e474",
+      "bytes": 223077,
+      "sha256": "30b453b7286edc9913b33f1e1145fbd8e97580f04a5cd13e9ba200a6b3fedf62"
+    },
+    {
+      "path": "experiments/nationwide-tolls/WORK_LOG.md",
+      "blob": "7988c7b3af6efad4369fa416556f025828011f54",
+      "bytes": 312952,
+      "sha256": "a039619a21984272c1631e36a6f4d463910b94faeaa882b5176dc1b14102fdef"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/README.md",
+      "blob": "255a37d36c84f59a67184e84caf25c787f9230b9",
+      "bytes": 12308,
+      "sha256": "da2c6830f2804694ff13223ce7a327546dd2ed8d3ee4cc668fbd9665af9e748e"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/audit.log.gz",
+      "blob": "49c1c6b1e6596e53f92e04dc62731f34bdb617e2",
+      "bytes": 22616,
+      "sha256": "2a95d8186d02d57198f25f40a3bcaeec15d929844615631dd29a4c39062a1087"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/build.log.gz",
+      "blob": "25c9997459d8f8e24429a34a13a816e3b28cecad",
+      "bytes": 483,
+      "sha256": "3bc250bc56a58bee67f15a63eb2509d5b6fe916a7ffe30e0a62f17c263cdfe2a"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/cases/max-chain-m12-ckad-m11-zsd-prim-to-arzamas.json",
+      "blob": "b3ed00fef943bb9130d2fab58fb61a327218feb2",
+      "bytes": 172735,
+      "sha256": "a46dbd4632b0d88edbaa4216be2bd2beb2dc3b04b273c73a4060fb40bb84bd88"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/cases/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary.json",
+      "blob": "2d458cc3bac54cf782983b8d42c2070d294ed987",
+      "bytes": 153112,
+      "sha256": "2f9f8b0e2e1085fc3f4dc496ee30c077155124f1ca4c8db8e4fe598aaf21fd83"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/ci-observed-during-work.json",
+      "blob": "c8b06640b344c91e912fb91c4b948be5efe6d276",
+      "bytes": 707,
+      "sha256": "658dece71e65c4ef34084524d4b4d652b10b061a86ade611514cdb3c7f1e3110"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/eslint.log.gz",
+      "blob": "d4b9926df0b7defceb6caf0b474c4a190c5ca8f0",
+      "bytes": 20,
+      "sha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/focused-before-network-guard-check.json",
+      "blob": "cd362da2b68e67b612ae8730a0eecf0bb3c49a5d",
+      "bytes": 195,
+      "sha256": "5d3c8b6ecb45ce172b0faaed96bb82f5bc496fcb7aed3fae0e58a7246bd5bd28"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/focused-before-network-guard.log.gz",
+      "blob": "607f9ec2f7d5da2a0b68df1db1d26c2b3809628d",
+      "bytes": 631,
+      "sha256": "13c17d08f61cf4af787a111fbcfa8bbaac605910f1322e2a927aedf763bba8dd"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/focused-check.json",
+      "blob": "fcaaa8ad64282ca011f885fc074752c09e5d34fa",
+      "bytes": 272,
+      "sha256": "d4987d12b0d48c9cdb01d45651f79e954f042da1daabd01b4f061851eb584f42"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/focused-initial-check.json",
+      "blob": "9bd6a56373543906d7afe7f85d6a0461b1a17f82",
+      "bytes": 195,
+      "sha256": "7e55357891b686fcc1512d7c58cee1bac2320e1be6d93eac0e20d5f5515bb1bd"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/focused-initial.log.gz",
+      "blob": "9eef6a2150b42361d9fe6d8ebbe4b0fe4c4225a4",
+      "bytes": 1116,
+      "sha256": "b709377701c5430295f64c2461b286ff61c79bc30ba77a7c247a739a40f89c91"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/focused.log.gz",
+      "blob": "3a71450c3b6bf701b6e997e9984d74492532ff34",
+      "bytes": 632,
+      "sha256": "a16eb9f3d145c7a5b4576c4eacd7a3256a8f8a90e28583b812471a8c3c00099d"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/initial-check-findings.json",
+      "blob": "8fac1c4829e0c10b8dacc094193381e54c0d6a9e",
+      "bytes": 1095,
+      "sha256": "37970cd5867abb2f5fa0b6289e0c4321d0b1bff2639645cfb105e1167b88747d"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/negative-context-checks.json",
+      "blob": "9404ac8354297534eb65051f826d3ab30e6c72d6",
+      "bytes": 496,
+      "sha256": "668f6f23fa3e46b84cffacb06321fec93e24d0606799af8db057fd0c50cd540e"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/pre-save-readback.json",
+      "blob": "5e147bb55d0c7fa9abd92d7f497eee0f370bbc36",
+      "bytes": 1286,
+      "sha256": "66f8ad02d87a48aab91cab82910cc6af91253c2118a35fb94399d180dedd352a"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/progress.json",
+      "blob": "b6f1ab84ca4e957ffc1c9a7c3e91e586a878df7d",
+      "bytes": 302,
+      "sha256": "d546260fd01477b90712f09e79d05dbe8f5d6bb7045181e02cff7979656c9fe8"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/required-checks.json",
+      "blob": "dcc5c800439e2617244ffcd6d5d42ef69fa49ac0",
+      "bytes": 1073,
+      "sha256": "5637af8b5ad6ab0ff7cac39ef076024071963af86d234969d1ab3df63ad21b8d"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/summary.json",
+      "blob": "60bff925294883357efe9d28e55a71b0208aa698",
+      "bytes": 9631,
+      "sha256": "2ca9b8836ee2ef4be46d7da3bdf2cf03f4ee6a1fdeed1126e3d140aec7a1cd76"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/tsc.log.gz",
+      "blob": "d4b9926df0b7defceb6caf0b474c4a190c5ca8f0",
+      "bytes": 20,
+      "sha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/validation.json",
+      "blob": "952f95b9b29d90435503526ab7e44e229f236885",
+      "bytes": 1263,
+      "sha256": "cbdcc79ba58e316905b43cd23a11fcd329913ae5dca995ca5108d29b5298873c"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/01ba060f9aefa925fbec.metadata.json",
+      "blob": "a2c569f5d1152921ceb47ce1eb6b2db4fe445421",
+      "bytes": 488,
+      "sha256": "8ba814a3a80f2817e9170505d843e85a8051fdcb1df1f449425c21cd221a2c61"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/01ba060f9aefa925fbec.osm",
+      "blob": "1bbed3401773bf5ea3514575fbfe5b7a9cf17ad5",
+      "bytes": 1563,
+      "sha256": "7210bd1b53c660c36fa50935945f790afa844d292e778f9477a765b21511da77"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/188b375d0695e2a1c254.metadata.json",
+      "blob": "95ef7890fcade8f26298ab2d642d5a435074145b",
+      "bytes": 486,
+      "sha256": "403ef10e41d5639398f5c32bcea989248a49f8e669cc997feee361a91e1d3f11"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/188b375d0695e2a1c254.osm",
+      "blob": "4602cbf3964b376098e2ecf508d1c0a7f7842c5a",
+      "bytes": 1588,
+      "sha256": "b3594fb3d1fde05d3498f805b60fb3ebdce0204b69cb281c19a42268802cc56f"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/311dc7698b6a73a2265f.metadata.json",
+      "blob": "8bc0d29c550b61e0a7f0b59c2839a47ab3be4e32",
+      "bytes": 489,
+      "sha256": "1453dafa1d7ec63b8d8fc71873177103cfb5362f1579473bdb709c4bbeee365f"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/311dc7698b6a73a2265f.osm",
+      "blob": "93cef1c59686b9c660af40a0b674ff5a0fe890c2",
+      "bytes": 1449,
+      "sha256": "cdd0c9b0e56ec2939041f83eb4d9d5508eb054e80a5483cdca60da05fc207ca0"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/3bfb7278c60ffb4a20a3.metadata.json",
+      "blob": "0a17018f391e85e26991805e031a8bb5cbe03fa1",
+      "bytes": 486,
+      "sha256": "9ca732c1db3d1bb0600ba6b44fc0c43af83a7e66a7f9c25f08cd3ce9edd351de"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/3bfb7278c60ffb4a20a3.osm",
+      "blob": "35bce359da738d980816c38c07365e72299018b9",
+      "bytes": 4452,
+      "sha256": "759095314a5fd89a4e9bda2adb900892ed6641d368ba42d01a8c9c59329a84c5"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/616dc95325a09bcadbf8.metadata.json",
+      "blob": "afc3caf4b95fc0078aa573783368362f9c8eda7e",
+      "bytes": 486,
+      "sha256": "59a5df75cc385cad17ad953c3af8634fffd4ae00a332b886c369c3c0ed5cbf0a"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/616dc95325a09bcadbf8.osm",
+      "blob": "34b70299814e31e40ba681c8d711b793023bf5fc",
+      "bytes": 2979,
+      "sha256": "38e7ec698a896151be59a9a9efa44b29c385cd6d91cda49303f9d2d9d76e8b2c"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/64a04cac63bfc59f524d.metadata.json",
+      "blob": "2211a74c5fe652f013b27301a4c118ab8d3e9705",
+      "bytes": 479,
+      "sha256": "a92aa287a566fe4b7f664e4aa2398833afba1e66e2a3ce679da38336ca3a0c5b"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/64a04cac63bfc59f524d.osm",
+      "blob": "c55ec45a0f413ee768d6c1efb58460e011eadf57",
+      "bytes": 504,
+      "sha256": "f847530d927f3666293a6e0667611f0d63a6d81ed774e0cd93228187ff2d41a8"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/6587d1637ed49b3cbb47.metadata.json",
+      "blob": "fbb67331ab6d0c85c814a5beecd3906f72c8adf3",
+      "bytes": 479,
+      "sha256": "bb39976622499264b6fb4ea8eb3aaf0c10a7141b6e11b7205e3d9174b203fd0d"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/6587d1637ed49b3cbb47.osm",
+      "blob": "b9c510003d0a5ff12a6b095f7130839a7036cc5b",
+      "bytes": 507,
+      "sha256": "b972214f9aef2abbd4bb7cf7a8b651353fc32dc7c555657408b67178321df56f"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/919bcb82b0adc9391fec.metadata.json",
+      "blob": "e065e087a02804a9f06aa218f6c6bd631a5a3b55",
+      "bytes": 481,
+      "sha256": "2bc0b13f25c632c515ab3a51c48e9c57d699ca5a1bbc454478e1ad13cca5f412"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/919bcb82b0adc9391fec.osm",
+      "blob": "cd963cedf5e88dc18dbf9654e5ab18509442f423",
+      "bytes": 507,
+      "sha256": "1a8ef5a2227dd95c9263d4297269756c860c532388e75432de97927b4a34cb3e"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/README.md",
+      "blob": "7f49c4b0bbbc9082830d3b646d1f6cc198714be0",
+      "bytes": 3819,
+      "sha256": "4923c39aa4ecfe6b4efe853a27f7667f3b0020492ea402f08c7032d478c94b8c"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/b2319a830347351be8d7.metadata.json",
+      "blob": "415ac87a9ccfadb4fabd8bc7e08c7bebc7c21e7f",
+      "bytes": 488,
+      "sha256": "955a704420c1727b6acfc2728e90e49498a1a01b02e448488708bc6ae2eb333b"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/b2319a830347351be8d7.osm",
+      "blob": "c6bb3b7e2bfb4879ae5a6f897a35ba0ce81872cc",
+      "bytes": 1414,
+      "sha256": "5893a2bc98c5f83a68bc16190ee8a852ae2ae9ab1030f2fe4c66e241f9f43a30"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/b2d6f4bfb98c3a6535e9.metadata.json",
+      "blob": "e6f7095227461d8c7e41cd278c26e614d2120630",
+      "bytes": 488,
+      "sha256": "905b347a9d884db83c26f2b81a55bcb25d1d6d20b79c78fd7c54a8616e435fcd"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/b2d6f4bfb98c3a6535e9.osm",
+      "blob": "922f253ceb729c90b23648b3b5a488522ec95edd",
+      "bytes": 1929,
+      "sha256": "8554a401be399efc923a8a709da8e878224c31194720c55630076a0a21265df6"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/binding-proof.json",
+      "blob": "745843306a3fd355155ad956ade272639c76b7fe",
+      "bytes": 9988,
+      "sha256": "330ccf2318822c3df51b7364e425341d732e2d8b0314f58927386efc5d86a794"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/c4b24dcb8db4743a900f.metadata.json",
+      "blob": "6ba36fcc2699142fa10aa9238d0babf99239433e",
+      "bytes": 479,
+      "sha256": "0c62a23c7c91ad8befea5c4bebe86280456a642e046b4686d688d7c89f58a1c8"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/c4b24dcb8db4743a900f.osm",
+      "blob": "36c09eddee55de90e58156928d6d0fb2c746805b",
+      "bytes": 505,
+      "sha256": "0ac33202e2e96070fc757cdb940bdaa3df13a0a5fcb6e0849ac73326374d35a7"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/dfdac5ff1ade415d779d.metadata.json",
+      "blob": "cf1566e0133015bedb56c71c61aa41920673ac06",
+      "bytes": 488,
+      "sha256": "8ea1143a4de11fc1fc1e9b798bfef6baf64b81f9a8e8cb0f97b639f457e7b18b"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/dfdac5ff1ade415d779d.osm",
+      "blob": "2e7122ce6d52decdc5c4d8d14da81689a003a044",
+      "bytes": 1760,
+      "sha256": "176301f355d8ca3cc8ffe6fc7022609ea6ddb49919ae31557f57d390bf47ab39"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/physical-directed.json",
+      "blob": "e5e938b1173ef9fb0a58f6f4ded19dbb89f8c4e0",
+      "bytes": 5561,
+      "sha256": "950990d1f8ce69bffae5ffff5c5fc8db9c80ddbfb4f2deab1d2e6f238b3fca03"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/progress-before-reconcile.json",
+      "blob": "23f7366938c9622312fba4fd208e4bc1b38f4bbb",
+      "bytes": 252,
+      "sha256": "1a2b5cd7c3522cb592d3bf0a24d71638766a958c451b45782b2a35f55a1765c7"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/progress.json",
+      "blob": "60830bdbcb9528deaa34a9664a78206d5823ab4d",
+      "bytes": 426,
+      "sha256": "40f34869303e6a87d63a07296e2eee720c72363f6fde373b36c2c7fe92a5d4fc"
+    },
+    {
+      "path": "lib/toll-validator.ts",
+      "blob": "b472af9ec83e14461ccbb7415eb6fd4f9e5db572",
+      "bytes": 12276,
+      "sha256": "58e16135882a73f8d81792204038730abcc2f4f11a35fb269c9b16804c65f59d"
+    },
+    {
+      "path": "lib/v3-calculation/ckad-m11-m12-boundary.ts",
+      "blob": "a40cd3ba6757b7704fb8fbe4a858650ad90c3e5e",
+      "bytes": 4111,
+      "sha256": "4c0489d8b48dfea6d9f7fc7365a2c6bfde083a2f9364c899177d2b482f604751"
+    },
+    {
+      "path": "lib/v3-calculation/ckad-product-boundaries.ts",
+      "blob": "fb896ee7ddd569336edf266131ec72bc335b99f0",
+      "bytes": 1233,
+      "sha256": "f5d021575a5d71b7249312b41fede705a7ce1e2f9a618503f89850d261b2fcf3"
+    },
+    {
+      "path": "lib/v3-calculation/route-leg-pricing.ts",
+      "blob": "2b39009a1e8bc756738c9882db9d38d097329039",
+      "bytes": 17474,
+      "sha256": "1dd42f6355572b5aec04ab9712cd8f6c94876f7ef77928ab032e47577eb366f2"
+    },
+    {
+      "path": "scripts/v3-ckad-m11-m12-boundary.test.ts",
+      "blob": "31207127c747e558d36bba89deda47c14e735c26",
+      "bytes": 15303,
+      "sha256": "bb3009c3e6ab063b9fa241050508cdd56f895e7c9ff314c473be806f21925578"
+    }
+  ],
+  "currentRuntimeHashesMatched": 6,
+  "recordedChecks": [
+    {
+      "name": "audit",
+      "recordedExitCode": 0,
+      "logBytes": 61161,
+      "tail": [
+        "ℹ fail 0",
+        "ℹ cancelled 0",
+        "ℹ skipped 0",
+        "ℹ todo 0",
+        "ℹ duration_ms 10059.517355",
+        "PASS quote: known, provisional, warning propagation/copy, unknown completeness, duplicate/route guards, MSD version boundary, expired Shali",
+        "PASS API adapter: JSON numeric estimate and warning survive; copy warning; incomplete/null"
+      ]
+    },
+    {
+      "name": "tsc",
+      "recordedExitCode": 0,
+      "logBytes": 0,
+      "tail": []
+    },
+    {
+      "name": "eslint",
+      "recordedExitCode": 0,
+      "logBytes": 0,
+      "tail": []
+    },
+    {
+      "name": "build",
+      "recordedExitCode": 0,
+      "logBytes": 972,
+      "tail": [
+        "├ ○ /v2/toll-roads",
+        "└ ○ /v3",
+        "",
+        "",
+        "○  (Static)   prerendered as static content",
+        "ƒ  (Dynamic)  server-rendered on demand",
+        ""
+      ]
+    }
+  ],
+  "recordedFocused": "8/8",
+  "recordedAudit": "736/736",
+  "newTestsRun": 0,
+  "newRoutingOrTrace": 0,
+  "caseFiles": 2,
+  "initialVerificationFailure": "TAP-only # pass assertion did not accept actual Node ℹ reporter; corrected parser, no source/test changes",
+  "frozenSourcesChecked": 13,
+  "primaryRawHashesChecked": 12,
+  "currentRemote": "5102b44ef5d52865ed36a31302c5b22cd88ace56",
+  "pendingBytes": 1306375,
+  "ciObserved": {
+    "run": 39065562352,
+    "verify": "success",
+    "live_probe": "in_progress"
+  },
+  "persistedPendingCode": false,
+  "recoveryBundle": {
+    "path": "experiments/nationwide-tolls/checks/2026-10-17-ckad-save-recovery/pending-ckad.bundle",
+    "bytes": 82729,
+    "sha256": "c01882f75319a517e92f21222f4f603b5ebeabc0d7c9e40d5026361d8238363c",
+    "head": "a9f2bf98106bc798cc3536a7c920cd2c4dbd10a2",
+    "prerequisite": "a666fb4887ea54a328a29fb3bfc2dfa5102e5499",
+    "verify": "PASS"
+  }
+}

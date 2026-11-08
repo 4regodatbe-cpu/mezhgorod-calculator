@@ -1,0 +1,70 @@
+{
+  "startedAt": "2026-10-16T01:45:47.967Z",
+  "scope": {
+    "region": null,
+    "group": "single-a289",
+    "caseId": "single-a289-krasnodar-to-anapa",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "single-a289-krasnodar-to-anapa",
+      "startedAt": "2026-10-16T01:45:47.970Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-krasnodar-to-anapa/live-2026-10-15T09-00-00-03-00-2026-10-16T01-45-49-840Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-krasnodar-to-anapa/2026-10-16T01-45-49-820Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-45-50-219Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-45-50-581Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "a289"
+        ],
+        "provenRoads": [
+          "a289"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "weekday": {
+        "amount": 620,
+        "weekdayAmount": 620,
+        "weekendAmount": 620,
+        "period": "все дни",
+        "segments": [
+          "А-289: Maryanskaya → AnapaExit: 620 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 620,
+        "weekdayAmount": 620,
+        "weekendAmount": 620,
+        "period": "все дни",
+        "segments": [
+          "А-289: Maryanskaya → AnapaExit: 620 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "a289",
+          "amount": 620,
+          "reason": "A-289 Anapa exit inferred from two selected-route frames; estimate"
+        }
+      ],
+      "finishedAt": "2026-10-16T01:45:50.602Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T01:45:50.605Z"
+}

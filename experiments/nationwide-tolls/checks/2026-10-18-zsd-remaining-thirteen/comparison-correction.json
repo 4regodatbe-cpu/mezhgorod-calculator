@@ -1,0 +1,17 @@
+{
+  "initialFalsePositives": 6,
+  "sourceOfMistake": "New one-off comparator assumed gantry approach must have toll=true, though retained representative saysfalse. No source/runtime changes.",
+  "correction": "Match actual own gantry identity/type/toll flag against exact retained representative; keep payment unproven.",
+  "initialOutputsPreservedAt": "experiments/nationwide-tolls/checks/2026-10-18-zsd-remaining-thirteen/initial-gantry-toll-assumption",
+  "correctedCases": [
+    "pair-m11-ckad-spb-to-noginsk",
+    "single-m11-spb-to-moscow",
+    "triple-m11-ckad-m12-spb-to-kazan",
+    "pair-m4-m11-spb-to-voronezh",
+    "single-m11-spb-to-tver",
+    "triple-m11-ckad-m12-spb-to-arzamas"
+  ],
+  "captureRereads": 0,
+  "newRequests": 0,
+  "newPricingCalls": 0
+}

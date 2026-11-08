@@ -1,0 +1,79 @@
+{
+  "startedAt": "2026-10-16T00:09:28.722Z",
+  "scope": {
+    "region": null,
+    "group": "pair-m4-a289",
+    "caseId": "pair-m4-a289-kerch-to-rostov",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "pair-m4-a289-kerch-to-rostov",
+      "startedAt": "2026-10-16T00:09:28.724Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-rostov/live-2026-10-15T09-00-00-03-00-2026-10-16T00-09-31-722Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-kerch-to-rostov/2026-10-16T00-09-31-679Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-09-32-145Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-09-32-569Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m4",
+          "a289"
+        ],
+        "provenRoads": [
+          "a289",
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "weekday": {
+        "amount": 1650,
+        "weekdayAmount": 1650,
+        "weekendAmount": 1800,
+        "period": "понедельник–четверг",
+        "segments": [
+          "М-4: m4-1223 → m4-1093 · Стоимость не подтверждена",
+          "А-289: TamanBridge → Maryanskaya: 800 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 1800,
+        "weekdayAmount": 1650,
+        "weekendAmount": 1800,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "М-4: m4-1223 → m4-1093 · Стоимость не подтверждена",
+          "А-289: TamanBridge → Maryanskaya: 800 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": 850,
+          "reason": "matrix exact selected-route M4 vector"
+        },
+        {
+          "id": "a289",
+          "amount": 800,
+          "reason": "A-289 selected-route OD vector"
+        }
+      ],
+      "finishedAt": "2026-10-16T00:09:32.585Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T00:09:32.588Z"
+}

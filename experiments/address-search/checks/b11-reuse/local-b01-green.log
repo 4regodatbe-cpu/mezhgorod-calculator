@@ -1,0 +1,18 @@
+✔ disabled default makes zero requests (1.190348ms)
+✔ full Photon 503 and 429 permit isolated candidate research without public admission (38.912467ms)
+✔ empty/partial successful primary and missing status never trigger fallback (0.253592ms)
+✔ missing credentials and expired budget do not request provider (0.15435ms)
+✔ cancellation before and during transport is propagated (0.880692ms)
+✔ HTTP failures and exception messages cannot leak credentials (0.989263ms)
+✔ invalid coordinates, missing administrative labels, wrong precision and duplicates rejected (1.578849ms)
+✔ request is one bounded city lookup, not a country-restricted approximate address (0.684828ms)
+✔ deadline during body parsing cannot admit late coordinates (0.496859ms)
+✔ provider metadata cannot echo API key or credential-bearing URLs into research results (0.977726ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 54.646883

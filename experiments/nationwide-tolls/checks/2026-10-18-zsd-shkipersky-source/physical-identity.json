@@ -1,0 +1,41 @@
+{
+  "atUtc": "2026-10-18T06:27:49.494322+00:00",
+  "wayId": "351741889",
+  "wayVersion": "27",
+  "wayTimestamp": "2025-07-24T10:44:00Z",
+  "wayName": "проспект Крузенштерна",
+  "oneway": "yes",
+  "nodeId": "13020687195",
+  "nodeVersion": "1",
+  "nodeTimestamp": "2025-07-24T10:44:00Z",
+  "coordinate": [
+    30.2224424,
+    59.9615898
+  ],
+  "tags": {
+    "description:ru": "Рамка взимания платы RUTOLL FLOW PLUS",
+    "highway": "toll_gantry",
+    "name": "РВП-64",
+    "name:en": "TG-64",
+    "name:ru": "РВП-64",
+    "operator:en": "Nothern Capital Highway",
+    "operator:ru": "Магистраль Северной Столицы",
+    "ref:rutoll": "64E"
+  },
+  "rawRecordedTraceIdentity": "All7previousgroup2c00 own captures contain this same node/way andtoll=false; no freshcapture checks or price replays.",
+  "osmAttribution": "© OpenStreetMap contributors; ODbL1.0; exact retained API response metadata.",
+  "ownerShkiperskyTariffGantryIds": [
+    "571",
+    "581",
+    "59",
+    "60"
+  ],
+  "ownerOlderShkiperskyRulesIds": [
+    "581",
+    "59",
+    "60"
+  ],
+  "shkiperskyTariffApplicableToNode64Proven": false,
+  "separateInterchangeChargeForRecordedNodeProven": false,
+  "zeroOrFreeForWholeTripProven": false
+}
