@@ -43,12 +43,11 @@ export function useV3Calculation({ from, to, rates, specialRates, requestMode, o
         ]
         : [{ type: "Оптимальный", trip: pickOptimal(leg.fast, leg.free), tolls: null }];
       variants.forEach(({ type, trip, tolls }) => {
-        if (!trip.pricingByVehicle || Object.values(trip.pricingByVehicle).some(price=>price.requiresSplit||price.totalPrice===null)) return;
         const totals = {
-            standard: trip.pricingByVehicle?.standard.totalPrice ?? 0,
-            comfort: trip.pricingByVehicle?.comfort.totalPrice ?? 0,
-            comfortPlus: trip.pricingByVehicle?.comfort_plus.totalPrice ?? 0,
-            minivan: trip.pricingByVehicle?.minivan.totalPrice ?? 0,
+            standard: trip.pricingByVehicle?.standard?.requiresSplit ? null : trip.pricingByVehicle?.standard?.totalPrice ?? null,
+            comfort: trip.pricingByVehicle?.comfort?.requiresSplit ? null : trip.pricingByVehicle?.comfort?.totalPrice ?? null,
+            comfortPlus: trip.pricingByVehicle?.comfort_plus?.requiresSplit ? null : trip.pricingByVehicle?.comfort_plus?.totalPrice ?? null,
+            minivan: trip.pricingByVehicle?.minivan?.requiresSplit ? null : trip.pricingByVehicle?.minivan?.totalPrice ?? null,
           };
         void fetch("/api/collect", {
           method: "POST",

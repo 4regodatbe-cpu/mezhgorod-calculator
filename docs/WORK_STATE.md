@@ -1,3 +1,9 @@
+# Текущий handoff — аналитика маршрутов: подготовлен кандидат (08.11.2026)
+
+**LOCAL CANDIDATE / LIVE SCRIPT NOT VERIFIED.** На базе выпущенного V3 и журнала f628e4d подготовлено исправление передачи городов, времени и частично неизвестных тарифов; сохранены существующие A:O Google Sheets. Целевые тесты 7/7, полный штатный build 1184 PASS / 0 FAIL / 1 SKIP, TypeScript, scoped ESLint и синтаксис PASS. Живой Apps Script и сквозная запись не проверены; таблица и Production не изменены. Отдельные поисковые запросы без расчёта не собираются, сохраняется прежняя фильтрация улиц/домов. Детали и следующий шаг: [checkpoint](checkpoints/2026-11-08-route-statistics-candidate-local.md), [инструкция кандидата](../experiments/route-statistics/README.md).
+
+---
+
 # Текущий handoff — Production V3 выпущен; аналитика маршрутов исследуется (08.11.2026)
 
 **PRODUCTION VERIFIED / ROUTE ANALYTICS BLOCKED.** Production deployment `dpl_GwLhsBvyXoeUMkWuESpV326JYE3d` READY, Git source `b2b34d24440c018d887ada5db60d5f0062443b79`; PR #14 открыт и Draft. Calculator final gate push 42427180745 и PR 42427185100 — SUCCESS; B03 42427180727 — SUCCESS; live Preview и Production route acceptance по отчёту релиза выполнена. Документационный closeout `5104d504` в GitHub недоступен, восстановлена только подтверждённая информация; см. [checkpoint](checkpoints/2026-11-08-release-analytics-diagnosis.md).

@@ -47,7 +47,7 @@ test("collect preserves unknown toll nulls and sends only coarse regions to the 
     calls += 1;
     sent = String(init?.body ?? "");
     contentType = new Headers(init?.headers).get("Content-Type") ?? "";
-    return Response.json({ ok: true });
+    return Response.json({ ok: true, saved: true });
   };
   try {
     const event = {
@@ -73,6 +73,7 @@ test("collect preserves unknown toll nulls and sends only coarse regions to the 
     assert.match(sent, /Москва, Московская область, Россия/);
     assert.match(sent, /Казань, Татарстан, Россия/);
     assert.doesNotMatch(sent, /tollWeekday|tollWeekend|unknown/);
+    assert.equal(JSON.parse(sent).durationMin, 600);
     assert.equal(calls, 1);
   } finally {
     globalThis.fetch = originalFetch;
