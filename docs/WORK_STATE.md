@@ -1,3 +1,13 @@
+# Текущий handoff — Production V3 выпущен; аналитика маршрутов исследуется (08.11.2026)
+
+**PRODUCTION VERIFIED / ROUTE ANALYTICS BLOCKED.** Production deployment `dpl_GwLhsBvyXoeUMkWuESpV326JYE3d` READY, Git source `b2b34d24440c018d887ada5db60d5f0062443b79`; PR #14 открыт и Draft. Calculator final gate push 42427180745 и PR 42427185100 — SUCCESS; B03 42427180727 — SUCCESS; live Preview и Production route acceptance по отчёту релиза выполнена. Документационный closeout `5104d504` в GitHub недоступен, восстановлена только подтверждённая информация; см. [checkpoint](checkpoints/2026-11-08-release-analytics-diagnosis.md).
+
+**Analytics BLOCKED / diagnosis:** пользователь сообщил: предложения сохраняются, новые маршруты нет. Read-only просмотр таблицы подтвердил последнюю наблюдённую запись маршрута 01.10.2026 и 15 существующих колонок A:O; H=Версия, I=Вариант маршрута, J:O заняты тарифами. Не применять миграции, предполагающие свободные H или I. На `b2b34d24440c018d887ada5db60d5f0062443b79` `app/api/collect/route.ts` не пересылает `durationMin`, а опубликованный по истории Apps Script требует его и готовой миграции; актуальный код размещённого Apps Script здесь пока не проверен. V3 не отправляет маршруты при частично неизвестных тарифах. Ввод отдельных запросов поиска без расчёта не является текущим подтверждённым поведением аналитики. Не менять тарифы/маршрутизацию, не публиковать Production без прямого разрешения.
+
+**Next:** восстановить подтверждённую версию действующего Apps Script и Stage V analytics bundle; подготовить совместимое сохранение A:O без перезаписи, затем тесты и безопасный порядок релиза. Финальный контроль журналов и этого readback выполнить перед любой записью.
+
+---
+
 # Текущий handoff — Stage AJ: source-backed snapshot candidate, hosted acceptance pending (07.11.2026)
 
 **DONE LOCAL / HOSTED ACCEPTANCE PENDING.** Isolated worktree `/workspace/stage-ae-gate-proposal`, branch `codex/stage-ae-gate-proposal`, local base `89eca232d8787788153daf5b2356f7f7fe76e822`; this candidate's code/data/docs are locally verified but not yet pushed. Immediately before code changes GitHub feature branch readback was also `89eca232…`. Reconfirm remote head and Draft PR #14 before pushing. Production remains `a6bea89dd4b481a1352dc492969004e6cd1e6e38`; untouched.
