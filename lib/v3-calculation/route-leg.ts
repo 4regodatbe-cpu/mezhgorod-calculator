@@ -1,3 +1,5 @@
+import { avoidsCrimeaBridge, crimeaLandMileage } from "./crimea-land-mode";
+import { splitRouteByTerritory } from "../special-territory-geometry";
 import { isUsableRoute } from "./route-candidate";
 import { analyzeRoute, findPlanLegStretchAnomaly, followsPlan } from "../special-territory-policy.ts";
 import { SPECIAL_TERRITORY_BOUNDARIES } from "../special-territory-boundaries.ts";
@@ -10,7 +12,7 @@ import { selectFastestRoute } from "@/experiments/nationwide-tolls/fastest-route
 import type { CalculationTiming, CalculationStage } from "@/lib/calculation-timing";
 import { routingFailure, routingResponseStatus, type RoutingAttempt } from "../routing-attempt";
 
-export async function calculateLeg(from: Located, to: Located, departureAt?: string, diagnostics = false, positions?: Array<{ lat:number; lng:number }>, fastestOnly = false, timing?: CalculationTiming, signal?: AbortSignal) {
+export async function calculateLeg(from: Located, to: Located, departureAt?: string, diagnostics = false, positions?: Array<{ lat:number; lng:number }>, fastestOnly = false, timing?: CalculationTiming, signal?: AbortSignal, crimeaLand = false) {
   signal?.throwIfAborted();
   const measure = <T>(stage: CalculationStage, operation: () => Promise<T>) => timing ? timing.measure(stage, operation) : operation();
   const rejectedStretchProviders = new Map<string, number>();
@@ -40,7 +42,11 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
         }
         if (!followsPlan(result.value.coordinates, positions, "mainland", false)) throw new Error("ROUTE_CONTROLS_MISSED");
       }
-      analyzeRoute(result.value.coordinates, result.value.meters, result.value.seconds, from.position, to.position, SPECIAL_TERRITORY_BOUNDARIES);
+      if ((crimeaLand || process.env.CRIMEA_LAND_MODE === "1") && !avoidsCrimeaBridge(result.value.coordinates)) throw new Error("ROUTE_CONTROLS_MISSED");
+      if (crimeaLand) {
+        const route = result.value;
+        crimeaLandMileage(splitRouteByTerritory({coordinates: route.coordinates, routedDistanceMeters: route.meters, routedDurationSeconds: route.seconds, zones: SPECIAL_TERRITORY_BOUNDARIES}), route.meters / 1000);
+      } else analyzeRoute(result.value.coordinates, result.value.meters, result.value.seconds, from.position, to.position, SPECIAL_TERRITORY_BOUNDARIES);
       return result;
     } catch(reason) { return {status:"rejected" as const,reason}; }
   });

@@ -2,10 +2,11 @@ import { buildPricingSegments, type PricingSegment } from "./route-pricing-segme
 import type { TerritorySplit } from "./special-territory-geometry.ts";
 export type PricingVehicle = "standard" | "comfort" | "comfort_plus" | "minivan";
 export type PricedSegment = PricingSegment & { type: PricingSegment["tariffType"]; from: string; to: string; ratePerKm: number; amount: number; reason: string; reviewRequired: boolean };
+const CRIMEA_RATES: Record<PricingVehicle, number> = { standard:35, comfort:40, comfort_plus:45, minivan:60 };
 const NORMAL_RATES: Record<PricingVehicle, [number, number, number]> = { standard: [35,32,30], comfort: [40,35,32.5], comfort_plus: [45,37,35], minivan: [55,50,45] };
 export const SPECIAL_RATES: Record<PricingVehicle, number> = { standard:70, comfort:80, comfort_plus:90, minivan:110 };
 export function calculateRoutePricing(input: {
-  legs: Array<{ from: string; to: string; distanceKm: number; territorySplit?: TerritorySplit }>;
+  legs: Array<{ from: string; to: string; distanceKm: number; territorySplit?: TerritorySplit; crimeaKm?: number }>;
   from: string; to: string; vehicle?: PricingVehicle;
   normalRateOverrides?: Partial<Record<PricingVehicle, number>>;
   specialRateOverrides?: Partial<Record<PricingVehicle, number>>;
@@ -27,15 +28,22 @@ export function calculateRoutePricing(input: {
   if (!incomplete) for (const [i, leg] of input.legs.entries()) {
     const split = leg.territorySplit!;
     const specialKm = input.mode === "standard" ? 0 : Math.min(leg.distanceKm, split.specialKm);
-    const normalKm = leg.distanceKm - specialKm;
-    for (const descriptor of buildPricingSegments(normalKm, specialKm).segments) {
+    const crimeaKm = leg.crimeaKm ?? 0;
+    if (!Number.isFinite(crimeaKm) || crimeaKm < 0 || crimeaKm > leg.distanceKm - specialKm + 1e-9) {
+      incomplete = true;
+      break;
+    }
+    const normalKm = Math.max(0, leg.distanceKm - specialKm - crimeaKm);
+    for (const descriptor of buildPricingSegments(normalKm + crimeaKm, specialKm).segments) {
       const special = descriptor.tariffType === "special";
       const fallback = NORMAL_RATES[vehicle][normalKm <= 200 ? 0 : normalKm <= 500 ? 1 : 2];
       const override = special ? input.specialRateOverrides?.[vehicle] : input.manualRateByLeg?.[i] ?? input.normalRateOverrides?.[vehicle];
       const ratePerKm = Number.isFinite(override) && override! >= 1 && override! <= 10000 ? override! : special ? SPECIAL_RATES[vehicle] : fallback;
-      const rawAmount = descriptor.distanceKm * ratePerKm * multiplier;
+      const baseAmount = special ? specialKm * ratePerKm : normalKm * ratePerKm + crimeaKm * CRIMEA_RATES[vehicle];
+      const displayedRate = !special && crimeaKm > 0 ? baseAmount / descriptor.distanceKm : ratePerKm;
+      const rawAmount = baseAmount * multiplier;
       unroundedAmounts.push(rawAmount);
-      pricingSegments.push({ ...descriptor, type: descriptor.tariffType, from: leg.from, to: leg.to, ratePerKm, amount: 0, reason: special ? "Пробег внутри особых тарифных зон" : "Обычный тариф", reviewRequired: false });
+      pricingSegments.push({ ...descriptor, type: descriptor.tariffType, from: leg.from, to: leg.to, ratePerKm: displayedRate, amount: 0, reason: special ? "Пробег внутри особых тарифных зон" : "Обычный тариф", reviewRequired: false });
     }
   }
   const rawTotal = unroundedAmounts.reduce((sum,amount)=>sum+amount,0);

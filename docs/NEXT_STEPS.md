@@ -1,3 +1,5 @@
+Временная схема Крыма: после разрешения выпуска проверить оперативный статус моста и принять Preview с CRIMEA_LAND_MODE=1. Порядок активации и отката в [checkpoint](checkpoints/2026-11-20-crimea-land-mode.md).
+
 # Next steps
 
 ## Stage AJ — local source-backed candidate ready; hosted acceptance pending

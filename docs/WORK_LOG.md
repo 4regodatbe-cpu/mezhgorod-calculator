@@ -135,3 +135,6 @@ Commands/outcomes on final local implementation: five focused suites (address sn
 - Full build: 1142 passed, 0 failed, 1 skipped; TypeScript PASS; ESLint exit 0 (9 warnings); webpack build PASS; final-gate harness 6/6; API smoke 16/16; route benchmark 61 PASS. Standard Next/Turbopack build passed. Strict tariff freshness remains blocked by two October 1 snapshots at 37 days vs 30-day threshold, with effective dates unknown.
 - No runtime/pricing/geometry edits. No push or publication. PR #14 remains Draft.
 - Detailed results: [Stage AA checkpoint](checkpoints/2026-11-07-stage-aa-v3-final-gate-DONE-LOCAL.md).
+
+
+20.11.2026 — временный сухопутный режим V3, проверка Ялта ↔ Ростов-на-Дону и порядок отката описаны в [checkpoint](checkpoints/2026-11-20-crimea-land-mode.md).

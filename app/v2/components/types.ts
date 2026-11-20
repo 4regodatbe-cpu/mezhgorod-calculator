@@ -72,4 +72,4 @@ export type Leg = {
   freeCandidate?: Trip | null;
   freeError?: string;
 };
-export type Result = { preferredCorridor?: "mainland"|"crimea"; automaticMode?: "standard"|"dual"; legs: Leg[]; options?: Leg[]; mode?: "standard"|"dual"; specialEndpoint?:boolean; specialOnly?:boolean; crimeaComparisonVerified?:boolean; crimeaAccepted?:boolean };
+export type Result = { crimeaLand?: boolean; preferredCorridor?: "mainland"|"crimea"; automaticMode?: "standard"|"dual"; legs: Leg[]; options?: Leg[]; mode?: "standard"|"dual"; specialEndpoint?:boolean; specialOnly?:boolean; crimeaComparisonVerified?:boolean; crimeaAccepted?:boolean };

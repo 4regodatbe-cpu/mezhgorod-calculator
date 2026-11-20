@@ -228,3 +228,27 @@ export function chooseCorridorRoute(routes: CorridorRoute[], corridor: CorridorR
   return available.find((route) => route.tollStatus === "paid") ?? available.find((route) => route.tollStatus === "free") ??
     [...available].sort((a, b) => a.seconds - b.seconds)[0] ?? null;
 }
+
+
+/** Measure the part of a polyline inside an area, including edges that cross its boundary. */
+export function routeFractionInRing(points: GeoPoint[], ring: GeoPoint[], contains: (point: Position) => boolean) {
+  let total = 0;
+  let inside = 0;
+  for (let i = 1; i < points.length; i++) {
+    const a = points[i - 1], b = points[i];
+    const meters = distanceMeters(a, b);
+    if (!meters) continue;
+    const cuts = [0, 1];
+    for (let j = 0; j < ring.length; j++) {
+      const cut = segmentCrossing(a, b, ring[j], ring[(j + 1) % ring.length]);
+      if (typeof cut === "number") cuts.push(cut);
+    }
+    cuts.sort((a, b) => a - b);
+    for (let j = 1; j < cuts.length; j++) {
+      const [lng, lat] = interpolate(a, b, (cuts[j - 1] + cuts[j]) / 2);
+      if (contains({lng, lat})) inside += meters * (cuts[j] - cuts[j - 1]);
+    }
+    total += meters;
+  }
+  return total > 0 ? inside / total : 0;
+}

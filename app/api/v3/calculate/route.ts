@@ -1,3 +1,6 @@
+import { inCrimea } from "@/lib/crimea-geography";
+import { crimeaLandMileage, crimeaLandPositions } from "@/lib/v3-calculation/crimea-land-mode";
+import { splitRouteByTerritory } from "@/lib/special-territory-geometry";
 import { NextRequest, NextResponse } from "next/server";
 import { classifyCalculateApiError } from "@/lib/calculate-api-error";
 import { readLimitedJsonObject, RequestBodyError } from "@/lib/limited-json-body";
@@ -81,20 +84,24 @@ export async function POST(request: NextRequest) {
     const [from,to] = await timing.measure("geocoding", () => withinRoutingSignal(() => Promise.all([geocode(body.from!,signal),geocode(body.to!,signal)]), signal));
     request.signal.throwIfAborted();
     const policy = endpointPolicy(from.position,to.position,zones);
-    const automaticMode = policy.specialEndpoint ? "dual" : "standard";
+    const crimeaLand = process.env.CRIMEA_LAND_MODE === "1" && inCrimea(from.position) !== inCrimea(to.position);
+    const automaticMode = policy.specialEndpoint || crimeaLand ? "dual" : "standard";
     // A manual ordinary-mode override cannot erase verified special-zone mileage.
-    const mode = policy.fromTerritory && policy.toTerritory ? "dual"
+    const mode = crimeaLand || (policy.fromTerritory && policy.toTerritory) ? "dual"
       : body.modeOverride === true && body.mode ? body.mode : automaticMode;
     const normalRateOverrides = body.rates ? { ...body.rates, comfort_plus:body.rates.comfortPlus } : undefined;
     const specialRateOverrides = body.specialRates ? { ...body.specialRates, comfort_plus:body.specialRates.comfortPlus } : undefined;
     const attachPricing = <T extends { meters:number; seconds:number; coordinates:Coordinate[]; legs?:unknown; tollEstimate?:TollEstimateView }>(trip:T, verifiedSplit?:ReturnType<typeof analyzeRoute>) => timing.measureSync("response_pricing", () => {
       // Policy is independent of manual pricing mode, including every alternative.
-      const territorySplit = verifiedSplit ?? analyzeRoute(trip.coordinates,trip.meters,trip.seconds,from.position,to.position,zones);
+      const territorySplit = crimeaLand
+        ? splitRouteByTerritory({coordinates: trip.coordinates, routedDistanceMeters: trip.meters, routedDurationSeconds: trip.seconds, zones})
+        : verifiedSplit ?? analyzeRoute(trip.coordinates,trip.meters,trip.seconds,from.position,to.position,zones);
+      const mileage = crimeaLand ? crimeaLandMileage(territorySplit, trip.meters / 1000) : undefined;
       const {coordinates, legs, tollEstimate, ...summary} = trip;
       void coordinates; void legs;
       const tolls = "tolls" in trip && trip.tolls && typeof trip.tolls === "object"
         ? trip.tolls as Record<string, unknown> : null;
-      const yandexEstimate = acceptedYandexRouteEstimate({ from: body.from, to: body.to, meters: trip.meters, departureAt });
+      const yandexEstimate = crimeaLand ? null : acceptedYandexRouteEstimate({ from: body.from, to: body.to, meters: trip.meters, departureAt });
       const publicTolls = yandexEstimate
         ? yandexRouteEstimateTolls(yandexEstimate)
         : tolls
@@ -106,9 +113,15 @@ export async function POST(request: NextRequest) {
         : null;
       return {...summary, ...(publicTolls ? {tolls:publicTolls} : {}), ...(!yandexEstimate && tollEstimate ? {tollEstimate} : {}), pricingByVehicle:Object.fromEntries(VEHICLES.map(vehicle=>[vehicle,calculateRoutePricing({
         from:from.label,to:to.label,vehicle,mode,normalRateOverrides,specialRateOverrides,multiplier:body.multiplier,
-        legs:[{from:from.label,to:to.label,distanceKm:trip.meters/1000,territorySplit}],
+        legs:[{from:from.label,to:to.label,distanceKm:trip.meters/1000,crimeaKm:mileage?.crimeaKm,territorySplit:mileage ? {...territorySplit, ordinaryKm:mileage.ordinaryKm + mileage.crimeaKm, specialKm:mileage.specialKm} : territorySplit}],
       })]))};
     });
+    if (crimeaLand) {
+      const positions = crimeaLandPositions(from.position, to.position, policy.specialEndpoint);
+      const leg = await timing.measure("route_leg", () => withinRoutingSignal(
+        () => calculateLeg(from, to, departureAt, body.diagnostics === true, positions, true, timing, signal, true), signal));
+      return respond({legs:[{...leg,fast:attachPricing(leg.fast)}],mode,automaticMode,specialEndpoint:true,specialOnly:false,crimeaLand:true,preferredCorridor:"mainland"});
+    }
     if(policy.specialEndpoint) {
       const special=await timing.measure("special_options", () => withinRoutingSignal(() => calculateSpecialOptions(from,to,departureAt,true,timing,signal), signal));
       request.signal.throwIfAborted();

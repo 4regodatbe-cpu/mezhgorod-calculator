@@ -1,3 +1,4 @@
+import { avoidsCrimeaBridge } from "./crimea-land-mode";
 import { isUsableRoute } from "./route-candidate";
 import { valhalla, osrmRoute, type Located, type RouteWithGeometry } from "../route-providers";
 import { SPECIAL_TERRITORY_BOUNDARIES as zones } from "../special-territory-boundaries";
@@ -32,7 +33,10 @@ type PricedCandidate = {
 export async function calculateSpecialOptions(from:Located,to:Located,departureAt?:string,fastestOnly=false,timing?:CalculationTiming,signal?:AbortSignal) {
   signal?.throwIfAborted();
   const measure = <T>(stage:CalculationStage,operation:()=>Promise<T>) => timing ? timing.measure(stage,operation) : operation();
-  const plans=candidatePlans(from.position,to.position,zones);
+  const bridgeClosed = process.env.CRIMEA_LAND_MODE === "1";
+  const plans = bridgeClosed
+    ? [{corridor:"mainland" as const, positions:[from.position,to.position]}]
+    : candidatePlans(from.position,to.position,zones);
   const endpoints=endpointPolicy(from.position,to.position,zones);
   const requiresInternalRoute=Boolean(endpoints.fromTerritory&&endpoints.toTerritory);
   const preferredCorridor=plans[0]?.corridor??"mainland";
@@ -47,7 +51,7 @@ export async function calculateSpecialOptions(from:Located,to:Located,departureA
       if(response.status!=="fulfilled")return null;
       try {
         const route:RouteWithGeometry=response.value;
-        if(!isUsableRoute(route,from,to))return null;
+        if(!isUsableRoute(route,from,to) || (bridgeClosed && !avoidsCrimeaBridge(route.coordinates)))return null;
         const providerName=index===0?"Valhalla":"OSRM";
         const stretch=findPlanLegStretchAnomaly(route.coordinates,plan.positions);
         if(stretch){rejectedStretchProviders.set(providerName,stretch.stretchRatio);return null;}
