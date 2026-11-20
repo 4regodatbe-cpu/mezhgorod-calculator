@@ -1,4 +1,4 @@
-import { avoidsCrimeaBridge, crimeaLandMileage } from "./crimea-land-mode";
+import { avoidsCrimeaBridge, crimeaLandMileage, crossesCrimeaBoundaryOnce } from "./crimea-land-mode";
 import { splitRouteByTerritory } from "../special-territory-geometry";
 import { isUsableRoute } from "./route-candidate";
 import { analyzeRoute, findPlanLegStretchAnomaly, followsPlan } from "../special-territory-policy.ts";
@@ -45,6 +45,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
       if ((crimeaLand || process.env.CRIMEA_LAND_MODE === "1") && !avoidsCrimeaBridge(result.value.coordinates)) throw new Error("ROUTE_CONTROLS_MISSED");
       if (crimeaLand) {
         const route = result.value;
+        if (!crossesCrimeaBoundaryOnce(route.coordinates)) throw new Error("ROUTE_CONTROLS_MISSED");
         crimeaLandMileage(splitRouteByTerritory({coordinates: route.coordinates, routedDistanceMeters: route.meters, routedDurationSeconds: route.seconds, zones: SPECIAL_TERRITORY_BOUNDARIES}), route.meters / 1000);
       } else analyzeRoute(result.value.coordinates, result.value.meters, result.value.seconds, from.position, to.position, SPECIAL_TERRITORY_BOUNDARIES);
       return result;

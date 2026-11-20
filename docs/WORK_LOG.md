@@ -138,3 +138,9 @@ Commands/outcomes on final local implementation: five focused suites (address sn
 
 
 20.11.2026 — временный сухопутный режим V3, проверка Ялта ↔ Ростов-на-Дону и порядок отката описаны в [checkpoint](checkpoints/2026-11-20-crimea-land-mode.md).
+
+
+20.11.2026 — Production V3 с временным сухопутным режимом. [Проверки и откат](checkpoints/2026-11-20-crimea-release-DONE.md).
+
+
+20.11.2026 — исправление возврата в Крым на маршруте Севастополь → Краснодар. [Запись](checkpoints/2026-11-20-sevastopol-krasnodar-route.md).

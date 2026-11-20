@@ -9,6 +9,26 @@ export function crimeaLandPositions(from: Position, to: Position, specialEndpoin
   return specialEndpoint ? [from, to] : [from, MELITOPOL, to];
 }
 
+// Road approach to the public R-280 crossing, used when a router doubles back.
+const EASTERN_LAND_EXIT = {lng: 38.242836, lat: 47.16134};
+
+export function crimeaLandFallbackPositions(from: Position, to: Position): Position[] {
+  const positions = [from, MELITOPOL, EASTERN_LAND_EXIT, to];
+  return inCrimea(from) ? positions : [from, EASTERN_LAND_EXIT, MELITOPOL, to];
+}
+
+export function crossesCrimeaBoundaryOnce(coordinates: GeoPoint[]) {
+  let previous: boolean | undefined;
+  let crossings = 0;
+  for (const [lng, lat] of coordinates) {
+    const inside = inCrimea({lng, lat});
+    if (previous !== undefined && inside !== previous) crossings++;
+    if (crossings > 1) return false;
+    previous = inside;
+  }
+  return crossings === 1;
+}
+
 export function avoidsCrimeaBridge(coordinates: GeoPoint[]) {
   const scale = Math.cos(BRIDGE.lat * Math.PI / 180);
   for (let i = 1; i < coordinates.length; i++) {

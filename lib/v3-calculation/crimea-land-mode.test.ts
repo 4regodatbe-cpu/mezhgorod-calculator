@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { avoidsCrimeaBridge, crimeaLandMileage, crimeaLandPositions } from "./crimea-land-mode.ts";
+import { avoidsCrimeaBridge, crimeaLandMileage, crimeaLandPositions, crossesCrimeaBoundaryOnce, crimeaLandFallbackPositions } from "./crimea-land-mode.ts";
 import { calculateRoutePricing, type PricingVehicle } from "../route-pricing-integration.ts";
 import { BRIDGE } from "../special-territory-policy.ts";
 import type { GeoPoint, TerritorySplit } from "../special-territory-geometry.ts";
@@ -33,4 +33,15 @@ test("three tariff rates contribute to two visible groups and preserve distance"
   assert.throws(()=>crimeaLandMileage({...split,pieces:pieces.slice(0,1)},100), /ROUTE_CORRIDOR_UNCONFIRMED/);
   const from={lng:34,lat:45}, to={lng:39,lat:47};
   assert.deepEqual(crimeaLandPositions(to,from,false),crimeaLandPositions(from,to,false).reverse());
+});
+
+test("land route rejects returning to Crimea after a mainland detour", () => {
+  const valid: GeoPoint[] = [[34,45],[35,46.8],[38,47],[39,45]];
+  const loop: GeoPoint[] = [[34,45],[35,46.8],[34,45],[39,45]];
+  assert.equal(crossesCrimeaBoundaryOnce(valid), true);
+  assert.equal(crossesCrimeaBoundaryOnce([...valid].reverse()), true);
+  assert.equal(crossesCrimeaBoundaryOnce(loop), false);
+  assert.equal(crossesCrimeaBoundaryOnce([...loop].reverse()), false);
+  const a={lng:34,lat:45}, b={lng:39,lat:45};
+  assert.deepEqual(crimeaLandFallbackPositions(a,b),crimeaLandFallbackPositions(b,a).reverse());
 });

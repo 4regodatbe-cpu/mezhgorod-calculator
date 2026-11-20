@@ -1,5 +1,5 @@
 import { inCrimea } from "@/lib/crimea-geography";
-import { crimeaLandMileage, crimeaLandPositions } from "@/lib/v3-calculation/crimea-land-mode";
+import { crimeaLandFallbackPositions, crimeaLandMileage, crimeaLandPositions } from "@/lib/v3-calculation/crimea-land-mode";
 import { splitRouteByTerritory } from "@/lib/special-territory-geometry";
 import { NextRequest, NextResponse } from "next/server";
 import { classifyCalculateApiError } from "@/lib/calculate-api-error";
@@ -118,8 +118,13 @@ export async function POST(request: NextRequest) {
     });
     if (crimeaLand) {
       const positions = crimeaLandPositions(from.position, to.position, policy.specialEndpoint);
-      const leg = await timing.measure("route_leg", () => withinRoutingSignal(
-        () => calculateLeg(from, to, departureAt, body.diagnostics === true, positions, true, timing, signal, true), signal));
+      const calculateLandLeg = (controls: typeof positions) => timing.measure("route_leg", () => withinRoutingSignal(
+        () => calculateLeg(from, to, departureAt, body.diagnostics === true, controls, true, timing, signal, true), signal));
+      const leg = await calculateLandLeg(positions).catch((error: unknown) => {
+        if (signal.aborted || policy.specialEndpoint || !(error instanceof Error) ||
+            !["ROUTE_CORRIDOR_UNCONFIRMED", "ROUTE_UNAVAILABLE"].includes(error.message)) throw error;
+        return calculateLandLeg(crimeaLandFallbackPositions(from.position, to.position));
+      });
       return respond({legs:[{...leg,fast:attachPricing(leg.fast)}],mode,automaticMode,specialEndpoint:true,specialOnly:false,crimeaLand:true,preferredCorridor:"mainland"});
     }
     if(policy.specialEndpoint) {
