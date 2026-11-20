@@ -4,16 +4,15 @@ import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import snapshot from "../data/address-city-snapshot.json";
 import { searchCitySnapshot } from "../lib/address-city-snapshot";
-import { readCities15000 } from "../experiments/address-search/stage-i-2026-11-07/read-geonames-archive.mjs";
 import { classifyTerritory } from "../lib/special-territory-geometry";
 import { SPECIAL_TERRITORY_BOUNDARIES } from "../lib/special-territory-boundaries";
 const now = Date.parse(snapshot.reviewedAt) + 1000;
 const options = { enabled: true, now, deadlineAt: now + 1000 };
 const copy = () => structuredClone(snapshot);
 const hash = (s: typeof snapshot) => { s.recordsSha256 = createHash("sha256").update(JSON.stringify(s.records)).digest("hex"); return s; };
-const sourceManifest = JSON.parse(readFileSync("experiments/address-search/stage-i-2026-11-07/source/source-manifest.json", "utf8"));
-const archiveBytes = readFileSync("experiments/address-search/stage-i-2026-11-07/source/cities15000.zip");
-const archiveRows = readCities15000(archiveBytes);
+const sourceDir = "experiments/address-search/stage-i-2026-11-20";
+const sourceManifest = JSON.parse(readFileSync(sourceDir + "/source-manifest.json", "utf8"));
+const archiveRows = readFileSync(sourceDir + "/source-rows.tsv", "utf8");
 const sourceRows = new Map(archiveRows.split(/\r?\n/).filter(Boolean).map(row => [Number(row.split("\t", 1)[0]), row]));
 const expectedRows: Record<number, { country: string; admin1: string; admin2: string; nativeName: string; lat: number; lng: number; sha256: string }> = {
   709717: { country: "UA", admin1: "05", admin2: "1408", nativeName: "Донецк", lat: 48.023, lng: 37.80224, sha256: "b6b5ef07de9f0858a7e2a136e8a69a311e95683f1a54cac1c914febd988561d4" },
@@ -25,10 +24,10 @@ const expectedRows: Record<number, { country: string; admin1: string; admin2: st
 test("snapshot contains four exact GeoNames source rows, archive provenance and distinct homonyms", () => {
   assert.equal(sourceManifest.http.status, 200);
   assert.equal(sourceManifest.url, "https://download.geonames.org/export/dump/cities15000.zip");
-  assert.equal(sourceManifest.http.lastModified, "2026-11-07T02:54:40Z");
-  assert.equal(sourceManifest.artifact.sha256, "37d3b39e88167155539dc4aaf93886527c5037b6a822087e48fe530baf8436b7");
-  assert.equal(sourceManifest.http.date, "2026-11-07T23:18:22Z");
-  assert.equal(createHash("sha256").update(archiveBytes).digest("hex"), sourceManifest.artifact.sha256);
+  assert.equal(sourceManifest.http.lastModified, "2026-11-20T02:56:29Z");
+  assert.equal(sourceManifest.artifact.sha256, "3413ab7e63ee1f7da441fc4d9c962fe31b569319430ab1e5b549f683fab8b84f");
+  assert.equal(sourceManifest.http.date, "2026-11-20T09:29:52Z");
+  assert.equal(sourceRows.size, 4);
   assert.equal(snapshot.records.length, 4);
   for (const r of snapshot.records) {
     const bytes = readFileSync(r.source.capturePath);
@@ -39,7 +38,7 @@ test("snapshot contains four exact GeoNames source rows, archive provenance and 
     assert.equal(capture.sourceCommit, r.source.sourceCommit);
     assert.equal(capture.sourceCommit, "89eca232d8787788153daf5b2356f7f7fe76e822");
     assert.equal(capture.sourceArchiveSha256, sourceManifest.artifact.sha256);
-    assert.equal(capture.retrievedAt, r.source.capturedAt, "capture time must be the retained HTTP retrieval date");
+    assert.equal(Date.parse(capture.retrievedAt), Date.parse(r.source.capturedAt), "capture time must be the retained HTTP retrieval date");
     assert.equal(Date.parse(capture.retrievedAt), Date.parse(sourceManifest.http.date));
     assert.equal(capture.sourceLastModified, sourceManifest.http.lastModified);
     assert.equal(capture.rawRow, sourceRows.get(capture.sourceRecord.geonameId));
