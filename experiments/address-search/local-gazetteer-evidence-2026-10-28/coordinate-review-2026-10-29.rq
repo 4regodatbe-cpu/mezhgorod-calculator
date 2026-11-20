@@ -1,0 +1,6 @@
+# Review fixtures joined by existing GeoNames identifiers, never runtime overrides.
+SELECT ?id ?place ?coord WHERE {
+ VALUES ?id { "709717" "565348" "689198" "702658" "701822" "701404" "712451" "708878" "693805" "694423" "688533" "706524" "542420" "524901" "498817" }
+ ?place <http://www.wikidata.org/prop/direct/P1566> ?id .
+ ?place <http://www.wikidata.org/prop/direct/P625> ?coord .
+} LIMIT 30

@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:08:12.361Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 47,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 13,
+    "spec": {
+      "caseId": "zaporizhzhia-кушугум-saint-petersburg-center",
+      "kind": "regional",
+      "region": "zaporizhzhia"
+    }
+  },
+  "caseId": "zaporizhzhia-кушугум-saint-petersburg-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-08-12-361Z-part13",
+  "parent": "d6bc4a5bf3d2a27cda97738c4a13a4a4544bf35a"
+}

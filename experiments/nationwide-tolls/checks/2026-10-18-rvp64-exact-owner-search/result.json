@@ -1,0 +1,38 @@
+{
+  "status": "DONE",
+  "causeReviewStatus": "blocked_by_missing_reliable_data",
+  "atMsk": "2026-10-18T11:26:39.363248+03:00",
+  "sourceStartedCommit": "c3470606b3423b49ae533627fa0c6f6ee7bad2de",
+  "sourceStartedTree": "580791f4338cda1d98ea25de6d1bc0c3a07b22f7",
+  "search": {
+    "engine": "system1",
+    "queries": [
+      "\"РВП-64\" ЗСД",
+      "site:nch-spb.com \"Макарова\" \"без транспондера\""
+    ],
+    "combinedResultCount": 1,
+    "perQueryResultAttribution": "not exposed by combined response; no per-query counts inferred",
+    "rawPath": "experiments/nationwide-tolls/checks/2026-10-18-rvp64-exact-owner-search/search-result.json",
+    "rawSha256": "ec735c2155562589c76bfc954040da9d60e376f631e73fbf496c150f4c5cedc9"
+  },
+  "returnedLead": {
+    "url": "https://gorod-812.ru/rossijskuyu-naczionalnuyu-proveril-minkult/",
+    "published": "2020-11-11",
+    "type": "secondary publication reproducing an audit account",
+    "whyNotAccepted": "Historical 2019/2020 transponder journeys, not current operator cash/card proof or primary RVP64 map. No source-price or physical crosswalk activated from this lead.",
+    "retrievedVia": "search result only; no separate page GET"
+  },
+  "newOperatorPagesRead": 0,
+  "missing": [
+    "Primary operator mapping of captured gantry13020687195/ref64E to a current WHSD tariff-zone/collection product.",
+    "Complete no-transponder charge bundle through south KAD booth933975069 for the selected route."
+  ],
+  "newRouting": 0,
+  "newTrace": 0,
+  "newReplay": 0,
+  "newPricedComponents": 0,
+  "newConfirmedFullFares": 0,
+  "runtimeChanges": 0,
+  "tests": "JSON/raw SHA/link/path/diff checks only; no runtime code change, full tests/build not run",
+  "nextAction": "Keep this cause blocked until a NEW independent exact operator access diagram or dated cash/card receipt is available. Do not restart generic source searches/PDF review or saved route audits."
+}

@@ -1,0 +1,12 @@
+PASS 01-donetsk-disambiguation: requests=3, externalBlocked=0
+PASS 02-select-a-and-b: requests=8, externalBlocked=0
+FAIL 03-swap-and-reset: requests=8, externalBlocked=0; expected A↔B swap control is absent from the V2 page
+PASS 04-clear-and-replace-b: requests=6, externalBlocked=0
+PASS 05-stale-response-race: requests=4, externalBlocked=0
+FAIL 06-normal-empty-error-retry: requests=5, externalBlocked=0; 502 must not leave old items selectable
+
+1 !== 0
+
+PASS 07-fallback-not-in-legacy-cache: requests=5, externalBlocked=0
+FAIL 08-mobile-keyboard: requests=2, externalBlocked=0; page.waitForRequest: Timeout 10000ms exceeded while waiting for event "request"
+{"finishedAt":"2026-10-26T14:45:42.448Z","status":"FAIL","passed":5,"failed":3,"notRun":0,"resultsPath":"/home/runner/work/mezhgorod-calculator/mezhgorod-calculator/b03-browser-results/scenarios.json"}

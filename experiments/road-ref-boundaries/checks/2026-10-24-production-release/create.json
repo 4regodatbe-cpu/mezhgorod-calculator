@@ -1,0 +1,38 @@
+{
+  "result": {
+    "deployment": {
+      "id": "dpl_YgtZ6Ky2HU7gvFg7YzcqVd6JXvCk",
+      "name": "mezhgorod-calculator",
+      "url": "mezhgorod-calculator-3efwb9kbx-4regodatbe-5310.vercel.app",
+      "type": "LAMBDAS",
+      "state": "INITIALIZING",
+      "createdAt": 1792852835103,
+      "creator": {
+        "uid": "kzdYyk5M2pQj46AFBwI7ZyTb",
+        "username": "4regodatbe-5310"
+      },
+      "project": {
+        "id": "prj_JbuIKFQNjD3FvAcX2I65Dm5OBKie",
+        "name": "mezhgorod-calculator",
+        "framework": "nextjs"
+      },
+      "meta": {
+        "githubCommitRef": "da77f96f4f9185017938ed07022557611f3ea9bf",
+        "githubCommitSha": "da77f96f4f9185017938ed07022557611f3ea9bf",
+        "githubCommitMessage": "docs: separate current handoff from preserved historical next steps [skip ci]",
+        "githubRepo": "mezhgorod-calculator",
+        "githubOrg": "4regodatbe-cpu"
+      },
+      "alias": [
+        "mezhgorod-calculator-4regodatbe-5310.vercel.app",
+        "mezhgorod-calculator-git-da77f96f4f91850-312731-4regodatbe-5310.vercel.app"
+      ],
+      "target": "production",
+      "regions": [
+        "iad1"
+      ],
+      "buildingAt": 1792852835103,
+      "readyState": "INITIALIZING"
+    }
+  }
+}

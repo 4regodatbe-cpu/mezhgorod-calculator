@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-17T14:23:42.652Z",
+  "source": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-moscow/2026-10-16T00-06-25-425Z-capture.json.gz",
+  "sourceSha256": "24a24fda86b252ba77c3765a24b8ee58f05c742b84af6ed7445540368fd0eb61",
+  "routeSha256": "eae2270d0c7fa50572ea7f4dfabee9672e35ae5149ae7266720403dc07d46574",
+  "geometrySha256": "0594101a8aaa8cd7f2aeba0624d291782cd0b598d692e533c5f6254125d6b87b",
+  "caseId": "pair-m11-zsd-prim-to-moscow",
+  "provider": "OSRM",
+  "candidates": [
+    {
+      "provider": "Valhalla",
+      "admitted": false,
+      "meters": 724531,
+      "seconds": 25471,
+      "dimensions": [
+        2
+      ]
+    },
+    {
+      "provider": "OSRM",
+      "admitted": true,
+      "meters": 715622,
+      "seconds": 30963,
+      "dimensions": [
+        2
+      ]
+    },
+    {
+      "provider": "BRouter",
+      "admitted": false,
+      "meters": 724227,
+      "seconds": 30659,
+      "dimensions": [
+        3
+      ]
+    }
+  ],
+  "newRoutingRequests": 0,
+  "maxNetworkRequests": 12,
+  "totalBudgetMs": 120000,
+  "durableStartedCommit": "dbb5a1ef669e3ce5179d35b59f22378602b766c8"
+}

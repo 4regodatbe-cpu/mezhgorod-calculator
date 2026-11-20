@@ -1,0 +1,15 @@
+## Runtime Logs
+
+**Project:** prj_JbuIKFQNjD3FvAcX2I65Dm5OBKie
+**Deployment:** dpl_4R2Lqb1f6C9WPHYoheU2mjDU9zss
+**Time range:** 2026-10-24T08:11:01.853Z → 2026-10-24T08:26:01.853Z
+
+### 2026-10-24T08:24:54.616Z GET /api/suggest [warn/function]
+dep=dpl_4R2Lqb1f6C9WPHYoheU2mjDU9zss branch=fix/v3-missing-route-prices-2026-10-15 request=kcpzq-1792830293418-e2db2e8de951 domain=mezhgorod-calculator-bvtpbupm6-4regodatbe-5310.vercel.app environment=preview region=iad1 runtime=nodejs24.x stream=stderr
+    address_search_partial {
+      elapsedMs: 236,
+      sourceCount: 7,
+      failures: { http_503: 1 },
+      budgetExpired: false
+    }
+

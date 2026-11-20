@@ -1,0 +1,5 @@
+# ESLint PASS; offline контроль STARTED
+
+DONE: pnpm exec eslint по18 source/test файлам departure-policy (точный список в evidence/2026-10-16-eslint.log) exit0; git diff --check exit0. Parent remote6c6faa26d3c69efd0f06fd54903b92f841b0064a/tree428b44755ca5f9f9eeb2f4ebe04ec9de04a6235f сверены. При переносе build stdout сохранены исходные CR/LF байты; итоговое Git tree полностью совпадает с локальным.
+
+STARTED один маршрут: offline replay zaporizhzhia-гуляйполе-moscow-center, capture2026-10-15T18-16-40-411Z-capture.json.gz; departure2026-10-15T09:00:00+03:00 и2026-10-17T09:00:00+03:00. Точный runner: node --import ./scripts/register-ts-paths.mjs experiments/nationwide-tolls/scripts/run-systemic-route-case.mjs --replay <capture> <departure>. Вывод evidence/2026-10-16-huliaipole-replay.log; новые JSON в исходном runs каталоге. Сохранить суммы/компоненты/replayIntegrity и source SHA; это не новый live и не независимое подтверждение тарифа. Затем live Бахмут→Казань. Ветка/PR14draft без release.

@@ -1,0 +1,3 @@
+# Tariff proof arbitration experiment — PARTIAL — 27.10.2026
+
+Source10007e2e710cf606428060764ea1db58ebe09503; allowed branch, PR14 Draft. Compared exact-pair, additive graph and evidence arbitration. Isolated prototype/tests/analysis under experiments/tariff-proof-selection. Saved M4 pending endpoints remain unknown; positive monetary fixtures synthetic only. Focused test-file aggregate and diff PASS; no app integration, fare/geometry changes or network routing. Next: independently billed road composition and actual source-bound context validation. Required operator proofs still absent; no claim that B04/B10 are resolved.

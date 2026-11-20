@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1319 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="318102347" visible="true" version="6" changeset="169404337" timestamp="2025-07-24T14:56:45Z" user="Anton Cheloshkin" uid="2071484" lat="59.8688120" lon="30.2935749">
+  <tag k="barrier" v="toll_booth"/>
+  <tag k="name" v="ПВП 3"/>
+  <tag k="source" v="https://i.47news.ru/titles/2023/04//20230427_98wezn58i9bolcwbgve9.jpg"/>
+ </node>
+ <node id="3789313425" visible="true" version="2" changeset="69569939" timestamp="2019-04-25T15:31:20Z" user="EIjas" uid="700550" lat="59.8687267" lon="30.2935528"/>
+ <node id="3789313436" visible="true" version="2" changeset="69569939" timestamp="2019-04-25T15:31:20Z" user="EIjas" uid="700550" lat="59.8689316" lon="30.2936208"/>
+ <way id="375574651" visible="true" version="5" changeset="109614004" timestamp="2021-08-13T08:32:21Z" user="mini-me" uid="3846961">
+  <nd ref="3789313436"/>
+  <nd ref="318102347"/>
+  <nd ref="3789313425"/>
+  <tag k="covered" v="yes"/>
+  <tag k="foot" v="no"/>
+  <tag k="highway" v="primary_link"/>
+  <tag k="lanes" v="3"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="40"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="source" v="survey"/>
+  <tag k="surface" v="asphalt"/>
+  <tag k="surface:grade" v="3"/>
+  <tag k="toll" v="yes"/>
+ </way>
+</osm>

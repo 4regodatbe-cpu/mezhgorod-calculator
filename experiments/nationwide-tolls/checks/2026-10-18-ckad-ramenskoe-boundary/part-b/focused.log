@@ -1,0 +1,23 @@
+✔ own directed exit resolves the exact existing1218 cell without M12 endpoint restriction (22.01346ms)
+✔ five own departure profiles compose complete unconfirmed estimates using the departure date (303.693192ms)
+✔ old, absent, partial or wrong context cannot turn a CKAD subtotal into a full fare (271.487183ms)
+✔ own public API uses recorded Valhalla geometry and prices only a complete trace (204.842729ms)
+✔ own saved current named trace proves directed M11 to Egoryevskoye; old paid-only snapshot cannot (25.030473ms)
+✔ incomplete trace, other boundary, repeated passage or wrong plaza cannot borrow proof (10.414373ms)
+✔ reverse, shift, sparse, detour, malformed or mismatched strict end fail closed (25.85197ms)
+✔ primary directed CKAD source bytes and49 physical witnesses retain exact object/owner provenance (37.621664ms)
+✔ both own complete traces bind the shared directed pair; old paid-only validation cannot authorize it (94.815941ms)
+✔ a free city gap lost from paidRoadEdges creates two real named trace blocks and rejects the pair (10.839553ms)
+✔ incomplete coverage and missing/repeated/wrong boundary context or plaza fail closed (22.528616ms)
+✔ reverse, shifted, sparse or inconsistent own geometry cannot borrow a complete trace (39.634474ms)
+✔ each own quote adds981 only to the known subtotal; M12 remains the sole missing component and API amount stays null (517.271976ms)
+✔ independent own Voronezh OSRM keeps7254 and gains no CKAD merely from its historical case name (129.414623ms)
+✔ V3 API uses each own OSRM and exact trace responses while preserving unknown full fare (371.584613ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1610.209843

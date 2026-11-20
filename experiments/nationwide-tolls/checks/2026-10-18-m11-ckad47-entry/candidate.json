@@ -1,0 +1,207 @@
+{
+  "status": "candidate_not_runtime_binding",
+  "atMsk": "2026-10-18T12:07:52.076798+03:00",
+  "sourceHead": "ca58a6ebd603aec149103a3e1c2e3f3fa5f392ec",
+  "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+  "capturePath": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/2026-10-15T23-58-33-171Z-capture.json.gz",
+  "captureSha256": "e8b5d42fb9b737227c04d195271c4cb4dde444a66f85aa579d238a0cd2769ed0",
+  "provider": "Valhalla",
+  "ownTraceComplete": true,
+  "traceCallIndex": 6,
+  "traceBodySha256": "a8d2af336ab8bbdbc9c694eebd4948ca7cbb14b18d4294b064b39d494163b4cc",
+  "entryEdges": [
+    {
+      "edgeIndex": 131,
+      "way_id": 954011576,
+      "toll": false,
+      "begin_shape_index": 379,
+      "end_shape_index": 381,
+      "names": [
+        "А-113",
+        "Центральная кольцевая автодорога",
+        "ЦКАД"
+      ],
+      "end_node": {
+        "node_id": 8087316065,
+        "type": "toll_booth"
+      }
+    },
+    {
+      "edgeIndex": 132,
+      "way_id": 954011576,
+      "toll": false,
+      "begin_shape_index": 381,
+      "end_shape_index": 383,
+      "names": [
+        "А-113",
+        "Центральная кольцевая автодорога",
+        "ЦКАД"
+      ],
+      "end_node": {
+        "intersecting_edges": [
+          {}
+        ],
+        "node_id": 8087316056,
+        "type": "street_intersection"
+      }
+    },
+    {
+      "edgeIndex": 133,
+      "way_id": 954011577,
+      "toll": false,
+      "begin_shape_index": 383,
+      "end_shape_index": 385,
+      "names": [
+        "А-113",
+        "Центральная кольцевая автодорога",
+        "ЦКАД"
+      ],
+      "end_node": {
+        "intersecting_edges": [
+          {}
+        ],
+        "node_id": 7832087256,
+        "type": "street_intersection"
+      }
+    },
+    {
+      "edgeIndex": 134,
+      "way_id": 791520973,
+      "toll": false,
+      "begin_shape_index": 385,
+      "end_shape_index": 414,
+      "names": [
+        "А-113",
+        "Центральная кольцевая автодорога",
+        "ЦКАД"
+      ],
+      "end_node": {
+        "intersecting_edges": [
+          {}
+        ],
+        "node_id": 3566326245,
+        "type": "street_intersection"
+      }
+    },
+    {
+      "edgeIndex": 135,
+      "way_id": 1270188032,
+      "toll": true,
+      "begin_shape_index": 414,
+      "end_shape_index": 415,
+      "names": [
+        "М-11",
+        "«Нева»"
+      ],
+      "end_node": {
+        "node_id": 1872038476,
+        "type": "street_intersection"
+      }
+    },
+    {
+      "edgeIndex": 136,
+      "way_id": 317945846,
+      "toll": true,
+      "begin_shape_index": 415,
+      "end_shape_index": 416,
+      "names": [
+        "М-11",
+        "«Нева»"
+      ],
+      "end_node": {
+        "node_id": 3499365559,
+        "type": "street_intersection"
+      }
+    },
+    {
+      "edgeIndex": 137,
+      "way_id": 343010750,
+      "toll": true,
+      "begin_shape_index": 416,
+      "end_shape_index": 419,
+      "names": [
+        "М-11",
+        "«Нева»"
+      ],
+      "end_node": {
+        "node_id": 5440766351,
+        "type": "street_intersection"
+      }
+    },
+    {
+      "edgeIndex": 138,
+      "way_id": 317945853,
+      "toll": true,
+      "begin_shape_index": 419,
+      "end_shape_index": 423,
+      "names": [
+        "М-11",
+        "«Нева»"
+      ],
+      "end_node": {
+        "node_id": 11793782898,
+        "type": "street_intersection"
+      }
+    },
+    {
+      "edgeIndex": 139,
+      "way_id": 1270188020,
+      "toll": true,
+      "begin_shape_index": 423,
+      "end_shape_index": 425,
+      "names": [
+        "М-11",
+        "«Нева»"
+      ],
+      "end_node": {
+        "intersecting_edges": [
+          {}
+        ],
+        "node_id": 1872038490,
+        "type": "motor_way_junction"
+      }
+    },
+    {
+      "edgeIndex": 140,
+      "way_id": 1270188023,
+      "toll": true,
+      "begin_shape_index": 425,
+      "end_shape_index": 430,
+      "names": [
+        "М-11",
+        "«Нева»"
+      ],
+      "end_node": {
+        "node_id": 3071523719,
+        "type": "street_intersection"
+      }
+    }
+  ],
+  "firstM11StrictBlock": {
+    "provider": "valhalla",
+    "legIndex": 0,
+    "sourceStartIndex": 12,
+    "sourceEndIndex": 15,
+    "beginKm": 487.514,
+    "endKm": 825.581,
+    "lengthKm": 338.067,
+    "beginCoordinate": [
+      37.209886,
+      56.089259
+    ],
+    "endCoordinate": [
+      33.669658,
+      58.086935
+    ],
+    "labels": [
+      "М-11",
+      "«Нева»"
+    ]
+  },
+  "observedGateNode": "8087316065",
+  "gateWay": "954011576",
+  "firstM11Way": "1270188032",
+  "firstM11Node": "3566326245",
+  "hypothesis": "Direct CKAD47 PVP18 entry, distinct from already anchored MMK50 PVP6B2. Official tariffs already distinguish tskad and mmk_a107. Needs exact primary identity/topology proof before runtime use.",
+  "notEstablished": "No new price or current binding is claimed; this is a newly isolated source target from the saved route, not another replay."
+}

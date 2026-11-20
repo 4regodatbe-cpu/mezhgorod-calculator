@@ -1,0 +1,1 @@
+{"command": ["node", "--import", "./scripts/register-ts-paths.mjs", "--test", "scripts/v3-m11-ckad-exit.test.ts", "scripts/v3-m11-ckad-entry.test.ts", "scripts/v3-m11-p214-boundary.test.ts", "scripts/v3-m11-p214-moscow-head.test.ts", "scripts/v3-m11-p214-orphan.test.ts"], "exitCode": 0}

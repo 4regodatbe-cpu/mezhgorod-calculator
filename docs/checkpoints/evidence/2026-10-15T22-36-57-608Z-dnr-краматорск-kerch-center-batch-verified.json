@@ -1,0 +1,48 @@
+{
+  "caseId": "dnr-краматорск-kerch-center",
+  "status": "audited",
+  "commandExit": 0,
+  "stage1Completed": 22,
+  "stage1Planned": 155,
+  "next": {
+    "caseId": "dnr-краматорск-moscow-center",
+    "kind": "regional",
+    "region": "dnr"
+  },
+  "provider": "OSRM",
+  "routeMeters": 864115,
+  "traceComplete": true,
+  "weekday": 2030,
+  "weekend": 2250,
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "components": [
+    {
+      "id": "m4",
+      "amount": 1230,
+      "reason": "matrix exact selected-route M4 vector"
+    },
+    {
+      "id": "a289",
+      "amount": 800,
+      "reason": "A-289 selected-route OD vector"
+    }
+  ],
+  "captureSha256": "2b7bf736942b3cd66494041b5f0e68332b798f40d0ceedc1bb41fb14934ac11e",
+  "parity": true,
+  "evidence": {
+    "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T22-36-57-853Z.json",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-37-25-354Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-kerch-center/2026-10-15T22-37-25-281Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T22-37-25-745Z.json",
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T22-37-26-113Z.json",
+    "sameDateParity": true
+  },
+  "commands": {
+    "inventory": 0,
+    "report": 0
+  },
+  "parentRemote": "7770deebf5aebde867f88684f6580e6ff9091888"
+}

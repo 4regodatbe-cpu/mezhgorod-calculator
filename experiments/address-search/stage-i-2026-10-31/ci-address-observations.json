@@ -1,0 +1,44 @@
+[
+  {
+    "query": "Ростов",
+    "status": "PASS",
+    "elapsedMs": 1205,
+    "sourceCount": 7,
+    "failures": {
+      "http_503": 1
+    },
+    "featureCount": 103,
+    "checks": {
+      "rostovOnDonWithinFirstEight": true
+    }
+  },
+  {
+    "query": "Красн",
+    "status": "PASS",
+    "elapsedMs": 770,
+    "sourceCount": 7,
+    "failures": {
+      "http_503": 2,
+      "source_cooldown": 4
+    },
+    "featureCount": 20,
+    "checks": {
+      "krasnodarFirst": true
+    }
+  },
+  {
+    "query": "Донецк",
+    "status": "SOURCE_UNAVAILABLE",
+    "elapsedMs": 274,
+    "sourceCount": 7,
+    "failures": {
+      "http_503": 4,
+      "source_cooldown": 3
+    },
+    "featureCount": 0,
+    "checks": {
+      "donetskDnrFirst": false,
+      "donetskRostovSecond": false
+    }
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "experiment": 8,
+  "acquiredAtMoscowDate": "2026-10-27",
+  "method": "ordinary curl HTTPS GET with granted per-command network access, inherited proxy and TLS verification, no access-control bypass",
+  "localOriginalDirectory": "/tmp/m4-podd-exp8.FSZfcc",
+  "originalsUnmodified": true,
+  "uploadedFullOriginalsToGit": false,
+  "documents": [
+    {
+      "id": "mainline",
+      "url": "https://russianhighways.ru/upload/iblock/ac0/ac0d3f914d1dbbb1965af9018617ec94.pdf",
+      "localFile": "ac0d3f914d1dbbb1965af9018617ec94.pdf",
+      "curlExitCode": 0,
+      "httpStatus": 200,
+      "bytes": 38525744,
+      "matchesExpectedBytes": true,
+      "sha256": "fae0cb80d7db62befd6ad297fe566d3d2add227c0e5dd47693752cdc17627e32",
+      "pages": 245,
+      "encrypted": false,
+      "javascript": false,
+      "coverTitle": "ПРОЕКТ ОРГАНИЗАЦИИ ДОРОЖНОГО ДВИЖЕНИЯ, ТОМ2.1(ЧАСТЬ1), СХЕМЫ СУЩЕСТВУЮЩЕЙ ДИСЛОКАЦИИ ТСОДД, М4км464+300–546+000",
+      "coverYear": 2023,
+      "approvalDateOnCover": null,
+      "publisherIndexDate": "2025-03-13",
+      "targetPageCandidatesFromText": [242,243,244,245],
+      "textFinding": "PDFpage242 explicitly contains ПВП544+835–545+600; candidates not yet visually mapped to target OSM node"
+    },
+    {
+      "id": "alternative",
+      "url": "https://russianhighways.ru/upload/iblock/963/9632eae064152f4477899207a052bc6b.pdf",
+      "localFile": "9632eae064152f4477899207a052bc6b.pdf",
+      "curlExitCode": 0,
+      "httpStatus": 200,
+      "bytes": 11840573,
+      "sha256": "1700a00fdeabe41719fb515bc9162d68108725ba6d57fb96fd62d82da2055187",
+      "pages": 87,
+      "encrypted": false,
+      "javascript": false,
+      "coverTitle": "ПРОЕКТ ОРГАНИЗАЦИИ ДОРОЖНОГО ДВИЖЕНИЯ, ТОМ2.1(АЛЬТЕРНАТИВНОЕ НАПРАВЛЕНИЕ), М4км517+000–544+000(с.НоваяУсмань,с.Рогачевка)",
+      "coverYear": 2023,
+      "approvalDateOnCover": null,
+      "publisherIndexDate": "2025-03-13",
+      "targetPageCandidatesFromText": [],
+      "textFinding": "Cover matches target alternative direction; end/junction leaves to locate next"
+    }
+  ],
+  "integrityChecks": "stat byte counts; sha256sum; pdfinfo successful for both; complete pdftotext indexing successful (245/87 pages), no parse failure observed",
+  "limits": "No independent publisher SHA available; PDF parse success is not a geometric or tariff proof. Blank cover approval dates and 2023 plan year are not October2026 tariff freshness evidence. Local originals may require redownload with exact SHA after environment loss.",
+  "newPhysicalTariffCorrespondences": 0,
+  "newFullFarePairs": 0
+}

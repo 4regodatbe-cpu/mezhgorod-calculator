@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:51:05.667Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 21,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 12,
+    "spec": {
+      "caseId": "kherson-старая-збурьевка-kazan-center",
+      "kind": "regional",
+      "region": "kherson"
+    }
+  },
+  "caseId": "kherson-старая-збурьевка-kazan-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-51-05-667Z-part12",
+  "parent": "40ef5e3f8ceea9a2604338e4b1b78ab25e9ae42f"
+}

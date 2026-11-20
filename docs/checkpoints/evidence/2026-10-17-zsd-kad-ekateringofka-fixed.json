@@ -1,0 +1,115 @@
+{
+  "atUtc": "2026-10-17T10:53:00Z",
+  "sourceCommit": "fbc7be25b819f0b3d2f0784b19d89aba30a765ee",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "pr": 14,
+  "sourceRun": {
+    "id": 39025484086,
+    "conclusion": "success"
+  },
+  "scope": "One source-derived finished cash/card ZSD vector KAD south to Ekateringofka, not a general ZSD fare",
+  "proof": {
+    "ownerZoneDefinition": "Order96 Annex1 PDFpage1 explicitly includes KAD south entry in zone1 and Ekateringofka exit from Blagodatnaya in zone2",
+    "currentBaseFare": "Order32 Annex1 effective2025-05-01, current owner tariff table retrieved2026-10-17:300RUB per zone for categoryI cash/card",
+    "paymentRules": "Current owner rules6.2 and6.3 apply base zone tariffs;6.2.17 receipt exception Auto<->Blagodatnaya does not describe this entry/exit pair",
+    "readyVectorRub": 600,
+    "derivation": "Precomputed source-derived zone1+zone2 finished vector; runtime selects one row and never charges by booth count",
+    "independentOdReceiptConfirmed": false,
+    "osmTopology": {
+      "reviewedNamedWays": 26,
+      "allTollAndOneWay": true,
+      "all26WaysFormDirectedContinuousChain": true,
+      "exitWay": 183902370,
+      "exitDescription": "ЗСД ->наб. р. Екатерингофка",
+      "exitPrimaryURL": "https://api.openstreetmap.org/api/0.6/way/183902370/full"
+    },
+    "sourceManifest": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/source-manifest.json"
+  },
+  "positiveCases": 1,
+  "fullReplayProfiles": 2,
+  "negativeDistinctSavedCase": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+  "negativeCaseMode": "component regression, not new live/full replay",
+  "newLiveRouteRuns": 0,
+  "captureSha256": "0493305d255cfc779f4d2b7f15e5c4fb7161b80857f3af75a4c57567a6df3cb1",
+  "previousUnknownArtifacts": [],
+  "results": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-17T10-48-56-719Z.json",
+      "sha256": "6faf025ecb5c9d9234098d70ea3942371d8860dad5e707fc1e9a48ee413a33d9",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "amount": 9534,
+      "priceConfirmation": "unconfirmed",
+      "pricingStatus": "priced",
+      "missing": [],
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      },
+      "zsd": {
+        "id": "zsd",
+        "detected": true,
+        "reason": "zsd_kad_south_ekateringofka_owner_zone_vector",
+        "tolls": {
+          "amount": 600,
+          "weekdayAmount": 600,
+          "weekendAmount": 600,
+          "period": "все дни, без транспондера",
+          "confidence": "matched",
+          "segments": [
+            "ЗСД: КАД (юг) → наб. р. Екатерингофки · 600 ₽ (зоны 1–2)"
+          ]
+        }
+      }
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-17T10-49-05-192Z.json",
+      "sha256": "5959913884db34a5789fcb30df252f567dab7bc76d36bb1e8f386580007c184c",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "amount": 11184,
+      "priceConfirmation": "unconfirmed",
+      "pricingStatus": "priced",
+      "missing": [],
+      "replayIntegrity": {
+        "complete": true,
+        "missingResponses": []
+      },
+      "zsd": {
+        "id": "zsd",
+        "detected": true,
+        "reason": "zsd_kad_south_ekateringofka_owner_zone_vector",
+        "tolls": {
+          "amount": 600,
+          "weekdayAmount": 600,
+          "weekendAmount": 600,
+          "period": "все дни, без транспондера",
+          "confidence": "matched",
+          "segments": [
+            "ЗСД: КАД (юг) → наб. р. Екатерингофки · 600 ₽ (зоны 1–2)"
+          ]
+        }
+      }
+    }
+  ],
+  "validation": {
+    "focusedInitial": {
+      "pass": 16,
+      "fail": 0
+    },
+    "finalFullGate": {
+      "pass": 704,
+      "fail": 0,
+      "extraQuoteAndApiAdapterChecks": "PASS"
+    },
+    "typescript": "PASS",
+    "nextBuild": "PASS",
+    "logs": "experiments/nationwide-tolls/checks/2026-10-17-zsd-kad-ekateringofka",
+    "initialEnvironmentFailures": "Sparse checkout omitted existing fixture files; materialized the exact tracked fixtures and reran. No source-regression failure established."
+  },
+  "limits": [
+    "Whole-trip priceConfirmation remains unconfirmed",
+    "Only the exact reviewed direction/entry/plaza/exit and complete selected trace are enabled",
+    "Larger ZSD scope, reverse, incomplete trace, missing exact ways, repeated or extra ZSD plazas stay unknown",
+    "Other75 baseline ZSD cases were not re-evaluated in this step; counts overlap and are not a fare-coverage percentage",
+    "No main/merge/Production/Android action"
+  ]
+}

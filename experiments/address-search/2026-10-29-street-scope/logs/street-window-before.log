@@ -1,0 +1,43 @@
+✔ comma plus an explicit region is still a settlement query, not a street request (3.170978ms)
+✖ street requests use the captured street window, not a mixed house/POI window or settlement bbox (2.935648ms)
+✔ all requested standalone cities including comma-qualified DNR use admitted data with zero Photon calls (158.180911ms)
+✔ saved real city/street candidates rank correctly without requiring a house (30.788198ms)
+✔ city+street outranks namesake streets in other cities independently of initial order (7.745576ms)
+✔ same-name city street ties retain territorial priority and explicit-region overrides (4.101384ms)
+✔ no confirmed street point: actual settlement remains available, never a silent other-city substitute (35.802957ms)
+✔ invalid/missing street geometry is never invented or copied from another result (1.109958ms)
+✔ a street containing the city word cannot impersonate that city (1.658982ms)
+✔ actual saved street windows serve three confirmed cities, not a substituted Rostov street for DNR (94.454248ms)
+✔ complete provider failure retains an explicitly city-only option; cancellation never returns that stale fallback (5.068332ms)
+✔ local settlement work uses the existing total budget; an expired deadline starts no Photon requests (6.022713ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 11
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 611.217333
+
+✖ failing tests:
+
+test at scripts/street-address.test.ts:22:1
+✖ street requests use the captured street window, not a mixed house/POI window or settlement bbox (2.935648ms)
+  AssertionError [ERR_ASSERTION]: Краснодар, Красная улица
+  
+  null !== 'street'
+  
+      at TestContext.<anonymous> (file:///workspace/geonames-preview-publish-fc83523/scripts/street-address.test.ts:25:33)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: 'street',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,7 @@
+# Part19 policy runner — focused DONE / next verification STARTED
+
+Parent0a462473200263d91665c1c5b41d44824f64195a, working branch/PR14draft only. Implemented new automatic-policy-replay-queue.mjs without modifying live pricing or enabling workflow yet. Existing captures only; two fixed departure profiles, exact capture/case/provider/date/policy/integrity/M4 and whole-total consistency guards. One route STARTED and DONE/FAILED each committed/pushed with expected-head and fetched exact tree readback before next. Class complete remains part19ongoing/20planned; unknown other products remains null total.
+
+Focused5/5 PASS: resume/progress uniqueness, unknownsubtotal, complete total consistency, exact selected capture/departure identity, missing response/unpriced M4 stops. Scoped ESLint2/diff PASS. No job launched, no309rerun. The first orchestration-only patch invocation had a JS SyntaxError before execution; retried corrected template, no file/route change from failed call.
+
+Next STARTED: strengthen raw-provider and immutable-report checks, add isolated fakeGit integration proving STARTED→DONE→next sequence and stop-on-failure persistence, then focused/fullgate. This is verification of the one queue implementation, not a new fare fix. Before enabling workflow save fullgate evidence. If interrupted, workflow still invokes old completed live queue only and is not triggered by these script-only commits; resume tests before workflow edit. No main/merge/Production/Android/messages.

@@ -1,0 +1,61 @@
+{
+  "road": "m11",
+  "date": "2026-10-15T09:00:00+03:00",
+  "source": "current pure boundary/quote adapters on1–2retainedrecords; not provider/trace/API replay or a mass route audit",
+  "externalRequests": 0,
+  "pricePolicy": "latest retained official price/rule until replaced; neither document age nor an optional lane certificate is a standalone blocker; geometry/product conflicts remain material",
+  "results": [
+    {
+      "caseId": "pair-m11-ckad-noginsk-to-tver",
+      "capture": {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-tver/2026-10-16T01-29-30-153Z-capture.json.gz",
+        "sha256": "3235c04e3f0d95c30df518d159c3e47bce988a0c4a0b1b5700b5ee9e206f61b1",
+        "expectedShaPreviouslyPinned": true
+      },
+      "provider": "Valhalla",
+      "meters": 243975,
+      "seconds": 9976,
+      "selectedTraceComplete": true,
+      "physical": {
+        "directedExit": {
+          "from": "М-11",
+          "viaBooth": "6588472831",
+          "boothWay": "1307036920",
+          "to": "М-10",
+          "toWay": "900434333"
+        },
+        "entry": "CKAD approach, not a proven p58 start",
+        "sourceCall": 4,
+        "sourceEdges": [
+          63,
+          72
+        ]
+      },
+      "boundary": {
+        "candidate": false,
+        "headDetected": false,
+        "resolved": false,
+        "parts": null,
+        "reason": "m11_outer_boundaries_unresolved"
+      },
+      "quote": null,
+      "coverage": {
+        "core": [
+          "ckad",
+          "m11"
+        ],
+        "regional": [
+          {
+            "id": "unknown-paid-road",
+            "reason": "unmapped_selected_route_paid_booth"
+          }
+        ]
+      },
+      "status": "BLOCKED_BY_DATA",
+      "missingEvidence": [
+        "bind THIS directed CKAD approach to the mainline58 virtual interface and head/mainline product division",
+        "exact selected parent-node/road sequence connecting that interface to reviewed147exit; a physical booth at a virtual boundary is not required"
+      ]
+    }
+  ]
+}

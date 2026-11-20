@@ -1,0 +1,64 @@
+{
+  "status": "DONE_SOURCE_ONLY",
+  "capturePath": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-torzhok-to-moscow/2026-10-16T01-56-26-781Z-capture.json.gz",
+  "captureSha256": "11c1ccb92c498be357958138e293b7ed24f94a86e59bb7e1a366c9e67172b798",
+  "hits": [
+    {
+      "nodeId": "4932294633",
+      "coordinate": [
+        37.4500204,
+        55.9355476
+      ],
+      "index": 1255.008550611535,
+      "distanceKm": 0.000016166767687448032
+    },
+    {
+      "nodeId": "7171624764",
+      "coordinate": [
+        37.4500368,
+        55.9354985
+      ],
+      "index": 1255.989937430367,
+      "distanceKm": 0.0000018371351173089885
+    },
+    {
+      "nodeId": "4932294632",
+      "coordinate": [
+        37.4500537,
+        55.935448
+      ],
+      "index": 1256.9993743019054,
+      "distanceKm": 0.000018371372802178187
+    }
+  ],
+  "ordered": true,
+  "p58": {
+    "index": 963.4313481401866,
+    "distanceKm": 0.03210375502826035
+  },
+  "end": {
+    "index": 1330,
+    "distanceKm": 0
+  },
+  "moscow": {
+    "index": 1336,
+    "distanceKm": 0.49909704106090835
+  },
+  "strictEndToMoscowKm": 0.5844964388600258,
+  "gateEvent": [
+    {
+      "osmNodeId": "7171624764",
+      "wayId": "502872285",
+      "roadNames": [
+        "М-11",
+        "«Нева»"
+      ],
+      "edgeIndex": 1,
+      "edgeToll": true,
+      "beginShapeIndex": 507,
+      "endShapeIndex": 508
+    }
+  ],
+  "newPricedComponents": 0,
+  "networkRequestsInVerifier": 0
+}

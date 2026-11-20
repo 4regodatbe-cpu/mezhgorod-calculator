@@ -1,0 +1,606 @@
+{
+  "schemaVersion": 1,
+  "sourceHead": "320c50d4a07b4f2b122d2de3f4ee2f6b4134d591",
+  "scope": "Git tracked/index files; source text under 1 MiB; literal imports and paths. Dynamic paths, workflow globs and test fixtures require manual review.",
+  "trackedFiles": 14055,
+  "trackedBytes": 402106462,
+  "groups": {
+    "ci": {
+      "files": 73,
+      "bytes": 152831
+    },
+    "data_conservative_keep": {
+      "files": 6246,
+      "bytes": 21880748
+    },
+    "documentation_or_archive": {
+      "files": 2664,
+      "bytes": 8443470
+    },
+    "experiments_review_dependencies": {
+      "files": 4545,
+      "bytes": 369236448
+    },
+    "other_integrations_keep": {
+      "files": 25,
+      "bytes": 38766
+    },
+    "root_configuration_or_other": {
+      "files": 116,
+      "bytes": 589673
+    },
+    "runtime_code": {
+      "files": 181,
+      "bytes": 775869
+    },
+    "scripts_and_tests": {
+      "files": 205,
+      "bytes": 988657
+    }
+  },
+  "directoryGroups": {
+    ".github": {
+      "files": 73,
+      "bytes": 152831
+    },
+    "android-app": {
+      "files": 9,
+      "bytes": 7013
+    },
+    "android-app-v2": {
+      "files": 9,
+      "bytes": 6791
+    },
+    "app": {
+      "files": 39,
+      "bytes": 174798
+    },
+    "archive": {
+      "files": 4,
+      "bytes": 9291
+    },
+    "benchmarks": {
+      "files": 11,
+      "bytes": 43216
+    },
+    "checkpoints": {
+      "files": 91,
+      "bytes": 267057
+    },
+    "components": {
+      "files": 5,
+      "bytes": 6902
+    },
+    "data/SPECIAL_TERRITORY_BOUNDARIES.md": {
+      "files": 1,
+      "bytes": 1257
+    },
+    "data/address-city-snapshot.json": {
+      "files": 1,
+      "bytes": 3816
+    },
+    "data/external-toll-benchmark.json": {
+      "files": 1,
+      "bytes": 4817
+    },
+    "data/fixtures": {
+      "files": 2,
+      "bytes": 15832
+    },
+    "data/local-settlements": {
+      "files": 6221,
+      "bytes": 18929775
+    },
+    "data/m11-road-evidence-fixtures.json": {
+      "files": 1,
+      "bytes": 5533
+    },
+    "data/m4-pvp-osm-partial.json": {
+      "files": 1,
+      "bytes": 14055
+    },
+    "data/road-kilometrage.json": {
+      "files": 1,
+      "bytes": 602
+    },
+    "data/route-coverage-plan.json": {
+      "files": 1,
+      "bytes": 23980
+    },
+    "data/route-priority.json": {
+      "files": 1,
+      "bytes": 12564
+    },
+    "data/ruwiki-settlement-index.json": {
+      "files": 1,
+      "bytes": 114600
+    },
+    "data/settlement-route-benchmark-20261006.json": {
+      "files": 1,
+      "bytes": 15215
+    },
+    "data/special-territory-boundaries.json": {
+      "files": 1,
+      "bytes": 2682975
+    },
+    "data/toll-feature-switches.json": {
+      "files": 1,
+      "bytes": 121
+    },
+    "data/tolls": {
+      "files": 11,
+      "bytes": 55606
+    },
+    "docs": {
+      "files": 2659,
+      "bytes": 8432344
+    },
+    "experiments/address-search": {
+      "files": 280,
+      "bytes": 20664127
+    },
+    "experiments/crimea-m4-bypass": {
+      "files": 19,
+      "bytes": 314739
+    },
+    "experiments/junction-atlas": {
+      "files": 55,
+      "bytes": 428667
+    },
+    "experiments/nationwide-tolls": {
+      "files": 3418,
+      "bytes": 339050670
+    },
+    "experiments/preview-acceptance": {
+      "files": 21,
+      "bytes": 2095837
+    },
+    "experiments/release-candidate-1": {
+      "files": 40,
+      "bytes": 284414
+    },
+    "experiments/road-ref-boundaries": {
+      "files": 274,
+      "bytes": 3710912
+    },
+    "experiments/routing-reliability": {
+      "files": 33,
+      "bytes": 575377
+    },
+    "experiments/tariff-proof-selection": {
+      "files": 53,
+      "bytes": 274967
+    },
+    "experiments/toll-estimates": {
+      "files": 297,
+      "bytes": 1498928
+    },
+    "experiments/toll-od-matrix": {
+      "files": 55,
+      "bytes": 337810
+    },
+    "google-apps-script": {
+      "files": 1,
+      "bytes": 2976
+    },
+    "lib": {
+      "files": 134,
+      "bytes": 576934
+    },
+    "public": {
+      "files": 2,
+      "bytes": 1194
+    },
+    "sandbox": {
+      "files": 1,
+      "bytes": 1835
+    },
+    "scripts": {
+      "files": 205,
+      "bytes": 988657
+    },
+    "vendor": {
+      "files": 1,
+      "bytes": 16041
+    },
+    "vk-mini-app": {
+      "files": 6,
+      "bytes": 21986
+    }
+  },
+  "scannedSourceFiles": 689,
+  "matchedReferencedFiles": 395,
+  "crossGroupLiteralReferences": {
+    "ci -> data_conservative_keep": 4,
+    "ci -> runtime_code": 16,
+    "ci -> scripts_and_tests": 15,
+    "experiments_review_dependencies -> data_conservative_keep": 15,
+    "experiments_review_dependencies -> experiments_review_dependencies": 312,
+    "experiments_review_dependencies -> runtime_code": 204,
+    "experiments_review_dependencies -> scripts_and_tests": 6,
+    "root_configuration_or_other -> runtime_code": 5,
+    "runtime_code -> data_conservative_keep": 24,
+    "runtime_code -> experiments_review_dependencies": 70,
+    "runtime_code -> runtime_code": 483,
+    "scripts_and_tests -> ci": 1,
+    "scripts_and_tests -> data_conservative_keep": 43,
+    "scripts_and_tests -> experiments_review_dependencies": 97,
+    "scripts_and_tests -> root_configuration_or_other": 1,
+    "scripts_and_tests -> runtime_code": 459,
+    "scripts_and_tests -> scripts_and_tests": 31
+  },
+  "experimentReview": [
+    {
+      "directory": "experiments/address-search",
+      "files": 280,
+      "bytes": 20664127,
+      "referencedFiles": 19,
+      "directReferrers": [
+        "experiments/address-search/2026-10-29-street-scope/handler-replay-runner.mjs",
+        "experiments/routing-reliability/control-summary.mjs",
+        "experiments/address-search/2026-10-30-stage-d/d1-example.mjs",
+        "scripts/address-street-context.test.ts",
+        "experiments/address-search/b11-split-reuse.test.mjs",
+        "experiments/address-search/fallback-admission-review.mjs",
+        "experiments/address-search/geoapify-fallback-experiment.test.mjs",
+        "experiments/address-search/fallback-admission-review.test.mjs",
+        "experiments/address-search/local-gazetteer-admission.mjs",
+        "experiments/address-search/local-gazetteer-exclusions.mjs",
+        "experiments/address-search/local-gazetteer-priority.test.mjs",
+        "experiments/address-search/local-gazetteer-profile.mjs"
+      ],
+      "status": "REVIEW_REQUIRED_NOT_PROVEN_UNUSED"
+    },
+    {
+      "directory": "experiments/crimea-m4-bypass",
+      "files": 19,
+      "bytes": 314739,
+      "referencedFiles": 0,
+      "directReferrers": [],
+      "status": "REVIEW_REQUIRED_NOT_PROVEN_UNUSED"
+    },
+    {
+      "directory": "experiments/junction-atlas",
+      "files": 55,
+      "bytes": 428667,
+      "referencedFiles": 3,
+      "directReferrers": [
+        "experiments/junction-atlas/m4-atlas.test.mjs",
+        "experiments/junction-atlas/zsd-atlas.test.mjs"
+      ],
+      "status": "REVIEW_REQUIRED_NOT_PROVEN_UNUSED"
+    },
+    {
+      "directory": "experiments/nationwide-tolls",
+      "files": 3418,
+      "bytes": 339050670,
+      "referencedFiles": 89,
+      "directReferrers": [
+        "app/v2/toll-roads/page.tsx",
+        "experiments/nationwide-tolls/m1-m3-shadow-quote.test.mjs",
+        "experiments/nationwide-tolls/national-preview.test.mjs",
+        "experiments/nationwide-tolls/national-price.test.mjs",
+        "lib/v2-calculation/route-leg-pricing.ts",
+        "lib/v3-calculation/route-leg-pricing.ts",
+        "scripts/classify-special-territory-live-push.mjs",
+        "experiments/address-search/b11-response-split-profile.mjs",
+        "experiments/routing-reliability/uncancelled-parity.mjs",
+        "scripts/b11-reuse-api-regression.test.mjs",
+        "experiments/junction-atlas/build-m4.mjs",
+        "experiments/junction-atlas/zsd-atlas.test.mjs"
+      ],
+      "status": "REVIEW_REQUIRED_NOT_PROVEN_UNUSED"
+    },
+    {
+      "directory": "experiments/preview-acceptance",
+      "files": 21,
+      "bytes": 2095837,
+      "referencedFiles": 1,
+      "directReferrers": [
+        "experiments/preview-acceptance/2026-10-29-ab/preflight.mjs"
+      ],
+      "status": "REVIEW_REQUIRED_NOT_PROVEN_UNUSED"
+    },
+    {
+      "directory": "experiments/release-candidate-1",
+      "files": 40,
+      "bytes": 284414,
+      "referencedFiles": 1,
+      "directReferrers": [
+        "experiments/release-candidate-1/2026-10-31/deny-photon.mjs"
+      ],
+      "status": "REVIEW_REQUIRED_NOT_PROVEN_UNUSED"
+    },
+    {
+      "directory": "experiments/road-ref-boundaries",
+      "files": 274,
+      "bytes": 3710912,
+      "referencedFiles": 9,
+      "directReferrers": [
+        "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.mjs",
+        "experiments/toll-estimates/integration-cases.test.ts",
+        "experiments/toll-estimates/saved-samples.ts",
+        "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/m4-evidence.mjs",
+        "experiments/routing-reliability/saved-timing-summary.mjs",
+        "experiments/tariff-proof-selection/m4-scope.test.mjs",
+        "scripts/b03-browser-workflow.test.mjs",
+        "scripts/road-boundaries-v3-replay.test.ts",
+        "scripts/road-boundaries.test.ts",
+        "scripts/road-kilometrage-benchmark.mjs"
+      ],
+      "status": "REVIEW_REQUIRED_NOT_PROVEN_UNUSED"
+    },
+    {
+      "directory": "experiments/routing-reliability",
+      "files": 33,
+      "bytes": 575377,
+      "referencedFiles": 5,
+      "directReferrers": [
+        "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c5-composition.mjs",
+        "experiments/routing-reliability/replay-krasnodar-spb.mjs",
+        "experiments/routing-reliability/cancel-diagnostic.mjs",
+        "experiments/routing-reliability/saved-timing-summary.mjs",
+        "experiments/routing-reliability/uncancelled-parity.mjs"
+      ],
+      "status": "REVIEW_REQUIRED_NOT_PROVEN_UNUSED"
+    },
+    {
+      "directory": "experiments/tariff-proof-selection",
+      "files": 53,
+      "bytes": 274967,
+      "referencedFiles": 9,
+      "directReferrers": [
+        "experiments/junction-atlas/build-m4.mjs",
+        "experiments/junction-atlas/m4-atlas.test.mjs",
+        "experiments/tariff-proof-selection/m4-545-directed-osm.test.mjs",
+        "experiments/tariff-proof-selection/m4-545-accepted-working.mjs",
+        "lib/v3-calculation/route-leg-pricing.ts",
+        "scripts/b05-accepted-working.test.mjs",
+        "experiments/tariff-proof-selection/compose.test.mjs",
+        "experiments/tariff-proof-selection/real-document.test.mjs",
+        "experiments/tariff-proof-selection/m4-545-route-history.test.mjs",
+        "experiments/tariff-proof-selection/select.test.mjs"
+      ],
+      "status": "REVIEW_REQUIRED_NOT_PROVEN_UNUSED"
+    },
+    {
+      "directory": "experiments/toll-estimates",
+      "files": 297,
+      "bytes": 1498928,
+      "referencedFiles": 13,
+      "directReferrers": [
+        "experiments/toll-estimates/acceptance.test.ts",
+        "experiments/toll-estimates/estimate.test.ts",
+        "experiments/toll-estimates/finalize-integration.mjs",
+        "experiments/toll-estimates/practical-recovery.mjs",
+        "experiments/toll-estimates/practical-recovery.test.mjs",
+        "experiments/toll-estimates/presentation.test.ts",
+        "experiments/toll-estimates/presentation.ts",
+        "experiments/toll-estimates/saved-samples.ts",
+        "experiments/toll-estimates/torzhok-recovery.mjs",
+        "experiments/toll-estimates/torzhok-recovery.test.mjs",
+        "lib/v3-calculation/toll-estimate-adapter.ts",
+        "experiments/toll-estimates/demo.ts"
+      ],
+      "status": "REVIEW_REQUIRED_NOT_PROVEN_UNUSED"
+    },
+    {
+      "directory": "experiments/toll-od-matrix",
+      "files": 55,
+      "bytes": 337810,
+      "referencedFiles": 15,
+      "directReferrers": [
+        "experiments/nationwide-tolls/engine/dzok-route-adapter.mjs",
+        "experiments/nationwide-tolls/engine/m4-route-adapter.mjs",
+        "experiments/nationwide-tolls/m1-m3-shadow-quote.mjs",
+        "experiments/nationwide-tolls/scripts/diagnose-systemic-findings.mjs",
+        "experiments/toll-estimates/saved-samples.ts",
+        "experiments/toll-od-matrix/m4-fare-calendar-2026.test.mjs",
+        "experiments/toll-od-matrix/m4-pvp-timed-quote.mjs",
+        "lib/v3-calculation/toll-estimate-adapter.ts",
+        "scripts/v3-time-calendar-audit.test.ts",
+        "experiments/toll-od-matrix/build-m4-pvp-matrix.mjs",
+        "experiments/toll-od-matrix/m4-pvp-compiler.test.mjs",
+        "experiments/toll-od-matrix/engine.test.mjs"
+      ],
+      "status": "REVIEW_REQUIRED_NOT_PROVEN_UNUSED"
+    }
+  ],
+  "largestTrackedFiles": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-18-rvp64-current-rules/current-rules-Pravila0926.pdf",
+      "bytes": 10558533
+    },
+    {
+      "path": "experiments/address-search/2026-10-30-stage-d/m11-new-scheme.pdf",
+      "bytes": 9573142
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-09-04-avtodor-order274-current.pdf",
+      "bytes": 4499278
+    },
+    {
+      "path": "experiments/nationwide-tolls/TARIFF_SELECTION_REGISTER.json",
+      "bytes": 4398646
+    },
+    {
+      "path": "experiments/nationwide-tolls/TARIFF_VECTOR_MATRIX_2026-10-12.json",
+      "bytes": 3840441
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-documents/m12-order302-effective-2026-10-08.pdf",
+      "bytes": 3828705
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-documents/m11-head-passage-rules-retrieved-2026-10-14.pdf",
+      "bytes": 2969094
+    },
+    {
+      "path": "experiments/address-search/local-gazetteer-evidence-2026-10-28/full-validation-2026-10-29.json",
+      "bytes": 2772966
+    },
+    {
+      "path": "data/special-territory-boundaries.json",
+      "bytes": 2682975
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-documents/ckad-order56-effective-2026-03-02.pdf",
+      "bytes": 2140537
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-18-ramenskoe-owner/operator-ckad4-project-memo.pdf",
+      "bytes": 1897406
+    },
+    {
+      "path": "experiments/address-search/local-gazetteer-evidence-2026-10-28/pilot-corpus-2026-10-29.json",
+      "bytes": 1896153
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-documents/m4-order58-effective-2026-03-02.pdf",
+      "bytes": 1712005
+    },
+    {
+      "path": "data/local-settlements/manifest.json",
+      "bytes": 1621626
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-documents/tolyatti-order85-effective-2026-03-01.pdf",
+      "bytes": 1480319
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/EVIDENCE_AVAILABILITY.json",
+      "bytes": 1376233
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-17-p258-binding/e16194851d1c15e2611d.osm",
+      "bytes": 1253349
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-saint-petersburg-center/2026-10-16T00-57-49-532Z-capture.json.gz",
+      "bytes": 1222425
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-saint-petersburg-center/progress-2026-10-16T00-57-19-604Z.json.gz",
+      "bytes": 1222421
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-kazan-center/2026-10-16T00-55-32-204Z-capture.json.gz",
+      "bytes": 1207722
+    },
+    {
+      "path": "experiments/nationwide-tolls/M4_ACTIVE_ENDPOINT_REGISTER.json",
+      "bytes": 1207407
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-documents/a289-order55-effective-2026-03-02.pdf",
+      "bytes": 1126712
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-saint-petersburg-center/2026-10-16T01-08-39-850Z-capture.json.gz",
+      "bytes": 1050343
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-кушугум-saint-petersburg-center/progress-2026-10-16T01-08-14-174Z.json.gz",
+      "bytes": 1050340
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-херсон-moscow-center/2026-10-16T00-56-51-739Z-capture.json.gz",
+      "bytes": 1048339
+    }
+  ],
+  "dynamicPathSourcesSample": [
+    ".github/workflows/b03-address-ui-browser.yml",
+    ".github/workflows/nationwide-audit-queue.yml",
+    ".github/workflows/route-quality.yml",
+    ".github/workflows/segment4c-concurrency-probe.yml",
+    "docs/reorganization/build-inventory.mjs",
+    "experiments/address-search/2026-10-29-stage-a4-local/city-browser-runner.mjs",
+    "experiments/address-search/2026-10-29-stage-a4-local/detail-browser-runner.mjs",
+    "experiments/address-search/2026-10-29-street-scope/handler-replay-runner.mjs",
+    "experiments/address-search/2026-10-29-street-scope/ui/browser-runner.mjs",
+    "experiments/address-search/2026-10-30-stage-d/d1-example.mjs",
+    "experiments/address-search/2026-10-30-stage-d/verify-evidence.mjs",
+    "experiments/address-search/b11-response-split-profile.mjs",
+    "experiments/address-search/b11-split-reuse.test.mjs",
+    "experiments/address-search/local-gazetteer-admission.mjs",
+    "experiments/address-search/local-gazetteer-api-profile.mjs",
+    "experiments/address-search/local-gazetteer-browser.mjs",
+    "experiments/address-search/local-gazetteer-cold-server.mjs",
+    "experiments/address-search/local-gazetteer-controls-nearest.mjs",
+    "experiments/address-search/local-gazetteer-coordinate-review.mjs",
+    "experiments/address-search/local-gazetteer-coverage.mjs",
+    "experiments/address-search/local-gazetteer-crosscheck.mjs",
+    "experiments/address-search/local-gazetteer-display-comparison.mjs",
+    "experiments/address-search/local-gazetteer-http-profile.mjs",
+    "experiments/address-search/local-gazetteer-one-route.mjs",
+    "experiments/address-search/local-gazetteer-pilot-build.mjs",
+    "experiments/address-search/local-gazetteer-profile.mjs",
+    "experiments/address-search/local-gazetteer-route-transport.mjs",
+    "experiments/address-search/local-gazetteer-shards-parity.mjs",
+    "experiments/address-search/local-gazetteer-shards-profile.mjs",
+    "experiments/address-search/local-gazetteer-validate.mjs",
+    "experiments/address-search/local-gazetteer.d.mts",
+    "experiments/address-search/settlement-display-browser.mjs",
+    "experiments/address-search/stage-i-2026-10-31/capture-snapshot.mjs",
+    "experiments/junction-atlas/build-m4.mjs",
+    "experiments/junction-atlas/finalize.mjs",
+    "experiments/junction-atlas/m4-atlas.test.mjs",
+    "experiments/junction-atlas/other-atlas.test.mjs",
+    "experiments/junction-atlas/zsd-atlas.test.mjs",
+    "experiments/nationwide-tolls/automatic-policy-replay-integration.test.mjs",
+    "experiments/nationwide-tolls/checks/2026-10-18-ckad-ramenskoe-boundary/diagnose.mjs",
+    "experiments/nationwide-tolls/checks/2026-10-18-m11-ckad47-seven/check-head.mjs",
+    "experiments/nationwide-tolls/checks/2026-10-18-m11-p214-orphan/diagnose.mjs",
+    "experiments/nationwide-tolls/checks/2026-10-18-m11-p214-three/check.mjs",
+    "experiments/nationwide-tolls/checks/2026-10-18-m11-torzhok-ramenskoe/inspect.mjs",
+    "experiments/nationwide-tolls/engine/ckad-route-adapter.mjs",
+    "experiments/nationwide-tolls/engine/date-calendar-source-regression.test.mjs",
+    "experiments/nationwide-tolls/engine/dzok-route-adapter.mjs",
+    "experiments/nationwide-tolls/engine/endpoint-product-integration.test.mjs",
+    "experiments/nationwide-tolls/engine/m11-head-route-adapter.mjs",
+    "experiments/nationwide-tolls/engine/m11-route-adapter.mjs",
+    "experiments/nationwide-tolls/engine/m12-route-adapter.mjs",
+    "experiments/nationwide-tolls/engine/uploaded-pdf-source-regression.test.mjs",
+    "experiments/nationwide-tolls/m1-m3-deep-diagnostic-ui.test.mjs",
+    "experiments/nationwide-tolls/m1-m3-gate-evidence.test.mjs",
+    "experiments/nationwide-tolls/m1-m3-osm-id-review-ui.test.mjs",
+    "experiments/nationwide-tolls/m1-m3-shadow-quote.test.mjs",
+    "experiments/nationwide-tolls/m1-m3-valhalla-node-id-contract.test.mjs",
+    "experiments/nationwide-tolls/m4-endpoint-register.test.mjs",
+    "experiments/nationwide-tolls/m4-verified-source.test.mjs",
+    "experiments/nationwide-tolls/matrix-provenance.test.mjs",
+    "experiments/nationwide-tolls/matrix-quarantine.test.mjs",
+    "experiments/nationwide-tolls/national-preview.test.mjs",
+    "experiments/nationwide-tolls/national-price.test.mjs",
+    "experiments/nationwide-tolls/scripts/audit-matrix-provenance.cjs",
+    "experiments/nationwide-tolls/scripts/automatic-audit-queue.mjs",
+    "experiments/nationwide-tolls/scripts/automatic-policy-replay-queue.mjs",
+    "experiments/nationwide-tolls/scripts/build-m4-endpoint-register.cjs",
+    "experiments/nationwide-tolls/scripts/build-release-register.cjs",
+    "experiments/nationwide-tolls/scripts/build-systemic-audit-report.mjs",
+    "experiments/nationwide-tolls/scripts/build-systemic-road-cases.mjs",
+    "experiments/nationwide-tolls/scripts/build-vector-matrix.cjs",
+    "experiments/nationwide-tolls/scripts/capture-ckad-m11-m12-sources.mjs",
+    "experiments/nationwide-tolls/scripts/capture-m11-p258-sources.mjs",
+    "experiments/nationwide-tolls/scripts/capture-m12-western-boundaries.mjs",
+    "experiments/nationwide-tolls/scripts/check-selected-zsd-osrm.mjs",
+    "experiments/nationwide-tolls/scripts/check-zsd-no-reentry.mjs",
+    "experiments/nationwide-tolls/scripts/check-zsd-osrm-replacements.mjs",
+    "experiments/nationwide-tolls/scripts/check-zsd-saved-batch.mjs",
+    "experiments/nationwide-tolls/scripts/diagnose-systemic-findings.mjs",
+    "experiments/nationwide-tolls/scripts/replay-systemic-date.mjs"
+  ],
+  "protectedDependencies": [
+    "app/v3/page.tsx -> app/v2/components (shared live UI)",
+    "next.config.ts outputFileTracingIncludes -> data/local-settlements/**",
+    "package.json test:audit -> scripts/*.test.* and experiments/nationwide-tolls plus experiments/toll-od-matrix",
+    ".github/workflows/** -> scripts, data fixtures and experiments; path filters are not a full dependency graph",
+    "Android and VK integration directories remain in place"
+  ],
+  "confirmedUnusedFiles": [],
+  "deletionCandidates": [],
+  "ambiguousAreas": [
+    "Unmatched research files may be read through dynamic paths, globs, quoted string interpolation or archival tools.",
+    "A missing literal edge is not proof of non-use; each move requires exact import/test/CI review and verified backup."
+  ]
+}

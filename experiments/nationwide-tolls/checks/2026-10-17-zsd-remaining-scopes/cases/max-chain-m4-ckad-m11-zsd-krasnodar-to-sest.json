@@ -1,0 +1,143 @@
+{
+  "caseId": "max-chain-m4-ckad-m11-zsd-krasnodar-to-sest",
+  "sourceHead": "97d165fe4d071e68d2a30b341babc16fb1c2af56",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-krasnodar-to-sest/2026-10-16T00-01-04-945Z-capture.json.gz",
+  "captureSha256": "3c29b35159cbdfb9e308db468d0896c19f54e4ebc73591bbf42216cbba0d1175",
+  "priorResultPath": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m4-ckad-m11-zsd-krasnodar-to-sest.json",
+  "priorResultSha256": "78bbb96c6f47e1b7b088877bddd1ccb1b95facbd3fed47552f6115a3f6d75cd2",
+  "fingerprint": "3493d8c10e8bd66d6a242fabe4e64e53ea85908f972e3cf823be50292735e06c",
+  "selectedProvider": "OSRM",
+  "selectedProviderGeometryIdentity": "exact",
+  "coordinateCount": 12745,
+  "selectedProviderSteps": [
+    {
+      "name": "«Нева»",
+      "maneuver": {
+        "bearing_after": 338,
+        "bearing_before": 329,
+        "location": [
+          30.358981,
+          59.776376
+        ],
+        "modifier": "slight left",
+        "type": "merge"
+      },
+      "distance": 3144.9
+    },
+    {
+      "name": "«Нева»",
+      "destinations": "А-118: КАД, ЗСД",
+      "maneuver": {
+        "bearing_after": 323,
+        "bearing_before": 330,
+        "location": [
+          30.337801,
+          59.802372
+        ],
+        "modifier": "slight left",
+        "type": "fork"
+      },
+      "distance": 2181.8
+    },
+    {
+      "name": "КАД",
+      "maneuver": {
+        "bearing_after": 315,
+        "bearing_before": 307,
+        "location": [
+          30.312274,
+          59.81611
+        ],
+        "modifier": "slight left",
+        "type": "merge"
+      },
+      "distance": 2472.6
+    },
+    {
+      "name": "",
+      "destinations": "ЗСД, Морской порт",
+      "maneuver": {
+        "bearing_after": 329,
+        "bearing_before": 315,
+        "location": [
+          30.283506,
+          59.832743
+        ],
+        "modifier": "slight right",
+        "type": "off ramp"
+      },
+      "distance": 29954.3
+    },
+    {
+      "name": "ЗСД",
+      "maneuver": {
+        "bearing_after": 334,
+        "bearing_before": 341,
+        "location": [
+          30.150759,
+          60.047377
+        ],
+        "modifier": "slight left",
+        "type": "turn"
+      },
+      "distance": 1338.4
+    },
+    {
+      "name": "",
+      "destinations": "Левашовское ш., КАД, Приморское ш.",
+      "maneuver": {
+        "bearing_after": 347,
+        "bearing_before": 344,
+        "location": [
+          30.14377,
+          60.058867
+        ],
+        "modifier": "slight right",
+        "type": "off ramp"
+      },
+      "distance": 1249.8
+    }
+  ],
+  "traceComplete": true,
+  "boothCoverage": "complete",
+  "recordedZsdBooths": [
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "edgeToll": true
+    },
+    {
+      "osmNodeId": "1766158809",
+      "wayId": "458501110",
+      "edgeToll": true
+    }
+  ],
+  "scopeReview": "КАД-юг → КАД-север, OSRM, другая полоса северного ПВП",
+  "ownerZoneCandidateOnly": "entry1–exit4",
+  "outcome": "blocked_by_missing_reliable_data",
+  "readyTariffRub": null,
+  "newPricedComponents": 0,
+  "priorComponentProfiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_finished_vector_scope_not_reviewed",
+      "componentResult": "unknown",
+      "segments": []
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_finished_vector_scope_not_reviewed",
+      "componentResult": "unknown",
+      "segments": []
+    }
+  ],
+  "newComponentDateChecks": 0,
+  "newLiveRouteRequests": 0,
+  "newFullRouteReplays": 0,
+  "reentryProof": [],
+  "separateInterchangeGantryEvidence": [],
+  "traceIndexLimit": "Do not apply trace end_shape_index to input shape: matched trace indices differ. No such coordinate mapping used.",
+  "missing": "Primary directed cash/card collection bundle for these entry/exit boundaries; separate interchange fee where applicable."
+}

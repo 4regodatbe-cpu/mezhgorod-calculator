@@ -1,0 +1,250 @@
+{
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-voronezh-to-prim/2026-10-16T00-03-24-052Z-capture.json.gz",
+  "captureSha256": "fa38a093f1ccf7fee9c35e27eec0dff76bf878fcdcf88bb06fda0ea79f17c7c9",
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-voronezh-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T08-55-17-794Z.json",
+      "sha256": "4b3c1301c5a07ae0ea79308c89ddd859e3c37f53f31f7c12a2b2da5abcdb315d",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "provider": "Valhalla",
+      "routeMeters": 1245601,
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd, unknown-paid-road",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1",
+          "unknown-paid-road: unmapped_selected_route_paid_booth"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "audit": {
+        "status": "unknown",
+        "priced": [
+          "m4",
+          "m11-15-58",
+          "m11-58-679",
+          "m11-679-684"
+        ],
+        "missing": [
+          "zsd",
+          "unknown-paid-road"
+        ],
+        "components": [
+          {
+            "id": "m4",
+            "detected": true,
+            "tolls": {
+              "amount": 1830,
+              "weekdayAmount": 1830,
+              "weekendAmount": 2300,
+              "period": "понедельник–четверг",
+              "segments": [
+                "М-4: m4-460 → m4-71 · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix exact selected-route M4 vector"
+          },
+          {
+            "id": "m11-15-58",
+            "detected": true,
+            "tolls": {
+              "amount": 1130,
+              "weekdayAmount": 1130,
+              "weekendAmount": 1650,
+              "period": "по тарифу отправления М-11 15–58 (monThu)",
+              "confidence": "matched",
+              "segments": [
+                "М-11 15–58: moscow → solnechnogorsk: 1130 ₽ · Стоимость не подтверждена"
+              ]
+            },
+            "reason": "m11_head_ready_direct_pair_at_departure"
+          },
+          {
+            "id": "m11-58-679",
+            "detected": true,
+            "tolls": {
+              "amount": 3900,
+              "weekdayAmount": 3900,
+              "weekendAmount": 4200,
+              "period": "понедельник–четверг",
+              "segments": [
+                "М-11: p58 → p679 · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix dated selected-route M11 direct pair"
+          },
+          {
+            "id": "m11-679-684",
+            "detected": true,
+            "tolls": {
+              "amount": 94,
+              "weekdayAmount": 94,
+              "weekendAmount": 94,
+              "period": "пн–вс, приказ №274 с 04.09.2026",
+              "segments": [
+                "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+          },
+          {
+            "id": "zsd",
+            "detected": true,
+            "tolls": null,
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          {
+            "id": "unknown-paid-road",
+            "detected": true,
+            "tolls": null,
+            "reason": "unmapped_selected_route_paid_booth"
+          }
+        ]
+      },
+      "m4": {
+        "status": "boundaries_resolved",
+        "reason": null,
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 3,
+        "confirmedPvps": [
+          "m4-460",
+          "m4-71"
+        ],
+        "diagnosticOnly": true
+      }
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-voronezh-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T08-55-18-732Z.json",
+      "sha256": "1d55c6092eae1c2b07ca1d4ec04d9e6334de0d316e00f61709c623e1ab6bbf0b",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "provider": "Valhalla",
+      "routeMeters": 1245601,
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: zsd, unknown-paid-road",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1",
+          "unknown-paid-road: unmapped_selected_route_paid_booth"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "audit": {
+        "status": "unknown",
+        "priced": [
+          "m4",
+          "m11-15-58",
+          "m11-58-679",
+          "m11-679-684"
+        ],
+        "missing": [
+          "zsd",
+          "unknown-paid-road"
+        ],
+        "components": [
+          {
+            "id": "m4",
+            "detected": true,
+            "tolls": {
+              "amount": 2300,
+              "weekdayAmount": 1830,
+              "weekendAmount": 2300,
+              "period": "пятница–воскресенье",
+              "segments": [
+                "М-4: m4-460 → m4-71 · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix exact selected-route M4 vector"
+          },
+          {
+            "id": "m11-15-58",
+            "detected": true,
+            "tolls": {
+              "amount": 1650,
+              "weekdayAmount": 1130,
+              "weekendAmount": 1650,
+              "period": "по тарифу отправления М-11 15–58 (sat)",
+              "confidence": "matched",
+              "segments": [
+                "М-11 15–58: moscow → solnechnogorsk: 1650 ₽ · Стоимость не подтверждена"
+              ]
+            },
+            "reason": "m11_head_ready_direct_pair_at_departure"
+          },
+          {
+            "id": "m11-58-679",
+            "detected": true,
+            "tolls": {
+              "amount": 4200,
+              "weekdayAmount": 3900,
+              "weekendAmount": 4200,
+              "period": "пятница–воскресенье",
+              "segments": [
+                "М-11: p58 → p679 · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix dated selected-route M11 direct pair"
+          },
+          {
+            "id": "m11-679-684",
+            "detected": true,
+            "tolls": {
+              "amount": 94,
+              "weekdayAmount": 94,
+              "weekendAmount": 94,
+              "period": "пн–вс, приказ №274 с 04.09.2026",
+              "segments": [
+                "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+          },
+          {
+            "id": "zsd",
+            "detected": true,
+            "tolls": null,
+            "reason": "zsd_trip_extends_outside_reviewed_zone1"
+          },
+          {
+            "id": "unknown-paid-road",
+            "detected": true,
+            "tolls": null,
+            "reason": "unmapped_selected_route_paid_booth"
+          }
+        ]
+      },
+      "m4": {
+        "status": "boundaries_resolved",
+        "reason": null,
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 3,
+        "confirmedPvps": [
+          "m4-460",
+          "m4-71"
+        ],
+        "diagnosticOnly": true
+      }
+    }
+  ],
+  "next": "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
+  "checked": 7
+}

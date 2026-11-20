@@ -1,0 +1,163 @@
+{
+  "caseId": "single-a289-anapa-to-krasnodar",
+  "mode": "live",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 165397,
+      "seconds": 10042
+    },
+    {
+      "name": "OSRM",
+      "meters": 166211,
+      "seconds": 8732
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 166211,
+  "routeSeconds": 8732,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 37.3167,
+          "lat": 44.894
+        },
+        {
+          "lng": 38.975313,
+          "lat": 45.03547
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "a289"
+    ],
+    "provenRoads": [
+      "a289"
+    ],
+    "missingExpectedRoads": [],
+    "status": "traversal-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "a289",
+      "kind": "selected-paid-edge",
+      "wayId": "1382373410",
+      "names": [
+        "А-289"
+      ]
+    },
+    {
+      "road": "a289",
+      "kind": "selected-paid-edge",
+      "wayId": "1354743710",
+      "names": [
+        "А-289"
+      ]
+    },
+    {
+      "road": "a289",
+      "kind": "selected-paid-edge",
+      "wayId": "1381361850",
+      "names": [
+        "А-289"
+      ]
+    },
+    {
+      "road": "a289",
+      "kind": "selected-geometry-exact-frames",
+      "frames": [
+        "82",
+        "23"
+      ]
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "a289": {
+      "occurrences": 141,
+      "uniqueWays": 123
+    }
+  },
+  "replayIntegrity": null,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-anapa-to-krasnodar/2026-10-16T01-45-14-228Z-capture.json.gz",
+  "captureSha256": "93a87bfbd5425c4191ed49f8893c09c1efa467b4e35708b9efb5dd5168a69ff4",
+  "detectedRoadComponents": [
+    {
+      "id": "a289",
+      "amount": 620,
+      "reason": "A-289 Anapa exit inferred from two selected-route frames; estimate"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "А-289"
+  ],
+  "tollNodeIds": [],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [
+    "82",
+    "23"
+  ],
+  "tolls": {
+    "amount": 620,
+    "weekdayAmount": 620,
+    "weekendAmount": 620,
+    "period": "все дни",
+    "segments": [
+      "А-289: AnapaExit → Maryanskaya: 620 ₽"
+    ],
+    "confidence": "matched",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "priced"
+  },
+  "audit": {
+    "status": "priced",
+    "priced": [
+      "a289"
+    ],
+    "missing": [],
+    "components": [
+      {
+        "id": "a289",
+        "detected": true,
+        "tolls": {
+          "amount": 620,
+          "weekdayAmount": 620,
+          "weekendAmount": 620,
+          "period": "все дни",
+          "segments": [
+            "А-289: AnapaExit → Maryanskaya: 620 ₽"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "A-289 Anapa exit inferred from two selected-route frames; estimate"
+      }
+    ]
+  }
+}

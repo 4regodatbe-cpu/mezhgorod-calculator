@@ -1,0 +1,57 @@
+name: Последовательный аудит платных дорог
+on:
+  push:
+    branches: [fix/v3-missing-route-prices-2026-10-15]
+    paths:
+      - .github/workflows/nationwide-audit-queue.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: nationwide-audit-queue-${{ github.ref_name }}
+  cancel-in-progress: false
+jobs:
+  single-case-queue:
+    if: github.ref_name == 'fix/v3-missing-route-prices-2026-10-15'
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+      - run: pnpm install --frozen-lockfile
+      - name: Проверить исходники до первого маршрута
+        run: pnpm build
+      - name: Автор сохранённых checkpoints
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - name: По одному случаю с сохранением и автоматическим переходом
+        run: |
+          if node --input-type=module -e 'import fs from "node:fs"; const p=JSON.parse(fs.readFileSync("experiments/nationwide-tolls/SMALL_PARTS_PLAN.json")); process.exit(p.parts.filter(x=>x.id<19).every(x=>x.status==="done") && p.parts.find(x=>x.id===19)?.status==="in_progress" ? 0 : 1)'; then
+            node experiments/nationwide-tolls/scripts/automatic-policy-replay-queue.mjs
+          else
+            node experiments/nationwide-tolls/scripts/automatic-audit-queue.mjs
+          fi
+      - name: Сохранить evidence даже при сбое Git или процесса
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nationwide-audit-${{ github.run_id }}
+          path: |
+            docs/checkpoints/
+            experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/
+            experiments/nationwide-tolls/AUTO_QUEUE_STATE.json
+            experiments/nationwide-tolls/PART19_FINDINGS_QUEUE.json
+            experiments/nationwide-tolls/SMALL_PARTS_PLAN.json
+            experiments/nationwide-tolls/WORK_LOG.md
+            experiments/nationwide-tolls/NEXT_STEPS.md
+            docs/WORK_STATE.md
+          retention-days: 30

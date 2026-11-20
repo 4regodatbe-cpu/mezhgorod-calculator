@@ -1,0 +1,15 @@
+# C2 — one M4 directed graph pair confirmed; operator crosswalk BLOCKED_BY_DATA
+
+29.10.2026 MSK; parentf9ed8f02,local-onlyallowedbranchancestry,PR14Draft/remotec2f52ee9. Source `checks/2026-10-23-graph/selected-vector.json` + pinned Granitnoe→Kazan capture + later24OctB04OSMprimaryintake. No new capture/provider/OSM/price request, no fullprovider/APIreplay or sixcaseaudit.
+
+Command `node --import ./scripts/register-ts-paths.mjs experiments/road-ref-boundaries/checks/2026-10-29-stage-c/m4-evidence.mjs` exit0. [Reproducible report](../../experiments/road-ref-boundaries/checks/2026-10-29-stage-c/m4-evidence.json) preserves inputs, captureSHA,13HTTP200tracebodySHAs,exactgraphtransitions,OSMsourcehashes,currentquotes and stops. Existing fixture captureSHA5c49cbd71433f7200538a5a4526d81f009375d49fce4445546151a8152cb19b9 verified;9B04source hashes checked unchanged.
+
+- Entry **osm-transition:4443232947:447135768>1182567076**, exactOSM[39.9708171,47.5105556]. Incomingway ends/targetway begins atnode,traceentrychunk1/edge138. Nearest selected vertex1877 differs0.045m (coordinate consistency only, not a nearest-PVP match).
+- Exit **osm-transition:358467208:1211606940>28835034**, M4→R260,OSM[40.265878,48.186303],tracechunk2/edge35,selectedvertex2328/exact0m. Directed order and existing unambiguous graph stitching PASS; no reverse direction inferred from a tariff table.
+- Node4443232947 has no saved booth tags;358467208 highway=motorway_junction. Neither is automatically a physical payment gate. Existing exact resolver intentionally keeps coordinate=null; separately joined saved OSM coords are evidence only, no runtimeEligiblefalse override.
+- Continuous **road-ref** span133uniqueedges has2tolltrue/131tollfalse. Paidedges:way1182567076→node10981360743 andway31984600→node2339659032. The rest is not thereby proven free under operator collection rules. Road-ref entry/exit is not a certificate that the full span is a single operator charge product.
+- Existing graph vector selected in both15OctThursday/17OctSaturday profiles, priceStatusunknown/tollsnull, reasonm4_road_vector_price_unknown. Activegraphfare rows0, exactpendingpair unchanged. Optionalkm resultunknown/no exactkm anchors; no official chainage/scale guessed from coordinate or nearbybooth.
+
+No geometry matching error demonstrated in this case, so runtime left unchanged. Exact missing evidence: operator diagram/register linking THESEdirected accesses to charge/product boundaries and branch/scale; applicability of partial-path collection rule; then official directed matrix cell/source/date. Tariff numbers are not a prerequisite to recognizing graph transitions, but graph identity alone does not supply operator scope. Closed C2 bounded investigation, NOT a closed operator-boundary/price blocker.
+
+Updated dated documentary index only; historical records and raw unchanged. Next C3 targeted generic invariants/reentry and diagnostic distinctions, no newnetwork/publicAPI/prices/thresholds/routepolicy. Localcheckpoint+commit only; pushnotauthorized.

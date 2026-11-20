@@ -1,0 +1,685 @@
+{
+  "retrievedAt": "2026-10-15",
+  "sourceURL": "https://whsd.ru/tarifyi-na-proezd/",
+  "rulesURL": "https://whsd.ru/pravila-ispolzovaniya-zsd",
+  "effectiveFrom": "2025-05-01T00:00:00+03:00",
+  "category1Zone1Rub": 300,
+  "paymentMethod": "cash/card base, no transponder",
+  "scope": "Reviewed zone1 paid way IDs plus exact Blagodatnaya entry/exit booth identity. Other namedZSDedges block this quote. No latitude heuristic used in runtime.",
+  "ways": [
+    {
+      "id": "28934684",
+      "zone": 1,
+      "minLat": 59.8464431,
+      "maxLat": 59.8497141,
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway",
+        "lanes": "4",
+        "layer": "1",
+        "lit": "yes",
+        "maxspeed": "RU:motorway",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source": "survey",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "31369306",
+      "zone": 1,
+      "minLat": 59.8426152,
+      "maxLat": 59.8464431,
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway",
+        "lanes": "4",
+        "layer": "2",
+        "lit": "yes",
+        "maxspeed": "RU:motorway",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "46948905",
+      "zone": 1,
+      "minLat": 59.8417983,
+      "maxLat": 59.8481624,
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway",
+        "lanes": "4",
+        "layer": "2",
+        "lit": "yes",
+        "maxspeed": "RU:motorway",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "80056716",
+      "zone": 1,
+      "minLat": 59.8692055,
+      "maxLat": 59.8721118,
+      "tags": {
+        "check_date": "2012-10-10",
+        "description": "правое направление (на север)",
+        "highway": "motorway",
+        "lanes": "10",
+        "lit": "yes",
+        "maxspeed": "40",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source": "survey",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "80056729",
+      "zone": 1,
+      "minLat": 59.8608339,
+      "maxLat": 59.8641326,
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway",
+        "lanes": "4",
+        "layer": "1",
+        "lit": "yes",
+        "maxspeed": "RU:motorway",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes",
+        "turn:lanes": "through|through|through|slight_right"
+      }
+    },
+    {
+      "id": "80056742",
+      "zone": 1,
+      "minLat": 59.8506529,
+      "maxLat": 59.8574379,
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway",
+        "lanes": "3",
+        "layer": "1",
+        "lit": "yes",
+        "maxspeed": "110",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "placement": "right_of:2",
+        "source": "survey",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "80056745",
+      "zone": 1,
+      "minLat": 59.8657591,
+      "maxLat": 59.8682499,
+      "tags": {
+        "highway": "motorway",
+        "lanes": "4",
+        "lit": "yes",
+        "maxspeed": "40",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source": "survey",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "81348980",
+      "zone": 1,
+      "minLat": 59.8657299,
+      "maxLat": 59.8666173,
+      "tags": {
+        "fixme": "подлежит уточнению в процессе строительства",
+        "highway": "motorway",
+        "lanes": "4",
+        "lit": "yes",
+        "maxspeed": "RU:motorway",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "129780705",
+      "zone": 1,
+      "minLat": 59.8359194,
+      "maxLat": 59.8369713,
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway",
+        "lanes": "4",
+        "layer": "1",
+        "lit": "yes",
+        "maxspeed": "RU:rural",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes",
+        "turn:lanes": "through|through|slight_right|slight_right"
+      }
+    },
+    {
+      "id": "139658546",
+      "zone": 1,
+      "minLat": 59.8481624,
+      "maxLat": 59.8608339,
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway",
+        "lanes": "3",
+        "layer": "1",
+        "lit": "yes",
+        "maxspeed": "RU:motorway",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "139658547",
+      "zone": 1,
+      "minLat": 59.8574379,
+      "maxLat": 59.8620517,
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway",
+        "lanes": "5",
+        "layer": "1",
+        "lit": "yes",
+        "maxspeed": "RU:motorway",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "placement": "right_of:2",
+        "source": "survey",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes",
+        "turn:lanes": "none|none|none|none|merge_to_left"
+      }
+    },
+    {
+      "id": "375574640",
+      "zone": 1,
+      "minLat": 59.8686824,
+      "maxLat": 59.8688863,
+      "tags": {
+        "check_date": "2012-10-10",
+        "covered": "yes",
+        "highway": "motorway",
+        "lanes": "9",
+        "lit": "yes",
+        "maxspeed": "40",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source": "survey",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "375646973",
+      "zone": 1,
+      "minLat": 59.8666173,
+      "maxLat": 59.8686824,
+      "tags": {
+        "check_date": "2012-10-10",
+        "highway": "motorway",
+        "lanes": "9",
+        "lit": "yes",
+        "maxspeed": "RU:urban",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source": "survey",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "400111351",
+      "zone": 1,
+      "minLat": 59.8415015,
+      "maxLat": 59.8426152,
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway",
+        "lanes": "5",
+        "layer": "1",
+        "lit": "yes",
+        "maxspeed": "RU:motorway",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "placement": "right_of:2",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes",
+        "turn:lanes": "none|none|none|none|merge_to_left"
+      }
+    },
+    {
+      "id": "400111352",
+      "zone": 1,
+      "minLat": 59.8369713,
+      "maxLat": 59.8404314,
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway",
+        "lanes": "4",
+        "layer": "1",
+        "lit": "yes",
+        "maxspeed": "110",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "400111353",
+      "zone": 1,
+      "minLat": 59.8404314,
+      "maxLat": 59.8411723,
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway",
+        "lanes": "6",
+        "layer": "1",
+        "lit": "yes",
+        "maxspeed": "110",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "placement": "right_of:2",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes",
+        "turn:lanes": "through|through|through|through|slight_right|slight_right"
+      }
+    },
+    {
+      "id": "400111354",
+      "zone": 1,
+      "minLat": 59.8380526,
+      "maxLat": 59.8415015,
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway",
+        "lanes": "4",
+        "layer": "1",
+        "lit": "yes",
+        "maxspeed": "110",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "461676671",
+      "zone": 1,
+      "minLat": 59.8620517,
+      "maxLat": 59.8657591,
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway",
+        "lanes": "4",
+        "layer": "1",
+        "lit": "yes",
+        "maxspeed": "RU:motorway",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source": "survey",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "465117517",
+      "zone": 1,
+      "minLat": 59.8497141,
+      "maxLat": 59.8506529,
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway",
+        "lanes": "4",
+        "layer": "1",
+        "lit": "yes",
+        "maxspeed": "RU:motorway",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source": "survey",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes",
+        "turn:lanes": "through|through|through|slight_right"
+      }
+    },
+    {
+      "id": "721628539",
+      "zone": 1,
+      "minLat": 59.8648023,
+      "maxLat": 59.8657299,
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway",
+        "lanes": "4",
+        "layer": "1",
+        "lit": "yes",
+        "maxspeed": "RU:motorway",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "721628540",
+      "zone": 1,
+      "minLat": 59.8682499,
+      "maxLat": 59.8692055,
+      "tags": {
+        "highway": "motorway",
+        "lanes": "4",
+        "lit": "yes",
+        "maxspeed": "40",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source": "survey",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes",
+        "turn:lanes": "through|through|through|through;slight_right"
+      }
+    },
+    {
+      "id": "1053072562",
+      "zone": 1,
+      "minLat": 59.8688863,
+      "maxLat": 59.8703258,
+      "tags": {
+        "check_date": "2012-10-10",
+        "highway": "motorway",
+        "lanes": "9",
+        "lit": "yes",
+        "maxspeed": "40",
+        "maxspeed:type": "sign",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source": "survey",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "1090759975",
+      "zone": 1,
+      "minLat": 59.8641326,
+      "maxLat": 59.8648023,
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway",
+        "lanes": "5",
+        "layer": "1",
+        "lit": "yes",
+        "maxspeed": "RU:motorway",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes",
+        "turn:lanes": "slight_left|through|through|through|through"
+      }
+    },
+    {
+      "id": "1120339785",
+      "zone": 1,
+      "minLat": 59.8411723,
+      "maxLat": 59.8417983,
+      "tags": {
+        "bridge": "yes",
+        "fixme": "подлежит уточнению",
+        "highway": "motorway",
+        "lanes": "4",
+        "layer": "2",
+        "lit": "yes",
+        "maxspeed": "RU:motorway",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes"
+      }
+    },
+    {
+      "id": "1122966004",
+      "zone": 1,
+      "minLat": 59.8377295,
+      "maxLat": 59.8380526,
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway",
+        "lanes": "5",
+        "layer": "1",
+        "lit": "yes",
+        "maxspeed": "110",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes",
+        "turn:lanes": "||||merge_to_left"
+      }
+    },
+    {
+      "id": "1122966005",
+      "zone": 1,
+      "minLat": 59.836389,
+      "maxLat": 59.8377295,
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway",
+        "lanes": "6",
+        "layer": "1",
+        "lit": "yes",
+        "maxspeed": "110",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "source:maxspeed": "implicit",
+        "surface": "asphalt",
+        "surface:grade": "3",
+        "toll": "yes",
+        "turn:lanes": "|||||merge_to_left"
+      }
+    },
+    {
+      "id": "1122966006",
+      "zone": 1,
+      "minLat": 59.8359361,
+      "maxLat": 59.836389,
+      "tags": {
+        "bridge": "yes",
+        "highway": "motorway_link",
+        "lanes": "6",
+        "layer": "1",
+        "lit": "yes",
+        "maxspeed": "RU:rural",
+        "name": "ЗСД",
+        "name:en": "Western High-Speed Diameter",
+        "name:ru": "ЗСД",
+        "oneway": "yes",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    }
+  ],
+  "boothNodeIds": [
+    "933974949",
+    "318102347"
+  ],
+  "osmWaysURL": "https://www.openstreetmap.org/api/0.6/ways?ways=27462206,28934684,31369306,46948905,80056716,80056721,80056729,80056742,80056745,80056747,81348980,85763340,119176958,123709500,123709505,129780705,130062824,130068395,139658546,139658547,165035750,172999960,183912265,183912266,183912267,183912268,183912269,183921952,183921953,189271976,223744446,350477987,375574640,375646973,381576631,381576632,397223749,397223750,397223751,397223752,400111351,400111352,400111353,400111354,461676671,465117517,589047640,589047641,688149996,721628539,721628540,721628541,721628542,736306923,1053072562,1090759975,1120339785,1122966004,1122966005,1122966006,1257246768,1257246769,1257246773,1257246774",
+  "sourceSHA256": {
+    "selected-paid-nodes.osm.gz": "debfe6e45d6c51554d2710b83068f206ffbf93cf9f4b3bc4d9aa3bdfdbd0a8c5",
+    "whsd-owner-tariffs.html": "02f1f3eb15f566831bc83bfc9599c17a5520a97a752bc2735d832f7a9308aad5",
+    "whsd-owner-rules.html": "7fc16154f626d7596c6f12ec6f85e3db1d70b7b63c58981bcf18e2cace9cc4e7",
+    "selected-paid-ways.osm.gz": "327c5bdd61576e414184ef2d6b2fbebfab71cc32cb7589a55c5fd98ab1a3b954"
+  },
+  "rows": [
+    {
+      "road": "zsd",
+      "productId": "zsd",
+      "from": "zone-1",
+      "to": "zone-1",
+      "profile": "allDays",
+      "rub": 300,
+      "validFrom": "2025-05-01",
+      "vehicleCategory": 1,
+      "verification": "official_owner_base_tariff_page",
+      "runtimeEligible": true,
+      "source": "https://whsd.ru/tarifyi-na-proezd/"
+    }
+  ],
+  "limitations": [
+    "Only zone1 is activated. Published six-zone table is saved; other physical zone pairs remain unbound.",
+    "Full selected-route trace and every namedZSDpaidway membership are required. Missing edge identities, outside reviewed set or unidentified paid booth never produces partial full price."
+  ],
+  "gates": [
+    {
+      "kind": "exit-blagodatnaya",
+      "wayId": "381576635",
+      "before": {
+        "id": "3847689343",
+        "lon": 30.2960733,
+        "lat": 59.8720921
+      },
+      "gate": {
+        "id": "933974949",
+        "lon": 30.2960852,
+        "lat": 59.8721757
+      },
+      "after": {
+        "id": "3847689345",
+        "lon": 30.2961085,
+        "lat": 59.8723008
+      },
+      "source": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/identity-sources/zsd-way381576635.osm"
+    },
+    {
+      "kind": "entry-blagodatnaya",
+      "wayId": "375574651",
+      "before": {
+        "id": "3789313436",
+        "lon": 30.2936208,
+        "lat": 59.8689316
+      },
+      "gate": {
+        "id": "318102347",
+        "lon": 30.2935749,
+        "lat": 59.868812
+      },
+      "after": {
+        "id": "3789313425",
+        "lon": 30.2935528,
+        "lat": 59.8687267
+      },
+      "source": "experiments/nationwide-tolls/source-snapshots/long-chain-2026-10-15/identity-sources/zsd-way375574651.osm"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+PASS invalid calculation mode: HTTP 400, expected 400
+PASS invalid departure timestamp: HTTP 400, expected 400
+PASS out-of-range route coordinates: HTTP 400, expected 400
+PASS legacy V2 accepts dual mode before point validation: HTTP 400, expected 400
+PASS malformed calculation JSON: HTTP 400, expected 400
+PASS invalid user tariff override: HTTP 400, expected 400
+PASS invalid urgency multiplier: HTTP 400, expected 400
+PASS V3 rejects an invalid calculation mode: HTTP 400, expected 400
+PASS V3 rejects an invalid departure timestamp: HTTP 400, expected 400
+PASS V3 rejects invalid vehicle classes: HTTP 400, expected 400
+PASS V3 rejects invalid coordinates before routing providers are called: HTTP 400, expected 400
+PASS V3 rejects malformed JSON: HTTP 400, expected 400
+PASS V3 rejects out-of-range urgency multiplier: HTTP 400, expected 400
+PASS oversized suggestion query: HTTP 400, expected 400
+PASS unknown toll telemetry cannot claim zero: HTTP 400, expected 400
+PASS free toll telemetry must remain zero: HTTP 400, expected 400
+API contract smoke GREEN: 16 checks

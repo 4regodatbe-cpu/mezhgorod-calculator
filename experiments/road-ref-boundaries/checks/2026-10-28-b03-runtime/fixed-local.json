@@ -1,0 +1,301 @@
+{
+  "startedAt": "2026-10-27T21:51:02.728Z",
+  "node": "v24.19.0",
+  "browser": "154.0.8037.57",
+  "sourceSha": "local-three-line-fix-over-75d55b8a",
+  "componentSha256": "5ece9b654422c35e43442208f5b778cbf0d173fc19f6da946dd21bbc08728a4d",
+  "snapshotExpiresAt": "2026-10-31T08:24:54Z",
+  "mode": "browser mocked API, no external-service verification",
+  "results": [
+    {
+      "id": "01-select-A-and-B",
+      "status": "PASS",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "addressRequests": [
+        "Краснодар",
+        "Анапа"
+      ],
+      "classifications": [
+        {
+          "positions": [
+            {
+              "lat": 45.0351532,
+              "lng": 38.9772396
+            }
+          ]
+        },
+        {
+          "positions": [
+            {
+              "lat": 45.0351532,
+              "lng": 38.9772396
+            },
+            {
+              "lat": 44.895,
+              "lng": 37.315
+            }
+          ]
+        }
+      ],
+      "calculations": [],
+      "addressAbortEvents": 2
+    },
+    {
+      "id": "02-Anapa-clear-Donetsk",
+      "status": "PASS",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "addressRequests": [
+        "Краснодар",
+        "Анапа",
+        "Донецк"
+      ],
+      "classifications": [
+        {
+          "positions": [
+            {
+              "lat": 45.0351532,
+              "lng": 38.9772396
+            }
+          ]
+        },
+        {
+          "positions": [
+            {
+              "lat": 45.0351532,
+              "lng": 38.9772396
+            },
+            {
+              "lat": 44.895,
+              "lng": 37.315
+            }
+          ]
+        },
+        {
+          "positions": [
+            {
+              "lat": 45.0351532,
+              "lng": 38.9772396
+            }
+          ]
+        },
+        {
+          "positions": [
+            {
+              "lat": 45.0351532,
+              "lng": 38.9772396
+            },
+            {
+              "lat": 48.0158753,
+              "lng": 37.8013407
+            }
+          ]
+        }
+      ],
+      "calculations": [],
+      "addressAbortEvents": 3
+    },
+    {
+      "id": "03-fast-typing",
+      "status": "PASS",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "addressRequests": [
+        "Донецк"
+      ],
+      "classifications": [],
+      "calculations": [],
+      "addressAbortEvents": 0
+    },
+    {
+      "id": "04-late-response-after-replace",
+      "status": "PASS",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "addressRequests": [
+        "Анапа",
+        "Донецк"
+      ],
+      "classifications": [],
+      "calculations": [],
+      "addressAbortEvents": 1
+    },
+    {
+      "id": "05-clear-active-request",
+      "status": "PASS",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "addressRequests": [
+        "Анапа"
+      ],
+      "classifications": [],
+      "calculations": [],
+      "addressAbortEvents": 1
+    },
+    {
+      "id": "06-same-name-choice",
+      "status": "PASS",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "addressRequests": [
+        "Донецк"
+      ],
+      "classifications": [
+        {
+          "positions": [
+            {
+              "lat": 48.3382864,
+              "lng": 39.9509488
+            }
+          ]
+        }
+      ],
+      "calculations": [],
+      "addressAbortEvents": 1
+    },
+    {
+      "id": "07-swap-and-refocus",
+      "status": "PASS",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "addressRequests": [
+        "Краснодар",
+        "Анапа"
+      ],
+      "classifications": [
+        {
+          "positions": [
+            {
+              "lat": 45.0351532,
+              "lng": 38.9772396
+            }
+          ]
+        },
+        {
+          "positions": [
+            {
+              "lat": 45.0351532,
+              "lng": 38.9772396
+            },
+            {
+              "lat": 44.895,
+              "lng": 37.315
+            }
+          ]
+        },
+        {
+          "positions": [
+            {
+              "lat": 44.895,
+              "lng": 37.315
+            },
+            {
+              "lat": 45.0351532,
+              "lng": 38.9772396
+            }
+          ]
+        }
+      ],
+      "calculations": [],
+      "addressAbortEvents": 2
+    },
+    {
+      "id": "08-503-429-empty-recovery",
+      "status": "PASS",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "addressRequests": [
+        "Отказ",
+        "Отказ",
+        "Отказ",
+        "Донецк"
+      ],
+      "classifications": [
+        {
+          "positions": [
+            {
+              "lat": 48.0158753,
+              "lng": 37.8013407
+            }
+          ]
+        }
+      ],
+      "calculations": [],
+      "addressAbortEvents": 4
+    },
+    {
+      "id": "09-mobile-replace",
+      "status": "PASS",
+      "viewport": {
+        "width": 320,
+        "height": 720
+      },
+      "addressRequests": [
+        "Анапа",
+        "Донецк"
+      ],
+      "classifications": [
+        {
+          "positions": [
+            {
+              "lat": 44.895,
+              "lng": 37.315
+            }
+          ]
+        },
+        {
+          "positions": [
+            {
+              "lat": 48.3382864,
+              "lng": 39.9509488
+            }
+          ]
+        }
+      ],
+      "calculations": [],
+      "addressAbortEvents": 2
+    },
+    {
+      "id": "10-fields-independent-and-cancel",
+      "status": "PASS",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "addressRequests": [
+        "Краснодар",
+        "Анапа"
+      ],
+      "classifications": [
+        {
+          "positions": [
+            {
+              "lat": 45.0351532,
+              "lng": 38.9772396
+            }
+          ]
+        }
+      ],
+      "calculations": [],
+      "addressAbortEvents": 2
+    }
+  ],
+  "finishedAt": "2026-10-27T21:51:41.873Z"
+}

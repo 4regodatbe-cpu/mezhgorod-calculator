@@ -1,0 +1,29 @@
+{
+  "verdict": "READY_FOR_CONTROLLED_PREVIEW_NOT_APPROVED_FOR_PRODUCTION",
+  "initialHead": "dbc701fb9560c7b6b3a4e0299734f365c88df4aa",
+  "testedCommit": "719d344b4de08953ba1e4af2db462a491723a327",
+  "applicationRuntimeDiffFromInitialHead": [],
+  "confirmedNewP0P1DefectsInTestedScenarios": 0,
+  "applicationRuntimeFixesThisCycle": 0,
+  "deliveryAddendumCreated": true,
+  "geonamesActualHttpQueries": 11,
+  "controlledPhotonOutageAttempts": 0,
+  "liveRoute": {"name": "Краснодар → Анапа", "httpStatus": 200, "elapsedMs": 2280.669019, "meters": 166347, "seconds": 8713, "standardTransferRub": 4159, "tollRub": 620, "tollPricingStatus": "priced", "tariffIndependentlyCertified": false},
+  "checks": [
+    {"name": "actual localhost API flow", "exit": 0, "log": "api-flow.log"},
+    {"name": "targeted product contracts", "exit": 0, "pass": 52, "fail": 0, "log": "product-contracts.log"},
+    {"name": "npm run test:audit", "exit": 0, "pass": 1063, "fail": 0, "skip": 1, "quoteAndApiContracts": "PASS", "log": "offline-gate.log"},
+    {"name": "npm run lint", "exit": 0, "warnings": 7, "errors": 0, "log": "lint.log"},
+    {"name": "direct next build --webpack", "exit": 0, "log": "build.log"},
+    {"name": "tsc --noEmit after build", "exit": 0, "log": "typecheck.log"}
+  ],
+  "versions": {"node": "24.19.0", "next": "16.3.4"},
+  "acceptanceGaps": ["current complete desktop/mobile browser journey", "new SHA GitHub Actions and Preview", "separately authorized Production GeoNames activation policy"],
+  "browserEvidence": "browser-evidence.json",
+  "remoteHead": "c0e76eccfda0bf4fd8eeb5ac299c6da1242baa57",
+  "pr14": "OPEN_DRAFT",
+  "newActionsRuns": false,
+  "pushPerformed": false,
+  "productionChanged": false,
+  "massAuditRepeated": false
+}

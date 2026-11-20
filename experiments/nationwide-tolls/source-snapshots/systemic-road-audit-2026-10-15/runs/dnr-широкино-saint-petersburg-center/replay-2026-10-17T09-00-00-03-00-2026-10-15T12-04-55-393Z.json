@@ -1,0 +1,410 @@
+{
+  "caseId": "dnr-широкино-saint-petersburg-center",
+  "region": "dnr",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-17T09:00:00+03:00",
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "OSRM",
+      "meters": 1942329,
+      "seconds": 88439
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "Valhalla",
+      "error": "Error: ROUTE_UNAVAILABLE"
+    },
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 1942329,
+  "routeSeconds": 88439,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lat": 47.09822,
+          "lng": 37.81769
+        },
+        {
+          "lng": 30.3159,
+          "lat": 59.9391
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [],
+    "provenRoads": [
+      "m4",
+      "m11",
+      "zsd"
+    ],
+    "missingExpectedRoads": [],
+    "status": "not-assigned"
+  },
+  "passageEvidence": [
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "1182567076",
+      "names": [
+        "М-4",
+        "E 50",
+        "E 115",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "31984600",
+      "names": [
+        "М-4",
+        "E 50",
+        "E 115",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-paid-edge",
+      "wayId": "288855122",
+      "names": [
+        "М-4",
+        "E 115",
+        "«Дон»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "315369157",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "609627830",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "m11",
+      "kind": "selected-paid-edge",
+      "wayId": "609627844",
+      "names": [
+        "М-11",
+        "«Нева»"
+      ]
+    },
+    {
+      "road": "zsd",
+      "kind": "selected-paid-edge",
+      "wayId": "1122966006",
+      "names": [
+        "ЗСД"
+      ]
+    },
+    {
+      "road": "zsd",
+      "kind": "selected-paid-edge",
+      "wayId": "1122966005",
+      "names": [
+        "ЗСД"
+      ]
+    },
+    {
+      "road": "zsd",
+      "kind": "selected-paid-edge",
+      "wayId": "1122966004",
+      "names": [
+        "ЗСД"
+      ]
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "11838466120"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "75715767"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "7678126300"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "4315323077"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "5818209495"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "3257030196"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "75724804"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "3717382721"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "2431427636"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "5061777372"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "4341143825"
+    },
+    {
+      "road": "m4",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "285903913"
+    },
+    {
+      "road": "m11",
+      "kind": "selected-booth-name",
+      "osmNodeId": "7171625012"
+    },
+    {
+      "road": "m11",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "7014845616"
+    },
+    {
+      "road": "zsd",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "933974949"
+    }
+  ],
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-широкино-saint-petersburg-center/2026-10-15T12-04-54-252Z-capture.json.gz",
+  "captureSha256": "6ffccea6b7cf0b7a43994058f70cabaa68a10111b8b696eeb8bf0a40b60e45b4",
+  "detectedRoadComponents": [
+    {
+      "id": "m4",
+      "amount": 4640,
+      "reason": "matrix exact selected-route M4 vector"
+    },
+    {
+      "id": "m11-15-58",
+      "amount": 1260,
+      "reason": "m11_head_ready_direct_pair_at_exit_payment"
+    },
+    {
+      "id": "m11-58-679",
+      "amount": 4200,
+      "reason": "matrix dated selected-route M11 direct pair"
+    },
+    {
+      "id": "m11-679-684",
+      "amount": 94,
+      "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+    },
+    {
+      "id": "zsd",
+      "amount": 300,
+      "reason": "zsd_zone1_complete_directed_base_tariff"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-4",
+    "E 50",
+    "E 115",
+    "«Дон»",
+    "улица Изыскателей",
+    "Дон",
+    "E 119",
+    "AH8",
+    "М-11",
+    "«Нева»",
+    "ЗСД"
+  ],
+  "tollNodeIds": [
+    "11838466120",
+    "75715767",
+    "7678126300",
+    "4315323077",
+    "5818209495",
+    "3257030196",
+    "75724804",
+    "3717382721",
+    "2431427636",
+    "5061777372",
+    "4341143825",
+    "285903913",
+    "7171625012",
+    "7014845616",
+    "933974949"
+  ],
+  "m4PvpPreview": {
+    "status": "boundaries_resolved",
+    "reason": null,
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 3,
+    "confirmedPvps": [
+      "m4-911",
+      "m4-71"
+    ],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": 10494,
+    "weekdayAmount": 9234,
+    "weekendAmount": 10884,
+    "period": "пятница–воскресенье",
+    "segments": [
+      "М-4: m4-911 → m4-71 · Стоимость не подтверждена",
+      "М-11 15–58: moscow → solnechnogorsk: 1260 ₽ · Стоимость не подтверждена",
+      "М-11: p58 → p679 · Стоимость не подтверждена",
+      "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽",
+      "ЗСД: тарифная зона 1 · 300 ₽"
+    ],
+    "confidence": "matched",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "priced"
+  },
+  "audit": {
+    "status": "priced",
+    "priced": [
+      "m4",
+      "m11-15-58",
+      "m11-58-679",
+      "m11-679-684",
+      "zsd"
+    ],
+    "missing": [],
+    "components": [
+      {
+        "id": "m4",
+        "detected": true,
+        "tolls": {
+          "amount": 4640,
+          "weekdayAmount": 3810,
+          "weekendAmount": 4640,
+          "period": "пятница–воскресенье",
+          "segments": [
+            "М-4: m4-911 → m4-71 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "m11-15-58",
+        "detected": true,
+        "tolls": {
+          "amount": 1260,
+          "weekdayAmount": 1130,
+          "weekendAmount": 1650,
+          "period": "по расчётному времени оплаты М-11 15–58 (sun)",
+          "confidence": "matched",
+          "segments": [
+            "М-11 15–58: moscow → solnechnogorsk: 1260 ₽ · Стоимость не подтверждена"
+          ]
+        },
+        "reason": "m11_head_ready_direct_pair_at_exit_payment"
+      },
+      {
+        "id": "m11-58-679",
+        "detected": true,
+        "tolls": {
+          "amount": 4200,
+          "weekdayAmount": 3900,
+          "weekendAmount": 4200,
+          "period": "пятница–воскресенье",
+          "segments": [
+            "М-11: p58 → p679 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix dated selected-route M11 direct pair"
+      },
+      {
+        "id": "m11-679-684",
+        "detected": true,
+        "tolls": {
+          "amount": 94,
+          "weekdayAmount": 94,
+          "weekendAmount": 94,
+          "period": "пн–вс, приказ №274 с 04.09.2026",
+          "segments": [
+            "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+      },
+      {
+        "id": "zsd",
+        "detected": true,
+        "reason": "zsd_zone1_complete_directed_base_tariff",
+        "tolls": {
+          "amount": 300,
+          "weekdayAmount": 300,
+          "weekendAmount": 300,
+          "period": "все дни, без транспондера",
+          "confidence": "matched",
+          "segments": [
+            "ЗСД: тарифная зона 1 · 300 ₽"
+          ]
+        }
+      }
+    ]
+  },
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "m4": {
+      "occurrences": 648,
+      "uniqueWays": 449
+    },
+    "m11": {
+      "occurrences": 761,
+      "uniqueWays": 578
+    },
+    "zsd": {
+      "occurrences": 13,
+      "uniqueWays": 13
+    }
+  }
+}

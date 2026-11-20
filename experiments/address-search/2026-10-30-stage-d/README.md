@@ -1,0 +1,9 @@
+# Stage D evidence
+
+LOCALONLY. D1regression inputs use one retained realPhotonRostovstreet response and admittedGeoNamescitypoints; synthetic mixedstreetfixtures test filtering and do NOT prove realDNRArtyomastreetcoverage. No newPreview/Photon/liveaddress request. Negativebaseline and post-fix logs are separate; sources/codes/hashes recorded in checkpoints/finalmanifest. D2/D3newprimary-source findings are distinct from mock/API evidence.
+
+D3 preserves one newly retrieved original M11 operator PDF (HTTP200,25 scanned pages,9,573,142bytes) and raw CRLF HTTP headers; extracted text consists only of page breaks. Primary-source scope/date/limits are in d3-primary-ledger.json; the PDF is not a new certified virtual tariff boundary. New M12 PDF lead returned403 and no PDF bytes; headers were sanitized before committing, with anti-bot cookies omitted and never reused. No access bypass or old blocked-link retry.
+
+D4 `node experiments/address-search/2026-10-30-stage-d/verify-evidence.mjs` checks saved evidence only, not application behavior or the network. final-review.json contains artifact byte counts/hashes and eight integrity checks; the initial incorrect M11 status-path assertion is recorded separately. Runtime gate commands and observed exits remain authoritative in the D1 checkpoint; empty compiler logs alone are not proof of a successful command. Raw HTTP header CRLF/end-of-header blank lines intentionally differ from source-file whitespace conventions; do not normalize archived source bytes merely to silence git warnings.
+
+The same preservation rule applies to whitespace in original negative-test output and build/lint terminal logs. A broad default git whitespace check reports those recorded bytes; the separate source/document/config check is scoped to editable source formats, not represented as an all-raw-artifacts PASS. No mandatory test or CI configuration is weakened.

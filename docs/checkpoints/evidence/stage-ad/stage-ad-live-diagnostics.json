@@ -1,0 +1,174 @@
+{
+  "sourceSha": "176e1d8ef3f38e5b1d3643a5c2d4711ab9766348",
+  "kind": "LOCAL_API_LIVE_EXTERNAL_PROVIDERS",
+  "streets": [
+    {
+      "query": "Краснодар, Красная улица",
+      "status": 200,
+      "elapsedMs": 1343,
+      "partial": false,
+      "fallback": null,
+      "localSource": null,
+      "items": [
+        {
+          "id": "W-41745170",
+          "title": "Красная улица",
+          "label": "Красная улица, Краснодар, Западный округ, городской округ Краснодар, Краснодарский край, Россия (ориентировочная точка улицы)"
+        },
+        {
+          "id": "W-45834241",
+          "title": "Красная улица",
+          "label": "Красная улица, Краснодар, Прикубанский округ, городской округ Краснодар, Краснодарский край, Россия (ориентировочная точка улицы)"
+        },
+        {
+          "id": "W-372479868",
+          "title": "Красная улица",
+          "label": "Красная улица, Краснодар, Центральный округ, городской округ Краснодар, Краснодарский край, Россия (ориентировочная точка улицы)"
+        }
+      ]
+    },
+    {
+      "query": "Москва, Тверская улица",
+      "status": 200,
+      "elapsedMs": 569,
+      "partial": false,
+      "fallback": null,
+      "localSource": null,
+      "items": [
+        {
+          "id": "W-427579315",
+          "title": "Тверская улица",
+          "label": "Тверская улица, Москва, Тверской, Россия (ориентировочная точка улицы)"
+        }
+      ]
+    },
+    {
+      "query": "Донецк ДНР, улица Артёма",
+      "status": 200,
+      "elapsedMs": 454,
+      "partial": true,
+      "fallback": null,
+      "localSource": {
+        "provider": "geonames",
+        "scope": "local-pilot-only",
+        "precision": "settlement-centre",
+        "sourceDate": "2026-10-24",
+        "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "sourceUrl": "https://www.geonames.org/",
+        "semanticAccuracyCertified": false,
+        "omittedExactHomonymsPossible": false
+      },
+      "items": [
+        {
+          "id": "geonames-709717",
+          "title": "Донецк",
+          "label": "Донецк — ДНР"
+        },
+        {
+          "id": "geonames-709714",
+          "title": "Донецкий",
+          "label": "Донецкий — ДНР (1 из 2); район не уточнён"
+        },
+        {
+          "id": "geonames-709715",
+          "title": "Донецкий",
+          "label": "Донецкий — ДНР (2 из 2); район не уточнён"
+        }
+      ]
+    },
+    {
+      "query": "Ялта, улица Кирова",
+      "status": 200,
+      "elapsedMs": 337,
+      "partial": true,
+      "fallback": null,
+      "localSource": {
+        "provider": "geonames",
+        "scope": "local-pilot-only",
+        "precision": "settlement-centre",
+        "sourceDate": "2026-10-24",
+        "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "sourceUrl": "https://www.geonames.org/",
+        "semanticAccuracyCertified": false,
+        "omittedExactHomonymsPossible": false
+      },
+      "items": [
+        {
+          "id": "geonames-688533",
+          "title": "Ялта",
+          "label": "Ялта — Крым"
+        },
+        {
+          "id": "geonames-688532",
+          "title": "Ялта",
+          "label": "Ялта — ДНР (1 из 2); район не уточнён"
+        },
+        {
+          "id": "geonames-688531",
+          "title": "Ялта",
+          "label": "Ялта — ДНР (2 из 2); район не уточнён"
+        },
+        {
+          "id": "geonames-469349",
+          "title": "Ялта",
+          "label": "Ялта — Тульская Область"
+        },
+        {
+          "id": "geonames-821752",
+          "title": "Ялта",
+          "label": "Ялта — Рязанская Область"
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "name": "Тверь → Адлер",
+      "status": 200,
+      "elapsedMs": 12429,
+      "error": null,
+      "legs": [
+        {
+          "meters": 1836455,
+          "seconds": 90093,
+          "quality": {
+            "status": "single",
+            "providers": [
+              "OSRM"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "tolls": "unknown"
+        }
+      ]
+    },
+    {
+      "name": "Голубицкая → Санкт-Петербург",
+      "status": 200,
+      "elapsedMs": 20069,
+      "error": null,
+      "legs": [
+        {
+          "meters": 2210036,
+          "seconds": 101385,
+          "quality": {
+            "status": "single",
+            "providers": [
+              "OSRM"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "tolls": "priced"
+        }
+      ]
+    }
+  ]
+}

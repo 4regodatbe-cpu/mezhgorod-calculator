@@ -1,0 +1,46 @@
+[
+  {
+    "name": "audit",
+    "command": [
+      "npm",
+      "run",
+      "test:audit"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 10.101,
+    "log": "audit.log.gz"
+  },
+  {
+    "name": "tsc",
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 2.065,
+    "log": "tsc.log.gz"
+  },
+  {
+    "name": "eslint",
+    "command": [
+      "node",
+      "node_modules/eslint/bin/eslint.js",
+      "experiments/nationwide-tolls/scripts/review-selected-osrm-m12-ckad-scope.mjs"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 1.095,
+    "log": "eslint.log.gz"
+  },
+  {
+    "name": "build",
+    "command": [
+      "node",
+      "node_modules/next/dist/bin/next",
+      "build"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 8.554,
+    "log": "build.log.gz"
+  }
+]

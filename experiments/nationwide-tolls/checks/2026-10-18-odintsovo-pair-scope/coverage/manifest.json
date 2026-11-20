@@ -1,0 +1,79 @@
+{
+  "status": "LOCAL_CODE_VALIDATION_PASS",
+  "sourceHead": "95c1fbd3094ae7b076462d8c0cd4949ed72d52a5",
+  "focusedInitialPass": 17,
+  "focusedInitialFail": 1,
+  "focusedFinalPass": 18,
+  "fullPass": 792,
+  "staticPages": 16,
+  "buildExit": 0,
+  "tscExit": 0,
+  "eslintExit": 0,
+  "externalRequests": 0,
+  "apiReplays": 2,
+  "directQuotes": 2,
+  "newPrices": 0,
+  "confirmedFullTripFares": 0,
+  "files": [
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-scope/coverage/api-0.json",
+      "bytes": 6433,
+      "sha256": "9285bc1bf6de811d458cec3e74387ac41e5e4b7ac1fc5064f7ba66d783faea7b"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-scope/coverage/api-1.json",
+      "bytes": 6353,
+      "sha256": "03879c198a1c2991f8ad874edfd3a04241b01356ba8a01113fd3c9f6754d1809"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-scope/coverage/build.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-scope/coverage/build.log",
+      "bytes": 70891,
+      "sha256": "3fad7336d5f2c84b18efcef0f70e9981c8ec8ee399450c0783d47831a97de41b"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-scope/coverage/eslint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-scope/coverage/eslint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-scope/coverage/focused-initial.log",
+      "bytes": 2531,
+      "sha256": "2da92fffec1221b8f055342ecc991b15538743df0c2d8d0e7e54bf7ba2baeec9"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-scope/coverage/focused.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-scope/coverage/focused.log",
+      "bytes": 1783,
+      "sha256": "d2af0f959c7a92b56f8d1c191335bec9cdd513f45b5a85d0957d8f76aa2c564a"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-scope/coverage/quotes.json",
+      "bytes": 3692,
+      "sha256": "379ea8c31b2b82d2d7ce3c04770ef6f75b1dcf3e661b7c815e598026bd78f361"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-scope/coverage/tsc.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-pair-scope/coverage/tsc.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

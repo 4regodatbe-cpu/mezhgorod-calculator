@@ -1,0 +1,70 @@
+{
+  "startedAt": "2026-10-16T01:15:14.139Z",
+  "scope": {
+    "region": null,
+    "group": null,
+    "caseId": "zaporizhzhia-розовка-kazan-center",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "zaporizhzhia-розовка-kazan-center",
+      "startedAt": "2026-10-16T01:15:14.142Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-16T01-15-29-603Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-розовка-kazan-center/2026-10-16T01-15-29-491Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-15-30-144Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-15-30-667Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [],
+        "provenRoads": [
+          "m4"
+        ],
+        "missingExpectedRoads": [],
+        "status": "not-assigned"
+      },
+      "weekday": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "weekend": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "components": [
+        {
+          "id": "m4",
+          "amount": null,
+          "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+        }
+      ],
+      "finishedAt": "2026-10-16T01:15:30.687Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T01:15:30.690Z"
+}

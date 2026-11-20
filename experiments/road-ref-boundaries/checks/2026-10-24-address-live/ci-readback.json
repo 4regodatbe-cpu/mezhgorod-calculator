@@ -1,0 +1,710 @@
+{
+  "sourceCommit": "849102c5994c16db2dbfe1ca8d1c145b856725ea",
+  "runId": 40074351547,
+  "overall": "success",
+  "verify": "success",
+  "liveProbe": "failure",
+  "geometry": "success",
+  "photon": "failure",
+  "settlements": "skipped",
+  "yandex": "skipped",
+  "legacyProbeBypassesRuntimePool": true,
+  "records": [
+    {
+      "query": "Донецк",
+      "globalStatus": "fulfilled",
+      "ukraineStatus": "fulfilled",
+      "featureCount": 120,
+      "failedSources": 1,
+      "sourceErrors": [
+        {
+          "sourceIndex": 6,
+          "name": "Error",
+          "message": "Photon HTTP 503"
+        }
+      ],
+      "rankingChecks": {
+        "donetskDnrFirst": true,
+        "donetskRostovSecond": true
+      },
+      "topSuggestions": [
+        {
+          "title": "Донецк — ДНР",
+          "label": "Донецк — ДНР",
+          "position": {
+            "lat": 48.0158753,
+            "lng": 37.8013407
+          },
+          "territory": "dnr",
+          "crimea": false
+        },
+        {
+          "title": "Донецк",
+          "label": "Донецк, Ростовская область, Россия",
+          "position": {
+            "lat": 48.3382864,
+            "lng": 39.9509488
+          },
+          "territory": null,
+          "crimea": false
+        },
+        {
+          "title": "Донецкая",
+          "label": "Донецкая, Донецк, Ростовская область, Россия",
+          "position": {
+            "lat": 48.3006651,
+            "lng": 39.9073607
+          },
+          "territory": null,
+          "crimea": false
+        },
+        {
+          "title": "Донецк (Северный)",
+          "label": "Донецк (Северный), Донецк, Ростовская область, Россия",
+          "position": {
+            "lat": 48.3402734,
+            "lng": 39.9209416
+          },
+          "territory": null,
+          "crimea": false
+        },
+        {
+          "title": "Донецк (Краснодарский)",
+          "label": "Донецк (Краснодарский), Донецк, Ростовская область, Россия",
+          "position": {
+            "lat": 48.3173243,
+            "lng": 39.9911061
+          },
+          "territory": null,
+          "crimea": false
+        },
+        {
+          "title": "Донецкий кирпичный завод",
+          "label": "Донецкий кирпичный завод, Донецк, Ростовская область, Россия",
+          "position": {
+            "lat": 48.353137,
+            "lng": 39.9989865
+          },
+          "territory": null,
+          "crimea": false
+        },
+        {
+          "title": "Донецкая Мануфактура М",
+          "label": "Донецкая Мануфактура М, Донецк, Ростовская область, Россия",
+          "position": {
+            "lat": 48.326623,
+            "lng": 39.9502949
+          },
+          "territory": null,
+          "crimea": false
+        },
+        {
+          "title": "Донецкий переулок",
+          "label": "Донецкий переулок, Донецк, Гундоровский, Ростовская область, Россия",
+          "position": {
+            "lat": 48.35398,
+            "lng": 40.0220708
+          },
+          "territory": null,
+          "crimea": false
+        }
+      ],
+      "specialMatchFound": true,
+      "crimeaLabelFound": false
+    },
+    {
+      "query": "Донецкая область",
+      "globalStatus": "rejected",
+      "ukraineStatus": "rejected",
+      "featureCount": 0,
+      "failedSources": 9,
+      "sourceErrors": [
+        {
+          "sourceIndex": 0,
+          "name": "Error",
+          "message": "Photon HTTP 503"
+        },
+        {
+          "sourceIndex": 1,
+          "name": "Error",
+          "message": "Photon HTTP 503"
+        },
+        {
+          "sourceIndex": 2,
+          "name": "Error",
+          "message": "Photon HTTP 503"
+        },
+        {
+          "sourceIndex": 3,
+          "name": "Error",
+          "message": "Photon HTTP 503"
+        },
+        {
+          "sourceIndex": 4,
+          "name": "Error",
+          "message": "Photon HTTP 503"
+        },
+        {
+          "sourceIndex": 5,
+          "name": "Error",
+          "message": "Photon HTTP 503"
+        },
+        {
+          "sourceIndex": 6,
+          "name": "Error",
+          "message": "Photon HTTP 503"
+        },
+        {
+          "sourceIndex": 7,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 8,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        }
+      ],
+      "rankingChecks": {},
+      "topSuggestions": [],
+      "specialMatchFound": false,
+      "crimeaLabelFound": false
+    },
+    {
+      "query": "Макеевка",
+      "globalStatus": "rejected",
+      "ukraineStatus": "rejected",
+      "featureCount": 0,
+      "failedSources": 12,
+      "sourceErrors": [
+        {
+          "sourceIndex": 0,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 1,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 2,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 3,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 4,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 5,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 6,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 7,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 8,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 9,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 10,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 11,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        }
+      ],
+      "rankingChecks": {
+        "makeyevkaDnrPresent": false
+      },
+      "topSuggestions": [],
+      "specialMatchFound": false,
+      "crimeaLabelFound": false
+    },
+    {
+      "query": "Луганск",
+      "globalStatus": "rejected",
+      "ukraineStatus": "rejected",
+      "featureCount": 0,
+      "failedSources": 7,
+      "sourceErrors": [
+        {
+          "sourceIndex": 0,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 1,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 2,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 3,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 4,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 5,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 6,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        }
+      ],
+      "rankingChecks": {},
+      "topSuggestions": [],
+      "specialMatchFound": false,
+      "crimeaLabelFound": false
+    },
+    {
+      "query": "Ялта",
+      "globalStatus": "rejected",
+      "ukraineStatus": "rejected",
+      "featureCount": 0,
+      "failedSources": 7,
+      "sourceErrors": [
+        {
+          "sourceIndex": 0,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 1,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 2,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 3,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 4,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 5,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 6,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        }
+      ],
+      "rankingChecks": {
+        "yaltaPriorityTerritoryFirst": false
+      },
+      "topSuggestions": [],
+      "specialMatchFound": false,
+      "crimeaLabelFound": false
+    },
+    {
+      "query": "Изюм",
+      "globalStatus": "rejected",
+      "ukraineStatus": "rejected",
+      "featureCount": 0,
+      "failedSources": 12,
+      "sourceErrors": [
+        {
+          "sourceIndex": 0,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 1,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 2,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 3,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 4,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 5,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 6,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 7,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 8,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 9,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 10,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 11,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        }
+      ],
+      "rankingChecks": {
+        "izyumPriorityTerritoryFirst": false,
+        "izyumUkraineCityWithinFirstEight": false
+      },
+      "topSuggestions": [],
+      "specialMatchFound": false,
+      "crimeaLabelFound": false
+    },
+    {
+      "query": "Ялта ДНР",
+      "globalStatus": "rejected",
+      "ukraineStatus": "rejected",
+      "featureCount": 0,
+      "failedSources": 7,
+      "sourceErrors": [
+        {
+          "sourceIndex": 0,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 1,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 2,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 3,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 4,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 5,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 6,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        }
+      ],
+      "rankingChecks": {
+        "yaltaDnrFirst": false
+      },
+      "topSuggestions": [],
+      "specialMatchFound": false,
+      "crimeaLabelFound": false
+    },
+    {
+      "query": "Ялта Крым",
+      "globalStatus": "rejected",
+      "ukraineStatus": "rejected",
+      "featureCount": 0,
+      "failedSources": 7,
+      "sourceErrors": [
+        {
+          "sourceIndex": 0,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 1,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 2,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 3,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 4,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 5,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 6,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        }
+      ],
+      "rankingChecks": {
+        "yaltaCrimeaQualifiedFirst": false
+      },
+      "topSuggestions": [],
+      "specialMatchFound": false,
+      "crimeaLabelFound": false
+    },
+    {
+      "query": "Севастополь",
+      "globalStatus": "rejected",
+      "ukraineStatus": "rejected",
+      "featureCount": 0,
+      "failedSources": 7,
+      "sourceErrors": [
+        {
+          "sourceIndex": 0,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 1,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 2,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 3,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 4,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 5,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        },
+        {
+          "sourceIndex": 6,
+          "name": "ProbeTimeoutError",
+          "message": "Address source request/body timed out"
+        }
+      ],
+      "rankingChecks": {},
+      "topSuggestions": [],
+      "specialMatchFound": false,
+      "crimeaLabelFound": false
+    },
+    {
+      "query": "Краснодар",
+      "globalStatus": "rejected",
+      "ukraineStatus": "rejected",
+      "featureCount": 0,
+      "failedSources": 7,
+      "sourceErrors": [
+        {
+          "sourceIndex": 0,
+          "name": "ProbeBudgetError",
+          "message": "Address probe total time budget exhausted"
+        },
+        {
+          "sourceIndex": 1,
+          "name": "ProbeBudgetError",
+          "message": "Address probe total time budget exhausted"
+        },
+        {
+          "sourceIndex": 2,
+          "name": "ProbeBudgetError",
+          "message": "Address probe total time budget exhausted"
+        },
+        {
+          "sourceIndex": 3,
+          "name": "ProbeBudgetError",
+          "message": "Address probe total time budget exhausted"
+        },
+        {
+          "sourceIndex": 4,
+          "name": "ProbeBudgetError",
+          "message": "Address probe total time budget exhausted"
+        },
+        {
+          "sourceIndex": 5,
+          "name": "ProbeBudgetError",
+          "message": "Address probe total time budget exhausted"
+        },
+        {
+          "sourceIndex": 6,
+          "name": "ProbeBudgetError",
+          "message": "Address probe total time budget exhausted"
+        }
+      ],
+      "rankingChecks": {},
+      "topSuggestions": [],
+      "specialMatchFound": false,
+      "crimeaLabelFound": false
+    },
+    {
+      "type": "address-search-live-summary",
+      "status": "BUDGET_EXHAUSTED",
+      "completed": 10,
+      "planned": 13,
+      "remainingQueries": [
+        "Москва",
+        "Запорожье",
+        "Харьков, Украина"
+      ],
+      "elapsedMs": 90001,
+      "requestTimeoutMs": 10000,
+      "totalTimeoutMs": 90000,
+      "failedSources": 76,
+      "checks": [
+        {
+          "query": "Донецк",
+          "rankingChecks": {
+            "donetskDnrFirst": true,
+            "donetskRostovSecond": true
+          },
+          "featureCount": 120,
+          "failedSources": 1
+        },
+        {
+          "query": "Донецкая область",
+          "rankingChecks": {},
+          "featureCount": 0,
+          "failedSources": 9
+        },
+        {
+          "query": "Макеевка",
+          "rankingChecks": {
+            "makeyevkaDnrPresent": false
+          },
+          "featureCount": 0,
+          "failedSources": 12
+        },
+        {
+          "query": "Луганск",
+          "rankingChecks": {},
+          "featureCount": 0,
+          "failedSources": 7
+        },
+        {
+          "query": "Ялта",
+          "rankingChecks": {
+            "yaltaPriorityTerritoryFirst": false
+          },
+          "featureCount": 0,
+          "failedSources": 7
+        },
+        {
+          "query": "Изюм",
+          "rankingChecks": {
+            "izyumPriorityTerritoryFirst": false,
+            "izyumUkraineCityWithinFirstEight": false
+          },
+          "featureCount": 0,
+          "failedSources": 12
+        },
+        {
+          "query": "Ялта ДНР",
+          "rankingChecks": {
+            "yaltaDnrFirst": false
+          },
+          "featureCount": 0,
+          "failedSources": 7
+        },
+        {
+          "query": "Ялта Крым",
+          "rankingChecks": {
+            "yaltaCrimeaQualifiedFirst": false
+          },
+          "featureCount": 0,
+          "failedSources": 7
+        },
+        {
+          "query": "Севастополь",
+          "rankingChecks": {},
+          "featureCount": 0,
+          "failedSources": 7
+        },
+        {
+          "query": "Краснодар",
+          "rankingChecks": {},
+          "featureCount": 0,
+          "failedSources": 7
+        }
+      ]
+    }
+  ]
+}

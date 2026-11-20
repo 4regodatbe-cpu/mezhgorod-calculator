@@ -1,0 +1,43 @@
+{
+  "caseId": "dnr-донецк-kazan-center",
+  "status": "audited",
+  "commandExit": 0,
+  "stage1Completed": 17,
+  "stage1Planned": 155,
+  "next": {
+    "caseId": "dnr-донецк-kerch-center",
+    "kind": "regional",
+    "region": "dnr"
+  },
+  "provider": "OSRM",
+  "routeMeters": 1536014,
+  "traceComplete": true,
+  "weekday": 850,
+  "weekend": 850,
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "components": [
+    {
+      "id": "m12",
+      "amount": 850,
+      "reason": "matrix dated selected-route M12 directed endpoint pair"
+    }
+  ],
+  "captureSha256": "c07ee285cfa488ba6be90f5c1bafc12b922523113875b5c469025892c7f6ffb1",
+  "parity": true,
+  "evidence": {
+    "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T22-31-12-094Z.json",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-kazan-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-31-38-476Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-kazan-center/2026-10-15T22-31-38-361Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T22-31-38-957Z.json",
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T22-31-39-450Z.json",
+    "sameDateParity": true
+  },
+  "commands": {
+    "inventory": 0,
+    "report": 0
+  },
+  "parentRemote": "04123e73259db3b3369305b2b76501ac47369ab2"
+}

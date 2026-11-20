@@ -1,0 +1,51 @@
+[
+  {
+    "name": "audit",
+    "command": [
+      "npm",
+      "run",
+      "test:audit"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 10.374,
+    "log": "audit.log.gz"
+  },
+  {
+    "name": "tsc",
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 2.028,
+    "log": "tsc.log.gz"
+  },
+  {
+    "name": "eslint",
+    "command": [
+      "node",
+      "node_modules/eslint/bin/eslint.js",
+      "lib/toll-validator.ts",
+      "lib/v3-calculation/ckad-m11-m12-boundary.ts",
+      "lib/v3-calculation/ckad-product-boundaries.ts",
+      "lib/v3-calculation/route-leg-pricing.ts",
+      "scripts/v3-ckad-m11-m12-boundary.test.ts",
+      "experiments/nationwide-tolls/scripts/capture-ckad-m11-m12-sources.mjs"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 1.325,
+    "log": "eslint.log.gz"
+  },
+  {
+    "name": "build",
+    "command": [
+      "node",
+      "node_modules/next/dist/bin/next",
+      "build"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 8.109,
+    "log": "build.log.gz"
+  }
+]

@@ -1,0 +1,41 @@
+✔ comma plus an explicit region is still a settlement query, not a street request (3.078176ms)
+✔ all requested standalone cities including comma-qualified DNR use admitted data with zero Photon calls (164.42898ms)
+✔ saved real city/street candidates rank correctly without requiring a house (31.020155ms)
+✔ city+street outranks namesake streets in other cities independently of initial order (7.138639ms)
+✔ same-name city street ties retain territorial priority and explicit-region overrides (3.976584ms)
+✖ no confirmed street point: actual settlement remains available, never a silent other-city substitute (33.898675ms)
+✔ invalid/missing street geometry is never invented or copied from another result (1.15405ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 531.369135
+
+✖ failing tests:
+
+test at scripts/street-address.test.ts:52:1
+✖ no confirmed street point: actual settlement remains available, never a silent other-city substitute (33.898675ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   lat: 45.04534,
+  +   lng: 38.98178
+  -   lat: 45.04484,
+  -   lng: 38.97603
+    }
+  
+      at file:///workspace/geonames-preview-publish-fc83523/scripts/street-address.test.ts:56:9
+      at async withLocalPilot (file:///workspace/geonames-preview-publish-fc83523/scripts/street-address.test.ts:15:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { lat: 45.04534, lng: 38.98178 },
+    expected: { lat: 45.04484, lng: 38.97603 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

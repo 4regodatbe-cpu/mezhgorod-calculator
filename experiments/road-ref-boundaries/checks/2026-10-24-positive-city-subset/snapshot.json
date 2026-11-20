@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "snapshotId": "positive-cities-2026-10-24",
+  "reviewedAt": "2026-10-24T13:17:55.454120+00:00",
+  "expiresAt": "2026-10-31T08:24:54Z",
+  "scope": "limited_settlements_only",
+  "license": {
+    "name": "ODbL-1.0",
+    "url": "https://www.openstreetmap.org/copyright",
+    "attribution": "© OpenStreetMap contributors"
+  },
+  "records": [
+    {
+      "searchNames": [
+        "Донецк",
+        "Донецк ДНР"
+      ],
+      "suggestion": {
+        "id": "R-1413957",
+        "title": "Донецк — ДНР",
+        "label": "Донецк — ДНР",
+        "region": "ДНР",
+        "position": {
+          "lat": 48.0158753,
+          "lng": 37.8013407
+        }
+      },
+      "source": {
+        "capturePath": "experiments/road-ref-boundaries/checks/2026-10-24-address-live-fixed/donetsk.json",
+        "sha256": "412c820fe352e37c1e7a50cd9ea4f2553ae75025a3be1f3df21cf8499c4b4820",
+        "capturedAt": "Sat, 24 Oct 2026 08:25:42 GMT",
+        "sourceCommit": "5d7043a14bab604aae46dcc131990790683159f6",
+        "sourceId": "R-1413957"
+      }
+    },
+    {
+      "searchNames": [
+        "Донецк",
+        "Донецк Ростовская область"
+      ],
+      "suggestion": {
+        "id": "R-1517207",
+        "title": "Донецк",
+        "label": "Донецк, Ростовская область, Россия",
+        "region": "Ростовская область, Россия",
+        "position": {
+          "lat": 48.3382864,
+          "lng": 39.9509488
+        }
+      },
+      "source": {
+        "capturePath": "experiments/road-ref-boundaries/checks/2026-10-24-address-live-fixed/donetsk.json",
+        "sha256": "412c820fe352e37c1e7a50cd9ea4f2553ae75025a3be1f3df21cf8499c4b4820",
+        "capturedAt": "Sat, 24 Oct 2026 08:25:42 GMT",
+        "sourceCommit": "5d7043a14bab604aae46dcc131990790683159f6",
+        "sourceId": "R-1517207"
+      }
+    },
+    {
+      "searchNames": [
+        "Краснодар"
+      ],
+      "suggestion": {
+        "id": "R-7373058",
+        "title": "Краснодар",
+        "label": "Краснодар, городской округ Краснодар, Краснодарский край, Россия",
+        "region": "городской округ Краснодар, Краснодарский край, Россия",
+        "position": {
+          "lat": 45.0351532,
+          "lng": 38.9772396
+        }
+      },
+      "source": {
+        "capturePath": "experiments/road-ref-boundaries/checks/2026-10-24-address-live-fixed/krasn.json",
+        "sha256": "8c96abfde7d54881f230ee549b7b198f03e428890270c3abce569f50e604d63a",
+        "capturedAt": "Sat, 24 Oct 2026 08:25:23 GMT",
+        "sourceCommit": "5d7043a14bab604aae46dcc131990790683159f6",
+        "sourceId": "R-7373058"
+      }
+    },
+    {
+      "searchNames": [
+        "Ростов-на-Дону",
+        "Ростов"
+      ],
+      "suggestion": {
+        "id": "R-1285772",
+        "title": "Ростов-на-Дону",
+        "label": "Ростов-на-Дону, городской округ Ростов-на-Дону, Ростовская область, Россия",
+        "region": "городской округ Ростов-на-Дону, Ростовская область, Россия",
+        "position": {
+          "lat": 47.2222596,
+          "lng": 39.7198736
+        }
+      },
+      "source": {
+        "capturePath": "experiments/road-ref-boundaries/checks/2026-10-24-address-live-fixed/rostov.json",
+        "sha256": "6f358701fc45f7c62ec0ec512f0adef6f0203928f5248ab55a1fac06658f22df",
+        "capturedAt": "Sat, 24 Oct 2026 08:24:54 GMT",
+        "sourceCommit": "5d7043a14bab604aae46dcc131990790683159f6",
+        "sourceId": "R-1285772"
+      }
+    }
+  ],
+  "recordsSha256": "98f0b3aff117d77525bcba9d65c4d507b1a29d540e0c9fdf553e5fb9494b2933"
+}

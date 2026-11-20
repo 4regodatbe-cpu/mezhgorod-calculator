@@ -1,0 +1,34 @@
+✔ D1: city-first street context works without punctuation and preserves explicit region (3.62257ms)
+✔ D1: retained Rostov-only Photon answer cannot replace unpunctuated requested DNR city (134.359834ms)
+✔ D1: one compatible street does not allow incompatible namesakes to leak into the same response (17.348746ms)
+✔ D1: explicit ordinary region is retained instead of forcing the priority-region namesake (14.949969ms)
+✔ D1: generic requested city filters a same-name street in another city without city-specific code (50.689642ms)
+✔ D1: explicit priority region rejects incompatible coordinates even without a local-store result (0.581557ms)
+✔ D1: source outage keeps admitted city fallback; cancellation never returns a stale city (8.382679ms)
+✔ D1: city fallback does not extend total search budget or start Photon after expiry (6.290975ms)
+✔ real Krasnodar capture ranks city/street/house evidence independently of provider ordering (90.943855ms)
+✔ Moscow detailed capture outranks unrelated towns but does not manufacture house1 (22.707839ms)
+✔ detailed search keeps the full original query and does not launch locality bbox windows (3.144212ms)
+✔ a number in a complete settlement name must not erase existing geographical priority (5.997527ms)
+✔ a municipal/county value in a provider city field cannot stand in for the requested city (0.434463ms)
+✔ detailed priority-area labels use verified Russian context, not raw Ukrainian administration (3.076177ms)
+✔ comma plus an explicit region is still a settlement query, not a street request (3.428639ms)
+✔ street requests use the captured street window, not a mixed house/POI window or settlement bbox (4.743033ms)
+✔ all requested standalone cities including comma-qualified DNR use admitted data with zero Photon calls (194.469911ms)
+✔ saved real city/street candidates rank correctly without requiring a house (27.635002ms)
+✔ city+street outranks namesake streets in other cities independently of initial order (6.822184ms)
+✔ same-name city street ties retain territorial priority and explicit-region overrides (3.729772ms)
+✔ no confirmed street point: actual settlement remains available, never a silent other-city substitute (47.54244ms)
+✔ invalid/missing street geometry is never invented or copied from another result (1.153394ms)
+✔ a street containing the city word cannot impersonate that city (2.959081ms)
+✔ actual saved street windows serve three confirmed cities, not a substituted Rostov street for DNR (126.811712ms)
+✔ complete provider failure retains an explicitly city-only option; cancellation never returns that stale fallback (3.072918ms)
+✔ local settlement work uses the existing total budget; an expired deadline starts no Photon requests (3.398978ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1550.234138

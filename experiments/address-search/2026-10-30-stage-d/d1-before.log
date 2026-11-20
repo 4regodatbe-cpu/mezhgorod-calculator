@@ -1,0 +1,197 @@
+✖ D1: city-first street context works without punctuation and preserves explicit region (2.385791ms)
+✖ D1: retained Rostov-only Photon answer cannot replace unpunctuated requested DNR city (223.024673ms)
+✖ D1: one compatible street does not allow incompatible namesakes to leak into the same response (20.481839ms)
+✖ D1: explicit ordinary region is retained instead of forcing the priority-region namesake (16.729473ms)
+address_search_unavailable {
+  elapsedMs: 2,
+  sourceCount: 3,
+  failures: { network_error: 3 },
+  budgetExpired: false
+}
+✖ D1: generic requested city filters a same-name street in another city without city-specific code (39.515425ms)
+✖ D1: explicit priority region rejects incompatible coordinates even without a local-store result (7.906881ms)
+✖ D1: source outage keeps admitted city fallback; cancellation never returns a stale city (3.104906ms)
+✖ D1: city fallback does not extend total search budget or start Photon after expiry (0.928946ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 0
+ℹ fail 8
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 741.559624
+
+✖ failing tests:
+
+test at scripts/address-street-context.test.ts:21:1
+✖ D1: city-first street context works without punctuation and preserves explicit region (2.385791ms)
+  AssertionError [ERR_ASSERTION]: Донецк ДНР улица Артёма
+  + actual - expected
+  
+  + null
+  - 'Донецк ДНР'
+  
+      at TestContext.<anonymous> (file:///workspace/geonames-preview-publish-fc83523/scripts/address-street-context.test.ts:22:351)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: 'Донецк ДНР',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at scripts/address-street-context.test.ts:26:1
+✖ D1: retained Rostov-only Photon answer cannot replace unpunctuated requested DNR city (223.024673ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'unconfirmed'
+  
+      at file:///workspace/geonames-preview-publish-fc83523/scripts/address-street-context.test.ts:30:43
+      at async withPilot (file:///workspace/geonames-preview-publish-fc83523/scripts/address-street-context.test.ts:16:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'unconfirmed',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at scripts/address-street-context.test.ts:34:1
+✖ D1: one compatible street does not allow incompatible namesakes to leak into the same response (20.481839ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      'W-910001',
+  +   'W-174010725'
+    ]
+  
+      at file:///workspace/geonames-preview-publish-fc83523/scripts/address-street-context.test.ts:40:43
+      at async withPilot (file:///workspace/geonames-preview-publish-fc83523/scripts/address-street-context.test.ts:16:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'W-910001', 'W-174010725' ],
+    expected: [ 'W-910001' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at scripts/address-street-context.test.ts:42:1
+✖ D1: explicit ordinary region is retained instead of forcing the priority-region namesake (16.729473ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(body.items.every((x               )=>x.label.includes('Ростовская область')))
+  
+      at file:///workspace/geonames-preview-publish-fc83523/scripts/address-street-context.test.ts:46:74
+      at async withPilot (file:///workspace/geonames-preview-publish-fc83523/scripts/address-street-context.test.ts:16:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at scripts/address-street-context.test.ts:48:1
+✖ D1: generic requested city filters a same-name street in another city without city-specific code (39.515425ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      'W-910003',
+  +   'W-910004'
+    ]
+  
+      at file:///workspace/geonames-preview-publish-fc83523/scripts/address-street-context.test.ts:53:43
+      at async withPilot (file:///workspace/geonames-preview-publish-fc83523/scripts/address-street-context.test.ts:16:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'W-910003', 'W-910004' ],
+    expected: [ 'W-910003' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at scripts/address-street-context.test.ts:55:1
+✖ D1: explicit priority region rejects incompatible coordinates even without a local-store result (7.906881ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   {
+  +     id: 'W-174010725',
+  +     label: 'улица Артёма, Донецк, Ростовская область, Россия (ориентировочная точка улицы)',
+  +     position: {
+  +       lat: 48.3179236,
+  +       lng: 39.9866201
+  +     },
+  +     region: 'Донецк, Ростовская область, Россия',
+  +     title: 'улица Артёма'
+  +   }
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///workspace/geonames-preview-publish-fc83523/scripts/address-street-context.test.ts:56:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { id: 'W-174010725', title: 'улица Артёма', label: 'улица Артёма, Донецк, Ростовская область, Россия (ориентировочная точка улицы)', region: 'Донецк, Ростовская область, Россия', position: [Object] } ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at scripts/address-street-context.test.ts:60:1
+✖ D1: source outage keeps admitted city fallback; cancellation never returns a stale city (3.104906ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  502 !== 200
+  
+      at file:///workspace/geonames-preview-publish-fc83523/scripts/address-street-context.test.ts:63:9
+      at async withPilot (file:///workspace/geonames-preview-publish-fc83523/scripts/address-street-context.test.ts:16:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 502,
+    expected: 200,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at scripts/address-street-context.test.ts:66:1
+✖ D1: city fallback does not extend total search budget or start Photon after expiry (0.928946ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  502 !== 200
+  
+      at file:///workspace/geonames-preview-publish-fc83523/scripts/address-street-context.test.ts:69:70
+      at async withPilot (file:///workspace/geonames-preview-publish-fc83523/scripts/address-street-context.test.ts:16:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 502,
+    expected: 200,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

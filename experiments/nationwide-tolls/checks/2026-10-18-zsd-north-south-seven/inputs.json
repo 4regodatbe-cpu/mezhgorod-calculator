@@ -1,0 +1,61 @@
+{
+  "status": "STARTED",
+  "atUtc": "2026-10-18T06:08:08.643649+00:00",
+  "sourceHead": "5372689322bda1a5ad8e36e0cedabcc7ca459c53",
+  "sourceTree": "25aa2a6e1c84e261cb94c8ab37f9daecd3b952cf",
+  "sourceHeadWorkflowRuns": [],
+  "pr": 14,
+  "draft": true,
+  "fingerprint": "1e954c437e46cc7926adf88189e1f0af9fcb2d6ec184332656bfee9d91fd2625",
+  "representative": "max-chain-m12-ckad-m11-zsd-sest-to-kazan",
+  "representativeEvidence": "experiments/nationwide-tolls/checks/2026-10-17-zsd-remaining-scopes/cases/max-chain-m12-ckad-m11-zsd-sest-to-kazan.json",
+  "representativeEvidenceSha256": "6fb40fe115cc4c625e0d07ff851888d31ece87ee2d9b3f06079ef596899ea689",
+  "caseReports": [
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-murom",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m12-ckad-m11-zsd-sest-to-murom.json",
+      "sha256": "9ff1da5128ddcfea1e8740e5ce0c274ef643a51673df680d84001f1d51d0226a"
+    },
+    {
+      "caseId": "pair-m11-zsd-sest-to-moscow",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-zsd-sest-to-moscow.json",
+      "sha256": "d1cd0dc8059a444b2dd4d7899b0514727bd3ddd288e203d542a3903b1e50218d"
+    },
+    {
+      "caseId": "single-zsd-sest-to-pushkin",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/single-zsd-sest-to-pushkin.json",
+      "sha256": "8340cad4858b1315e51d5c16b7570b715dc090f5f939bb0bbd959ad820944ddb"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-sest-to-vladimir",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m12-ckad-m11-zsd-sest-to-vladimir.json",
+      "sha256": "5cc0bc16c1d4ea14379c6dad5da5522f990160ad44054974257e25e0818b0dcf"
+    },
+    {
+      "caseId": "pair-m11-zsd-sest-to-novgorod",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-zsd-sest-to-novgorod.json",
+      "sha256": "feee9e9288075f7d2d822ed5f57f6fe799fabe58cab6d39e582f4385f0e2b09f"
+    },
+    {
+      "caseId": "pair-m11-zsd-sest-to-tver",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/pair-m11-zsd-sest-to-tver.json",
+      "sha256": "b8f25dfae8e6069579d59118b96e0998cb69143ec7e23b6548133a4d0d97ea08"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-sest-to-domodedovo",
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m4-m11-zsd-sest-to-domodedovo.json",
+      "sha256": "58a81ce4ae927218c2f8973013fab9ad2c9a0edc3585a22a4548d56eb9d607e3"
+    }
+  ],
+  "scope": "Seven new own saved boundary/exit exception checks; no repeat74component pricing checks or representative re-evaluation.",
+  "limits": {
+    "cases": 7,
+    "secondsPerCase": 30,
+    "totalSeconds": 120,
+    "newProviderRequests": 0,
+    "newFullReplays": 0,
+    "newPricingCalls": 0
+  },
+  "recovery": "Atomic per-case/progress. Restore absent working-tree captures only from exact existing local Git blobs with GIT_NO_LAZY_FETCH=1; verify sourceSHA/Gitblob. Resume unfinished cases only.",
+  "missingProof": "Directed cash/card owner collection bundle for northKAD→southKAD; matching geometry does not authorize fare."
+}

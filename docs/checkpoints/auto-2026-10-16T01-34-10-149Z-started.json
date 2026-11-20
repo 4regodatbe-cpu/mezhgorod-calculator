@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:34:10.149Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 83,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 15,
+    "spec": {
+      "caseId": "pair-m11-zsd-torzhok-to-prim",
+      "kind": "road",
+      "group": "pair-m11-zsd"
+    }
+  },
+  "caseId": "pair-m11-zsd-torzhok-to-prim",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-34-10-149Z-part15",
+  "parent": "227ec44978064815a94002b6321da3184627d71d"
+}

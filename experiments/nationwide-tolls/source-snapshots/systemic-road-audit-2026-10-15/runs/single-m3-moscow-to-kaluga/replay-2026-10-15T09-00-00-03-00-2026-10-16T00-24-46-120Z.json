@@ -1,0 +1,169 @@
+{
+  "caseId": "single-m3-moscow-to-kaluga",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 191959,
+      "seconds": 11854
+    },
+    {
+      "name": "OSRM",
+      "meters": 184817,
+      "seconds": 10636
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 184817,
+  "routeSeconds": 10636,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 37.6173,
+          "lat": 55.7558
+        },
+        {
+          "lng": 36.2612,
+          "lat": 54.5138
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "m3"
+    ],
+    "provenRoads": [
+      "m3"
+    ],
+    "missingExpectedRoads": [],
+    "status": "traversal-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "m3",
+      "kind": "selected-paid-edge",
+      "wayId": "165082526",
+      "names": [
+        "М-3",
+        "E 101",
+        "Киевское шоссе"
+      ]
+    },
+    {
+      "road": "m3",
+      "kind": "selected-paid-edge",
+      "wayId": "1451346303",
+      "names": [
+        "М-3",
+        "E 101",
+        "Киевское шоссе"
+      ]
+    },
+    {
+      "road": "m3",
+      "kind": "selected-paid-edge",
+      "wayId": "1065571861",
+      "names": [
+        "М-3",
+        "E 101",
+        "«Украина»"
+      ]
+    },
+    {
+      "road": "m3",
+      "kind": "selected-booth-name",
+      "osmNodeId": "13294157951"
+    },
+    {
+      "road": "m3",
+      "kind": "selected-booth-name",
+      "osmNodeId": "4780909558"
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "m3": {
+      "occurrences": 12,
+      "uniqueWays": 4
+    }
+  },
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-moscow-to-kaluga/2026-10-16T00-24-45-734Z-capture.json.gz",
+  "captureSha256": "136e928c0358dcf2667483cbd61d8860a94bea90f38ad88b90c6f10ee42b58ea",
+  "detectedRoadComponents": [
+    {
+      "id": "m3",
+      "amount": null,
+      "reason": "m3_engine_not_yet_composed"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-3",
+    "E 101",
+    "Киевское шоссе",
+    "«Украина»"
+  ],
+  "tollNodeIds": [
+    "13294157951",
+    "4780909558"
+  ],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m3",
+      "m3: m3_engine_not_yet_composed"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [],
+    "missing": [
+      "m3"
+    ],
+    "components": [
+      {
+        "id": "m3",
+        "detected": true,
+        "tolls": null,
+        "reason": "m3_engine_not_yet_composed"
+      }
+    ]
+  }
+}

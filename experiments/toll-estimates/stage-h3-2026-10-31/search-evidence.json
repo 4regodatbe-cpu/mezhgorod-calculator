@@ -1,0 +1,53 @@
+{
+  "sourceHead": "a158a7f5b1bfa0a578607b74469c214c33f9ec71",
+  "soughtG": "dd3e2ff6ab6ffc7ec10b9630f2d064b32058ca29",
+  "gFound": false,
+  "restoredGFiles": [],
+  "bundleCount": 28,
+  "uniqueBundleTips": 24,
+  "isolatedBundleTip": "a9f2bf98106bc798cc3536a7c920cd2c4dbd10a2",
+  "isolatedUnbundleExit": 0,
+  "githubStatus": 422,
+  "fullUnreachableRescan": false,
+  "fToH2Ancestry": true,
+  "gAncestry": null,
+  "push": false,
+  "raw": [
+    {
+      "path": "/workspace/stage-H3-handoff-gJZPzy/bundles.txt",
+      "sha256": "1e876f9c322d936e4264e76cb23975800b7642f1e94a4dd41d4260a647ba1c39"
+    },
+    {
+      "path": "/workspace/stage-H3-handoff-gJZPzy/bundle-heads.txt",
+      "sha256": "d19cbbbe0e8fddff0e2b996e227da30ac6cefe8fa572039d5790d1e8ccdc8fc9"
+    },
+    {
+      "path": "/workspace/stage-H3-handoff-gJZPzy/bundle-tips.txt",
+      "sha256": "f9fa37b431d83ce634a2e133e0891882f795e252c69880cc48ff3e1ad92a167a"
+    },
+    {
+      "path": "/workspace/stage-H3-handoff-gJZPzy/unknown-bundle-tips.txt",
+      "sha256": "09e132d8eaf0442c2fb6f2d30810fecb4f1038cdb38f85319f0051dd7649b54d"
+    },
+    {
+      "path": "/workspace/stage-H3-handoff-gJZPzy/reflog-search.txt",
+      "sha256": "3677256549f93907a928cf740c5816f4cf9fdac585618a34dad4805d46538f51"
+    },
+    {
+      "path": "/workspace/stage-H3-handoff-gJZPzy/unbundle.stderr.log",
+      "sha256": "7819806422faf497eb439f01219cbe60a9cadd951d9629f4927a28e9e6c578b1"
+    },
+    {
+      "path": "/workspace/stage-H3-handoff-gJZPzy/unbundle-final.stdout.log",
+      "sha256": "9c5cc0c317fa93b3a538d920751a3515ba6b59ad8aaf96f47fed61e83c833cb9"
+    },
+    {
+      "path": "/workspace/stage-H3-handoff-gJZPzy/unbundle-final.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/workspace/stage-H3-handoff-gJZPzy/github-G-read.json",
+      "sha256": "d36e2bfa424c72282221fcc4946383529bd22ff5ed99d708c2e5cf3b525cc549"
+    }
+  ]
+}

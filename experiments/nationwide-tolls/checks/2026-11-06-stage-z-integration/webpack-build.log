@@ -1,0 +1,2 @@
+Command: ./node_modules/.bin/next build --webpack
+Result: PASS, Next.js 16.3.4; compilation completed, embedded TypeScript completed, page data collected, 16 static pages generated, build finalized. One non-blocking deprecation warning was emitted for preferredRegion.

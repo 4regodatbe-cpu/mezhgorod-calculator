@@ -1,0 +1,120 @@
+{
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-moscow-center/2026-10-15T22-38-43-101Z-capture.json.gz",
+  "captureSha256": "ed4c45197f7a105878675ec0e4021e2c3bc95df216addfcedde0e4c896578d12",
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-moscow-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T08-50-57-482Z.json",
+      "sha256": "4ca308c27789c9df49cd971cf584c4f24ef1ac307650c177c371545390156e24",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "provider": "OSRM",
+      "routeMeters": 982509,
+      "tolls": {
+        "amount": 1830,
+        "weekdayAmount": 1830,
+        "weekendAmount": 2300,
+        "period": "понедельник–четверг",
+        "segments": [
+          "М-4: m4-460 → m4-71 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "audit": {
+        "status": "priced",
+        "priced": [
+          "m4"
+        ],
+        "missing": [],
+        "components": [
+          {
+            "id": "m4",
+            "detected": true,
+            "tolls": {
+              "amount": 1830,
+              "weekdayAmount": 1830,
+              "weekendAmount": 2300,
+              "period": "понедельник–четверг",
+              "segments": [
+                "М-4: m4-460 → m4-71 · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix exact selected-route M4 vector"
+          }
+        ]
+      },
+      "m4": {
+        "status": "boundaries_resolved",
+        "reason": null,
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 3,
+        "confirmedPvps": [
+          "m4-460",
+          "m4-71"
+        ],
+        "diagnosticOnly": true
+      }
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-краматорск-moscow-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T08-50-58-429Z.json",
+      "sha256": "edede14c1deee56d420af8c1681a4a07c3cf86c3d56a16c2fd1e9f4307aed1d5",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "provider": "OSRM",
+      "routeMeters": 982509,
+      "tolls": {
+        "amount": 2300,
+        "weekdayAmount": 1830,
+        "weekendAmount": 2300,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "М-4: m4-460 → m4-71 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "audit": {
+        "status": "priced",
+        "priced": [
+          "m4"
+        ],
+        "missing": [],
+        "components": [
+          {
+            "id": "m4",
+            "detected": true,
+            "tolls": {
+              "amount": 2300,
+              "weekdayAmount": 1830,
+              "weekendAmount": 2300,
+              "period": "пятница–воскресенье",
+              "segments": [
+                "М-4: m4-460 → m4-71 · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix exact selected-route M4 vector"
+          }
+        ]
+      },
+      "m4": {
+        "status": "boundaries_resolved",
+        "reason": null,
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 3,
+        "confirmedPvps": [
+          "m4-460",
+          "m4-71"
+        ],
+        "diagnosticOnly": true
+      }
+    }
+  ],
+  "next": "dnr-краматорск-moscow-center",
+  "checked": 5
+}

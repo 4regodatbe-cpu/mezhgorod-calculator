@@ -1,0 +1,186 @@
+{
+  "caseId": "pair-m4-a289-anapa-to-voronezh",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-anapa-to-voronezh/2026-10-16T01-37-51-243Z-capture.json.gz",
+  "captureSha256": "dda02d02b6dc3afcf524389f74e89bfefbed3e405b574e6d1253066b1b9ed61a",
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-anapa-to-voronezh/replay-2026-10-15T09-00-00-03-00-2026-10-16T09-44-10-062Z.json",
+      "sha256": "832f8ce2074ed558e0cf35a348e1d23371580afcc0fb1a833d8abd4d60f73eb7",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "provider": "OSRM",
+      "routeMeters": 992359,
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "audit": {
+        "status": "unknown",
+        "priced": [
+          "a289",
+          "krasnodar-west-bypass"
+        ],
+        "missing": [
+          "m4"
+        ],
+        "components": [
+          {
+            "id": "m4",
+            "detected": true,
+            "tolls": null,
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          {
+            "id": "a289",
+            "detected": true,
+            "tolls": {
+              "amount": 620,
+              "weekdayAmount": 620,
+              "weekendAmount": 620,
+              "period": "все дни",
+              "segments": [
+                "А-289: AnapaExit → Maryanskaya: 620 ₽"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "A-289 Anapa exit inferred from two selected-route frames; estimate"
+          },
+          {
+            "id": "krasnodar-west-bypass",
+            "detected": true,
+            "tolls": {
+              "amount": 410,
+              "weekdayAmount": 410,
+              "weekendAmount": 410,
+              "period": "понедельник–четверг",
+              "confidence": "matched",
+              "segments": [
+                "М-4: Дальний западный обход Краснодара: 51 → 0: 410 ₽ · Стоимость не подтверждена"
+              ]
+            },
+            "reason": "dzok_ready_matrix_pair_unconfirmed_route_binding"
+          }
+        ]
+      },
+      "m4": {
+        "status": "boundaries_resolved",
+        "reason": null,
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 2,
+        "confirmedPvps": [
+          "m4-1223",
+          "m4-545"
+        ],
+        "diagnosticOnly": true
+      }
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-anapa-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T09-44-11-132Z.json",
+      "sha256": "9b3c0f29f24ce60c29caf53f651bc805d972438f00ea380a060e958a6f7466fc",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "provider": "OSRM",
+      "routeMeters": 992359,
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "audit": {
+        "status": "unknown",
+        "priced": [
+          "a289",
+          "krasnodar-west-bypass"
+        ],
+        "missing": [
+          "m4"
+        ],
+        "components": [
+          {
+            "id": "m4",
+            "detected": true,
+            "tolls": null,
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          {
+            "id": "a289",
+            "detected": true,
+            "tolls": {
+              "amount": 620,
+              "weekdayAmount": 620,
+              "weekendAmount": 620,
+              "period": "все дни",
+              "segments": [
+                "А-289: AnapaExit → Maryanskaya: 620 ₽"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "A-289 Anapa exit inferred from two selected-route frames; estimate"
+          },
+          {
+            "id": "krasnodar-west-bypass",
+            "detected": true,
+            "tolls": {
+              "amount": 410,
+              "weekdayAmount": 410,
+              "weekendAmount": 410,
+              "period": "пятница–воскресенье",
+              "confidence": "matched",
+              "segments": [
+                "М-4: Дальний западный обход Краснодара: 51 → 0: 410 ₽ · Стоимость не подтверждена"
+              ]
+            },
+            "reason": "dzok_ready_matrix_pair_unconfirmed_route_binding"
+          }
+        ]
+      },
+      "m4": {
+        "status": "boundaries_resolved",
+        "reason": null,
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 2,
+        "confirmedPvps": [
+          "m4-1223",
+          "m4-545"
+        ],
+        "diagnosticOnly": true
+      }
+    }
+  ],
+  "validation": {
+    "complete": true,
+    "boothEventCoverage": "complete",
+    "tollBoothCount": 10,
+    "paidEdgeCount": 750,
+    "paidWaysIfShort": null,
+    "selected545Nodes": [
+      "5818209495"
+    ]
+  },
+  "geometry": null,
+  "previousCount": 17,
+  "nextCase": "pair-m4-a289-voronezh-to-anapa",
+  "oldNext": "pair-m4-a289-anapa-to-voronezh",
+  "oldPlan": "19D17/22 reviewed, latestzaporizhzhia-розовка-kazan-center source_gated_same_two_way_collection_scope; nextpair-m4-a289-anapa-to-voronezh exactsavedcapture/twoofflineprofiles; sourcegapsretained, no newgate",
+  "result": "source_gated_physical545_scope_unresolved",
+  "scopeCheckpoint": "docs/checkpoints/2026-10-16-122949-case9-545-source-gate.md"
+}

@@ -1,0 +1,271 @@
+{
+  "schemaVersion": 1,
+  "productId": "m11-15-58",
+  "tariffFrom": "tskad",
+  "tariffTo": "solnechnogorsk",
+  "direction": "northbound_only",
+  "facilityId": "ckad47-pvp18",
+  "gateNodeId": "8087316065",
+  "gateWayId": "954011576",
+  "orderedWayIds": [
+    "954011576",
+    "954011577",
+    "791520973",
+    "1270188032"
+  ],
+  "anchors": [
+    {
+      "osmNodeId": "11385232741",
+      "coordinate": [
+        37.2134958,
+        56.0914169
+      ]
+    },
+    {
+      "osmNodeId": "8087316065",
+      "coordinate": [
+        37.2128116,
+        56.0910646
+      ]
+    },
+    {
+      "osmNodeId": "11385232716",
+      "coordinate": [
+        37.2123606,
+        56.0908277
+      ]
+    },
+    {
+      "osmNodeId": "8087316056",
+      "coordinate": [
+        37.2113612,
+        56.0901571
+      ]
+    },
+    {
+      "osmNodeId": "7832087256",
+      "coordinate": [
+        37.209886,
+        56.0892585
+      ]
+    },
+    {
+      "osmNodeId": "3566326245",
+      "coordinate": [
+        37.2016452,
+        56.0888728
+      ]
+    },
+    {
+      "osmNodeId": "1872038476",
+      "coordinate": [
+        37.2004102,
+        56.0897492
+      ]
+    }
+  ],
+  "officialIdentity": {
+    "path": "experiments/nationwide-tolls/source-documents/m11-head-passage-rules-retrieved-2026-10-14.pdf",
+    "sha256": "c4c86c9fd92faddaaa4ab4628542185f48e6ea25ed2dff460960650ab48b9f5a",
+    "pdfPage": 5,
+    "fact": "ПВП18 ЦКАД — подъезд к пусковому комплексу3 ЦКАД, примыкающий к М11 на47км; отличен отММК48/50."
+  },
+  "primarySources": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-entry/node8087316065.osm",
+      "url": "https://api.openstreetmap.org/api/0.6/node/8087316065",
+      "sha256": "9e18ba1c744305a891d216cc7136f6e7fe2225762dd2d4fc7c801a73a6865f9b"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-entry/way1270188032.osm",
+      "url": "https://api.openstreetmap.org/api/0.6/way/1270188032/full",
+      "sha256": "4c256346c4501333073d235bffd4284d000849f23119cc10765243a78b65b500"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-18-ckad47-entry/entry-local-map.osm",
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=37.2028116,56.0810646,37.2228116,56.1010646",
+      "sha256": "4c67bf668d770e1c2f2925bf19d622cea4a4deca37db7a1d010415bbef7dc85c"
+    }
+  ],
+  "wayConnectivity": [
+    {
+      "wayId": "954011576",
+      "firstNodeId": "11385232740",
+      "lastNodeId": "8087316056",
+      "oneway": "yes"
+    },
+    {
+      "wayId": "954011577",
+      "firstNodeId": "8087316056",
+      "lastNodeId": "7832087256",
+      "oneway": "yes"
+    },
+    {
+      "wayId": "791520973",
+      "firstNodeId": "7832087256",
+      "lastNodeId": "3566326245",
+      "oneway": "yes"
+    },
+    {
+      "wayId": "1270188032",
+      "firstNodeId": "3566326245",
+      "lastNodeId": "1872038476",
+      "oneway": "yes"
+    }
+  ],
+  "scope": "Physical source anchors only; no OD case id, fare, date, route duration or archived benchmark geometry is used by runtime. Reverse direction not authorized.",
+  "corridorCoordinates": [
+    [
+      37.2144063,
+      56.0917554
+    ],
+    [
+      37.2141594,
+      56.0916528
+    ],
+    [
+      37.2134958,
+      56.0914169
+    ],
+    [
+      37.2128116,
+      56.0910646
+    ],
+    [
+      37.2123606,
+      56.0908277
+    ],
+    [
+      37.2113612,
+      56.0901571
+    ],
+    [
+      37.2106357,
+      56.0897306
+    ],
+    [
+      37.209886,
+      56.0892585
+    ],
+    [
+      37.2094743,
+      56.0890467
+    ],
+    [
+      37.2092289,
+      56.0889323
+    ],
+    [
+      37.2090438,
+      56.0888552
+    ],
+    [
+      37.2088681,
+      56.0888036
+    ],
+    [
+      37.2087045,
+      56.0887609
+    ],
+    [
+      37.2084725,
+      56.0887183
+    ],
+    [
+      37.2082163,
+      56.0886794
+    ],
+    [
+      37.2079119,
+      56.0886457
+    ],
+    [
+      37.2073795,
+      56.0886023
+    ],
+    [
+      37.2069088,
+      56.0885746
+    ],
+    [
+      37.206443,
+      56.0885538
+    ],
+    [
+      37.2056374,
+      56.0885162
+    ],
+    [
+      37.2046047,
+      56.0884504
+    ],
+    [
+      37.2043955,
+      56.0884369
+    ],
+    [
+      37.2042005,
+      56.0884307
+    ],
+    [
+      37.2039664,
+      56.0884265
+    ],
+    [
+      37.2037438,
+      56.088428
+    ],
+    [
+      37.2035629,
+      56.0884345
+    ],
+    [
+      37.2033709,
+      56.0884459
+    ],
+    [
+      37.2031956,
+      56.0884621
+    ],
+    [
+      37.2030517,
+      56.0884803
+    ],
+    [
+      37.2029069,
+      56.0885073
+    ],
+    [
+      37.2027835,
+      56.0885342
+    ],
+    [
+      37.2026643,
+      56.0885644
+    ],
+    [
+      37.2024804,
+      56.0886165
+    ],
+    [
+      37.2023234,
+      56.0886687
+    ],
+    [
+      37.2022283,
+      56.0887048
+    ],
+    [
+      37.2021157,
+      56.0887587
+    ],
+    [
+      37.2016452,
+      56.0888728
+    ],
+    [
+      37.2004102,
+      56.0897492
+    ]
+  ]
+}

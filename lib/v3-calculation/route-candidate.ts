@@ -1,4 +1,5 @@
 import type { Located, RouteWithGeometry } from "../route-providers";
+import { hasReviewedZsdReentry } from "./zsd-reentry-policy";
 
 // A fast ETA is not usable without the geometry and distance of that same trip.
 export function isUsableRoute(route: RouteWithGeometry, from: Located, to: Located): boolean {
@@ -12,5 +13,6 @@ export function isUsableRoute(route: RouteWithGeometry, from: Located, to: Locat
     (point[0] - endpoint.position.lng) * Math.cos(endpoint.position.lat * Math.PI / 180),
     point[1] - endpoint.position.lat,
   ) < 0.025; // Same endpoint tolerance as the existing routing-control policy.
-  return near(route.coordinates[0], from) && near(route.coordinates.at(-1)!, to);
+  return near(route.coordinates[0], from) && near(route.coordinates.at(-1)!, to)
+    && !hasReviewedZsdReentry(route.coordinates);
 }

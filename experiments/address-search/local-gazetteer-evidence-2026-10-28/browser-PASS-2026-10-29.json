@@ -1,0 +1,714 @@
+{
+  "mode": "real local production V3 /r + actual GeoNames; no address mocks; calculation blocked to avoid unapproved extra live work",
+  "results": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "status": "PASS",
+      "searches": [
+        {
+          "query": "Ялта Крым",
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "id": "geonames-688533",
+                "title": "Ялта",
+                "label": "Ялта — Крым",
+                "region": "Крым",
+                "position": {
+                  "lat": 44.50218,
+                  "lng": 34.16624
+                }
+              }
+            ],
+            "partial": false,
+            "localSource": {
+              "provider": "geonames",
+              "scope": "local-pilot-only",
+              "precision": "settlement-centre",
+              "sourceDate": "2026-10-24",
+              "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+              "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+              "sourceUrl": "https://www.geonames.org/",
+              "semanticAccuracyCertified": false
+            }
+          }
+        },
+        {
+          "query": "Санкт-Петербург",
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "id": "geonames-498817",
+                "title": "Санкт-Петербург",
+                "label": "Санкт-Петербург — Санкт-Петербург",
+                "region": "Санкт-Петербург",
+                "position": {
+                  "lat": 59.93863,
+                  "lng": 30.31413
+                }
+              }
+            ],
+            "partial": false,
+            "localSource": {
+              "provider": "geonames",
+              "scope": "local-pilot-only",
+              "precision": "settlement-centre",
+              "sourceDate": "2026-10-24",
+              "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+              "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+              "sourceUrl": "https://www.geonames.org/",
+              "semanticAccuracyCertified": false
+            }
+          }
+        },
+        {
+          "query": "Волноваха",
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "id": "geonames-689198",
+                "title": "Волноваха",
+                "label": "Волноваха — ДНР",
+                "region": "ДНР",
+                "position": {
+                  "lat": 47.6008,
+                  "lng": 37.49358
+                }
+              }
+            ],
+            "partial": false,
+            "localSource": {
+              "provider": "geonames",
+              "scope": "local-pilot-only",
+              "precision": "settlement-centre",
+              "sourceDate": "2026-10-24",
+              "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+              "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+              "sourceUrl": "https://www.geonames.org/",
+              "semanticAccuracyCertified": false
+            }
+          }
+        },
+        {
+          "query": "Доне",
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "id": "geonames-709717",
+                "title": "Донецк",
+                "label": "Донецк — ДНР",
+                "region": "ДНР",
+                "position": {
+                  "lat": 48.023,
+                  "lng": 37.80224
+                }
+              },
+              {
+                "id": "geonames-709713",
+                "title": "Донецкий",
+                "label": "Донецкий — ЛНР · geonames-709713 · 48.6996, 38.67627",
+                "region": "ЛНР",
+                "position": {
+                  "lat": 48.6996,
+                  "lng": 38.67627
+                }
+              },
+              {
+                "id": "geonames-709711",
+                "title": "Донецьке",
+                "label": "Донецьке — ДНР",
+                "region": "ДНР",
+                "position": {
+                  "lat": 48.93347,
+                  "lng": 37.69006
+                }
+              },
+              {
+                "id": "geonames-709714",
+                "title": "Донецкий",
+                "label": "Донецкий — ДНР · geonames-709714 · 47.71556, 38.40889",
+                "region": "ДНР",
+                "position": {
+                  "lat": 47.71556,
+                  "lng": 38.40889
+                }
+              },
+              {
+                "id": "geonames-709715",
+                "title": "Донецкий",
+                "label": "Донецкий — ДНР · geonames-709715 · 47.41667, 37.95",
+                "region": "ДНР",
+                "position": {
+                  "lat": 47.41667,
+                  "lng": 37.95
+                }
+              },
+              {
+                "id": "geonames-811884",
+                "title": "Донецкий",
+                "label": "Донецкий — ЛНР · geonames-811884 · 48.96667, 39.16694",
+                "region": "ЛНР",
+                "position": {
+                  "lat": 48.96667,
+                  "lng": 39.16694
+                }
+              },
+              {
+                "id": "geonames-565348",
+                "title": "Донецк",
+                "label": "Донецк — Ростовская Область",
+                "region": "Ростовская Область",
+                "position": {
+                  "lat": 48.33711,
+                  "lng": 39.95229
+                }
+              },
+              {
+                "id": "geonames-11763020",
+                "title": "Донецкий Лесхоз",
+                "label": "Донецкий Лесхоз — Ростовская Область",
+                "region": "Ростовская Область",
+                "position": {
+                  "lat": 49.03511,
+                  "lng": 40.55049
+                }
+              },
+              {
+                "id": "geonames-1507246",
+                "title": "Донец",
+                "label": "Донец — Новосибирская Область",
+                "region": "Новосибирская Область",
+                "position": {
+                  "lat": 54.92554,
+                  "lng": 75.60433
+                }
+              },
+              {
+                "id": "geonames-565343",
+                "title": "Донетское",
+                "label": "Донетское — Оренбургская Область",
+                "region": "Оренбургская Область",
+                "position": {
+                  "lat": 51.8987,
+                  "lng": 54.41266
+                }
+              },
+              {
+                "id": "geonames-565344",
+                "title": "Донец",
+                "label": "Донец — Белгородская Область",
+                "region": "Белгородская Область",
+                "position": {
+                  "lat": 50.96151,
+                  "lng": 37.02789
+                }
+              },
+              {
+                "id": "geonames-565345",
+                "title": "Донецкий",
+                "label": "Донецкий — Ростовская Область · geonames-565345 · 48.7168, 39.9838",
+                "region": "Ростовская Область",
+                "position": {
+                  "lat": 48.7168,
+                  "lng": 39.9838
+                }
+              },
+              {
+                "id": "geonames-565346",
+                "title": "Донецкий",
+                "label": "Донецкий — Ростовская Область · geonames-565346 · 47.3136, 42.4969",
+                "region": "Ростовская Область",
+                "position": {
+                  "lat": 47.3136,
+                  "lng": 42.4969
+                }
+              },
+              {
+                "id": "geonames-565351",
+                "title": "Донец",
+                "label": "Донец — Ленинградская область",
+                "region": "Ленинградская область",
+                "position": {
+                  "lat": 58.93333,
+                  "lng": 30.75
+                }
+              },
+              {
+                "id": "geonames-565352",
+                "title": "Донец",
+                "label": "Донец — Новгородская Область",
+                "region": "Новгородская Область",
+                "position": {
+                  "lat": 58.21025,
+                  "lng": 30.29159
+                }
+              },
+              {
+                "id": "geonames-565353",
+                "title": "Донец",
+                "label": "Донец — Смоленская Область",
+                "region": "Смоленская Область",
+                "position": {
+                  "lat": 55.14792,
+                  "lng": 31.95125
+                }
+              },
+              {
+                "id": "geonames-565354",
+                "title": "Донец",
+                "label": "Донец — Рязанская Область",
+                "region": "Рязанская Область",
+                "position": {
+                  "lat": 53.55294,
+                  "lng": 41.14021
+                }
+              },
+              {
+                "id": "geonames-565355",
+                "title": "Донец",
+                "label": "Донец — Орловская область",
+                "region": "Орловская область",
+                "position": {
+                  "lat": 52.12719,
+                  "lng": 37.45436
+                }
+              }
+            ],
+            "partial": false,
+            "localSource": {
+              "provider": "geonames",
+              "scope": "local-pilot-only",
+              "precision": "settlement-centre",
+              "sourceDate": "2026-10-24",
+              "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+              "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+              "sourceUrl": "https://www.geonames.org/",
+              "semanticAccuracyCertified": false
+            }
+          }
+        },
+        {
+          "query": "Донецк Ростовская область",
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "id": "geonames-565348",
+                "title": "Донецк",
+                "label": "Донецк — Ростовская Область",
+                "region": "Ростовская Область",
+                "position": {
+                  "lat": 48.33711,
+                  "lng": 39.95229
+                }
+              },
+              {
+                "id": "geonames-11763020",
+                "title": "Донецкий Лесхоз",
+                "label": "Донецкий Лесхоз — Ростовская Область",
+                "region": "Ростовская Область",
+                "position": {
+                  "lat": 49.03511,
+                  "lng": 40.55049
+                }
+              },
+              {
+                "id": "geonames-565345",
+                "title": "Донецкий",
+                "label": "Донецкий — Ростовская Область · geonames-565345 · 48.7168, 39.9838",
+                "region": "Ростовская Область",
+                "position": {
+                  "lat": 48.7168,
+                  "lng": 39.9838
+                }
+              },
+              {
+                "id": "geonames-565346",
+                "title": "Донецкий",
+                "label": "Донецкий — Ростовская Область · geonames-565346 · 47.3136, 42.4969",
+                "region": "Ростовская Область",
+                "position": {
+                  "lat": 47.3136,
+                  "lng": 42.4969
+                }
+              }
+            ],
+            "partial": false,
+            "localSource": {
+              "provider": "geonames",
+              "scope": "local-pilot-only",
+              "precision": "settlement-centre",
+              "sourceDate": "2026-10-24",
+              "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+              "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+              "sourceUrl": "https://www.geonames.org/",
+              "semanticAccuracyCertified": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "PASS",
+      "searches": [
+        {
+          "query": "Ялта Крым",
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "id": "geonames-688533",
+                "title": "Ялта",
+                "label": "Ялта — Крым",
+                "region": "Крым",
+                "position": {
+                  "lat": 44.50218,
+                  "lng": 34.16624
+                }
+              }
+            ],
+            "partial": false,
+            "localSource": {
+              "provider": "geonames",
+              "scope": "local-pilot-only",
+              "precision": "settlement-centre",
+              "sourceDate": "2026-10-24",
+              "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+              "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+              "sourceUrl": "https://www.geonames.org/",
+              "semanticAccuracyCertified": false
+            }
+          }
+        },
+        {
+          "query": "Санкт-Петербург",
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "id": "geonames-498817",
+                "title": "Санкт-Петербург",
+                "label": "Санкт-Петербург — Санкт-Петербург",
+                "region": "Санкт-Петербург",
+                "position": {
+                  "lat": 59.93863,
+                  "lng": 30.31413
+                }
+              }
+            ],
+            "partial": false,
+            "localSource": {
+              "provider": "geonames",
+              "scope": "local-pilot-only",
+              "precision": "settlement-centre",
+              "sourceDate": "2026-10-24",
+              "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+              "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+              "sourceUrl": "https://www.geonames.org/",
+              "semanticAccuracyCertified": false
+            }
+          }
+        },
+        {
+          "query": "Волноваха",
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "id": "geonames-689198",
+                "title": "Волноваха",
+                "label": "Волноваха — ДНР",
+                "region": "ДНР",
+                "position": {
+                  "lat": 47.6008,
+                  "lng": 37.49358
+                }
+              }
+            ],
+            "partial": false,
+            "localSource": {
+              "provider": "geonames",
+              "scope": "local-pilot-only",
+              "precision": "settlement-centre",
+              "sourceDate": "2026-10-24",
+              "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+              "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+              "sourceUrl": "https://www.geonames.org/",
+              "semanticAccuracyCertified": false
+            }
+          }
+        },
+        {
+          "query": "Доне",
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "id": "geonames-709717",
+                "title": "Донецк",
+                "label": "Донецк — ДНР",
+                "region": "ДНР",
+                "position": {
+                  "lat": 48.023,
+                  "lng": 37.80224
+                }
+              },
+              {
+                "id": "geonames-709713",
+                "title": "Донецкий",
+                "label": "Донецкий — ЛНР · geonames-709713 · 48.6996, 38.67627",
+                "region": "ЛНР",
+                "position": {
+                  "lat": 48.6996,
+                  "lng": 38.67627
+                }
+              },
+              {
+                "id": "geonames-709711",
+                "title": "Донецьке",
+                "label": "Донецьке — ДНР",
+                "region": "ДНР",
+                "position": {
+                  "lat": 48.93347,
+                  "lng": 37.69006
+                }
+              },
+              {
+                "id": "geonames-709714",
+                "title": "Донецкий",
+                "label": "Донецкий — ДНР · geonames-709714 · 47.71556, 38.40889",
+                "region": "ДНР",
+                "position": {
+                  "lat": 47.71556,
+                  "lng": 38.40889
+                }
+              },
+              {
+                "id": "geonames-709715",
+                "title": "Донецкий",
+                "label": "Донецкий — ДНР · geonames-709715 · 47.41667, 37.95",
+                "region": "ДНР",
+                "position": {
+                  "lat": 47.41667,
+                  "lng": 37.95
+                }
+              },
+              {
+                "id": "geonames-811884",
+                "title": "Донецкий",
+                "label": "Донецкий — ЛНР · geonames-811884 · 48.96667, 39.16694",
+                "region": "ЛНР",
+                "position": {
+                  "lat": 48.96667,
+                  "lng": 39.16694
+                }
+              },
+              {
+                "id": "geonames-565348",
+                "title": "Донецк",
+                "label": "Донецк — Ростовская Область",
+                "region": "Ростовская Область",
+                "position": {
+                  "lat": 48.33711,
+                  "lng": 39.95229
+                }
+              },
+              {
+                "id": "geonames-11763020",
+                "title": "Донецкий Лесхоз",
+                "label": "Донецкий Лесхоз — Ростовская Область",
+                "region": "Ростовская Область",
+                "position": {
+                  "lat": 49.03511,
+                  "lng": 40.55049
+                }
+              },
+              {
+                "id": "geonames-1507246",
+                "title": "Донец",
+                "label": "Донец — Новосибирская Область",
+                "region": "Новосибирская Область",
+                "position": {
+                  "lat": 54.92554,
+                  "lng": 75.60433
+                }
+              },
+              {
+                "id": "geonames-565343",
+                "title": "Донетское",
+                "label": "Донетское — Оренбургская Область",
+                "region": "Оренбургская Область",
+                "position": {
+                  "lat": 51.8987,
+                  "lng": 54.41266
+                }
+              },
+              {
+                "id": "geonames-565344",
+                "title": "Донец",
+                "label": "Донец — Белгородская Область",
+                "region": "Белгородская Область",
+                "position": {
+                  "lat": 50.96151,
+                  "lng": 37.02789
+                }
+              },
+              {
+                "id": "geonames-565345",
+                "title": "Донецкий",
+                "label": "Донецкий — Ростовская Область · geonames-565345 · 48.7168, 39.9838",
+                "region": "Ростовская Область",
+                "position": {
+                  "lat": 48.7168,
+                  "lng": 39.9838
+                }
+              },
+              {
+                "id": "geonames-565346",
+                "title": "Донецкий",
+                "label": "Донецкий — Ростовская Область · geonames-565346 · 47.3136, 42.4969",
+                "region": "Ростовская Область",
+                "position": {
+                  "lat": 47.3136,
+                  "lng": 42.4969
+                }
+              },
+              {
+                "id": "geonames-565351",
+                "title": "Донец",
+                "label": "Донец — Ленинградская область",
+                "region": "Ленинградская область",
+                "position": {
+                  "lat": 58.93333,
+                  "lng": 30.75
+                }
+              },
+              {
+                "id": "geonames-565352",
+                "title": "Донец",
+                "label": "Донец — Новгородская Область",
+                "region": "Новгородская Область",
+                "position": {
+                  "lat": 58.21025,
+                  "lng": 30.29159
+                }
+              },
+              {
+                "id": "geonames-565353",
+                "title": "Донец",
+                "label": "Донец — Смоленская Область",
+                "region": "Смоленская Область",
+                "position": {
+                  "lat": 55.14792,
+                  "lng": 31.95125
+                }
+              },
+              {
+                "id": "geonames-565354",
+                "title": "Донец",
+                "label": "Донец — Рязанская Область",
+                "region": "Рязанская Область",
+                "position": {
+                  "lat": 53.55294,
+                  "lng": 41.14021
+                }
+              },
+              {
+                "id": "geonames-565355",
+                "title": "Донец",
+                "label": "Донец — Орловская область",
+                "region": "Орловская область",
+                "position": {
+                  "lat": 52.12719,
+                  "lng": 37.45436
+                }
+              }
+            ],
+            "partial": false,
+            "localSource": {
+              "provider": "geonames",
+              "scope": "local-pilot-only",
+              "precision": "settlement-centre",
+              "sourceDate": "2026-10-24",
+              "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+              "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+              "sourceUrl": "https://www.geonames.org/",
+              "semanticAccuracyCertified": false
+            }
+          }
+        },
+        {
+          "query": "Донецк Ростовская область",
+          "status": 200,
+          "body": {
+            "items": [
+              {
+                "id": "geonames-565348",
+                "title": "Донецк",
+                "label": "Донецк — Ростовская Область",
+                "region": "Ростовская Область",
+                "position": {
+                  "lat": 48.33711,
+                  "lng": 39.95229
+                }
+              },
+              {
+                "id": "geonames-11763020",
+                "title": "Донецкий Лесхоз",
+                "label": "Донецкий Лесхоз — Ростовская Область",
+                "region": "Ростовская Область",
+                "position": {
+                  "lat": 49.03511,
+                  "lng": 40.55049
+                }
+              },
+              {
+                "id": "geonames-565345",
+                "title": "Донецкий",
+                "label": "Донецкий — Ростовская Область · geonames-565345 · 48.7168, 39.9838",
+                "region": "Ростовская Область",
+                "position": {
+                  "lat": 48.7168,
+                  "lng": 39.9838
+                }
+              },
+              {
+                "id": "geonames-565346",
+                "title": "Донецкий",
+                "label": "Донецкий — Ростовская Область · geonames-565346 · 47.3136, 42.4969",
+                "region": "Ростовская Область",
+                "position": {
+                  "lat": 47.3136,
+                  "lng": 42.4969
+                }
+              }
+            ],
+            "partial": false,
+            "localSource": {
+              "provider": "geonames",
+              "scope": "local-pilot-only",
+              "precision": "settlement-centre",
+              "sourceDate": "2026-10-24",
+              "attribution": "GeoNames — CC BY 4.0; filtered and indexed by Mezhgorod Calculator",
+              "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+              "sourceUrl": "https://www.geonames.org/",
+              "semanticAccuracyCertified": false
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "browser": "154.0.8037.57"
+}

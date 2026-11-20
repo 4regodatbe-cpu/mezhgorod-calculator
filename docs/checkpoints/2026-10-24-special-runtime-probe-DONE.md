@@ -1,0 +1,9 @@
+# DONE special probe setup / NEXT first actual CI — 24.10.2026 МСК
+
+Parent4ecc0fbaaa071032ddbc09d78a94e3880bbac28f/tree3c93b534844f8f196dcf33476006ba53509cf509 подтверждён remote/tree. Первая PRhead readback сразу после update была устаревшей, повторная подтвердила нужный head до разработки. Готовые операции не повторялись. STARTED:2026-10-24-special-runtime-STARTED.md.
+
+scripts/calculation-runtime-probe.mjs: явный whitelist anapa-krasnodar(default сохранён) и donetsk-moscow, fixed request copy,caseId в worker/progress/result/error; неизвестный ID отклонён до spawn/write/сети. Parent проверяет совпадение caseId и request, чтобы другойcase не дал ложныйPASS. Для Донецка проверяется specialEndpoint:true и6special/provider/routing/matching/pricing spans; отсутствующаяветка→ROUTE_POLICY_MISMATCH,отсутствующиеметрики→TIMING_INVALID. Actual requestFactory получает выбранный request; responsebody/prices не переписываются. Child60с/SIGKILL/atomicfile/2minjob сохранены.
+
+Workflowcalculation_timing теперь черезenv CALCULATION_PROBE_CASE:donetsk-moscow запускает один специальный POST; Анапа в этом CIнеповторяется. Существующие broadjobs нетронуты. Runtimeapp/lib/data/тарифы/политики не менялись. CLIdefault всёещёАнапа для совместимости.
+
+Добавлены2contracts: выбранный specialrequest/ветка/стадии/default/невалидныйcase безfile;wrongchildcase→WORKER_ERRORсpartial. Focused22/22,full887/887,quote/API/ESLint/webpackTypeScript/static16/16PASS. Локальныхlive0. Rawlogs+SHA256:checks/2026-10-24-special-runtime-probe/verification.json. Workflow stage --sparse и exactblobreadback обязательны. NEXTпослеdurable: первый обычныйCI exacthead, calculation_timingjob/log/fullartifact,сохранитьвремя/ошибку/цену сsha. Не повторять длязелёного. Еслиover10с—только отдельный доказанныйbottleneckfix послеcheckpoint/STARTED;обязательныепроверки/fastestнеослаблять. Main/Production/merge/backup/Androidнетронуты,PR14draft.

@@ -31,9 +31,9 @@ await expectStatus("invalid departure timestamp", "/api/v2/calculate", {
 await expectStatus("out-of-range route coordinates", "/api/v2/calculate", {
   method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "standard", from: { label: "A", position: { lat: 95, lng: 37 } }, to }),
 }, 400);
-await expectStatus("dual mode accepts omitted midpoint", "/api/v2/calculate", {
-  method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "dual", from, to }),
-}, 200);
+await expectStatus("legacy V2 accepts dual mode before point validation", "/api/v2/calculate", {
+  method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "dual" }),
+}, 400);
 await expectStatus("malformed calculation JSON", "/api/v2/calculate", {
   method: "POST", headers: jsonHeaders, body: "{",
 }, 400);
@@ -43,6 +43,24 @@ await expectStatus("invalid user tariff override", "/api/v2/calculate", {
   }),
 }, 400);
 await expectStatus("invalid urgency multiplier", "/api/v2/calculate", {
+  method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "standard", from, to, multiplier: 7 }),
+}, 400);
+await expectStatus("V3 rejects an invalid calculation mode", "/api/v3/calculate", {
+  method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "broken", from, to }),
+}, 400);
+await expectStatus("V3 rejects an invalid departure timestamp", "/api/v3/calculate", {
+  method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "standard", from, to, departureAt: "not-a-date" }),
+}, 400);
+await expectStatus("V3 rejects invalid vehicle classes", "/api/v3/calculate", {
+  method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "standard", vehicle: "spaceship", from, to }),
+}, 400);
+await expectStatus("V3 rejects invalid coordinates before routing providers are called", "/api/v3/calculate", {
+  method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "standard", from: { label: "A", position: { lat: 95, lng: 37 } }, to }),
+}, 400);
+await expectStatus("V3 rejects malformed JSON", "/api/v3/calculate", {
+  method: "POST", headers: jsonHeaders, body: "{",
+}, 400);
+await expectStatus("V3 rejects out-of-range urgency multiplier", "/api/v3/calculate", {
   method: "POST", headers: jsonHeaders, body: JSON.stringify({ mode: "standard", from, to, multiplier: 7 }),
 }, 400);
 await expectStatus("oversized suggestion query", `/api/suggest?q=${encodeURIComponent("a".repeat(201))}`, {

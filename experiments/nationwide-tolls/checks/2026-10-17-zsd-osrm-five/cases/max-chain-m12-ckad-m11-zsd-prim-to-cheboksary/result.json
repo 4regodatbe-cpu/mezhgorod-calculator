@@ -1,0 +1,178 @@
+{
+  "core": {
+    "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+    "sourceCapture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary/2026-10-16T01-22-56-513Z-capture.json.gz",
+    "sourceSha256": "ff9294352008224ef3ce7433539682ed9d80bcb8f7b3a4eb4d573cfd8dd4a4d5",
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "selectedProvider": "OSRM",
+    "routeSha256": "ccf1dae85faa72c53f9f7534a87de98b5347ff43b512ad9c13e865257eab7c98",
+    "geometrySha256": "b7160cd1eaa69e8a5fa958fc87a6d4705b203e5b184f14e9477663548d62d72e",
+    "routeMeters": 1393036,
+    "routeSeconds": 64986,
+    "candidates": [
+      {
+        "provider": "Valhalla",
+        "admitted": false,
+        "seconds": 54716
+      },
+      {
+        "provider": "OSRM",
+        "admitted": true,
+        "seconds": 64986
+      },
+      {
+        "provider": "BRouter",
+        "admitted": false,
+        "seconds": 62487
+      }
+    ],
+    "projectedBrouterAlsoReentry": true,
+    "validation": {
+      "complete": true,
+      "boothEventCoverage": "complete",
+      "chunks": 10,
+      "checked": 10,
+      "failed": 0
+    },
+    "zsdComponent": {
+      "reason": "zsd_zone1_complete_directed_base_tariff",
+      "tolls": {
+        "amount": 300,
+        "weekdayAmount": 300,
+        "weekendAmount": 300,
+        "period": "все дни, без транспондера",
+        "confidence": "matched",
+        "segments": [
+          "ЗСД: тарифная зона 1 · 300 ₽"
+        ]
+      }
+    },
+    "componentAudit": {
+      "status": "unknown",
+      "priced": [
+        "m11-15-58",
+        "m11-58-679",
+        "m11-679-684",
+        "zsd"
+      ],
+      "missing": [
+        "m12",
+        "ckad"
+      ],
+      "components": [
+        {
+          "id": "m11-15-58",
+          "detected": true,
+          "tolls": {
+            "amount": 200,
+            "weekdayAmount": 200,
+            "weekendAmount": 320,
+            "period": "по тарифу отправления М-11 15–58 (monThu)",
+            "confidence": "matched",
+            "segments": [
+              "М-11 15–58: solnechnogorsk → mmk_a107: 200 ₽ · Стоимость не подтверждена"
+            ]
+          },
+          "reason": "m11_head_ready_direct_pair_at_departure"
+        },
+        {
+          "id": "m11-58-679",
+          "detected": true,
+          "tolls": {
+            "amount": 3900,
+            "weekdayAmount": 3900,
+            "weekendAmount": 4200,
+            "period": "понедельник–четверг",
+            "segments": [
+              "М-11: p679 → p58 · Стоимость не подтверждена"
+            ],
+            "confidence": "matched"
+          },
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "detected": true,
+          "tolls": {
+            "amount": 94,
+            "weekdayAmount": 94,
+            "weekendAmount": 94,
+            "period": "пн–вс, приказ №274 с 04.09.2026",
+            "segments": [
+              "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽"
+            ],
+            "confidence": "matched"
+          },
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "m12",
+          "detected": true,
+          "tolls": null,
+          "reason": "m12_current_operator_pair_not_bound"
+        },
+        {
+          "id": "ckad",
+          "detected": true,
+          "tolls": null,
+          "reason": "ckad_east_arc_not_proven"
+        },
+        {
+          "id": "zsd",
+          "detected": true,
+          "reason": "zsd_zone1_complete_directed_base_tariff",
+          "tolls": {
+            "amount": 300,
+            "weekdayAmount": 300,
+            "weekendAmount": 300,
+            "period": "все дни, без транспондера",
+            "confidence": "matched",
+            "segments": [
+              "ЗСД: тарифная зона 1 · 300 ₽"
+            ]
+          }
+        }
+      ]
+    },
+    "apiTolls": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m12, ckad",
+        "m12: m12_current_operator_pair_not_bound",
+        "ckad: ckad_east_arc_not_proven"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "priceConfirmation": "unconfirmed",
+    "negativeChecks": [
+      {
+        "name": "incomplete_trace",
+        "reason": "zsd_complete_selected_trace_missing",
+        "status": "PASS"
+      },
+      {
+        "name": "outside_zone1_way",
+        "reason": "zsd_trip_extends_outside_reviewed_zone1",
+        "status": "PASS"
+      },
+      {
+        "name": "reversed_geometry",
+        "reason": "zsd_zone1_directional_geometry_unresolved",
+        "status": "PASS"
+      }
+    ],
+    "pricedComponents": 4,
+    "pricedZsdComponents": 1,
+    "confirmedFullTripFares": 0
+  },
+  "outcome": "fixed_and_verified",
+  "traceRequestOccurrences": 10,
+  "networkRequestsThisCase": 4,
+  "reusedResponseOccurrences": 6
+}

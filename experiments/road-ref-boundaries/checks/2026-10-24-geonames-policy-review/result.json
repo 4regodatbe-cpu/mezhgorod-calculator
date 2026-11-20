@@ -1,0 +1,41 @@
+{
+  "status": "BOUNDED_POLICY_REVIEW_DONE_RUNTIME_BLOCKED",
+  "reviewDate": "2026-10-24",
+  "searchQueries": 4,
+  "primaryDocumentsAttempted": 3,
+  "primaryDocumentsRetrieved": 2,
+  "networkDownloadsOfArchives": 0,
+  "sources": [
+    {"url":"https://www.geonames.org/export/codes.html","outcome":"READ","scope":"Official feature-code definitions; PPLH/PPLQ/PPLW historical/abandoned/destroyed; PPLX section; PPL/PPLA*/PPLC settlement/admin seats"},
+    {"url":"https://www.wikidata.org/wiki/Q134279","outcome":"READ","scope":"Entity links GeoNames 702658; current Russian official-name statement Luhansk from 1990; coordinate claim imported from Russian Wikipedia. Identity corroboration, not independent geodetic certification."},
+    {"url":"https://www.wikidata.org/wiki/Q43070","outcome":"TIMEOUT","scope":"Direct document unavailable; search snippet not used to approve coordinates or labels."}
+  ],
+  "selectedFeatureCodes":{"PPL":86,"PPLA":4,"PPLA2":2,"PPLC":1},
+  "selectedTotal":93,
+  "allSelectedPassProposedConservativeTypeFilter":true,
+  "ambiguityAfterTypeFilter":{"Москва":3,"Краснодар":2,"Донецк":2,"Луганск":2,"Ялта":5,"Севастополь":3,"Тарасовка":75,"Черноморское":1},
+  "luhanskComparison":{
+    "geonameid":"702658",
+    "wikidata":"Q134279",
+    "geonamesLat":48.56814,
+    "geonamesLng":39.30553,
+    "wikidataCoordinateDms":"48°34'18.1502\"N, 39°17'50.3351\"E",
+    "wikidataLatDerived":48.571708388888894,
+    "wikidataLngDerived":39.29731530555556,
+    "haversineMetersDerived":723.0273859100829,
+    "earthRadiusMeters":6371008.8,
+    "identityLink":"CORROBORATED",
+    "coordinateAccuracy":"UNVERIFIED_DIFFERENT_REPRESENTATIVE_POINTS",
+    "sourceIndependence":"NOT_ESTABLISHED_WIKIMEDIA_IMPORT_AND_GEONAMES_REFERENCE",
+    "automaticAcceptanceThreshold":null,
+    "runtimeEligible":false
+  },
+  "proposedOfflineTypePolicy":{
+    "candidateOnly":["PPL","PPLA","PPLA2","PPLA3","PPLA4","PPLA5","PPLC"],
+    "excludeFromInitialCurrentSettlementCandidateSet":["PPLH","PPLQ","PPLW","PPLX","PPLCH"],
+    "otherCodes":"REVIEW_REQUIRED; no automatic removal from source evidence",
+    "appliedToRuntime":false
+  },
+  "remainingGates":["independent coordinate/representative centre review","verified Russian names and aliases with current/historical status","Russian disambiguating region/district labels","reviewed Crimea polygon or explicit unverified coverage","versioned bounded snapshot/attribution before implementation"],
+  "runtimeApproved":false
+}

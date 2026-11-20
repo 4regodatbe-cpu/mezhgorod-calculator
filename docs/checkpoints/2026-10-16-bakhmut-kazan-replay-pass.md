@@ -1,0 +1,5 @@
+# Бахмут→Казань: same-date/weekend PASS
+
+DONE2026-10-16. Оба replay exit0/complete, missingResponses=[], same-date pricingParity=true по полному tolls/audit/traceComplete. Четверг850₽/суббота850₽, trip-departure-v1. Raw SHA25603c155aa97de4864fbb54405bb7fcd81c519a50b66c8da29c7aa7c9c06a6d882 тот же. Corpus status audited и новый batch2026-10-15T22-20-00-000Z.json связывают exact live/capture/replays. Stdout evidence/2026-10-16-bakhmut-kazan-replays.log. Parent remotea2015986ae5ba28b2995454c60df67e0ab7a57c8/tree79f214516602184931a2f578007a456fa27bc06e проверены. Это воспроизводимость движка, не внешняя сверка цены.
+
+Stage1 теперь9/155 при проверке четырёх файлов этого случая; старые8 случаев до departurepolicy не выдаются за9 новых повторных проверок. STARTED следующий шаг после readback: audit-evidence-availability.py и build-systemic-audit-report.mjs, сохранить stdout/result и новый checkpoint. Затем продолжить точную очередь stage1 со следующим planned case. No main/merge/Production/Android.

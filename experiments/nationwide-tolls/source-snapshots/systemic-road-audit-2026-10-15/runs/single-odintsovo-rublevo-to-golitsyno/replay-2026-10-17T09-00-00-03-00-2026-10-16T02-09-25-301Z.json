@@ -1,0 +1,185 @@
+{
+  "caseId": "single-odintsovo-rublevo-to-golitsyno",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-17T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-17T09:00:00+03:00"
+  },
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 40269,
+      "seconds": 3148
+    },
+    {
+      "name": "OSRM",
+      "meters": 43941,
+      "seconds": 2638
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 43941,
+  "routeSeconds": 2638,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 37.354,
+          "lat": 55.785
+        },
+        {
+          "lng": 36.987,
+          "lat": 55.617
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "odintsovo"
+    ],
+    "provenRoads": [
+      "odintsovo"
+    ],
+    "missingExpectedRoads": [],
+    "status": "traversal-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "odintsovo",
+      "kind": "selected-paid-edge",
+      "wayId": "1306659360",
+      "names": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "road": "odintsovo",
+      "kind": "selected-paid-edge",
+      "wayId": "188935811",
+      "names": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "road": "odintsovo",
+      "kind": "selected-paid-edge",
+      "wayId": "1067603714",
+      "names": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "road": "odintsovo",
+      "kind": "selected-booth-name",
+      "osmNodeId": "3109177690"
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "odintsovo": {
+      "occurrences": 41,
+      "uniqueWays": 40
+    }
+  },
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/2026-10-16T02-09-24-620Z-capture.json.gz",
+  "captureSha256": "14ff3bd2aa0daa55de044e69757be17b2632559411ebad074b8b9a4098981522",
+  "detectedRoadComponents": [
+    {
+      "id": "m1",
+      "amount": null,
+      "reason": "m1_engine_not_yet_composed"
+    },
+    {
+      "id": "unknown-paid-road",
+      "amount": null,
+      "reason": "unmapped_selected_route_paid_booth"
+    },
+    {
+      "id": "odintsovo",
+      "amount": null,
+      "reason": "М-1 · Северный обход Одинцова"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-1",
+    "Северный обход Одинцова"
+  ],
+  "tollNodeIds": [
+    "3783549015",
+    "3109177690"
+  ],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "пятница–воскресенье",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m1, unknown-paid-road, odintsovo",
+      "m1: m1_engine_not_yet_composed",
+      "unknown-paid-road: unmapped_selected_route_paid_booth",
+      "odintsovo: М-1 · Северный обход Одинцова"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [],
+    "missing": [
+      "m1",
+      "unknown-paid-road",
+      "odintsovo"
+    ],
+    "components": [
+      {
+        "id": "m1",
+        "detected": true,
+        "tolls": null,
+        "reason": "m1_engine_not_yet_composed"
+      },
+      {
+        "id": "unknown-paid-road",
+        "detected": true,
+        "tolls": null,
+        "reason": "unmapped_selected_route_paid_booth"
+      },
+      {
+        "id": "odintsovo",
+        "detected": true,
+        "tolls": null,
+        "reason": "М-1 · Северный обход Одинцова"
+      }
+    ]
+  }
+}

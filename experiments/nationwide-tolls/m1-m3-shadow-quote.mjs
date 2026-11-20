@@ -3,7 +3,9 @@ import {quoteNationalRoad} from "./national-price.mjs";
 
 // M-3 three-gate observed corridor only; not an all-Russia toll total.
 // Calculate in shadow mode once same-route Valhalla paid gate IDs are
-// independently mapped and the same operator date/profile holds through trip.
+// independently mapped and the operator source covers the departure date.
+// The trip-departure policy also applies to diagnostic components: crossing
+// midnight does not change the tariff date or select an arrival-day profile.
 function quoteM3ThreeGateShadow(catalog,gateAudit,departureAt,routeSeconds){
  const unknown=reason=>({status:"unknown",reason,amountRub:null,diagnosticOnly:true,roadId:"m3"});
  if(!gateAudit||gateAudit.status!=="physical_gate_nodes_matched"||
@@ -17,9 +19,8 @@ function quoteM3ThreeGateShadow(catalog,gateAudit,departureAt,routeSeconds){
  if(!forward&&!reverse || new Set(ids).size!==3)return unknown("m3_gate_order_or_duplicate_invalid");
  if(typeof departureAt!=="string"||!Number.isFinite(routeSeconds)||routeSeconds<0||routeSeconds>24*3600)return unknown("m3_departure_or_duration_invalid");
  const start=Date.parse(departureAt);if(!Number.isFinite(start)||!/(?:Z|[+-]\d\d:\d\d)$/.test(departureAt))return unknown("m3_departure_timezone_missing");
- const end=new Date(start+Math.ceil(routeSeconds)*1000).toISOString();
- const a=m4TariffPeriodAt(departureAt),b=m4TariffPeriodAt(end);
- if(a.status!=="resolved"||b.status!=="resolved"||a.date!==b.date||a.profile!==b.profile)return unknown("m3_gate_tariff_date_changes_during_trip");
+ const a=m4TariffPeriodAt(departureAt);
+ if(a.status!=="resolved")return unknown("m3_departure_tariff_date_unresolved");
  const m3Source=catalog?.operatorFares?.m3;
  if(!m3Source?.effectiveFrom || !m3Source?.verifiedThrough || a.date<m3Source.effectiveFrom || a.date>m3Source.verifiedThrough)
    return unknown("m3_source_effective_day_not_verified");
@@ -51,8 +52,8 @@ function quoteM1SingleGateShadow(catalog,gateAudit,departureAt,routeSeconds){
  if(typeof departureAt!=="string"||!Number.isFinite(routeSeconds)||routeSeconds<0||routeSeconds>86400)return unknown("m1_departure_or_duration_invalid");
  const start=Date.parse(departureAt);
  if(!Number.isFinite(start)||!/(?:Z|[+-]\d\d:\d\d)$/.test(departureAt))return unknown("m1_departure_timezone_invalid");
- const a=m4TariffPeriodAt(departureAt),b=m4TariffPeriodAt(new Date(start+Math.ceil(routeSeconds)*1000).toISOString());
- if(a.status!=="resolved"||b.status!=="resolved"||a.date!==b.date)return unknown("m1_tariff_date_changes_during_trip");
+ const a=m4TariffPeriodAt(departureAt);
+ if(a.status!=="resolved")return unknown("m1_departure_tariff_date_unresolved");
  const fare=catalog?.operatorFares?.m1;
  if(!fare?.effectiveFrom||!fare?.verifiedThrough||a.date<fare.effectiveFrom||a.date>fare.verifiedThrough)
   return unknown("m1_operator_tariff_version_not_verified");

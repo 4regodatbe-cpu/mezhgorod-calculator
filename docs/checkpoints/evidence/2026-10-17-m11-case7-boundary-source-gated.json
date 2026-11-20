@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "finding": "m11_partial_head_entry_boundary_unresolved",
+  "caseId": "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+  "reviewStatus": "blocked_by_missing_reliable_data_no_material_m11_boundary_exception",
+  "reviewedAtUtc": "2026-10-16T21:16:00Z",
+  "reviewedAtMsk": "2026-10-17T00:16:00+03:00",
+  "sourceCommit": "b0d4c5cdb67ea6ba5d390fd4ac67299b61c11208",
+  "sourceTree": "88fd83819e14705d15a9f0bd489876f52e2434b6",
+  "capture": {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-vladimir-to-sest/2026-10-16T01-24-11-271Z-capture.json.gz",
+    "gitBlobSha1": "80bf282afa92f210adc7d141bc204ebb48d326df",
+    "sha256": "5e895d6785df78dafd9a016706e733fd3da66502001fbb5611ff34d33f52eb6f",
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "routeMeters": 921380,
+    "routeSeconds": 31886,
+    "traceComplete": true,
+    "checkedChunks": 7,
+    "totalChunks": 7,
+    "failedChunks": 0,
+    "checkedEdges": 1690,
+    "provider": "Valhalla",
+    "providerCandidates": [
+      {
+        "name": "Valhalla",
+        "meters": 921380,
+        "seconds": 31886
+      },
+      {
+        "name": "OSRM",
+        "meters": 919671,
+        "seconds": 40158
+      }
+    ],
+    "routeSelectionRule": "fastest-route-only"
+  },
+  "profiles": [
+    {
+      "mode": "live",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-vladimir-to-sest/live-2026-10-15T09-00-00-03-00-2026-10-16T01-24-11-322Z.json",
+      "gitBlobSha1": "efd38d39c7e35b65520ad187d59450f8a2186527",
+      "routeMeters": 921380,
+      "routeSeconds": 31886,
+      "captureSha256": "5e895d6785df78dafd9a016706e733fd3da66502001fbb5611ff34d33f52eb6f",
+      "missingExpectedRoads": [
+        "m12"
+      ]
+    },
+    {
+      "mode": "offline-recorded-response-replay",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-vladimir-to-sest/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-24-11-760Z.json",
+      "gitBlobSha1": "84d14bdf2a78949f2c4f62e33941556187115750",
+      "routeMeters": 921380,
+      "routeSeconds": 31886,
+      "replayComplete": true,
+      "missingResponses": [],
+      "captureSha256": "5e895d6785df78dafd9a016706e733fd3da66502001fbb5611ff34d33f52eb6f",
+      "missingExpectedRoads": [
+        "m12"
+      ]
+    },
+    {
+      "mode": "offline-recorded-response-replay",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-vladimir-to-sest/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-24-12-180Z.json",
+      "gitBlobSha1": "c439e9406778e72db0c5e9fa07df81fe60050f19",
+      "routeMeters": 921380,
+      "routeSeconds": 31886,
+      "replayComplete": true,
+      "missingResponses": [],
+      "captureSha256": "5e895d6785df78dafd9a016706e733fd3da66502001fbb5611ff34d33f52eb6f",
+      "missingExpectedRoads": [
+        "m12"
+      ]
+    }
+  ],
+  "boundaryCheck": {
+    "source": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-15-mmk-bindings/directed-mmk-north-gates.json",
+    "directedGateWayIds": [
+      "795569815",
+      "795569816"
+    ],
+    "directedGateWaysInSelectedTrace": [
+      false,
+      false
+    ],
+    "gateNodeIds": [
+      "3499155981",
+      "3499155978"
+    ],
+    "approxNearestPolylineDistanceMeters": [
+      26.47,
+      41.76
+    ],
+    "thresholdMeters": 25,
+    "pvp21SpatialAnchor": "unresolved"
+  },
+  "otherUnresolved": [
+    "M12 expected traversal not proven",
+    "CKAD east arc not proven",
+    "ZSD extends outside reviewed zone1"
+  ],
+  "tollState": {
+    "m11Head": "unknown",
+    "ckad": "unknown",
+    "zsd": "unknown",
+    "m12ExpectedRoad": "not_proven",
+    "routeAmountRub": null,
+    "pricingStatus": "unknown",
+    "priceConfirmation": "unconfirmed"
+  },
+  "decision": "No material exception to the shared M11 boundary cause; M12 expected traversal is not proven. CKAD/ZSD remain unresolved and no full route toll amount is supported.",
+  "newLiveRequests": 0,
+  "codeChanged": false,
+  "testsRun": [],
+  "tariffConfirmed": false,
+  "nextCase": "triple-m11-ckad-m12-arzamas-to-spb"
+}

@@ -1,0 +1,88 @@
+TAP version 13
+# Subtest: ordinary V3 excludes the recorded faster reentry before ranking and validates only the admitted OSRM geometry
+not ok 1 - ordinary V3 excludes the recorded faster reentry before ranking and validates only the admitted OSRM geometry
+  ---
+  duration_ms: 185.219295
+  type: 'test'
+  location: '/workspace/scratch/43bf6cdc55b7/mezhgorod/scripts/v3-route-selection-audit.test.ts:104:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+
+      [
+    +   'Valhalla'
+    -   'OSRM'
+      ]
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: 'OSRM'
+  actual:
+    0: 'Valhalla'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/43bf6cdc55b7/mezhgorod/scripts/v3-route-selection-audit.test.ts:112:9)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: special-zone V3 uses the same admission guard before ETA and cannot promote an invalid reentry
+not ok 2 - special-zone V3 uses the same admission guard before ETA and cannot promote an invalid reentry
+  ---
+  duration_ms: 37.20184
+  type: 'test'
+  location: '/workspace/scratch/43bf6cdc55b7/mezhgorod/scripts/v3-route-selection-audit.test.ts:123:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+
+      [
+    +   'Valhalla'
+    -   'OSRM'
+      ]
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: 'OSRM'
+  actual:
+    0: 'Valhalla'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/43bf6cdc55b7/mezhgorod/scripts/v3-route-selection-audit.test.ts:131:9)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: ordinary V3 reports routing unavailable when only the forbidden reentry is returned
+not ok 3 - ordinary V3 reports routing unavailable when only the forbidden reentry is returned
+  ---
+  duration_ms: 111.77268
+  type: 'test'
+  location: '/workspace/scratch/43bf6cdc55b7/mezhgorod/scripts/v3-route-selection-audit.test.ts:137:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    {"legs":[{"from":"Санкт-Петербург, Приморский проспект, контроль","to":"Москва, центр","fast":{"meters":724531,"seconds":25471,"m12StrictSpan":null,"m12EndpointSpan":null,"m11RoadEvidence":{"provider":"valhalla","strictBlocks":[],"candidateClues":[],"malformedStrictCount":0},"quality":{"status":"single","providers":["Valhalla"],"distanceSpreadPercent":null,"timeSpreadPercent":null,"goldenDistanceDeviationPercent":null,"message":"Выбран маршрут с минимальным временем"},"tolls":{"amount":null,"weekdayAmount":null,"weekendAmount":null,"period":"понедельник–четверг","segments":["Обнаружены, но не полностью оценены платные системы: unknown-paid-road","unknown-paid-road: selected_route_payment_trace_incomplete"],"confidence":"none","pricingStatus":"unknown"},"tollValidation":{"status":"unknown","source":"Valhalla map matching","tollEdgeCount":0,"checkedEdgeCount":0,"wayIds":[],"roadNames":[],"message":"Нельзя показывать частичную сумму как итог маршрута. Не оценены: unknown-paid-road: selected_route_payment_trace_incomplete"},"m4PvpPreview":{"status":"unknown","reason":"Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.","priceRub":null,"verifiedPriceCells":0,"candidateCount":0,"confirmedPvps":[],"diagnosticOnly":true},"nationalTollCoverage":{"catalogNetworkCount":22,"candidateNetworks":[{"id":"m11","name":"М-11 «Нева» (участки 58–679 км)","status":"candidate_unverified","hasReferenceFare":false,"operator":"Автодор"}],"catalogWithReferenceFares":8,"exactCrossingVerified":false,"newFareApplied":false,"reason":"geometry_candidate_is_not_map_matched_paid_passage","m1m3GateAudit":{"status":"unknown","reason":"same_selected_route_trace_incomplete","routeId":"selected-fast-route","candidateRoads":[],"verifiedGates":[],"unmappedPaidNodes":[],"strictPriceAllowed":false},"m3Shadow":{"status":"unknown","reason":"m3_full_three_gate_proof_incomplete","amountRub":null,"diagnosticOnly":true,"roadId":"m3"},"m1Shadow":{"status":"unknown","reason":"m1_exact_gate_proof_not_verified","amountRub":null,"roadId":"m1","diagnosticOnly":true}},"pricingByVehicle":{"standard":{"corridor":{"id":"geometry"},"dualTariff":false,"pricingSegments":[{"distanceKm":724.531,"tariffType":"normal","type":"normal","from":"Санкт-Петербург, Приморский проспект, контроль","to":"Москва, центр","ratePerKm":30,"amount":21736,"reason":"Обычный тариф","reviewRequired":false}],"totalPrice":21736,"reviewRequired":false,"requiresSplit":false,"multiplier":1},"comfort":{"corridor":{"id":"geometry"},"dualTariff":false,"pricingSegments":[{"distanceKm":724.531,"tariffType":"normal","type":"normal","from":"Санкт-Петербург, Приморский проспект, контроль","to":"Москва, центр","ratePerKm":32.5,"amount":23547,"reason":"Обычный тариф","reviewRequired":false}],"totalPrice":23547,"reviewRequired":false,"requiresSplit":false,"multiplier":1},"comfort_plus":{"corridor":{"id":"geometry"},"dualTariff":false,"pricingSegments":[{"distanceKm":724.531,"tariffType":"normal","type":"normal","from":"Санкт-Петербург, Приморский проспект, контроль","to":"Москва, центр","ratePerKm":35,"amount":25359,"reason":"Обычный тариф","reviewRequired":false}],"totalPrice":25359,"reviewRequired":false,"requiresSplit":false,"multiplier":1},"minivan":{"corridor":{"id":"geometry"},"dualTariff":false,"pricingSegments":[{"distanceKm":724.531,"tariffType":"normal","type":"normal","from":"Санкт-Петербург, Приморский проспект, контроль","to":"Москва, центр","ratePerKm":45,"amount":32604,"reason":"Обычный тариф","reviewRequired":false}],"totalPrice":32604,"reviewRequired":false,"requiresSplit":false,"multiplier":1}}},"free":null,"freeCandidate":null}],"mode":"standard","automaticMode":"standard","specialEndpoint":false}
+
+    200 !== 502
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 502
+  actual: 200
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/scratch/43bf6cdc55b7/mezhgorod/scripts/v3-route-selection-audit.test.ts:139:9)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 0
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 732.586354

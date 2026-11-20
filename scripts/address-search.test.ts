@@ -5,7 +5,9 @@ import { photonSearchUrls, rankPhotonFeatures, type PhotonFeature } from "../lib
 
 const feature = (name: string, lng: number, lat: number, osmId: number, osmValue = "city"): PhotonFeature => ({
   geometry: { coordinates: [lng, lat] },
-  properties: { name, city: name, state: name === "Донецк" ? (lng > 38 ? "Ростовская область" : "Донецкая область") : "Луганская область", country: lng > 38 ? "Россия" : "Украина", countrycode: lng > 38 ? "RU" : "UA", osm_key: ["city", "town", "village", "hamlet", "locality", "municipality", "isolated_dwelling", "farm"].includes(osmValue) ? "place" : osmValue === "administrative" ? "boundary" : "highway", osm_type: "N", osm_id: osmId, osm_value: osmValue },
+  // Ranking fixtures model localized Russian source fields. The separate
+  // photon-russian-display suite covers absent/invalid language evidence.
+  properties: { name, "name:ru": /[А-Яа-яЁё]/u.test(name)&&!/[A-Za-zІіЇїЄєҐґ]/u.test(name)?name:undefined, city: name, state: name === "Донецк" ? (lng > 38 ? "Ростовская область" : "Донецкая область") : "Луганская область", country: lng > 38 ? "Россия" : "Украина", countrycode: lng > 38 ? "RU" : "UA", osm_key: ["city", "town", "village", "hamlet", "locality", "municipality", "isolated_dwelling", "farm"].includes(osmValue) ? "place" : osmValue === "administrative" ? "boundary" : "highway", osm_type: "N", osm_id: osmId, osm_value: osmValue },
 });
 
 test("searches globally, within Ukraine and Russia, and in each priority territory", () => {
@@ -42,7 +44,9 @@ test("RuWiki alias results are matched and labeled using the settlement's listed
   const russianHomonym = feature("Кировск", 39.7, 47.23, 74, "city");
   const results = rankPhotonFeatures([russianHomonym, lnrSettlement], SPECIAL_TERRITORY_BOUNDARIES, "Кировск");
   assert.equal(results[0]?.label, "Голубовка — ЛНР");
-  assert.equal(results[0]?.position.lng, 39.3078);
+  assert.ok(results[0]);
+  assert.ok(results[0].position);
+  assert.equal(results[0].position.lng, 39.3078);
 });
 
 test("all special-oblast queries search provider aliases in Ukraine's state layer", () => {
@@ -71,8 +75,7 @@ test("exact matches in all five high-demand areas rank before ordinary namesakes
     feature("Ялта", 32.6169, 46.6354, 11),
     feature("Ялта", 34.1689, 44.4988, 12),
   ], SPECIAL_TERRITORY_BOUNDARIES, "Ялта");
-  assert.deepEqual(results.slice(0, 4).map((item) => item.id), ["N-8", "N-9", "N-10", "N-11"]);
-  assert.deepEqual(results.slice(4).map((item) => item.id), ["N-7", "N-12"]);
+  assert.deepEqual(results.map((item) => item.id), ["N-12", "N-8", "N-9", "N-10", "N-11", "N-7"]);
 });
 
 test("Donetsk search ranks priority territories before Russia and foreign namesakes", () => {
@@ -85,7 +88,7 @@ test("Donetsk search ranks priority territories before Russia and foreign namesa
   const crimea = feature("Донецк", 34.1689, 44.4988, 16);
   crimea.properties!.state = "Республика Крым";
   const results = rankPhotonFeatures([other, crimea, rostov, dnr], SPECIAL_TERRITORY_BOUNDARIES, "Донецк");
-  assert.deepEqual(results.map((item) => item.id), ["N-13", "N-14", "N-16", "N-15"]);
+  assert.deepEqual(results.map((item) => item.id), ["N-16", "N-13", "N-14", "N-15"]);
 });
 
 test("same-name city inside a special ADM1 polygon ranks above its Russian namesake by coordinates", () => {
@@ -94,6 +97,8 @@ test("same-name city inside a special ADM1 polygon ranks above its Russian names
   specialDonetsk.properties!.country = "Россия";
   const results = rankPhotonFeatures([rostovDonetsk, specialDonetsk], SPECIAL_TERRITORY_BOUNDARIES, "Донецк");
   assert.deepEqual(results.map((item) => item.id), ["N-2", "N-1"]);
+  assert.ok(results[0]);
+  assert.ok(results[0].position);
   assert.equal(results[0].position.lng, 37.8029);
   assert.equal(results[0].label, "Донецк — ДНР");
   assert.equal(results[0].title, "Донецк — ДНР");
@@ -103,6 +108,7 @@ test("same-name city inside a special ADM1 polygon ranks above its Russian names
 
 test("Ukrainian Makeyevka spelling is matched and displayed in Russian for a Russian query", () => {
   const makeyevka = feature("Макіївка", 37.9028, 48.0171, 72, "town");
+  makeyevka.properties!["name:ru"] = "Макеевка";
   const results = rankPhotonFeatures([makeyevka], SPECIAL_TERRITORY_BOUNDARIES, "Макеевка");
   assert.equal(results[0].label, "Макеевка — ДНР");
   assert.equal(results[0].title, "Макеевка — ДНР");
@@ -126,6 +132,7 @@ test("priority-territory settlement named Moscow outranks the Russian city, whil
   const crimeaPoi = feature("Москва", 33.5187, 44.5788, 81, "shop");
   crimeaPoi.properties!.osm_key = "shop";
   crimeaPoi.properties!.city = "Севастополь";
+  crimeaPoi.properties!["city:ru"] = "Севастополь"; // Explicit Russian context for the nonlocality fixture.
   crimeaPoi.properties!.state = "Республика Крым";
   const moscowCity = feature("Москва", 37.6173, 55.7558, 82, "city");
   moscowCity.properties!.osm_type = "R";
@@ -193,9 +200,9 @@ test("boosts exact namesake cities in special polygons while keeping unrelated p
   const yaltaCrimea = feature("Ялта", 34.1689, 44.4988, 53);
   const yaltaDnr = feature("Ялта", 37.2776, 46.9589, 54);
   const yalts = rankPhotonFeatures([yaltaCrimea, yaltaDnr], SPECIAL_TERRITORY_BOUNDARIES, "Ялта");
-  assert.equal(yalts[0].id, "N-54");
-  assert.equal(yalts[0].label, "Ялта — ДНР");
-  assert.equal(yalts[1].label, "Ялта — Крым");
+  assert.equal(yalts[0].id, "N-53");
+  assert.equal(yalts[0].label, "Ялта — Крым");
+  assert.equal(yalts[1].label, "Ялта — ДНР");
 });
 
 test("region query boosts exact oblast result and not a similarly named street", () => {
@@ -225,6 +232,7 @@ test("localized Ukrainian oblast result matches a Russian region query by its ex
 
 test("Ukrainian locality spelling matches a Russian query and omits community suffix", () => {
   const donetsk = feature("Донецьк", 37.80134, 48.01587, 70, "administrative");
+  donetsk.properties!["name:ru"] = "Донецк";
   donetsk.properties!.city = "Донецька міська громада";
   const makeyevka = feature("Макеевка", 37.9028, 48.0171, 71, "administrative");
   makeyevka.properties!.city = "Макіївська міська рада";
@@ -234,6 +242,7 @@ test("Ukrainian locality spelling matches a Russian query and omits community su
   assert.equal(makeyevkaResults[0].label, "Макеевка — ДНР");
   assert.equal(makeyevkaResults[0].id, "N-71");
   const luhansk = feature("Луганськ", 39.3078, 48.574, 73, "city");
+  luhansk.properties!["name:ru"] = "Луганск";
   const luhanskResult = rankPhotonFeatures([luhansk], SPECIAL_TERRITORY_BOUNDARIES, "Луганск");
   assert.equal(luhanskResult[0].label, "Луганск — ЛНР");
 });
@@ -243,12 +252,17 @@ test("Russian Zaporizhzhia query searches and ranks Ukrainian city spelling", ()
   assert.equal(urls.length, 12);
   assert.equal(urls[3].searchParams.get("q"), "Запоріжжя");
   assert.equal(urls[3].searchParams.get("countrycode"), "UA");
+  const localizedZaporizhzhia = feature("Запоріжжя", 35.1182867, 47.8507859, 201, "city");
+  localizedZaporizhzhia.properties!["name:ru"] = "Запорожье";
   const results = rankPhotonFeatures([
-    feature("Запоріжжя", 35.1182867, 47.8507859, 201, "city"),
+    localizedZaporizhzhia,
     feature("Запорожье", 34.0, 44.5, 202, "village"),
   ], SPECIAL_TERRITORY_BOUNDARIES, "Запорожье");
-  assert.equal(results[0].position.lat, 47.8507859);
-  assert.equal(results[0].label, "Запорожье — Запорожская область");
+  assert.ok(results[0]);
+  assert.ok(results[0].position);
+  assert.equal(results[0].id, "N-202"); // Crimea namesake now has the owner-approved priority.
+  assert.equal(results[1].position.lat, 47.8507859);
+  assert.equal(results[1].label, "Запорожье — Запорожская область");
 });
 
 test("Russian Kharkiv query with country qualifier searches Ukrainian spelling and ranks the city first", () => {
@@ -262,7 +276,7 @@ test("Russian Kharkiv query with country qualifier searches Ukrainian spelling a
     feature("Харьков", 34.1689, 44.4988, 203, "village"),
     feature("Харків", 36.2310146, 49.9923181, 204, "city"),
   ], SPECIAL_TERRITORY_BOUNDARIES, "Харьков, Украина");
-  assert.ok(results.some((item) => item.position.lat === 49.9923181), "the Ukrainian spelling alias should return Kharkiv city");
+  assert.ok(results.some((item) => item.position?.lat === 49.9923181), "the Ukrainian spelling alias should return Kharkiv city");
 });
 
 
@@ -283,7 +297,7 @@ test("all new-territory settlements rank before Russian namesakes regardless of 
   const otherSpecial = feature("Донецк", 35.365, 46.848, 313, "village");
   const crimea = feature("Донецк", 34.1689, 44.4988, 314, "city");
   const results = rankPhotonFeatures([otherSpecial, crimea, rostov, dnrHamlet], SPECIAL_TERRITORY_BOUNDARIES, "Донецк");
-  assert.deepEqual(results.map((item) => item.id), ["N-313", "N-312", "N-311", "N-314"]);
+  assert.deepEqual(results.map((item) => item.id), ["N-314", "N-313", "N-312", "N-311"]);
 });
 
 test("Tarasovka DNR ranks first, Kyiv region Tarasovka stays visible, and Russia precedes other countries", () => {
@@ -383,11 +397,11 @@ test("regional qualifier is removed from Photon query without changing full addr
 });
 
 
-test("unqualified Yalta prefers a new-territory namesake; explicit qualifiers win", () => {
+test("unqualified Yalta prefers Crimea; explicit qualifiers win", () => {
   const yaltaCrimea = feature("Ялта", 34.1689, 44.4988, 353, "city");
   const yaltaDnr = feature("Ялта", 37.2776, 46.9589, 354, "village");
   const features = [yaltaDnr, yaltaCrimea];
-  assert.deepEqual(rankPhotonFeatures(features, SPECIAL_TERRITORY_BOUNDARIES, "Ялта").map((item) => item.id), ["N-354", "N-353"]);
+  assert.deepEqual(rankPhotonFeatures(features, SPECIAL_TERRITORY_BOUNDARIES, "Ялта").map((item) => item.id), ["N-353", "N-354"]);
   assert.deepEqual(rankPhotonFeatures(features, SPECIAL_TERRITORY_BOUNDARIES, "Ялта ДНР").map((item) => item.id), ["N-354", "N-353"]);
   assert.deepEqual(rankPhotonFeatures(features, SPECIAL_TERRITORY_BOUNDARIES, "Ялта Крым").map((item) => item.id), ["N-353", "N-354"]);
 });

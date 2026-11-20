@@ -1,0 +1,70 @@
+name: GeoNames bounded country download pilot
+on:
+  push:
+    branches: [fix/v3-missing-route-prices-2026-10-15]
+    paths: [.github/workflows/geonames-country-download-pilot.yml]
+permissions:
+  contents: read
+concurrency:
+  group: geonames-country-download-${{ github.ref_name }}
+  cancel-in-progress: false
+jobs:
+  download-only:
+    if: github.ref_name == 'fix/v3-missing-route-prices-2026-10-15'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Download only RU and UA within approved limits
+        shell: python
+        run: |
+          import datetime, hashlib, json, pathlib, subprocess, zipfile
+          root = pathlib.Path('geonames-country-pilot')
+          root.mkdir()
+          expected = [('RU', 15263760, '"e8e810-65e8c60db5937"'),
+                      ('UA', 2394186, '"24884a-65e8c62e3b818"')]
+          assert sum(x[1] for x in expected) <= 50 * 1024 * 1024
+          manifest = dict(stage='B_DOWNLOAD_ONLY', sourceHeadRun=40091487220,
+              runtimeApproved=False, recordsReviewed=False, files=[])
+          (root / 'progress.json').write_text(json.dumps(manifest, indent=2))
+          for country, size, etag in expected:
+              url = 'https://download.geonames.org/export/dump/' + country + '.zip'
+              part = root / (country + '.zip.part')
+              headers = root / (country + '.headers.txt')
+              result = subprocess.run(['curl', '--fail', '--silent', '--show-error',
+                  '--location', '--max-redirs', '2', '--proto', '=https', '--proto-redir', '=https',
+                  '--connect-timeout', '6', '--max-time', '60', '--max-filesize', str(size),
+                  '--header', 'If-Match: ' + etag, '--dump-header', str(headers),
+                  '--output', str(part), url], text=True, capture_output=True, timeout=65)
+              if result.returncode or not part.exists() or part.stat().st_size != size:
+                  manifest['failure'] = dict(country=country, curlExit=result.returncode,
+                      error=result.stderr, actualBytes=part.stat().st_size if part.exists() else 0)
+                  (root / 'result.json').write_text(json.dumps(manifest, indent=2))
+                  print(json.dumps(manifest, indent=2))
+                  raise SystemExit(1)
+              digest = hashlib.sha256(part.read_bytes()).hexdigest()
+              with zipfile.ZipFile(part) as archive:
+                  entries = archive.infolist()
+                  if not entries or any(x.filename not in [country+'.txt', 'readme.txt'] for x in entries):
+                      raise RuntimeError('Unexpected ZIP members')
+                  if sum(x.file_size for x in entries) > 256 * 1024 * 1024:
+                      raise RuntimeError('Uncompressed country archive exceeds 256MiB')
+                  if archive.testzip() is not None:
+                      raise RuntimeError('ZIP CRC failure')
+                  members = [dict(name=x.filename, bytes=x.file_size, crc=x.CRC) for x in entries]
+              target = root / (country + '.zip')
+              part.rename(target)
+              manifest['files'].append(dict(country=country, url=url, etag=etag,
+                  bytes=size, sha256=digest, zipIntegrity='PASS', members=members,
+                  receivedAt=datetime.datetime.now(datetime.timezone.utc).isoformat()))
+              (root / 'progress.json').write_text(json.dumps(manifest, indent=2))
+          manifest['status'] = 'DOWNLOADED_NOT_REVIEWED'
+          (root / 'result.json').write_text(json.dumps(manifest, indent=2))
+          print(json.dumps(manifest, indent=2))
+      - name: Preserve country archives and manifests
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: geonames-country-download-${{ github.run_id }}
+          path: geonames-country-pilot/
+          if-no-files-found: error
+          retention-days: 14

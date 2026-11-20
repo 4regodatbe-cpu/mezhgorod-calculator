@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-16T07:47:36.234Z",
+  "phase": "PART19_M4_POLICY_STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38869309675",
+  "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
+  "checked": 10,
+  "total": 25,
+  "next": "zaporizhzhia-молочанск-moscow-center",
+  "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
+  "caseId": "zaporizhzhia-молочанск-moscow-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/zaporizhzhia-молочанск-moscow-center/2026-10-15T18-22-49-183Z-capture.json.gz",
+  "captureSha256": "6b0bb9bbb5c3699f83e41f9098d4c44ab3ce1ed03a356fe379707cfc722c7cf2",
+  "dates": [
+    "2026-10-15T09:00:00+03:00",
+    "2026-10-17T09:00:00+03:00"
+  ],
+  "parent": "5039742a00a60482fdf7ffadc9d3196a1b4e9bb8",
+  "logPrefix": "docs/checkpoints/evidence/policy-2026-10-16T07-47-36-234Z",
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-47-36-234Z-part19_m4_policy_started.json"
+}

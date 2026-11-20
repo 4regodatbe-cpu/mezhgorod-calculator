@@ -1,0 +1,15 @@
+{
+  "name": "eslint",
+  "command": [
+    "node",
+    "node_modules/eslint/bin/eslint.js",
+    "experiments/nationwide-tolls/m1-m3-shadow-quote.mjs",
+    "experiments/nationwide-tolls/m1-m3-shadow-quote.test.mjs"
+  ],
+  "startedAtUtc": "2026-10-18T05:44:32.428550+00:00",
+  "elapsedSeconds": 2.382,
+  "exitCode": 0,
+  "status": "PASS",
+  "log": "experiments/nationwide-tolls/checks/2026-10-18-m1-m3-departure-policy/eslint.log.gz",
+  "uncompressedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "persisted": "LOCAL_ONLY_NO_PUSH",
+  "sourceRuntimeCommit": "180e7caad4381a92057035827ba1be88113e2bc1",
+  "publishedHeadLastVerified": "a1c169d3c7dce49b7d1d3747b9698e7aee4b581a",
+  "pr": 14,
+  "draft": true,
+  "node": "24.19.0",
+  "next": "16.3.4",
+  "checks": {
+    "focused": {
+      "pass": 31,
+      "fail": 0
+    },
+    "offline": {
+      "pass": 1031,
+      "fail": 0,
+      "skip": 1
+    },
+    "typeScriptExitCode": 0,
+    "scopedESLintExitCode": 0,
+    "webpackBuildExitCode": 0,
+    "fullBodyAndRequestParity": "EXACT",
+    "parityMissingStoredResponses": 0
+  },
+  "network": {
+    "standaloneBrouterProbes": 1,
+    "newActualFullCalculations": 1,
+    "newCalculationUpstreamCalls": 14
+  },
+  "sourceFiles": [
+    {
+      "path": "app/api/v3/calculate/route.ts",
+      "sha256": "916d4945e62f9fc9a8bf89884f44dbb688dbd7808ead1838ea632ce640f6b9aa"
+    },
+    {
+      "path": "lib/route-providers.ts",
+      "sha256": "f09102ecf0f0591bef0e107a0d30407f4979694ab3309be3d175b63cf11197cd"
+    },
+    {
+      "path": "lib/toll-validator.ts",
+      "sha256": "15d73a4dfd61c19611c74220db619c8d783738fc6e8487abbdbe52b3ad1c7f70"
+    },
+    {
+      "path": "lib/v3-calculation/route-leg.ts",
+      "sha256": "f285a5b671eafc768b8297a7ee4703daeaec8a55a6b4262cf0bdbd0dfa1c6052"
+    },
+    {
+      "path": "lib/v3-calculation/special-options.ts",
+      "sha256": "4d09ad5d5910d5fbcc29a55b69fadf46bb1e0711df38d3b6c0fc1486fb857453"
+    },
+    {
+      "path": "scripts/routing-cancellation.test.ts",
+      "sha256": "40358ffb52edc4a69e2f63feca539f83162d52cff3aca4e3ebd02b1e92fdf1d6"
+    }
+  ],
+  "files": [
+    {
+      "path": "2026-10-29/api-before.txt",
+      "bytes": 8767,
+      "sha256": "e8292921ddec4aeca2f7121c18c118a0ee0e33697c488dd99e752c7103f8ee6a"
+    },
+    {
+      "path": "2026-10-29/brouter-current-review.json",
+      "bytes": 500,
+      "sha256": "98c9557936ac77e1da9cccadb0bdd64c3b3506213be4cabffbd60494cf249310"
+    },
+    {
+      "path": "2026-10-29/brouter-current.body",
+      "bytes": 25,
+      "sha256": "8ad91f34168ca1c21811e27e0e5fd5b8b631d041d61bcb2eaccb7a9bc332962c"
+    },
+    {
+      "path": "2026-10-29/cancel-after.json",
+      "bytes": 443,
+      "sha256": "81925f95b99f877519bae16b586948fdff267d0d6e691dfc5c1c4c6e17cd5d00"
+    },
+    {
+      "path": "2026-10-29/cancel-before.json",
+      "bytes": 733,
+      "sha256": "60d7dd445cf7d9f5aee52b26c50799cb4e610554358477d94fd30c757937d376"
+    },
+    {
+      "path": "2026-10-29/cancel-diagnostic.json",
+      "bytes": 733,
+      "sha256": "60d7dd445cf7d9f5aee52b26c50799cb4e610554358477d94fd30c757937d376"
+    },
+    {
+      "path": "2026-10-29/cancelled-work-summary.json",
+      "bytes": 1209,
+      "sha256": "e063b7691f470aac27fbf18aaacae48d2a91ffc17b67bc0524b89e29f1e434e5"
+    },
+    {
+      "path": "2026-10-29/control-summary.json",
+      "bytes": 4112,
+      "sha256": "abdd90b052890549cbbb9378ead0dc70c0eafa6709712d6d6e0995948562b32f"
+    },
+    {
+      "path": "2026-10-29/krasnodar-moscow-current.json",
+      "bytes": 11612,
+      "sha256": "ea0a3c3d4ac50846be2bc43212a716b8e983d3daa883ea01cb2b092ab2620805"
+    },
+    {
+      "path": "2026-10-29/krasnodar-moscow-current.json.gz",
+      "bytes": 282519,
+      "sha256": "8edfb11ae0da2f014d7b98989fc292114bb98b6ae77bd1fa3cb88d7a3491679a"
+    },
+    {
+      "path": "2026-10-29/krasnodar-spb-replay.json",
+      "bytes": 11159,
+      "sha256": "410071a44209bf5d1d109a3cb0f1060ef1aa1e3399bbe9d6d23352c23a7b6c2e"
+    },
+    {
+      "path": "2026-10-29/live-candidate-admission.json",
+      "bytes": 1064,
+      "sha256": "f16d8154c6b3790563463b40634a1b3ac8e5d2918e2fef96f63e63e73828a818"
+    },
+    {
+      "path": "2026-10-29/logs/audit.log",
+      "bytes": 157437,
+      "sha256": "c5c3eaea3bd95a60bfac4f06843720c03feebf9cf0fb6c2a6b6caa796a0a0b40"
+    },
+    {
+      "path": "2026-10-29/logs/build.log",
+      "bytes": 1202,
+      "sha256": "5af707015c28cb0a7bf343ca62fe56229b27903c90cc471758056079b7d59751"
+    },
+    {
+      "path": "2026-10-29/logs/cancel-before.log",
+      "bytes": 5656,
+      "sha256": "b8ef41dcf8d08431654cedc72d0dbbad3bc01d2bd1fcdb739d2ceacbed340662"
+    },
+    {
+      "path": "2026-10-29/logs/eslint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "2026-10-29/logs/focused.log",
+      "bytes": 20809,
+      "sha256": "28ae95f8c19281fcfd3460218c26fdb87bdaa1fb7a69bdb1a5a0233106a3bef4"
+    },
+    {
+      "path": "2026-10-29/logs/krasnodar-spb-replay.log",
+      "bytes": 648,
+      "sha256": "9728c789e7ed6d510e5bf22fa0a0a15946078e0161acd3a4d17f0dab15f448ce"
+    },
+    {
+      "path": "2026-10-29/logs/live-control.log",
+      "bytes": 240,
+      "sha256": "b337e6d562b11f20dfac38d7f394e44c0bd8cea4be792dd3c86e9834eb912d20"
+    },
+    {
+      "path": "2026-10-29/logs/tsc.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "2026-10-29/logs/uncancelled-parity.log",
+      "bytes": 830,
+      "sha256": "ba7b63cf69653ebce18f3c67c743bff188d8b2806e959229d35a84afa323b2c0"
+    },
+    {
+      "path": "2026-10-29/timing-summary.json",
+      "bytes": 6610,
+      "sha256": "ee55701b3c583645b63735f78640e479a130946b7974dd290853c8ab662474c5"
+    },
+    {
+      "path": "2026-10-29/uncancelled-parity.json",
+      "bytes": 21357,
+      "sha256": "1c8233e17a9be218db22ee1f91561f551fed87cc7a8010eb9b43d0ac1fdea488"
+    },
+    {
+      "path": "STAGE_B.md",
+      "bytes": 8064,
+      "sha256": "292f51c0df5d79ae38eca5e6ca8233d439d9d030fb34a880abe8ba98c4f714ce"
+    },
+    {
+      "path": "cancel-diagnostic.mjs",
+      "bytes": 1726,
+      "sha256": "cd8c148bdff86b45d24aa675b3a41ab54d639002c559c433a3bf4b227edda61a"
+    },
+    {
+      "path": "cancelled-work-summary.mjs",
+      "bytes": 1770,
+      "sha256": "1279140959567f56ccdcc3658b52f4534226e92ac097908686a9a00be9085d46"
+    },
+    {
+      "path": "capture-krasnodar-moscow.mjs",
+      "bytes": 3115,
+      "sha256": "4d84213142d39d320ad519a75a98117be80a72a87b938e65ec6e93968ae47630"
+    },
+    {
+      "path": "control-summary.mjs",
+      "bytes": 3950,
+      "sha256": "45570783e7026a4b62ac578580ccbf253bcd6f508c43e5eebd9c5652700ffe24"
+    },
+    {
+      "path": "replay-krasnodar-spb.mjs",
+      "bytes": 3148,
+      "sha256": "369e7ded509cf08cde7f817b223b995ecbe1fcd94d1b5a5120fd073a0adb5f01"
+    },
+    {
+      "path": "saved-timing-summary.mjs",
+      "bytes": 2870,
+      "sha256": "751351677d86269e94b80dabf66c9b8f495649cdff1e185492ec5eba1436e300"
+    },
+    {
+      "path": "uncancelled-parity.mjs",
+      "bytes": 3303,
+      "sha256": "a8dc8b6e57d872a6ab6c6291d47917696f457d895efad32c2368690da2fbd8ed"
+    },
+    {
+      "path": "verify-live-candidates.mjs",
+      "bytes": 2880,
+      "sha256": "46902f206a82f953178898f6a0249a2228f9a045c657a6a5c556cfd9ec4347bb"
+    }
+  ]
+}

@@ -1,0 +1,381 @@
+{
+  "completed": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "amount": 2668,
+      "componentAudit": {
+        "status": "priced",
+        "priced": [
+          "m11-15-58",
+          "m11-58-679",
+          "ckad"
+        ],
+        "missing": [],
+        "components": [
+          {
+            "id": "m11-15-58",
+            "detected": true,
+            "tolls": {
+              "amount": 200,
+              "weekdayAmount": 200,
+              "weekendAmount": 320,
+              "period": "по тарифу отправления М-11 15–58 (monThu)",
+              "confidence": "matched",
+              "segments": [
+                "М-11 15–58: solnechnogorsk → tskad: 200 ₽ · Стоимость не подтверждена"
+              ]
+            },
+            "reason": "m11_head_ready_direct_pair_at_departure"
+          },
+          {
+            "id": "m11-58-679",
+            "detected": true,
+            "tolls": {
+              "amount": 1250,
+              "weekdayAmount": 1250,
+              "weekendAmount": 1390,
+              "period": "понедельник–четверг",
+              "segments": [
+                "М-11: p214 → p58 · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix dated selected-route M11 direct pair"
+          },
+          {
+            "id": "ckad",
+            "detected": true,
+            "tolls": {
+              "amount": 1218,
+              "weekdayAmount": 1218,
+              "weekendAmount": 1218,
+              "period": "все дни",
+              "segments": [
+                "ЦКАД: М-11 Нева → Егорьевское шоссе · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix dated selected-route CKAD direct pair"
+          }
+        ]
+      },
+      "apiTolls": {
+        "amount": 2668,
+        "weekdayAmount": 2668,
+        "weekendAmount": 2928,
+        "period": "по тарифу отправления М-11 15–58 (monThu)",
+        "segments": [
+          "М-11 15–58: solnechnogorsk → tskad: 200 ₽ · Стоимость не подтверждена",
+          "М-11: p214 → p58 · Стоимость не подтверждена",
+          "ЦКАД: М-11 Нева → Егорьевское шоссе · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      }
+    },
+    {
+      "departureAt": "2026-10-15T23:59:00+03:00",
+      "amount": 2668,
+      "componentAudit": {
+        "status": "priced",
+        "priced": [
+          "m11-15-58",
+          "m11-58-679",
+          "ckad"
+        ],
+        "missing": [],
+        "components": [
+          {
+            "id": "m11-15-58",
+            "detected": true,
+            "tolls": {
+              "amount": 200,
+              "weekdayAmount": 200,
+              "weekendAmount": 320,
+              "period": "по тарифу отправления М-11 15–58 (monThu)",
+              "confidence": "matched",
+              "segments": [
+                "М-11 15–58: solnechnogorsk → tskad: 200 ₽ · Стоимость не подтверждена"
+              ]
+            },
+            "reason": "m11_head_ready_direct_pair_at_departure"
+          },
+          {
+            "id": "m11-58-679",
+            "detected": true,
+            "tolls": {
+              "amount": 1250,
+              "weekdayAmount": 1250,
+              "weekendAmount": 1390,
+              "period": "понедельник–четверг",
+              "segments": [
+                "М-11: p214 → p58 · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix dated selected-route M11 direct pair"
+          },
+          {
+            "id": "ckad",
+            "detected": true,
+            "tolls": {
+              "amount": 1218,
+              "weekdayAmount": 1218,
+              "weekendAmount": 1218,
+              "period": "все дни",
+              "segments": [
+                "ЦКАД: М-11 Нева → Егорьевское шоссе · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix dated selected-route CKAD direct pair"
+          }
+        ]
+      },
+      "apiTolls": {
+        "amount": 2668,
+        "weekdayAmount": 2668,
+        "weekendAmount": 2928,
+        "period": "по тарифу отправления М-11 15–58 (monThu)",
+        "segments": [
+          "М-11 15–58: solnechnogorsk → tskad: 200 ₽ · Стоимость не подтверждена",
+          "М-11: p214 → p58 · Стоимость не подтверждена",
+          "ЦКАД: М-11 Нева → Егорьевское шоссе · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      }
+    },
+    {
+      "departureAt": "2026-10-16T09:00:00+03:00",
+      "amount": 2828,
+      "componentAudit": {
+        "status": "priced",
+        "priced": [
+          "m11-15-58",
+          "m11-58-679",
+          "ckad"
+        ],
+        "missing": [],
+        "components": [
+          {
+            "id": "m11-15-58",
+            "detected": true,
+            "tolls": {
+              "amount": 220,
+              "weekdayAmount": 200,
+              "weekendAmount": 320,
+              "period": "по тарифу отправления М-11 15–58 (fri)",
+              "confidence": "matched",
+              "segments": [
+                "М-11 15–58: solnechnogorsk → tskad: 220 ₽ · Стоимость не подтверждена"
+              ]
+            },
+            "reason": "m11_head_ready_direct_pair_at_departure"
+          },
+          {
+            "id": "m11-58-679",
+            "detected": true,
+            "tolls": {
+              "amount": 1390,
+              "weekdayAmount": 1250,
+              "weekendAmount": 1390,
+              "period": "пятница–воскресенье",
+              "segments": [
+                "М-11: p214 → p58 · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix dated selected-route M11 direct pair"
+          },
+          {
+            "id": "ckad",
+            "detected": true,
+            "tolls": {
+              "amount": 1218,
+              "weekdayAmount": 1218,
+              "weekendAmount": 1218,
+              "period": "все дни",
+              "segments": [
+                "ЦКАД: М-11 Нева → Егорьевское шоссе · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix dated selected-route CKAD direct pair"
+          }
+        ]
+      },
+      "apiTolls": {
+        "amount": 2828,
+        "weekdayAmount": 2668,
+        "weekendAmount": 2928,
+        "period": "по тарифу отправления М-11 15–58 (fri)",
+        "segments": [
+          "М-11 15–58: solnechnogorsk → tskad: 220 ₽ · Стоимость не подтверждена",
+          "М-11: p214 → p58 · Стоимость не подтверждена",
+          "ЦКАД: М-11 Нева → Егорьевское шоссе · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      }
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "amount": 2848,
+      "componentAudit": {
+        "status": "priced",
+        "priced": [
+          "m11-15-58",
+          "m11-58-679",
+          "ckad"
+        ],
+        "missing": [],
+        "components": [
+          {
+            "id": "m11-15-58",
+            "detected": true,
+            "tolls": {
+              "amount": 240,
+              "weekdayAmount": 200,
+              "weekendAmount": 320,
+              "period": "по тарифу отправления М-11 15–58 (sat)",
+              "confidence": "matched",
+              "segments": [
+                "М-11 15–58: solnechnogorsk → tskad: 240 ₽ · Стоимость не подтверждена"
+              ]
+            },
+            "reason": "m11_head_ready_direct_pair_at_departure"
+          },
+          {
+            "id": "m11-58-679",
+            "detected": true,
+            "tolls": {
+              "amount": 1390,
+              "weekdayAmount": 1250,
+              "weekendAmount": 1390,
+              "period": "пятница–воскресенье",
+              "segments": [
+                "М-11: p214 → p58 · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix dated selected-route M11 direct pair"
+          },
+          {
+            "id": "ckad",
+            "detected": true,
+            "tolls": {
+              "amount": 1218,
+              "weekdayAmount": 1218,
+              "weekendAmount": 1218,
+              "period": "все дни",
+              "segments": [
+                "ЦКАД: М-11 Нева → Егорьевское шоссе · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix dated selected-route CKAD direct pair"
+          }
+        ]
+      },
+      "apiTolls": {
+        "amount": 2848,
+        "weekdayAmount": 2668,
+        "weekendAmount": 2928,
+        "period": "по тарифу отправления М-11 15–58 (sat)",
+        "segments": [
+          "М-11 15–58: solnechnogorsk → tskad: 240 ₽ · Стоимость не подтверждена",
+          "М-11: p214 → p58 · Стоимость не подтверждена",
+          "ЦКАД: М-11 Нева → Егорьевское шоссе · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      }
+    },
+    {
+      "departureAt": "2026-10-18T09:00:00+03:00",
+      "amount": 2928,
+      "componentAudit": {
+        "status": "priced",
+        "priced": [
+          "m11-15-58",
+          "m11-58-679",
+          "ckad"
+        ],
+        "missing": [],
+        "components": [
+          {
+            "id": "m11-15-58",
+            "detected": true,
+            "tolls": {
+              "amount": 320,
+              "weekdayAmount": 200,
+              "weekendAmount": 320,
+              "period": "по тарифу отправления М-11 15–58 (sun)",
+              "confidence": "matched",
+              "segments": [
+                "М-11 15–58: solnechnogorsk → tskad: 320 ₽ · Стоимость не подтверждена"
+              ]
+            },
+            "reason": "m11_head_ready_direct_pair_at_departure"
+          },
+          {
+            "id": "m11-58-679",
+            "detected": true,
+            "tolls": {
+              "amount": 1390,
+              "weekdayAmount": 1250,
+              "weekendAmount": 1390,
+              "period": "пятница–воскресенье",
+              "segments": [
+                "М-11: p214 → p58 · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix dated selected-route M11 direct pair"
+          },
+          {
+            "id": "ckad",
+            "detected": true,
+            "tolls": {
+              "amount": 1218,
+              "weekdayAmount": 1218,
+              "weekendAmount": 1218,
+              "period": "все дни",
+              "segments": [
+                "ЦКАД: М-11 Нева → Егорьевское шоссе · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix dated selected-route CKAD direct pair"
+          }
+        ]
+      },
+      "apiTolls": {
+        "amount": 2928,
+        "weekdayAmount": 2668,
+        "weekendAmount": 2928,
+        "period": "по тарифу отправления М-11 15–58 (sun)",
+        "segments": [
+          "М-11 15–58: solnechnogorsk → tskad: 320 ₽ · Стоимость не подтверждена",
+          "М-11: p214 → p58 · Стоимость не подтверждена",
+          "ЦКАД: М-11 Нева → Егорьевское шоссе · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      }
+    }
+  ],
+  "externalRequests": 0,
+  "confirmedFullTripFares": 0
+}

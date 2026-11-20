@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+date: Fri, 30 Oct 2026 00:11:46 GMT
+server: envoy
+
+HTTP/2 200 
+server: envoy
+date: Fri, 30 Oct 2026 00:11:48 GMT
+content-type: application/pdf
+content-length: 9573142
+last-modified: Sun, 03 Dec 2023 16:40:51 GMT
+etag: "921316-60b9daa135d5b"
+accept-ranges: bytes
+x-envoy-upstream-service-time: 542
+

@@ -1,0 +1,315 @@
+{
+  "capturedAt": "2026-11-01T22:06:00.018Z",
+  "summary": {
+    "id": "rostov-yalta",
+    "httpStatus": 200,
+    "meters": 763788,
+    "seconds": 37906,
+    "providers": [
+      "OSRM"
+    ],
+    "tolls": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m4, a289, krasnodar-west-bypass",
+        "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_date_missing",
+        "a289: A-289 selected frame vector has no applicable finished OD price",
+        "krasnodar-west-bypass: dzok_crossing_date_missing"
+      ],
+      "confidence": "none",
+      "pricingStatus": "unknown"
+    }
+  },
+  "body": {
+    "legs": [
+      {
+        "from": "rostov",
+        "to": "yalta",
+        "fast": {
+          "m4RoadBoundaries": {
+            "provider": "osrm",
+            "targetRef": "М-4",
+            "routeSignature": "bec563d6cc652924344252fdd3747db7664c68ffbf14b235c7a9a579f5c87f90",
+            "precision": "route-maneuver",
+            "status": "resolved",
+            "reason": "directed_road_transitions_resolved",
+            "entry": {
+              "id": "road-transition:97dfc0a16082174e0599b5cb",
+              "kind": "road-transition",
+              "from": {
+                "refs": [
+                  "А-135"
+                ],
+                "names": []
+              },
+              "to": {
+                "refs": [
+                  "М-4"
+                ],
+                "names": [
+                  "«Дон»"
+                ]
+              },
+              "coordinate": [
+                39.767863,
+                47.085638
+              ],
+              "legIndex": 0,
+              "sourceIndex": 9,
+              "connectorCount": 0
+            },
+            "exit": {
+              "id": "road-transition:72de9b1bf67e3406514f17ad",
+              "kind": "road-transition",
+              "from": {
+                "refs": [
+                  "М-4"
+                ],
+                "names": []
+              },
+              "to": {
+                "refs": [
+                  "А-289"
+                ],
+                "names": []
+              },
+              "coordinate": [
+                38.680776,
+                45.098698
+              ],
+              "legIndex": 0,
+              "sourceIndex": 15,
+              "connectorCount": 0
+            }
+          },
+          "m12EndpointSpan": null,
+          "m12StrictSpan": null,
+          "m12Candidate": false,
+          "m12SpanReason": null,
+          "m11RoadEvidence": {
+            "provider": "osrm",
+            "strictBlocks": [],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "meters": 763788,
+          "seconds": 37906,
+          "quality": {
+            "status": "single",
+            "providers": [
+              "OSRM"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "tolls": {
+            "amount": null,
+            "weekdayAmount": null,
+            "weekendAmount": null,
+            "period": "понедельник–четверг",
+            "segments": [
+              "Обнаружены, но не полностью оценены платные системы: m4, a289, krasnodar-west-bypass",
+              "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_date_missing",
+              "a289: A-289 selected frame vector has no applicable finished OD price",
+              "krasnodar-west-bypass: dzok_crossing_date_missing"
+            ],
+            "confidence": "none",
+            "pricingStatus": "unknown"
+          },
+          "tollValidation": {
+            "status": "unknown",
+            "source": "Valhalla map matching",
+            "tollEdgeCount": 0,
+            "checkedEdgeCount": 0,
+            "wayIds": [],
+            "roadNames": [],
+            "message": "Нельзя показывать частичную сумму как итог маршрута. Не оценены: m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_date_missing; a289: A-289 selected frame vector has no applicable finished OD price; krasnodar-west-bypass: dzok_crossing_date_missing"
+          },
+          "m4PvpPreview": {
+            "status": "boundaries_resolved",
+            "reason": null,
+            "roadBoundaries": {
+              "provider": "valhalla-trace",
+              "targetRef": "М-4",
+              "routeSignature": "bec563d6cc652924344252fdd3747db7664c68ffbf14b235c7a9a579f5c87f90",
+              "precision": "matched-road-edge",
+              "status": "unknown",
+              "reason": "road_trace_multiple_or_discontinuous_traversals",
+              "entry": null,
+              "exit": null
+            },
+            "roadKilometrage": {
+              "status": "unknown",
+              "direction": "unknown",
+              "diagnosticOnly": true,
+              "entry": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "exit": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "stops": [
+                "km_boundary_evidence_unresolved"
+              ]
+            },
+            "priceRub": null,
+            "verifiedPriceCells": 0,
+            "candidateCount": 2,
+            "confirmedPvps": [
+              "m4-1093",
+              "m4-1223"
+            ],
+            "diagnosticOnly": true
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [
+              {
+                "id": "m4",
+                "name": "М-4 «Дон»",
+                "status": "strict_pvp_found_full_price_unverified",
+                "hasReferenceFare": false,
+                "operator": "Автодор"
+              }
+            ],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "candidate_needs_osm_operator_node_mapping",
+              "reason": "no_verifiable_m1_m3_booths",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 763.788,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "rostov",
+                  "to": "yalta",
+                  "ratePerKm": 30,
+                  "amount": 22914,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 22914,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 763.788,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "rostov",
+                  "to": "yalta",
+                  "ratePerKm": 32.5,
+                  "amount": 24823,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 24823,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 763.788,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "rostov",
+                  "to": "yalta",
+                  "ratePerKm": 35,
+                  "amount": 26733,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 26733,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 763.788,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "rostov",
+                  "to": "yalta",
+                  "ratePerKm": 45,
+                  "amount": 34370,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 34370,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "mode": "standard",
+    "automaticMode": "standard",
+    "specialEndpoint": false
+  }
+}

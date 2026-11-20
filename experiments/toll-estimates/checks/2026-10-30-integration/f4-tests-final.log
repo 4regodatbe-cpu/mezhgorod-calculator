@@ -1,0 +1,16 @@
+✔ F4 integrated saved evidence OFF/ON: triple-m11-ckad-m12-torzhok-to-kazan (665.330832ms)
+✔ F4 integrated saved evidence OFF/ON: pair-m4-m11-krasnodar-to-spb (881.134515ms)
+✔ F4 integrated saved evidence OFF/ON: dnr-гранитное-saint-petersburg-center (800.228328ms)
+✔ F4 integrated saved evidence OFF/ON: max-chain-m12-ckad-m11-zsd-arzamas-to-prim (382.060565ms)
+✔ F2 switch is defaultOFF, local opt-in only, exact Preview branch, always denied in Production (0.747565ms)
+✔ F2 OFF is absent and leaves strict inputs byte-identical (0.397752ms)
+✔ F2 ON confirmed/estimated/partial remain separate and cannot mutate strict totals (4.838896ms)
+✔ F2 client view rejects numeric unknown and separates partial from full and approximate labels (3.855403ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3291.737374

@@ -1,0 +1,180 @@
+{
+  "caseId": "triple-m11-ckad-m12-spb-to-kazan",
+  "fingerprint": "2c00c1cc6c1d9e8f8b34365454ebb654ed4c4054a8530c84c21fe727dd5f5377",
+  "scopeReview": "Въезд со стороны проспекта Крузенштерна / Шкиперского протока → КАД-юг",
+  "atUtc": "2026-10-18T06:12:26.500646+00:00",
+  "sourceReport": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m11-ckad-m12-spb-to-kazan.json",
+  "sourceReportSha256": "97c164c85e9275e29e3bcbf9f73c90f773f8412405812087a8558195b21ab913",
+  "mode": "own_saved_boundary_exception_review",
+  "newPricingCalls": 0,
+  "newRouteCalls": 0,
+  "newTraceCalls": 0,
+  "newFullRouteReplays": 0,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-spb-to-kazan/2026-10-16T00-33-32-062Z-capture.json.gz",
+  "captureSha256": "5803bd2fa0a447847d6ffdb78eb58fbf7828fbb77fde1a9f5c4414fbeaff77cb",
+  "provider": "Valhalla",
+  "selectedProviderGeometryIdentity": "exact",
+  "coordinateCount": 8937,
+  "routeMeters": 1533663,
+  "traceComplete": true,
+  "boothEventCoverage": "complete",
+  "traceChunks": 11,
+  "ownSelectedBoundarySteps": [],
+  "zsdWays": [
+    "1053072562",
+    "1090759975",
+    "1120339785",
+    "119176958",
+    "1257246768",
+    "1257246769",
+    "1257246773",
+    "1257246774",
+    "129780705",
+    "130062824",
+    "130068395",
+    "139658546",
+    "165035750",
+    "172999960",
+    "183912265",
+    "183912266",
+    "183912269",
+    "183921952",
+    "183921953",
+    "189271976",
+    "27462206",
+    "350477987",
+    "375574640",
+    "375646973",
+    "397223750",
+    "400111352",
+    "400111353",
+    "46948905",
+    "589047640",
+    "589047641",
+    "688149996",
+    "721628539",
+    "721628542",
+    "736306923",
+    "80056721",
+    "80056729",
+    "80056747",
+    "81348980"
+  ],
+  "zsdBooths": [
+    {
+      "osmNodeId": "933975069",
+      "wayId": "375574640",
+      "edgeToll": true
+    }
+  ],
+  "rawTraceBoothOrder": [
+    [
+      "933975069",
+      "375574640",
+      true
+    ]
+  ],
+  "sameWaySetAndBoothsAsRepresentative": true,
+  "ownEarlySteps": [
+    {
+      "instruction": "Двигайтесь на юго-запад по Дворцовая площадь.",
+      "begin_shape_index": 0,
+      "end_shape_index": 14,
+      "length": 0.205
+    },
+    {
+      "instruction": "Поверните направо на Дворцовый проезд.",
+      "begin_shape_index": 14,
+      "end_shape_index": 22,
+      "length": 0.491
+    },
+    {
+      "instruction": "Держитесь правее, чтобы свернуть на Биржевая площадь.",
+      "begin_shape_index": 22,
+      "end_shape_index": 37,
+      "length": 0.352
+    },
+    {
+      "instruction": "Держитесь левее, чтобы свернуть на набережная Макарова.",
+      "begin_shape_index": 37,
+      "end_shape_index": 105,
+      "length": 2.122
+    },
+    {
+      "instruction": "Поверните направо на 8-я линия В.О..",
+      "begin_shape_index": 105,
+      "end_shape_index": 117,
+      "length": 0.403
+    },
+    {
+      "instruction": "Поверните направо на улица Одоевского.",
+      "begin_shape_index": 117,
+      "end_shape_index": 118,
+      "length": 0.067
+    },
+    {
+      "instruction": "Держитесь правее на развилке.",
+      "begin_shape_index": 118,
+      "end_shape_index": 131,
+      "length": 0.184
+    },
+    {
+      "instruction": "Поверните налево на набережная Макарова.",
+      "begin_shape_index": 131,
+      "end_shape_index": 165,
+      "length": 2.183
+    },
+    {
+      "instruction": "Держитесь левее, чтобы остаться на набережная Макарова.",
+      "begin_shape_index": 165,
+      "end_shape_index": 427,
+      "length": 18.198
+    },
+    {
+      "instruction": "Держитесь левее, чтобы свернуть на А-118/КАД/Кольцевая автомобильная дорога вокруг г. Санкт-Петербурга к КАД/Пулковское ш..",
+      "begin_shape_index": 427,
+      "end_shape_index": 486,
+      "length": 3.469
+    }
+  ],
+  "ownSouthKadExitSteps": [
+    {
+      "instruction": "Держитесь левее, чтобы свернуть на А-118/КАД/Кольцевая автомобильная дорога вокруг г. Санкт-Петербурга к КАД/Пулковское ш..",
+      "begin_shape_index": 427,
+      "end_shape_index": 486,
+      "length": 3.469
+    }
+  ],
+  "interchangeGantryProof": [
+    {
+      "captureCallIndex": 3,
+      "edgeIndex": 80,
+      "osmNodeId": "13020687195",
+      "wayId": "351741889",
+      "edgeToll": false,
+      "nodeType": "toll_gantry"
+    }
+  ],
+  "exactInterchangeGantryProven": false,
+  "materialException": true,
+  "priorProfilesReferenced": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1",
+      "componentResult": "unknown",
+      "segments": []
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1",
+      "componentResult": "unknown",
+      "segments": []
+    }
+  ],
+  "outcome": "material_exception_requires_separate_review",
+  "readyTariffRub": null,
+  "traceIndexLimit": "No trace end_shape_index used on selected/provider input shape. Provider geometry compared independently; raw gate IDs checked directly.",
+  "elapsedSeconds": 0.044
+}

@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-15T23:44:59.259Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 36,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 4,
+    "spec": {
+      "caseId": "kherson-новая-збурьевка-kerch-center",
+      "kind": "regional",
+      "region": "kherson"
+    }
+  },
+  "caseId": "kherson-новая-збурьевка-kerch-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-15T23-44-59-258Z-part4",
+  "parent": "e4d5e17f2135a3a3488d46e4144f26b567e43d04"
+}

@@ -1,0 +1,39 @@
+{
+  "caseId": "yeisk-to-moscow",
+  "sourceCaptureSha256": "19763eed7da92b505668ed8a9eb528baf77add76ec805d1511101b94e6144ca0",
+  "replays": [
+    {
+      "departureAt": "2026-10-22T09:00:00+03:00",
+      "fileSha256": "f902c749442535515837c6ce3cc6a59be7e7b98c3c4b435df2b257cde32cdf7b",
+      "responseStatus": 200,
+      "routeMeters": 1271780,
+      "routeSeconds": 59629,
+      "providers": ["Valhalla", "Valhalla local routing candidate", "Valhalla partial toll candidate", "OSRM", "BRouter"],
+      "quality": "verified",
+      "tollPricingStatus": "priced",
+      "tollAmount": 4920,
+      "weekdayAmount": 4920,
+      "weekendAmount": 6770,
+      "integrity": {"capturedCalls": 32, "consumedCalls": 32, "liveNetworkRequests": 0, "missingResponses": 0, "unusedResponses": 0}
+    },
+    {
+      "departureAt": "2026-10-24T09:00:00+03:00",
+      "fileSha256": "ef96f1dae77a9a11a9629a18e5a7b179e274564deb58a8dc66d61db9f6b3753a",
+      "responseStatus": 200,
+      "routeMeters": 1271780,
+      "routeSeconds": 59629,
+      "providers": ["Valhalla", "Valhalla local routing candidate", "Valhalla partial toll candidate", "OSRM", "BRouter"],
+      "quality": "verified",
+      "tollPricingStatus": "priced",
+      "tollAmount": 6770,
+      "weekdayAmount": 4920,
+      "weekendAmount": 6770,
+      "integrity": {"capturedCalls": 32, "consumedCalls": 32, "liveNetworkRequests": 0, "missingResponses": 0, "unusedResponses": 0}
+    }
+  ],
+  "comparisonAgainstV3": {
+    "thursday": {"v3RouteMeters": 1271781, "v3RouteSeconds": 59629, "v3TollAmount": 4340, "v2MinusV3": {"routeMeters": -1, "routeSeconds": 0, "tollAmount": 580}},
+    "saturday": {"v3RouteMeters": 1271781, "v3RouteSeconds": 59629, "v3TollAmount": 5240, "v2MinusV3": {"routeMeters": -1, "routeSeconds": 0, "tollAmount": 1530}}
+  },
+  "interpretation": "Deterministic offline replay and V2/V3 project proxy-control comparison; displayed toll amounts are not confirmed operator tariffs."
+}

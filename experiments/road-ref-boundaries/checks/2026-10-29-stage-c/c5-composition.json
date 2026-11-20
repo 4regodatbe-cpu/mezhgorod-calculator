@@ -1,0 +1,383 @@
+{
+  "status": "PASS",
+  "scope": "two current upper-composer evaluations; positive M4 case rebuilds selected trace/private context AND retains stored local-M4 trace responses required by the existing validator; no provider/API replay or new capture",
+  "networkRequests": 0,
+  "results": [
+    {
+      "caseId": "pair-m4-m11-krasnodar-to-spb",
+      "scope": "M4→M11(head/mainline/tail)→ZSDzone1",
+      "capture": {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-krasnodar-to-spb/2026-10-16T00-11-59-083Z-capture.json.gz",
+        "sha256": "0146e84b961b714fcc4e11dcb723285482127efb30bf417c5fc8ccf1215e41c8"
+      },
+      "provider": "OSRM",
+      "meters": 2061460,
+      "seconds": 94846,
+      "selectedGeometrySha256": "c0507836382807f591a84b7bad8f228fc07164a9c872c880a88f9da1707a7f74",
+      "geometryUnchanged": true,
+      "date": "2026-10-15T09:00:00+03:00",
+      "traceContext": {
+        "rebuilt": true,
+        "oldSerializedBooths": 19,
+        "selectedBooths": 19,
+        "storedTraceCalls": [
+          {
+            "sourceCall": 3,
+            "httpStatus": 200,
+            "responseSha256": "2ec8199029e1d88e0844c1220a0b0c6dc651ebd86bd99793d0bf9b2b312e9d0d",
+            "shapeSha256": "9d5f59faa22fcd150a3e98cd9af46fcaa07be13fe0c0f2b80ec8f1286f664d97"
+          },
+          {
+            "sourceCall": 4,
+            "httpStatus": 200,
+            "responseSha256": "d2efe655529fa46ac4c1d1bac02ac836624f9e397a1929696c3fc731b8efe327",
+            "shapeSha256": "5409d00ac04bfd933132458d454e0cdd04b7662f7c46001605da96d563aa9c71"
+          },
+          {
+            "sourceCall": 5,
+            "httpStatus": 200,
+            "responseSha256": "b1a96e9acb20f2c3858dc13f386d0a0d7e7e77c312a306b2a2fe1efd86fe0bd4",
+            "shapeSha256": "f2fbf30075da59cadca9e99f5601b65bacc2726ea3981818bc1ea91476c4205e"
+          },
+          {
+            "sourceCall": 6,
+            "httpStatus": 200,
+            "responseSha256": "bd25707929fa440da5f81b0f7272614bc481c587ca16c2b9aa9e00975babbd44",
+            "shapeSha256": "2d11e3d7242e32426b0ecff394fe2382f39f9304703d7a99a3785ad8498b7f8a"
+          },
+          {
+            "sourceCall": 7,
+            "httpStatus": 200,
+            "responseSha256": "82e2bb8f0aef7a30e910c9c0c872b14e12c159d21bc9b065611e70cc6b5f1b60",
+            "shapeSha256": "18445f4bdf1dcf1c562ac0a61f9af1c2f56fd915f0e3a2ae712b14fece591a91"
+          },
+          {
+            "sourceCall": 8,
+            "httpStatus": 200,
+            "responseSha256": "3f2f4aff62e8ada7af6205be46931fb68c1d7265319a8939bfdf55b37de668e5",
+            "shapeSha256": "35ed44f45ac324e053feac09a5ecfec77f91d873e1581c21c3b6f4640dde4199"
+          },
+          {
+            "sourceCall": 9,
+            "httpStatus": 200,
+            "responseSha256": "c1bd8c34f8c79c8c5b413815b0df2684a6cb8d189bf0b3a9b56a93012e3e9e0a",
+            "shapeSha256": "6214b8fcbd7ac41bf569bef7ef4ea8fd52c6358ea7a87dea409a5bcffa52367b"
+          },
+          {
+            "sourceCall": 10,
+            "httpStatus": 200,
+            "responseSha256": "e22372cc58c6e057bd791502210e483355e2376ab5e90f7a2c0ef8d324160ada",
+            "shapeSha256": "b4651ff7e79491afd413ededeb7bb89d9503d722d7511fbfdd6d0c11c068f9bb"
+          },
+          {
+            "sourceCall": 11,
+            "httpStatus": 200,
+            "responseSha256": "1a606d14917df6929566114cc166e8bd131985115eecc44c4c97e581921aaf98",
+            "shapeSha256": "b79373152ddf7e1f78238598fe4d800ca348f6a24d4ca5e0fc6bac2a16f9674e"
+          },
+          {
+            "sourceCall": 12,
+            "httpStatus": 200,
+            "responseSha256": "103f7308a3cbc2db10f8352777c9284d6cd28c3d3f6538fae51993cfc71f2d92",
+            "shapeSha256": "8d3a54ed6393e69d2ca037ac6f55334771703f6570029c0cb18b3fdbe81ac02b"
+          },
+          {
+            "sourceCall": 13,
+            "httpStatus": 200,
+            "responseSha256": "bb42b247329133e04b34d1cda3a4a022204d0bb028d57e2e7f0441e1a9d4d79d",
+            "shapeSha256": "4e148c812a9dd67f2500275f7979a0d2e572de3afd725b803de498415136c078"
+          },
+          {
+            "sourceCall": 14,
+            "httpStatus": 200,
+            "responseSha256": "ecb8cb3cbdc3ca2d3896007d68f2789c2075006f055323bb7f4c13b00555c8f4",
+            "shapeSha256": "15fe105cb58f55555a1ab2c60913819e149b35dd63cb3764cc7a8c389aedfb19"
+          },
+          {
+            "sourceCall": 15,
+            "httpStatus": 200,
+            "responseSha256": "40e62244a1a490cd736cdfb7b997b646a03c0fae0d25a554ec7cd43badad6025",
+            "shapeSha256": "2607cc5f474242165853f2224b80910fa4b5dbebb1bf591fcfe953bd5e561eb3"
+          },
+          {
+            "sourceCall": 16,
+            "httpStatus": 200,
+            "responseSha256": "0f1224027cc2a032e4ac3b110ee552506c7c229a0394b1fc33bc36f18683928c",
+            "shapeSha256": "3a14463def2caadd0c1287c734ae716deddc7e52c44085cd9d75b0c8a1ebd603"
+          },
+          {
+            "sourceCall": 17,
+            "httpStatus": 200,
+            "responseSha256": "6bb19a9d7730acf7444d7e5def00e87ed5a20efed00b77e9de001ebcba6215c4",
+            "shapeSha256": "6e19e2991232814624c5e09f6c6bc10810614724247aab05aa975cd1e64f3c03"
+          },
+          {
+            "sourceCall": 18,
+            "httpStatus": 200,
+            "responseSha256": "9a51f7811ac16e75ef490438a48a698849c64c875af32d3d412eb950d04d5040",
+            "shapeSha256": "b9e300d32cf04ee9b98ae42a212b477794749b1e3a149246e9107de65c6ab606"
+          }
+        ]
+      },
+      "componentAudit": {
+        "status": "priced",
+        "priced": [
+          "m4",
+          "m11-15-58",
+          "m11-58-679",
+          "m11-679-684",
+          "zsd"
+        ],
+        "missing": [],
+        "components": [
+          {
+            "id": "m4",
+            "detected": true,
+            "tolls": {
+              "amount": 5040,
+              "weekdayAmount": 5040,
+              "weekendAmount": 6090,
+              "period": "понедельник–четверг",
+              "segments": [
+                "М-4: m4-1223 → m4-71 · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix exact selected-route M4 vector"
+          },
+          {
+            "id": "m11-15-58",
+            "detected": true,
+            "tolls": {
+              "amount": 1130,
+              "weekdayAmount": 1130,
+              "weekendAmount": 1650,
+              "period": "по тарифу отправления М-11 15–58 (monThu)",
+              "confidence": "matched",
+              "segments": [
+                "М-11 15–58: moscow → solnechnogorsk: 1130 ₽ · Стоимость не подтверждена"
+              ]
+            },
+            "reason": "m11_head_ready_direct_pair_at_departure"
+          },
+          {
+            "id": "m11-58-679",
+            "detected": true,
+            "tolls": {
+              "amount": 3900,
+              "weekdayAmount": 3900,
+              "weekendAmount": 4200,
+              "period": "понедельник–четверг",
+              "segments": [
+                "М-11: p58 → p679 · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix dated selected-route M11 direct pair"
+          },
+          {
+            "id": "m11-679-684",
+            "detected": true,
+            "tolls": {
+              "amount": 94,
+              "weekdayAmount": 94,
+              "weekendAmount": 94,
+              "period": "пн–вс, приказ №274 с 04.09.2026",
+              "segments": [
+                "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+          },
+          {
+            "id": "zsd",
+            "detected": true,
+            "reason": "zsd_zone1_complete_directed_base_tariff",
+            "tolls": {
+              "amount": 300,
+              "weekdayAmount": 300,
+              "weekendAmount": 300,
+              "period": "все дни, без транспондера",
+              "confidence": "matched",
+              "segments": [
+                "ЗСД: тарифная зона 1 · 300 ₽"
+              ]
+            }
+          }
+        ]
+      },
+      "api": {
+        "amount": 10464,
+        "weekdayAmount": 10464,
+        "weekendAmount": 12334,
+        "period": "понедельник–четверг",
+        "segments": [
+          "М-4: m4-1223 → m4-71 · Стоимость не подтверждена",
+          "М-11 15–58: moscow → solnechnogorsk: 1130 ₽ · Стоимость не подтверждена",
+          "М-11: p58 → p679 · Стоимость не подтверждена",
+          "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽",
+          "ЗСД: тарифная зона 1 · 300 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "comparison": "same total as previously saved current-runtime full API replay; exact split components recorded",
+      "expectedMissing": []
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+      "scope": "M12→CKAD→M11→ZSDPlanernaya",
+      "capture": {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/2026-10-15T23-58-33-171Z-capture.json.gz",
+        "sha256": "e8b5d42fb9b737227c04d195271c4cb4dde444a66f85aa579d238a0cd2769ed0"
+      },
+      "provider": "Valhalla",
+      "meters": 1158570,
+      "seconds": 43654,
+      "selectedGeometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e",
+      "geometryUnchanged": true,
+      "date": "2026-10-15T09:00:00+03:00",
+      "traceContext": {
+        "rebuilt": false,
+        "oldSerializedBooths": 6,
+        "selectedBooths": 6,
+        "storedTraceCalls": []
+      },
+      "componentAudit": {
+        "status": "unknown",
+        "priced": [
+          "m11-15-58",
+          "m11-58-679",
+          "m11-679-684",
+          "m12"
+        ],
+        "missing": [
+          "ckad",
+          "zsd"
+        ],
+        "components": [
+          {
+            "id": "m11-15-58",
+            "detected": true,
+            "tolls": {
+              "amount": 280,
+              "weekdayAmount": 280,
+              "weekendAmount": 320,
+              "period": "по тарифу отправления М-11 15–58 (monThu)",
+              "confidence": "matched",
+              "segments": [
+                "М-11 15–58: tskad → solnechnogorsk: 280 ₽ · Стоимость не подтверждена"
+              ]
+            },
+            "reason": "m11_head_ready_direct_pair_at_departure"
+          },
+          {
+            "id": "m11-58-679",
+            "detected": true,
+            "tolls": {
+              "amount": 3900,
+              "weekdayAmount": 3900,
+              "weekendAmount": 4200,
+              "period": "понедельник–четверг",
+              "segments": [
+                "М-11: p58 → p679 · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix dated selected-route M11 direct pair"
+          },
+          {
+            "id": "m11-679-684",
+            "detected": true,
+            "tolls": {
+              "amount": 94,
+              "weekdayAmount": 94,
+              "weekendAmount": 94,
+              "period": "пн–вс, приказ №274 с 04.09.2026",
+              "segments": [
+                "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+          },
+          {
+            "id": "m12",
+            "detected": true,
+            "tolls": {
+              "amount": 1713,
+              "weekdayAmount": 1713,
+              "weekendAmount": 1713,
+              "period": "все дни",
+              "segments": [
+                "М-12: arzamas_p158 → vladimir · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix dated selected-route M12 directed endpoint pair"
+          },
+          {
+            "id": "ckad",
+            "detected": true,
+            "tolls": null,
+            "reason": "ckad_east_arc_not_proven"
+          },
+          {
+            "id": "zsd",
+            "detected": true,
+            "tolls": null,
+            "reason": "zsd_finished_vector_scope_not_reviewed"
+          }
+        ]
+      },
+      "api": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: ckad, zsd",
+          "ckad: ckad_east_arc_not_proven",
+          "zsd: zsd_finished_vector_scope_not_reviewed"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "comparison": "missing products block full total despite independently returned component amounts",
+      "expectedMissing": [
+        "ckad",
+        "zsd"
+      ],
+      "currentM12Boundary": {
+        "boundary": {
+          "direction": "reverse",
+          "firstRvpKm": 420,
+          "lastRvpKm": 184,
+          "entryOutsideRvpKm": 485,
+          "exitOutsideRvpKm": 174,
+          "entryRouteGapKm": 21.925104,
+          "exitRouteGapKm": 2.244937,
+          "entryOfficialGapKm": 65,
+          "exitOfficialGapKm": 10,
+          "calibrationMarginKm": 2.5,
+          "status": "proven",
+          "reason": null
+        },
+        "directMarkers": [
+          420,
+          392,
+          314,
+          281,
+          184
+        ],
+        "reason": "m12_direct_outer_boundaries_without_native_money"
+      },
+      "operatorBindingCaution": "Existing runtime reverse420→184 quote returns1713 under its directed-marker model; this is NOT a new independently proven22Н-approach→operator registration crosswalk or tariff source. C4 eastbound case and experimental directional crosswalk gaps remain separate/open."
+    }
+  ]
+}

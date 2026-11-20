@@ -1,0 +1,259 @@
+calculation_timing {
+  status: 502,
+  handlerElapsedMs: 45.436,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.517,
+      maxMs: 2.517
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.127,
+      maxMs: 0.127
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 1,
+      totalMs: 2.429,
+      maxMs: 2.429
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.971,
+      maxMs: 1.971
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 1,
+      totalMs: 1.893,
+      maxMs: 1.893
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.803,
+      maxMs: 0.803
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.46,
+      maxMs: 0.46
+    }
+  ],
+  stops: []
+}
+✖ an already cancelled calculation starts no geocoder or route request (51.624435ms)
+calculation_timing {
+  status: 502,
+  handlerElapsedMs: 17.25,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.186,
+      maxMs: 0.186
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.021,
+      maxMs: 0.021
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 1,
+      totalMs: 16.48,
+      maxMs: 16.48
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 16.461,
+      maxMs: 16.461
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 1,
+      totalMs: 16.113,
+      maxMs: 16.113
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 1,
+      totalMs: 15.886,
+      maxMs: 15.886
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 15.905,
+      maxMs: 15.905
+    }
+  ],
+  stops: []
+}
+✖ caller cancellation reaches every pending route provider and does not start toll matching (18.855326ms)
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 34.51,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.291,
+      maxMs: 0.291
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.144,
+      maxMs: 0.144
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 32.563,
+      maxMs: 32.563
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 2.023,
+      maxMs: 2.023
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 1,
+      totalMs: 1.049,
+      maxMs: 1.049
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.678,
+      maxMs: 1.678
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.541,
+      maxMs: 0.541
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 16.382,
+      maxMs: 16.382
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 12.974,
+      maxMs: 12.974
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.075,
+      maxMs: 1.075
+    }
+  ],
+  stops: []
+}
+✖ cancellation during selected-route trace aborts matching and cannot turn partial evidence into a result (35.431634ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 0
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 508.618897
+
+✖ failing tests:
+
+test at scripts/routing-cancellation.test.ts:6:1
+✖ an already cancelled calculation starts no geocoder or route request (51.624435ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  502 !== 400
+  
+      at TestContext.<anonymous> (file:///workspace/geonames-preview-publish-fc83523/scripts/routing-cancellation.test.ts:9:67)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 502,
+    expected: 400,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at scripts/routing-cancellation.test.ts:11:1
+✖ caller cancellation reaches every pending route provider and does not start toll matching (18.855326ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  502 !== 400
+  
+      at TestContext.<anonymous> (file:///workspace/geonames-preview-publish-fc83523/scripts/routing-cancellation.test.ts:18:67)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 502,
+    expected: 400,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at scripts/routing-cancellation.test.ts:20:1
+✖ cancellation during selected-route trace aborts matching and cannot turn partial evidence into a result (35.431634ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  200 !== 400
+  
+      at TestContext.<anonymous> (file:///workspace/geonames-preview-publish-fc83523/scripts/routing-cancellation.test.ts:29:67)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 200,
+    expected: 400,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

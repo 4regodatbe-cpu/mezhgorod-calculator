@@ -1,0 +1,21 @@
+{
+  "stage": "AC",
+  "status": "PARTIAL_LOCAL",
+  "base": "1f4987f9e49f519480c7eda7359cab2c3b19885b",
+  "implementation": "f3db8239",
+  "expandedTests": "1fa76aa8",
+  "liveRequests": 0,
+  "push": false,
+  "sha256": {
+    "lib/routing-attempt.ts": "ddbf03cc79a34be15a558217411310971838a9e2e3b48dd1dd9054a5f5eb8df3",
+    "lib/route-providers.ts": "9145b01db815ad2da95b4737a54415976ad3f5e365b15515b9f17d2f9391ab6b",
+    "lib/v3-calculation/route-leg.ts": "76c64834b11842848de2e8553e321f4e280ddc26502b42350ee3a71fd1855981",
+    "scripts/v3-partial-provider-failure.test.ts": "b9b687e1a76386dac98daabcc116e70cdd36c6745a001478807434830d50bad5",
+    "docs/checkpoints/evidence/stage-ac/stage-ac-address-ui.log": "db7aee8553f300d0b08420b49002c9e12d91ee12f1b3dd2c4853cb7ee10ba3e9",
+    "docs/checkpoints/evidence/stage-ac/stage-ac-api-smoke.log": "cf5d175e7e98ce69a8362e458a50a8f992bf908ce829eda51dea66cc57e31eec",
+    "docs/checkpoints/evidence/stage-ac/stage-ac-final-build.log": "fbcce1e5c33ab8fe74089d354eea70fca754e5a7f62e5009799839c102e41ebd",
+    "docs/checkpoints/evidence/stage-ac/stage-ac-lint.log": "a29d5da4a13a5298b96e35dd3028af202ceb97ee5e72dd799b02c5f9c01ccb53",
+    "docs/checkpoints/evidence/stage-ac/stage-ac-provider-matrix.log": "db5d45669e38fb9020e3623d0308d8663e29883103be5a8c4732f5b106de3fba",
+    "docs/checkpoints/evidence/stage-ac/stage-ac-webpack.log": "c4abbe915c67c41cae10cd9ef3c2d8c5765216d3929302821d8f0115d1d6022b"
+  }
+}

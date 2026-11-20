@@ -1,0 +1,5 @@
+# F2 — optional runtime evidence adapter LOCAL
+
+30.10.2026, parent9d3343e7, permitted branch lineage/remote c2f52ee9/PR14Draft. No push. [Contract/source/switch/limits](../../experiments/toll-estimates/INTEGRATION.md). New libadapter delegates to existing estimator and actual per-road quote engines, consumes current selected geometry/components/trace/provider sections; no named-case money/capture imports or network. Own OFF switch hard-deniesProduction and other Previewbranches. Strict snapshot untouched, M12warning, known part separate, M4atomic/aggregate duplicate guards.
+
+Four new targettestsPASS/exit0, projecttsc0, scopedlint0; logs/exits in `experiments/toll-estimates/checks/2026-10-30-integration/f2-*`. Final cases retain independently confirmed strict proof even without trace; unproven model/incomplete/date/duplicate checks remain fail-closed. Read-only helper signature mistake/strict rawtrace refusal documented, not hidden or called appfix. No app/API callsite or UI connected yet. F2 done locally; F3 optionalfield propagation/view next, then F4 saved evidence and F5 one required fullgate/build.

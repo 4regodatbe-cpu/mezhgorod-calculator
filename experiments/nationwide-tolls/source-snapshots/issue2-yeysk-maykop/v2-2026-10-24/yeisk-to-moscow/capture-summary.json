@@ -1,0 +1,26 @@
+{
+  "caseId": "yeisk-to-moscow",
+  "request": {
+    "mode": "standard",
+    "from": {
+      "label": "Ейск",
+      "position": {
+        "lat": 46.711524,
+        "lng": 38.276451
+      }
+    },
+    "to": {
+      "label": "Москва",
+      "position": {
+        "lat": 55.755819,
+        "lng": 37.617644
+      }
+    },
+    "departureAt": "2026-10-22T09:00:00+03:00"
+  },
+  "responseStatus": 502,
+  "providerCalls": 5,
+  "capturePath": "experiments/nationwide-tolls/source-snapshots/issue2-yeysk-maykop/v2-2026-10-24/yeisk-to-moscow/capture.json.gz",
+  "captureBytes": 1095,
+  "captureSha256": "6cb2a0d8feb1a05877530ccc4a658444cc96559464674df0eafdc9f0cafb2855"
+}

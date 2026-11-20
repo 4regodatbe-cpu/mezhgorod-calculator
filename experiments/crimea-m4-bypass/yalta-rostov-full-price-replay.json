@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-20T11:51:18.983Z",
+  "offline": true,
+  "calls": 2,
+  "misses": 0,
+  "unused": 0,
+  "tolls": {
+    "amount": 2060,
+    "weekdayAmount": 2060,
+    "weekendAmount": 2210,
+    "period": "понедельник–четверг",
+    "segments": [
+      "М-4: m4-1223 → m4-1093 · Стоимость не подтверждена",
+      "А-289: TamanBridge → Maryanskaya: 800 ₽",
+      "М-4: Дальний западный обход Краснодара: 51 → 0: 410 ₽ · Стоимость не подтверждена"
+    ],
+    "confidence": "matched",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null
+  },
+  "componentAudit": {
+    "status": "priced",
+    "priced": [
+      "m4",
+      "a289",
+      "krasnodar-west-bypass"
+    ],
+    "missing": [],
+    "components": [
+      {
+        "id": "m4",
+        "detected": true,
+        "tolls": {
+          "amount": 850,
+          "weekdayAmount": 850,
+          "weekendAmount": 1000,
+          "period": "понедельник–четверг",
+          "segments": [
+            "М-4: m4-1223 → m4-1093 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix exact selected-route M4 vector"
+      },
+      {
+        "id": "a289",
+        "detected": true,
+        "tolls": {
+          "amount": 800,
+          "weekdayAmount": 800,
+          "weekendAmount": 800,
+          "period": "все дни",
+          "segments": [
+            "А-289: TamanBridge → Maryanskaya: 800 ₽"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "A-289 selected-route OD vector"
+      },
+      {
+        "id": "krasnodar-west-bypass",
+        "detected": true,
+        "tolls": {
+          "amount": 410,
+          "weekdayAmount": 410,
+          "weekendAmount": 410,
+          "period": "понедельник–четверг",
+          "confidence": "matched",
+          "segments": [
+            "М-4: Дальний западный обход Краснодара: 51 → 0: 410 ₽ · Стоимость не подтверждена"
+          ]
+        },
+        "reason": "dzok_ready_matrix_pair_unconfirmed_route_binding"
+      }
+    ]
+  }
+}

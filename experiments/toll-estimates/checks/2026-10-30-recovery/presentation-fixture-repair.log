@@ -1,0 +1,15 @@
+✔ E4 confirmed full toll label is exact and has no approximate suffix (5.75688ms)
+✔ source-derived ZSD600 is displayed approximately and never relabelled exact by the view (0.272694ms)
+✔ E4 estimated full toll label has explicit approximation and applies only to tolls (0.363854ms)
+✔ E4 unknown full total displays clarified status and non-additive partial explanation (0.325766ms)
+✔ E4 disabled shadow view does not replace existing strict presentation (0.267177ms)
+✔ E4 insufficient state cannot accidentally publish a stale numeric total (0.339541ms)
+✔ E4 standalone responsive markup escapes source text and stays visibly local/offline (0.704502ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 453.868461

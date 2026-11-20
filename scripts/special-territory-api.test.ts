@@ -49,6 +49,25 @@ test('ordinary calculation preserves unknown toll price, prices all classes and 
   assert.equal(body.mode,'dual');assert.equal(body.legs[0].fast.tolls.pricingStatus,'unknown');assert.equal(body.legs[0].fast.tolls.amount,null);
   assert.ok(body.legs[0].fast.pricingByVehicle.comfort.totalPrice>0);
 });
+test('V2 rejects invalid departure calendars before contacting providers',async()=>{
+  const routingFetch=globalThis.fetch;
+  let requests=0;
+  globalThis.fetch=async()=>{requests++;throw new Error('Unexpected external request');};
+  try {
+    for(const departureAt of ['2026-02-30T09:00:00+03:00','2026-02-29','2026-04-31','10/13/2026','2026-10-13T09:00:00','2026-10-13T24:00:00Z']) {
+      const result=await POST(req({from,to,departureAt}));
+      assert.equal(result.status,400,departureAt);
+      assert.equal((await result.json()).error,'Некорректная дата поездки',departureAt);
+    }
+    assert.equal(requests,0);
+  } finally {globalThis.fetch=routingFetch;}
+});
+test('V2 accepts valid leap day, date-only, and timezone-qualified timestamps',async()=>{
+  for(const departureAt of ['2028-02-29T09:00:00+03:00','2026-10-13','2026-10-13T06:00:00.000Z']) {
+    const result=await POST(req({from,to,departureAt}));
+    assert.equal(result.status,200,departureAt+': '+JSON.stringify(await result.json()));
+  }
+});
 test('ordinary calculation rejects an extreme control-leg detour and exposes a warning',async()=>{
   overlongValhalla=true;
   try{

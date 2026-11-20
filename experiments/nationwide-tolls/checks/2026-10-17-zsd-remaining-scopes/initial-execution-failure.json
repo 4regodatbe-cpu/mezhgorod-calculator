@@ -1,0 +1,8 @@
+{
+  "status": "RECOVERED",
+  "error": "KeyError0 when treating saved OSRM GeoJSON as a polyline string",
+  "processedBeforeFailure": 1,
+  "fix": "Handle OSRM geometry.coordinates when geometry is a dict; preserve polyline6 decoding for Valhalla/string geometry.",
+  "successfulRerun": "14unique cases,9representatives+5exceptions, exact selected-provider geometry identity14/14",
+  "runtimePricingAffected": false
+}

@@ -1,0 +1,7 @@
+# Preview environment gate and local-store failure isolation — PASS
+
+29.10.2026 MSK, parent e30c09f. No push/CI/Preview/Production changes. Two confirmed readiness gaps fixed minimally: (1) pilot flag could enable on any runtime, (2) corrupt/missing local store produced502 despite available Photon. Runtime now permits Vercel ONLY when VERCEL_ENV=preview AND exact VERCEL_GIT_COMMIT_REF=fix/v3-missing-route-prices-2026-10-15 AND explicit pilotflag1. Production/development/missing branch/other branches reject even local-test override. Non-Vercel local production testing additionally requires GEONAMES_LOCAL_TEST=1; no secret/account change.
+
+Optional-store failure now logs a fixed safe event and continues pure existing Photon path; no filesystem errors exposed/no local+remote merge. Request abort is not retried through Photon. New safety tests2/2PASS: environment matrix and actual GET with missing store→mockPhoton200/noGeoNamesIDs + aborted request→no additional provider calls. TS check executed separately; scoped checks before commit. Existing successful city tests not repeated yet; new coverage guard may require focused rerun later.
+
+Next independent coverage-only comparison: derive omissions from already-saved validation/corpus reports, not repeat221512validation. Count52081omitted source IDs and check alias collisions; do not import omitted coordinates. Historical denied WORK_LOG/NEXT_STEPS untouched; this checkpoint is append-only work log. All previous local commits preserved.

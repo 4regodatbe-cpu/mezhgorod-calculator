@@ -1,0 +1,100 @@
+{
+  "caseId": "triple-m4-m11-zsd-krasnodar-to-prim",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-prim/2026-10-16T02-17-24-374Z-capture.json.gz",
+  "captureSha256": "860f18ffe2fa0627df462b57888a8033a4f16964316f79dfacdfe9af0e976374",
+  "priorResultPath": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m4-m11-zsd-krasnodar-to-prim.json",
+  "priorResultSha256": "354c492094979f33831701bde67c8ae13062b2b9ed3cc82a42fd6f04485550e7",
+  "physicalScopeFingerprint": "0c0e778a8622dfc6a3f57032f70fd16bc29fa010f3785c0215b8bb7ffae9c6c4",
+  "checked": true,
+  "mode": "saved_evidence_boundary_exception_check",
+  "sourceHead": "567090bf34db7ba9dc343469398d53682048bb48",
+  "traceComplete": true,
+  "boothCoverage": "complete",
+  "zsdWayCount": 55,
+  "directedExitChainIndices": [
+    1649,
+    1650,
+    1651,
+    1652
+  ],
+  "orderedEntryMainExitWitnesses": [
+    {
+      "distanceMeters": 0.019,
+      "index": 12077.001143672154,
+      "segmentMeters": 6.486
+    },
+    {
+      "distanceMeters": 0.031,
+      "index": 12078.000860573866,
+      "segmentMeters": 45.097
+    },
+    {
+      "distanceMeters": 0.022,
+      "index": 12079.000073679006,
+      "segmentMeters": 63.045
+    },
+    {
+      "distanceMeters": 0.001,
+      "index": 12126.999440073303,
+      "segmentMeters": 39.696
+    },
+    {
+      "distanceMeters": 0.006,
+      "index": 12127.999987659125,
+      "segmentMeters": 11.247
+    },
+    {
+      "distanceMeters": 0.014,
+      "index": 12129.00063804475,
+      "segmentMeters": 68.496
+    },
+    {
+      "distanceMeters": 0.016,
+      "index": 12381.999114211507,
+      "segmentMeters": 35.276
+    },
+    {
+      "distanceMeters": 0.029,
+      "index": 12383.000414107753,
+      "segmentMeters": 19.048
+    }
+  ],
+  "booths": [
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "edgeToll": true
+    },
+    {
+      "osmNodeId": "1766158781",
+      "wayId": "355755817",
+      "edgeToll": true
+    }
+  ],
+  "ekateringofkaExitAbsent": true,
+  "materialExceptionFound": false,
+  "entry": "KAD south, northbound",
+  "exit": "northbound ramp to Bogatyrsky/Planernaya; plaza1766158781",
+  "priorComponentProfiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_finished_vector_scope_not_reviewed",
+      "componentResult": "unknown",
+      "segments": []
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_finished_vector_scope_not_reviewed",
+      "componentResult": "unknown",
+      "segments": []
+    }
+  ],
+  "newComponentExecutions": 0,
+  "newFullRouteReplays": 0,
+  "newProviderCalls": 0,
+  "outcome": "blocked_by_missing_reliable_data",
+  "fareRub": null,
+  "missing": "Owner directional cash/card collection-zone bundle and any receipt credit at this finished entry/exit pair; general per-zone rates do not identify the payment bundle."
+}

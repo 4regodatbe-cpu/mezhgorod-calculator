@@ -1,0 +1,41 @@
+✔ exact A113 references and full CKAD name identify paid product including booth aliases (9.109859ms)
+✔ paid trace name without any booth still requires the CKAD component; incomplete trace stays unknown (1.50916ms)
+✔ own forward route retains omitted paid CKAD; reverse does not inherit the other direction evidence (98.397727ms)
+✔ own POST replay keeps forward CKAD unknown and prices only the complete reverse route (148.052355ms)
+✔ each own continuous named trace and independent physical lanes prove its directed two-plaza pair only (26.08029ms)
+✔ a free city gap with unchanged paid edges and booth order prevents exit-reentry borrowing (7.42956ms)
+✔ incomplete, repeated, unknown or wrong directional context cannot authorize the pair (18.188063ms)
+✔ reversed, shifted, sparse or detouring geometry cannot borrow valid trace context (29.031246ms)
+✔ historical snapshots without continuity context cannot borrow the new component price (87.950693ms)
+✔ departure profile uses independent 2026 calendar, directional peaks and explicit unknown windows (2.638066ms)
+✔ ready matrix values respect 01/05/07/13/16/22 boundaries and freeze at departure (57.423965ms)
+✔ five own profiles in each direction price the component but never hide forward CKAD (152.686922ms)
+✔ missing, partial, repeated or wrong own context and unsupported calendar never authorize money (2.880463ms)
+✖ public API prices reverse650, forward remains CKAD-unknown, unavailable trace stays null (165.199258ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 13
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1233.512434
+
+✖ failing tests:
+
+test at scripts/v3-odintsovo-pair-pricing.test.ts:106:1
+✖ public API prices reverse650, forward remains CKAD-unknown, unavailable trace stays null (165.199258ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Стоимость не подтверждена/. Input:
+  
+  'Северный обход Одинцова: ПВП 6.9 → 17.7 км'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/9847ba89efdb/mezhgorod/scripts/v3-odintsovo-pair-pricing.test.ts:110:10)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'Северный обход Одинцова: ПВП 6.9 → 17.7 км',
+    expected: /Стоимость не подтверждена/,
+    operator: 'match',
+    diff: 'simple'
+  }

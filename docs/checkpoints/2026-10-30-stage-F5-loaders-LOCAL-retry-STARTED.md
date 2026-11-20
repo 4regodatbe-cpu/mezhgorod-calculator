@@ -1,0 +1,9 @@
+# F5 loader compatibility repaired LOCAL / full gate retry STARTED
+
+30.10.2026 МСК; parentf13d3820125f3e85e519f46548de30ebb027193d. Only three existing test VM loaders changed: v2-unknown-result-render, v3-result-render-audit, v3-hook-race-audit. Added the same @/root→actualTS loader branch already present in helpers/load-ts. No mocks of toll money/formatter, no assertion removal, no application import/security/sandbox workaround. Real helper now executes in those VMs.
+
+Three affected files now **14PASS/0FAIL/exit0**, including a new controlled clipboard regression: labelled5904 estimate appended but original880toll/980transfer remains and6004 is not invented. Existing reset/unmount/race/error/manual/render assertions all retained. Scopedlint exit0. Initial loader-only targeted result also preserved. Evidence `f5-loader-*`.
+
+Application/config/dependencies/data/CI source equality to successful build48d685a767010aa9011fc27f03f2e0736fcb973a verified: `f5-build-app-equivalence.exit`0, allowing only these three test files and docs/experimentevidence differences. Next build is NOT rerun: its actualexit0/Node24.19.0/Next16.3.4 evidence still applies to identical application source, not to a falsely claimed identical completeGit tree. InitialprojectTS0/53targetsPASS also remain valid; JSloader changes have their own14targetchecks.
+
+Before the next long operation save this checkpoint/localcommit; run **one justified full offline gate retry** after import fix, plus freshwholeESLint for changedtests, capturing stdout/stderr/command/source/immediateexit. Prior fullgateexit1/10fail retained, F5stillnotDONE until retry realPASS. No liveaudit/networkcapture/push/CI/env/deploy/Production/otherbranch action. Finish with final state/source hashes/localbundle; keep knownaddressPreview gaps andZSDbundle open.

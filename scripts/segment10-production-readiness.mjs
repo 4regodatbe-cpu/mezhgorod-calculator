@@ -1,80 +1,55 @@
 import fs from "node:fs";
-const read=(p)=>fs.readFileSync(p,"utf8");
-const assert=(v,m)=>{if(!v)throw new Error(`Segment 10 gate failed: ${m}`)};
-const api=read("app/api/v2/calculate/route.ts");
-const ui=read("app/v2/page.tsx");
-const root=read("app/page.tsx");
-const collect=read("app/api/collect/route.ts");
-const sheets=read("google-apps-script/Code.gs");
-const envExample=read(".env.example");
-const androidV2=read("android-app-v2/app/src/main/java/ru/mezhgorod/calculator/v2/MainActivity.kt");
-const androidWorkflow=read(".github/workflows/android-apk.yml");
-const vercel=JSON.parse(read("vercel.json"));
-const apiV3=read("app/api/v3/calculate/route.ts");
-const debugRoute=read("app/api/v2/debug-route/route.ts");
-const debugM4=read("app/api/v2/debug-m4/route.ts");
-const debugPvp=read("app/api/v2/debug-pvp-node/route.ts");
-const suggest=read("app/api/suggest/route.ts");
-const routeMonitor=read("scripts/route-monitor.mjs");
-assert(api.includes('pricingStatus: "priced" | "free" | "unknown"'),"API pricing truth enum missing");
-assert(api.includes('amount: null')&&api.includes('pricingStatus: "unknown"'),"unknown toll must remain null");
-assert(api.includes('truth: "confirmed_free" | "candidate_unverified"'),"free-route truth enum missing");
-assert(api.includes('body.mode !== undefined && body.mode !== "standard" && body.mode !== "dual"'),"V2 calculator mode must be validated");
-assert(api.includes('const valhallaEvidence = selectedFast.provider === "Valhalla" && fastResult.status === "fulfilled" ? fastResult.value : null;'),"road evidence must stay bound to the selected live route provider");
-assert(api.includes('Number.isNaN(new Date(body.departureAt).getTime())'),"V2 departure timestamp must be validated");
-assert(api.includes("lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180"),"route point coordinates must be range-validated");
-assert(api.includes('typeof point.label !== "string"'),"route point labels must be type-validated");
-assert(apiV3.includes('body.mode !== undefined && body.mode !== "standard" && body.mode !== "dual"'),"V3 calculator mode must be validated");
-assert(apiV3.includes('typeof body.from?.label === "string"')&&apiV3.includes('typeof body.to?.label === "string"'),"V3 point labels must be type-validated");
-assert(apiV3.includes('error instanceof SyntaxError')&&apiV3.includes('"Некорректный JSON"'),"V3 malformed JSON must return a client error");
-for (const [name, source] of [["route", debugRoute], ["M4", debugM4], ["PVP", debugPvp]]) {
-  assert(source.includes('process.env.VERCEL !== "1"')&&source.includes('CALCULATOR_DEBUG_TOKEN')&&source.includes('x-calculator-debug-token'),`${name} diagnostics must be protected on Vercel`);
+
+const read = (path) => fs.readFileSync(path, "utf8");
+const assert = (value, message) => {
+  if (!value) throw new Error(`Production-readiness truth gate failed: ${message}`);
+};
+
+const root = read("app/page.tsx");
+const v2Api = read("app/api/v2/calculate/route.ts");
+const v3Api = read("app/api/v3/calculate/route.ts");
+const routeInput = read("lib/route-input-validation.ts");
+const requestBody = read("lib/limited-json-body.ts");
+const tollTruth = read("lib/v2-calculation/free-route-selection.ts");
+const routePricing = read("lib/v2-calculation/route-leg-pricing.ts");
+const routeCard = read("app/v2/components/route-card.tsx");
+const collect = read("app/api/collect/route.ts");
+const envExample = read(".env.example");
+const suggest = read("app/api/suggest/route.ts");
+const debugRoutes = [
+  ["route", read("app/api/v2/debug-route/route.ts")],
+  ["M4", read("app/api/v2/debug-m4/route.ts")],
+  ["PVP", read("app/api/v2/debug-pvp-node/route.ts")],
+];
+
+assert(root.includes('redirect("/v3")'), "public root points to current V3");
+assert(fs.existsSync("app/v2/page.tsx"), "legacy V2 page has not been removed");
+assert(v2Api.includes('body.mode !== undefined && body.mode !== "standard" && body.mode !== "dual"'), "legacy V2 mode is validated");
+assert(v3Api.includes('body.mode !== undefined && body.mode !== "standard" && body.mode !== "dual"'), "V3 mode is validated");
+assert(v2Api.includes("function validDepartureAt(value: unknown)") && v3Api.includes("function validDepartureAt(value: unknown)"), "both API versions validate departure dates");
+assert(v2Api.includes("!validPoint(body.from) || !validPoint(body.to)") && v3Api.includes("!validPoint(body.from) || !validPoint(body.to)"), "both API versions validate points before route-provider calls");
+assert(routeInput.includes('typeof point.label !== "string"') && routeInput.includes("Array.from(point.label).length > MAX_ROUTE_POINT_LABEL_CHARS"), "labels have type and length bounds");
+assert(routeInput.includes("lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180"), "coordinates have geographic bounds");
+assert(requestBody.includes("byteLength > maxBytes") && requestBody.includes("new TextDecoder(\"utf-8\", { fatal: true })"), "calculation and telemetry JSON is bounded and decoded strictly");
+
+assert(tollTruth.includes('pricingStatus: "priced" | "free" | "unknown"'), "shared toll serializer exposes explicit truth status");
+assert(tollTruth.includes("amount: null") && tollTruth.includes('pricingStatus: "unknown"'), "unknown toll price stays null in the shared serializer");
+assert(tollTruth.includes('"confirmed_payment_point_avoiding"'), "a free alternative requires a confirmed payment-point-avoiding route");
+assert(routePricing.includes("const composition = composeRouteTolls(components)"), "road-family composition is based on detected toll components");
+assert(!routePricing.includes('compositionValidation(["m4_a289"]'), "route composition does not invent an M4 family for unrelated routes");
+assert(routeCard.includes('toll?.pricingStatus === "unknown"') && routeCard.includes("Стоимость платных дорог неизвестна"), "shared V2/V3 card visibly distinguishes unknown toll pricing");
+assert(!routeCard.includes("toll.amount ?? 0"), "unknown toll amount is not coerced to zero in the shared card");
+
+assert(collect.includes('const invalidStatus = !["priced", "free", "unknown"].includes(pricingStatus ?? "")'), "route telemetry requires explicit toll truth");
+assert(collect.includes('pricingStatus === "unknown"') && collect.includes("tollValues.some((value) => value !== null)"), "route telemetry preserves null for unknown tolls");
+assert(collect.includes("function coarseRegion") && collect.includes("ADDRESS_PART"), "route telemetry removes address-level details");
+assert(!collect.includes("{ ...body,"), "telemetry does not forward the full request object");
+assert(suggest.includes("q.length > 200"), "suggestion query length is bounded");
+assert(envExample.includes("CALCULATOR_DEBUG_TOKEN="), "debug access token configuration is documented without a secret");
+for (const [name, source] of debugRoutes) {
+  assert(source.includes('process.env.VERCEL !== "1"') && source.includes("CALCULATOR_DEBUG_TOKEN") && source.includes("x-calculator-debug-token"), `${name} diagnostics require local mode or an explicit protected token`);
 }
-assert(envExample.includes("CALCULATOR_DEBUG_TOKEN="),"debug access token must be documented in environment example");
-assert(debugM4.includes("fromText.length > 120")&&debugPvp.includes("fromText.length > 120"),"diagnostic geocode inputs must be bounded");
-assert(debugPvp.includes("lat < -90 || lat > 90 || lon < -180 || lon > 180"),"debug anchor coordinates must be range-validated");
-assert(!api.includes('compositionValidation(["m4_a289"], "Локальный расчёт существенно расходился'),"verified control must not hardcode M4 family for non-M4 routes");
-assert(api.includes("composition.priced.length > 0 ? composition.priced : [...legacyFamilies]"),"verified control must preserve detected toll families");
-assert(ui.includes('pricingStatus === "unknown"'),"UI does not render unknown toll state");
-assert(ui.includes("Платность / стоимость не подтверждена"),"unknown route card must not claim a confirmed paid road");
-assert(ui.includes("Платность / стоимость дороги не подтверждена"),"copied unknown result must not claim a confirmed paid road");
-assert(ui.includes('tollUnknown ? "Быстрый маршрут" : "По платной дороге"'),"dual unknown route must not be titled as confirmed paid");
-assert(ui.includes("Платность не подтверждена"),"unverified alternative warning missing");
-assert(ui.includes("Стоимость не определена"),"unknown toll price label missing");
-assert(!ui.includes("toll.amount ?? 0) > 0 ? String(toll.amount) : \"0\""),"unknown toll coerced to zero in UI");
-assert(ui.includes("clampNumber(Number(e.target.value), 1, 10000, 1)"),"fare inputs must be clamped to supported bounds");
-assert(ui.includes("clampNumber(Number(e.target.value), 0, 500, 0)"),"urgency markup must be clamped to supported bounds");
-assert(ui.includes("clampNumber(Number(parsed[key]), 1, 10000, defaults[key])"),"stored fare values must be sanitized before use");
-assert(ui.includes('const saved = localStorage.getItem(key); return saved === null ? fallback'),"empty local storage must preserve configured dual-rate and urgency defaults");
-assert(ui.includes('storedNumber("mezhgorod-v2-rate1", 1, 10000, 25)')&&ui.includes('storedNumber("mezhgorod-v2-rate2", 1, 10000, 35)')&&ui.includes('storedNumber("mezhgorod-v2-urgent-percent", 0, 500, 20)'),"V2 default persisted inputs must use null-safe storage reads");
-assert(ui.includes("maxLength={200}"),"V2 address inputs must respect the suggestion-query bound");
-assert(ui.includes("clampNumber(Number(manualToll), 0, 100000, 0)"),"manual toll override must be bounded");
-assert(ui.includes('e.target.value === "" ? "" : String(clampNumber(Number(e.target.value), 0, 100000, 0))'),"manual toll override must be clearable back to automatic pricing");
-assert(!ui.includes("это сделает расстояния и расчёт платных дорог максимально точными"),"donation copy must not promise exact toll pricing from map API alone");
-assert(ui.includes("Стоимость платных дорог по-прежнему требует проверки"),"donation copy must explain toll tariff verification");
-assert(ui.includes('navigator.userAgent.includes("MezhgorodAndroid")'),"V2 must recognize both current and legacy Android wrappers");
-assert(ui.includes('localStorage.setItem("mezhgorod-v2-rate1"')&&ui.includes('localStorage.setItem("mezhgorod-v2-rate2"'),"dual fare rates must persist");
-assert(ui.includes('localStorage.setItem("mezhgorod-v2-urgent-percent"'),"urgency markup must persist");
-assert(ui.includes('tolls?.pricingStatus === "unknown" ? null'),"unknown toll telemetry must preserve null instead of zero");
-assert(collect.includes('const invalidStatus = !["priced", "free", "unknown"].includes(pricingStatus ?? "")'),"V2 telemetry must require explicit toll truth status");
-assert(collect.includes("validTotalKeys"),"V2 telemetry totals schema must be exact");
-assert(collect.includes("function coarseRegion")&&collect.includes("ADDRESS_PART"),"route telemetry locations must strip address-like parts");
-assert(collect.includes("fromRegion: coarseRegion(body.fromRegion)")&&collect.includes("toRegion: coarseRegion(body.toRegion)"),"route telemetry must store only coarse locations");
-assert(collect.includes("effectiveRate(body.distanceKm, body.totals.standard)"),"V2 route storage must preserve an effective tariff");
-assert(!collect.includes('? { ...body, fromRegion:'),"V2 telemetry must not forward the full request body to storage");
-assert(collect.includes('error instanceof SyntaxError')&&collect.includes('"Некорректный JSON"'),"malformed telemetry JSON must return a client error");
-assert(sheets.includes('["Город / регион A", "Город / регион B", "Расстояние, км", "Тариф, ₽/км", "Стоимость, ₽"]'),"Sheets route storage must contain only anonymized route statistics fields");
-assert(sheets.includes("routes.appendRow([data.fromRegion, data.toRegion, data.distanceKm, data.rate, data.total])"),"Sheets route rows must follow minimized statistics schema");
-assert(androidV2.includes('private val home = "https://mezhgorod-calculator.vercel.app/v2"'),"Android 2.0 must open the hardened V2 calculator");
-assert(androidWorkflow.includes('working-directory: android-app-v2')&&!androidWorkflow.includes('working-directory: android-app\n'),"APK workflow must build the canonical Android 2.0 project only");
-assert(androidWorkflow.includes("pull_request:")&&androidWorkflow.includes("if: github.event_name == 'push' && github.ref == 'refs/heads/main'"),"APK must be compiled on PR without publishing a release");
-assert(vercel?.git?.deploymentEnabled?.["fix-systemic-toll-composition"] === false,"active hardening branch must not consume Vercel preview deployments");
-assert(routeMonitor.includes("allowUnknownToll: true")&&routeMonitor.includes('pricingStatus === "unknown" && toll === null && weekdayToll === null && weekendToll === null'),"daily monitor must accept unknown only as fail-closed null pricing on explicitly allowed routes");
-assert(routeMonitor.includes("weekdayAmount")&&routeMonitor.includes("weekendAmount")&&routeMonitor.includes("pricedValuesValid"),"daily monitor must validate weekday and weekend toll values instead of depending on run day");
-assert(suggest.includes("q.length > 200"),"address suggestion queries must be bounded");
-assert(suggest.includes("coordinates[1] < -90")&&suggest.includes("coordinates[0] < -180"),"geocoder suggestions must reject invalid coordinates");
-assert(root.includes('redirect("/v2")'),"root must route users to the hardened V2 calculator");
-assert(!root.includes('/api/calculate'),"legacy V1 calculator must not remain the public root entry point");
+
 for (const obsolete of [
   ".github/workflows/apply-ckad-composition-patch.yml",
   ".github/workflows/apply-fast-router-fallback-patch.yml",
@@ -82,7 +57,6 @@ for (const obsolete of [
   "scripts/apply-ckad-composition-patch.mjs",
   "scripts/apply-fast-router-fallback-patch.mjs",
   "scripts/apply-m11-moscow-composition-patch.mjs",
-]) assert(!fs.existsSync(obsolete),`obsolete self-patching hook must be removed: ${obsolete}`);
-const segment9=read("scripts/segment9-regression.mjs");
-assert(segment9.includes("must not coerce to zero"),"Segment 9 fail-closed gate missing");
-console.log("Segment 10 static truthfulness gates GREEN");
+]) assert(!fs.existsSync(obsolete), `obsolete self-patching hook is absent: ${obsolete}`);
+
+console.log("Production-readiness truth gates GREEN: active V3, isolated legacy V2, fail-closed tolls, bounded diagnostics");

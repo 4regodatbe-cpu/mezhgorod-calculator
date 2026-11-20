@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:45:47.325Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 13,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 11,
+    "spec": {
+      "caseId": "dnr-харцызск-kerch-center",
+      "kind": "regional",
+      "region": "dnr"
+    }
+  },
+  "caseId": "dnr-харцызск-kerch-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-45-47-325Z-part11",
+  "parent": "0ddc108cba8e05a29804ad891a328480e4aaf325"
+}

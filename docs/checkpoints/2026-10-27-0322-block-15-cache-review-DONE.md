@@ -1,0 +1,8 @@
+# Reliability block15 — cache keys, TTL and isolation — DONE — 27.10.2026 03:22 МСК
+
+- Parent `ea559e8a8081eb07886d48b3f8ac1dba0d0046aa`; allowed branch; PR14 Draft; no parent workflow runs.
+- Reviewed cache code only; no new external requests. Route provider GET URLs encode coordinates/route controls/provider options (including Valhalla toll penalty and BRouter profile); these requests use Next fetch `force-cache` with revalidation21600s. Thus materially different route candidates have different URLs. This framework cache path was code-reviewed, not integration-tested against a deployed Next cache.
+- Photon request pool uses the complete URL for both in-flight singleflight and cache keys; origin is used separately for cooldown isolation. Positive results only are cached in process for300s, LRU128; empty results are not cached. A caller abort cancels only that subscriber; the upstream request is aborted only after the last subscriber leaves. `fetchPhotonFeatures` additionally uses revalidate300s and the caller's signal/deadline. Address suggestion cache normalizes Russian case/whitespace/ё-e, stores only nonempty results, LRU128 and default TTL5min.
+- No cache-key cross-route or stale-empty defect reproduced. Existing tests: `photon-request-pool.test.ts`, `address-suggestion-cache.test.ts`, `photon-fetch.test.ts` — all3 suites PASS, with mocked transport/timers and no live requests.
+- No source/cache configuration change. Residual limitation: Next runtime cache-key semantics and shared multi-instance cache behavior were not tested in a hosted app; process-local pool/cache behavior is directly covered by mocks.
+- Next: block16 review structured diagnostics and privacy limits; do not add sensitive address/provider URL logging.

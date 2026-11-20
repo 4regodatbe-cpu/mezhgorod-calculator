@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:48:21.967Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 17,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 11,
+    "spec": {
+      "caseId": "kherson-скадовск-kazan-center",
+      "kind": "regional",
+      "region": "kherson"
+    }
+  },
+  "caseId": "kherson-скадовск-kazan-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-48-21-967Z-part11",
+  "parent": "e78cf484f758019b1503cc0fde8bceffe2e7ab50"
+}

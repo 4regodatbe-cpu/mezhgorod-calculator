@@ -1,0 +1,48 @@
+{
+  "status": "DONE",
+  "fingerprint": "1ea03b40cb54472b3b95aaeff95abe0b685000471b8c5f77855dc20f67798cbf",
+  "caseId": "triple-m11-ckad-m12-arzamas-to-spb",
+  "capturePath": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-arzamas-to-spb/2026-10-16T02-13-09-138Z-capture.json.gz",
+  "captureGitBlob": "b95d07d9614e5b72621a0cfd264f0936658d55f4",
+  "captureSha256": "b47f5207bc108a91b0121614d3184d5c7fe9339db341cd44102acfba191ea61b",
+  "provider": "Valhalla",
+  "routeMeters": 1149643,
+  "routeSeconds": 43716,
+  "completeOwnCapture": true,
+  "gateIndex": 3543.0012607479107,
+  "profiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "physicalResolved": true,
+      "boundariesResolved": true,
+      "from": "tskad",
+      "to": "solnechnogorsk",
+      "headRub": 280,
+      "headReason": "m11_head_ready_direct_pair_at_departure",
+      "headWithoutSelectedGateValidation": null,
+      "m11SubtotalRub": 4180,
+      "wholeTripEvaluated": false
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "physicalResolved": true,
+      "boundariesResolved": true,
+      "from": "tskad",
+      "to": "solnechnogorsk",
+      "headRub": 320,
+      "headReason": "m11_head_ready_direct_pair_at_departure",
+      "headWithoutSelectedGateValidation": null,
+      "m11SubtotalRub": 4520,
+      "wholeTripEvaluated": false
+    }
+  ],
+  "negativeChecks": {
+    "reverseRejected": true,
+    "incompleteRejected": true,
+    "absentGateRejected": true
+  },
+  "recoveredHeadComponent": true,
+  "outcome": "fixed_and_verified_for_this_own_capture",
+  "confirmedWholeTripFares": 0,
+  "networkCalls": 0
+}

@@ -1,0 +1,13 @@
+# DONE baseline ESLint repair / LINT-001 FIXED — 24.10.2026 МСК
+
+Parent81dfe59297846d7b25d489cbcfaab3bc181f5f17/разрешённаяfixbranch/PR14draft,STARTEDсохранёнпередкодом. Scopeeslint.config.mjs,lib/v2-calculation/route-leg.ts,quote.cjscomment,scripts/eslint-commonjs-policy.test.mjs.
+
+Исправлены2причины:scopedNodeCommonJSдля.cjsэксперимента(18ошибокнеподходящегоimport-styleправила),иconsttuple+отдельныйmutablefree(1preferconst). ESM/TS/out-of-scopeCJSrequireпо-прежнемуотклоняется,файлыизанализа не исключены. Первыйновыйpolicytestпоказалmodule вместоcommonjsизpreset;исправленsourceTypeконфига,assertionнеослаблен. Логисходногоfailureсохранён.
+
+Все10CJSисполняемыхтелбезизменений(9wholefilesexact/1толькокомментарийquote.cjs);Promise.all/providers/fastestOnly/выбормаршрутов/ценыпрежние. Лишнийeslint-disablecommentудалёнпослетого,каксталunuseddirectivewarning;quote/APIперепроверены,bodyexactproofсохранён.
+
+Actualchecks:policy1/1+3negativecasesPASS;full895/895PASS(exactfullselector,concurrency2безпропусков/ослабленияtimeouts);quote/APIadapterPASS;whole-repoESLintexit0/0errors/5старыхwarnings;webpackTypeScript/static16/16PASS. Build/fullбылидокомментарногоудаления,нулевойruntimebodydiffподтверждёнбайтами,quote/APIпосленегоPASS. RawlogSHA/verification/repro:checks/2026-10-24-eslint-baseline/README.md. Новыхlive0,новыйordinaryCIнеприписываетсяskipcicode. addressCitySnapshot:false.
+
+Обновлённыестатусы:currentmoduleguide/OPTIONAL_MODULES/BLOCKERS/state/log:LINT-001FIXED,activationpendingUIreview/snapshotfreshness. Старыеfailure/checkpointsнепереписаныкакPASS. Production/main/Android/backupне менялись,PR14draft/mergeнет.
+
+NEXTотдельнаялокальнаяUIпредпосылка:проверитьналичиебраузера,затемеслидоступен—реальныйAddressFieldUIсmock/rresponsesровноизreviewed4snapshot/cancel/clear/reverse/credit/no-cachemetadata-loss;непроверкареальнойдоступностиPhoton. ЕслиChromiumотсутствует—BLOCKED_BY_ENVIRONMENT,ничегонеактивироватьи несчитатьE2EPASS. Передсерверным/длиннымrun—STARTED,безизмененияProduction/credentials.

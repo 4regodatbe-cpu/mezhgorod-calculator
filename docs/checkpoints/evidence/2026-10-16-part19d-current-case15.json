@@ -1,0 +1,126 @@
+{
+  "caseId": "dnr-новоазовск-kazan-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-новоазовск-kazan-center/2026-10-16T00-39-28-580Z-capture.json.gz",
+  "captureSha256": "1774d480c1e4f8dc82d529fb21c2daf87e95ab84be4945bcb9336bb6fc451c0d",
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-новоазовск-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T09-40-41-681Z.json",
+      "sha256": "3d96bbb592795428cd23a806cedfca0fa1d8b13e0e223742065740d5633b9f2c",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "provider": "Valhalla",
+      "routeMeters": 1647414,
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "audit": {
+        "status": "unknown",
+        "priced": [],
+        "missing": [
+          "m4"
+        ],
+        "components": [
+          {
+            "id": "m4",
+            "detected": true,
+            "tolls": null,
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+          }
+        ]
+      },
+      "m4": {
+        "status": "unknown",
+        "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 0,
+        "confirmedPvps": [],
+        "diagnosticOnly": true
+      }
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-новоазовск-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T09-40-42-686Z.json",
+      "sha256": "8a21b9c5392ce10da95fc3528c956cca37300223764bce2759287e5c863e3959",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "provider": "Valhalla",
+      "routeMeters": 1647414,
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "audit": {
+        "status": "unknown",
+        "priced": [],
+        "missing": [
+          "m4"
+        ],
+        "components": [
+          {
+            "id": "m4",
+            "detected": true,
+            "tolls": null,
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4."
+          }
+        ]
+      },
+      "m4": {
+        "status": "unknown",
+        "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 0,
+        "confirmedPvps": [],
+        "diagnosticOnly": true
+      }
+    }
+  ],
+  "validation": {
+    "complete": true,
+    "boothEventCoverage": "complete",
+    "tollBoothCount": 0,
+    "paidEdgeCount": 2,
+    "paidWaysIfShort": [
+      "1182567076",
+      "31984600"
+    ],
+    "selected545Nodes": []
+  },
+  "geometry": [
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/1182567076/full.json",
+      "fromKm": 0.00004502858131882864,
+      "toKm": 0.000029988906011819833
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/31984600/full.json",
+      "fromKm": 0.000029988906011819833,
+      "toKm": 0.000018652372335047468
+    }
+  ],
+  "previousCount": 14,
+  "nextCase": "dnr-талаковка-kazan-center",
+  "oldNext": "dnr-новоазовск-kazan-center",
+  "oldPlan": "19D14/22 reviewed, latesttriple-m4-m11-zsd-voronezh-to-prim m4_component_priced_other_products_unknown; nextdnr-новоазовск-kazan-center exactsavedcapture/twoofflineprofiles; sourcegapsretained, no newgate",
+  "result": "source_gated_same_two_way_collection_scope",
+  "scopeCheckpoint": "docs/checkpoints/2026-10-16-part19d-granitnoe-kazan-scope-reviewed.md"
+}

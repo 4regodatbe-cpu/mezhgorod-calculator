@@ -1,0 +1,5 @@
+# Возобновление после повторного прерывания
+
+STARTED, 15.10.2026 21:05 МСК. Исходный remote/PR14 head403d7a4448f2c1801f3cf3cd9f397adabd48347e, draft/open. Свежая рабочая копия /workspace/scratch/b6b2dcd2107d/mezhgorod-calculator, ветка fix/v3-missing-route-prices-2026-10-15, clean после fetch/checkout. AGENTS.md, CHECKPOINT_PROTOCOL, WORK_STATE, NEXT_STEPS, README, DECISIONS изучены. Живых audit процессов не обнаружено; причина прерывания не установлена.
+
+DONE: подтверждено, что Пришиб→СПб уже сохранён в remote; повтор не нужен. Пришиб→Казань capture в прежнем checkout отсутствует. NEXT: node --import ./scripts/register-ts-paths.mjs experiments/nationwide-tolls/scripts/run-systemic-route-batch.mjs --case zaporizhzhia-пришиб-kazan-center --limit 1, stdout в docs/checkpoints/evidence/. После одного случая availability/report, checkpoint и проверка remote до следующего. Публичные координаты и routing параметры разрешены ранее для Valhalla/OSRM/BRouter; consent в DECISIONS. Итог unknown не считать бесплатным. App/lib/тарифы/Production без изменений; новых тестов пока нет.

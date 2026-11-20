@@ -1,0 +1,46 @@
+{
+  "atUtc": "2026-10-18T06:00:37.438303+00:00",
+  "outcome": "blocked_by_missing_reliable_data",
+  "startedHead": "3a7bc9d2eecb42f90e896b9cce27dfa830bc730a",
+  "startedTree": "24678f1ce76aea7d8c78fa6105c869c61dd41919",
+  "searchQueries": 4,
+  "sourceReads": 4,
+  "sourceResults": [
+    "new business tariff page403; indexed figures alone insufficient",
+    "owner news134108 is16Oct2025, effective17Oct2025; not2026 proof",
+    "owner M3 navigation redirects to JS shell tab3",
+    "observed M3track38 AJAX200,21174bytes, no tariff date; only already-known tariffs link"
+  ],
+  "excluded": [
+    "Old March announcement/test-host mirror not fetched",
+    "Source year2025 not misread as2026",
+    "Second engine search results were mostly irrelevant, not proof of source absence"
+  ],
+  "retainedWebOutputs": [
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m3-tariff-date-source/search1.json.gz",
+      "rawSha256": "3e99730b88f6f92ef2870d6fbbf6e12c4bc71db2f8536f6c0e5e6d57cffaeee4"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m3-tariff-date-source/search2-pages.json.gz",
+      "rawSha256": "e202a77b32e14c0ee65162305ec4a87eea3afc19b559c9735397351bc243d23a"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-m3-tariff-date-source/owner-page.json.gz",
+      "rawSha256": "2a5040b73a5c0db147eef5982a1c3095fa650836c37f85bf433d5ec1f5e7b571"
+    }
+  ],
+  "directAjaxMetadata": "experiments/nationwide-tolls/checks/2026-10-18-m3-tariff-date-source/m3-track.metadata.json",
+  "sourceHorizonExtended": false,
+  "verifiedThrough": "2026-10-10",
+  "targetDepartureDates": [
+    "2026-10-15",
+    "2026-10-17"
+  ],
+  "newRuntimeChanges": 0,
+  "newRoutes": 0,
+  "newReplays": 0,
+  "newCustomerPricedComponents": 0,
+  "confirmedFullFares": 0,
+  "nextM3": "Reopen only with a new independent operator effective-date/version source or dated payment evidence. No repeated four queries/four reads, old PDFs or route batch."
+}

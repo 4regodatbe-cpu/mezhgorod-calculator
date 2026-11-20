@@ -1,0 +1,22 @@
+✔ exact A113 references and full CKAD name identify paid product including booth aliases (7.599124ms)
+✔ paid trace name without any booth still requires the CKAD component; incomplete trace stays unknown (0.644825ms)
+✔ own forward route retains omitted paid CKAD; reverse does not inherit the other direction evidence (79.336778ms)
+✔ own POST replay keeps forward CKAD unknown and prices only the complete reverse route (164.643405ms)
+✔ each own continuous named trace and independent physical lanes prove its directed two-plaza pair only (37.49947ms)
+✔ a free city gap with unchanged paid edges and booth order prevents exit-reentry borrowing (5.506237ms)
+✔ incomplete, repeated, unknown or wrong directional context cannot authorize the pair (13.200348ms)
+✔ reversed, shifted, sparse or detouring geometry cannot borrow valid trace context (28.255726ms)
+✔ historical snapshots without continuity context cannot borrow the new component price (67.761397ms)
+✔ planning baseline is650 in both directions across hours, weekends, holidays and future calendar years (197.915467ms)
+✔ planning baseline preserves tariff validity, invalid date guards and departure-only calculation (9.623572ms)
+✔ five own profiles in each direction price the component but never hide forward CKAD (176.206848ms)
+✔ missing, partial, repeated or wrong own context never authorize a planning charge (2.3785ms)
+✔ public API prices reverse650, forward remains CKAD-unknown, unavailable trace stays null (212.63403ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1332.183074

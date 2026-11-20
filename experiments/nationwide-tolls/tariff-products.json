@@ -131,8 +131,8 @@
     {
       "id": "zsd",
       "registryId": "zsd",
-      "boundary": "Proven ZSD ramp entry and exit",
-      "matrix": "ZSD ramp OD to audit",
+      "boundary": "V3 zone1 only: exact directed Blagodatnaya booth and complete selected-route paid way ledger wholly in reviewed zone1. Other zones remain unknown.",
+      "matrix": "Official owner cash/card base zone1=300 from2025-05-01; ready zonal row in source-snapshots/zsd/2026-10-15-zone1/zone1-readiness.json; transponder fares excluded.",
       "overlap": "Exclude any separate ShMSD entry if operator tariff already includes it."
     },
     {

@@ -1,0 +1,9 @@
+{
+  "extends": "../../../../tsconfig.json",
+  "compilerOptions": {
+    "incremental": false,
+    "typeRoots": ["../../../../node_modules/@types"]
+  },
+  "include": ["../../../../scripts/stage-c-boundary-evidence.test.ts"],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,19 @@
+{
+  "sourceHead": "567090bf34db7ba9dc343469398d53682048bb48",
+  "mode": "short_offline_saved_evidence_review",
+  "inputs": [
+    "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+    "max-chain-m4-ckad-m11-zsd-voronezh-to-prim",
+    "pair-m11-zsd-moscow-to-prim",
+    "triple-m4-m11-zsd-voronezh-to-prim",
+    "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+    "max-chain-m4-ckad-m11-zsd-krasnodar-to-prim",
+    "max-chain-m4-ckad-m11-zsd-rostov-to-prim",
+    "pair-m11-zsd-torzhok-to-prim",
+    "triple-m4-m11-zsd-krasnodar-to-prim"
+  ],
+  "newComponentExecutions": 0,
+  "newRouteReplays": 0,
+  "newProviderCalls": 0,
+  "remotePersistenceAtStart": "pending_active_CI39031962573"
+}

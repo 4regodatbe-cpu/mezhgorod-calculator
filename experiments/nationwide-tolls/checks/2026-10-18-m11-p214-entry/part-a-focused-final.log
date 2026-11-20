@@ -1,0 +1,12 @@
+✔ own complete capture proves only its directed p214 access (56.644722ms)
+✔ incomplete chunks, coverage and missing or duplicate physical identities fail closed (2.049813ms)
+✔ missing, malformed, multiple and shifted strict mainline boundaries fail closed (15.757198ms)
+✔ reverse, parallel, sparse and truncated geometry cannot borrow the gate identity (39.351391ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 729.636526

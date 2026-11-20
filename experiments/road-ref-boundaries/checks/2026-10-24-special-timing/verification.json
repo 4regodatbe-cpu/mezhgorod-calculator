@@ -1,0 +1,25 @@
+{
+  "sourceParent": "e180173d03a9f93b5955e59faee93b1a88c43895",
+  "recordedAt": "2026-10-24T09:32:58.317571+00:00",
+  "focused": {
+    "pass": 16,
+    "fail": 0
+  },
+  "full": {
+    "pass": 880,
+    "fail": 0
+  },
+  "quoteApi": "PASS",
+  "eslint": "PASS",
+  "webpackTypeScriptStatic16": "PASS",
+  "newExternalRequests": 0,
+  "livePostRequests": 0,
+  "endToEnd10Seconds": "UNVERIFIED",
+  "logs": {
+    "full-audit.log": "a0642282e1abc0201899f258a4369af526d2ecdd196963abdbaf7e4e8b4526ac",
+    "build.log": "52ff2c1c2f4a859dc3f75f4c92e3997f9a896e3085bb9f01c093de3dbc1b1ced",
+    "eslint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "focused.log": "79ebc5830a485434219d7b3552c9c26c0932eda0fbaaa9967c8e95bf8260eb6b",
+    "quote.log": "22f3fb8fd4d4481c5eeb44e2bceecf00919d98cbe1b3738345b52035b7be39ef"
+  }
+}

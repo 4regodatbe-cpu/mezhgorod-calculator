@@ -1,0 +1,142 @@
+{
+  "caseId": "dnr-гранитное-saint-petersburg-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/2026-10-15T11-56-56-059Z-capture.json.gz",
+  "captureSha256": "0493305d255cfc779f4d2b7f15e5c4fb7161b80857f3af75a4c57567a6df3cb1",
+  "traceComplete": true,
+  "boothEventCoverage": "complete",
+  "zsdPaidEdgeCount": 28,
+  "uniqueWayIds": [
+    "1122966006",
+    "1122966005",
+    "1122966004",
+    "400111354",
+    "400111351",
+    "31369306",
+    "28934684",
+    "465117517",
+    "80056742",
+    "139658547",
+    "461676671",
+    "80056745",
+    "721628540",
+    "80056716",
+    "381576632",
+    "381576631",
+    "123709500",
+    "123709505",
+    "183912267",
+    "397223751",
+    "397223752",
+    "397223749",
+    "183912268",
+    "85763340",
+    "223744446",
+    "721628541"
+  ],
+  "outsideReviewedZone1": [
+    "381576632",
+    "381576631",
+    "123709500",
+    "123709505",
+    "183912267",
+    "397223751",
+    "397223752",
+    "397223749",
+    "183912268",
+    "85763340",
+    "223744446",
+    "721628541"
+  ],
+  "selectedZsdBooths": [
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 15,
+      "edgeToll": true,
+      "beginShapeIndex": 48,
+      "endShapeIndex": 49
+    }
+  ],
+  "primaryGate": {
+    "id": "933974870",
+    "visible": "true",
+    "version": "5",
+    "changeset": "169404337",
+    "timestamp": "2025-07-24T14:56:45Z",
+    "user": "Anton Cheloshkin",
+    "uid": "2071484",
+    "lat": "59.8722130",
+    "lon": "30.2955029"
+  },
+  "primaryGateTags": {
+    "barrier": "toll_booth",
+    "name": "ПВП 5",
+    "source": "https://i.47news.ru/titles/2023/04//20230427_98wezn58i9bolcwbgve9.jpg"
+  },
+  "directionalGateWay": {
+    "id": "381576632",
+    "nodes": [
+      "3847689344",
+      "933974870",
+      "3847689346"
+    ],
+    "tags": {
+      "check_date": "2012-10-10",
+      "covered": "yes",
+      "description": "правое направление (на север)",
+      "highway": "motorway",
+      "lanes": "10",
+      "lit": "yes",
+      "maxspeed": "40",
+      "name": "ЗСД",
+      "name:en": "Western High-Speed Diameter",
+      "name:ru": "ЗСД",
+      "oneway": "yes",
+      "source": "survey",
+      "surface": "asphalt",
+      "surface:grade": "3",
+      "toll": "yes"
+    }
+  },
+  "selectedExitManeuvers": [
+    {
+      "instruction": "Сверните на съезде к ЗСД.",
+      "street_names": [
+        "ЗСД"
+      ],
+      "begin_shape_index": 11835,
+      "end_shape_index": 11964
+    },
+    {
+      "instruction": "Держитесь правее к набережная Обводного канала/Двинская улица.",
+      "street_names": null,
+      "begin_shape_index": 11964,
+      "end_shape_index": 11966
+    },
+    {
+      "instruction": "Держитесь прямо, чтобы заехать на въезд.",
+      "street_names": null,
+      "begin_shape_index": 11966,
+      "end_shape_index": 11992
+    },
+    {
+      "instruction": "Поверните налево на набережная реки Екатерингофки.",
+      "street_names": [
+        "набережная реки Екатерингофки"
+      ],
+      "begin_shape_index": 11992,
+      "end_shape_index": 12015
+    }
+  ],
+  "sourceHashes": {
+    "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/selected-paid-ways.osm.gz": "327c5bdd61576e414184ef2d6b2fbebfab71cc32cb7589a55c5fd98ab1a3b954",
+    "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/selected-paid-nodes.osm.gz": "debfe6e45d6c51554d2710b83068f206ffbf93cf9f4b3bc4d9aa3bdfdbd0a8c5",
+    "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/whsd-owner-tariffs.html": "02f1f3eb15f566831bc83bfc9599c17a5520a97a752bc2735d832f7a9308aad5",
+    "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-15-zone1/whsd-owner-rules.html": "7fc16154f626d7596c6f12ec6f85e3db1d70b7b63c58981bcf18e2cace9cc4e7"
+  },
+  "result": "additional_northbound_main_gate_outside_zone1_review_confirmed_not_missing_an_alias",
+  "numericFarePromoted": false
+}

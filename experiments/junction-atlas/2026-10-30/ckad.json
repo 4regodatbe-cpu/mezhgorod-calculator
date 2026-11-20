@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "road": "CKAD",
+  "date": "2026-10-30",
+  "mode": "research_only_not_runtime",
+  "sources": [
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/ckad-way1080462753-full.json",
+      "sha256": "f471a35662e894d7f6e81b8de320d0f5512fcb3a3c5be8c7be57bb0ea7942bdf"
+    },
+    {
+      "path": "experiments/road-ref-boundaries/checks/2026-10-29-stage-c/c4-ckad.json",
+      "sha256": "d3413dd00418d1aa698e4d0ca33cb516b418696f9873c1a1ef116f5357ae6ec8"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/ckad-local-short-route-accessibility.txt",
+      "sha256": "391c34ef54e2cebd68afe11bd5dab92c5aa2774c10146b96c413c74b33b91fa4"
+    },
+    {
+      "path": "experiments/junction-atlas/2026-10-30/raw/ckad-local-osm-z15-19752-10264.png",
+      "sha256": "cb60a69d39422765df15664a2caec127ddbe589fb4a5abf803db51399dd2fa1f"
+    }
+  ],
+  "points": [
+    {
+      "id": "CKAD-9903493812",
+      "road": "CKAD",
+      "kind": "technical",
+      "title": "Начало точного OSMway внутри сохранённого блока",
+      "position": {
+        "lat": 55.6268814,
+        "lon": 37.0111477
+      },
+      "direction": "selected_southbound_A113",
+      "osm": {
+        "nodeId": "9903493812",
+        "wayIds": [
+          "1080462753"
+        ]
+      },
+      "crossingRoads": [
+        "А-113/ЦКАД"
+      ],
+      "coordinateSource": {
+        "path": "experiments/junction-atlas/2026-10-30/raw/ckad-way1080462753-full.json",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=37.0111477%2C55.6268814&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "inspected local A113 raster, not operator free-domain boundary",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null
+    },
+    {
+      "id": "CKAD-12443433262",
+      "road": "CKAD",
+      "kind": "technical",
+      "title": "Рамка по OSM; не доказательство отдельной оплаты",
+      "position": {
+        "lat": 55.6254417,
+        "lon": 37.0099022
+      },
+      "direction": "selected_southbound_A113",
+      "osm": {
+        "nodeId": "12443433262",
+        "wayIds": [
+          "1080462753"
+        ]
+      },
+      "crossingRoads": [
+        "А-113/ЦКАД"
+      ],
+      "coordinateSource": {
+        "path": "experiments/junction-atlas/2026-10-30/raw/ckad-way1080462753-full.json",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=37.0099022%2C55.6254417&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "inspected local A113 raster, not operator free-domain boundary",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null
+    },
+    {
+      "id": "CKAD-9903493803",
+      "road": "CKAD",
+      "kind": "technical",
+      "title": "Конец точного OSMway внутри сохранённого блока",
+      "position": {
+        "lat": 55.6222701,
+        "lon": 37.0105657
+      },
+      "direction": "selected_southbound_A113",
+      "osm": {
+        "nodeId": "9903493803",
+        "wayIds": [
+          "1080462753"
+        ]
+      },
+      "crossingRoads": [
+        "А-113/ЦКАД"
+      ],
+      "coordinateSource": {
+        "path": "experiments/junction-atlas/2026-10-30/raw/ckad-way1080462753-full.json",
+        "field": "original OSM node lat/lon, not a map centre or operator chainage"
+      },
+      "mapUrl": "https://yandex.ru/maps/?ll=37.0105657%2C55.6222701&z=18",
+      "operatorScheme": null,
+      "evidence": {
+        "coordinate": "original OSM node",
+        "visual": "inspected local A113 raster, not operator free-domain boundary",
+        "operatorTariffBoundary": "unknown"
+      },
+      "tariffPair": null,
+      "priceRub": null
+    }
+  ],
+  "newTariffBindings": 0,
+  "appRuntimeChanged": false,
+  "directedWay": {
+    "wayId": "1080462753",
+    "nodeOrder": [
+      "9903493812",
+      "12443433262",
+      "12495639627",
+      "9903493811",
+      "9903493810",
+      "9903493809",
+      "9903493808",
+      "9903493807",
+      "9903493806",
+      "9903493805",
+      "9903493804",
+      "9903493803"
+    ],
+    "tags": {
+      "fee": "yes",
+      "highway": "trunk",
+      "lanes": "2",
+      "lit": "yes",
+      "maxspeed": "RU:urban",
+      "name": "Центральная кольцевая автомобильная дорога",
+      "oneway": "yes",
+      "ref": "А-113",
+      "short_name": "ЦКАД",
+      "surface": "asphalt",
+      "toll": "yes"
+    }
+  },
+  "mapControl": {
+    "meters": 570,
+    "minutes": 1,
+    "fromLabel": "ЦКАД,275-й километр",
+    "toLabel": "ЦКАД,274-й километр",
+    "status": "SHORT_CONTROL_CONSTRUCTED",
+    "operatorChainageCertified": false
+  },
+  "operatorGap": "General PK5 free status is retained; this exact block still lacks an official free-domain crosswalk or payable pair. OSM fee/toll and map address km cannot establish a charge or zero.",
+  "geographyStatus": "Exact gantry and parent-way coordinates/order bound to the retained contiguous block; endpoints are not separately proven interchange or operator endpoints."
+}

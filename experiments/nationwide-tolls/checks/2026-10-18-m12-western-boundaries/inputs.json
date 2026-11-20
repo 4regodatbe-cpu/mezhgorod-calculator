@@ -1,0 +1,65 @@
+{
+  "sourceCommit": "d497df67738696dbe9c11e4dc14e617717ea1a2a",
+  "scope": "M12 western physical gantries and two distinct selected exits; reuse proved CKAD entry",
+  "caseIds": [
+    "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+    "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary"
+  ],
+  "sourceHashes": {
+    "experiments/nationwide-tolls/checks/2026-10-17-selected-osrm-m12-ckad-scope/summary.json": "d138da5624a7f6c80dddfe5ede49f105fca33189aad842acbdda3ec4a28cc347",
+    "experiments/nationwide-tolls/checks/2026-10-17-selected-osrm-m12-ckad-scope/cases/max-chain-m12-ckad-m11-zsd-prim-to-arzamas.json": "9c671c44e053cb6d1bdba686186bf09075fde123f75fe9b34d3e82d1454561ef",
+    "experiments/nationwide-tolls/checks/2026-10-17-selected-osrm-m12-ckad-scope/cases/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary.json": "f3b7b552bd4c91d916a9132330130bae006e421b2c0fe86bb91fc4c44c278c6b",
+    "experiments/nationwide-tolls/checks/2026-10-17-ckad-m11-m12/summary.json": "2ca9b8836ee2ef4be46d7da3bdf2cf03f4ee6a1fdeed1126e3d140aec7a1cd76",
+    "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/physical-directed.json": "950990d1f8ce69bffae5ffff5c5fc8db9c80ddbfb4f2deab1d2e6f238b3fca03",
+    "experiments/nationwide-tolls/source-snapshots/m12-order302-2026-10-08-category1-direct-pair-matrix.json": "46beac44bd56e8493665134fdaf328a8ff2951d36ccf9743cbf2d2cf98687dda",
+    "data/tolls/m12-rvp-evidence-2026-09-30.json": "22270ffce7320613c7b631095d3e38b26db5c05aad741adbad4372f9cf77f9e9",
+    "data/fixtures/m12-osm-5a2-limited.json": "697a8fa4ee2321d8bb4a30555341bc9f70f56069c8fdff473d85f82817b17c5c"
+  },
+  "primaryUrls": [
+    "https://api.openstreetmap.org/api/0.6/node/10782165529",
+    "https://api.openstreetmap.org/api/0.6/node/11214930528",
+    "https://api.openstreetmap.org/api/0.6/node/11157985901",
+    "https://api.openstreetmap.org/api/0.6/way/1550135076/full",
+    "https://api.openstreetmap.org/api/0.6/way/1550561305/full",
+    "https://api.openstreetmap.org/api/0.6/way/1206479738/full",
+    "https://api.openstreetmap.org/api/0.6/way/972809728/full",
+    "https://api.openstreetmap.org/api/0.6/way/972809720/full",
+    "https://api.openstreetmap.org/api/0.6/way/292501171/full"
+  ],
+  "limits": {
+    "osmGets": 9,
+    "perGetMs": 15000,
+    "wholeCaptureMs": 120000,
+    "stopOnFirstHttpOrNetworkFailure": true,
+    "newRoutingRequests": 0,
+    "newTraceRequests": 0,
+    "operatorSearchQueries": 2,
+    "operatorPageOpens": 4
+  },
+  "operatorQueries": [
+    {
+      "q": "М-12 рамки взимания платы 81 118 174",
+      "domains": [
+        "avtodor-tr.ru",
+        "russianhighways.ru",
+        "avto-dor.ru"
+      ]
+    },
+    {
+      "q": "М-12 развязка Владимир М-7 Арзамас Р-158 421",
+      "domains": [
+        "avtodor-tr.ru",
+        "russianhighways.ru",
+        "avto-dor.ru"
+      ]
+    }
+  ],
+  "existingPrimaryEntry": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-17-m11-m12-binding/README.md",
+  "rejectedShortcuts": [
+    "assigning81/118/174 from coordinate order or distance alone",
+    "city destination as toll exit",
+    "widening80m/calibration2.5km thresholds",
+    "assuming2952/1239 apply before proving exact operator boundaries"
+  ],
+  "outcomeRule": "Only apply a finished existing matrix pair after independent physical-to-operator proof. Otherwise record exact blocker; do not broaden source search or invent a fare."
+}

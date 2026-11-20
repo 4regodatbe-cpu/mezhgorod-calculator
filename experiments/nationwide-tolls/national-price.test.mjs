@@ -19,7 +19,7 @@ test("Kazan peak starts 06:30",()=>assert.equal(q(registry,req("voznesensky",["v
 test("Kazan peak ends at 19:30",()=>assert.equal(q(registry,req("voznesensky",["voznesensky-rvp"],{dayClass:"verified_workday",moscowPassageTime:"19:30",timeSource:"same_route_estimated_passage"})).amountRub,90));
 test("Kazan weekend peak remains 90",()=>assert.equal(q(registry,req("voznesensky",["voznesensky-rvp"],{dayClass:"verified_weekend_or_holiday",moscowPassageTime:"08:30",timeSource:"same_route_estimated_passage"})).amountRub,90));
 test("Kazan unknown holiday state returns unknown",()=>assert.equal(q(registry,req("voznesensky",["voznesensky-rvp"],{moscowPassageTime:"08:30",timeSource:"same_route_estimated_passage"})).amountRub,null));
-test("M1 official category-I no-transponder rate is 250 (230 is the transponder column)",()=>assert.equal(q(registry,req("m1",["m1-33-66"],{operatorProfile:"all",calendarSource:"verified_operator_schedule"})).amountRub,250));
+test("M1 candidate Order54 category-I rate is 230; same category-I base is used without a transponder",()=>assert.equal(q(registry,req("m1",["m1-33-66"],{operatorProfile:"all",calendarSource:"verified_operator_schedule"})).amountRub,230));
 test("M3 verified monThu two-section fare",()=>assert.equal(q(registry,req("m3",["m3-65-86","m3-112-150"],{operatorProfile:"monThu",calendarSource:"verified_operator_schedule"})).amountRub,290));
 test("M3 FriSun category-I PVP86+136 is 290",()=>assert.equal(q(registry,req("m3",["m3-65-86","m3-112-150"],{operatorProfile:"friSun",calendarSource:"verified_operator_schedule"})).amountRub,290));
 test("M3 no period proof unknown",()=>assert.equal(q(registry,req("m3",["m3-65-86"])).amountRub,null));
@@ -64,9 +64,9 @@ test("national route with unregistered paid road fails closed",()=>{const x=allT
 test("national route rejects repeated billable traversal identities",()=>{const x=allTrip([{...req("bagration",["bagration-camera-6.6"]),traversalId:"a"},{...req("ufa-east",["ufa-east-pvp"]),traversalId:"a"}]);assert.equal(total(registry,x).amountRub,null)});
 test("national route cannot reuse proof from another selected route",()=>{const x=allTrip([{...req("bagration",["bagration-camera-6.6"]),traversalId:"a",proof:{...req("bagration",["bagration-camera-6.6"]).proof,routeId:"another"}}]);assert.equal(total(registry,x).amountRub,null)});
 
-test("M1 operator order 54 valid Oct10 2026 category-I no-transponder 250 Rub",()=>{
+test("M1 candidate Order54 valid Oct10 2026 category-I no-transponder 230 Rub",()=>{
  const x=req("m1",["m1-33-66"],{operatorProfile:"all",calendarSource:"verified_operator_schedule"});
- x.tariffDate="2026-10-10";assert.equal(q(registry,x).amountRub,250);
+ x.tariffDate="2026-10-10";assert.equal(q(registry,x).amountRub,230);
 });
 test("M1 dated order began March 2 2026; March 1 rejected",()=>{
  const x=req("m1",["m1-33-66"],{operatorProfile:"all",calendarSource:"verified_operator_schedule"});

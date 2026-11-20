@@ -1,0 +1,159 @@
+{
+  "caseId": "single-m3-kaluga-to-balabanovo",
+  "mode": "live",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 94744,
+      "seconds": 4934
+    },
+    {
+      "name": "OSRM",
+      "meters": 86918,
+      "seconds": 4711
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 86918,
+  "routeSeconds": 4711,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 36.2612,
+          "lat": 54.5138
+        },
+        {
+          "lng": 36.658,
+          "lat": 55.178
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "m3"
+    ],
+    "provenRoads": [
+      "m3"
+    ],
+    "missingExpectedRoads": [],
+    "status": "traversal-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "m3",
+      "kind": "selected-paid-edge",
+      "wayId": "1067506794",
+      "names": [
+        "М-3",
+        "E 101",
+        "«Украина»"
+      ]
+    },
+    {
+      "road": "m3",
+      "kind": "selected-paid-edge",
+      "wayId": "713888632",
+      "names": [
+        "М-3",
+        "E 101",
+        "«Украина»"
+      ]
+    },
+    {
+      "road": "m3",
+      "kind": "selected-paid-edge",
+      "wayId": "540179442",
+      "names": [
+        "М-3",
+        "E 101",
+        "«Украина»"
+      ]
+    },
+    {
+      "road": "m3",
+      "kind": "selected-booth-name",
+      "osmNodeId": "4780909557"
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "m3": {
+      "occurrences": 14,
+      "uniqueWays": 7
+    }
+  },
+  "replayIntegrity": null,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m3-kaluga-to-balabanovo/2026-10-16T02-01-27-964Z-capture.json.gz",
+  "captureSha256": "4c124ffb18a73a506607012b9fc8e5af5ce3737844081e70a23f9df690c39262",
+  "detectedRoadComponents": [
+    {
+      "id": "m3",
+      "amount": null,
+      "reason": "m3_engine_not_yet_composed"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-3",
+    "E 101",
+    "«Украина»"
+  ],
+  "tollNodeIds": [
+    "4780909557"
+  ],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m3",
+      "m3: m3_engine_not_yet_composed"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [],
+    "missing": [
+      "m3"
+    ],
+    "components": [
+      {
+        "id": "m3",
+        "detected": true,
+        "tolls": null,
+        "reason": "m3_engine_not_yet_composed"
+      }
+    ]
+  }
+}

@@ -5,5 +5,15 @@
     "deploymentEnabled": {
       "fix-systemic-toll-composition": false
     }
+  },
+  "functions": {
+    "app/api/suggest/route.ts": {
+      "regions": ["fra1"],
+      "supportsCancellation": true
+    },
+    "app/r/route.ts": {
+      "regions": ["fra1"],
+      "supportsCancellation": true
+    }
   }
 }

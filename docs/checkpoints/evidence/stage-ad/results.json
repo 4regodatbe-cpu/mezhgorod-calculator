@@ -1,0 +1,152 @@
+{
+  "kind": "LOCAL_BUILT_UI_CONTROLLED_API",
+  "sourceSha": "e4e070c8fb24b6e415029c31f4e4b2827ef010d0",
+  "results": [
+    {
+      "viewport": "desktop",
+      "name": "01 empty calculate disabled",
+      "status": "PASS"
+    },
+    {
+      "viewport": "desktop",
+      "name": "02 select A",
+      "status": "PASS"
+    },
+    {
+      "viewport": "desktop",
+      "name": "03 select B",
+      "status": "PASS"
+    },
+    {
+      "viewport": "desktop",
+      "name": "04 street refinement controlled",
+      "status": "PASS"
+    },
+    {
+      "viewport": "desktop",
+      "name": "05 clear A preserves B",
+      "status": "PASS"
+    },
+    {
+      "viewport": "desktop",
+      "name": "06 reselect A preserves B",
+      "status": "PASS"
+    },
+    {
+      "viewport": "desktop",
+      "name": "07 clear B preserves A",
+      "status": "PASS"
+    },
+    {
+      "viewport": "desktop",
+      "name": "08 reverse",
+      "status": "PASS"
+    },
+    {
+      "viewport": "desktop",
+      "name": "09 calculation and day duration",
+      "status": "PASS"
+    },
+    {
+      "viewport": "desktop",
+      "name": "10 upstream error",
+      "status": "PASS"
+    },
+    {
+      "viewport": "desktop",
+      "name": "11 retry succeeds",
+      "status": "PASS"
+    },
+    {
+      "viewport": "desktop",
+      "name": "12 clear cancels pending",
+      "status": "PASS"
+    },
+    {
+      "viewport": "desktop",
+      "name": "13 late response cannot restore result",
+      "status": "PASS"
+    },
+    {
+      "viewport": "desktop",
+      "name": "14 repeat and layout",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile",
+      "name": "01 empty calculate disabled",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile",
+      "name": "02 select A",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile",
+      "name": "03 select B",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile",
+      "name": "04 street refinement controlled",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile",
+      "name": "05 clear A preserves B",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile",
+      "name": "06 reselect A preserves B",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile",
+      "name": "07 clear B preserves A",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile",
+      "name": "08 reverse",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile",
+      "name": "09 calculation and day duration",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile",
+      "name": "10 upstream error",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile",
+      "name": "11 retry succeeds",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile",
+      "name": "12 clear cancels pending",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile",
+      "name": "13 late response cannot restore result",
+      "status": "PASS"
+    },
+    {
+      "viewport": "mobile",
+      "name": "14 repeat and layout",
+      "status": "PASS"
+    }
+  ],
+  "liveProviders": "NOT_RUN",
+  "version": {
+    "commit": "e4e070c8fb24b6e415029c31f4e4b2827ef010d0",
+    "environment": null,
+    "generatedAt": "2026-11-07T13:56:01.265Z"
+  }
+}

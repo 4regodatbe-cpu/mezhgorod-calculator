@@ -1,0 +1,14 @@
+✔ E4 confirmed full toll label is exact and has no approximate suffix (5.294309ms)
+✔ E4 estimated full toll label has explicit approximation and applies only to tolls (0.440437ms)
+✔ E4 unknown full total displays clarified status and non-additive partial explanation (0.285773ms)
+✔ E4 disabled shadow view does not replace existing strict presentation (0.173063ms)
+✔ E4 insufficient state cannot accidentally publish a stale numeric total (0.269053ms)
+✔ E4 standalone responsive markup escapes source text and stays visibly local/offline (0.696065ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 323.896112

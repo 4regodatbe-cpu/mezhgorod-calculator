@@ -1,0 +1,48 @@
+{
+  "status": "DONE",
+  "fingerprint": "1ea03b40cb54472b3b95aaeff95abe0b685000471b8c5f77855dc20f67798cbf",
+  "caseId": "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+  "capturePath": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/2026-10-16T01-21-31-631Z-capture.json.gz",
+  "captureGitBlob": "fa8c1b70d52138c59fcc5d8055d09e3eb020a297",
+  "captureSha256": "ce2577c835f8a5321dcff6be9717084452234bc4512683fd59fb7085b1f6fdcf",
+  "provider": "Valhalla",
+  "routeMeters": 1380434,
+  "routeSeconds": 53656,
+  "completeOwnCapture": true,
+  "gateIndex": 5013.001260747911,
+  "profiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "physicalResolved": true,
+      "boundariesResolved": true,
+      "from": "tskad",
+      "to": "solnechnogorsk",
+      "headRub": 280,
+      "headReason": "m11_head_ready_direct_pair_at_departure",
+      "headWithoutSelectedGateValidation": null,
+      "m11SubtotalRub": 4180,
+      "wholeTripEvaluated": false
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "physicalResolved": true,
+      "boundariesResolved": true,
+      "from": "tskad",
+      "to": "solnechnogorsk",
+      "headRub": 320,
+      "headReason": "m11_head_ready_direct_pair_at_departure",
+      "headWithoutSelectedGateValidation": null,
+      "m11SubtotalRub": 4520,
+      "wholeTripEvaluated": false
+    }
+  ],
+  "negativeChecks": {
+    "reverseRejected": true,
+    "incompleteRejected": true,
+    "absentGateRejected": true
+  },
+  "recoveredHeadComponent": true,
+  "outcome": "fixed_and_verified_for_this_own_capture",
+  "confirmedWholeTripFares": 0,
+  "networkCalls": 0
+}

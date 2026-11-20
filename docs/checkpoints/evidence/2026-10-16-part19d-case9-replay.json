@@ -1,0 +1,170 @@
+{
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-voronezh/2026-10-16T00-10-53-930Z-capture.json.gz",
+  "captureSha256": "db7ce8f0d256d7e2583644611c3a00adae58c5367735a146a4f9005867b9404a",
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-voronezh/replay-2026-10-15T09-00-00-03-00-2026-10-16T08-57-33-461Z.json",
+      "sha256": "d72b644d33d68e65435a1b9e48cc9ffb1c73503ae2b599f252a06d29a7eb75f4",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "provider": "OSRM",
+      "routeMeters": 1026560,
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "понедельник–четверг",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "audit": {
+        "status": "unknown",
+        "priced": [
+          "a289",
+          "krasnodar-west-bypass"
+        ],
+        "missing": [
+          "m4"
+        ],
+        "components": [
+          {
+            "id": "m4",
+            "detected": true,
+            "tolls": null,
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          {
+            "id": "a289",
+            "detected": true,
+            "tolls": {
+              "amount": 800,
+              "weekdayAmount": 800,
+              "weekendAmount": 800,
+              "period": "все дни",
+              "segments": [
+                "А-289: TamanBridge → Maryanskaya: 800 ₽"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "A-289 selected-route OD vector"
+          },
+          {
+            "id": "krasnodar-west-bypass",
+            "detected": true,
+            "tolls": {
+              "amount": 410,
+              "weekdayAmount": 410,
+              "weekendAmount": 410,
+              "period": "понедельник–четверг",
+              "confidence": "matched",
+              "segments": [
+                "М-4: Дальний западный обход Краснодара: 51 → 0: 410 ₽ · Стоимость не подтверждена"
+              ]
+            },
+            "reason": "dzok_ready_matrix_pair_unconfirmed_route_binding"
+          }
+        ]
+      },
+      "m4": {
+        "status": "boundaries_resolved",
+        "reason": null,
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 2,
+        "confirmedPvps": [
+          "m4-1223",
+          "m4-545"
+        ],
+        "diagnosticOnly": true
+      }
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-voronezh/replay-2026-10-17T09-00-00-03-00-2026-10-16T08-57-34-384Z.json",
+      "sha256": "3aac9fcafe4e57c0b50b646744425f279f99eb7559d6b367643e4fae507c44a8",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "provider": "OSRM",
+      "routeMeters": 1026560,
+      "tolls": {
+        "amount": null,
+        "weekdayAmount": null,
+        "weekendAmount": null,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+        ],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "unknown"
+      },
+      "audit": {
+        "status": "unknown",
+        "priced": [
+          "a289",
+          "krasnodar-west-bypass"
+        ],
+        "missing": [
+          "m4"
+        ],
+        "components": [
+          {
+            "id": "m4",
+            "detected": true,
+            "tolls": null,
+            "reason": "M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_endpoint_matrix_missing-current-exact-fare"
+          },
+          {
+            "id": "a289",
+            "detected": true,
+            "tolls": {
+              "amount": 800,
+              "weekdayAmount": 800,
+              "weekendAmount": 800,
+              "period": "все дни",
+              "segments": [
+                "А-289: TamanBridge → Maryanskaya: 800 ₽"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "A-289 selected-route OD vector"
+          },
+          {
+            "id": "krasnodar-west-bypass",
+            "detected": true,
+            "tolls": {
+              "amount": 410,
+              "weekdayAmount": 410,
+              "weekendAmount": 410,
+              "period": "пятница–воскресенье",
+              "confidence": "matched",
+              "segments": [
+                "М-4: Дальний западный обход Краснодара: 51 → 0: 410 ₽ · Стоимость не подтверждена"
+              ]
+            },
+            "reason": "dzok_ready_matrix_pair_unconfirmed_route_binding"
+          }
+        ]
+      },
+      "m4": {
+        "status": "boundaries_resolved",
+        "reason": null,
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 2,
+        "confirmedPvps": [
+          "m4-1223",
+          "m4-545"
+        ],
+        "diagnosticOnly": true
+      }
+    }
+  ],
+  "next": "pair-m4-a289-taman-to-voronezh",
+  "checked": 8
+}

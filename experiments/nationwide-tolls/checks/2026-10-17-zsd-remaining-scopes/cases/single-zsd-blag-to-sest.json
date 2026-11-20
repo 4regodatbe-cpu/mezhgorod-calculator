@@ -1,0 +1,123 @@
+{
+  "caseId": "single-zsd-blag-to-sest",
+  "sourceHead": "97d165fe4d071e68d2a30b341babc16fb1c2af56",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-blag-to-sest/2026-10-16T02-10-00-890Z-capture.json.gz",
+  "captureSha256": "77a2eb49ca1cf11d3ec016d2ae428a727d3c92e1fa9a481caf859f73c643dd0e",
+  "priorResultPath": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/single-zsd-blag-to-sest.json",
+  "priorResultSha256": "fbb1b7c7327ef7c72b1f228de8d9dd21106e824ac5b80c8b39b2ade9fb11f8e6",
+  "fingerprint": "94943ad7caf714125fff0505bfaaab356360e7dfa5392eed5e7a516373ae41af",
+  "selectedProvider": "OSRM",
+  "selectedProviderGeometryIdentity": "exact",
+  "coordinateCount": 656,
+  "selectedProviderSteps": [
+    {
+      "name": "",
+      "maneuver": {
+        "bearing_after": 279,
+        "bearing_before": 270,
+        "location": [
+          30.298599,
+          59.875594
+        ],
+        "modifier": "straight",
+        "type": "new name"
+      },
+      "distance": 79.3
+    },
+    {
+      "name": "",
+      "destinations": "Зсд, 1–й и 2–й районы Порта",
+      "maneuver": {
+        "bearing_after": 275,
+        "bearing_before": 267,
+        "location": [
+          30.297188,
+          59.875594
+        ],
+        "modifier": "slight right",
+        "type": "fork"
+      },
+      "distance": 714.6
+    },
+    {
+      "name": "ЗСД",
+      "maneuver": {
+        "bearing_after": 298,
+        "bearing_before": 293,
+        "location": [
+          30.289987,
+          59.880341
+        ],
+        "modifier": "slight left",
+        "type": "merge"
+      },
+      "distance": 24367.2
+    },
+    {
+      "name": "ЗСД",
+      "maneuver": {
+        "bearing_after": 334,
+        "bearing_before": 341,
+        "location": [
+          30.150759,
+          60.047377
+        ],
+        "modifier": "slight left",
+        "type": "turn"
+      },
+      "distance": 1338.4
+    },
+    {
+      "name": "",
+      "destinations": "Левашовское ш., КАД, Приморское ш.",
+      "maneuver": {
+        "bearing_after": 347,
+        "bearing_before": 344,
+        "location": [
+          30.14377,
+          60.058867
+        ],
+        "modifier": "slight right",
+        "type": "off ramp"
+      },
+      "distance": 1249.8
+    }
+  ],
+  "traceComplete": true,
+  "boothCoverage": "complete",
+  "recordedZsdBooths": [
+    {
+      "osmNodeId": "1766158809",
+      "wayId": "458501110",
+      "edgeToll": true
+    }
+  ],
+  "scopeReview": "Благодатная, въезд на север → КАД-север",
+  "ownerZoneCandidateOnly": "entry2–exit4",
+  "outcome": "blocked_by_missing_reliable_data",
+  "readyTariffRub": null,
+  "newPricedComponents": 0,
+  "priorComponentProfiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1",
+      "componentResult": "unknown",
+      "segments": []
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1",
+      "componentResult": "unknown",
+      "segments": []
+    }
+  ],
+  "newComponentDateChecks": 0,
+  "newLiveRouteRequests": 0,
+  "newFullRouteReplays": 0,
+  "reentryProof": [],
+  "separateInterchangeGantryEvidence": [],
+  "traceIndexLimit": "Do not apply trace end_shape_index to input shape: matched trace indices differ. No such coordinate mapping used.",
+  "missing": "Primary directed cash/card collection bundle for these entry/exit boundaries; separate interchange fee where applicable."
+}

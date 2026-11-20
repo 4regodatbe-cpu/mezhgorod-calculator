@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:34:47.648Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 150,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 10,
+    "spec": {
+      "caseId": "triple-m4-m11-zsd-krasnodar-to-sest",
+      "kind": "road",
+      "group": "triple-m4-m11-zsd"
+    }
+  },
+  "caseId": "triple-m4-m11-zsd-krasnodar-to-sest",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-34-47-648Z-part10",
+  "parent": "b0f475f940be2008386ac6e1496d1fd9c373e332"
+}

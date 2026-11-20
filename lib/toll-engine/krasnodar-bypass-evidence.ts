@@ -2,6 +2,12 @@ import snapshot from '../../experiments/nationwide-tolls/source-snapshots/dzok/2
 import {haversineKm, nearestSegment} from './m11-moscow-geometry';
 import type {Coordinate} from '../tolls';
 
+/** Directional routing controls on the paid carriageway, not a city-centre via. */
+export function krasnodarBypassControls(towardsM4:boolean) {
+ const gate=snapshot.gates.find(g=>g.from===(towardsM4?'51':'0') && g.to===(towardsM4?'0':'51'))!;
+ return [gate.before,gate.gate,gate.after].map(p=>({lat:p.lat,lng:p.lon}));
+}
+
 /** One open-system plaza, charged once. Long straight chords and a city/road
  * label alone cannot prove crossing its directional carriageway. */
 export function inspectKrasnodarBypass(route:readonly Coordinate[]) {

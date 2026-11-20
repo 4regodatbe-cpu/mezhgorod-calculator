@@ -1,0 +1,83 @@
+✔ E5 comparable bound uses actual same-product matrix cells, never a whole-route benchmark (8.720618ms)
+✔ E5 reverse matrix quote must be resolved independently, a northbound quote cannot be inherited (1.080688ms)
+✔ E5 road-specific midnight and night calendars remain departure-based, not a global weekend or arrival profile (2.469489ms)
+✔ E5 actual sample atomic M4 and ZSD coverage blocks aggregate plus partial duplicate charges (128.616063ms)
+✔ E5 a blocked map/product scope cannot acquire a price merely because comparable tariffs exist (0.683372ms)
+✔ E2 disabled module passes strict object through without activating estimates (1.293785ms)
+✔ E2 fully confirmed complete route retains exact total (1.125217ms)
+✔ E2 one and multiple working estimates mark only the complete toll total as estimated (1.440699ms)
+✔ E2 mixed roads sum confirmed and estimated components without relabelling strict input (0.341168ms)
+✔ E2 insufficient product data never turns known subtotal into a full total (0.744064ms)
+✔ E2 comparable upper bound requires a documented exhaustive same-product candidate set (0.407513ms)
+✔ E2 incompatible road direction category payment product profile or date cannot be a convenient estimate (0.458075ms)
+✔ E2 duplicate and aggregate-overlap protection rejects double charging (0.227203ms)
+✔ E2 unsafe route scope malformed date and unknown zero remain insufficient (0.469565ms)
+✔ E2 confirmed strict conflict and unsafe arithmetic never overwrite an existing confirmed calculation (0.462715ms)
+✔ E2 resolved component profile at departure cannot be replaced by another quote profile (0.246614ms)
+✔ E2 local work limits return structured insufficient instead of unbounded candidate evaluation (0.214248ms)
+✔ saved Arzamas destination is Saint Petersburg Primorsky avenue, not Primorsk town (22.65045ms)
+✔ actual saved CKAD M7→M11 selects category I direct941, not M12→M11=981 or category II (31.407316ms)
+✔ two exact ZSD plazas and exit are retained;900 hypothesis is not a usable quote (15.69272ms)
+✔ CKAD adds941 to both date subtotals without promoting incomplete6928/7268 to whole fare (135.22611ms)
+✔ recovered CKAD cannot bypass disabled default or overlap guards (106.13956ms)
+✖ E4 confirmed full toll label is exact and has no approximate suffix (0.968524ms)
+✔ E4 estimated full toll label has explicit approximation and applies only to tolls (3.960327ms)
+✔ E4 unknown full total displays clarified status and non-additive partial explanation (0.401899ms)
+✖ E4 disabled shadow view does not replace existing strict presentation (0.158185ms)
+✔ E4 insufficient state cannot accidentally publish a stale numeric total (0.265661ms)
+✖ E4 standalone responsive markup escapes source text and stays visibly local/offline (0.3129ms)
+✔ E3 full saved multi-road total retained exactly and explicitly graded estimated (1.844856ms)
+✔ E3 missing CKAD/ZSD does not turn5987 or6327 into a complete route estimate (0.396275ms)
+✔ E practical recovery: derived ZSD600 is estimated without rewriting original strict status/source/amount (0.279855ms)
+✔ E3 selected geometry strict snapshots and departure calendars remain source-bound without network (0.188873ms)
+✔ E3 report counts three distinct retained routes, not six evaluations or synthetic estimates (106.494216ms)
+✔ previously unknown Torzhok→Kazan has source-bound full shadow5904Thu/6084Sat, not strict repricing (0.8155ms)
+✔ southbound M11 head uses actual reverse200/240 and mainline1250/1390, not forward280/320 (0.218207ms)
+✔ all eight retained trace chunks and both formerly unmapped plazas are source-covered once (0.205657ms)
+✔ M12 retained3513 is explicitly working-grade, not new endpoint certification (0.284688ms)
+✔ no full estimate if any recovered component lacks evidence or extra unknown product is present (1.982638ms)
+✔ default remains off and M11 head cannot be counted twice (0.187368ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 36
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2442.197326
+
+✖ failing tests:
+
+test at experiments/toll-estimates/presentation.test.ts:8:1
+✖ E4 confirmed full toll label is exact and has no approximate suffix (0.968524ms)
+  TypeError: Cannot read properties of undefined (reading 'result')
+      at TestContext.<anonymous> (file:///workspace/geonames-preview-publish-fc83523/experiments/toll-estimates/presentation.test.ts:9:37)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+
+test at experiments/toll-estimates/presentation.test.ts:17:1
+✖ E4 disabled shadow view does not replace existing strict presentation (0.158185ms)
+  TypeError: Cannot read properties of undefined (reading 'result')
+      at TestContext.<anonymous> (file:///workspace/geonames-preview-publish-fc83523/experiments/toll-estimates/presentation.test.ts:18:41)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at experiments/toll-estimates/presentation.test.ts:23:1
+✖ E4 standalone responsive markup escapes source text and stays visibly local/offline (0.3129ms)
+  TypeError: Cannot read properties of undefined (reading 'status')
+      at tollEstimateView (file:///workspace/geonames-preview-publish-fc83523/experiments/toll-estimates/presentation.ts:8:12)
+      at file:///workspace/geonames-preview-publish-fc83523/experiments/toll-estimates/demo.ts:5:41
+      at Array.map (<anonymous>)
+      at renderTollDemo (file:///workspace/geonames-preview-publish-fc83523/experiments/toll-estimates/demo.ts:5:22)
+      at TestContext.<anonymous> (file:///workspace/geonames-preview-publish-fc83523/experiments/toll-estimates/presentation.test.ts:24:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)

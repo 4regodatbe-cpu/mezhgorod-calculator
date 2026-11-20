@@ -1,0 +1,9 @@
+# ZSD case14 Kazan→Sestroretsk distinct scope — DONE / source-gated
+
+16.10.2026 MSK parent74a819a64f0fb596ea687b70949b20b3cfd25721/treee3657992 verified equal local; PR14draft workingbranch. Two priorrecorded currentengine offlineprofiles complete/exit0, notfreshlive. Exactselected Valhalla ZSDscope76unique namedpaidways, PVPnodes933974870 and1766158812 both namedЗСД/edgeToll=true. ZSDmaneuvers17.000+14.247km continuepastPlanernaya, exit towardLevashovskoye/KADnorth. Distinct from first26way/PVP5→Ekateringofka and55wayPlanernaya journeys. No unrecognizedpaidbooth after identityfix; currentremaining M11head/CKAD/ZSD. Full ledger/selection/maneuvers in evidence/2026-10-16-zsd-kazan-sestroretsk-scope.json.
+
+Existing zone1-only adapter correctly refuses largertrip. No positiveproof of another algorithm defect. Per-zone tariff300exists in preservedprimaryoperator table, but this is not a reviewedfinishedsouth→north collection vector. Keepunknown rather than multiplyingzone/gatecounts or accepting zone1subtotal. Reuse this distinct physical-scope diagnosis only when subsequent exactselectedZSDwayset and boothsequence match, never benchmarkrouteIDs in runtime. This is auditclassification only; sourcegate stillopen.
+
+Correction of generic replaynote: case14 checkpoint inherited 'historical687' from old helper. Currentfullgate is691/691+quote/API/Next/TS/static16/16PASS from validatedidentityfix, not rerun for evidence-onlycase14. Latest status and this correction supersede stale template; no test result invented.
+
+NEXT STARTED case15 max-chain-m12-ckad-m11-zsd-murom-to-sest exactcapture twoofflineprofiles and compare exactphysicalscope; same-way/booth groups may reuse diagnosis but keep per-caseevidence. Plan90%18/20, part19ongoing/20planned. No main/merge/Production/Android/messages.

@@ -1,0 +1,7 @@
+# Immutable local pilot packaging — STARTED
+
+29.10.2026 MSK; parent47d69d9, no push/CI/Production. Continuing independent authorized work after single-route provider failure, not retrying it. Prior handoff packaging limitation is being addressed, not erased.
+
+Generated immutable169431point pilot gzip shards/manifest/admission receipt copied to data/local-settlements with CC BY4.0 attribution. Existing runtime lazy loader reused; opt-in now defaults to bundled data path, optional directory override retained. OFF by default. next.config outputFileTracingIncludes for ONLY /r and /api/suggest includes these assets; not a CI change or required-check exclusion. V3 footer adds visible GeoNames link/licence/date/filtering/settlement-centre notice, no AddressField/route/tariff changes.
+
+New package test validates EVERY unique compressed shard SHA/length/decompression cap, receipt pins manifest, licence/UI links, record count. PASS. Existing focused actual API tests rerun with packaged corpus because directory source changes;3PASS. TS/lint/diffcheck checks executed. Next: stop own old local server, supported webpack build for changed source/config, inspect actual resulting NFT data inclusion and exact sizes; start fresh production server with opt-in/no directory override for cold HTTP+data load and licence rendering. Preserve build/source correspondence, do not reuse old build as evidence for changed runtime. Generated data is now a local Git asset, not a claim of remote publication.

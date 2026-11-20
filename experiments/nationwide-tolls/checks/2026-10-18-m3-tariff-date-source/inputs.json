@@ -1,0 +1,33 @@
+{
+  "status": "STARTED",
+  "atUtc": "2026-10-18T05:57:06.449954+00:00",
+  "sourceHead": "65bed1ae4a5236c40adc50cc596593696e3197a7",
+  "sourceTree": "d312fed475496d7dbbb616454234dce1ed90e5d8",
+  "sourceCI": {
+    "runId": 39101746826,
+    "status": "completed",
+    "conclusion": "success",
+    "verify": "success",
+    "live_probe": "success"
+  },
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "prDraft": true,
+  "goal": "New independent official source establishing categoryI/no-transponder M3 tariff version applicable to departures2026-10-15 and2026-10-17. Existing data verifiedThroughOct10; effectiveFromMar2 alone does not extend it.",
+  "budget": {
+    "queries": 4,
+    "newSourceReads": 4,
+    "directGetMaxTimeSeconds": 20,
+    "directGetMaxBytes": 4000000
+  },
+  "domains": [
+    "avtodor-tr.ru",
+    "russianhighways.ru"
+  ],
+  "existingSourcesDoNotRepeat": [
+    "source-documents/m3-order53-effective-2026-03-02.pdf",
+    "https://avtodor-tr.ru/upload/iblock/cb5/9ag98rhzi0t9m0ix75q4o45e4urml5sf.pdf",
+    "https://www.russianhighways.ru/press/news/141463/"
+  ],
+  "rules": "No routing/trace/replay, no old route batches. Preserve source dates/raw/hash immediately. Do not copy higher-category/transponder prices. A search snippet is discovery, not sufficient date/version proof. If evidence insufficient keepBLOCKED; if adequate save proof before data/code updates.",
+  "recovery": "Continue only unfinished requests using retained progress; do not repeat completed reads after save failure."
+}

@@ -1,0 +1,31 @@
+{
+  "status": "REVIEWED_EXACT_REUSE_OF_PREVIOUS_LIVE_SUGGESTIONS",
+  "records": [
+    {
+      "id": "R-1413957",
+      "territory": "dnr",
+      "label": "Донецк — ДНР"
+    },
+    {
+      "id": "R-1517207",
+      "territory": null,
+      "label": "Донецк, Ростовская область, Россия"
+    },
+    {
+      "id": "R-7373058",
+      "territory": null,
+      "label": "Краснодар, городской округ Краснодар, Краснодарский край, Россия"
+    },
+    {
+      "id": "R-1285772",
+      "territory": null,
+      "label": "Ростов-на-Дону, городской округ Ростов-на-Дону, Ростовская область, Россия"
+    }
+  ],
+  "newCoordinates": 0,
+  "sourceOrigin": "Photon/OSM",
+  "independentGeodeticVerification": false,
+  "independentAvailability": "local snapshot only; no Photon request during lookup",
+  "runtimeEnabled": false,
+  "maximumSnapshotAgeDays": 7
+}

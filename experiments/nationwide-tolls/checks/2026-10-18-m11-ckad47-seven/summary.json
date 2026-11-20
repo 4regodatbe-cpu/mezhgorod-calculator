@@ -1,0 +1,55 @@
+{
+  "status": "DONE",
+  "fingerprint": "1ea03b40cb54472b3b95aaeff95abe0b685000471b8c5f77855dc20f67798cbf",
+  "inputCaseCount": 7,
+  "ownCasesChecked": 7,
+  "profilesChecked": 14,
+  "headComponentsRecovered": 7,
+  "materialExceptions": [],
+  "negativeChecksPassed": 21,
+  "confirmedWholeTripFares": 0,
+  "wholeTripEvaluations": 0,
+  "networkCalls": 0,
+  "newRoutingRequests": 0,
+  "newTraceRequests": 0,
+  "newSourceGets": 0,
+  "newFullPricingReplays": 0,
+  "representativeRepeated": false,
+  "caseResults": [
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-kazan-to-sest",
+      "path": "cases/max-chain-m12-ckad-m11-zsd-kazan-to-sest.json",
+      "sha256": "7a5ba2089c019b9432489a87141359dc7f74b0a126648f1cac23b688da7df932"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-murom-to-sest",
+      "path": "cases/max-chain-m12-ckad-m11-zsd-murom-to-sest.json",
+      "sha256": "e2982dd398d4ddf301dc88b1c34a678c9df50174d2cd83cb5175014ab9c511be"
+    },
+    {
+      "caseId": "pair-m11-ckad-noginsk-to-spb",
+      "path": "cases/pair-m11-ckad-noginsk-to-spb.json",
+      "sha256": "0cdcd57fa35d88f1fc8b399a5f04bef0703ffca78db6701b3f3be9a55c76e47e"
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-kazan-to-spb",
+      "path": "cases/triple-m11-ckad-m12-kazan-to-spb.json",
+      "sha256": "fc112bb21c74bfd4028f4770f8f42d7b839e9348cf393c838c96eeebc4291614"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+      "path": "cases/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim.json",
+      "sha256": "776746df881138cc4efafebf0a3782e613bdf92f0eb5271dd9590315fdc9a9bf"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+      "path": "cases/max-chain-m12-ckad-m11-zsd-vladimir-to-sest.json",
+      "sha256": "37ef01153d0a2cd5f2eaec48cf69f053cfd167db1da32e4f48ad61e6346948d8"
+    },
+    {
+      "caseId": "triple-m11-ckad-m12-arzamas-to-spb",
+      "path": "cases/triple-m11-ckad-m12-arzamas-to-spb.json",
+      "sha256": "3d00d68440b50ea77f6ef2bd1b98f3fe97a7bd18533ea51418811a098bf1dcd9"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:25:50.265Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 129,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 9,
+    "spec": {
+      "caseId": "single-m3-obninsk-to-moscow",
+      "kind": "road",
+      "group": "single-m3"
+    }
+  },
+  "caseId": "single-m3-obninsk-to-moscow",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-25-50-264Z-part9",
+  "parent": "a6092bd83528e1f83f61cf98b2e6b93898167f14"
+}

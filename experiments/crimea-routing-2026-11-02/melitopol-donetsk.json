@@ -1,0 +1,511 @@
+{
+  "capturedAt": "2026-11-01T21:55:04.860Z",
+  "from": {
+    "label": "melitopol",
+    "position": {
+      "lng": 35.365,
+      "lat": 46.848
+    }
+  },
+  "to": {
+    "label": "donetsk",
+    "position": {
+      "lng": 37.8029,
+      "lat": 48.0156
+    }
+  },
+  "summary": {
+    "id": "melitopol-donetsk",
+    "httpStatus": 200,
+    "elapsedMs": 4153,
+    "meters": 299036,
+    "seconds": 16857,
+    "quality": {
+      "status": "single",
+      "providers": [
+        "OSRM"
+      ],
+      "distanceSpreadPercent": null,
+      "timeSpreadPercent": null,
+      "goldenDistanceDeviationPercent": null,
+      "message": "Выбран маршрут с минимальным временем"
+    },
+    "tolls": {
+      "amount": 0,
+      "weekdayAmount": 0,
+      "weekendAmount": 0,
+      "period": "понедельник–четверг",
+      "segments": [],
+      "confidence": "none",
+      "pricingStatus": "free"
+    }
+  },
+  "body": {
+    "legs": [
+      {
+        "from": "melitopol",
+        "to": "donetsk",
+        "fast": {
+          "m4RoadBoundaries": {
+            "provider": "osrm",
+            "targetRef": "М-4",
+            "routeSignature": "cb556ce5c2234616ab9a475b4378c436fa63389418d3d01db4cd4fac30105973",
+            "precision": "route-maneuver",
+            "status": "not-detected",
+            "reason": "road_ref_not_detected",
+            "entry": null,
+            "exit": null
+          },
+          "m12EndpointSpan": null,
+          "m12StrictSpan": null,
+          "m12Candidate": false,
+          "m12SpanReason": null,
+          "m11RoadEvidence": {
+            "provider": "osrm",
+            "strictBlocks": [],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "meters": 299036,
+          "seconds": 16857,
+          "tolls": {
+            "amount": 0,
+            "weekdayAmount": 0,
+            "weekendAmount": 0,
+            "period": "понедельник–четверг",
+            "segments": [],
+            "confidence": "none",
+            "pricingStatus": "free"
+          },
+          "tollValidation": {
+            "status": "free",
+            "source": "Valhalla map matching",
+            "tollEdgeCount": 0,
+            "checkedEdgeCount": 705,
+            "wayIds": [],
+            "roadNames": [],
+            "paidRoadEdges": [],
+            "message": "Платные дорожные рёбра не обнаружены во всём проверенном маршруте",
+            "tollBoothCount": 0,
+            "tollBooths": [],
+            "chunkCount": 3,
+            "checkedChunkCount": 3,
+            "failedChunkCount": 0,
+            "complete": true,
+            "boothEventCoverage": "complete"
+          },
+          "quality": {
+            "status": "single",
+            "providers": [
+              "OSRM"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "m4PvpPreview": {
+            "status": "unknown",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+            "roadBoundaries": {
+              "provider": "osrm",
+              "targetRef": "М-4",
+              "routeSignature": "cb556ce5c2234616ab9a475b4378c436fa63389418d3d01db4cd4fac30105973",
+              "precision": "route-maneuver",
+              "status": "not-detected",
+              "reason": "road_ref_not_detected",
+              "entry": null,
+              "exit": null
+            },
+            "roadKilometrage": {
+              "status": "unknown",
+              "direction": "unknown",
+              "diagnosticOnly": true,
+              "entry": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "exit": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "stops": [
+                "km_boundary_evidence_unresolved"
+              ]
+            },
+            "priceRub": null,
+            "verifiedPriceCells": 0,
+            "candidateCount": 0,
+            "confirmedPvps": [],
+            "diagnosticOnly": true
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "candidate_needs_osm_operator_node_mapping",
+              "reason": "no_verifiable_m1_m3_booths",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 299.036,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "melitopol",
+                  "to": "donetsk",
+                  "ratePerKm": 70,
+                  "amount": 20933,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 20933,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 299.036,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "melitopol",
+                  "to": "donetsk",
+                  "ratePerKm": 80,
+                  "amount": 23923,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 23923,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 299.036,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "melitopol",
+                  "to": "donetsk",
+                  "ratePerKm": 90,
+                  "amount": 26913,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 26913,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 299.036,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "melitopol",
+                  "to": "donetsk",
+                  "ratePerKm": 110,
+                  "amount": 32894,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 32894,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "options": [
+      {
+        "from": "melitopol",
+        "to": "donetsk",
+        "fast": {
+          "m4RoadBoundaries": {
+            "provider": "osrm",
+            "targetRef": "М-4",
+            "routeSignature": "cb556ce5c2234616ab9a475b4378c436fa63389418d3d01db4cd4fac30105973",
+            "precision": "route-maneuver",
+            "status": "not-detected",
+            "reason": "road_ref_not_detected",
+            "entry": null,
+            "exit": null
+          },
+          "m12EndpointSpan": null,
+          "m12StrictSpan": null,
+          "m12Candidate": false,
+          "m12SpanReason": null,
+          "m11RoadEvidence": {
+            "provider": "osrm",
+            "strictBlocks": [],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "meters": 299036,
+          "seconds": 16857,
+          "tolls": {
+            "amount": 0,
+            "weekdayAmount": 0,
+            "weekendAmount": 0,
+            "period": "понедельник–четверг",
+            "segments": [],
+            "confidence": "none",
+            "pricingStatus": "free"
+          },
+          "tollValidation": {
+            "status": "free",
+            "source": "Valhalla map matching",
+            "tollEdgeCount": 0,
+            "checkedEdgeCount": 705,
+            "wayIds": [],
+            "roadNames": [],
+            "paidRoadEdges": [],
+            "message": "Платные дорожные рёбра не обнаружены во всём проверенном маршруте",
+            "tollBoothCount": 0,
+            "tollBooths": [],
+            "chunkCount": 3,
+            "checkedChunkCount": 3,
+            "failedChunkCount": 0,
+            "complete": true,
+            "boothEventCoverage": "complete"
+          },
+          "quality": {
+            "status": "single",
+            "providers": [
+              "OSRM"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "m4PvpPreview": {
+            "status": "unknown",
+            "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+            "roadBoundaries": {
+              "provider": "osrm",
+              "targetRef": "М-4",
+              "routeSignature": "cb556ce5c2234616ab9a475b4378c436fa63389418d3d01db4cd4fac30105973",
+              "precision": "route-maneuver",
+              "status": "not-detected",
+              "reason": "road_ref_not_detected",
+              "entry": null,
+              "exit": null
+            },
+            "roadKilometrage": {
+              "status": "unknown",
+              "direction": "unknown",
+              "diagnosticOnly": true,
+              "entry": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "exit": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "stops": [
+                "km_boundary_evidence_unresolved"
+              ]
+            },
+            "priceRub": null,
+            "verifiedPriceCells": 0,
+            "candidateCount": 0,
+            "confirmedPvps": [],
+            "diagnosticOnly": true
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "candidate_needs_osm_operator_node_mapping",
+              "reason": "no_verifiable_m1_m3_booths",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 299.036,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "melitopol",
+                  "to": "donetsk",
+                  "ratePerKm": 70,
+                  "amount": 20933,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 20933,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 299.036,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "melitopol",
+                  "to": "donetsk",
+                  "ratePerKm": 80,
+                  "amount": 23923,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 23923,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 299.036,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "melitopol",
+                  "to": "donetsk",
+                  "ratePerKm": 90,
+                  "amount": 26913,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 26913,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": true,
+              "pricingSegments": [
+                {
+                  "distanceKm": 299.036,
+                  "tariffType": "special",
+                  "type": "special",
+                  "from": "melitopol",
+                  "to": "donetsk",
+                  "ratePerKm": 110,
+                  "amount": 32894,
+                  "reason": "Пробег внутри особых тарифных зон",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 32894,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "mode": "dual",
+    "automaticMode": "dual",
+    "specialEndpoint": true,
+    "specialOnly": true,
+    "preferredCorridor": "mainland",
+    "routePolicy": "geographic-zone"
+  }
+}

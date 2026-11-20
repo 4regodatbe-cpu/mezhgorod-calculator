@@ -1,0 +1,60 @@
+{
+  "startedAt": "2026-10-16T01:58:15.635Z",
+  "scope": {
+    "region": null,
+    "group": "single-m12",
+    "caseId": "single-m12-cheboksary-to-moscow",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "single-m12-cheboksary-to-moscow",
+      "startedAt": "2026-10-16T01:58:15.637Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-cheboksary-to-moscow/live-2026-10-15T09-00-00-03-00-2026-10-16T01-58-19-543Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-cheboksary-to-moscow/2026-10-16T01-58-19-492Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-58-20-017Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-58-20-476Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m12"
+        ],
+        "provenRoads": [],
+        "missingExpectedRoads": [
+          "m12"
+        ],
+        "status": "expected-road-not-proven"
+      },
+      "weekday": {
+        "amount": 0,
+        "weekdayAmount": 0,
+        "weekendAmount": 0,
+        "period": "понедельник–четверг",
+        "segments": [],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "free"
+      },
+      "weekend": {
+        "amount": 0,
+        "weekdayAmount": 0,
+        "weekendAmount": 0,
+        "period": "пятница–воскресенье",
+        "segments": [],
+        "confidence": "none",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "free"
+      },
+      "components": [],
+      "finishedAt": "2026-10-16T01:58:20.492Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T01:58:20.496Z"
+}

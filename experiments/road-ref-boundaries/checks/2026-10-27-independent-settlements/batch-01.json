@@ -1,0 +1,182 @@
+{
+  "reviewedAt": "2026-10-27",
+  "sourceCommit": "94b60992a1eab914faa737bed1664837818f18a0",
+  "scope": "First seven IDs; bounded independent-source research, no import",
+  "sources": [
+    {
+      "id": "kom",
+      "url": "https://komish-gromada.gov.ua/перелік-населених-пунктів/",
+      "operator": "Комишуваська територіальна громада",
+      "access": "WEB_OPEN_SUCCESS",
+      "publicationDate": null,
+      "observed": "Municipal list includes Тарасівка in Новотавричеський старостинський округ 3.",
+      "limits": "No coordinates, GeoNames IDs or document date; does not choose between 691883 and 691884.",
+      "reuse": "Municipal page reuse licence not confirmed; factual paraphrase only."
+    },
+    {
+      "id": "rada-y",
+      "url": "https://zakon.rada.gov.ua/laws/show/z1121-25",
+      "publicationDate": "2025-07-17",
+      "access": "SEARCH_INDEX_ONLY; WEB_OPEN_TIMEOUT",
+      "observed": "Search index lists Ялта in Комарська громада, KATOTTG UA14040070190022988.",
+      "limits": "Full primary text not read; no coordinate/GeoNames mapping."
+    },
+    {
+      "id": "rada-t",
+      "url": "https://zakon.rada.gov.ua/laws/show/z0116-26",
+      "publicationDate": "2026-01-22",
+      "access": "SEARCH_INDEX_ONLY; WEB_OPEN_TIMEOUT",
+      "observed": "Index lists Тарасівка in Комишуваська громада, KATOTTG UA23060090220029638.",
+      "limits": "Not accepted as full primary-document validation."
+    },
+    {
+      "id": "ill",
+      "url": "https://decentralization.gov.ua/gromada/1268/composition",
+      "publicationDate": null,
+      "access": "WEB_OPEN_SUCCESS",
+      "observed": "Historical composition lists Тарасівка.",
+      "limits": "Page explicitly warns data is historical/outdated; cannot certify current admin or coordinates.",
+      "reuse": "Licence not checked; no text imported."
+    },
+    {
+      "id": "garant-y",
+      "url": "https://base.garant.ru/406688253/3e01a7fa47957b2f627d012fe630f5c6/",
+      "publicationDate": "2023-03-31",
+      "access": "SEARCH_INDEX_ONLY; WEB_OPEN_HTTP403",
+      "observed": "Secondary legal index lists Ялта in Мангушский муниципальный округ.",
+      "limits": "Not a read primary document; no identity/coordinate proof."
+    },
+    {
+      "id": "geo-license",
+      "url": "https://www.geonames.org/export/",
+      "access": "WEB_OPEN_SUCCESS",
+      "observed": "GeoNames permits commercial use with attribution and provides data without accuracy/completeness warranty.",
+      "limits": "Licence does not verify a coordinate; other sources require separate provenance review."
+    }
+  ],
+  "records": [
+    {
+      "geonamesId": "688531",
+      "originalCoordinates": {
+        "lat": 48.04505,
+        "lon": 36.74963
+      },
+      "candidateRussianLabel": "Ялта",
+      "verifiedRussianLabel": null,
+      "sourceAdmin3": "1404007",
+      "sourceRefs": [
+        "rada-y"
+      ],
+      "identity": "UNCONFIRMED_ID_LINK",
+      "coordinates": "UNVERIFIED",
+      "status": "AMBIGUOUS",
+      "runtimeEligible": false,
+      "limitations": "Source name/admin evidence does not independently identify this GeoNames record or certify its representative coordinates."
+    },
+    {
+      "geonamesId": "688532",
+      "originalCoordinates": {
+        "lat": 46.96098,
+        "lon": 37.27446
+      },
+      "candidateRussianLabel": "Ялта",
+      "verifiedRussianLabel": null,
+      "sourceAdmin3": "1414003",
+      "sourceRefs": [
+        "garant-y"
+      ],
+      "identity": "UNCONFIRMED_ID_LINK",
+      "coordinates": "UNVERIFIED",
+      "status": "AMBIGUOUS",
+      "runtimeEligible": false,
+      "limitations": "Source name/admin evidence does not independently identify this GeoNames record or certify its representative coordinates."
+    },
+    {
+      "geonamesId": "691877",
+      "originalCoordinates": {
+        "lat": 48.34967,
+        "lon": 37.55241
+      },
+      "candidateRussianLabel": "Тарасовка",
+      "verifiedRussianLabel": null,
+      "sourceAdmin3": "1412005",
+      "sourceRefs": [
+        "ill"
+      ],
+      "identity": "UNCONFIRMED_ID_LINK",
+      "coordinates": "UNVERIFIED",
+      "status": "AMBIGUOUS",
+      "runtimeEligible": false,
+      "limitations": "Source name/admin evidence does not independently identify this GeoNames record or certify its representative coordinates."
+    },
+    {
+      "geonamesId": "9529726",
+      "originalCoordinates": {
+        "lat": 47.55014,
+        "lon": 37.64903
+      },
+      "candidateRussianLabel": "Тарасовка",
+      "verifiedRussianLabel": null,
+      "sourceAdmin3": "1404003",
+      "sourceRefs": [],
+      "identity": "UNCONFIRMED_ID_LINK",
+      "coordinates": "UNVERIFIED",
+      "status": "AMBIGUOUS",
+      "runtimeEligible": false,
+      "limitations": "Source name/admin evidence does not independently identify this GeoNames record or certify its representative coordinates."
+    },
+    {
+      "geonamesId": "691883",
+      "originalCoordinates": {
+        "lat": 47.77743,
+        "lon": 35.44361
+      },
+      "candidateRussianLabel": "Тарасовка",
+      "verifiedRussianLabel": null,
+      "sourceAdmin3": "2306009",
+      "sourceRefs": [
+        "kom"
+      ],
+      "identity": "UNCONFIRMED_ID_LINK",
+      "coordinates": "UNVERIFIED",
+      "status": "AMBIGUOUS",
+      "runtimeEligible": false,
+      "limitations": "Source name/admin evidence does not independently identify this GeoNames record or certify its representative coordinates."
+    },
+    {
+      "geonamesId": "691884",
+      "originalCoordinates": {
+        "lat": 47.71667,
+        "lon": 35.65
+      },
+      "candidateRussianLabel": "Тарасовка",
+      "verifiedRussianLabel": null,
+      "sourceAdmin3": "2306009",
+      "sourceRefs": [
+        "kom"
+      ],
+      "identity": "UNCONFIRMED_ID_LINK",
+      "coordinates": "UNVERIFIED",
+      "status": "AMBIGUOUS",
+      "runtimeEligible": false,
+      "limitations": "Source name/admin evidence does not independently identify this GeoNames record or certify its representative coordinates."
+    },
+    {
+      "geonamesId": "11125193",
+      "originalCoordinates": {
+        "lat": 48.0624,
+        "lon": 35.14804
+      },
+      "candidateRussianLabel": "Тарасовка",
+      "verifiedRussianLabel": null,
+      "sourceAdmin3": "2306025",
+      "sourceRefs": [],
+      "identity": "UNCONFIRMED_ID_LINK",
+      "coordinates": "UNVERIFIED",
+      "status": "AMBIGUOUS",
+      "runtimeEligible": false,
+      "limitations": "Source name/admin evidence does not independently identify this GeoNames record or certify its representative coordinates."
+    }
+  ],
+  "next": "Find independent coordinate-bearing municipal/geographic record for each candidate, preserving homonyms; then remaining sixteen collision groups."
+}

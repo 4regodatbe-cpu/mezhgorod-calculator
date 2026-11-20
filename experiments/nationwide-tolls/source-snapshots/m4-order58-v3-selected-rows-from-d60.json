@@ -1,0 +1,645 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "d60e733313860d2412d8be64f4be10ef71f7de28",
+  "sourceBlobSha": "51d0e08f72e4e221f062e09e4ad8fa0d1d938cea",
+  "rows": [
+    {
+      "road": "m4-south",
+      "from": "1046",
+      "to": "1046",
+      "profile": "monThu",
+      "rub": 380,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1046"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1046",
+      "to": "1046",
+      "profile": "friSun",
+      "rub": 450,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1046"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1046",
+      "to": "1093",
+      "profile": "monThu",
+      "rub": 530,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1046",
+        "1093"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1093",
+      "to": "1046",
+      "profile": "monThu",
+      "rub": 530,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1093",
+        "1046"
+      ],
+      "basis": "same vector reversed under user rule",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1046",
+      "to": "1093",
+      "profile": "friSun",
+      "rub": 600,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1046",
+        "1093"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1093",
+      "to": "1046",
+      "profile": "friSun",
+      "rub": 600,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1093",
+        "1046"
+      ],
+      "basis": "same vector reversed under user rule",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1046",
+      "to": "1184",
+      "profile": "monThu",
+      "rub": 830,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1046",
+        "1093",
+        "1184"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1184",
+      "to": "1046",
+      "profile": "monThu",
+      "rub": 830,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1184",
+        "1093",
+        "1046"
+      ],
+      "basis": "same vector reversed under user rule",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1046",
+      "to": "1184",
+      "profile": "friSun",
+      "rub": 950,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1046",
+        "1093",
+        "1184"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1184",
+      "to": "1046",
+      "profile": "friSun",
+      "rub": 950,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1184",
+        "1093",
+        "1046"
+      ],
+      "basis": "same vector reversed under user rule",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1046",
+      "to": "1223",
+      "profile": "monThu",
+      "rub": 1230,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1046",
+        "1093",
+        "1184",
+        "1223"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1223",
+      "to": "1046",
+      "profile": "monThu",
+      "rub": 1230,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1223",
+        "1184",
+        "1093",
+        "1046"
+      ],
+      "basis": "same vector reversed under user rule",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1046",
+      "to": "1223",
+      "profile": "friSun",
+      "rub": 1450,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1046",
+        "1093",
+        "1184",
+        "1223"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1223",
+      "to": "1046",
+      "profile": "friSun",
+      "rub": 1450,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1223",
+        "1184",
+        "1093",
+        "1046"
+      ],
+      "basis": "same vector reversed under user rule",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1093",
+      "to": "1093",
+      "profile": "monThu",
+      "rub": 150,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1093"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1093",
+      "to": "1093",
+      "profile": "friSun",
+      "rub": 150,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1093"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1093",
+      "to": "1184",
+      "profile": "monThu",
+      "rub": 450,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1093",
+        "1184"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1184",
+      "to": "1093",
+      "profile": "monThu",
+      "rub": 450,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1184",
+        "1093"
+      ],
+      "basis": "same vector reversed under user rule",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1093",
+      "to": "1184",
+      "profile": "friSun",
+      "rub": 500,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1093",
+        "1184"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1184",
+      "to": "1093",
+      "profile": "friSun",
+      "rub": 500,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1184",
+        "1093"
+      ],
+      "basis": "same vector reversed under user rule",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1093",
+      "to": "1223",
+      "profile": "monThu",
+      "rub": 850,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1093",
+        "1184",
+        "1223"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1223",
+      "to": "1093",
+      "profile": "monThu",
+      "rub": 850,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1223",
+        "1184",
+        "1093"
+      ],
+      "basis": "same vector reversed under user rule",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1093",
+      "to": "1223",
+      "profile": "friSun",
+      "rub": 1000,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1093",
+        "1184",
+        "1223"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1223",
+      "to": "1093",
+      "profile": "friSun",
+      "rub": 1000,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1223",
+        "1184",
+        "1093"
+      ],
+      "basis": "same vector reversed under user rule",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1184",
+      "to": "1184",
+      "profile": "monThu",
+      "rub": 300,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1184"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1184",
+      "to": "1184",
+      "profile": "friSun",
+      "rub": 350,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1184"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1184",
+      "to": "1223",
+      "profile": "monThu",
+      "rub": 700,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1184",
+        "1223"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1223",
+      "to": "1184",
+      "profile": "monThu",
+      "rub": 700,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1223",
+        "1184"
+      ],
+      "basis": "same vector reversed under user rule",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1184",
+      "to": "1223",
+      "profile": "friSun",
+      "rub": 850,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1184",
+        "1223"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1223",
+      "to": "1184",
+      "profile": "friSun",
+      "rub": 850,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1223",
+        "1184"
+      ],
+      "basis": "same vector reversed under user rule",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1223",
+      "to": "1223",
+      "profile": "monThu",
+      "rub": 400,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1223"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-south",
+      "from": "1223",
+      "to": "1223",
+      "profile": "friSun",
+      "rub": 500,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "pvpVector": [
+        "1223"
+      ],
+      "basis": "offline sum of verified PVP charges; persisted finished vector",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "sourceSnapshot": "source-snapshots/m4-order58-2026-03-02-category1-verified.json",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-dzok",
+      "from": "0",
+      "to": "51",
+      "profile": "monThu",
+      "rub": 410,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "verification": "visually verified operator category-I PDF row",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-dzok",
+      "from": "51",
+      "to": "0",
+      "profile": "monThu",
+      "rub": 410,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "verification": "visually verified operator category-I PDF row",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "reverseBasis": "user direction-invariant model unless operator publishes a different rate",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-dzok",
+      "from": "0",
+      "to": "51",
+      "profile": "friSun",
+      "rub": 410,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "verification": "visually verified operator category-I PDF row",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    },
+    {
+      "road": "m4-dzok",
+      "from": "51",
+      "to": "0",
+      "profile": "friSun",
+      "rub": 410,
+      "source": "source-documents/m4-order58-effective-2026-03-02.pdf",
+      "verification": "visually verified operator category-I PDF row",
+      "effectiveFrom": "2026-03-02T00:00:00+03:00",
+      "sourceFareStatus": "verified-operator-rows",
+      "reverseBasis": "user direction-invariant model unless operator publishes a different rate",
+      "selectionReason": "published or user-confirmed price; route binding still required",
+      "runtimeApproved": false
+    }
+  ]
+}

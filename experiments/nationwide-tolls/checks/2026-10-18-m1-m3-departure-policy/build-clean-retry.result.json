@@ -1,0 +1,14 @@
+{
+  "name": "build-clean-retry",
+  "command": [
+    "node",
+    "node_modules/next/dist/bin/next",
+    "build"
+  ],
+  "startedAtUtc": "2026-10-18T05:45:19.324646+00:00",
+  "elapsedSeconds": 11.152,
+  "exitCode": 0,
+  "status": "PASS",
+  "log": "experiments/nationwide-tolls/checks/2026-10-18-m1-m3-departure-policy/build-clean-retry.log.gz",
+  "uncompressedSha256": "1e328767c04b964cb32135466386a101d720b426c50f7ec62d86acb9210c6107"
+}

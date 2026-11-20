@@ -1,0 +1,196 @@
+{
+  "atUtc": "2026-10-17T11:32:31.493Z",
+  "sourceCommit": "dc44185940e0da95dafa00b5718b751fb729981c",
+  "sourceCi": {
+    "run": 39026791473,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "caseId": "lnr-брянка-saint-petersburg-center",
+  "mode": "saved_capture_current_component_exception_check",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/2026-10-15T11-57-59-642Z-capture.json.gz",
+  "captureSha256": "bb720239367689bf2c68a22c3c2277cf3c34cd48a80a3d8052464c1f68a71815",
+  "routeMeters": 1827396,
+  "coordinateCount": 11805,
+  "traceComplete": true,
+  "boothEventCoverage": "complete",
+  "wayIds": [
+    "1122966006",
+    "1122966005",
+    "1122966004",
+    "400111354",
+    "400111351",
+    "31369306",
+    "28934684",
+    "465117517",
+    "80056742",
+    "139658547",
+    "461676671",
+    "80056745",
+    "721628540",
+    "80056716",
+    "381576632",
+    "381576631",
+    "123709500",
+    "123709505",
+    "183912267",
+    "397223751",
+    "397223752",
+    "397223749",
+    "183912268",
+    "85763340",
+    "223744446",
+    "721628541"
+  ],
+  "exitWayPresent": true,
+  "zsdBooths": [
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 15,
+      "edgeToll": true,
+      "beginShapeIndex": 732,
+      "endShapeIndex": 733
+    }
+  ],
+  "witnesses": [
+    {
+      "id": "10270133471",
+      "index": 11420.00113576269,
+      "distanceKm": 1.8716096179829202e-05
+    },
+    {
+      "id": "2326313083",
+      "index": 11421.00085864063,
+      "distanceKm": 3.1250997107713014e-05
+    },
+    {
+      "id": "1833109726",
+      "index": 11422.000074632975,
+      "distanceKm": 2.1880146840160708e-05
+    },
+    {
+      "id": "3847689344",
+      "index": 11469.999440098549,
+      "distanceKm": 1.2848355606985252e-06
+    },
+    {
+      "id": "933974870",
+      "index": 11470.99998749215,
+      "distanceKm": 5.585740200489986e-06
+    },
+    {
+      "id": "3847689346",
+      "index": 11472.000637863832,
+      "distanceKm": 1.4056541736495397e-05
+    },
+    {
+      "id": "1339782267",
+      "index": 11562.000387842216,
+      "distanceKm": 1.2069337871081818e-05
+    },
+    {
+      "id": "7020792290",
+      "index": 11562.999992190082,
+      "distanceKm": 2.006414264671127e-05
+    },
+    {
+      "id": "1943198683",
+      "index": 11563.999672078302,
+      "distanceKm": 5.306144284627394e-06
+    },
+    {
+      "id": "2903386149",
+      "index": 11565.0000423385,
+      "distanceKm": 3.5476813289704934e-05
+    },
+    {
+      "id": "2396020561",
+      "index": 11565.999537318392,
+      "distanceKm": 1.1127534128839027e-05
+    },
+    {
+      "id": "25893875",
+      "index": 11567.000277118877,
+      "distanceKm": 3.256327356282905e-05
+    }
+  ],
+  "maxSegmentKm": 0.2905588758357199,
+  "results": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "result": {
+        "reason": "zsd_kad_south_ekateringofka_owner_zone_vector",
+        "tolls": {
+          "amount": 600,
+          "weekdayAmount": 600,
+          "weekendAmount": 600,
+          "period": "все дни, без транспондера",
+          "confidence": "matched",
+          "segments": [
+            "ЗСД: КАД (юг) → наб. р. Екатерингофки · 600 ₽ (зоны 1–2)"
+          ]
+        }
+      }
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "result": {
+        "reason": "zsd_kad_south_ekateringofka_owner_zone_vector",
+        "tolls": {
+          "amount": 600,
+          "weekdayAmount": 600,
+          "weekendAmount": 600,
+          "period": "все дни, без транспондера",
+          "confidence": "matched",
+          "segments": [
+            "ЗСД: КАД (юг) → наб. р. Екатерингофки · 600 ₽ (зоны 1–2)"
+          ]
+        }
+      }
+    }
+  ],
+  "negativeChecks": [
+    {
+      "label": "reverse",
+      "reason": "zsd_finished_vector_direction_or_boundary_unresolved",
+      "unknown": true
+    },
+    {
+      "label": "incomplete",
+      "reason": "zsd_finished_vector_complete_trace_missing",
+      "unknown": true
+    },
+    {
+      "label": "missing_exit",
+      "reason": "zsd_ekateringofka_directed_exit_missing",
+      "unknown": true
+    }
+  ],
+  "previousArtifacts": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T11-02-04-834Z.json",
+      "sha256": "da6ecaffcb5e994f44f514fbee7ef016d26dab043040b086eb4d11643ba5aa23",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "oldWholeResult": null,
+      "oldZsdReason": "zsd_trip_extends_outside_reviewed_zone1"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/lnr-брянка-saint-petersburg-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T11-02-05-296Z.json",
+      "sha256": "4c12724b78840e9a8b7cbe0ce7027832c357ba859b76219b13b8b882a0b694f5",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "oldWholeResult": null,
+      "oldZsdReason": "zsd_trip_extends_outside_reviewed_zone1"
+    }
+  ],
+  "componentOutcome": "fixed_and_verified",
+  "wholeTripOutcome": "not_replayed_in_this_step",
+  "tariffProvenance": "owner-zone-derived finished vector; no independent operator OD receipt",
+  "newLiveRequests": 0,
+  "newFullReplays": 0,
+  "componentDateChecks": 2,
+  "negativeChecksCount": 3
+}

@@ -1,0 +1,27 @@
+{
+  "atUtc": "2026-10-17T14:51:58.510Z",
+  "input": {
+    "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary/2026-10-16T01-22-56-513Z-capture.json.gz",
+    "sha256": "ff9294352008224ef3ce7433539682ed9d80bcb8f7b3a4eb4d573cfd8dd4a4d5"
+  },
+  "routeSha256": "ccf1dae85faa72c53f9f7534a87de98b5347ff43b512ad9c13e865257eab7c98",
+  "geometrySha256": "b7160cd1eaa69e8a5fa958fc87a6d4705b203e5b184f14e9477663548d62d72e",
+  "candidates": [
+    {
+      "provider": "Valhalla",
+      "admitted": false,
+      "seconds": 54716
+    },
+    {
+      "provider": "OSRM",
+      "admitted": true,
+      "seconds": 64986
+    },
+    {
+      "provider": "BRouter",
+      "admitted": false,
+      "seconds": 62487
+    }
+  ]
+}

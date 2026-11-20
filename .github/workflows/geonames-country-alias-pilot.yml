@@ -1,0 +1,76 @@
+name: GeoNames bounded country alias pilot
+on:
+  push:
+    branches: [fix/v3-missing-route-prices-2026-10-15]
+    paths: [.github/workflows/geonames-country-alias-pilot.yml]
+permissions:
+  contents: read
+concurrency:
+  group: geonames-country-alias-${{ github.ref_name }}
+  cancel-in-progress: false
+jobs:
+  aliases-only:
+    runs-on: ubuntu-latest
+    if: github.ref_name == 'fix/v3-missing-route-prices-2026-10-15'
+    timeout-minutes: 3
+    steps:
+      - name: Two bounded country alias archives, no global V2
+        shell: python
+        run: |
+          import datetime, hashlib, json, pathlib, subprocess, zipfile
+          root = pathlib.Path('geonames-alias-pilot')
+          root.mkdir()
+          report = dict(status='STARTED', runtimeApproved=False, files=[])
+          def save():
+              path = root / 'result.json'
+              temp = root / 'result.json.tmp'
+              temp.write_text(json.dumps(report, indent=2)); temp.replace(path)
+          save()
+          plans = []
+          common = ['curl','--silent','--show-error','--location','--max-redirs','2',
+              '--proto','=https','--proto-redir','=https','--connect-timeout','6']
+          try:
+              for country in ['RU','UA']:
+                  url = 'https://download.geonames.org/export/dump/alternatenames/' + country + '.zip'
+                  headers = root / (country + '.head.txt')
+                  res = subprocess.run(common + ['--head','--max-time','10','--dump-header',str(headers),
+                      '--output','/dev/null','--write-out','%{http_code}',url],capture_output=True,text=True,timeout=12)
+                  raw = headers.read_text().replace('\r\n','\n').strip().split('\n\n')[-1]
+                  fields = dict((k.lower(),v.strip()) for k,v in (s.split(':',1) for s in raw.splitlines()[1:] if ':' in s))
+                  size = int(fields.get('content-length','0'))
+                  if res.returncode or res.stdout.strip() != '200' or size <= 0 or not fields.get('etag'):
+                      raise RuntimeError(country + ': HEAD not verified; ' + res.stderr)
+                  plans.append(dict(country=country,url=url,bytes=size,etag=fields['etag'],lastModified=fields.get('last-modified')))
+              report['heads'] = plans; save()
+              if sum(x['bytes'] for x in plans) > 50 * 1024 * 1024:
+                  raise RuntimeError('Combined country aliases exceed 50MiB')
+              for plan in plans:
+                  country = plan['country']; part = root / (country + '.zip.part')
+                  res = subprocess.run(common + ['--fail','--max-time','60','--max-filesize',str(plan['bytes']),
+                      '--header','If-Match: '+plan['etag'],'--dump-header',str(root/(country+'.get.txt')),
+                      '--output',str(part),plan['url']],capture_output=True,text=True,timeout=65)
+                  if res.returncode or not part.exists() or part.stat().st_size != plan['bytes']:
+                      raise RuntimeError(country + ': download failed; '+res.stderr)
+                  with zipfile.ZipFile(part) as z:
+                      if sum(x.file_size for x in z.infolist()) > 256 * 1024 * 1024:
+                          raise RuntimeError('Uncompressed aliases exceed 256MiB')
+                      if any('/' in x.filename or '\\' in x.filename or not x.filename.endswith('.txt') for x in z.infolist()):
+                          raise RuntimeError('Unexpected ZIP member')
+                      if z.testzip() is not None: raise RuntimeError('ZIP CRC failure')
+                      members = [dict(name=x.filename,bytes=x.file_size) for x in z.infolist()]
+                  sha = hashlib.sha256(part.read_bytes()).hexdigest()
+                  part.rename(root/(country+'.zip'))
+                  report['files'].append(dict(**plan,sha256=sha,zipIntegrity='PASS',members=members,
+                      receivedAt=datetime.datetime.now(datetime.timezone.utc).isoformat()));save()
+              report['status']='DOWNLOADED_NOT_REVIEWED';save()
+          except Exception as e:
+              report['status']='FAILED';report['error']=str(e);save();print(json.dumps(report,indent=2));raise
+          print(json.dumps(report,indent=2))
+      - name: Preserve exact alias archives, headers and manifest
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: geonames-country-alias-${{ github.run_id }}
+          path: geonames-alias-pilot/
+          if-no-files-found: error
+          retention-days: 14

@@ -1,0 +1,12 @@
+{
+  "url": "https://www.russianhighways.ru/ajax/gettrack.php?track=38&site=",
+  "startedAtUtc": "2026-10-18T05:58:56.283282+00:00",
+  "requestSource": "Observed data-href track38 / М3 from retained official page HTML; actual UI AJAX header pattern already established in previous M12 source pass. No normalGET retry.",
+  "sourceHtml": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/operator/operator-m12-page.html.gz",
+  "curlExitCode": 0,
+  "httpFinalTime": "200\nhttps://www.russianhighways.ru/ajax/gettrack.php?track=38&site=\n6.406803",
+  "stderr": "",
+  "bodyBytes": 21174,
+  "sha256": "9319abdd433f1d6092104e0e5fcc34448a05961d7ea66f2b3e9dd6c7ba759a3a",
+  "countsAsSourceRead": 4
+}

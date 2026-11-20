@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:28:02.338Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 134,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 9,
+    "spec": {
+      "caseId": "single-m4-voronezh-to-krasnodar",
+      "kind": "road",
+      "group": "single-m4"
+    }
+  },
+  "caseId": "single-m4-voronezh-to-krasnodar",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-28-02-337Z-part9",
+  "parent": "c80eaa1a838b5a7f74666c918ff8a21f4e6945c6"
+}

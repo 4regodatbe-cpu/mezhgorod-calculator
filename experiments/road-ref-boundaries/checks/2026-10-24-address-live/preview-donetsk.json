@@ -1,0 +1,18 @@
+{
+  "sourceCommit": "849102c5994c16db2dbfe1ca8d1c145b856725ea",
+  "deploymentId": "dpl_3oCZcqnjbj8BKWtbzDN7YvcT9VXx",
+  "url": "https://mezhgorod-calculator-bdpmxktze-4regodatbe-5310.vercel.app/api/suggest?q=%D0%94%D0%BE%D0%BD%D0%B5%D1%86%D0%BA",
+  "query": "Донецк",
+  "status": 502,
+  "toolElapsedMs": 2884,
+  "headers": {
+    "content-type": "application/json",
+    "date": "Sat, 24 Oct 2026 08:08:46 GMT",
+    "x-matched-path": "/api/suggest",
+    "x-vercel-cache": "MISS",
+    "x-vercel-id": "arn1:iad1::fra1::jb7tp-1792829326444-25eb52a791ea"
+  },
+  "body": {
+    "error": "Подсказки адресов временно недоступны"
+  }
+}

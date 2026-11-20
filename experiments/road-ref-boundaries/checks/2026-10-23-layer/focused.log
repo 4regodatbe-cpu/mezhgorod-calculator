@@ -1,0 +1,36 @@
+✔ strict south vector uses finished matrix price (2.866793ms)
+✔ reverse south vector same fare (0.589399ms)
+✔ current candidate exact vector carries warning (0.348355ms)
+✔ partial gate evidence does not replace fare (0.15917ms)
+✔ missing departure date fails; Thursday fare remains fixed across Friday midnight (0.346763ms)
+✔ A289 component cannot vanish in M4 replacement (0.135164ms)
+✔ single confirmed M4 plaza uses its existing candidate fare (0.327143ms)
+✔ ordinary weekday midnight and weekend midnight retain an unchanged complete M4 fare (0.842721ms)
+✔ departure profile stays fixed across a weekend/year boundary; unknown departure year fails (0.879787ms)
+✔ new endpoint-only south lookup needs no intermediate plaza evidence (0.57002ms)
+✔ new endpoint-only lookup supports a single tariff section without native sums (0.638072ms)
+✔ mainline endpoints use the canonical chain excluding intermediate entry tariff (0.272711ms)
+✔ Yandex reviewed northbound cells replace all conflicting variants with one price per profile (0.846687ms)
+✔ reviewed northbound fare does not get mirrored; reverse uses its own canonical estimate (0.579354ms)
+✔ published355 northbound receipt pair is charged220 once in both profiles (0.601347ms)
+✔ 355 southward artificial fare boundaries stay unknown with a specific reason (2.139677ms)
+✔ normalize complete road-number labels; do not accept prose or destinations (1.775387ms)
+✔ saved Granitnoe→Kazan selects actual northern-bypass entry and R260 exit without a price (14.94569ms)
+✔ same pair of road refs at different locations has different directed transition IDs (0.634236ms)
+✔ an old begin_street_names label does not extend M4 onto a different selected road (0.233132ms)
+✔ concurrent E-road labels do not split a continuous M4 block (2.655635ms)
+✔ discontinuous/malformed selected geometry cannot prove road boundaries (3.898975ms)
+✔ exit/re-entry is not silently folded into a single outer tariff vector (0.325681ms)
+✔ starting on M4 is partial access evidence, not a fabricated entry interchange (0.218029ms)
+✔ road names alone do not introduce a new toll charge or override legacy matrix prices (6.402737ms)
+✔ only a short continuous unnamed connector can link two named road transitions (0.48403ms)
+✔ road evidence signature binds all vertices, not merely endpoints (0.980329ms)
+✔ internally continuous OSRM steps from another candidate cannot annotate the selected shape (0.175906ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 263.980834

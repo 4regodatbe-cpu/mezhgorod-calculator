@@ -1,0 +1,827 @@
+{
+  "date": "2026-10-29",
+  "base": "a1c169d3c7dce49b7d1d3747b9698e7aee4b581a",
+  "head": "eea9351234e2f5b9d3f506b53a4e46bfd4bfd746",
+  "tree": "25914299afacd73ad54fb73f411b2af5b236d601",
+  "fastForward": true,
+  "commits": [
+    "0ddc4f935afd5fde2ea0403b596d01bc4e835068 docs(b05): record final display publication and exact tree readback",
+    "1487a46bc22adbfce8fbd2aa19c68b22517fdcf8 docs(b05): preserve exact final Preview READY and CI evidence locally",
+    "4c2d1a6bf93effc7695215780eb0a070bbe03e84 docs(b05): preserve final CI pass and exact Preview access blocker",
+    "622b52a52641e2419b855d8e4f793c67e0215098 docs(address): close bounded A1 and start targeted compound-address work",
+    "c962fb730c42fd42f192ee55bbba9de20341bbbc fix(address): rank compound addresses by city street and house evidence",
+    "b266d7558b59f43d76d731454827ec8329e36eed docs(address): distinguish free detailed reserve candidates from operational fallback",
+    "00e9983cf2669fad38f36681401e7ac6f5bd1e6a fix(address): preserve numeric localities and reject administrative city aliases",
+    "a82c8f31604a35f47badeeda1241b54423be2711 docs(address): preserve bounded local acceptance and detailed-search limits",
+    "a0e277816ce3e5f9f5a40ff33c43f5c241ebee72 docs(address): clarify exact raw-log preservation and archive readback",
+    "d7cc05f68f3950ceb2178324b89b25927bb4f249 docs(address): define settlement and optional street as permanent search scope",
+    "9d0d87d064f4c62947ecc1570a568dee25d985b9 docs(address): checkpoint bounded settlement and street acceptance",
+    "e6142b18f1d41dae25e43a0a859a36cd247cdb81 fix(address): align settlement and street selection with explicit city scope",
+    "ca62709607b172a004635e2b3a3c1c418e7ace07 docs(address): preserve street selection desktop mobile acceptance and coverage limits",
+    "25ba92f9056657618820f4c7853c100dd6db1ec3 docs(routing): checkpoint bounded stage B investigation",
+    "d9c66ea17522c02117f571936744ff5646c1a693 docs(routing): classify bounded BRouter and historic transport failures",
+    "180e7caad4381a92057035827ba1be88113e2bc1 fix(routing): propagate V3 cancellation through providers and selected trace",
+    "31ffa9fae425bd0a1c0343d9abd7afbf5296c101 docs(performance): separate saved network-inclusive stages from CPU profiles",
+    "43a1e2156522d35bb372fc29918da9cfde48bf2f docs(performance): measure avoided obsolete provider starts without SLA claims",
+    "cf45e4b7f448bef0426612445dfec2ebfb4dd5c5 docs(routing): checkpoint exact five-control acceptance and one bounded live gap",
+    "eea9351234e2f5b9d3f506b53a4e46bfd4bfd746 docs(routing): preserve five bounded controls and explicit routing blockers"
+  ],
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 12029,
+      "gitBlob": "4c9753255c8b20527b2deb314d58e88e0affa522",
+      "sha256": "48de849b88a901ae8439e1616331c82b3ddb8952d0ea7ecb52f26b4aa52ce7ac"
+    },
+    {
+      "path": "app/api/suggest/route.ts",
+      "bytes": 4403,
+      "gitBlob": "20b66a11bea5aa112a922c32e15c2fa085a95935",
+      "sha256": "7321bbecd19ce7735c6b63033d141270eed4dd4202d25d000b2e7a0836bc0d9c"
+    },
+    {
+      "path": "app/api/v3/calculate/route.ts",
+      "bytes": 9075,
+      "gitBlob": "62f6e8ce0e7e6cd9b1c4fe85fe648fadd39ffa5a",
+      "sha256": "916d4945e62f9fc9a8bf89884f44dbb688dbd7808ead1838ea632ce640f6b9aa"
+    },
+    {
+      "path": "docs/WORK_STATE.md",
+      "bytes": 114720,
+      "gitBlob": "17874c516abdcd7e8fcacfa5f38a9dd2679ae8f7",
+      "sha256": "66c549791d7eeb2724a2dab0d084ba814a67af8008a3c1a490bfff8d13be956d"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-address-search-scope-settlement-street-LOCAL.md",
+      "bytes": 5989,
+      "gitBlob": "0c67da35b7a42cad893e51a7cb1efd59b54063de",
+      "sha256": "1d57d7e7c876b379dfdd4da0795a2f0e595f8bfee710004f016710b7973186c4"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-b05-final-display-CI-PASS-ACCESS-BLOCKED.md",
+      "bytes": 5578,
+      "gitBlob": "608f1d0689f1af474991fe073d40f299b0ed988b",
+      "sha256": "b446d89f696e4443494b4a19d516d00b657260593bb6a66695ec886f7af9b01b"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-b05-final-display-PUBLISHED.md",
+      "bytes": 2589,
+      "gitBlob": "d417642edabf5e8c86e7b65c76bb29464f6c41d7",
+      "sha256": "f84526c4e90a5fde9ef1e78809cb91cd950b207c3cb5833b40601bc40b4b5b88"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-b05-final-display-preview-READY.md",
+      "bytes": 3153,
+      "gitBlob": "0619d0ce49aa14606eef3e4729a3e12f1facbd8d",
+      "sha256": "2cb9754854126856f3d04e1ce629828a3a821e03ffa712e299682190a0740f6a"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-stage-A-street-acceptance-LOCAL-PARTIAL.md",
+      "bytes": 4419,
+      "gitBlob": "80399da39c98f5d7fb1f350974944c095bd7b828",
+      "sha256": "6af9e900507c304df9fba22e3205e80754101b42998529ebae5e3edf22fe25c3"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-stage-A-street-code-LOCAL-PASS.md",
+      "bytes": 6558,
+      "gitBlob": "741073b57bee28a0feb456ee38089c24b9de6b5c",
+      "sha256": "7999db12039083151ff9c69014f4264b6460b97e4ee3d54c3ba3e051a5a831bb"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-stage-A-street-scope-STARTED.md",
+      "bytes": 2294,
+      "gitBlob": "410dbd06719ed21addf52ec2ea33786d427101af",
+      "sha256": "f42959221569555fa6eabf4aacc52e37d59afa506d10598aeee08184b7e46884"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-stage-A1-handoff-A2-STARTED.md",
+      "bytes": 2346,
+      "gitBlob": "00ae9e71522583afe0c0a6d0d6374f5315c8d429",
+      "sha256": "b3a0a424208f98e5931fb844c28ca43c3c51393ed0cbbcc52139503c0e7cc16a"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-stage-A2-compound-address-LOCAL.md",
+      "bytes": 4804,
+      "gitBlob": "a390c0f1651d40e315ef345f420449141e0d4ca5",
+      "sha256": "edf8f841c117708369855de4a5b445bf40ec78f8dbe8a750a527b938387658b8"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-stage-A3-detail-reserve-REVIEW.md",
+      "bytes": 3669,
+      "gitBlob": "b76d4fcbd651b67b4b2749194bc37ecfa1d2091e",
+      "sha256": "617da590a521adb5ac991bf3dd2498486bb454c2313a36c8a8c37acd21f24c01"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-stage-A4-archive-readback-DONE.md",
+      "bytes": 1660,
+      "gitBlob": "0a724d7df973fd795596353c167e997f68e3a427",
+      "sha256": "4e96be1c046a8a0c97ee97f8a63a430fdfa0ef1d5b928196c6a3ea2a3093e222"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-stage-A4-boundary-guards-LOCAL.md",
+      "bytes": 2509,
+      "gitBlob": "a701b676c0f38863fcf1b3d0ba45b4e53608c9b6",
+      "sha256": "adf4103779ae3036ed7261ab5adc704ee129f2167a39f7ac3296f1d937280a4a"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-stage-A4-local-acceptance-PARTIAL.md",
+      "bytes": 4951,
+      "gitBlob": "eb4e8b2803c563e2c07346eb5eeb3b9ec43cad3d",
+      "sha256": "db49e80ebee11a8443d4269443086f70060474bb32d72947b96dd6061a1ac645"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-stage-B-routing-STARTED.md",
+      "bytes": 1974,
+      "gitBlob": "4b2412ab4c1f1024f4a373d4b0fa680dd9931b96",
+      "sha256": "c134facc1f4de9ef3636dc1f01b5080be635d798bf146caf296111a36d355b78"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-stage-B1-causes-LOCAL.md",
+      "bytes": 1466,
+      "gitBlob": "b3658c747ed54acb549e2e89cf6fe9cdf110072d",
+      "sha256": "8f93428e5cb5650e6807f9204da2d9939b6f76f89da7297beb8276ebdd9900dc"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-stage-B2-cancellation-LOCAL-PASS.md",
+      "bytes": 4632,
+      "gitBlob": "dc4ac85a468064e12a7fd9cee228f691cf577e59",
+      "sha256": "04db77ab40aeb7464537ed051861f7e9850b2be4d615cb24dca67dc3b08c892f"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-stage-B3-saved-timings-LOCAL.md",
+      "bytes": 2190,
+      "gitBlob": "db3f1c4653f76c044cb3a6a3f3657987a4ee297e",
+      "sha256": "a4050b05279cac0c7a1523dcf3f40cd0d824f34bc13458130ef06c9a10071f32"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-stage-B4-cancelled-work-LOCAL.md",
+      "bytes": 2066,
+      "gitBlob": "fecbe7adf9e5052067b473c26197dd38aaa456a3",
+      "sha256": "a37f60cabeeb09d3fec3bba2b94560ef744d3af1188787241874a2ede58df3f9"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-stage-B5-controls-LOCAL-PARTIAL.md",
+      "bytes": 4850,
+      "gitBlob": "b4c95ddcb3182fde9e23d624cc009fbbd6d96c9a",
+      "sha256": "49b85423714e8621e0e36c61cd1b78fb6fd55f71885ad9633663a4552c2f73fe"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-29-stage-B5-controls-STARTED.md",
+      "bytes": 1548,
+      "gitBlob": "618bd756aa452f5186bef61204bd0712fc0a9d06",
+      "sha256": "57ad48cbf831f67048a79a32e650c127395389e28227b648a276c5d1ac840d35"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-final-display-ci/b03-ui.zip",
+      "bytes": 293504,
+      "gitBlob": "2f6242768db31051f236f9b1f94a0e80867dcbaa",
+      "sha256": "5ba6c7a2ea4a89525254e7a716536f462cb4c0f55a4ff7dc2cf6ffd21cae8c7f"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-final-display-ci/calculation-runtime.zip",
+      "bytes": 2849,
+      "gitBlob": "230af7322e689288be86ac0316b21aa609e04a18",
+      "sha256": "0867475581d6b68ca0de66f4ec83eb36d6b933c4c3354d98aabcb16669daf3a0"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-final-display-ci/live-probe.zip",
+      "bytes": 441186,
+      "gitBlob": "08de71d69b8599505e629edc4cffdd117a9450e4",
+      "sha256": "0b7b1d873420df9ba2f4f2dc3bfe5b9439f10f172c384a549ba8e4c03299bda5"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a2-photon/0-RU.json",
+      "bytes": 5248,
+      "gitBlob": "eb1a76904c95b322d145c2c6bca1941ae6c82c80",
+      "sha256": "d36713b56c05c7984ffd1ef6a390809c916602fccbd93c31a548914b6f2fca54"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a2-photon/0-global.json",
+      "bytes": 190,
+      "gitBlob": "76330898b920b1363b2cfcda0360efce4dc542e5",
+      "sha256": "b429e25e7813a9e2b90dcec11d9cb5287751246128dd6c76a7349774829c5554"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a2-photon/1-RU.json",
+      "bytes": 10083,
+      "gitBlob": "641fe5ff98a0c896b89f4013029972101750d664",
+      "sha256": "759efc89bbcfe0f6f1fed6934d631259811482caa135846ebf9460e785b68311"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a2-photon/1-global.json",
+      "bytes": 190,
+      "gitBlob": "76330898b920b1363b2cfcda0360efce4dc542e5",
+      "sha256": "b429e25e7813a9e2b90dcec11d9cb5287751246128dd6c76a7349774829c5554"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a2-photon/followup-review.json",
+      "bytes": 414,
+      "gitBlob": "6f86dfb53c19c912f7a6b326f2ebadc0cfb88a28",
+      "sha256": "017b0c2d700c4409e255081b3bd5280cebf77e7c4ca18301bf54f2512cf16fed"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a2-photon/moscow-house-followup.json",
+      "bytes": 9067,
+      "gitBlob": "d8de89bd55bd112410076b36e538ae4e01cb3f03",
+      "sha256": "7d3ccf432345585569b607a467f29d9b5daad118a6263598c0268e42c1841730"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a2-photon/review.json",
+      "bytes": 2000,
+      "gitBlob": "381485913fc5e3151aa0ccf607afdd2c12a226d5",
+      "sha256": "b455b0a597588367dc4e174e49d456fd6176b46443244796e1c777bdb138620a"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/README.md",
+      "bytes": 6422,
+      "gitBlob": "b25e585303d7799c1f28769d2ca284d09b69485f",
+      "sha256": "ab7b663dc9da83e47b1d35d3d61dedad95bc97ebb565679b95c0b1c7f334658b"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/city-browser-review.json",
+      "bytes": 23331,
+      "gitBlob": "bc10f97a64690dfd44d2a5109d3f45709e0a18f9",
+      "sha256": "5527109ff10d669ab2ba63aad908f3b0f6d086f5974e00107d8a79202030e17c"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/city-browser-runner.mjs",
+      "bytes": 3779,
+      "gitBlob": "1329e54f33eb21f725643b1eb05999ae68ab5737",
+      "sha256": "89ca503af3dca827f470406bd323e2a6fa5ebceaac39a9523992400ff1def3a6"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/city-desktop.png",
+      "bytes": 242903,
+      "gitBlob": "6095fad00ceebc1b5e49d89f5361c1fee173ad7b",
+      "sha256": "65f5641118a880b102affe070f685ee2350545e070d124d173f0cc07c01b07cd"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/city-mobile.png",
+      "bytes": 174792,
+      "gitBlob": "f37e5a32dfa66d7dc1dd758b57b7b9077738d30c",
+      "sha256": "621355830b87dc2e622a580166e16d74d172a5b94e1c69d281771328e39a9275"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/compound-api-http.json",
+      "bytes": 45,
+      "gitBlob": "263b5a9ee39fa83b5036dcc17e5deef2228ab6b4",
+      "sha256": "8f31a884638967700c308b5d79004335f4bf6f8ec9fcfd805766a00499ef150e"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/compound-api-response.json",
+      "bytes": 8030,
+      "gitBlob": "542a07b7a35cde04866fcdd68022ff2433d98d18",
+      "sha256": "86a544a1eccf7fbe59d021227c3d8ecc96f21929b69790ac8ae3b16a4c23beb2"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/detail-browser-review.json",
+      "bytes": 22012,
+      "gitBlob": "2b135cfbb1f0d48f9cdfe5909c3bbfd0e192f55f",
+      "sha256": "7182400b2dd704a49afc99eca2771a0c620188890276d83fe8fde71372b7ca9e"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/detail-browser-runner.mjs",
+      "bytes": 1941,
+      "gitBlob": "2a91ae332fb0208110eb28b8bc8b67a3b7270615",
+      "sha256": "6b3e7be64c2482dd391c203100273ea13ac5dfc1e8f552e137208822c3918b3d"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/detail-desktop.png",
+      "bytes": 208746,
+      "gitBlob": "8f6fae9dd734517782805332629c17421d8af5ea",
+      "sha256": "65f017e15befe53008046ad51bfd20f45832f8bf2c3a421c086d923ac5d5f393"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/detail-mobile.png",
+      "bytes": 142717,
+      "gitBlob": "c8906765c4e7c3762fe2ec4ff259913ea6ac286a",
+      "sha256": "71b3aa6eb599a5d93699dac0a4a6c416ad7abc805ef767bd5d06985f14ae3695"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/logs/audit.log",
+      "bytes": 152233,
+      "gitBlob": "f85221baafca4bdfcd4d71f217368bbb8c454179",
+      "sha256": "76185adf5495ccb73b39a84d56e4610e1115532f91eb30bd2c1f452fc64a8523"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/logs/build.log",
+      "bytes": 1202,
+      "gitBlob": "bf4da632f5c525ff022447507c1877654dc8773f",
+      "sha256": "c94a9b0715589e13fcf3632a2762f8ffe932594b9eefb2063eadac79bfd09899"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/logs/city-browser.log",
+      "bytes": 237,
+      "gitBlob": "b17998626c588fdb3b3a80edb516883b01087d92",
+      "sha256": "68aef480637ed4b84efc71ede103ed29127c22201d2825018418083b3abcce0b"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/logs/detail-browser.log",
+      "bytes": 149,
+      "gitBlob": "10b9b46f7007243b0ceddee65f4e51645a607dc1",
+      "sha256": "ddad2bfba50eb50a6f0cd3ee5a11a10c42931b68412718590db49366857faea6"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/logs/earlier-shared-isolation-failure.log",
+      "bytes": 9195,
+      "gitBlob": "afc8c30bc245b697c821b9c4046a35901efa99ac",
+      "sha256": "e7f21ee05e9c0c672b4ecf3c5215725cde6dc37c5716e0a1f476adaa29565a53"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/logs/eslint.log",
+      "bytes": 198,
+      "gitBlob": "d40a4b9c999a5089f6598ae7be333fe0b787e74c",
+      "sha256": "1c033a78bd3a0775df5613e8bd3498c1f821406d7cf582515f425f14dbe6f583"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/logs/server.log",
+      "bytes": 1491,
+      "gitBlob": "c0759a61429b924238770fc5b92016afdae6e367",
+      "sha256": "c3ac4dc32e231415e3184573d2e86cc07151edf331586b57b6d237d5fae3f11c"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/logs/targeted.log",
+      "bytes": 7907,
+      "gitBlob": "c767b98c7e033467b8edebd386d74975d337842b",
+      "sha256": "865e0fee51eefe3f54527497aa6f104e1dca88446da21e854d6ac95bb039fc4e"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/logs/tsc.log",
+      "bytes": 0,
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-stage-a4-local/manifest.json",
+      "bytes": 4901,
+      "gitBlob": "cf15b57dd81a508767c02eab82669a35d7720a63",
+      "sha256": "e431210599081b301552a40b6786ca72041c6cd8dbc11769ff12cd3e93d5958d"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/README.md",
+      "bytes": 5340,
+      "gitBlob": "f92067bb5c1e5732739a8bdaf6d64b5303add0b9",
+      "sha256": "e711e016ba70a8a6a7c98c22fe6914f24ffbf7a242d542450497bc4d845ad740"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/capture-review.json",
+      "bytes": 2233,
+      "gitBlob": "2c4207304c14f91fe45576af118c38a531bd58e6",
+      "sha256": "b04b306fdd06d4fa4f7cbd913b0035de6eecb229a15093d406f62e8d8a94238f"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/donetsk-UA.body",
+      "bytes": 10381,
+      "gitBlob": "46f74eb34f429696c77e06d09478677da432d178",
+      "sha256": "b6ef9df623430decd63a5509900e04139821c9a47a18645a0425f1b6c231f9b7"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/followup-review.json",
+      "bytes": 538,
+      "gitBlob": "c83a9a108c390b43db0855b16e12bd0748673085",
+      "sha256": "acc06e79f9d97e7da6d9aa2d4addbc5e9ab38fec392bc5b256f31395f2df212e"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/handler-replay-runner.mjs",
+      "bytes": 3345,
+      "gitBlob": "61ac7dd3134a5511c28e9478bab743447104775a",
+      "sha256": "09ad337d4e13b600a5ddb48bae21e402cb90abd450b26cd6d357a3852e2b44af"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/handler-replay.json",
+      "bytes": 20418,
+      "gitBlob": "8938a2b8d91b51142093d026d96523ad9dae79bc",
+      "sha256": "3b686284a2428a03fed7fbe400eb02c34abcef5b5b762e77f09b32844690c81e"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/logs/audit.log",
+      "bytes": 153439,
+      "gitBlob": "be1b7e7bff06cb8cf2eadb886ee64b9b542e2c37",
+      "sha256": "0df9bb5be2d53ffc6be1bb6e2e6a0d1d605edae2bfbfb65732936999f20a4600"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/logs/build.log",
+      "bytes": 1203,
+      "gitBlob": "870f9aaad33c988e6703253beb14143754d596ae",
+      "sha256": "6850c8f0b44abf8f0dc4c7c4c20515a6106833398d4ae66583889976a733489d"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/logs/eslint.log",
+      "bytes": 198,
+      "gitBlob": "213a75ddd671b0c20e1c29052a10e40c3df67ea1",
+      "sha256": "294448f81e64903bdea424b1d7ba27975da7ed4409f6ef9a291affe6f93563f4"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/logs/focused.log",
+      "bytes": 9375,
+      "gitBlob": "c9f7bde5a6d47b771207c444af019d5cd403e904",
+      "sha256": "38bc97a46793f26c98eb920849a3ef6a43450a3563bc2344cee9389f30f70ef9"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/logs/handler-replay.log",
+      "bytes": 3786,
+      "gitBlob": "7b8cf76eb01e3c6149e047e6f2733d38cc4d0153",
+      "sha256": "fd20a79afae37bc9a1349977469758b9a0ef46c74c22580c14ea557448bff16c"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/logs/initial-coordinate-fixture-failure.log",
+      "bytes": 1796,
+      "gitBlob": "93a8476e8274b5c13354faf1dad4846afe18cc5f",
+      "sha256": "d4e001c4aae500da7587296af640621761d416e03eff2ac3e3efad40d480f8a9"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/logs/regressions-before.log",
+      "bytes": 4218,
+      "gitBlob": "133e7030659954d0e6110639ebf5d08a779152dd",
+      "sha256": "cb2bb15365544a385b717b15b1771c3a806923996a69b94d5c13d41e3223b847"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/logs/shared-fixture-cache-failure.log",
+      "bytes": 1932,
+      "gitBlob": "0efbd31f2486c63ae6161f4d8dd93b744f0ee943",
+      "sha256": "bcf209f092bd1e815e19255b3bdf3b5e3cbb84efd62d59e225388ffd0c7a78fd"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/logs/street-window-before.log",
+      "bytes": 2362,
+      "gitBlob": "724ceb37d9e187f6b134b4ed2f4e26e44eb32492",
+      "sha256": "8ebd429a738faf5f3cfc6eeac90fa071d890185bbbe6774ef002f7192bd05c2b"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/logs/tsc.log",
+      "bytes": 0,
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/manifest.json",
+      "bytes": 5542,
+      "gitBlob": "ddae425297ce339423f3210826c31db8d483d12b",
+      "sha256": "2e3c4d48c577a1649dd8490d8bb293ae0de8fa913df97bc0ba088a7d0534a270"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/source-capture-runner.mjs",
+      "bytes": 1534,
+      "gitBlob": "42cfc504e48d9e113bb402a5c2443e6128067519",
+      "sha256": "0880462a1b6adbcf5898d73326afef59b06301d7639fd7d4492fe361d146e8ce"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/source-followup-runner.mjs",
+      "bytes": 1151,
+      "gitBlob": "934f6aa23f9eef8ca6dff89cf05e97cbb4990dee",
+      "sha256": "34cc191fc31c6ddd804bee20aa0230ced63b4ae5c4e3f4dbd3f1a46de82e5ed7"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/street-0.body",
+      "bytes": 2738,
+      "gitBlob": "0a2848a7a68d2f328c125cf1c1243c2e9eff9721",
+      "sha256": "a5f69a75fd7dc9ad19d88781cbc7aa526fbf2177cf8ff757e00c619d053ed99e"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/street-1.body",
+      "bytes": 2636,
+      "gitBlob": "c8311174efcbe4e5cc329485cd8f8502370661cd",
+      "sha256": "18dd592f36d6190a44dc9a94fb8e89f9f9a01ce9f88214fa126f4ea3342d96ae"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/street-2.body",
+      "bytes": 485,
+      "gitBlob": "f148b3c9da6c5b93e2059e80ddbb152e53aa5c57",
+      "sha256": "2b231e2c13b7f27c4419d0e8d19994c3168d3c640580abc3a7a36f763fcb4634"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/street-3.body",
+      "bytes": 4551,
+      "gitBlob": "881fb5a34237526f5afb05be2e20b6f3b518b767",
+      "sha256": "780e90339e28e11de61ba61dd30248ed032a47f7338a00980cdfd9c21543edb7"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/ui/1280-street-city.png",
+      "bytes": 242888,
+      "gitBlob": "c50279b20c1092765e67b61732178974b36b24d7",
+      "sha256": "ceb30fe6a11d61a0c2a75d9d1a39c9603abed851406ac1da55fe6f6ec8f3de26"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/ui/390-street-city.png",
+      "bytes": 174993,
+      "gitBlob": "34648261e2beafcf8652621fb895a603ca6bbbe3",
+      "sha256": "1579d107d5eb16d0ba39e492f4d526caabc3f91cdc828ef5a42d445ad41478a8"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/ui/browser-runner.mjs",
+      "bytes": 4997,
+      "gitBlob": "46e60dd8fe24e0b4ebe2b5796b463766ed751409",
+      "sha256": "bfa83a14edadf9c55060e7bc27e28d07429e370bd24854ef34c1d4ccd54d3a35"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/ui/browser.log",
+      "bytes": 295,
+      "gitBlob": "5ff96e0db4eb3ce7d6fbdffb2e75a19e1548a800",
+      "sha256": "5896b3a73dffe7b80d9074ae26c330797a490ae523b349ebbf05d001049697a3"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/ui/review.json",
+      "bytes": 5810,
+      "gitBlob": "89be41bcbaf9dc8f09dbaf4b2f819de66b599ff6",
+      "sha256": "c69da9367d312e3352f911871eb015fd58771cc481e9cbed31b4d64b1a9dd078"
+    },
+    {
+      "path": "experiments/address-search/2026-10-29-street-scope/ui/server.log",
+      "bytes": 153,
+      "gitBlob": "4215ffc90d17d39c55c0d99c686ba5dd00063f3f",
+      "sha256": "2d0c822f140fc2d144bcdc73c0d2e4ff1c7d59c2ad09718ad7a42aa71317811e"
+    },
+    {
+      "path": "experiments/address-search/ADDRESS_SEARCH_SCOPE.md",
+      "bytes": 9544,
+      "gitBlob": "2dad3fea152beb91920db29cf6fc06454bee392b",
+      "sha256": "4f65e8839b960d6c843551c8284d90c47da3d1539c781e69a61e8c93d1ec076b"
+    },
+    {
+      "path": "experiments/address-search/DECISIONS.md",
+      "bytes": 2440,
+      "gitBlob": "174aaa4cb106e8917a62aeb66b7bb3e6fcc7ac15",
+      "sha256": "96a8f891d7bd061fd2ea1b5480f47824345b7f2cd4ac73b20ed0ab028c13f435"
+    },
+    {
+      "path": "experiments/address-search/GEONAMES_V3_LOCAL_INTEGRATION.md",
+      "bytes": 12359,
+      "gitBlob": "02502a0690d2ba453edbd2d47bafd01cfa6908e5",
+      "sha256": "f9b1d2ad05f017f6c49c7c0e3c874a5fe1b3f637ce00ee601b6b8c93d0006fe4"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/api-before.txt",
+      "bytes": 8767,
+      "gitBlob": "5fad968f64202bb14bf3fcdfe920ad364a312cd0",
+      "sha256": "e8292921ddec4aeca2f7121c18c118a0ee0e33697c488dd99e752c7103f8ee6a"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/brouter-current-review.json",
+      "bytes": 500,
+      "gitBlob": "b07d91730016824fcb8a0f7cb7a0a34e0ffa12d6",
+      "sha256": "98c9557936ac77e1da9cccadb0bdd64c3b3506213be4cabffbd60494cf249310"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/brouter-current.body",
+      "bytes": 25,
+      "gitBlob": "66f2b2e9dc1cbd60aae6b65778cbfcb875e42ee6",
+      "sha256": "8ad91f34168ca1c21811e27e0e5fd5b8b631d041d61bcb2eaccb7a9bc332962c"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/cancel-after.json",
+      "bytes": 443,
+      "gitBlob": "64b5fbe125895851025b5596c5bec2f7eea69d09",
+      "sha256": "81925f95b99f877519bae16b586948fdff267d0d6e691dfc5c1c4c6e17cd5d00"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/cancel-before.json",
+      "bytes": 733,
+      "gitBlob": "b159c4d1cf821040a070b0d9679408dd15cafe01",
+      "sha256": "60d7dd445cf7d9f5aee52b26c50799cb4e610554358477d94fd30c757937d376"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/cancel-diagnostic.json",
+      "bytes": 733,
+      "gitBlob": "b159c4d1cf821040a070b0d9679408dd15cafe01",
+      "sha256": "60d7dd445cf7d9f5aee52b26c50799cb4e610554358477d94fd30c757937d376"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/cancelled-work-summary.json",
+      "bytes": 1209,
+      "gitBlob": "fa73c9d0d6fce6f4698e83edf7ec3b7b88dc4733",
+      "sha256": "e063b7691f470aac27fbf18aaacae48d2a91ffc17b67bc0524b89e29f1e434e5"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/control-summary.json",
+      "bytes": 4112,
+      "gitBlob": "06ec274bada1c5b75d745dd8f8a60483d878a31a",
+      "sha256": "abdd90b052890549cbbb9378ead0dc70c0eafa6709712d6d6e0995948562b32f"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/krasnodar-moscow-current.json",
+      "bytes": 11612,
+      "gitBlob": "ce3a9942f3f20cb23e6ff34ae28895bbb9f5b376",
+      "sha256": "ea0a3c3d4ac50846be2bc43212a716b8e983d3daa883ea01cb2b092ab2620805"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/krasnodar-moscow-current.json.gz",
+      "bytes": 282519,
+      "gitBlob": "6404c303365fa3fc89d20a3723bf5d23d746dccf",
+      "sha256": "8edfb11ae0da2f014d7b98989fc292114bb98b6ae77bd1fa3cb88d7a3491679a"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/krasnodar-spb-replay.json",
+      "bytes": 11159,
+      "gitBlob": "3ff8797dc83796238f3f675d337fc1d9df190c03",
+      "sha256": "410071a44209bf5d1d109a3cb0f1060ef1aa1e3399bbe9d6d23352c23a7b6c2e"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/live-candidate-admission.json",
+      "bytes": 1064,
+      "gitBlob": "74729dd3bdbce23dfbb8defa542eac4a77c50933",
+      "sha256": "f16d8154c6b3790563463b40634a1b3ac8e5d2918e2fef96f63e63e73828a818"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/logs/audit.log",
+      "bytes": 157437,
+      "gitBlob": "56842d009675d8ecb430bdf468f936ff61e50ff2",
+      "sha256": "c5c3eaea3bd95a60bfac4f06843720c03feebf9cf0fb6c2a6b6caa796a0a0b40"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/logs/build.log",
+      "bytes": 1202,
+      "gitBlob": "1d219a1527da36a5bcf3f8e914c855b5f664fb7d",
+      "sha256": "5af707015c28cb0a7bf343ca62fe56229b27903c90cc471758056079b7d59751"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/logs/cancel-before.log",
+      "bytes": 5656,
+      "gitBlob": "3cea6f36915232918c5ae92eb187dd38f891469b",
+      "sha256": "b8ef41dcf8d08431654cedc72d0dbbad3bc01d2bd1fcdb739d2ceacbed340662"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/logs/eslint.log",
+      "bytes": 0,
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/logs/focused.log",
+      "bytes": 20809,
+      "gitBlob": "e09c6a9c79af891b63491dc705f34dfdaa10ff3a",
+      "sha256": "28ae95f8c19281fcfd3460218c26fdb87bdaa1fb7a69bdb1a5a0233106a3bef4"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/logs/krasnodar-spb-replay.log",
+      "bytes": 648,
+      "gitBlob": "10a65d8be95c83156dc4415dc393f0828231be3f",
+      "sha256": "9728c789e7ed6d510e5bf22fa0a0a15946078e0161acd3a4d17f0dab15f448ce"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/logs/live-control.log",
+      "bytes": 240,
+      "gitBlob": "759916ed3c89ac26bc183da1c7a2c3789121e23e",
+      "sha256": "b337e6d562b11f20dfac38d7f394e44c0bd8cea4be792dd3c86e9834eb912d20"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/logs/tsc.log",
+      "bytes": 0,
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/logs/uncancelled-parity.log",
+      "bytes": 830,
+      "gitBlob": "e37b5abaa541c61f236e80992bd7e6b710dc1e5d",
+      "sha256": "ba7b63cf69653ebce18f3c67c743bff188d8b2806e959229d35a84afa323b2c0"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/manifest.json",
+      "bytes": 6886,
+      "gitBlob": "f77a956fceffd07e71febb6793ca83053b7f23bf",
+      "sha256": "7cdb750270727a8fd380a65865cfc193d17bbd3d0c26e5c7f959475eea795f09"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/timing-summary.json",
+      "bytes": 6610,
+      "gitBlob": "f833fdb0894dcc471075ffe6d9cddd8b908b4fd2",
+      "sha256": "ee55701b3c583645b63735f78640e479a130946b7974dd290853c8ab662474c5"
+    },
+    {
+      "path": "experiments/routing-reliability/2026-10-29/uncancelled-parity.json",
+      "bytes": 21357,
+      "gitBlob": "faf152473d66cbb4d5b78a62eb2aa603708e1bfd",
+      "sha256": "1c8233e17a9be218db22ee1f91561f551fed87cc7a8010eb9b43d0ac1fdea488"
+    },
+    {
+      "path": "experiments/routing-reliability/STAGE_B.md",
+      "bytes": 8064,
+      "gitBlob": "a39c1e4f43dac248d29c62f31a317c35cabe3531",
+      "sha256": "292f51c0df5d79ae38eca5e6ca8233d439d9d030fb34a880abe8ba98c4f714ce"
+    },
+    {
+      "path": "experiments/routing-reliability/cancel-diagnostic.mjs",
+      "bytes": 1726,
+      "gitBlob": "26b29a6ec6860e6f40aabc04b24003fe346430f8",
+      "sha256": "cd8c148bdff86b45d24aa675b3a41ab54d639002c559c433a3bf4b227edda61a"
+    },
+    {
+      "path": "experiments/routing-reliability/cancelled-work-summary.mjs",
+      "bytes": 1770,
+      "gitBlob": "0b1cdff7f52e024232c590beb9d8b35f26b144dc",
+      "sha256": "1279140959567f56ccdcc3658b52f4534226e92ac097908686a9a00be9085d46"
+    },
+    {
+      "path": "experiments/routing-reliability/capture-krasnodar-moscow.mjs",
+      "bytes": 3115,
+      "gitBlob": "77b021f5642c2b7c97cecde5aaf9588480105b9f",
+      "sha256": "4d84213142d39d320ad519a75a98117be80a72a87b938e65ec6e93968ae47630"
+    },
+    {
+      "path": "experiments/routing-reliability/control-summary.mjs",
+      "bytes": 3950,
+      "gitBlob": "202c36a406e6dca8c4b3ccf4b06105e71088f7f8",
+      "sha256": "45570783e7026a4b62ac578580ccbf253bcd6f508c43e5eebd9c5652700ffe24"
+    },
+    {
+      "path": "experiments/routing-reliability/replay-krasnodar-spb.mjs",
+      "bytes": 3148,
+      "gitBlob": "84c70258c56e5577cdee29bfca29eb406cdb3f87",
+      "sha256": "369e7ded509cf08cde7f817b223b995ecbe1fcd94d1b5a5120fd073a0adb5f01"
+    },
+    {
+      "path": "experiments/routing-reliability/saved-timing-summary.mjs",
+      "bytes": 2870,
+      "gitBlob": "e057e12159d254f556c1101c1ed26a1fda7ece81",
+      "sha256": "751351677d86269e94b80dabf66c9b8f495649cdff1e185492ec5eba1436e300"
+    },
+    {
+      "path": "experiments/routing-reliability/uncancelled-parity.mjs",
+      "bytes": 3303,
+      "gitBlob": "8b16044e9bf629ea43c15b8cc2daeaa972dc8855",
+      "sha256": "a8dc8b6e57d872a6ab6c6291d47917696f457d895efad32c2368690da2fbd8ed"
+    },
+    {
+      "path": "experiments/routing-reliability/verify-live-candidates.mjs",
+      "bytes": 2880,
+      "gitBlob": "6fb6a91db62ff95b0b58f7694720a8bbcde3d876",
+      "sha256": "46902f206a82f953178898f6a0249a2228f9a045c657a6a5c556cfd9ec4347bb"
+    },
+    {
+      "path": "lib/address-query.ts",
+      "bytes": 3776,
+      "gitBlob": "5000208f627fa4ffab7e3729680ec494fc758ae1",
+      "sha256": "c6be86c56602db0f96f0e9d4e24d94ab38a17229432ccdf327ed7bd1cc82088a"
+    },
+    {
+      "path": "lib/local-settlement-search.ts",
+      "bytes": 4190,
+      "gitBlob": "de80e746164824be1c393d14bd915150856bccd6",
+      "sha256": "ede317f8a4aa584577661e0a8d874d811590c66c61fff3652dfa99bd619d0544"
+    },
+    {
+      "path": "lib/photon-address-search.ts",
+      "bytes": 23842,
+      "gitBlob": "af19cf8aee4e0e8d24175e2c5a69bcbe79a68f56",
+      "sha256": "08f1d47a7dcc577b8804eda97b7ddd6a6352af89690676c9f8836a616fffbfd7"
+    },
+    {
+      "path": "lib/route-providers.ts",
+      "bytes": 9780,
+      "gitBlob": "d90a4a37d6b66e63c5284cb0febc71a23c7ff308",
+      "sha256": "f09102ecf0f0591bef0e107a0d30407f4979694ab3309be3d175b63cf11197cd"
+    },
+    {
+      "path": "lib/toll-validator.ts",
+      "bytes": 16530,
+      "gitBlob": "c54e14050315de906bfa8b382e1a52a61e6cc155",
+      "sha256": "15d73a4dfd61c19611c74220db619c8d783738fc6e8487abbdbe52b3ad1c7f70"
+    },
+    {
+      "path": "lib/v3-calculation/route-leg.ts",
+      "bytes": 9011,
+      "gitBlob": "0fe6ab4627c1f03c7fda3c68f3a9a40d58d3f4c1",
+      "sha256": "f285a5b671eafc768b8297a7ee4703daeaec8a55a6b4262cf0bdbd0dfa1c6052"
+    },
+    {
+      "path": "lib/v3-calculation/special-options.ts",
+      "bytes": 8969,
+      "gitBlob": "d99028774301a0c19a89c2f1e435142dbe7fe633",
+      "sha256": "4d09ad5d5910d5fbcc29a55b69fadf46bb1e0711df38d3b6c0fc1486fb857453"
+    },
+    {
+      "path": "scripts/address-search.test.ts",
+      "bytes": 26378,
+      "gitBlob": "4353170e979bc1ad8dad42f95b561aa0b4144a36",
+      "sha256": "556a8dca6ccf69bde466e92f777ff258bb3b6d2f3e8b7062f8db2d4f5c932c82"
+    },
+    {
+      "path": "scripts/compound-address.test.ts",
+      "bytes": 4748,
+      "gitBlob": "2962e0222adbe0d2b2d1be16c89aadb0a10e3d50",
+      "sha256": "eed80238cc80658f06fd9025abf10164f0c03b7174580b37a058881be91996df"
+    },
+    {
+      "path": "scripts/routing-cancellation.test.ts",
+      "bytes": 6099,
+      "gitBlob": "2c086eb349f67781af6a940d4f9dc57f33a52da2",
+      "sha256": "40358ffb52edc4a69e2f63feca539f83162d52cff3aca4e3ebd02b1e92fdf1d6"
+    },
+    {
+      "path": "scripts/street-address.test.ts",
+      "bytes": 10731,
+      "gitBlob": "45fbc2e52be76e286a335eb7cb32017051c85f1e",
+      "sha256": "7f4e8dbc4000905a24ae55a852caca9b2d46d4b74fa0e4bbf0351620f50e5a63"
+    }
+  ],
+  "prohibited": [],
+  "scan": {
+    "scope": "changed bytes plus decoded gzip/ZIP payloads; bounded pattern scan, not proof of absence of all secrets",
+    "archivePayloads": 4,
+    "findings": []
+  },
+  "manifestValidation": {
+    "verifiedHashes": 98,
+    "errors": []
+  }
+}

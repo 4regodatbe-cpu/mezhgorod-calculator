@@ -1,0 +1,27 @@
+{
+  "status": "CAPTURED_PENDING_REVIEW",
+  "sourceCommit": "da0e545c5ec2038097230b7dc77723897af006ad",
+  "transport": "Real current GET handler + Photon fetch; direct local handler invocation, not Preview HTTP; no mocks",
+  "maxQueries": 2,
+  "perQueryBudgetMs": 20000,
+  "rows": [
+    {
+      "id": "krasnodar-exact",
+      "path": "experiments/address-search/stage-i-2026-10-31/capture-krasnodar-exact.json",
+      "sha256": "243733a1d1be12567b3c9d62ec14265206a2ab268a19ec7ce43cb7c8543749c4",
+      "status": 200,
+      "capturedAt": "2026-10-31T14:54:05.129Z",
+      "elapsedMs": 1864.192791,
+      "requiredIdsPresent": true
+    },
+    {
+      "id": "rostov-exact",
+      "path": "experiments/address-search/stage-i-2026-10-31/capture-rostov-exact.json",
+      "sha256": "ff0642769c22412e52f7c7177f8b931e764f040b4b7568dc4e92f16d09962549",
+      "status": 200,
+      "capturedAt": "2026-10-31T14:54:06.046Z",
+      "elapsedMs": 916.459961,
+      "requiredIdsPresent": true
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+✔ E3 full saved multi-road total retained exactly and explicitly graded estimated (1.499073ms)
+✔ E3 missing CKAD/ZSD does not turn5987 or6327 into a complete route estimate (0.233944ms)
+✔ E3 existing confirmed finished ZSD600 remains confirmed on both dates (0.124005ms)
+✔ E3 selected geometry strict snapshots and departure calendars remain source-bound without network (0.325769ms)
+✔ E3 report counts three distinct retained routes, not six evaluations or synthetic estimates (120.649007ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 431.793783

@@ -1,0 +1,38 @@
+{
+  "status": "LOCAL_CHECKS_PASS_WITH_EXTERNAL_BLOCKER",
+  "testedCommit": "be932d99a30776ee74389c79e75200c2b1f16083",
+  "node": "24.19.0",
+  "next": "16.3.4",
+  "runtimeFilesChanged": ["data/address-city-snapshot.json"],
+  "checks": [
+    {"command": "node --import ./scripts/register-ts-paths.mjs --test scripts/address-city-snapshot.test.ts scripts/b03-browser-workflow.test.mjs", "exit": 0, "pass": 9, "fail": 0, "log": "snapshot-target-final.log"},
+    {"command": "node --import ./scripts/register-ts-paths.mjs --test scripts/address-503-regression.test.ts", "exit": 0, "pass": 4, "fail": 0, "log": "photon-regression.log", "realNetwork": false},
+    {"command": "npm run test:audit", "exit": 0, "pass": 1061, "fail": 0, "skip": 1, "additionalQuoteAndApiContracts": "PASS", "log": "offline-gate.log", "realNetwork": false},
+    {"command": "npm run lint", "exit": 0, "errors": 0, "warnings": 7, "log": "lint.log"},
+    {"command": "NEXT_TELEMETRY_DISABLED=1 node node_modules/next/dist/bin/next build --webpack", "exit": 0, "warning": "existing preferredRegion config deprecation", "log": "build.log"},
+    {"command": "node node_modules/typescript/bin/tsc --noEmit", "exit": 0, "afterBuild": true, "log": "typecheck.log"}
+  ],
+  "snapshot": {
+    "status": "FRESH_CAPTURE_REVIEWED_LOCAL_ONLY",
+    "exactPreservedSuggestions": 4,
+    "newRealCaptureQueries": 4,
+    "firstPrefixBatchExit": 2,
+    "exactMissingBatchExit": 0,
+    "expiresAt": "2026-11-07T14:50:17.541Z",
+    "maxAgeDays": 7,
+    "runtimeFlag": false,
+    "unchangedWorkflowFreshnessGuardExit": 0,
+    "beforeAfter": "before-after-review.json"
+  },
+  "photon503": {
+    "status": "BLOCKED_EXTERNAL_SOURCE",
+    "ciRun": "41198667966",
+    "observedDonetskFailures": {"http_503": 4, "source_cooldown": 3},
+    "urlVariants": 7,
+    "distinctOrigins": 1,
+    "remote503RootCause": "NOT_ESTABLISHED_WITH_AVAILABLE_HEADERS_BODY_AND_UPSTREAM_LOGS",
+    "runtimeRecoveryChanged": false
+  },
+  "notPerformed": ["new browser run", "new Actions run", "new Preview deployment or end-to-end verification", "push", "Production change", "route/tariff audit"],
+  "githubPersistenceOfStageI": false
+}

@@ -1,0 +1,3 @@
+# F–H4 one-push preflight STARTED LOCAL
+
+31.10.2026МСК. Sourcea04c31957c683a87dfced352de26dc0076ed6e4a/remote c2f52ee93cd98a81ecd05efa0358fb38c6704124,PR14Draft,clean,ancestry0/H4bundleverify0/activeCI0. [План/область/инварианты/ограничения](../../experiments/toll-estimates/publication-2026-10-31/WORK_LOG.md). Pending55commits/467files,основноедокументы/evidence+D1address+Foverlay. Матрица/CI/deployconfigнеизменны, FdefaultOFF/Productiondeny. Credentialpatternscan0/безcacheсекретныхпутей. Свежиеtarget/offline/TS/lint/buildPENDING. Одинpushтолькопослеуспеха+freshremote;безвторогопуша. НикакихProduction/main/Android/backup/merge/force.

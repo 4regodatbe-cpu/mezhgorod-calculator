@@ -1,0 +1,39 @@
+{
+  "status": "BASELINE_ESLINT_FIXED",
+  "sourceParent": "81dfe59297846d7b25d489cbcfaab3bc181f5f17",
+  "eslint": {
+    "exitCode": 0,
+    "errorsBefore": 19,
+    "errorsAfter": 0,
+    "warningsAfter": 5
+  },
+  "policyProof": {
+    "pass": 1,
+    "fail": 0,
+    "requireRetainedForTsAndEsmAndOutsideScope": true
+  },
+  "full": {
+    "pass": 895,
+    "fail": 0,
+    "testConcurrency": 2,
+    "selectorsUnchanged": true,
+    "timeoutsUnchanged": true
+  },
+  "quoteApiAdapter": "PASS",
+  "webpackTypeScriptStatic16": "PASS",
+  "cjsExecutableBodyChanges": 0,
+  "initialPolicyTest": "FAILED_SOURCE_TYPE_MODULE_UNDER_PRESET_THEN_FIXED_EXPLICIT_COMMONJS",
+  "initialPolicyFailureLog": "policy-initial-failed.log",
+  "obsoleteQuoteDirectiveRemoved": "comment only; exact runtime body byte equality and quote/API rechecked after removal",
+  "snapshotEnabled": false,
+  "liveQueries": 0,
+  "productionChanges": 0,
+  "logSha256": {
+    "build.log": "4a2d6702352189e9d8b24286ccf09b7cc2a481b2e7b403e0a028a59ee93b4816",
+    "policy-test.log": "e3a50385967eccb5944140282a1f926c68d888cb667c285db9d1e227f3f88da6",
+    "full-tests.log": "34e2921473d1bb5c362316967bca0286334404dc29446294a69d8a8248abd3c9",
+    "quote-api.log": "22f3fb8fd4d4481c5eeb44e2bceecf00919d98cbe1b3738345b52035b7be39ef",
+    "policy-initial-failed.log": "c7a4dc2cd74463a12f145ac48f81d198e07782d640489d4146913c8bc761eddc",
+    "eslint.log": "72b9e8da45dcc50bc4da234f4e92ffbf36a3d3861bd9724ec71d9f452e8e8d5c"
+  }
+}

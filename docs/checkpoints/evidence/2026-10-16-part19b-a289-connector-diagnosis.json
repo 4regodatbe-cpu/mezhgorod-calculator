@@ -1,0 +1,60 @@
+{
+  "scope": "Selected Valhalla route only; OSRM alternative not used for binding; provider geometry evidence, not new operator tariff",
+  "controls": [
+    {
+      "caseId": "pair-m4-a289-moscow-to-taman",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-moscow-to-taman/2026-10-16T00-10-06-845Z-capture.json.gz",
+      "captureSha256": "3a49571931bdfe0afedfa1f2bbefff81b6c265dd85ab51fd7e52f1a638c5ab66",
+      "provider": "Valhalla",
+      "kind": "entry",
+      "before": [
+        38.295164,
+        45.207196
+      ],
+      "join": [
+        38.293165,
+        45.206594
+      ],
+      "after": [
+        38.290048,
+        45.206306
+      ],
+      "beforeRoad": [
+        "03К-252"
+      ],
+      "nextRoad": [
+        "А-290",
+        "E 97"
+      ],
+      "selectedManeuver": "Поверните направо на А-289.",
+      "joinMapsToKnownSlavyanskRadiusKm": 13.66302502955692,
+      "frame23NearestVertexKm": 13.547185532349019
+    },
+    {
+      "caseId": "pair-m4-a289-taman-to-moscow",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-moscow/2026-10-16T01-40-05-574Z-capture.json.gz",
+      "captureSha256": "84d63ae07de73f59c97340972e96803918c3137ec4c1e6e90603d568ba26f679",
+      "provider": "Valhalla",
+      "kind": "exit",
+      "before": [
+        38.289318,
+        45.20618
+      ],
+      "join": [
+        38.292057,
+        45.206371
+      ],
+      "after": [
+        38.295398,
+        45.206445
+      ],
+      "beforeRoad": [
+        "А-290"
+      ],
+      "nextRoad": null,
+      "selectedManeuver": "Держитесь правее, чтобы свернуть на А-289.",
+      "joinMapsToKnownSlavyanskRadiusKm": 13.590483928631503,
+      "frame23NearestVertexKm": 13.535700820851034
+    }
+  ]
+}

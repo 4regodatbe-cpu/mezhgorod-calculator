@@ -1,0 +1,249 @@
+{
+  "status": "OFFLINE_REVIEW_DONE_NOT_RUNTIME_APPROVED",
+  "outerSha256": "0c92e4e0e21c5e39355344264cadcbba6640d06db64fff6c055adc1944814ce8",
+  "stats": {
+    "RU": {
+      "rows": 413135,
+      "P": 203263,
+      "featureCodes": {
+        "PPL": 187053,
+        "PPLQ": 10770,
+        "PPLX": 2954,
+        "PPLA2": 1810,
+        "PPLA3": 28,
+        "PPLH": 302,
+        "PPLF": 19,
+        "PPLA": 80,
+        "PPLW": 34,
+        "PPLL": 46,
+        "PPLA4": 2,
+        "PPLC": 1,
+        "PPLS": 162,
+        "PPLR": 2
+      },
+      "countryCodes": {
+        "RU": 203263
+      },
+      "primaryContainsCyrillic": 42
+    },
+    "UA": {
+      "rows": 45744,
+      "P": 33743,
+      "featureCodes": {
+        "PPLA3": 1061,
+        "PPLX": 854,
+        "PPL": 31156,
+        "PPLA2": 215,
+        "PPLQ": 268,
+        "PPLW": 19,
+        "PPLH": 131,
+        "PPLA": 24,
+        "PPLL": 10,
+        "PPLC": 1,
+        "PPLF": 4
+      },
+      "countryCodes": {
+        "UA": 33743
+      },
+      "primaryContainsCyrillic": 3
+    }
+  },
+  "duplicateCount": 0,
+  "duplicateSamples": [],
+  "invalidCount": 0,
+  "invalidSamples": [],
+  "readme": [
+    {
+      "country": "RU",
+      "readmeSha256": "b1957379b6c1242c700c98ac9a8aa0a09f56c3c0a50ee72175527005f48ef2c5"
+    },
+    {
+      "country": "UA",
+      "readmeSha256": "b1957379b6c1242c700c98ac9a8aa0a09f56c3c0a50ee72175527005f48ef2c5"
+    }
+  ],
+  "queryVerdicts": {
+    "Москва": {
+      "records": 3,
+      "distinctIds": 3,
+      "identityStatus": "AMBIGUOUS",
+      "coordinateAccuracy": "UNVERIFIED",
+      "ruAliases": "UNVERIFIED"
+    },
+    "Краснодар": {
+      "records": 2,
+      "distinctIds": 2,
+      "identityStatus": "AMBIGUOUS",
+      "coordinateAccuracy": "UNVERIFIED",
+      "ruAliases": "UNVERIFIED"
+    },
+    "Донецк": {
+      "records": 2,
+      "distinctIds": 2,
+      "identityStatus": "AMBIGUOUS",
+      "coordinateAccuracy": "UNVERIFIED",
+      "ruAliases": "UNVERIFIED"
+    },
+    "Луганск": {
+      "records": 2,
+      "distinctIds": 2,
+      "identityStatus": "AMBIGUOUS",
+      "coordinateAccuracy": "UNVERIFIED",
+      "ruAliases": "UNVERIFIED"
+    },
+    "Ялта": {
+      "records": 5,
+      "distinctIds": 5,
+      "identityStatus": "AMBIGUOUS",
+      "coordinateAccuracy": "UNVERIFIED",
+      "ruAliases": "UNVERIFIED"
+    },
+    "Севастополь": {
+      "records": 3,
+      "distinctIds": 3,
+      "identityStatus": "AMBIGUOUS",
+      "coordinateAccuracy": "UNVERIFIED",
+      "ruAliases": "UNVERIFIED"
+    },
+    "Тарасовка": {
+      "records": 75,
+      "distinctIds": 75,
+      "identityStatus": "AMBIGUOUS",
+      "coordinateAccuracy": "UNVERIFIED",
+      "ruAliases": "UNVERIFIED"
+    },
+    "Черноморское": {
+      "records": 1,
+      "distinctIds": 1,
+      "identityStatus": "SINGLE_CANDIDATE_UNVERIFIED",
+      "coordinateAccuracy": "UNVERIFIED",
+      "ruAliases": "UNVERIFIED"
+    }
+  },
+  "geometry": {
+    "counts": {
+      "outside_four_polygons": {
+        "RU": 203262,
+        "UA": 28314
+      },
+      "lnr": {
+        "RU": 1,
+        "UA": 1375
+      },
+      "dnr": {
+        "UA": 1803
+      },
+      "kherson": {
+        "UA": 985
+      },
+      "zaporizhzhia": {
+        "UA": 1266
+      }
+    },
+    "selected": {
+      "469349": "outside_four_polygons",
+      "484449": "outside_four_polygons",
+      "484453": "outside_four_polygons",
+      "484454": "outside_four_polygons",
+      "496443": "outside_four_polygons",
+      "496444": "outside_four_polygons",
+      "520860": "outside_four_polygons",
+      "524898": "outside_four_polygons",
+      "524900": "outside_four_polygons",
+      "524901": "outside_four_polygons",
+      "542420": "outside_four_polygons",
+      "565348": "outside_four_polygons",
+      "688531": "dnr",
+      "688532": "dnr",
+      "688533": "outside_four_polygons",
+      "691853": "outside_four_polygons",
+      "691854": "outside_four_polygons",
+      "691855": "outside_four_polygons",
+      "691856": "outside_four_polygons",
+      "691857": "outside_four_polygons",
+      "691858": "outside_four_polygons",
+      "691859": "outside_four_polygons",
+      "691860": "outside_four_polygons",
+      "691861": "outside_four_polygons",
+      "691862": "outside_four_polygons",
+      "691863": "lnr",
+      "691865": "outside_four_polygons",
+      "691866": "outside_four_polygons",
+      "691867": "outside_four_polygons",
+      "691868": "outside_four_polygons",
+      "691869": "outside_four_polygons",
+      "691870": "outside_four_polygons",
+      "691871": "outside_four_polygons",
+      "691873": "outside_four_polygons",
+      "691874": "outside_four_polygons",
+      "691875": "outside_four_polygons",
+      "691877": "dnr",
+      "691878": "outside_four_polygons",
+      "691879": "outside_four_polygons",
+      "691880": "outside_four_polygons",
+      "691881": "outside_four_polygons",
+      "691882": "outside_four_polygons",
+      "691883": "zaporizhzhia",
+      "691884": "zaporizhzhia",
+      "691885": "outside_four_polygons",
+      "691886": "outside_four_polygons",
+      "691888": "zaporizhzhia",
+      "691889": "zaporizhzhia",
+      "691890": "outside_four_polygons",
+      "691892": "kherson",
+      "691893": "kherson",
+      "694423": "outside_four_polygons",
+      "694791": "outside_four_polygons",
+      "702658": "lnr",
+      "703222": "outside_four_polygons",
+      "705966": "outside_four_polygons",
+      "709367": "outside_four_polygons",
+      "709717": "dnr",
+      "710687": "outside_four_polygons",
+      "806985": "outside_four_polygons",
+      "808814": "outside_four_polygons",
+      "808966": "outside_four_polygons",
+      "815579": "outside_four_polygons",
+      "821752": "outside_four_polygons",
+      "1490117": "outside_four_polygons",
+      "1500304": "outside_four_polygons",
+      "2015555": "outside_four_polygons",
+      "7688317": "outside_four_polygons",
+      "8220552": "outside_four_polygons",
+      "8475859": "outside_four_polygons",
+      "8530275": "outside_four_polygons",
+      "8530926": "outside_four_polygons",
+      "8729816": "outside_four_polygons",
+      "9290676": "outside_four_polygons",
+      "9529726": "dnr",
+      "9533075": "outside_four_polygons",
+      "9533083": "outside_four_polygons",
+      "10266714": "outside_four_polygons",
+      "11077845": "outside_four_polygons",
+      "11125193": "zaporizhzhia",
+      "11139432": "outside_four_polygons",
+      "11145053": "outside_four_polygons",
+      "11145139": "outside_four_polygons",
+      "11151993": "outside_four_polygons",
+      "11152191": "outside_four_polygons",
+      "11201564": "outside_four_polygons",
+      "11222828": "outside_four_polygons",
+      "11313077": "outside_four_polygons",
+      "12156635": "outside_four_polygons",
+      "12204725": "outside_four_polygons",
+      "12362345": "outside_four_polygons",
+      "13546093": "outside_four_polygons",
+      "13589149": "outside_four_polygons"
+    },
+    "errorCount": 0,
+    "errors": [],
+    "total": 237006
+  },
+  "polygonSha256": "2c61b01d9ee8b938cd8f3baee1efcd6f27043f6479ab7b3ac05a63586d935ea9",
+  "polygonSource": "HDX/UN OCHA Ukraine COD-AB ADM1 v05 valid2025-09-01; existing repository verified four polygons",
+  "crimeaCoverage": "UNKNOWN_NO_REVIEWED_CRIMEA_POLYGON_IN_FOUR_REGION_DATASET",
+  "coverageCompleteness": "UNKNOWN_NO_INDEPENDENT_DENOMINATOR",
+  "aliasesV2Downloaded": false,
+  "runtimeApproved": false,
+  "elapsedSeconds": 5.789
+}

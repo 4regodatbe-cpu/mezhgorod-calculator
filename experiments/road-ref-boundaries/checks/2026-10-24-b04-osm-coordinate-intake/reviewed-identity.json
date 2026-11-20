@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "status": "reviewed_exact_osm_identity_only",
+  "runtimeEligible": false,
+  "officialKilometre": null,
+  "operatorScope": null,
+  "fare": null,
+  "boundaries": [
+    {
+      "role": "entry",
+      "nodeId": 4443232947,
+      "coordinates": {
+        "lat": 47.5105556,
+        "lon": 39.9708171
+      },
+      "incomingWayId": 447135768,
+      "outgoingWayId": 1182567076,
+      "incomingNodeIndex": 17,
+      "incomingNodeCount": 18,
+      "outgoingNodeIndex": 0,
+      "outgoingNodeCount": 3,
+      "incomingRef": null,
+      "outgoingRef": "М-4",
+      "outgoingTollTag": "yes",
+      "directedMembershipVerified": true
+    },
+    {
+      "role": "exit",
+      "nodeId": 358467208,
+      "coordinates": {
+        "lat": 48.186303,
+        "lon": 40.265878
+      },
+      "incomingWayId": 1211606940,
+      "outgoingWayId": 28835034,
+      "incomingNodeIndex": 4,
+      "incomingNodeCount": 5,
+      "outgoingNodeIndex": 0,
+      "outgoingNodeCount": 10,
+      "incomingRef": "М-4",
+      "outgoingRef": "Р-260",
+      "directedMembershipVerified": true
+    }
+  ],
+  "constraints": [
+    "OSM identity/topology is not an official kilometre",
+    "OSM toll/ref tags do not prove operator tariff endpoints or fare",
+    "unknown scope and fare remain fail-closed"
+  ]
+}

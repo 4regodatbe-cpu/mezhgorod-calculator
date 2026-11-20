@@ -1,0 +1,3511 @@
+{
+  "scope": "OFFLINE_EVIDENCE_ONLY_NOT_UI",
+  "records": [
+    {
+      "id": "524898",
+      "cityNameChoice": {
+        "status": "MISSING",
+        "names": [],
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "RU",
+            "33"
+          ],
+          "id": "548389",
+          "name": "Кировская Область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [
+        {
+          "reason": "NO_UNIQUE_RU_CITY_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Moskva — Кировская Область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Москва"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "524900",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Москва",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "RU",
+            "77"
+          ],
+          "id": "480041",
+          "name": "Тверская Область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "RU",
+            "77",
+            "511588"
+          ],
+          "id": "511588",
+          "name": "Пеновский Район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Москва — Тверская Область — Пеновский Район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Москва"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "524901",
+      "cityNameChoice": {
+        "status": "PREFERRED_CANDIDATE",
+        "name": "Москва",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "RU",
+            "48"
+          ],
+          "id": "524894",
+          "name": "Москва",
+          "status": "PREFERRED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Москва — Москва",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Москва"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "542420",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Краснодар",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "RU",
+            "38"
+          ],
+          "id": "542415",
+          "name": "Краснодарский край",
+          "status": "PREFERRED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Краснодар — Краснодарский край",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Краснодар"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "808966",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Краснодар",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "RU",
+            "86"
+          ],
+          "id": "472039",
+          "name": "Воронежская Область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Краснодар — Воронежская Область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Краснодар"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "565348",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Донецк",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "RU",
+            "61"
+          ],
+          "id": "501165",
+          "name": "Ростовская Область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Донецк — Ростовская Область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Донецк"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "709717",
+      "cityNameChoice": {
+        "status": "PREFERRED_CANDIDATE",
+        "name": "Донецк",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "05"
+          ],
+          "id": "709716",
+          "name": "Донецкая область",
+          "status": "PREFERRED_CANDIDATE"
+        }
+      ],
+      "issues": [
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "05",
+            "1408"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Донецк — Донецкая область",
+      "territory": "dnr",
+      "queryMatched": [
+        "Донецк"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "1500304",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Луганск",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "RU",
+            "53"
+          ],
+          "id": "1496745",
+          "name": "Новосибирская Область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Луганск — Новосибирская Область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Луганск"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "702658",
+      "cityNameChoice": {
+        "status": "PREFERRED_CANDIDATE",
+        "name": "Луганск",
+        "currentUsageVerified": false
+      },
+      "adminNames": [],
+      "issues": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "14"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "AMBIGUOUS_UNFLAGGED"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "14",
+            "4406"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Луганск",
+      "territory": "lnr",
+      "queryMatched": [
+        "Луганск"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "469349",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Ялта",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "RU",
+            "76"
+          ],
+          "id": "480508",
+          "name": "Тульская Область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Ялта — Тульская Область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Ялта"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "821752",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Ялта",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "RU",
+            "62"
+          ],
+          "id": "500059",
+          "name": "Рязанская Область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Ялта — Рязанская Область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Ялта"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "688531",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Ялта",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "05"
+          ],
+          "id": "709716",
+          "name": "Донецкая область",
+          "status": "PREFERRED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "05",
+            "1404"
+          ],
+          "id": "689196",
+          "name": "Volnovakhskiy Rayon",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Ялта — Донецкая область — Volnovakhskiy Rayon",
+      "territory": "dnr",
+      "queryMatched": [
+        "Ялта"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "688532",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Ялта",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "05"
+          ],
+          "id": "709716",
+          "name": "Донецкая область",
+          "status": "PREFERRED_CANDIDATE"
+        }
+      ],
+      "issues": [
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "05",
+            "1414"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Ялта — Донецкая область",
+      "territory": "dnr",
+      "queryMatched": [
+        "Ялта"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "688533",
+      "cityNameChoice": {
+        "status": "PREFERRED_CANDIDATE",
+        "name": "Ялта",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "11"
+          ],
+          "id": "703883",
+          "name": "Крым",
+          "status": "PREFERRED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "11",
+            "0120"
+          ],
+          "id": "8449687",
+          "name": "Ялтинский район",
+          "status": "PREFERRED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Ялта — Крым — Ялтинский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Ялта"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "496443",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Севастополь",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "RU",
+            "25"
+          ],
+          "id": "553899",
+          "name": "Калужская Область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Севастополь — Калужская Область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Севастополь"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "496444",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Севастополь",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "RU",
+            "55"
+          ],
+          "id": "515001",
+          "name": "Оренбургская Область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Севастополь — Оренбургская Область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Севастополь"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "694423",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Севастополь",
+        "currentUsageVerified": false
+      },
+      "adminNames": [],
+      "issues": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "20"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "AMBIGUOUS_UNFLAGGED"
+        }
+      ],
+      "draftLabel": "Севастополь",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Севастополь"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "484449",
+      "cityNameChoice": {
+        "status": "PREFERRED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "RU",
+            "47"
+          ],
+          "id": "524925",
+          "name": "Московская область",
+          "status": "PREFERRED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Московская область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "484453",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "RU",
+            "10"
+          ],
+          "id": "571473",
+          "name": "Брянская Область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Брянская Область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "484454",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "RU",
+            "10"
+          ],
+          "id": "571473",
+          "name": "Брянская Область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Брянская Область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "520860",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "RU",
+            "56"
+          ],
+          "id": "514801",
+          "name": "Орловская область",
+          "status": "PREFERRED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Орловская область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "806985",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "RU",
+            "86"
+          ],
+          "id": "472039",
+          "name": "Воронежская Область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Воронежская Область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "1490117",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [],
+      "issues": [
+        {
+          "key": [
+            "ADM1",
+            "RU",
+            "13"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "AMBIGUOUS_UNFLAGGED"
+        }
+      ],
+      "draftLabel": "Тарасовка",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "2015555",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "RU",
+            "59"
+          ],
+          "id": "2017623",
+          "name": "Приморский Край",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Приморский Край",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "7688317",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "RU",
+            "62"
+          ],
+          "id": "500059",
+          "name": "Рязанская Область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Рязанская Область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691853",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "02"
+          ],
+          "id": "710734",
+          "name": "Черниговская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "02",
+            "7406"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Тарасовка — Черниговская область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691854",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "21"
+          ],
+          "id": "692196",
+          "name": "Сумская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "21",
+            "5908"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Тарасовка — Сумская область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691855",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "21"
+          ],
+          "id": "692196",
+          "name": "Сумская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "21",
+            "5904"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Тарасовка — Сумская область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691856",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "13"
+          ],
+          "id": "703446",
+          "name": "Киевская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "13",
+            "3214"
+          ],
+          "id": "709244",
+          "name": "Фастовский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Киевская область — Фастовский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691857",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "18"
+          ],
+          "id": "696634",
+          "name": "Полтавская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "18",
+            "5308"
+          ],
+          "id": "696629",
+          "name": "Полтавский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Полтавская область — Полтавский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691858",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "18"
+          ],
+          "id": "696634",
+          "name": "Полтавская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "18",
+            "5304"
+          ],
+          "id": "702724",
+          "name": "Лубенский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Полтавская область — Лубенский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691859",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [],
+      "issues": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "27"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "AMBIGUOUS_UNFLAGGED"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "27",
+            "1804"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "AMBIGUOUS_UNFLAGGED"
+        }
+      ],
+      "draftLabel": "Тарасовка",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691860",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "07"
+          ],
+          "id": "706482",
+          "name": "Харьковская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "07",
+            "6302"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Тарасовка — Харьковская область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691861",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "18"
+          ],
+          "id": "696634",
+          "name": "Полтавская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "18",
+            "5304"
+          ],
+          "id": "702724",
+          "name": "Лубенский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Полтавская область — Лубенский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691862",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "13"
+          ],
+          "id": "703446",
+          "name": "Киевская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "13",
+            "3202"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Тарасовка — Киевская область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691863",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [],
+      "issues": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "14"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "AMBIGUOUS_UNFLAGGED"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "14",
+            "4410"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Тарасовка",
+      "territory": "lnr",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691865",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "09"
+          ],
+          "id": "706370",
+          "name": "Хмельницкая область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "09",
+            "6804"
+          ],
+          "id": "706375",
+          "name": "Хмельницкий район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Хмельницкая область — Хмельницкий район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691866",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "23"
+          ],
+          "id": "689559",
+          "name": "Винницкая область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "23",
+            "0502"
+          ],
+          "id": "689560",
+          "name": "Винницкий район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Винницкая область — Винницкий район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691867",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "23"
+          ],
+          "id": "689559",
+          "name": "Винницкая область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "23",
+            "0502"
+          ],
+          "id": "689560",
+          "name": "Винницкий район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Винницкая область — Винницкий район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691868",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "23"
+          ],
+          "id": "689559",
+          "name": "Винницкая область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "23",
+            "0506"
+          ],
+          "id": "687114",
+          "name": "Жмеринский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Винницкая область — Жмеринский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691869",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "01"
+          ],
+          "id": "710802",
+          "name": "Черкасская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "01",
+            "7102"
+          ],
+          "id": "686801",
+          "name": "Звенигородский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Черкасская область — Звенигородский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691870",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "09"
+          ],
+          "id": "706370",
+          "name": "Хмельницкая область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "09",
+            "6804"
+          ],
+          "id": "706375",
+          "name": "Хмельницкий район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Хмельницкая область — Хмельницкий район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691871",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "04"
+          ],
+          "id": "709929",
+          "name": "Днепропетровская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "04",
+            "1210"
+          ],
+          "id": "699442",
+          "name": "Самаровский район",
+          "status": "PREFERRED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Днепропетровская область — Самаровский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691873",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "23"
+          ],
+          "id": "689559",
+          "name": "Винницкая область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "23",
+            "0510"
+          ],
+          "id": "691015",
+          "name": "Тульчинский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Винницкая область — Тульчинский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691874",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "04"
+          ],
+          "id": "709929",
+          "name": "Днепропетровская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "04",
+            "1202"
+          ],
+          "id": "709961",
+          "name": "Днепровский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Днепропетровская область — Днепровский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691875",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "09"
+          ],
+          "id": "706370",
+          "name": "Хмельницкая область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "09",
+            "6802"
+          ],
+          "id": "707076",
+          "name": "Каменец-Подольский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Хмельницкая область — Каменец-Подольский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691877",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "05"
+          ],
+          "id": "709716",
+          "name": "Донецкая область",
+          "status": "PREFERRED_CANDIDATE"
+        }
+      ],
+      "issues": [
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "05",
+            "1412"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Тарасовка — Донецкая область",
+      "territory": "dnr",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691878",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "25"
+          ],
+          "id": "687869",
+          "name": "Закарпатская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "25",
+            "2108"
+          ],
+          "id": "690904",
+          "name": "Тячевский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Закарпатская область — Тячевский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691879",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "04"
+          ],
+          "id": "709929",
+          "name": "Днепропетровская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "04",
+            "1214"
+          ],
+          "id": "693793",
+          "name": "Синельниковский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Днепропетровская область — Синельниковский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691880",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "04"
+          ],
+          "id": "709929",
+          "name": "Днепропетровская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "04",
+            "1208"
+          ],
+          "id": "700049",
+          "name": "Никопольский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Днепропетровская область — Никопольский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691881",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "10"
+          ],
+          "id": "705811",
+          "name": "Кировоградская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "10",
+            "3504"
+          ],
+          "id": "705813",
+          "name": "Кропивницкий район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Кировоградская область — Кропивницкий район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691882",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "16"
+          ],
+          "id": "700567",
+          "name": "Николаевская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "16",
+            "4802"
+          ],
+          "id": "712771",
+          "name": "Баштанский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Николаевская область — Баштанский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691883",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "26"
+          ],
+          "id": "687699",
+          "name": "Запорожская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "26",
+            "2306"
+          ],
+          "id": "687686",
+          "name": "Запорожский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Запорожская область — Запорожский район",
+      "territory": "zaporizhzhia",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691884",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "26"
+          ],
+          "id": "687699",
+          "name": "Запорожская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "26",
+            "2306"
+          ],
+          "id": "687686",
+          "name": "Запорожский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Запорожская область — Запорожский район",
+      "territory": "zaporizhzhia",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691885",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "16"
+          ],
+          "id": "700567",
+          "name": "Николаевская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "16",
+            "4808"
+          ],
+          "id": "697571",
+          "name": "Первомайский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Николаевская область — Первомайский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691886",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "16"
+          ],
+          "id": "700567",
+          "name": "Николаевская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "16",
+            "4802"
+          ],
+          "id": "712771",
+          "name": "Баштанский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Николаевская область — Баштанский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691888",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "26"
+          ],
+          "id": "687699",
+          "name": "Запорожская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "26",
+            "2310"
+          ],
+          "id": "696670",
+          "name": "Пологовский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Запорожская область — Пологовский район",
+      "territory": "zaporizhzhia",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691889",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "26"
+          ],
+          "id": "687699",
+          "name": "Запорожская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "26",
+            "2302"
+          ],
+          "id": "712446",
+          "name": "Бердянский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Запорожская область — Бердянский район",
+      "territory": "zaporizhzhia",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691890",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "17"
+          ],
+          "id": "698738",
+          "name": "Одесская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "17",
+            "5102"
+          ],
+          "id": "712271",
+          "name": "Березовский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Одесская область — Березовский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691892",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "08"
+          ],
+          "id": "706442",
+          "name": "Херсонская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "08",
+            "6510"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Тарасовка — Херсонская область",
+      "territory": "kherson",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "691893",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "08"
+          ],
+          "id": "706442",
+          "name": "Херсонская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "08",
+            "6508"
+          ],
+          "id": "693707",
+          "name": "Скадовский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Херсонская область — Скадовский район",
+      "territory": "kherson",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "694791",
+      "cityNameChoice": {
+        "status": "PREFERRED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "11"
+          ],
+          "id": "703883",
+          "name": "Крым",
+          "status": "PREFERRED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "11",
+            "0104"
+          ],
+          "id": "712585",
+          "name": "Белогорский район",
+          "status": "PREFERRED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Крым — Белогорский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "703222",
+      "cityNameChoice": {
+        "status": "PREFERRED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "13"
+          ],
+          "id": "703446",
+          "name": "Киевская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "13",
+            "3202"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Тарасовка — Киевская область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "705966",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "01"
+          ],
+          "id": "710802",
+          "name": "Черкасская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "01",
+            "7106"
+          ],
+          "id": "690686",
+          "name": "Уманский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Черкасская область — Уманский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "709367",
+      "cityNameChoice": {
+        "status": "PREFERRED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "11"
+          ],
+          "id": "703883",
+          "name": "Крым",
+          "status": "PREFERRED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "11",
+            "0106"
+          ],
+          "id": "709333",
+          "name": "Джанкойский район",
+          "status": "PREFERRED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Крым — Джанкойский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "808814",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "07"
+          ],
+          "id": "706482",
+          "name": "Харьковская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "07",
+            "6306"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Тарасовка — Харьковская область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "815579",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "02"
+          ],
+          "id": "710734",
+          "name": "Черниговская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "02",
+            "7406"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Тарасовка — Черниговская область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "8220552",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "21"
+          ],
+          "id": "692196",
+          "name": "Сумская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "21",
+            "5902"
+          ],
+          "id": "9808694",
+          "name": "Конотопский городской совет",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Сумская область — Конотопский городской совет",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "8475859",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "27",
+            "1806"
+          ],
+          "id": "704899",
+          "name": "Korostenskiy Rayon",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "27"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "AMBIGUOUS_UNFLAGGED"
+        }
+      ],
+      "draftLabel": "Тарасовка — Korostenskiy Rayon",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "8530275",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "02"
+          ],
+          "id": "710734",
+          "name": "Черниговская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "02",
+            "7408"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Тарасовка — Черниговская область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "8530926",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "02"
+          ],
+          "id": "710734",
+          "name": "Черниговская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "02",
+            "7408"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Тарасовка — Черниговская область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "8729816",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "18"
+          ],
+          "id": "696634",
+          "name": "Полтавская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "18",
+            "5304"
+          ],
+          "id": "702724",
+          "name": "Лубенский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Полтавская область — Лубенский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "9290676",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "01"
+          ],
+          "id": "710802",
+          "name": "Черкасская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "01",
+            "7104"
+          ],
+          "id": "686871",
+          "name": "Золотоношский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Черкасская область — Золотоношский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "9529726",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "05"
+          ],
+          "id": "709716",
+          "name": "Донецкая область",
+          "status": "PREFERRED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "05",
+            "1404"
+          ],
+          "id": "689196",
+          "name": "Volnovakhskiy Rayon",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Донецкая область — Volnovakhskiy Rayon",
+      "territory": "dnr",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "9533075",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "04"
+          ],
+          "id": "709929",
+          "name": "Днепропетровская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "04",
+            "1210"
+          ],
+          "id": "699442",
+          "name": "Самаровский район",
+          "status": "PREFERRED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Днепропетровская область — Самаровский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "9533083",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "04"
+          ],
+          "id": "709929",
+          "name": "Днепропетровская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "04",
+            "1210"
+          ],
+          "id": "699442",
+          "name": "Самаровский район",
+          "status": "PREFERRED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Днепропетровская область — Самаровский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "10266714",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "18"
+          ],
+          "id": "696634",
+          "name": "Полтавская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "18",
+            "5308"
+          ],
+          "id": "696629",
+          "name": "Полтавский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Полтавская область — Полтавский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "11077845",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "10"
+          ],
+          "id": "705811",
+          "name": "Кировоградская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "10",
+            "3508"
+          ],
+          "id": "709226",
+          "name": "Александрийский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Кировоградская область — Александрийский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "11125193",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "26"
+          ],
+          "id": "687699",
+          "name": "Запорожская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "26",
+            "2306"
+          ],
+          "id": "687686",
+          "name": "Запорожский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Запорожская область — Запорожский район",
+      "territory": "zaporizhzhia",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "11139432",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "18"
+          ],
+          "id": "696634",
+          "name": "Полтавская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "18",
+            "5302"
+          ],
+          "id": "704149",
+          "name": "Кременчугский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Полтавская область — Кременчугский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "11145053",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "04"
+          ],
+          "id": "709929",
+          "name": "Днепропетровская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "04",
+            "1202"
+          ],
+          "id": "709961",
+          "name": "Днепровский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Днепропетровская область — Днепровский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "11145139",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "04"
+          ],
+          "id": "709929",
+          "name": "Днепропетровская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "04",
+            "1204"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Тарасовка — Днепропетровская область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "11151993",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "04"
+          ],
+          "id": "709929",
+          "name": "Днепропетровская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "04",
+            "1204"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Тарасовка — Днепропетровская область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "11152191",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "04"
+          ],
+          "id": "709929",
+          "name": "Днепропетровская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "04",
+            "1206"
+          ],
+          "id": "704025",
+          "name": "Криворожский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Днепропетровская область — Криворожский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "11201564",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "13"
+          ],
+          "id": "703446",
+          "name": "Киевская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "13",
+            "3214"
+          ],
+          "id": "709244",
+          "name": "Фастовский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Киевская область — Фастовский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "11222828",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [],
+      "issues": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "27"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "AMBIGUOUS_UNFLAGGED"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "27",
+            "1802"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Тарасовка",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "11313077",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "09"
+          ],
+          "id": "706370",
+          "name": "Хмельницкая область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "09",
+            "6806"
+          ],
+          "id": "694213",
+          "name": "Шепетовский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Хмельницкая область — Шепетовский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "12156635",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "16"
+          ],
+          "id": "700567",
+          "name": "Николаевская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "16",
+            "4808"
+          ],
+          "id": "697571",
+          "name": "Первомайский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Николаевская область — Первомайский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "12204725",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "15"
+          ],
+          "id": "702549",
+          "name": "Львовская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "15",
+            "4606"
+          ],
+          "reason": "NO_UNIQUE_RU_ADMIN_NAME",
+          "status": "MISSING"
+        }
+      ],
+      "draftLabel": "Тарасовка — Львовская область",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "12362345",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "13"
+          ],
+          "id": "703446",
+          "name": "Киевская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "13",
+            "3204"
+          ],
+          "id": "711658",
+          "name": "Бориспольский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Киевская область — Бориспольский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "13546093",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "23"
+          ],
+          "id": "689559",
+          "name": "Винницкая область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "23",
+            "0504"
+          ],
+          "id": "708899",
+          "name": "Гайсинский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Винницкая область — Гайсинский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "13589149",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Тарасовка",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "10"
+          ],
+          "id": "705811",
+          "name": "Кировоградская область",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "10",
+            "3502"
+          ],
+          "id": "708583",
+          "name": "Голованевский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Тарасовка — Кировоградская область — Голованевский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Тарасовка"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    },
+    {
+      "id": "710687",
+      "cityNameChoice": {
+        "status": "SINGLE_UNFLAGGED_CANDIDATE",
+        "name": "Черноморское",
+        "currentUsageVerified": false
+      },
+      "adminNames": [
+        {
+          "key": [
+            "ADM1",
+            "UA",
+            "11"
+          ],
+          "id": "703883",
+          "name": "Крым",
+          "status": "PREFERRED_CANDIDATE"
+        },
+        {
+          "key": [
+            "ADM2",
+            "UA",
+            "11",
+            "0108"
+          ],
+          "id": "12189506",
+          "name": "Евпаторийский район",
+          "status": "SINGLE_UNFLAGGED_CANDIDATE"
+        }
+      ],
+      "issues": [],
+      "draftLabel": "Черноморское — Крым — Евпаторийский район",
+      "territory": "outside_four_polygons",
+      "queryMatched": [
+        "Черноморское"
+      ],
+      "runtimeEligible": false,
+      "currentUsageVerified": false,
+      "coordinateAccuracy": "UNVERIFIED"
+    }
+  ]
+}

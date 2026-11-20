@@ -1,0 +1,432 @@
+{
+  "date": "2026-10-30",
+  "node": "v24.19.0",
+  "source": {
+    "unitGateSha": "3806a78ec6d53d799870026c472b872dee023db2",
+    "productionBuildSha": "04f100a5c12c2cf0e1c7133cd73aaa14ea2e0f25",
+    "productionBuildTree": "86ac4b109d759434799f9e14d7427fc05b61693e",
+    "protectedApplicationUnchangedComparedWith": "128807fb34f7b73a52cf999155489c40b739f9bd",
+    "evidence": "protected-source-unchanged.exit",
+    "currentOfflineProjectionCode": [
+      {
+        "path": "experiments/toll-estimates/estimate.ts",
+        "sha256": "e813566b81d47e40ffae8c55b9402557a053309d12fffe942f4f19b30cb98dc9"
+      },
+      {
+        "path": "experiments/toll-estimates/saved-samples.ts",
+        "sha256": "8393d96e9575d01ad6e22407c75f73da1e3366f3b4701391ef5c79022bbce62c"
+      },
+      {
+        "path": "experiments/toll-estimates/saved-samples.test.ts",
+        "sha256": "6c8f24a118a6fa7e96aa3f5b9185df9c64df09b178249191dd533b3687a3b0c6"
+      },
+      {
+        "path": "experiments/toll-estimates/presentation.test.ts",
+        "sha256": "df01f170f0f0f12be569dc5fa8b58488f3c8efbd24cef1bc6e2ebb74c4a46459"
+      },
+      {
+        "path": "experiments/toll-estimates/practical-recovery.mjs",
+        "sha256": "49c617b30ae64818f759c7c359c83760579e7c5ab9c07e043f375b56a8d31c09"
+      },
+      {
+        "path": "experiments/toll-estimates/practical-recovery.test.mjs",
+        "sha256": "9923ca405747eabfa52e6849eb274cc61a41c754bb116bfcc5da81016a84df37"
+      },
+      {
+        "path": "experiments/toll-estimates/torzhok-recovery.mjs",
+        "sha256": "b3eae24b0ad7d96fe37ce82b89567acc80570d57dec08158cb3440b6a32a3606"
+      },
+      {
+        "path": "experiments/toll-estimates/torzhok-recovery.test.mjs",
+        "sha256": "f387f3fa64ad7deee7bb1c010152a4a1b70bb550e8a79edba1d8cb14a06044c8"
+      },
+      {
+        "path": "experiments/toll-estimates/finalize-recovery.mjs",
+        "sha256": "b856027a5fcfe22f7731cebdb025b5ac107289132c3a15e85ed2a83ef0ff39bc"
+      }
+    ]
+  },
+  "commands": {
+    "exits": {
+      "all-focused-final": 0,
+      "final-scoped-typecheck": 0,
+      "final-scoped-lint": 0,
+      "project-typecheck": 0,
+      "required-offline-gate": 0,
+      "presentation-fixture-repair": 0,
+      "presentation-fixture-typecheck": 0,
+      "presentation-fixture-lint": 0,
+      "all-focused-provenance-final": 0,
+      "provenance-final-lint": 0,
+      "production-build": 0,
+      "protected-source-unchanged": 0
+    },
+    "focused": {
+      "pass": 40,
+      "fail": 0
+    },
+    "offlineGate": {
+      "command": "npm run test:audit",
+      "pass": 1047,
+      "fail": 0,
+      "skip": 1,
+      "skipReason": "Existing admitted real GeoNames GET integration requires GEONAMES_TEST_DIR; not executed, unrelated to toll experiment",
+      "quoteAndApiContracts": "PASS"
+    },
+    "productionBuild": {
+      "command": "NEXT_TELEMETRY_DISABLED=1 node node_modules/next/dist/bin/next build --webpack",
+      "exit": 0,
+      "nextVersion": "16.3.4",
+      "started": "2026-10-30T09:30:41Z",
+      "finished": "2026-10-30T09:31:01Z",
+      "staticPages": "16/16",
+      "warnings": [
+        "existing preferredRegion deprecation"
+      ]
+    }
+  },
+  "sourceStatus": {
+    "zsd600": {
+      "shadow": "estimated",
+      "rub": 600,
+      "originalStrict": "priced/confirmed/600 unchanged",
+      "reason": "derived zone sum, no exact independent OD tariff"
+    },
+    "arzamas": {
+      "destination": "Saint Petersburg Primorsky avenue, NOT Primorsk town",
+      "assessed": [
+        6928,
+        7268
+      ],
+      "full": [
+        null,
+        null
+      ],
+      "missing": "ZSD exact cash/card collection bundle"
+    },
+    "torzhok": {
+      "destination": "Kazan",
+      "fullEstimated": [
+        5904,
+        6084
+      ],
+      "strictFull": [
+        null,
+        null
+      ],
+      "m12": "retained working pair, not new independent registration proof"
+    }
+  },
+  "originalSources": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/owner-base-32-1.pdf",
+      "sha256": "a8041b8a0b44189fd9f3e8dcd9bf155ec9b1b86c2023445fa2805367f0586413"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-17-kad-ekateringofka/owner-zones-96.pdf",
+      "sha256": "3651cf7c42ec6530f2d994cd03c2929c94bd45c86b8479ebce98b6688b23975e"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/zsd/2026-10-18-rvp64-current-rules/current-rules-Pravila0926.pdf",
+      "sha256": "659346fb36a6cccb022d5fb61ee5396b82d62b6bbacdac023fe20447192d3bd2"
+    }
+  ],
+  "newFullEstimatedRoutes": 1,
+  "newConfirmedFullTariffs": 0,
+  "defaultEnabled": false,
+  "liveIntegration": false,
+  "push": false,
+  "productionChanged": false,
+  "providerCaptures": 0,
+  "newFullRouteReplays": 0,
+  "initialFailure": {
+    "file": "all-focused.log",
+    "exit": 1,
+    "pass": 36,
+    "fail": 3,
+    "cause": "old presentation tests selected nonexistent confirmed real sample after honest ZSD assurance downgrade; repaired with explicit controlled UI fixture, not a fake real fare"
+  },
+  "limitations": [
+    "No exact ZSD extended cash/card collection bundle; conditional900 is not an admitted fare/upper bound.",
+    "No route to Primorsk town was captured or priced; saved case ends in Saint Petersburg.",
+    "Torzhok full total is experimental estimate, not strict priced response or operator receipt.",
+    "No UI, live adapter, Preview, CI or Production acceptance/publication performed. Prior build exit metadata remains unknown; this is a separately measured build."
+  ],
+  "artifacts": [
+    {
+      "path": "all-focused-final.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "all-focused-final.log",
+      "bytes": 4190,
+      "sha256": "918cdc51008b10038d7dd069a05b6485833fe61b7e351fdadd5777490c6bf2da"
+    },
+    {
+      "path": "all-focused-provenance-final.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "all-focused-provenance-final.log",
+      "bytes": 4186,
+      "sha256": "38d7c8b91dce135bac0434b385a9f36835eea11c3976c807aaedaafbb88e41ba"
+    },
+    {
+      "path": "all-focused.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "all-focused.log",
+      "bytes": 6523,
+      "sha256": "6adf452b31b3e257c1aa11a080e42596770fbf5a98d74c8ed0768aac4fff156d"
+    },
+    {
+      "path": "application-trees.txt",
+      "bytes": 555,
+      "sha256": "21ca75691926be45e545f7f5635fa2b8d2de77d0c99751670b27b7aaaf4bdc13"
+    },
+    {
+      "path": "arzamas-lint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "arzamas-lint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "arzamas-recovery.json",
+      "bytes": 39748,
+      "sha256": "fd7822da48339bd5f3b8820b13d0a54a7f11ccf753bce32ebd5f3e15c2b15e0b"
+    },
+    {
+      "path": "arzamas-report.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "arzamas-tests.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "arzamas-tests.log",
+      "bytes": 609,
+      "sha256": "20cd71b84e50e233b1c854a724c1c370bda549b721bd9a5c3bd8e2a6db2f4358"
+    },
+    {
+      "path": "final-scoped-lint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "final-scoped-lint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "final-scoped-typecheck.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "final-scoped-typecheck.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "metadata-lint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "metadata-lint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "node.version",
+      "bytes": 9,
+      "sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41"
+    },
+    {
+      "path": "presentation-fixture-lint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "presentation-fixture-lint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "presentation-fixture-repair.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "presentation-fixture-repair.log",
+      "bytes": 782,
+      "sha256": "231f809ccc864b4cd468fc69ace86decfa8ab346d3ba85da365650dae45adc3e"
+    },
+    {
+      "path": "presentation-fixture-typecheck.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "presentation-fixture-typecheck.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "production-build-node.version",
+      "bytes": 9,
+      "sha256": "b7677d3ec37ee1897ba07dc2cfe8292fe421c9ac93396cca5bbece486d1a2a41"
+    },
+    {
+      "path": "production-build-source.sha",
+      "bytes": 41,
+      "sha256": "43ccc22d9513b2a7555f726d3a3b7f92065daa3fc655feacb614247d37946a51"
+    },
+    {
+      "path": "production-build-source.tree",
+      "bytes": 41,
+      "sha256": "14cd1c14a548ec05716c63e72b21bceca0b83f438b1416f15d0afcc6e035b2a1"
+    },
+    {
+      "path": "production-build.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "production-build.finished",
+      "bytes": 21,
+      "sha256": "5cfda8558c1ce4042bc70a1d4f6f3f9927b743dfb9f627d028e00d173ae6351f"
+    },
+    {
+      "path": "production-build.log",
+      "bytes": 1200,
+      "sha256": "4f0db428b9086bd3133076320644633fc57a673d1a4acd122a171ee59a6d8a18"
+    },
+    {
+      "path": "production-build.started",
+      "bytes": 21,
+      "sha256": "17addb98a6370b0e3d898dbfcac9141c5174c13c7a25469c21489fd84bbdbdcd"
+    },
+    {
+      "path": "project-typecheck.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "project-typecheck.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "protected-source-unchanged.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "provenance-final-lint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "provenance-final-lint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "required-offline-gate.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "required-offline-gate.log",
+      "bytes": 159100,
+      "sha256": "02dcb9b1bbb93c0bc93a70982ec824211309a03dc00a4d552c18fd7da4171194"
+    },
+    {
+      "path": "torzhok-lint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "torzhok-lint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "torzhok-recovery.json",
+      "bytes": 28841,
+      "sha256": "69c8792cf7d862277c8963a25cc854504a1b355dab4ec413aaaa618a246167fc"
+    },
+    {
+      "path": "torzhok-report.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "torzhok-tests.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "torzhok-tests.log",
+      "bytes": 726,
+      "sha256": "0c78ac983a9709c5d4e82dbf75732b28b6437a6447416fb2e9889497e946e40d"
+    },
+    {
+      "path": "verified-source.sha",
+      "bytes": 41,
+      "sha256": "fb9e5da251edcaa651eeb73ee3081cc0a8ccb570e52303db137cdbc1717257f5"
+    },
+    {
+      "path": "zsd-confidence-lint.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "zsd-confidence-lint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "zsd-confidence-tests-final.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "zsd-confidence-tests-final.log",
+      "bytes": 652,
+      "sha256": "87c0c7f923f08b6bec908bd99ebbc6b33b122b4fcc8f744eaafb134c41ae9aa7"
+    },
+    {
+      "path": "zsd-confidence-tests.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "zsd-confidence-tests.log",
+      "bytes": 1631,
+      "sha256": "91bb5aec4606b27c6db453d90c50ac542a5e6f0bd392b114b8f745970c8921bc"
+    },
+    {
+      "path": "zsd-confidence-typecheck.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "zsd-confidence-typecheck.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

@@ -1,0 +1,398 @@
+{
+  "sourceSha": "32038ec595ffacf2fe04b10c27f378c1579f1660",
+  "runId": 40645918704,
+  "artifactId": 12797178490,
+  "artifactBytes": 293457,
+  "artifactSha256": "623155b45faa651a28a8c2779aee5ffcdf1e50b4e9e265a3917b86eaa59af19f",
+  "archiveDownloadedAndVerified": true,
+  "environment": {
+    "startedAt": "2026-10-28T06:47:24.919Z",
+    "runnerOs": "Linux",
+    "node": "v24.21.0",
+    "chrome": "156.0.8078.47",
+    "commit": "32038ec595ffacf2fe04b10c27f378c1579f1660",
+    "viewportSet": [
+      {
+        "width": 1280,
+        "height": 900
+      },
+      {
+        "width": 320,
+        "height": 720
+      }
+    ],
+    "snapshotId": "positive-cities-2026-10-24",
+    "snapshotExpiresAt": "2026-10-31T08:24:54Z",
+    "snapshotRecordsSha256": "98f0b3aff117d77525bcba9d65c4d507b1a29d540e0c9fdf553e5fb9494b2933",
+    "snapshotRecordsHashVerified": true,
+    "browserVersion": "156.0.8078.47"
+  },
+  "legacySummary": {
+    "finishedAt": "2026-10-28T06:47:43.827Z",
+    "status": "PASS",
+    "passed": 8,
+    "failed": 0,
+    "notRun": 0,
+    "resultsPath": "/home/runner/work/mezhgorod-calculator/mezhgorod-calculator/b03-browser-results/legacy/scenarios.json"
+  },
+  "legacyCases": [
+    {
+      "id": "01-donetsk-disambiguation",
+      "status": "PASS",
+      "addressRequestCount": 1,
+      "blockedExternalRequestCount": 0
+    },
+    {
+      "id": "02-select-a-and-b",
+      "status": "PASS",
+      "addressRequestCount": 2,
+      "blockedExternalRequestCount": 0
+    },
+    {
+      "id": "03-swap-and-reset",
+      "status": "PASS",
+      "addressRequestCount": 2,
+      "blockedExternalRequestCount": 0
+    },
+    {
+      "id": "04-clear-and-replace-b",
+      "status": "PASS",
+      "addressRequestCount": 2,
+      "blockedExternalRequestCount": 0
+    },
+    {
+      "id": "05-stale-response-race",
+      "status": "PASS",
+      "addressRequestCount": 2,
+      "blockedExternalRequestCount": 0
+    },
+    {
+      "id": "06-normal-empty-error-retry",
+      "status": "PASS",
+      "addressRequestCount": 4,
+      "blockedExternalRequestCount": 0
+    },
+    {
+      "id": "07-fallback-not-in-legacy-cache",
+      "status": "PASS",
+      "addressRequestCount": 3,
+      "blockedExternalRequestCount": 0
+    },
+    {
+      "id": "08-mobile-keyboard",
+      "status": "PASS",
+      "addressRequestCount": 1,
+      "blockedExternalRequestCount": 0
+    }
+  ],
+  "current": {
+    "startedAt": "2026-10-28T06:47:44.248Z",
+    "node": "v24.21.0",
+    "browser": "156.0.8078.47",
+    "sourceSha": "32038ec595ffacf2fe04b10c27f378c1579f1660",
+    "componentSha256": "5ece9b654422c35e43442208f5b778cbf0d173fc19f6da946dd21bbc08728a4d",
+    "snapshotExpiresAt": "2026-10-31T08:24:54Z",
+    "mode": "browser mocked API, no external-service verification",
+    "results": [
+      {
+        "id": "01-select-A-and-B",
+        "status": "PASS",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "addressRequests": [
+          "Краснодар",
+          "Анапа"
+        ],
+        "classifications": [
+          {
+            "positions": [
+              {
+                "lat": 45.0351532,
+                "lng": 38.9772396
+              }
+            ]
+          },
+          {
+            "positions": [
+              {
+                "lat": 45.0351532,
+                "lng": 38.9772396
+              },
+              {
+                "lat": 44.895,
+                "lng": 37.315
+              }
+            ]
+          }
+        ],
+        "calculations": [],
+        "addressAbortEvents": 2
+      },
+      {
+        "id": "02-Anapa-clear-Donetsk",
+        "status": "PASS",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "addressRequests": [
+          "Краснодар",
+          "Анапа",
+          "Донецк"
+        ],
+        "classifications": [
+          {
+            "positions": [
+              {
+                "lat": 45.0351532,
+                "lng": 38.9772396
+              }
+            ]
+          },
+          {
+            "positions": [
+              {
+                "lat": 45.0351532,
+                "lng": 38.9772396
+              },
+              {
+                "lat": 44.895,
+                "lng": 37.315
+              }
+            ]
+          },
+          {
+            "positions": [
+              {
+                "lat": 45.0351532,
+                "lng": 38.9772396
+              }
+            ]
+          },
+          {
+            "positions": [
+              {
+                "lat": 45.0351532,
+                "lng": 38.9772396
+              },
+              {
+                "lat": 48.0158753,
+                "lng": 37.8013407
+              }
+            ]
+          }
+        ],
+        "calculations": [],
+        "addressAbortEvents": 3
+      },
+      {
+        "id": "03-fast-typing",
+        "status": "PASS",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "addressRequests": [
+          "Донецк"
+        ],
+        "classifications": [],
+        "calculations": [],
+        "addressAbortEvents": 0
+      },
+      {
+        "id": "04-late-response-after-replace",
+        "status": "PASS",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "addressRequests": [
+          "Анапа",
+          "Донецк"
+        ],
+        "classifications": [],
+        "calculations": [],
+        "addressAbortEvents": 1
+      },
+      {
+        "id": "05-clear-active-request",
+        "status": "PASS",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "addressRequests": [
+          "Анапа"
+        ],
+        "classifications": [],
+        "calculations": [],
+        "addressAbortEvents": 1
+      },
+      {
+        "id": "06-same-name-choice",
+        "status": "PASS",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "addressRequests": [
+          "Донецк"
+        ],
+        "classifications": [
+          {
+            "positions": [
+              {
+                "lat": 48.3382864,
+                "lng": 39.9509488
+              }
+            ]
+          }
+        ],
+        "calculations": [],
+        "addressAbortEvents": 1
+      },
+      {
+        "id": "07-swap-and-refocus",
+        "status": "PASS",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "addressRequests": [
+          "Краснодар",
+          "Анапа"
+        ],
+        "classifications": [
+          {
+            "positions": [
+              {
+                "lat": 45.0351532,
+                "lng": 38.9772396
+              }
+            ]
+          },
+          {
+            "positions": [
+              {
+                "lat": 45.0351532,
+                "lng": 38.9772396
+              },
+              {
+                "lat": 44.895,
+                "lng": 37.315
+              }
+            ]
+          },
+          {
+            "positions": [
+              {
+                "lat": 44.895,
+                "lng": 37.315
+              },
+              {
+                "lat": 45.0351532,
+                "lng": 38.9772396
+              }
+            ]
+          }
+        ],
+        "calculations": [],
+        "addressAbortEvents": 2
+      },
+      {
+        "id": "08-503-429-empty-recovery",
+        "status": "PASS",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "addressRequests": [
+          "Отказ",
+          "Отказ",
+          "Отказ",
+          "Донецк"
+        ],
+        "classifications": [
+          {
+            "positions": [
+              {
+                "lat": 48.0158753,
+                "lng": 37.8013407
+              }
+            ]
+          }
+        ],
+        "calculations": [],
+        "addressAbortEvents": 4
+      },
+      {
+        "id": "09-mobile-replace",
+        "status": "PASS",
+        "viewport": {
+          "width": 320,
+          "height": 720
+        },
+        "addressRequests": [
+          "Анапа",
+          "Донецк"
+        ],
+        "classifications": [
+          {
+            "positions": [
+              {
+                "lat": 44.895,
+                "lng": 37.315
+              }
+            ]
+          },
+          {
+            "positions": [
+              {
+                "lat": 48.3382864,
+                "lng": 39.9509488
+              }
+            ]
+          }
+        ],
+        "calculations": [],
+        "addressAbortEvents": 2
+      },
+      {
+        "id": "10-fields-independent-and-cancel",
+        "status": "PASS",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "addressRequests": [
+          "Краснодар",
+          "Анапа"
+        ],
+        "classifications": [
+          {
+            "positions": [
+              {
+                "lat": 45.0351532,
+                "lng": 38.9772396
+              }
+            ]
+          }
+        ],
+        "calculations": [],
+        "addressAbortEvents": 2
+      }
+    ],
+    "finishedAt": "2026-10-28T06:48:11.777Z"
+  },
+  "exitCodes": {
+    "legacy": 0,
+    "current": 0
+  },
+  "selectedImage": {
+    "archivePath": "current/09-mobile.png",
+    "bytes": 143733,
+    "sha256": "5c93140f6f879decdc1cf16738f027ff4e1338f9347fd3f163975fd4296a1cef"
+  }
+}

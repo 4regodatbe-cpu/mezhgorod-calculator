@@ -1,0 +1,73 @@
+{
+  "retrievedAt": "2026-10-17T10:39:11Z",
+  "documents": [
+    {
+      "path": "owner-zones-96.pdf",
+      "url": "https://whsd.ru/assets/disclosure/70/96.pdf",
+      "sha256": "3651cf7c42ec6530f2d994cd03c2929c94bd45c86b8479ebce98b6688b23975e",
+      "bytes": 469604,
+      "kind": "primary_raw"
+    },
+    {
+      "path": "owner-base-32-1.pdf",
+      "url": "https://whsd.ru/assets/disclosure/70/32_1.pdf",
+      "sha256": "a8041b8a0b44189fd9f3e8dcd9bf155ec9b1b86c2023445fa2805367f0586413",
+      "bytes": 110402,
+      "kind": "primary_raw"
+    },
+    {
+      "path": "owner-rules.html",
+      "url": "https://whsd.ru/pravila-ispolzovaniya-zsd",
+      "sha256": "39da1d5dd3a4235c50c09e55736b4939a5c62735464348564a7e606ce4b701c3",
+      "bytes": 395380,
+      "kind": "primary_raw"
+    },
+    {
+      "path": "owner-tariffs.html",
+      "url": "https://whsd.ru/tarifyi-na-proezd/",
+      "sha256": "02f1f3eb15f566831bc83bfc9599c17a5520a97a752bc2735d832f7a9308aad5",
+      "bytes": 34333,
+      "kind": "primary_raw"
+    },
+    {
+      "path": "owner-documents.html",
+      "url": "https://whsd.ru/dokumentyi,-svyazannyie-s-platnyim-proezdom-po-zsd",
+      "sha256": "6835764fa317bf622e04b4211321a23dcddacda136c230ecc655b74952a8a02a",
+      "bytes": 68172,
+      "kind": "primary_raw"
+    },
+    {
+      "path": "exit-way183902370.osm",
+      "url": "https://api.openstreetmap.org/api/0.6/way/183902370/full",
+      "sha256": "a0b3d4eb094cc9aae28196a4f4804604c871df0699d179b53b80a3e548d1c37f",
+      "bytes": 2137,
+      "kind": "primary_raw"
+    },
+    {
+      "path": "owner-zones-96.txt",
+      "url": null,
+      "sha256": "d07a126f0057e1b361bdb6dff32a4dea40abc68a309d722613d6e1a689bbc6ea",
+      "bytes": 92462,
+      "kind": "pdftotext_layout_derivative"
+    },
+    {
+      "path": "owner-base-32-1.txt",
+      "url": null,
+      "sha256": "ac6679929c51343f93b0eeb381b1e545e7230b7fa138092b1ca4567f0ca2052f",
+      "bytes": 5301,
+      "kind": "pdftotext_layout_derivative"
+    }
+  ],
+  "rulesPdfOriginal": {
+    "url": "https://whsd.ru/assets/disclosure/70/Pravila0926.pdf",
+    "sha256": "659346fb36a6cccb022d5fb61ee5396b82d62b6bbacdac023fe20447192d3bd2",
+    "bytes": 10558533,
+    "visuallyCheckedPdfPages": [
+      17,
+      19,
+      20
+    ],
+    "preservedEquivalentPrimaryText": "owner-rules.html"
+  },
+  "note": "96.pdf used only for Annex1 directed tariff-zone definitions; its historical transponder tables are not pricing inputs. Current cash/card amounts use32_1.pdf and current owner tariffs page."
+}

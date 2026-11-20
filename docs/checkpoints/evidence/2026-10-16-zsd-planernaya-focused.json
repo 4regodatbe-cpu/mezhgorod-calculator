@@ -1,0 +1,26 @@
+[
+  {
+    "command": [
+      "node",
+      "--import",
+      "./scripts/register-ts-paths.mjs",
+      "--test",
+      "scripts/v3-zsd-planernaya-identity.test.ts",
+      "scripts/v3-chain-boundaries.test.ts"
+    ],
+    "exitCode": 0,
+    "stdout": "✔ actual M12–CKAD–M11 chain resolves its own MMK head and mainline pair (23.449011ms)\n✔ a genuinely headless mainline pair does not manufacture a head charge (6.824225ms)\n✔ real unnamed ZSD/M11 events have their own identity and no invented fare (4.183173ms)\n✔ reverse-chain unnamed booths map to ZSD and M4, preserving incomplete trace refusal (0.309746ms)\n✔ Planernaya plaza identity has hashed primary booth and continuous directed ZSD topology (2.048669ms)\n✔ actual unnamed Planernaya event resolves as ZSD while its larger trip still has no zone1 fare (5.013848ms)\n✔ an unreviewed neighbouring node on the same unnamed way remains an unknown paid road (0.260554ms)\n✔ resolving Planernaya identity cannot hide incomplete selected payment coverage (0.261795ms)\nℹ tests 8\nℹ suites 0\nℹ pass 8\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 352.433515\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "pnpm",
+      "exec",
+      "eslint",
+      "scripts/v3-zsd-planernaya-identity.test.ts"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

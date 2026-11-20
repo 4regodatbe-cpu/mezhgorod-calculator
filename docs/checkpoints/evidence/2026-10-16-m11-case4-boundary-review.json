@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "finding": "m11_partial_head_entry_boundary_unresolved",
+  "caseId": "pair-m11-ckad-noginsk-to-spb",
+  "reviewStatus": "source_gated_m11_head_entry_boundary_unbound_no_material_exception",
+  "reviewedAtUtc": "2026-10-16T20:00:50.463Z",
+  "reviewedAtMsk": "2026-10-16T23:00:50.463+03:00",
+  "sourceCommit": "8819f8175edf616ed2229536cdf8abde5ef40a68",
+  "sourceTree": "8b99cebadb42786e8e95e2b24b504bf713dbda2f",
+  "capture": {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-spb/2026-10-16T00-04-08-712Z-capture.json.gz",
+    "gitBlobSha1": "7bf36b92145eb4cfec0d1bff8e6b9d06ce6e733c",
+    "sha256": "738c29e0773a4ac17fa4b56ea324cf060a62533b843560f3ca0413ea9b7234e",
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "routeMeters": 772549,
+    "coordinateCount": 3546,
+    "traceComplete": true,
+    "checkedChunks": 6,
+    "totalChunks": 6,
+    "failedChunks": 0,
+    "checkedEdges": 1172,
+    "paidEdges": 900,
+    "boothEventCoverage": "complete",
+    "selectedM11BoothNodeIds": [
+      "2492861246"
+    ]
+  },
+  "profiles": [
+    {
+      "mode": "live",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-spb/live-2026-10-15T09-00-00-03-00-2026-10-16T00-04-08-746Z.json",
+      "gitBlobSha1": "f0437215f159b1674bbeb23681f5266a5c6ee8a7",
+      "routeMeters": 772549,
+      "routeSeconds": 25413,
+      "traceComplete": true,
+      "captureSha256": "738c29e0773a4ac17fa4b56ea324cf060a62533b843560f3ca0413ea9b7234e4",
+      "m11Head": "unknown",
+      "ckad": "unknown",
+      "zsd": "unknown"
+    },
+    {
+      "mode": "offline-recorded-response-replay",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-spb/replay-2026-10-15T09-00-00-03-00-2026-10-16T00-04-09-151Z.json",
+      "gitBlobSha1": "a5d6f973aef774d740e93bdc863636b598bc1ba9",
+      "routeMeters": 772549,
+      "routeSeconds": 25413,
+      "replayComplete": true,
+      "missingResponses": [],
+      "captureSha256": "738c29e0773a4ac17fa4b56ea324cf060a62533b843560f3ca0413ea9b7234e4",
+      "m11Head": "unknown",
+      "ckad": "unknown",
+      "zsd": "unknown"
+    },
+    {
+      "mode": "offline-recorded-response-replay",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-spb/replay-2026-10-17T09-00-00-03-00-2026-10-16T00-04-09-543Z.json",
+      "gitBlobSha1": "65e4aa442e440993cbd67da32af1d1a1bf2b207b",
+      "routeMeters": 772549,
+      "routeSeconds": 25413,
+      "replayComplete": true,
+      "missingResponses": [],
+      "captureSha256": "738c29e0773a4ac17fa4b56ea324cf060a62533b843560f3ca0413ea9b7234e4",
+      "m11Head": "unknown",
+      "ckad": "unknown",
+      "zsd": "unknown"
+    }
+  ],
+  "routeSelection": {
+    "rule": "fastest-route-only",
+    "selectedProvider": "Valhalla",
+    "selectedRouteSeconds": 25413,
+    "otherCandidate": {
+      "provider": "OSRM",
+      "routeMeters": 770258,
+      "routeSeconds": 32301
+    },
+    "rejectedCandidate": {
+      "provider": "BRouter",
+      "reason": "ROUTE_UNAVAILABLE"
+    },
+    "selectionConsistentWithFastestCandidate": true
+  },
+  "boundaryCheck": {
+    "source": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-15-mmk-bindings/directed-mmk-north-gates.json",
+    "gitBlobSha1": "943f898eedef055fbb841431abe2bccd554c56cc",
+    "operatorPdfSha256": "c4c86c9fd92faddaaa4ab4628542185f48e6ea25ed2dff460960650ab48b9f5a",
+    "directedGateWayIds": [
+      "795569815",
+      "795569816"
+    ],
+    "gateNodeIds": [
+      "3499155981",
+      "3499155978"
+    ],
+    "directedGateWaysInSelectedTrace": [
+      false,
+      false
+    ],
+    "approxNearestPolylineDistanceMeters": [
+      26.61,
+      41.98
+    ],
+    "configuredMatchThresholdMeters": 25,
+    "selectedM11BoothNodeIds": [
+      "2492861246"
+    ],
+    "moscowPvp21SpatialAnchor": "unresolved"
+  },
+  "tollState": {
+    "weekday": "понедельник–четверг",
+    "weekend": "пятница–воскресенье",
+    "weekdayM11_58_679Rub": 3900,
+    "weekendM11_58_679Rub": 4200,
+    "m11_679_684Rub": 94,
+    "missing": [
+      "m11-15-58",
+      "ckad",
+      "zsd"
+    ],
+    "routeAmountRub": null,
+    "pricingStatus": "unknown",
+    "priceConfirmation": "unconfirmed"
+  },
+  "decision": "No material exception to the established boundary-evidence cause is demonstrated. The saved live and same-capture weekday/weekend profiles are complete; the directed gate ways are absent and nearest mapped gate nodes remain outside the 25m matching threshold. Exact M11 head/payment boundary remains unbound. Keep missing M11/CKAD/ZSD amounts unknown; no zero or total inferred.",
+  "testsRun": [],
+  "newLiveRequests": 0,
+  "codeChanged": false,
+  "tariffConfirmed": false,
+  "nextCase": "triple-m11-ckad-m12-kazan-to-spb"
+}

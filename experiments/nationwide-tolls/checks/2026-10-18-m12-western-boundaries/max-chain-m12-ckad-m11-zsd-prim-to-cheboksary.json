@@ -1,0 +1,23 @@
+{
+  "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+  "causeReviewStatus": "blocked_by_missing_reliable_data",
+  "primaryExitWayIds": [
+    "972809728",
+    "972809720",
+    "292501171"
+  ],
+  "sharedJunctionNodeIds": [
+    "10026978937",
+    "14216395535"
+  ],
+  "physicalExitChainVerified": true,
+  "exitRoadRef": "М-7",
+  "candidateOperatorPoint": "vladimir",
+  "unappliedCandidateRub": 1239,
+  "operatorPointBindingProven": false,
+  "existingSubtotalRub": 5475,
+  "fullTripRub": null,
+  "newPricedComponents": 0,
+  "confirmedFullTripFares": 0,
+  "missing": "Official coordinate/object-to-operator charged-boundary crosswalk; gantry identity tags absent; exit relation to tariff point not established"
+}

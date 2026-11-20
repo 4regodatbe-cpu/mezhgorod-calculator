@@ -1,0 +1,15 @@
+{
+  "status": "PROTOTYPE_ONLY",
+  "records": 221512,
+  "stats": {
+    "countryRows": 458879,
+    "populatedRows": 237006,
+    "inactiveOrSubdivisionExcluded": 15494,
+    "aliasRows": 1427089,
+    "missingRuName": 26505
+  },
+  "jsonBytes": 42874892,
+  "sha256": "64b0af909e526c11e961da65106152ec4ed40511bcbfa8c5d998f759c4428c56",
+  "elapsedSeconds": 8.424,
+  "runtimeApproved": false
+}

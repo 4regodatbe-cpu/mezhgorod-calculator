@@ -1,0 +1,221 @@
+{
+  "fast": {
+    "meters": 354824,
+    "seconds": 13566,
+    "m12StrictSpan": null,
+    "m12EndpointSpan": null,
+    "m11RoadEvidence": {
+      "provider": "valhalla",
+      "strictBlocks": [
+        {
+          "provider": "valhalla",
+          "legIndex": 0,
+          "sourceStartIndex": 14,
+          "sourceEndIndex": 15,
+          "beginKm": 34.987,
+          "endKm": 202.997,
+          "lengthKm": 168.01,
+          "beginCoordinate": [
+            35.426147,
+            56.983081
+          ],
+          "endCoordinate": [
+            37.199624,
+            56.09007
+          ],
+          "labels": [
+            "М-11",
+            "«Нева»"
+          ]
+        }
+      ],
+      "candidateClues": [],
+      "malformedStrictCount": 0
+    },
+    "quality": {
+      "status": "single",
+      "providers": [
+        "Valhalla"
+      ],
+      "distanceSpreadPercent": null,
+      "timeSpreadPercent": null,
+      "goldenDistanceDeviationPercent": null,
+      "message": "Выбран маршрут с минимальным временем"
+    },
+    "tolls": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m11-58-679, ckad, unknown-paid-road",
+        "m11-58-679: only_one_verified_boundary_crossing",
+        "ckad: ckad_east_arc_not_proven",
+        "unknown-paid-road: selected_route_payment_trace_incomplete"
+      ],
+      "confidence": "none",
+      "pricingStatus": "unknown"
+    },
+    "tollValidation": {
+      "status": "unknown",
+      "source": "Valhalla map matching",
+      "tollEdgeCount": 0,
+      "checkedEdgeCount": 0,
+      "wayIds": [],
+      "roadNames": [],
+      "message": "Нельзя показывать частичную сумму как итог маршрута. Не оценены: m11-58-679: only_one_verified_boundary_crossing; ckad: ckad_east_arc_not_proven; unknown-paid-road: selected_route_payment_trace_incomplete"
+    },
+    "m4PvpPreview": {
+      "status": "unknown",
+      "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+      "priceRub": null,
+      "verifiedPriceCells": 0,
+      "candidateCount": 0,
+      "confirmedPvps": [],
+      "diagnosticOnly": true
+    },
+    "nationalTollCoverage": {
+      "catalogNetworkCount": 22,
+      "candidateNetworks": [
+        {
+          "id": "ckad",
+          "name": "А-113 ЦКАД",
+          "status": "candidate_unverified",
+          "hasReferenceFare": false,
+          "operator": "Автодор"
+        }
+      ],
+      "catalogWithReferenceFares": 8,
+      "exactCrossingVerified": false,
+      "newFareApplied": false,
+      "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+      "m1m3GateAudit": {
+        "status": "unknown",
+        "reason": "same_selected_route_trace_incomplete",
+        "routeId": "selected-fast-route",
+        "candidateRoads": [],
+        "verifiedGates": [],
+        "unmappedPaidNodes": [],
+        "strictPriceAllowed": false
+      },
+      "m3Shadow": {
+        "status": "unknown",
+        "reason": "m3_full_three_gate_proof_incomplete",
+        "amountRub": null,
+        "diagnosticOnly": true,
+        "roadId": "m3"
+      },
+      "m1Shadow": {
+        "status": "unknown",
+        "reason": "m1_exact_gate_proof_not_verified",
+        "amountRub": null,
+        "roadId": "m1",
+        "diagnosticOnly": true
+      }
+    },
+    "pricingByVehicle": {
+      "standard": {
+        "corridor": {
+          "id": "geometry"
+        },
+        "dualTariff": false,
+        "pricingSegments": [
+          {
+            "distanceKm": 354.824,
+            "tariffType": "normal",
+            "type": "normal",
+            "from": "Торжок, центр",
+            "to": "Раменское, центр",
+            "ratePerKm": 32,
+            "amount": 11354,
+            "reason": "Обычный тариф",
+            "reviewRequired": false
+          }
+        ],
+        "totalPrice": 11354,
+        "reviewRequired": false,
+        "requiresSplit": false,
+        "multiplier": 1
+      },
+      "comfort": {
+        "corridor": {
+          "id": "geometry"
+        },
+        "dualTariff": false,
+        "pricingSegments": [
+          {
+            "distanceKm": 354.824,
+            "tariffType": "normal",
+            "type": "normal",
+            "from": "Торжок, центр",
+            "to": "Раменское, центр",
+            "ratePerKm": 35,
+            "amount": 12419,
+            "reason": "Обычный тариф",
+            "reviewRequired": false
+          }
+        ],
+        "totalPrice": 12419,
+        "reviewRequired": false,
+        "requiresSplit": false,
+        "multiplier": 1
+      },
+      "comfort_plus": {
+        "corridor": {
+          "id": "geometry"
+        },
+        "dualTariff": false,
+        "pricingSegments": [
+          {
+            "distanceKm": 354.824,
+            "tariffType": "normal",
+            "type": "normal",
+            "from": "Торжок, центр",
+            "to": "Раменское, центр",
+            "ratePerKm": 37,
+            "amount": 13128,
+            "reason": "Обычный тариф",
+            "reviewRequired": false
+          }
+        ],
+        "totalPrice": 13128,
+        "reviewRequired": false,
+        "requiresSplit": false,
+        "multiplier": 1
+      },
+      "minivan": {
+        "corridor": {
+          "id": "geometry"
+        },
+        "dualTariff": false,
+        "pricingSegments": [
+          {
+            "distanceKm": 354.824,
+            "tariffType": "normal",
+            "type": "normal",
+            "from": "Торжок, центр",
+            "to": "Раменское, центр",
+            "ratePerKm": 50,
+            "amount": 17741,
+            "reason": "Обычный тариф",
+            "reviewRequired": false
+          }
+        ],
+        "totalPrice": 17741,
+        "reviewRequired": false,
+        "requiresSplit": false,
+        "multiplier": 1
+      }
+    }
+  },
+  "replayRequests": [
+    "https://valhalla1.openstreetmap.de/route?json=%7B%22locations%22%3A%5B%7B%22lat%22%3A57.041%2C%22lon%22%3A34.962%2C%22type%22%3A%22break%22%7D%2C%7B%22lat%22%3A55.568%2C%22lon%22%3A38.225%2C%22type%22%3A%22break%22%7D%5D%2C%22costing%22%3A%22auto%22%2C%22costing_options%22%3A%7B%22auto%22%3A%7B%22use_tolls%22%3A1%7D%7D%2C%22units%22%3A%22kilometers%22%2C%22shape_format%22%3A%22polyline6%22%2C%22directions_options%22%3A%7B%22language%22%3A%22ru-RU%22%2C%22units%22%3A%22kilometers%22%7D%7D",
+    "https://router.project-osrm.org/route/v1/driving/34.962,57.041;38.225,55.568?overview=full&steps=true&geometries=geojson",
+    "https://brouter.de/brouter?lonlats=34.962%2C57.041%7C38.225%2C55.568&profile=car-vario&alternativeidx=0&format=geojson",
+    "https://valhalla1.openstreetmap.de/trace_attributes",
+    "https://valhalla1.openstreetmap.de/trace_attributes",
+    "https://valhalla1.openstreetmap.de/trace_attributes"
+  ],
+  "misses": [],
+  "externalRequests": 0
+}

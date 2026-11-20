@@ -1,0 +1,330 @@
+{
+  "identity": "H4_RECONSTRUCTED_NOT_ORIGINAL_G",
+  "status": "DOCUMENTARY_COMPARISON_COMPLETE_WITH_RECORDED_LIMITS",
+  "records": [
+    {
+      "caseId": "triple-m11-ckad-m12-torzhok-to-kazan",
+      "fromLatLon": [
+        57.041,
+        34.962
+      ],
+      "toLatLon": [
+        55.7887,
+        49.1221
+      ],
+      "yandexUrl": "https://yandex.com/maps/?ll=42.042361%2C56.192123&mode=routes&rtd=0&rtext=57.041000%2C34.962000~55.788700%2C49.122100&rtt=auto&ruri=~&z=6",
+      "urlRoundingErrorDegrees": 0,
+      "endpointsMatchSavedEF": true,
+      "savedGeometrySha256": "afef70ba994a294ff96c356bec2750b5a65bcfb9bf3c5ff44eb9a62ab4f197f7",
+      "projectDistanceKm": 1068.385,
+      "reportedYandexDistanceMiles": 660,
+      "reportedYandexDistanceKmApprox": 1062.2,
+      "milesToKm": 1062.16704,
+      "reportedYandexDurationSeconds": 40560,
+      "observationDate": "2026-10-31",
+      "departureMode": "now",
+      "reportedObservationWindowMoscow": "~10:25–10:27, as source report; not individual route timestamps",
+      "vehicle": "passenger car below 2 meters",
+      "transponder": false,
+      "chargeTimeBasis": "Reported Yandex price at departure from toll section",
+      "reportedYandexTotal": null,
+      "ourHistoricDates": [
+        "2026-10-15T09:00:00+03:00",
+        "2026-10-17T09:00:00+03:00"
+      ],
+      "ourHistoricAmounts": {
+        "weekday": 5904,
+        "saturday": 6084
+      },
+      "ourAmountIsPartial": false,
+      "diagnosticYandexMinusHistoric": null,
+      "exactPolylineMatch": false,
+      "entryExitPaymentMatch": false,
+      "sameTariffDate": false,
+      "screenshotFilesAvailable": false,
+      "reportedGeometryGrade": "not_vertex_verified",
+      "externalDataGrade": "reported_external_whole_route_estimate_not_operator_tariff",
+      "currentCalculatorStatus": [
+        {
+          "departureAt": "2026-10-15T09:00:00+03:00",
+          "strict": "unknown",
+          "estimate": "estimated",
+          "total": 5904,
+          "assessed": 5904
+        },
+        {
+          "departureAt": "2026-10-17T09:00:00+03:00",
+          "strict": "unknown",
+          "estimate": "estimated",
+          "total": 6084,
+          "assessed": 6084
+        }
+      ],
+      "runtimeAdmission": false,
+      "tollDifferenceAssignedToRoad": false,
+      "ferryReported": true
+    },
+    {
+      "caseId": "pair-m4-m11-krasnodar-to-spb",
+      "fromLatLon": [
+        45.03547,
+        38.975313
+      ],
+      "toLatLon": [
+        59.9391,
+        30.3159
+      ],
+      "yandexUrl": "https://yandex.com/maps/?ll=35.459232%2C53.131461&mode=routes&rtext=45.035470%2C38.975313~59.939100%2C30.315900&rtt=auto&ruri=~&z=5",
+      "urlRoundingErrorDegrees": 0,
+      "endpointsMatchSavedEF": true,
+      "savedGeometrySha256": "c0507836382807f591a84b7bad8f228fc07164a9c872c880a88f9da1707a7f74",
+      "projectDistanceKm": 2061.46,
+      "reportedYandexDistanceMiles": 1280,
+      "reportedYandexDistanceKmApprox": 2060,
+      "milesToKm": 2059.96032,
+      "reportedYandexDurationSeconds": 91680,
+      "observationDate": "2026-10-31",
+      "departureMode": "now",
+      "reportedObservationWindowMoscow": "~10:25–10:27, as source report; not individual route timestamps",
+      "vehicle": "passenger car below 2 meters",
+      "transponder": false,
+      "chargeTimeBasis": "Reported Yandex price at departure from toll section",
+      "reportedYandexTotal": 11070,
+      "ourHistoricDates": [
+        "2026-10-15T09:00:00+03:00",
+        "2026-10-17T09:00:00+03:00"
+      ],
+      "ourHistoricAmounts": {
+        "weekday": 10464,
+        "saturday": 12334
+      },
+      "ourAmountIsPartial": false,
+      "diagnosticYandexMinusHistoric": {
+        "weekday": 606,
+        "saturday": -1264
+      },
+      "exactPolylineMatch": false,
+      "entryExitPaymentMatch": false,
+      "sameTariffDate": false,
+      "screenshotFilesAvailable": false,
+      "reportedGeometryGrade": "visible_corridor_similar_0.07_percent_distance_difference_no_vertex_match",
+      "externalDataGrade": "reported_external_whole_route_estimate_not_operator_tariff",
+      "currentCalculatorStatus": [
+        {
+          "departureAt": "2026-10-15T09:00:00+03:00",
+          "strict": "priced",
+          "estimate": "estimated",
+          "total": 10464,
+          "assessed": 10464
+        },
+        {
+          "departureAt": "2026-10-17T09:00:00+03:00",
+          "strict": "priced",
+          "estimate": "estimated",
+          "total": 12334,
+          "assessed": 12334
+        }
+      ],
+      "runtimeAdmission": false,
+      "tollDifferenceAssignedToRoad": false,
+      "ferryReported": false
+    },
+    {
+      "caseId": "dnr-гранитное-saint-petersburg-center",
+      "fromLatLon": [
+        47.4593941,
+        37.866983
+      ],
+      "toLatLon": [
+        59.9391,
+        30.3159
+      ],
+      "yandexUrl": "https://yandex.com/maps/?ll=35.459232%2C54.026064&mode=routes&rtext=47.459394%2C37.866983~59.939100%2C30.315900&rtt=auto&ruri=~&z=5",
+      "urlRoundingErrorDegrees": 9.999999406318238e-8,
+      "endpointsMatchSavedEF": true,
+      "savedGeometrySha256": "28869d4f49daa96771c06cc729bc571acaed9fc2de111b4f843d6bc37db1fe09",
+      "projectDistanceKm": 1972.786,
+      "reportedYandexDistanceMiles": 1240,
+      "reportedYandexDistanceKmApprox": 1995.6,
+      "milesToKm": 1995.5865600000002,
+      "reportedYandexDurationSeconds": 85860,
+      "observationDate": "2026-10-31",
+      "departureMode": "now",
+      "reportedObservationWindowMoscow": "~10:25–10:27, as source report; not individual route timestamps",
+      "vehicle": "passenger car below 2 meters",
+      "transponder": false,
+      "chargeTimeBasis": "Reported Yandex price at departure from toll section",
+      "reportedYandexTotal": 10320,
+      "ourHistoricDates": [
+        "2026-10-15T09:00:00+03:00",
+        "2026-10-17T09:00:00+03:00"
+      ],
+      "ourHistoricAmounts": {
+        "weekday": 9534,
+        "saturday": 11184
+      },
+      "ourAmountIsPartial": false,
+      "diagnosticYandexMinusHistoric": {
+        "weekday": 786,
+        "saturday": -864
+      },
+      "exactPolylineMatch": false,
+      "entryExitPaymentMatch": false,
+      "sameTariffDate": false,
+      "screenshotFilesAvailable": false,
+      "reportedGeometryGrade": "visible_corridor_similar_1.16_percent_distance_difference_no_vertex_match",
+      "externalDataGrade": "reported_external_whole_route_estimate_not_operator_tariff",
+      "currentCalculatorStatus": [
+        {
+          "departureAt": "2026-10-15T09:00:00+03:00",
+          "strict": "priced",
+          "estimate": "estimated",
+          "total": 9534,
+          "assessed": 9534
+        },
+        {
+          "departureAt": "2026-10-17T09:00:00+03:00",
+          "strict": "priced",
+          "estimate": "estimated",
+          "total": 11184,
+          "assessed": 11184
+        }
+      ],
+      "runtimeAdmission": false,
+      "tollDifferenceAssignedToRoad": false,
+      "ferryReported": false
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+      "fromLatLon": [
+        55.394,
+        43.84
+      ],
+      "toLatLon": [
+        59.982,
+        30.24
+      ],
+      "yandexUrl": "https://yandex.com/maps/?ll=37.051592%2C57.772332&mode=routes&rtd=0&rtext=55.394000%2C43.840000~59.982000%2C30.240000&rtt=auto&ruri=~&z=6",
+      "urlRoundingErrorDegrees": 0,
+      "endpointsMatchSavedEF": true,
+      "savedGeometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e",
+      "projectDistanceKm": 1158.57,
+      "reportedYandexDistanceMiles": 730,
+      "reportedYandexDistanceKmApprox": 1174.8,
+      "milesToKm": 1174.82112,
+      "reportedYandexDurationSeconds": 41760,
+      "observationDate": "2026-10-31",
+      "departureMode": "now",
+      "reportedObservationWindowMoscow": "~10:25–10:27, as source report; not individual route timestamps",
+      "vehicle": "passenger car below 2 meters",
+      "transponder": false,
+      "chargeTimeBasis": "Reported Yandex price at departure from toll section",
+      "reportedYandexTotal": 9353,
+      "ourHistoricDates": [
+        "2026-10-15T09:00:00+03:00",
+        "2026-10-17T09:00:00+03:00"
+      ],
+      "ourHistoricAmounts": {
+        "weekday": 6928,
+        "saturday": 7268
+      },
+      "ourAmountIsPartial": true,
+      "diagnosticYandexMinusHistoric": {
+        "weekday": 2425,
+        "saturday": 2085
+      },
+      "exactPolylineMatch": false,
+      "entryExitPaymentMatch": false,
+      "sameTariffDate": false,
+      "screenshotFilesAvailable": false,
+      "reportedGeometryGrade": "visible_corridor_similar_1.40_percent_distance_difference_no_exact_entry_exit_match",
+      "externalDataGrade": "reported_external_whole_route_estimate_not_operator_tariff",
+      "currentCalculatorStatus": [
+        {
+          "departureAt": "2026-10-15T09:00:00+03:00",
+          "strict": "unknown",
+          "estimate": "unknown",
+          "total": null,
+          "assessed": 6928
+        },
+        {
+          "departureAt": "2026-10-17T09:00:00+03:00",
+          "strict": "unknown",
+          "estimate": "unknown",
+          "total": null,
+          "assessed": 7268
+        }
+      ],
+      "runtimeAdmission": false,
+      "tollDifferenceAssignedToRoad": false,
+      "ferryReported": false
+    }
+  ],
+  "findings": [
+    {
+      "id": "H4-DATA-01",
+      "kind": "historical_source_version",
+      "source": "Source report Granitnoe paragraph describes an older strict unknown due to M4/ZSD.",
+      "current": "F has strict numeric9534/11184 and estimated overlay; M4/ZSD600 remain working-grade. Preserve report, use F/H2 for current status.",
+      "blocksDocumentaryImport": false
+    },
+    {
+      "id": "H4-DATA-02",
+      "kind": "stale_missing_components_and_subtotal_label",
+      "source": "Source report calls Arzamas6928/7268 known and lists head/CKAD/unmapped booth as unresolved; reconstruction keeps a generic unmapped component caveat.",
+      "current": "H2 assessed part contains recovered head280/320 plus estimated CKAD941; only ZSD missing in this saved assessed composition. No new unknown booth demonstrated. Do not reopen old findings or label all6928/7268 confirmed.",
+      "blocksDocumentaryImport": false
+    },
+    {
+      "id": "H4-LIMIT-01",
+      "kind": "geometric_and_temporal_limit",
+      "source": "Visual corridor and rounded length only; exact polyline0, dates differ, payment gates unverified; Torzhok ferry/no price.",
+      "current": "Endpoints now match saved EF, but that does not establish toll-path equality. No difference assigned to a road or runtime quote.",
+      "blocksRuntimeAdmission": true
+    },
+    {
+      "id": "H4-LIMIT-02",
+      "kind": "provenance_limit",
+      "source": "No independent screenshot binaries, original G tree/parents/tests or original JSON hashes in archive.",
+      "current": "New RECONSTRUCTED documentary lineage only; archive-reported7 assertions are not H4 test results.",
+      "blocksOriginalGHistoryClaim": true
+    }
+  ],
+  "arzamasCurrent": {
+    "label": "оценённая часть 6 928/7 268 ₽",
+    "assessed": [
+      6928,
+      7268
+    ],
+    "confirmedGrade": [
+      4274,
+      4614
+    ],
+    "estimatedM12": 1713,
+    "estimatedCkad": 941,
+    "estimatedSubtotal": 2654,
+    "priceSourceKnown": true,
+    "routeApplicationGrade": "working_estimate",
+    "missing": [
+      "zsd"
+    ],
+    "zsd": null,
+    "full": null,
+    "conditionalSaturdayDifference": 2085,
+    "conditionalDifferenceIsZsdTariff": false
+  },
+  "inputBlockerClosed": true,
+  "originalGRecovered": false,
+  "originalGAncestryEstablished": false,
+  "newYandexRequests": 0,
+  "newRouteAudits": 0,
+  "h2TestsRepeated": false,
+  "publication": {
+    "documentarySequenceReadyForSeparateReview": true,
+    "originalFGHHistoryRestored": false,
+    "externalEstimatesRuntimeReady": false,
+    "pushAuthorized": false,
+    "previewOrProductionAcceptanceClaim": false
+  },
+  "note": "Read supplied report/archive and saved E/F/H2 only; source files preserved. Conditional arithmetic is not proof of a toll product."
+}

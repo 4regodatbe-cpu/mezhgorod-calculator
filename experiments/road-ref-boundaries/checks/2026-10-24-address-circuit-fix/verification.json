@@ -1,0 +1,28 @@
+{
+  "sourceBaseCommit": "b54f7d8ee9b41ea6f9bf3c1d7dd40a7e290d4b97",
+  "cause": "ADDR-CIRCUIT-001",
+  "status": "fixed-and-verified-contracts",
+  "focusedPass": 16,
+  "fullPass": 867,
+  "fail": 0,
+  "skip": 0,
+  "quoteApi": "PASS",
+  "eslintExit": 0,
+  "webpackTypeScriptExit": 0,
+  "static": "16/16",
+  "newLiveRequests": 0,
+  "liveAfterFix": "UNVERIFIED",
+  "productionFailureThreshold": 3,
+  "failureStreakWindowMs": 15000,
+  "successResetsCircuit": true,
+  "sha256": {
+    "lib/photon-request-pool.ts": "ff864fb274962380fc11797279f36033459403019ff5c1f7b0a4a5f72d511841",
+    "scripts/photon-request-pool.test.ts": "e685590c2ad3290c1a6bb66fb5a2b1e02519108468d1c2202b053a10d7791152",
+    "scripts/address-search-endpoint.test.ts": "9a300d8c5711a74df9dd1f74199b04c4e9e991e122754ade263f56f47ca1e6e9",
+    "experiments/road-ref-boundaries/checks/2026-10-24-address-circuit-fix/full-audit.log": "7051cae23f93aa6851e499db2d1f4965ce13b76a06fd9d6231f15205b5aace0d",
+    "experiments/road-ref-boundaries/checks/2026-10-24-address-circuit-fix/build.log": "9e2db339d9712871d05310939cc86c961dfc11df4b4da0a3e83d4d473c3ba1f4",
+    "experiments/road-ref-boundaries/checks/2026-10-24-address-circuit-fix/focused.log": "ac6d32d8831058600b45ef1f4731fc54994ac0c7f7016de0704a075963fdaa30",
+    "experiments/road-ref-boundaries/checks/2026-10-24-address-circuit-fix/eslint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experiments/road-ref-boundaries/checks/2026-10-24-address-circuit-fix/sequence.json": "4a9b16a4db8925ea5415363fc1a36d7fefc1d26217b2fadce6a7b7fc54769d3c"
+  }
+}

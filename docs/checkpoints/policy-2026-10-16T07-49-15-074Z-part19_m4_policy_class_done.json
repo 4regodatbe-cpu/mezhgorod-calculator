@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-16T07:49:15.074Z",
+  "phase": "PART19_M4_POLICY_CLASS_DONE",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38869309675",
+  "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
+  "checked": 25,
+  "total": 25,
+  "next": "Part19: diagnose next finding class; do not mark part19/20 complete",
+  "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
+  "parent": "51f9df6463bab7ac2668be9dc39ac25d5fcc733c",
+  "nextFinding": "m4:unpriced",
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-49-15-074Z-part19_m4_policy_class_done.json"
+}

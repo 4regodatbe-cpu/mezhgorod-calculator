@@ -1,0 +1,322 @@
+{
+  "status": "PROVED_DIRECTED_PHYSICAL_BINDING",
+  "durableStartedCommit": "a666fb4887ea54a328a29fb3bfc2dfa5102e5499",
+  "operatorPair": {
+    "road": "ckad",
+    "from": "М-11 Нева",
+    "to": "М-12 Восток",
+    "basis": "Published matrix interchange labels + primary directed А-113 ramp departing exact M11 junction and connected А-113 exit links ending on named paid М-12."
+  },
+  "operatorMatrix": "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+  "operatorPdf": "experiments/nationwide-tolls/source-documents/ckad-order56-effective-2026-03-02.pdf",
+  "operatorPdfSha256": "839488fed07f8e611b5304498f22d49626ff0dc7529df67734a2052a49bea3e7",
+  "primaryResponses": [
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/916593983/full",
+      "bodyFile": "188b375d0695e2a1c254.osm",
+      "status": 200,
+      "sha256": "b3594fb3d1fde05d3498f805b60fb3ebdce0204b69cb281c19a42268802cc56f",
+      "bytes": 1588
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/916593974/full",
+      "bodyFile": "616dc95325a09bcadbf8.osm",
+      "status": 200,
+      "sha256": "38e7ec698a896151be59a9a9efa44b29c385cd6d91cda49303f9d2d9d76e8b2c",
+      "bytes": 2979
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/node/8120716330",
+      "bodyFile": "64a04cac63bfc59f524d.osm",
+      "status": 200,
+      "sha256": "f847530d927f3666293a6e0667611f0d63a6d81ed774e0cd93228187ff2d41a8",
+      "bytes": 504
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/node/8120716327",
+      "bodyFile": "c4b24dcb8db4743a900f.osm",
+      "status": 200,
+      "sha256": "0ac33202e2e96070fc757cdb940bdaa3df13a0a5fcb6e0849ac73326374d35a7",
+      "bytes": 505
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/916593976/full",
+      "bodyFile": "3bfb7278c60ffb4a20a3.osm",
+      "status": 200,
+      "sha256": "759095314a5fd89a4e9bda2adb900892ed6641d368ba42d01a8c9c59329a84c5",
+      "bytes": 4452
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/1189855267/full",
+      "bodyFile": "01ba060f9aefa925fbec.osm",
+      "status": 200,
+      "sha256": "7210bd1b53c660c36fa50935945f790afa844d292e778f9477a765b21511da77",
+      "bytes": 1563
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/node/8120716326",
+      "bodyFile": "6587d1637ed49b3cbb47.osm",
+      "status": 200,
+      "sha256": "b972214f9aef2abbd4bb7cf7a8b651353fc32dc7c555657408b67178321df56f",
+      "bytes": 507
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/1189855268/full",
+      "bodyFile": "b2d6f4bfb98c3a6535e9.osm",
+      "status": 200,
+      "sha256": "8554a401be399efc923a8a709da8e878224c31194720c55630076a0a21265df6",
+      "bytes": 1929
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/1270188041/full",
+      "bodyFile": "dfdac5ff1ade415d779d.osm",
+      "status": 200,
+      "sha256": "176301f355d8ca3cc8ffe6fc7022609ea6ddb49919ae31557f57d390bf47ab39",
+      "bytes": 1760
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/1148492112/full",
+      "bodyFile": "311dc7698b6a73a2265f.osm",
+      "status": 200,
+      "sha256": "cdd0c9b0e56ec2939041f83eb4d9d5508eb054e80a5483cdca60da05fc207ca0",
+      "bytes": 1449
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/1148492111/full",
+      "bodyFile": "b2319a830347351be8d7.osm",
+      "status": 200,
+      "sha256": "5893a2bc98c5f83a68bc16190ee8a852ae2ae9ab1030f2fe4c66e241f9f43a30",
+      "bytes": 1414
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/node/11072845296",
+      "bodyFile": "919bcb82b0adc9391fec.osm",
+      "status": 200,
+      "sha256": "1a8ef5a2227dd95c9263d4297269756c860c532388e75432de97927b4a34cb3e",
+      "bytes": 507
+    }
+  ],
+  "ways": {
+    "916593983": {
+      "wayId": "916593983",
+      "version": "23",
+      "nodes": [
+        "8513080514",
+        "11982687016",
+        "8513080324",
+        "8513080306",
+        "8513080526"
+      ],
+      "tags": {
+        "highway": "trunk_link",
+        "lanes": "4",
+        "lit": "yes",
+        "motorroad": "yes",
+        "oneway": "yes",
+        "surface": "asphalt"
+      }
+    },
+    "916593974": {
+      "wayId": "916593974",
+      "version": "21",
+      "nodes": [
+        "8235775428",
+        "11215213264",
+        "12512420883",
+        "8513080465",
+        "8513080464",
+        "12512420884",
+        "8513080463",
+        "8513080462",
+        "8513080461",
+        "8513080460",
+        "8513080459",
+        "8513080514"
+      ],
+      "tags": {
+        "highway": "trunk_link",
+        "lanes": "2",
+        "lit": "yes",
+        "motorroad": "yes",
+        "oneway": "yes",
+        "surface": "asphalt"
+      }
+    },
+    "916593976": {
+      "wayId": "916593976",
+      "version": "19",
+      "nodes": [
+        "8513080526",
+        "13984339244",
+        "13984339245",
+        "11982461624",
+        "10734605209",
+        "10734605210",
+        "10734605205",
+        "10734605206",
+        "10734605207",
+        "10734605208",
+        "8513080485",
+        "8513080483",
+        "8513080482",
+        "8513080481",
+        "8513080480",
+        "13984339242",
+        "11982461622",
+        "13984339241",
+        "8513080479"
+      ],
+      "tags": {
+        "highway": "trunk_link",
+        "lanes": "2",
+        "lit": "yes",
+        "motorroad": "yes",
+        "oneway": "yes",
+        "surface": "asphalt"
+      }
+    },
+    "1189855267": {
+      "wayId": "1189855267",
+      "version": "6",
+      "nodes": [
+        "8235775429",
+        "8513080437",
+        "8235775428"
+      ],
+      "tags": {
+        "highway": "motorway",
+        "highway:category": "ru:IА",
+        "lanes": "3",
+        "lit": "yes",
+        "maxspeed": "RU:motorway",
+        "maxspeed:designed": "140",
+        "name": "Центральная кольцевая автомобильная дорога",
+        "oneway": "yes",
+        "ref": "А-113",
+        "short_name": "ЦКАД",
+        "source": "survey",
+        "surface": "asphalt",
+        "toll": "yes",
+        "turn:lanes": "through|through|right"
+      }
+    },
+    "1189855268": {
+      "wayId": "1189855268",
+      "version": "16",
+      "nodes": [
+        "8513080479",
+        "11158042782",
+        "8513080597"
+      ],
+      "tags": {
+        "agricultural": "no",
+        "bicycle": "no",
+        "foot": "no",
+        "highway": "trunk",
+        "highway:category": "ru:IБ",
+        "horse": "no",
+        "image": "https://www.roads.ru/forum/uploads/monthly_2019_03/mosvka_noginsk.jpg.7eb290a32b882d5eed15e9f913129fe5.jpg",
+        "lanes": "3",
+        "lit": "yes",
+        "maxspeed": "RU:rural",
+        "maxspeed:goods": "110",
+        "maxspeed:motorcar": "110",
+        "maxspeed:variable": "yes",
+        "minspeed": "40",
+        "moped": "no",
+        "motorroad": "yes",
+        "name": "«Восток»",
+        "name:ru": "«Восток»",
+        "oneway": "yes",
+        "ref": "М-12",
+        "surface": "asphalt",
+        "toll": "yes",
+        "wikidata": "Q56742564",
+        "wikipedia": "ru:Восток (автодорога)"
+      }
+    },
+    "1270188041": {
+      "wayId": "1270188041",
+      "version": "2",
+      "nodes": [
+        "11385232715",
+        "8087316064",
+        "11385232714",
+        "8087316060"
+      ],
+      "tags": {
+        "highway": "motorway_link",
+        "lanes": "6",
+        "lit": "yes",
+        "maxspeed": "30",
+        "name": "Центральная кольцевая автодорога",
+        "name:ru": "ЦКАД",
+        "oneway": "yes",
+        "ref": "А-113",
+        "shoulder": "no",
+        "surface": "asphalt"
+      }
+    },
+    "1148492112": {
+      "wayId": "1148492112",
+      "version": "3",
+      "nodes": [
+        "9556466755",
+        "10685667960"
+      ],
+      "tags": {
+        "destination": "ЦКАД;Дмитровское шоссе;Ярославское шоссе",
+        "destination:lang:en": "TsKAD",
+        "destination:ref": "А-113",
+        "highway": "motorway_link",
+        "lanes": "2",
+        "lit": "yes",
+        "maxspeed": "50",
+        "name": "Центральная кольцевая автодорога",
+        "oneway": "yes",
+        "placement": "transition",
+        "ref": "А-113",
+        "shoulder": "no",
+        "surface": "asphalt",
+        "width": "10"
+      }
+    },
+    "1148492111": {
+      "wayId": "1148492111",
+      "version": "3",
+      "nodes": [
+        "10685667960",
+        "10685667959"
+      ],
+      "tags": {
+        "bridge": "yes",
+        "destination": "ЦКАД;Дмитровское шоссе;Ярославское шоссе",
+        "destination:lang:en": "TsKAD",
+        "destination:ref": "А-113",
+        "highway": "motorway_link",
+        "lanes": "2",
+        "layer": "1",
+        "lit": "yes",
+        "maxspeed": "50",
+        "name": "Центральная кольцевая автодорога",
+        "oneway": "yes",
+        "ref": "А-113",
+        "shoulder": "no",
+        "surface": "asphalt",
+        "width": "10"
+      }
+    }
+  },
+  "physicalSnapshot": "physical-directed.json",
+  "physicalSnapshotSha256": "950990d1f8ce69bffae5ffff5c5fc8db9c80ddbfb4f2deab1d2e6f238b3fca03",
+  "witnessCount": 49,
+  "independentOperatorOdReceipt": false,
+  "limitations": [
+    "Forward М11→М12 only; no reverse or other CKAD pair enabled.",
+    "First two directed entry links and booth have primary coordinates; intervening entry links continuity must additionally come from one complete named А-113 selected trace block.",
+    "Four gantries are physical witnesses, not four additional fares.",
+    "Three exit links are not toll-tagged; they establish connection, not separate monetary charges.",
+    "M12 and other route components remain separate."
+  ],
+  "attribution": "© OpenStreetMap contributors, ODbL1.0; exact object versions and raw responses retained."
+}

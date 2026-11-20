@@ -1,0 +1,31 @@
+✔ F4 integrated saved evidence OFF/ON: triple-m11-ckad-m12-torzhok-to-kazan (630.620841ms)
+✔ F4 integrated saved evidence OFF/ON: pair-m4-m11-krasnodar-to-spb (884.401402ms)
+✖ F4 integrated saved evidence OFF/ON: dnr-гранитное-saint-petersburg-center (465.720914ms)
+✔ F4 integrated saved evidence OFF/ON: max-chain-m12-ckad-m11-zsd-arzamas-to-prim (401.669265ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 3
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2729.725502
+
+✖ failing tests:
+
+test at experiments/toll-estimates/integration-cases.test.ts:28:25
+✖ F4 integrated saved evidence OFF/ON: dnr-гранитное-saint-petersburg-center (465.720914ms)
+  AssertionError [ERR_ASSERTION]: {"departureAt":"2026-10-15T09:00:00+03:00","status":"estimated","totalRub":9534,"knownPartRub":9534,"strict":{"amount":9534,"weekdayAmount":9534,"weekendAmount":11184,"period":"понедельник–четверг","segments":["М-4: m4-911 → m4-71 · Стоимость не подтверждена","М-11 15–58: moscow → solnechnogorsk: 1130 ₽ · Стоимость не подтверждена","М-11: p58 → p679 · Стоимость не подтверждена","М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽","ЗСД: КАД (юг) → наб. р. Екатерингофки · 600 ₽ (зоны 1–2)"],"confidence":"matched","priceConfirmation":"unconfirmed","displayLabel":null,"pricingStatus":"priced"},"warnings":[],"reasons":[],"components":[{"id":"m4","rub":3810,"reason":"matrix exact selected-route M4 vector"},{"id":"m11-15-58","rub":1130,"reason":"m11_head_ready_direct_pair_at_departure"},{"id":"m11-58-679","rub":3900,"reason":"matrix dated selected-route M11 direct pair"},{"id":"m11-679-684","rub":94,"reason":"user_approved_m11_tail_94_rub_for_both_directions"},{"id":"zsd","rub":600,"reason":"zsd_kad_south_ekateringofka_owner_zone_vector"}],"text":{"label":"Платные дороги: 9 534 ₽ (ориентировочно)","partial":null}}
+  
+  9534 !== 600
+  
+      at TestContext.<anonymous> (file:///workspace/geonames-preview-publish-fc83523/experiments/toll-estimates/integration-cases.test.ts:59:11)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 9534,
+    expected: 600,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T02:09:57.435Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 139,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 18,
+    "spec": {
+      "caseId": "single-zsd-blag-to-sest",
+      "kind": "road",
+      "group": "single-zsd"
+    }
+  },
+  "caseId": "single-zsd-blag-to-sest",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-09-57-435Z-part18",
+  "parent": "34983a1937e5f46d067188f8a318a9c084d754ec"
+}

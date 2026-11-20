@@ -14,6 +14,15 @@ on:
   schedule:
     - cron: "17 2 * * *"
   workflow_dispatch:
+    inputs:
+      mode:
+        description: "Choose the route monitor or an isolated production build"
+        required: true
+        type: choice
+        options:
+          - route-monitor
+          - build-only
+        default: route-monitor
 
 permissions:
   contents: read
@@ -21,6 +30,7 @@ permissions:
 
 jobs:
   check-routes:
+    if: github.event_name != 'workflow_dispatch' || inputs.mode != 'build-only'
     runs-on: ubuntu-latest
     timeout-minutes: 35
     steps:
@@ -30,7 +40,7 @@ jobs:
           version: 11.25.0
       - uses: actions/setup-node@v4
         with:
-          node-version: 22.13.0
+          node-version: '24'
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
@@ -91,3 +101,77 @@ jobs:
       - name: Завершить с ошибкой при отклонениях
         if: steps.monitor.outcome == 'failure'
         run: exit 1
+
+  build-only:
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'build-only'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: pnpm
+      - name: Record source and runtime identity
+        run: |
+          mkdir -p build-only-evidence
+          {
+            printf 'source_sha='
+            git rev-parse HEAD
+            printf 'source_tree='
+            git rev-parse 'HEAD^{tree}'
+            printf 'node='
+            node --version
+            printf 'pnpm='
+            pnpm --version
+            printf 'next_declared='
+            node -p "require('./package.json').dependencies.next"
+            sha256sum package.json pnpm-lock.yaml
+          } | tee build-only-evidence/environment.txt
+      - name: Install frozen dependencies
+        run: |
+          set +e
+          pnpm install --frozen-lockfile > build-only-evidence/install.stdout.log 2> build-only-evidence/install.stderr.log
+          status=$?
+          printf '%s\n' "$status" > build-only-evidence/install.exit-code
+          cat build-only-evidence/install.stdout.log
+          cat build-only-evidence/install.stderr.log >&2
+          exit "$status"
+      - name: TypeScript typecheck
+        run: |
+          set +e
+          node node_modules/typescript/bin/tsc --noEmit > build-only-evidence/typecheck.stdout.log 2> build-only-evidence/typecheck.stderr.log
+          status=$?
+          printf '%s\n' "$status" > build-only-evidence/typecheck.exit-code
+          cat build-only-evidence/typecheck.stdout.log
+          cat build-only-evidence/typecheck.stderr.log >&2
+          exit "$status"
+      - name: Next.js production build without test:audit
+        run: |
+          set +e
+          node node_modules/next/dist/bin/next build > build-only-evidence/next-build.stdout.log 2> build-only-evidence/next-build.stderr.log
+          status=$?
+          printf '%s\n' "$status" > build-only-evidence/next-build.exit-code
+          cat build-only-evidence/next-build.stdout.log
+          cat build-only-evidence/next-build.stderr.log >&2
+          exit "$status"
+      - name: Hash captured evidence
+        if: always()
+        run: |
+          find build-only-evidence -maxdepth 1 -type f ! -name SHA256SUMS -print0 | sort -z | xargs -0 -r sha256sum > build-only-evidence/SHA256SUMS
+          cat build-only-evidence/SHA256SUMS
+      - name: Upload build-only evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: route-quality-build-only-${{ github.sha }}
+          path: build-only-evidence/
+          if-no-files-found: warn
+          retention-days: 30

@@ -89,7 +89,8 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
   const diagnosticFastValidationPromise: Promise<TollValidation | null> = diagnostics && routeGeometry.length > 2
     ? validateTollEdges(routeGeometry)
     : Promise.resolve(null);
-  let [selectedFree, diagnosticFastValidation] = await Promise.all([selectedFreePromise, diagnosticFastValidationPromise]);
+  const [initialSelectedFree, diagnosticFastValidation] = await Promise.all([selectedFreePromise, diagnosticFastValidationPromise]);
+  let selectedFree = initialSelectedFree;
   // The expensive full-detour search is a genuine fallback; keep it off the
   // critical path when a faster candidate already passes the complete booth trace.
   if (!fastestOnly && !selectedFree) {
@@ -125,7 +126,7 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
     confirmedFreeRoute: fastestOnly ? null : confirmedFree?.route ?? null,
     diagnosticFastValidation,
   });
-  const { tolls, fastValidation, m4PvpPreview, nationalTollCoverage } = pricing;
+  const { tolls, fastValidation, corridorRecoveryDiagnostic, m4PvpPreview, nationalTollCoverage } = pricing;
 
   // `free` is the legacy response key for the payment-point-avoiding alternative;
   // the route may still use tolled road segments when it avoids their booths.
@@ -133,7 +134,18 @@ export async function calculateLeg(from: Located, to: Located, departureAt?: str
   return {
     from: from.label,
     to: to.label,
-    fast: { ...selectedFast.route, coordinates: routeGeometry, quality: fastQuality, tolls: tollsForApi(tolls, fastValidation), tollValidation: fastValidation, m4PvpPreview, nationalTollCoverage },
+    fast: {
+      ...selectedFast.route,
+      coordinates: routeGeometry,
+      quality: fastQuality,
+      tolls: tollsForApi(tolls, fastValidation),
+      tollValidation: fastValidation,
+      ...(diagnostics && corridorRecoveryDiagnostic
+        ? { tollDiagnostics: { corridorRecovery: corridorRecoveryDiagnostic } }
+        : {}),
+      m4PvpPreview,
+      nationalTollCoverage,
+    },
     free: !fastestOnly && confirmedFree ? { ...confirmedFree.route, quality: confirmedFree.quality, tollValidation: confirmedFree.validation } : null,
     freeCandidate: null,
     freeError: confirmedFree ? undefined : "Не удалось подтвердить вариант с объездом пунктов оплаты.",

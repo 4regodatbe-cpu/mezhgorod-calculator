@@ -1,0 +1,1032 @@
+{
+  "status": "toll",
+  "source": "Valhalla map matching",
+  "tollEdgeCount": 43,
+  "checkedEdgeCount": 249,
+  "wayIds": [
+    "1306659360",
+    "188935811",
+    "1067603714",
+    "337390104",
+    "78392284",
+    "78392269",
+    "257619978",
+    "249455821",
+    "1067603713",
+    "1067603712",
+    "1067603711",
+    "1067603710",
+    "1051262035",
+    "1067603705",
+    "1067603704",
+    "894270232",
+    "1067603703",
+    "1067603702",
+    "1067603701",
+    "374972870",
+    "249178993",
+    "1067603700",
+    "1067603699",
+    "374972882",
+    "1067836117",
+    "383636785",
+    "248924539",
+    "383636789",
+    "248924538",
+    "1067836115",
+    "1067836114",
+    "1067836116",
+    "1067836112",
+    "307025434",
+    "1067836109",
+    "1067836108",
+    "597824386",
+    "1067836111",
+    "1067836110",
+    "307025423",
+    "1068479198"
+  ],
+  "roadNames": [
+    "М-1",
+    "Северный обход Одинцова"
+  ],
+  "paidRoadEdges": [
+    {
+      "wayId": "1306659360",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "188935811",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067603714",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "337390104",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "78392284",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "78392269",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "257619978",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "249455821",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067603713",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067603712",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067603711",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067603710",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1051262035",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067603705",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067603704",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "894270232",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067603703",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067603702",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067603701",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "374972870",
+      "roadNames": []
+    },
+    {
+      "wayId": "374972870",
+      "roadNames": []
+    },
+    {
+      "wayId": "249178993",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067603700",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067603699",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "374972882",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067836117",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "383636785",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "248924539",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "383636789",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "248924538",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067836115",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067836114",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067836116",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067836112",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "307025434",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067836109",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067836108",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "597824386",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067836111",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067836110",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1067836110",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "307025423",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    },
+    {
+      "wayId": "1068479198",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ]
+    }
+  ],
+  "ckadTraceBlocks": [
+    {
+      "firstWayId": "891093665",
+      "lastWayId": "1350633762",
+      "before": {
+        "wayId": "328933869",
+        "endNodeId": "3357545279",
+        "roadNames": []
+      },
+      "after": [
+        {
+          "wayId": "893111093",
+          "endNodeId": "9903493600",
+          "roadNames": [
+            "Петровское шоссе"
+          ]
+        },
+        {
+          "wayId": "1350633755",
+          "endNodeId": "9903493726",
+          "roadNames": [
+            "Петровское шоссе"
+          ]
+        },
+        {
+          "wayId": "1344784638",
+          "endNodeId": "1316083684",
+          "roadNames": [
+            "Петровское шоссе"
+          ]
+        },
+        {
+          "wayId": "605579009",
+          "endNodeId": "5743348423",
+          "roadNames": [
+            "Петровское шоссе"
+          ]
+        }
+      ],
+      "repeatedWayId": false
+    }
+  ],
+  "odintsovoTraceBlocks": [
+    {
+      "edges": [
+        {
+          "wayId": "1306659360",
+          "endNodeId": "1995685832",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "188935811",
+          "endNodeId": "9660638452",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067603714",
+          "endNodeId": "920071035",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "337390104",
+          "endNodeId": "920071103",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "78392284",
+          "endNodeId": "3783599929",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "78392269",
+          "endNodeId": "920071221",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "257619978",
+          "endNodeId": "920071048",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "249455821",
+          "endNodeId": "920071249",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067603713",
+          "endNodeId": "3783599113",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067603712",
+          "endNodeId": "3783599092",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067603711",
+          "endNodeId": "3783597587",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067603710",
+          "endNodeId": "3783599070",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1051262035",
+          "endNodeId": "7547883552",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067603705",
+          "endNodeId": "7547883553",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067603704",
+          "endNodeId": "920071026",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "894270232",
+          "endNodeId": "9801685476",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067603703",
+          "endNodeId": "9801685475",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067603702",
+          "endNodeId": "9801685474",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067603701",
+          "endNodeId": "920071228",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "374972870",
+          "endNodeId": "3783549015",
+          "roadNames": [],
+          "toll": true,
+          "paymentEvent": true
+        },
+        {
+          "wayId": "374972870",
+          "endNodeId": "920071189",
+          "roadNames": [],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "249178993",
+          "endNodeId": "3783548561",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067603700",
+          "endNodeId": "2560528268",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067603699",
+          "endNodeId": "3786342264",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "374972882",
+          "endNodeId": "920071225",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "78392258",
+          "endNodeId": "3786341831",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": false,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "375245741",
+          "endNodeId": "920071058",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": false,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067603698",
+          "endNodeId": "3786341600",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": false,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067603697",
+          "endNodeId": "3786341093",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": false,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067603696",
+          "endNodeId": "3786340855",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": false,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "78392287",
+          "endNodeId": "920071256",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": false,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067603694",
+          "endNodeId": "920071279",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": false,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "375245744",
+          "endNodeId": "920071163",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": false,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "78392266",
+          "endNodeId": "9803436441",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": false,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067836124",
+          "endNodeId": "3207417870",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": false,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067836123",
+          "endNodeId": "2560528260",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": false,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "375390982",
+          "endNodeId": "9803436431",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": false,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067836121",
+          "endNodeId": "920071240",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": false,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "249455818",
+          "endNodeId": "920071080",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": false,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "78392259",
+          "endNodeId": "920071161",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": false,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "78392252",
+          "endNodeId": "2419034508",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": false,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067836117",
+          "endNodeId": "2556373760",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "383636785",
+          "endNodeId": "3869470488",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "248924539",
+          "endNodeId": "3869470468",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "383636789",
+          "endNodeId": "2419034498",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "248924538",
+          "endNodeId": "920071106",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067836115",
+          "endNodeId": "9803436421",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067836114",
+          "endNodeId": "9803436420",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067836116",
+          "endNodeId": "2419034484",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067836112",
+          "endNodeId": "9803415309",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "307025434",
+          "endNodeId": "9803415306",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067836109",
+          "endNodeId": "3109177690",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": true
+        },
+        {
+          "wayId": "1067836108",
+          "endNodeId": "9803415305",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "597824386",
+          "endNodeId": "9803415308",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067836111",
+          "endNodeId": "9803415307",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067836110",
+          "endNodeId": "9816948266",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1067836110",
+          "endNodeId": "2556350399",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "307025423",
+          "endNodeId": "5768223624",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        },
+        {
+          "wayId": "1068479198",
+          "endNodeId": "1352493074",
+          "roadNames": [
+            "М-1",
+            "Северный обход Одинцова"
+          ],
+          "toll": true,
+          "paymentEvent": false
+        }
+      ],
+      "before": {
+        "wayId": "1067603715",
+        "endNodeId": "10832234095",
+        "roadNames": [
+          "57"
+        ],
+        "toll": false,
+        "paymentEvent": false
+      },
+      "after": {
+        "wayId": "130881165",
+        "endNodeId": "966597411",
+        "roadNames": [
+          "М-1",
+          "E 30"
+        ],
+        "toll": false,
+        "paymentEvent": false
+      },
+      "repeatedWayId": false
+    }
+  ],
+  "message": "Подтверждены платные дорожные рёбра: 43",
+  "tollBoothCount": 2,
+  "tollBooths": [
+    {
+      "osmNodeId": "3783549015",
+      "wayId": "374972870",
+      "roadNames": [],
+      "edgeIndex": 0,
+      "edgeToll": true,
+      "beginShapeIndex": 246,
+      "endShapeIndex": 251
+    },
+    {
+      "osmNodeId": "3109177690",
+      "wayId": "1067836109",
+      "roadNames": [
+        "М-1",
+        "Северный обход Одинцова"
+      ],
+      "edgeIndex": 1,
+      "edgeToll": true,
+      "beginShapeIndex": 447,
+      "endShapeIndex": 448
+    }
+  ],
+  "chunkCount": 1,
+  "checkedChunkCount": 1,
+  "failedChunkCount": 0,
+  "complete": true,
+  "boothEventCoverage": "complete"
+}

@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:43:09.971Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 9,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 11,
+    "spec": {
+      "caseId": "dnr-талаковка-saint-petersburg-center",
+      "kind": "regional",
+      "region": "dnr"
+    }
+  },
+  "caseId": "dnr-талаковка-saint-petersburg-center",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-43-09-971Z-part11",
+  "parent": "cdc65fa2b91c60d500a34d759326798fbf01aebe"
+}

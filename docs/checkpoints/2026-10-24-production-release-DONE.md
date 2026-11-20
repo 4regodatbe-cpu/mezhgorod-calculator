@@ -1,0 +1,11 @@
+# DONE — Production опубликован, 24.10.2026 МСК
+
+Пользователь прямо поручил «Публикуй». Durable STARTED0855f16b32eff01e405096b4059539284d40c340/tree7d52f8ae46ab2be419f250674756235754c3f65b сохранён до deployment. Release source da77f96f4f9185017938ed07022557611f3ea9bf/tree4b190f413be87d0488d7a32c93da8cb5ba9ff3fc; разрешённая fixbranch, без merge/main/Android/backup.
+
+Создано отдельное Production dpl_YgtZ6Ky2HU7gvFg7YzcqVd6JXvCk через exact gitSource SHA, проект prj_JbuIKFQNjD3FvAcX2I65Dm5OBKie/team_UFuw0UGXjMqBV2hJBxsWGAMS. INITIALIZING→QUEUED→BUILDING→READY, target production, aliasError null. Очередь ждала автоматический Preview служебного STARTED; builds не отменялись/не дублировались. Старый Production dpl_DGhwwdXRTKwbbEMR127M5AbDMAoP сохранён как rollback reference, rollback не выполнялся.
+
+Оба aliases mezhgorod-calculator.vercel.app и mezhgorod-calculator-4regodatbe-5310.vercel.app прочитаны и указывают на новый id. /api/version HTTP200: exact da77f96 + environment production. /,/v3,/v2 HTTP200, актуальная форма/старый алгоритм V2 присутствуют. GET через authenticated Vercel connector; анонимную доступность отдельный web retrieval не подтвердил (tool inaccessible), причину не угадывать. Browser E2E/POST/r/Photon/новые route probes не запускались. Runtime error/fatal scan14:39:45–14:44:45UTC: no logs; только ограниченное окно.
+
+Production build READY;100-event excerpt подтверждает compiled/TypeScript/static16/BuildCompleted. Это не полный build log и не новый счётчик898;898/quoteAPI/ESLint0errors5warnings — прежние локальные gates. Exact result/HTML/version/aliases/manifest: experiments/road-ref-boundaries/checks/2026-10-24-production-release. JSON assertions/source/alias/status/SHA/diff whitespace PASS; новых code tests не требовалось.
+
+Switches сохранены: roadKilometrage=true,addressRequestPool=true,calculationTiming=true,addressCitySnapshot=false. Резервный4citysnapshot НЕ включён; unknown tariff/km, общий sourceoutage и UI blockers не объявлены решёнными. Следующий шаг: при конкретной жалобе сопоставить время/request с новым deployment; browser/data задачи только при изменившейся предпосылке. PR14 оставить open/draft, main не трогать. Перед завершением exact remote tree/head/readback результата.

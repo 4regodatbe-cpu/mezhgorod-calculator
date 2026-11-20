@@ -1,0 +1,232 @@
+{
+  "status": "DONE_PHYSICAL_ONLY",
+  "junctionNodeId": "10832306578",
+  "lastCkadWayId": "886019081",
+  "connectorWayId": "886019063",
+  "afterA107WayId": "119881263",
+  "topology": [
+    {
+      "wayId": "886019081",
+      "sourceFirstNode": "10782061695",
+      "sourceLastNode": "8238636524",
+      "selectedFirstNode": "10782061695",
+      "selectedLastNode": "10832306578",
+      "tags": {
+        "highway": "motorway",
+        "highway:category": "ru:IА",
+        "lanes": "2",
+        "lit": "yes",
+        "maxspeed": "RU:motorway",
+        "maxspeed:designed": "140",
+        "name": "Центральная кольцевая автомобильная дорога",
+        "oneway": "yes",
+        "ref": "А-113",
+        "short_name": "ЦКАД",
+        "surface": "asphalt",
+        "toll": "yes"
+      }
+    },
+    {
+      "wayId": "886019063",
+      "sourceFirstNode": "10832306578",
+      "sourceLastNode": "8914828064",
+      "selectedFirstNode": "10832306578",
+      "selectedLastNode": "8914828064",
+      "tags": {
+        "highway": "trunk_link",
+        "lanes": "1",
+        "lit": "yes",
+        "maxspeed": "90",
+        "oneway": "yes",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "wayId": "119881263",
+      "sourceFirstNode": "8238636476",
+      "sourceLastNode": "3140785578",
+      "selectedFirstNode": "8914828064",
+      "selectedLastNode": "3140785578",
+      "tags": {
+        "highway": "trunk",
+        "lanes": "3",
+        "loc_name": "Первая бетонка",
+        "maxspeed": "RU:rural",
+        "maxspeed:practical": "40",
+        "name": "«Московское малое кольцо»",
+        "name:de": "Moskauer Kleiner Ring",
+        "name:en": "Moscow Small Ring",
+        "oneway": "yes",
+        "ref": "А-107",
+        "surface": "asphalt",
+        "turn:lanes": "left|left;right|right"
+      }
+    }
+  ],
+  "witnesses": [
+    {
+      "nodeId": "10782061695",
+      "lon": 38.3680882,
+      "lat": 55.6545085
+    },
+    {
+      "nodeId": "8238636536",
+      "lon": 38.3652913,
+      "lat": 55.6528145
+    },
+    {
+      "nodeId": "8238636535",
+      "lon": 38.3631099,
+      "lat": 55.651469
+    },
+    {
+      "nodeId": "8238636534",
+      "lon": 38.3611919,
+      "lat": 55.6500533
+    },
+    {
+      "nodeId": "8238636533",
+      "lon": 38.3599517,
+      "lat": 55.6488437
+    },
+    {
+      "nodeId": "8238636532",
+      "lon": 38.3589898,
+      "lat": 55.6477665
+    },
+    {
+      "nodeId": "12980657994",
+      "lon": 38.3585308,
+      "lat": 55.6470455
+    },
+    {
+      "nodeId": "8238636531",
+      "lon": 38.3581426,
+      "lat": 55.646311
+    },
+    {
+      "nodeId": "13184575929",
+      "lon": 38.3578205,
+      "lat": 55.6455637
+    },
+    {
+      "nodeId": "8238636530",
+      "lon": 38.3575424,
+      "lat": 55.6447567
+    },
+    {
+      "nodeId": "13184575931",
+      "lon": 38.3573645,
+      "lat": 55.6438775
+    },
+    {
+      "nodeId": "8238636529",
+      "lon": 38.3572528,
+      "lat": 55.6429658
+    },
+    {
+      "nodeId": "13184575932",
+      "lon": 38.3572572,
+      "lat": 55.642164
+    },
+    {
+      "nodeId": "8238636528",
+      "lon": 38.3573413,
+      "lat": 55.6413138
+    },
+    {
+      "nodeId": "10832306578",
+      "lon": 38.3575425,
+      "lat": 55.6403954
+    },
+    {
+      "nodeId": "10832306579",
+      "lon": 38.3577776,
+      "lat": 55.6395421
+    },
+    {
+      "nodeId": "10832306580",
+      "lon": 38.3580351,
+      "lat": 55.6387731
+    },
+    {
+      "nodeId": "10832306581",
+      "lon": 38.3582014,
+      "lat": 55.6384158
+    },
+    {
+      "nodeId": "13184575946",
+      "lon": 38.3586963,
+      "lat": 55.6375562
+    },
+    {
+      "nodeId": "13184575942",
+      "lon": 38.359831,
+      "lat": 55.635585
+    },
+    {
+      "nodeId": "10832306582",
+      "lon": 38.3600682,
+      "lat": 55.635173
+    },
+    {
+      "nodeId": "10832306583",
+      "lon": 38.3602452,
+      "lat": 55.6347521
+    },
+    {
+      "nodeId": "8238636470",
+      "lon": 38.3604183,
+      "lat": 55.6338474
+    },
+    {
+      "nodeId": "8238636469",
+      "lon": 38.3605617,
+      "lat": 55.6331896
+    },
+    {
+      "nodeId": "10832306584",
+      "lon": 38.3605778,
+      "lat": 55.6329504
+    },
+    {
+      "nodeId": "8238636468",
+      "lon": 38.3604866,
+      "lat": 55.6326627
+    },
+    {
+      "nodeId": "10832306585",
+      "lon": 38.3603579,
+      "lat": 55.6324568
+    },
+    {
+      "nodeId": "8914828064",
+      "lon": 38.3599046,
+      "lat": 55.631931
+    },
+    {
+      "nodeId": "3140785578",
+      "lon": 38.3591975,
+      "lat": 55.6313228
+    }
+  ],
+  "sources": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-18-ramenskoe-exit/886019081.osm",
+      "sha256": "03c48de4f18c324549fafe134f14624c3b78a54150b81f1b79da53dc310d71ff",
+      "url": "https://api.openstreetmap.org/api/0.6/way/886019081/full"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-18-ramenskoe-exit/886019063.osm",
+      "sha256": "a78eb02314051294d1b21524c1eee41d488b666c2e4a4ba2d2a88d2aa4204806",
+      "url": "https://api.openstreetmap.org/api/0.6/way/886019063/full"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/ckad/2026-10-18-ramenskoe-exit/119881263.osm",
+      "sha256": "1a328dae515bde9d43772289a3e2ac39d2e1fd3975f190fd441d94e62a110d4e",
+      "url": "https://api.openstreetmap.org/api/0.6/way/119881263/full"
+    }
+  ],
+  "billingPoint": null,
+  "scope": "Own directed physical exit toward A107; published operator tariff-point alias is not yet independently bound. Source way886019081 extends beyond the actual exit; only selected slice is retained."
+}

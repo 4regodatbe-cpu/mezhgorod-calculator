@@ -1,0 +1,337 @@
+$ next start --port 3208
+▲ Next.js 16.3.4
+- Local:         http://localhost:3208
+- Network:       http://172.26.91.244:3208
+✓ Ready in 116ms
+✓ Running next.config.ts took 58ms
+address_search_partial {
+  elapsedMs: 446,
+  sourceCount: 3,
+  failures: { http_503: 2 },
+  budgetExpired: false
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 12341.295,
+  targetMs: 10000,
+  overTarget: true,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 1.334,
+      maxMs: 1.334
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.141,
+      maxMs: 0.141
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 12175.454,
+      maxMs: 12175.454
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 3084.24,
+      maxMs: 3084.24
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 1,
+      totalMs: 880.05,
+      maxMs: 880.05
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 1400.804,
+      maxMs: 1400.804
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 3083.481,
+      maxMs: 3083.481
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 8471.167,
+      maxMs: 8471.167
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 375.733,
+      maxMs: 375.733
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 162.84,
+      maxMs: 162.84
+    }
+  ],
+  stops: [],
+  routingAttempts: [
+    {
+      provider: 'Valhalla',
+      kind: 'primary',
+      status: 'rejected',
+      failure: 'upstream_http',
+      httpStatus: 400,
+      elapsedMs: 880,
+      geometryUsable: false,
+      validator: 'not_run',
+      selected: false
+    },
+    {
+      provider: 'OSRM',
+      kind: 'primary',
+      status: 'accepted',
+      failure: null,
+      httpStatus: 200,
+      elapsedMs: 1401,
+      geometryUsable: true,
+      validator: 'accepted',
+      selected: true
+    },
+    {
+      provider: 'BRouter',
+      kind: 'primary',
+      status: 'rejected',
+      failure: 'upstream_http',
+      httpStatus: 400,
+      elapsedMs: 3084,
+      geometryUsable: false,
+      validator: 'not_run',
+      selected: false
+    }
+  ]
+}
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 20059.817,
+  targetMs: 10000,
+  overTarget: true,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.291,
+      maxMs: 0.291
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.026,
+      maxMs: 0.026
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 19888.194,
+      maxMs: 19888.194
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 8628.471,
+      maxMs: 8628.471
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 1,
+      totalMs: 736.086,
+      maxMs: 736.086
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 1037.407,
+      maxMs: 1037.407
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 0,
+      totalMs: 8628.251,
+      maxMs: 8628.251
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 10676.747,
+      maxMs: 10676.747
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 409.908,
+      maxMs: 409.908
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 170.335,
+      maxMs: 170.335
+    }
+  ],
+  stops: [],
+  routingAttempts: [
+    {
+      provider: 'Valhalla',
+      kind: 'primary',
+      status: 'rejected',
+      failure: 'upstream_http',
+      httpStatus: 400,
+      elapsedMs: 736,
+      geometryUsable: false,
+      validator: 'not_run',
+      selected: false
+    },
+    {
+      provider: 'OSRM',
+      kind: 'primary',
+      status: 'accepted',
+      failure: null,
+      httpStatus: 200,
+      elapsedMs: 1037,
+      geometryUsable: true,
+      validator: 'accepted',
+      selected: true
+    },
+    {
+      provider: 'BRouter',
+      kind: 'primary',
+      status: 'rejected',
+      failure: 'invalid_geometry',
+      httpStatus: null,
+      elapsedMs: 8628,
+      geometryUsable: true,
+      validator: 'rejected',
+      selected: false
+    }
+  ]
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.259,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.167,
+      maxMs: 0.167
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.637,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.411,
+      maxMs: 0.411
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.279,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.176,
+      maxMs: 0.176
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.269,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.169,
+      maxMs: 0.169
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.303,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 1,
+      totalMs: 0.201,
+      maxMs: 0.201
+    }
+  ],
+  stops: []
+}
+calculation_timing {
+  status: 400,
+  handlerElapsedMs: 0.307,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.21,
+      maxMs: 0.21
+    }
+  ],
+  stops: []
+}
+[ELIFECYCLE] Command failed.

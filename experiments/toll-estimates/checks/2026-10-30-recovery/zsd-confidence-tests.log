@@ -1,0 +1,36 @@
+✔ E3 full saved multi-road total retained exactly and explicitly graded estimated (1.442065ms)
+✔ E3 missing CKAD/ZSD does not turn5987 or6327 into a complete route estimate (0.227042ms)
+✖ E practical recovery: derived ZSD600 is estimated without rewriting original strict status/source/amount (0.912826ms)
+✔ E3 selected geometry strict snapshots and departure calendars remain source-bound without network (0.240664ms)
+✔ E3 report counts three distinct retained routes, not six evaluations or synthetic estimates (186.312973ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 4
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 670.302901
+
+✖ failing tests:
+
+test at experiments/toll-estimates/saved-samples.test.ts:15:1
+✖ E practical recovery: derived ZSD600 is estimated without rewriting original strict status/source/amount (0.912826ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  null !== 0
+  
+      at TestContext.<anonymous> (file:///workspace/geonames-preview-publish-fc83523/experiments/toll-estimates/saved-samples.test.ts:17:114)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,40 @@
+{
+  "sha": "33ddd2ed0a3e03112567a653933295ef54acce12",
+  "node_id": "C_kwDOUknb29oAKDMzZGRkMmVkMGEzZTAzMTEyNTY3YTY1MzkzMzI5NWVmNTRhY2NlMTI",
+  "url": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/git/commits/33ddd2ed0a3e03112567a653933295ef54acce12",
+  "html_url": "https://github.com/4regodatbe-cpu/mezhgorod-calculator/commit/33ddd2ed0a3e03112567a653933295ef54acce12",
+  "author": {
+    "name": "4regodatbe-cpu",
+    "email": "4regoda.tbe@gmail.com",
+    "date": "2026-10-29T20:22:38Z"
+  },
+  "committer": {
+    "name": "GitHub",
+    "email": "noreply@github.com",
+    "date": "2026-10-29T20:22:38Z"
+  },
+  "tree": {
+    "sha": "81b4edaee4ffb6a17c3c93308b87ec52fe08d054",
+    "url": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/git/trees/81b4edaee4ffb6a17c3c93308b87ec52fe08d054"
+  },
+  "message": "Merge c2f52ee93cd98a81ecd05efa0358fb38c6704124 into c1421f8a6b1ead6696fe7c639de372a9c6d85270",
+  "parents": [
+    {
+      "sha": "c1421f8a6b1ead6696fe7c639de372a9c6d85270",
+      "url": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/git/commits/c1421f8a6b1ead6696fe7c639de372a9c6d85270",
+      "html_url": "https://github.com/4regodatbe-cpu/mezhgorod-calculator/commit/c1421f8a6b1ead6696fe7c639de372a9c6d85270"
+    },
+    {
+      "sha": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+      "url": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/git/commits/c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+      "html_url": "https://github.com/4regodatbe-cpu/mezhgorod-calculator/commit/c2f52ee93cd98a81ecd05efa0358fb38c6704124"
+    }
+  ],
+  "verification": {
+    "verified": true,
+    "reason": "valid",
+    "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq46sOCRC1aQ7uu5UhlAAAegIQADNmQUO/f54qcOOFvqBr0V71\nuauKp/vHaPshi+YPhw7jGnXPLYeUOC5GVz+VcydasT6a7wLID0UDTGj1OFBAs50h\nj/1ZR8ihZI+wCWkS7WBOdDIY5Ksfz2osIicOM5L8IG6pL+SWc83j9Bm0l+PU6O/Y\nQtTXhfhRav4XA9RTo959jo+NFY8Hl42ci/t5RFiF8jK5zf0HpZS0xjZlchIZNZsE\nYqznO2Y1QO+NWy0TCm71mVuh8B83lHYy9jqU3pgXZqB4cUTad08eZJBR1MdRZLBY\neJutCJayY+QM7jUc314h+DLxbna9xInzepfHhvLCwjRS7dFtUQC98L/8cUHvitS7\nMiGjXa1nRfKB7WnP0qXdxYDtQ//JGPiqp42REqGBCg3Yr5mGgaOX3Sn5Bfj+iXKo\n4W9lZlVZUtMec+FFFRFZIWg7M70P1TdWd8xLDaegeXMYFN5hRSQPEQVAvF/B5SQX\nZfTPr94dTinRZV+3FBoeVUednAqg3ROtU7zJezYYpVMQjhR79yznaxmMMuioiylY\nQUJIipz3jA3eUZK/+SEohUnNpMSbPhamu1B8wLtkaD3ZNmzcjIsmgr1MUl6NCmfv\nvmCZZGcBGbOFCpHcmsHgbLLZfS/HhCC2jomT6CgzG+xG5eHjwXNtHqP1DfLxhmdK\nI0tRWIyyaiPi6VXwqTqi\n=qOX3\n-----END PGP SIGNATURE-----\n",
+    "payload": "tree 81b4edaee4ffb6a17c3c93308b87ec52fe08d054\nparent c1421f8a6b1ead6696fe7c639de372a9c6d85270\nparent c2f52ee93cd98a81ecd05efa0358fb38c6704124\nauthor 4regodatbe-cpu <4regoda.tbe@gmail.com> 1793305358 +0000\ncommitter GitHub <noreply@github.com> 1793305358 +0000\n\nMerge c2f52ee93cd98a81ecd05efa0358fb38c6704124 into c1421f8a6b1ead6696fe7c639de372a9c6d85270\n",
+    "verified_at": "2026-10-29T20:22:39Z"
+  }
+}

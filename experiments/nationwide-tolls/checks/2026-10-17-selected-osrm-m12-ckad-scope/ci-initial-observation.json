@@ -1,0 +1,31 @@
+{
+  "sourceCommit": "54f4cccccd0d4b70ae34f063ac4db351b013acba",
+  "sourceTree": "d28efcdc61f6bcfb3c6681cdce078a89eb2b60ce",
+  "pr": {
+    "number": 14,
+    "head": "54f4cccccd0d4b70ae34f063ac4db351b013acba",
+    "state": "open",
+    "draft": true
+  },
+  "observedAt": "2026-10-17T17:53:23.119Z",
+  "run": {
+    "id": 39054871192,
+    "jobs": [
+      {
+        "name": "verify",
+        "status": "completed",
+        "conclusion": "success",
+        "active": []
+      },
+      {
+        "name": "live_probe",
+        "status": "in_progress",
+        "conclusion": null,
+        "active": [
+          "Audit the fixed 50-settlement route corpus"
+        ]
+      }
+    ]
+  },
+  "branchUpdatePerformedWhileActive": false
+}

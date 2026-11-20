@@ -1,0 +1,64 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Из А в Б — тест выбора проезда</title>
+<style>body{margin:0;background:#edf2f8;color:#16283d;font:16px system-ui,sans-serif}main{max-width:680px;margin:auto;padding:24px 16px}h1{font-size:27px;margin:0 0 8px}.notice{background:#fff4d7;border:1px solid #d7ad47;padding:14px;border-radius:14px;line-height:1.5}.card{background:white;border:1px solid #ccd8e7;border-radius:18px;padding:20px;margin-top:18px;box-shadow:0 5px 20px #16385508}.fields{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:end}label{display:block;font-weight:650;font-size:14px}select,button{font:inherit;min-height:46px;border:1px solid #8b9fb7;border-radius:10px;background:white;color:inherit}select{width:100%;padding:8px;margin-top:7px}button{padding:8px 12px;cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #3c82cc;outline-offset:3px}fieldset{border:0;padding:0;margin:20px 0 0}legend{font-weight:700;margin-bottom:10px}.toggle{display:grid;grid-template-columns:1fr 1fr;background:#edf2f8;border-radius:12px;padding:4px;gap:4px}.toggle label{position:relative;cursor:pointer}.toggle input{position:absolute;opacity:0}.toggle span{display:flex;align-items:center;justify-content:center;min-height:50px;padding:4px;text-align:center;border:2px solid transparent;border-radius:9px}.toggle input:checked+span{background:#1765b3;color:white}.toggle input:focus-visible+span{outline:3px solid #233e60}.muted{color:#53647a;font-size:14px;line-height:1.5}.metrics{display:flex;gap:24px;margin:18px 0;font-size:22px;font-weight:750}.price{font-size:30px;font-weight:800;margin:12px 0}.difference{background:#edf4fc;padding:12px;border-radius:10px;line-height:1.6}[hidden]{display:none!important}@media(max-width:440px){.fields{grid-template-columns:1fr auto}.fields label:last-child{grid-column:1/-1}.card{padding:15px}h1{font-size:23px}}</style>
+<main><h1>из А в Б · тест проезда</h1><p class="notice"><strong>Отдельный демонстрационный стенд.</strong> Все точки, время и суммы ниже учебные. Реальные маршрутизаторы не вызываются. Это не расчёт поездки и не оценка безопасности дороги.</p>
+<div class="card"><label>Сценарий для проверки<select id="scenario"><option value="near">Близкие точки: объезд невыгоден</option><option value="far">Дальний проезд: объезд имеет смысл</option><option value="unavailable">Второй маршрут не получен</option></select></label></div>
+<div class="card"><div class="fields"><label>Откуда<select id="from" aria-label="Откуда"></select></label><button id="swap" aria-label="Поменять адреса местами">⇄</button><label>Куда<select id="to" aria-label="Куда"></select></label></div>
+<fieldset id="choice"><legend>Вариант проезда</legend><div class="toggle"><label><input type="radio" name="route" value="direct"><span>По новым территориям</span></label><label><input type="radio" name="route" value="external"><span>Через материк</span></label></div><p id="recommendation" class="muted"></p></fieldset></div>
+<section id="result" class="card" aria-live="polite" aria-atomic="true"></section>
+<p class="muted">Один выбранный вариант — один расчёт. Переключение не меняет адреса. Условные ставки стенда: обычные 25 ₽/км, особые 70 ₽/км.</p></main>
+<script type="module">
+/** Offline trade-off experiment. Not a safety assessment or runtime selector. */
+function compareCorridors(candidates, specialTimeWeight = 2) {
+  if (!Number.isFinite(specialTimeWeight) || specialTimeWeight < 1) throw new Error('Invalid weight');
+  const valid = candidates.filter(c => c.verified === true &&
+    [c.seconds, c.specialSeconds, c.meters].every(Number.isFinite) &&
+    c.seconds > 0 && c.specialSeconds >= 0 && c.specialSeconds <= c.seconds && c.meters > 0);
+  // Comparing a verified path to a failed/missing candidate would hide uncertainty.
+  if (valid.length < 2 || valid.length !== candidates.length) return {status:'insufficient-evidence', selected:null};
+  // T = ordinary + special, so ordinary + weight*special = T+(weight-1)*special.
+  const ranked = valid.map(c => ({...c, score:c.seconds + (specialTimeWeight-1) * c.specialSeconds}))
+    .sort((a,b) => a.score-b.score || a.seconds-b.seconds || a.meters-b.meters || String(a.id).localeCompare(String(b.id)));
+  const fastest = [...valid].sort((a,b)=>a.seconds-b.seconds || a.meters-b.meters)[0];
+  const selected=ranked[0];
+  return {status:'experimental-recommendation', selected:selected.id, specialTimeWeight,
+    extraSeconds:selected.seconds-fastest.seconds, extraMeters:selected.meters-fastest.meters,
+    avoidedSpecialSeconds:fastest.specialSeconds-selected.specialSeconds, ranked};
+}
+
+const places=[{id:'a',label:'Точка А — особая территория',special:true},{id:'b',label:'Точка Б — особая территория',special:true},{id:'ordinary',label:'Точка В — обычная территория',special:false}];
+// Deliberately synthetic: these are interface examples, never geographic evidence.
+const scenarios={
+ near:{label:'Близкие точки: объезд невыгоден',direct:{seconds:10800,specialSeconds:10800,meters:200000,ordinaryKm:0,specialKm:200,tollAmount:0},external:{seconds:43200,specialSeconds:7200,meters:900000,ordinaryKm:770,specialKm:130,tollAmount:null}},
+ far:{label:'Дальний проезд: объезд имеет смысл',direct:{seconds:25200,specialSeconds:25200,meters:450000,ordinaryKm:0,specialKm:450,tollAmount:0},external:{seconds:32400,specialSeconds:7200,meters:650000,ordinaryKm:510,specialKm:140,tollAmount:1200}},
+ unavailable:{label:'Второй маршрут не получен',direct:{seconds:10800,specialSeconds:10800,meters:200000,ordinaryKm:0,specialKm:200,tollAmount:0},external:null},
+};
+function makeView({from,to,scenario='near',selected=null}){
+ const pair=[from,to].map(id=>places.find(p=>p.id===id));
+ if(pair.some(p=>!p)||from===to)return {status:'enter-addresses',showSwitch:false};
+ if(!pair.every(p=>p.special))return {status:'ordinary-demo',showSwitch:false};
+ const data=scenarios[scenario];if(!data)throw Error('Unknown scenario');
+ const candidates=['direct','external'].flatMap(id=>data[id]?[{id,...data[id],verified:true}]:[]);
+ const recommendation=compareCorridors(candidates);
+ const chosen=selected??recommendation.selected??'direct';
+ if(!['direct','external'].includes(chosen))throw Error('Unknown route mode');
+ const active=data[chosen];
+ if(!active)return {status:'unavailable',showSwitch:true,selected:chosen,recommended:recommendation.selected};
+ const transfer=Math.round(active.ordinaryKm*25+active.specialKm*70);
+ const other=data[chosen==='direct'?'external':'direct'];
+ const total=active.tollAmount===null?null:transfer+active.tollAmount;
+ const otherTotal=other&&other.tollAmount!==null?Math.round(other.ordinaryKm*25+other.specialKm*70)+other.tollAmount:null;
+ return {status:'ready',showSwitch:true,selected:chosen,recommended:recommendation.selected,active,transfer,total,
+  deltaSeconds:other?active.seconds-other.seconds:null,deltaPrice:total!==null&&otherTotal!==null?total-otherTotal:null};
+}
+
+const $=id=>document.getElementById(id), money=n=>n.toLocaleString('ru-RU')+' ₽', duration=n=>{const m=Math.round(Math.abs(n)/60);return Math.floor(m/60)+' ч '+m%60+' мин';};
+for(const id of ['from','to']){const empty=document.createElement('option');empty.value='';empty.textContent='Выберите точку';$(id).append(empty);for(const place of places){const option=document.createElement('option');option.value=place.id;option.textContent=place.label;$(id).append(option);}}
+$('from').value='a';$('to').value='b';let selected=null;
+function render(){const view=makeView({from:$('from').value,to:$('to').value,scenario:$('scenario').value,selected});$('choice').hidden=!view.showSwitch;for(const radio of document.querySelectorAll('[name=route]'))radio.checked=radio.value===view.selected;
+ $('recommendation').textContent=view.recommended?'Предварительный выбор по весу 2:1: '+(view.recommended==='direct'?'по новым территориям.':'через материк.'):'Для рекомендации недостаточно двух проверенных вариантов.';
+ const result=$('result');result.replaceChildren();const add=(tag,text,cls)=>{const el=document.createElement(tag);el.textContent=text;if(cls)el.className=cls;result.append(el);};
+ if(view.status!=='ready'){add('p',view.status==='unavailable'?'Этот вариант не получен. Выберите другой проезд.':view.status==='ordinary-demo'?'Одна точка вне особых территорий: дополнительный переключатель не нужен. Обычный расчёт в стенде не моделируется.':'Выберите две разные точки.');return;}
+ add('h2',view.selected==='direct'?'По новым территориям':'Через материк');add('p',(view.active.meters/1000).toLocaleString('ru-RU')+' км · '+duration(view.active.seconds),'metrics');add('p',view.total===null?'Полная стоимость уточняется':money(view.total),'price');add('p','По километражу: '+money(view.transfer)+'; платные дороги: '+(view.active.tollAmount===null?'неизвестно':money(view.active.tollAmount)), 'muted');
+ const changes=[];if(view.deltaSeconds!==null)changes.push('Относительно другого варианта: '+(view.deltaSeconds>0?'дольше на ':view.deltaSeconds<0?'быстрее на ':'одинаково по времени ')+duration(view.deltaSeconds));else changes.push('Второй вариант недоступен.');changes.push(view.deltaPrice===null?'Разница полной цены неизвестна.':view.deltaPrice===0?'Цена одинаковая.':(view.deltaPrice>0?'Дороже на ':'Дешевле на ')+money(Math.abs(view.deltaPrice)));add('p',changes.join(' '),'difference');}
+for(const id of ['from','to','scenario'])$(id).addEventListener('change',()=>{selected=null;render();});$('swap').addEventListener('click',()=>{const a=$('from').value;$('from').value=$('to').value;$('to').value=a;selected=null;render();});for(const radio of document.querySelectorAll('[name=route]'))radio.addEventListener('change',()=>{selected=radio.value;render();});render();
+</script></html>

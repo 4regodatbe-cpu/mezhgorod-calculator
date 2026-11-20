@@ -1,0 +1,93 @@
+{
+  "retrievedAt": "2026-10-16",
+  "scope": "Exact road identity only; no new tariff or zone fare activated",
+  "nodes": [
+    {
+      "osmNodeId": "933974949",
+      "productId": "zsd",
+      "plazaName": "ПВП 4",
+      "topology": [
+        "381576635 contains booth933974949 and ends3847689343",
+        "28935150 starts301550064 and ends3847689343, links mainline to toll booth",
+        "80056716/721628540 at301550064: name=ЗСД, toll=yes, oneway=yes"
+      ],
+      "sourceURLs": [
+        "https://www.openstreetmap.org/api/0.6/node/933974949",
+        "https://www.openstreetmap.org/api/0.6/way/381576635/full",
+        "https://www.openstreetmap.org/api/0.6/node/3847689343/ways",
+        "https://www.openstreetmap.org/api/0.6/node/301550064/ways"
+      ]
+    },
+    {
+      "osmNodeId": "7014845616",
+      "productId": "m11",
+      "source": "../m11/2026-10-14-osm-tail-corridor.osm.gz",
+      "reason": "Existing p679 plaza lane cluster in archived primary map, not a separate new toll product"
+    },
+    {
+      "osmNodeId": "318102347",
+      "productId": "zsd",
+      "plazaName": "ПВП 3",
+      "topology": [
+        "375574651 contains booth318102347, ends3789313425",
+        "375574658 starts3789313425, ends301550024",
+        "81348980/375646973 at301550024: name=ЗСД, toll=yes, oneway=yes"
+      ],
+      "sourceURLs": [
+        "https://www.openstreetmap.org/api/0.6/node/318102347",
+        "https://www.openstreetmap.org/api/0.6/way/375574651/full",
+        "https://www.openstreetmap.org/api/0.6/node/3789313425/ways",
+        "https://www.openstreetmap.org/api/0.6/node/301550024/ways"
+      ]
+    },
+    {
+      "osmNodeId": "6257559336",
+      "productId": "m4",
+      "plazaName": "ПВП 515 км",
+      "sourceURLs": [
+        "https://www.openstreetmap.org/api/0.6/node/6257559336"
+      ],
+      "reason": "Named Avtodor booth in existing515 plaza; archived OSM fee tags are stale, never imported as tariffs"
+    },
+    {
+      "osmNodeId": "1766158781",
+      "productId": "zsd",
+      "plazaName": "Съезд к Планерной улице / Богатырскому проспекту",
+      "topology": [
+        "721839717:6771351212→1375515657 name=ЗСД toll=yes",
+        "165031082:1375515657→2027026364 toll=yes oneway=yes destination=Богатырский/Планерная",
+        "252148968:2027026364→3612944330 toll=yes oneway=yes",
+        "355755817:3612944330→1766158781 toll=yes oneway=yes",
+        "1766158781 barrier=toll_booth cash/card=yes"
+      ],
+      "sourceURLs": [
+        "https://api.openstreetmap.org/api/0.6/node/1766158781.json",
+        "https://api.openstreetmap.org/api/0.6/way/355755817/full.json",
+        "https://api.openstreetmap.org/api/0.6/node/3612944330/ways.json",
+        "https://api.openstreetmap.org/api/0.6/node/1766158781/ways.json",
+        "https://api.openstreetmap.org/api/0.6/node/2027026364/ways.json",
+        "https://api.openstreetmap.org/api/0.6/node/1375515657/ways.json"
+      ],
+      "sourceEvidence": "docs/checkpoints/evidence/2026-10-16-zsd-planernaya-identity-proof.json",
+      "reason": "Exact directed primary topology and same-selected paid-edge chain establish road identity only; no fare, zone count or finished traversal inferred"
+    }
+  ],
+  "hashes": {
+    "zsd-node318102347.osm": "265e92fca768408cf026d73e7190049830748fec6c3f65ed3fdc5425123a5ba7",
+    "zsd-connected-ways.osm": "09fe2bb39bca317503b10aa80b45687d2584719c7972038761217d15299f4417",
+    "m4-node6257559336.osm": "71501f99f56cb87f6507edd3591778445547173b0326ee6ebd9933986863076a",
+    "zsd-pvp3-connected.osm": "faf675925226a49ced5fb20e90408394b68d0b9d53b59c953cba4289af8a25e5",
+    "zsd-pvp3-mainline.osm": "23978e7c7e066ade1584c8681778775e197f61764880470d6451d47b999481af",
+    "zsd-node933974949.osm": "8c0f623f4564bca7c5e6191dba329ce5d6dc11c6c56beea6a728a8b34dc994b5",
+    "zsd-way375574651.osm": "986f797dd64ff1e571989a80e1b70f7b77b604992ee2e190e638c8fb8547045b",
+    "zsd-mainline-ways.osm": "f8feb9fe94fbec7eb98c08b0320e6bb45e04735373247042d67a305a6a59e874",
+    "zsd-way381576635.osm": "9051f99621fb5180d0ab18b8cc59812d9122f76c611dd917c5f83854ce9ca62a",
+    "zsd-pvp3-end.osm": "f10f35f46b6d5ffb89b66944dc9746e84c55bcfbb2885bafba1989f872b4a3b9",
+    "docs/checkpoints/evidence/2026-10-16-zsd-node-1766158781.json": "af1985508ad21348bf07a20b6570e9641db0199221970cee27052dd4f362db37",
+    "docs/checkpoints/evidence/2026-10-16-zsd-way-355755817.json": "600e493444353832eee4cc3d494b54020e9ec10a9a329b20eebf22e628bf49c1",
+    "docs/checkpoints/evidence/2026-10-16-zsd-node-3612944330-ways.json": "385671b261932ac7eececf0e2741207ff84148ad5f91682978c2df9d0a7a5677",
+    "docs/checkpoints/evidence/2026-10-16-zsd-node-1766158781-ways.json": "a25181911e5e23acc823f2fd144c80d0c86d23581278143611a4c7ad25e7ca8a",
+    "docs/checkpoints/evidence/2026-10-16-zsd-node-2027026364-ways.json": "339d429bc7bda8ba3940af8dd3e1f430ad3589fcdfc95386c0b56c4eede7da0c",
+    "docs/checkpoints/evidence/2026-10-16-zsd-node-1375515657-ways.json": "8129c144c762df6f38cd1701653b26e83ccae3feee2f80dd59beec20c45f5f4f"
+  }
+}

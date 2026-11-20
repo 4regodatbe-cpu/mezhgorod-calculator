@@ -1,0 +1,134 @@
+{
+  "caseId": "single-m4-voronezh-to-moscow",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-moscow/2026-10-16T02-05-46-824Z-capture.json.gz",
+  "captureSha256": "148f5753cba3fe4ca59e993613c28e249b10e377764626360e10af491c608022",
+  "outputs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-moscow/replay-2026-10-15T09-00-00-03-00-2026-10-16T09-47-22-212Z.json",
+      "sha256": "07c0d3c665fff6a072661876b7b39b17b170177a2e01c7939ab5e2741688dd44",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "provider": "Valhalla",
+      "routeMeters": 520174,
+      "tolls": {
+        "amount": 1830,
+        "weekdayAmount": 1830,
+        "weekendAmount": 2300,
+        "period": "понедельник–четверг",
+        "segments": [
+          "М-4: m4-460 → m4-71 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "audit": {
+        "status": "priced",
+        "priced": [
+          "m4"
+        ],
+        "missing": [],
+        "components": [
+          {
+            "id": "m4",
+            "detected": true,
+            "tolls": {
+              "amount": 1830,
+              "weekdayAmount": 1830,
+              "weekendAmount": 2300,
+              "period": "понедельник–четверг",
+              "segments": [
+                "М-4: m4-460 → m4-71 · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix exact selected-route M4 vector"
+          }
+        ]
+      },
+      "m4": {
+        "status": "boundaries_resolved",
+        "reason": null,
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 3,
+        "confirmedPvps": [
+          "m4-460",
+          "m4-71"
+        ],
+        "diagnosticOnly": true
+      }
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m4-voronezh-to-moscow/replay-2026-10-17T09-00-00-03-00-2026-10-16T09-47-23-153Z.json",
+      "sha256": "5cdfb4dd2ac046e28ae14811a81cfa5e979b7e045ce1e4aba99582a1530c145a",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "provider": "Valhalla",
+      "routeMeters": 520174,
+      "tolls": {
+        "amount": 2300,
+        "weekdayAmount": 1830,
+        "weekendAmount": 2300,
+        "period": "пятница–воскресенье",
+        "segments": [
+          "М-4: m4-460 → m4-71 · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "audit": {
+        "status": "priced",
+        "priced": [
+          "m4"
+        ],
+        "missing": [],
+        "components": [
+          {
+            "id": "m4",
+            "detected": true,
+            "tolls": {
+              "amount": 2300,
+              "weekdayAmount": 1830,
+              "weekendAmount": 2300,
+              "period": "пятница–воскресенье",
+              "segments": [
+                "М-4: m4-460 → m4-71 · Стоимость не подтверждена"
+              ],
+              "confidence": "matched"
+            },
+            "reason": "matrix exact selected-route M4 vector"
+          }
+        ]
+      },
+      "m4": {
+        "status": "boundaries_resolved",
+        "reason": null,
+        "priceRub": null,
+        "verifiedPriceCells": 0,
+        "candidateCount": 3,
+        "confirmedPvps": [
+          "m4-460",
+          "m4-71"
+        ],
+        "diagnosticOnly": true
+      }
+    }
+  ],
+  "validation": {
+    "complete": true,
+    "boothEventCoverage": "complete",
+    "tollBoothCount": 7,
+    "paidEdgeCount": 265,
+    "paidWaysIfShort": null,
+    "selected545Nodes": []
+  },
+  "geometry": null,
+  "previousCount": 20,
+  "nextCase": "single-m4-voronezh-to-rostov",
+  "oldNext": "single-m4-voronezh-to-moscow",
+  "oldPlan": "19D20/22 reviewed, latestsingle-m4-rostov-to-voronezh source_gated_physical545_scope_unresolved; nextsingle-m4-voronezh-to-moscow exactsavedcapture/twoofflineprofiles; sourcegapsretained, no newgate",
+  "result": "whole_estimate_present_current_engine",
+  "scopeCheckpoint": null
+}

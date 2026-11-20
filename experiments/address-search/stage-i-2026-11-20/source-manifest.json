@@ -1,0 +1,17 @@
+{
+  "url": "https://download.geonames.org/export/dump/cities15000.zip",
+  "http": {
+    "status": 200,
+    "date": "2026-11-20T09:29:52Z",
+    "lastModified": "2026-11-20T02:56:29Z",
+    "etag": "\"33680e-660ac6409c204\""
+  },
+  "artifact": {
+    "sha256": "3413ab7e63ee1f7da441fc4d9c962fe31b569319430ab1e5b549f683fab8b84f"
+  },
+  "license": {
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "GeoNames geographical database; filtered and indexed by Mezhgorod Calculator"
+  }
+}

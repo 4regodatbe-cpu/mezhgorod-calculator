@@ -1,0 +1,146 @@
+{
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-voronezh/2026-10-16T00-10-53-930Z-capture.json.gz",
+  "captureSha256": "db7ce8f0d256d7e2583644611c3a00adae58c5367735a146a4f9005867b9404a",
+  "pdfSha256": "25fdb9a430934f47617c8cc1563f95e49c6ebe41c6303e9bd67465b3c568662d",
+  "nodes": [
+    {
+      "id": 365274796,
+      "lon": 39.5539863,
+      "lat": 51.4702443,
+      "distanceKm": 0.04971939245575109,
+      "routeIndex": 6010.981960543605,
+      "inSelectedTrace": false
+    },
+    {
+      "id": 3504914294,
+      "lon": 39.5548118,
+      "lat": 51.4736578,
+      "distanceKm": 0.019707417593539694,
+      "routeIndex": 6018.142245719968,
+      "inSelectedTrace": false
+    },
+    {
+      "id": 3842564088,
+      "lon": 39.553241,
+      "lat": 51.4738083,
+      "distanceKm": 0.09012402450470254,
+      "routeIndex": 6018.072049100705,
+      "inSelectedTrace": false
+    },
+    {
+      "id": 6594393968,
+      "lon": 39.5536991,
+      "lat": 51.4702271,
+      "distanceKm": 0.06965418625412591,
+      "routeIndex": 6010.923946185957,
+      "inSelectedTrace": false
+    },
+    {
+      "id": 9620416636,
+      "lon": 39.5543533,
+      "lat": 51.4702571,
+      "distanceKm": 0.02430372472475873,
+      "routeIndex": 6010.979850741898,
+      "inSelectedTrace": false
+    },
+    {
+      "id": 5818209495,
+      "lon": 39.554704,
+      "lat": 51.4702718,
+      "distanceKm": 0.0000012655819374729197,
+      "routeIndex": 6010.998338749831,
+      "inSelectedTrace": true
+    }
+  ],
+  "primaryFiles": [
+    {
+      "path": "docs/checkpoints/evidence/2026-10-16-osm-way-1044709394.json",
+      "sha256": "dcd80340854bfa4871ada88e2e19a01272f5b32cfd236db856ca9f0ca7ca9843"
+    },
+    {
+      "path": "docs/checkpoints/evidence/2026-10-16-osm-node-4904703727.json",
+      "sha256": "a568004c0ebd33d2b65a0c0a2e449dfde073fa18b91e118e3dd6aec38f33bcb8"
+    },
+    {
+      "path": "docs/checkpoints/evidence/2026-10-16-osm-node-5818209495.json",
+      "sha256": "a3361b820588b604f55556d86bd72302a7426682b190192e4b1d5b25c560f73e"
+    },
+    {
+      "path": "docs/checkpoints/evidence/2026-10-16-osm-545-other-plaza-nodes.json",
+      "sha256": "fb75eed5f4a65fdec37ac7212e1addd5249e7ea437c151e7bf933cd138296d7b"
+    }
+  ],
+  "findings": {
+    "pdf": {
+      "pagesViewed": [
+        2,
+        4,
+        5
+      ],
+      "category": 1,
+      "payment": "no-transponder",
+      "rowA": {
+        "km": "517-544",
+        "monThu": 140,
+        "friSun": 160
+      },
+      "rowB": {
+        "km": "544-589",
+        "monThu": 180,
+        "friSun": 250
+      },
+      "no545LaneCollectionRuleOnViewedPages": true,
+      "textExtraction": "scanned; pdftotext outputempty, visualrenderused"
+    },
+    "selectedTrace": {
+      "callIndex": 10,
+      "key": "b754a52e4e6d3c2793d21aad4aa4ef303c0d58f79d91f22e3f74bacf608accde",
+      "shapePresent": false,
+      "requestPoints": 320,
+      "booth": {
+        "edge": 38,
+        "wayId": "615270691",
+        "node": "5818209495",
+        "begin": 106,
+        "end": 107
+      },
+      "lastToll": {
+        "edge": 59,
+        "wayId": "1044709394",
+        "endNode": "4904703727",
+        "coordinate": [
+          39.4855825,
+          51.5570206
+        ],
+        "selectedVertex": 6130,
+        "maxRoundingMeters": 0.057
+      },
+      "nextEdge": {
+        "edge": 60,
+        "wayId": "1044709393",
+        "toll": false
+      }
+    },
+    "osrm": {
+      "after545M4ManeuverMeters": 28347.8,
+      "merge": [
+        39.555226,
+        51.47572
+      ],
+      "exitR298": [
+        39.314027,
+        51.644965
+      ],
+      "warning": "Same M4 name throughout is not complete paid-section or collection-rule proof; toll-tag transition occurs before the named step ends."
+    },
+    "web": {
+      "officialNewsUrl": "https://avtodor-tr.ru/press-center/news/rezhim-platnosti-na-uchastke--/",
+      "historicalRulesUrl": "https://avtodor-tr.ru/upload/iblock/0aa/0vjf9h6sh29m07onagxuv1sg2voyf853.pdf",
+      "directStatus": 403,
+      "bypassAttempted": false,
+      "searchSnippetsNotAcceptedForFareBinding": true
+    },
+    "result": "source_gated_physical545_collection_scope_unresolved",
+    "next": "Continuecase10; deferred followup is primary collection-scheme binding between exact545lanes and publishedrows, not radius widening or farealias."
+  }
+}

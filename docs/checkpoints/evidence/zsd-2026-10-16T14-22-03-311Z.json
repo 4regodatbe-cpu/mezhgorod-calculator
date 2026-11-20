@@ -1,0 +1,197 @@
+{
+  "parent": "6d9fc3b05c4c050df084f60dd94f20435ede11f9",
+  "caseId": "pair-m11-zsd-prim-to-moscow",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-moscow/2026-10-16T00-06-25-425Z-capture.json.gz",
+  "captureSha256": "24a24fda86b252ba77c3765a24b8ee58f05c742b84af6ed7445540368fd0eb61",
+  "outsideZone1Ways": [
+    "119176958",
+    "123232667",
+    "123232674",
+    "1257246768",
+    "1257246769",
+    "1257246773",
+    "1257246774",
+    "130062824",
+    "130068395",
+    "165035750",
+    "172999960",
+    "183912265",
+    "183912266",
+    "183912269",
+    "183921952",
+    "183921953",
+    "189271976",
+    "222395953",
+    "233006897",
+    "27462206",
+    "350477987",
+    "351741888",
+    "397223750",
+    "493643653",
+    "589047640",
+    "589047641",
+    "589047643",
+    "589047648",
+    "688149996",
+    "721628542",
+    "721628545",
+    "721839717",
+    "736306923",
+    "736881674",
+    "80056721",
+    "80056747",
+    "944399839"
+  ],
+  "maneuvers": [
+    {
+      "type": 18,
+      "instruction": "Сверните на въезд к ЗСД/Богатырский проспект.",
+      "verbal_transition_alert_instruction": "Сверните на въезд к ЗСД.",
+      "verbal_pre_transition_instruction": "Сверните на въезд к ЗСД, Богатырский проспект.",
+      "verbal_post_transition_instruction": "Продолжайте движение еще 1.5 километров.",
+      "street_names": [
+        "ЗСД"
+      ],
+      "bearing_before": 284,
+      "bearing_after": 293,
+      "time": 139.107,
+      "length": 1.452,
+      "cost": 206.656,
+      "begin_shape_index": 144,
+      "end_shape_index": 165,
+      "toll": true,
+      "highway": true,
+      "sign": {
+        "exit_toward_elements": [
+          {
+            "text": "ЗСД"
+          },
+          {
+            "text": "Богатырский проспект"
+          }
+        ]
+      },
+      "travel_mode": "drive",
+      "travel_type": "car"
+    },
+    {
+      "type": 24,
+      "instruction": "Держитесь левее, чтобы свернуть на ЗСД.",
+      "verbal_transition_alert_instruction": "Держитесь левой стороны, чтобы свернуть на ЗСД.",
+      "verbal_pre_transition_instruction": "Держитесь левой стороны, чтобы свернуть на ЗСД.",
+      "verbal_post_transition_instruction": "Продолжайте движение еще 5 километров.",
+      "street_names": [
+        "ЗСД"
+      ],
+      "bearing_before": 349,
+      "bearing_after": 294,
+      "time": 365.901,
+      "length": 4.9,
+      "cost": 491.193,
+      "begin_shape_index": 180,
+      "end_shape_index": 257,
+      "toll": true,
+      "highway": true,
+      "travel_mode": "drive",
+      "travel_type": "car"
+    },
+    {
+      "type": 24,
+      "instruction": "Держитесь левее, чтобы остаться на ЗСД к набережная Обводного канала/Благодатная улица.",
+      "verbal_transition_alert_instruction": "Держитесь левее, чтобы остаться на ЗСД.",
+      "verbal_pre_transition_instruction": "Держитесь левее, чтобы остаться на ЗСД к набережная Обводного канала, Благодатная улица.",
+      "verbal_post_transition_instruction": "Продолжайте движение еще 17 километров.",
+      "street_names": [
+        "ЗСД"
+      ],
+      "bearing_before": 183,
+      "bearing_after": 187,
+      "time": 723.735,
+      "length": 17.353,
+      "cost": 800.792,
+      "begin_shape_index": 257,
+      "end_shape_index": 488,
+      "toll": true,
+      "highway": true,
+      "sign": {
+        "exit_toward_elements": [
+          {
+            "text": "набережная Обводного канала"
+          },
+          {
+            "text": "Благодатная улица"
+          }
+        ]
+      },
+      "travel_mode": "drive",
+      "travel_type": "car"
+    }
+  ],
+  "scope": {
+    "ways": [
+      "1053072562",
+      "1090759975",
+      "1120339785",
+      "119176958",
+      "123232667",
+      "123232674",
+      "1257246768",
+      "1257246769",
+      "1257246773",
+      "1257246774",
+      "129780705",
+      "130062824",
+      "130068395",
+      "139658546",
+      "165035750",
+      "172999960",
+      "183912265",
+      "183912266",
+      "183912269",
+      "183921952",
+      "183921953",
+      "189271976",
+      "222395953",
+      "233006897",
+      "27462206",
+      "350477987",
+      "351741888",
+      "375574640",
+      "375646973",
+      "397223750",
+      "400111352",
+      "400111353",
+      "46948905",
+      "493643653",
+      "589047640",
+      "589047641",
+      "589047643",
+      "589047648",
+      "688149996",
+      "721628539",
+      "721628542",
+      "721628545",
+      "721839717",
+      "736306923",
+      "736881674",
+      "80056721",
+      "80056729",
+      "80056747",
+      "81348980",
+      "944399839"
+    ],
+    "gates": [
+      "1766158781",
+      "933975069"
+    ]
+  },
+  "remainingMissing": [
+    "unknown-paid-road",
+    "zsd"
+  ],
+  "note": "Selected trace really extends beyond zone1: 37 unreviewed way IDs. Current refusal is consistent with that scope, not an established runtimebug. Exact source-backed finished collection span remains unbound. No per-zone/gate-count sum activated; unrelated missing products remain open.",
+  "at": "2026-10-16T14:22:03.311Z",
+  "checkpoint": "docs/checkpoints/zsd-2026-10-16T14-22-03-311Z.md",
+  "evidence": "docs/checkpoints/evidence/zsd-2026-10-16T14-22-03-311Z.json",
+  "overallPlanPercent": 90
+}

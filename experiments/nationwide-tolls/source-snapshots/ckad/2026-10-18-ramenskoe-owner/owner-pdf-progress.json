@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://avtodor-tr.ru/upload/iblock/165/wiri43iwx18q7t9xc6izr4qeds5odt3z.pdf",
+    "purpose": "Read and visually verify the same two owner PDF results already opened, no new URL",
+    "durableStartedCommit": "8bdabbf0189e16270879a7a5a8b00fa47de63902",
+    "status": 403,
+    "error": "HTTP Error 403: Forbidden",
+    "elapsedMs": 4839
+  },
+  {
+    "url": "https://www.russianhighways.ru/upload/ckad/Infomemo_CRR4_rus.pdf",
+    "purpose": "Read and visually verify the same two owner PDF results already opened, no new URL",
+    "durableStartedCommit": "8bdabbf0189e16270879a7a5a8b00fa47de63902",
+    "status": 200,
+    "bytes": 1897406,
+    "sha256": "52d00e6911470dc9bf3f74a4986174dd3c32219f0e8704192f3d92b284113bca",
+    "bodyFile": "operator-ckad4-project-memo.pdf",
+    "elapsedMs": 9671
+  }
+]

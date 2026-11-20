@@ -1,0 +1,446 @@
+{
+  "status": "LOCAL_EVIDENCE_RECONCILED",
+  "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+  "externalRequests": 0,
+  "classification": [
+    "REPLAY_VERSION_HEAD_RECOVERY",
+    "ADDITIONAL_SOURCE_BOUND_WORKING_CKAD_COMPONENT",
+    "ASSESSED_SUBTOTAL_NOT_CONFIRMED_SUBTOTAL",
+    "REPORTING_TERMINOLOGY"
+  ],
+  "arithmeticDefectDemonstrated": false,
+  "doubleChargingDemonstrated": false,
+  "priceSource": {
+    "path": "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json",
+    "pdf": "experiments/nationwide-tolls/source-documents/ckad-order56-effective-2026-03-02.pdf",
+    "pdfSha256": "839488fed07f8e611b5304498f22d49626ff0dc7529df67734a2052a49bea3e7",
+    "page": 1,
+    "category": "I",
+    "row": "М-7",
+    "column": "М-11",
+    "rub": 941,
+    "payment": "post-payment / listed transponders",
+    "effectiveFrom": "2026-03-02T00:00:00+03:00",
+    "routeBindingAssurance": "working_estimate",
+    "runtimeMatrixChanged": false
+  },
+  "routeEvidence": {
+    "capture": {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/2026-10-15T23-58-33-171Z-capture.json.gz",
+      "sha256": "e8b5d42fb9b737227c04d195271c4cb4dde444a66f85aa579d238a0cd2769ed0"
+    },
+    "geometrySha256": "94fe668503fc7bf28e4d1c1ec66f98d0b3669affa668dff5588d12820fd5b17e",
+    "entry": "М-7 Волга",
+    "exit": "М-11 Нева",
+    "shapeRange": [
+      2952,
+      3547
+    ],
+    "entryCoordinate": [
+      38.554201,
+      55.855543
+    ],
+    "exitCoordinate": [
+      37.209886,
+      56.089259
+    ],
+    "strictOldCkadStillUnknown": true
+  },
+  "oldReplays": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-58-33-711Z.json",
+      "sha256": "dfeee583042f8bb47c3a8adabaf16a4be40ece6ed18bf97f1c0611f77c48f610",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "whole": null,
+      "components": [
+        {
+          "id": "m11-15-58",
+          "rub": null,
+          "reason": "m11_partial_head_entry_boundary_unresolved"
+        },
+        {
+          "id": "m11-58-679",
+          "rub": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "rub": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "m12",
+          "rub": 1713,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        },
+        {
+          "id": "ckad",
+          "rub": null,
+          "reason": "ckad_east_arc_not_proven"
+        },
+        {
+          "id": "zsd",
+          "rub": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        },
+        {
+          "id": "unknown-paid-road",
+          "rub": null,
+          "reason": "unmapped_selected_route_paid_booth"
+        }
+      ],
+      "numericSubtotal": 5707
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T11-10-39-734Z.json",
+      "sha256": "dfeee583042f8bb47c3a8adabaf16a4be40ece6ed18bf97f1c0611f77c48f610",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "whole": null,
+      "components": [
+        {
+          "id": "m11-15-58",
+          "rub": null,
+          "reason": "m11_partial_head_entry_boundary_unresolved"
+        },
+        {
+          "id": "m11-58-679",
+          "rub": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "rub": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "m12",
+          "rub": 1713,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        },
+        {
+          "id": "ckad",
+          "rub": null,
+          "reason": "ckad_east_arc_not_proven"
+        },
+        {
+          "id": "zsd",
+          "rub": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        },
+        {
+          "id": "unknown-paid-road",
+          "rub": null,
+          "reason": "unmapped_selected_route_paid_booth"
+        }
+      ],
+      "numericSubtotal": 5707
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T11-17-04-593Z.json",
+      "sha256": "afaa79b5aea88dd66060fd118d75b4d970480f92d7acb8bf83a2b51869cf54ef",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "whole": null,
+      "components": [
+        {
+          "id": "m11-15-58",
+          "rub": null,
+          "reason": "m11_partial_head_entry_boundary_unresolved"
+        },
+        {
+          "id": "m11-58-679",
+          "rub": 3900,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "rub": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "m12",
+          "rub": 1713,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        },
+        {
+          "id": "ckad",
+          "rub": null,
+          "reason": "ckad_east_arc_not_proven"
+        },
+        {
+          "id": "zsd",
+          "rub": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "numericSubtotal": 5707
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-58-34-166Z.json",
+      "sha256": "5d78a9011722ceaf2b108b8165d87e4545c5b812e81e9263bbc454660855283d",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "whole": null,
+      "components": [
+        {
+          "id": "m11-15-58",
+          "rub": null,
+          "reason": "m11_partial_head_entry_boundary_unresolved"
+        },
+        {
+          "id": "m11-58-679",
+          "rub": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "rub": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "m12",
+          "rub": 1713,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        },
+        {
+          "id": "ckad",
+          "rub": null,
+          "reason": "ckad_east_arc_not_proven"
+        },
+        {
+          "id": "zsd",
+          "rub": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        },
+        {
+          "id": "unknown-paid-road",
+          "rub": null,
+          "reason": "unmapped_selected_route_paid_booth"
+        }
+      ],
+      "numericSubtotal": 6007
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T11-10-40-117Z.json",
+      "sha256": "5d78a9011722ceaf2b108b8165d87e4545c5b812e81e9263bbc454660855283d",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "whole": null,
+      "components": [
+        {
+          "id": "m11-15-58",
+          "rub": null,
+          "reason": "m11_partial_head_entry_boundary_unresolved"
+        },
+        {
+          "id": "m11-58-679",
+          "rub": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "rub": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "m12",
+          "rub": 1713,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        },
+        {
+          "id": "ckad",
+          "rub": null,
+          "reason": "ckad_east_arc_not_proven"
+        },
+        {
+          "id": "zsd",
+          "rub": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        },
+        {
+          "id": "unknown-paid-road",
+          "rub": null,
+          "reason": "unmapped_selected_route_paid_booth"
+        }
+      ],
+      "numericSubtotal": 6007
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T11-17-05-004Z.json",
+      "sha256": "5196480c4c9aadb4123699c98ad6f497a1fe61249a5beec46c208f5f01684987",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "whole": null,
+      "components": [
+        {
+          "id": "m11-15-58",
+          "rub": null,
+          "reason": "m11_partial_head_entry_boundary_unresolved"
+        },
+        {
+          "id": "m11-58-679",
+          "rub": 4200,
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "rub": 94,
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "m12",
+          "rub": 1713,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        },
+        {
+          "id": "ckad",
+          "rub": null,
+          "reason": "ckad_east_arc_not_proven"
+        },
+        {
+          "id": "zsd",
+          "rub": null,
+          "reason": "zsd_trip_extends_outside_reviewed_zone1"
+        }
+      ],
+      "numericSubtotal": 6007
+    }
+  ],
+  "rows": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "oldReplaySubtotal": 5707,
+      "oldReplayVersions": [
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-15T23-58-33-711Z.json",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T11-10-39-734Z.json",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T11-17-04-593Z.json"
+      ],
+      "headRub": 280,
+      "subtotalAfterHead": 5987,
+      "ckadRub": 941,
+      "ckadGrade": "estimated",
+      "assessedSubtotal": 6928,
+      "confirmedGradeSubtotal": 4274,
+      "estimatedComponents": [
+        {
+          "id": "m12",
+          "rub": 1713
+        },
+        {
+          "id": "ckad",
+          "rub": 941
+        }
+      ],
+      "components": [
+        {
+          "id": "m11-15-58",
+          "status": "confirmed",
+          "rub": 280
+        },
+        {
+          "id": "m11-58-679",
+          "status": "confirmed",
+          "rub": 3900
+        },
+        {
+          "id": "m11-679-684",
+          "status": "confirmed",
+          "rub": 94
+        },
+        {
+          "id": "m12",
+          "status": "estimated",
+          "rub": 1713
+        },
+        {
+          "id": "ckad",
+          "status": "estimated",
+          "rub": 941
+        },
+        {
+          "id": "zsd",
+          "status": "unknown",
+          "rub": null
+        }
+      ],
+      "missing": [
+        "zsd"
+      ],
+      "whole": null,
+      "deltaFromOld": 1221,
+      "externalYandexReportedRub": 9353,
+      "conditionalExternalMinusAssessed": 2425,
+      "conditionalExternalRemainderIsZsdTariff": false,
+      "comparableYandexGeometryConfirmed": false
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "oldReplaySubtotal": 6007,
+      "oldReplayVersions": [
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-15T23-58-34-166Z.json",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T11-10-40-117Z.json",
+        "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T11-17-05-004Z.json"
+      ],
+      "headRub": 320,
+      "subtotalAfterHead": 6327,
+      "ckadRub": 941,
+      "ckadGrade": "estimated",
+      "assessedSubtotal": 7268,
+      "confirmedGradeSubtotal": 4614,
+      "estimatedComponents": [
+        {
+          "id": "m12",
+          "rub": 1713
+        },
+        {
+          "id": "ckad",
+          "rub": 941
+        }
+      ],
+      "components": [
+        {
+          "id": "m11-15-58",
+          "status": "confirmed",
+          "rub": 320
+        },
+        {
+          "id": "m11-58-679",
+          "status": "confirmed",
+          "rub": 4200
+        },
+        {
+          "id": "m11-679-684",
+          "status": "confirmed",
+          "rub": 94
+        },
+        {
+          "id": "m12",
+          "status": "estimated",
+          "rub": 1713
+        },
+        {
+          "id": "ckad",
+          "status": "estimated",
+          "rub": 941
+        },
+        {
+          "id": "zsd",
+          "status": "unknown",
+          "rub": null
+        }
+      ],
+      "missing": [
+        "zsd"
+      ],
+      "whole": null,
+      "deltaFromOld": 1261,
+      "externalYandexReportedRub": 9353,
+      "conditionalExternalMinusAssessed": 2085,
+      "conditionalExternalRemainderIsZsdTariff": false,
+      "comparableYandexGeometryConfirmed": false
+    }
+  ],
+  "sourceReportAvailable": false,
+  "limitations": [
+    "Stage G component-analysis/evidence-manifest and library report not available in this workspace; no claim to reproduce their content.",
+    "9353 is user-reported on 31 October, not a new browser observation. Different dates/geometry/payment are not reconciled.",
+    "Confirmed-grade subtotal is the existing estimator classification, not new independent certification of all M11 charges.",
+    "ZSD finished cash/card collection bundle remains unknown; no residual assigned as its tariff."
+  ]
+}

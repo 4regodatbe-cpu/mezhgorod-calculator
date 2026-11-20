@@ -1,0 +1,3 @@
+# D4 metadata verifier initial failure
+
+30.10.2026; command `node experiments/address-search/2026-10-30-stage-d/verify-evidence.mjs`, exit1, Node24.19.0. AssertionError: `The "string" argument must be of type string. Received type undefined (undefined)` at the four-road status check. The verifier read `d3.m11.status`, but the ledger deliberately stores that status at `d3.m11.source.status` beside the primary source admission. Corrected the field access, retaining the same required BLOCKED_BY_DATA assertion. No application, price, data or road-model defect inferred; no test weakened or road audit rerun. Final successful metadata output is separate.

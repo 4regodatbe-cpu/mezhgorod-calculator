@@ -1,0 +1,30 @@
+✖ native experiment CommonJS accepts require while TS and ESM keep the import restriction (3039.338634ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3548.670917
+
+✖ failing tests:
+
+test at scripts/eslint-commonjs-policy.test.mjs:5:1
+✖ native experiment CommonJS accepts require while TS and ESM keep the import restriction (3039.338634ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'module'
+  - 'commonjs'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/6a7402161c9f/calculator/scripts/eslint-commonjs-policy.test.mjs:11:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'module',
+    expected: 'commonjs',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

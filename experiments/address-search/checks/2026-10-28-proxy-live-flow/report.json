@@ -1,0 +1,64 @@
+{
+  "startedAt": "2026-10-28T07:10:59.515Z",
+  "node": "v24.19.0",
+  "browser": "154.0.8037.57",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "componentSha256": "5ece9b654422c35e43442208f5b778cbf0d173fc19f6da946dd21bbc08728a4d",
+  "sourceApiRemote": "75d55b8a257d6e9685e13c9da179b3385f7ca7d6 (API code unchanged)",
+  "addressApi": "LIVE local /r → actual production collector → Photon",
+  "classifyAndCollect": "MOCKED, never counted as live",
+  "declaredServerProxyOptIn": true,
+  "requests": [
+    "Анапа",
+    "Донецк"
+  ],
+  "errors": [],
+  "steps": [
+    {
+      "city": "Анапа",
+      "httpStatus": 200,
+      "elapsedMs": 3606,
+      "file": "response-1.json",
+      "sha256": "4d95e56989888566d63ddda0b16f76593e6fa229600229603a527bd227209b1c",
+      "selectedId": "R-1477115",
+      "selectedLabel": "Анапа, муниципальный округ Анапа, Краснодарский край, Россия",
+      "selectedPosition": {
+        "lat": 44.894272,
+        "lng": 37.316887
+      },
+      "sentPositions": [
+        {
+          "lat": 44.894272,
+          "lng": 37.316887
+        }
+      ],
+      "outcome": "SELECTED",
+      "cleared": true
+    },
+    {
+      "city": "Донецк",
+      "httpStatus": 200,
+      "elapsedMs": 1144,
+      "file": "response-2.json",
+      "sha256": "71e34b160963f46dd5d782d124f3e7858482f9fcac30c74a1bf3aba5046fb769",
+      "selectedId": "R-1517207",
+      "selectedLabel": "Донецк, Ростовская область, Россия",
+      "selectedPosition": {
+        "lat": 48.3382864,
+        "lng": 39.9509488
+      },
+      "sentPositions": [
+        {
+          "lat": 48.3382864,
+          "lng": 39.9509488
+        }
+      ],
+      "outcome": "SELECTED"
+    }
+  ],
+  "status": "LIVE_REPLACEMENT_PASS",
+  "finishedAt": "2026-10-28T07:11:13.368Z"
+}

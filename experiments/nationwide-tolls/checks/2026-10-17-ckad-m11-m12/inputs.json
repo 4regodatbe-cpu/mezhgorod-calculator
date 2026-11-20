@@ -1,0 +1,51 @@
+{
+  "status": "STARTED",
+  "sourceCommit": "f010d847765874573a52ef1926f3ca82dc1a44c4",
+  "sourceTree": "94ba2e72308312c56d0c77cda00d09ccae98c911",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "pr": 14,
+  "caseIds": [
+    "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+    "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary"
+  ],
+  "primaryUrls": [
+    "https://api.openstreetmap.org/api/0.6/way/1148492112/full",
+    "https://api.openstreetmap.org/api/0.6/way/1148492111/full",
+    "https://api.openstreetmap.org/api/0.6/way/1270188041/full",
+    "https://api.openstreetmap.org/api/0.6/way/1189855267/full",
+    "https://api.openstreetmap.org/api/0.6/way/916593974/full",
+    "https://api.openstreetmap.org/api/0.6/way/916593983/full",
+    "https://api.openstreetmap.org/api/0.6/way/916593976/full",
+    "https://api.openstreetmap.org/api/0.6/way/1189855268/full",
+    "https://api.openstreetmap.org/api/0.6/node/8120716330",
+    "https://api.openstreetmap.org/api/0.6/node/8120716327",
+    "https://api.openstreetmap.org/api/0.6/node/8120716326",
+    "https://api.openstreetmap.org/api/0.6/node/11072845296"
+  ],
+  "bounds": {
+    "maxPrimaryGets": 12,
+    "totalNetworkMs": 120000,
+    "perGetMs": 15000,
+    "retries": 0,
+    "terminalCircuit": true,
+    "newRouting": 0,
+    "newTrace": 0
+  },
+  "sourceHashes": {
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/route.json.gz": "3bdfaa4e3d305b23a5c8e83c28fa7885c588dee6b506db9bcb4d6279f7cca42f",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/capture.json.gz": "499a736b6a699d1076867193a222f1eae076249347df72c9788698e087df87bf",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/max-chain-m12-ckad-m11-zsd-prim-to-arzamas/result.json": "7cc644f27be0251178669acf2579713905ad7757453b1e5ddd59771d38e65323",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary/route.json.gz": "6ebcc0dce2c45dc8a178434104f8ed38a792e599c12005fefbea88521c2b510f",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary/capture.json.gz": "370ac4c3bbc70768e5a84f635c4fe07ec30bb8208f91cc2eb25d8cd37cfe3756",
+    "experiments/nationwide-tolls/checks/2026-10-17-zsd-osrm-five/cases/max-chain-m12-ckad-m11-zsd-prim-to-cheboksary/result.json": "425c72314e7910aa1469e365bf5e66b97f65cf8591f8fb0f495015712a3ed098",
+    "experiments/nationwide-tolls/checks/2026-10-17-selected-osrm-m12-ckad-scope/summary.json": "d138da5624a7f6c80dddfe5ede49f105fca33189aad842acbdda3ec4a28cc347",
+    "experiments/nationwide-tolls/source-snapshots/ckad-2026-03-02-category1-direct-pair-matrix.json": "e6b2178c2448f071de92556d1d72237bd0281da9628f4855cb11b2cd32e6f9ca",
+    "experiments/nationwide-tolls/source-documents/ckad-order56-effective-2026-03-02.pdf": "839488fed07f8e611b5304498f22d49626ff0dc7529df67734a2052a49bea3e7",
+    "experiments/nationwide-tolls/TARIFF_SELECTION_REGISTER.json": "527b0ac0bcf932a30e8a9d95a2bd9c6cac90ee081107371bebb1abd8d0f5d378",
+    "lib/toll-validator.ts": "94e8d3ed0b16cd175b9ecc0ea89f35e369a52745253d5909c8d55a5615b40df7",
+    "lib/v3-calculation/ckad-product-boundaries.ts": "151cf35ddbbf2ac5f6e6f0003cb0b634f8bd2f9acc85c428a6b4d7e21126dc18",
+    "lib/v3-calculation/route-leg-pricing.ts": "2b8c640e740ffdc24958d9ffa63c21cab2835ebdc756d4c65f1b2cf44f4a7eaf"
+  },
+  "implementationCondition": "Only proved directed operator-point scope may enable ready981 cell. Preserve one complete CKAD named trace block including non-toll connectors; require own full validation, own ordered primary geometry and no other CKAD block. Existing fullM4 arc unchanged. M12 component stays unknown.",
+  "recovery": "Read progress and each metadata/raw; reuse exact completed GETs without refetch. Terminal/budget/missing binding => BLOCKED, no wider search. Do not start source requests until STARTED remote readback."
+}

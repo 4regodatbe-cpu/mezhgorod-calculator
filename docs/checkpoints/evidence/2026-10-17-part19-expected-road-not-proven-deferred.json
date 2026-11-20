@@ -1,0 +1,90 @@
+{
+  "recordedAtUtc": "2026-10-17T04:35:31Z",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "sourceHead": "fec51dab8eddc1919b4e839cc1b59a1c345f3b05",
+  "sourceTree": "0bd121306facb563761e924d54c57ad4aa4487c1",
+  "pr": {
+    "number": 14,
+    "state": "open",
+    "draft": true,
+    "head": "fec51dab8eddc1919b4e839cc1b59a1c345f3b05"
+  },
+  "workflow": {
+    "runId": "38999218280",
+    "status": "completed",
+    "conclusion": "success",
+    "headSha": "fec51dab8eddc1919b4e839cc1b59a1c345f3b05"
+  },
+  "source": {
+    "reportPath": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/REPORT.json",
+    "reportGitBlobSha": "528163f94cf0092bf58ad5b0be200059d61baff9",
+    "reportSha256PinnedInFindingsQueue": "cf72f0f4084236e3acb442a961bae5a9c79f49980566b6d784bd8b73642d765e",
+    "baselineCommit": "db83e7582f9ecb43f3191a0b93d7cd6989e5a464"
+  },
+  "finding": {
+    "code": "expected-road-not-proven",
+    "outcome": "deferred",
+    "caseCount": 64,
+    "reportRowsMatched": 64,
+    "uniqueLivePaths": 64,
+    "missingLivePaths": 0,
+    "rawAvailable": 64,
+    "traceComplete": 64,
+    "sameDateParity": 64,
+    "missingExpectedRoadCounts": {
+      "ckad": 30,
+      "m12": 11,
+      "khabarovsk": 10,
+      "odintsovo": 8,
+      "zsd": 3,
+      "m4": 2
+    },
+    "overlapWithOtherCauseCaseIds": 32,
+    "caseIdsNotInOtherCauseLedgers": 32,
+    "overlapCaveat": "case counts are non-additive"
+  },
+  "m11BoundaryCases": {
+    "completedInCommittedCheckpoints": 8,
+    "checkpoints": [
+      "docs/checkpoints/2026-10-16-part19-m11-case5-boundary-source-gated.md",
+      "docs/checkpoints/2026-10-16-part19-m11-case6-boundary-exception.md",
+      "docs/checkpoints/2026-10-17-part19-m11-case7-boundary-source-gated.md",
+      "docs/checkpoints/2026-10-17-part19-m11-case8-boundary-source-gated.md"
+    ],
+    "fourExplicitCases": [
+      {
+        "id": "triple-m11-ckad-m12-kazan-to-spb",
+        "checkpoint": "docs/checkpoints/2026-10-16-part19-m11-case5-boundary-source-gated.md",
+        "caseStatus": "DONE; shared cause remains blocked; no tariff confirmed"
+      },
+      {
+        "id": "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+        "checkpoint": "docs/checkpoints/2026-10-16-part19-m11-case6-boundary-exception.md",
+        "caseStatus": "DONE; shared cause remains blocked; no tariff confirmed"
+      },
+      {
+        "id": "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+        "checkpoint": "docs/checkpoints/2026-10-17-part19-m11-case7-boundary-source-gated.md",
+        "caseStatus": "DONE; shared cause remains blocked; no tariff confirmed"
+      },
+      {
+        "id": "triple-m11-ckad-m12-arzamas-to-spb",
+        "checkpoint": "docs/checkpoints/2026-10-17-part19-m11-case8-boundary-source-gated.md",
+        "caseStatus": "DONE; shared cause remains blocked; no tariff confirmed"
+      }
+    ],
+    "newRouteRunsThisStep": 0,
+    "sharedCauseOutcome": "blocked_by_missing_reliable_data",
+    "fareAmounts": "unknown/null"
+  },
+  "outcomeRationale": "The report records expected-vs-proven road-label differences, but does not establish that the fastest selected route actually traversed an omitted chargeable segment. The 64 rows span six unrelated road labels and overlap existing findings. Defer aggregate finding; don't force a road onto a route or invent a fare.",
+  "checks": {
+    "newRoutes": 0,
+    "newLive": 0,
+    "newReplay": 0,
+    "tests": 0,
+    "builds": 0,
+    "tariffConfirmed": false,
+    "formalPlan": "18/20=90%"
+  }
+}

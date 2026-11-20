@@ -1,0 +1,47 @@
+✔ recording reserves request order even when repeated requests finish out of order (5.310658ms)
+✔ offline replay preserves retry-after and has no fallback for missing responses (1.118558ms)
+✔ capture includes requests made during pricing, after routing (1.252998ms)
+✔ parity compares the complete toll audit, not just the numeric total (0.235491ms)
+✔ planned roads, incomplete traces and partially traversed pairs never count as proven coverage (0.673163ms)
+✖ compaction preserves every exact gate and road family while bounding duplicate paid-edge samples (7.758959ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 5
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 100.529227
+
+✖ failing tests:
+
+test at experiments/nationwide-tolls/systemic-audit-io.test.mjs:52:1
+✖ compaction preserves every exact gate and road family while bounding duplicate paid-edge samples (7.758959ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      m11: {
+        occurrences: 1501,
+  +     uniqueWays: 1499
+  -     uniqueWays: 1500
+      },
+      m4: {
+        occurrences: 1500,
+        uniqueWays: 1500
+      }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/8c78acfa2f19/mezhgorod-calculator/experiments/nationwide-tolls/systemic-audit-io.test.mjs:66:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { m11: { occurrences: 1501, uniqueWays: 1499 }, m4: { occurrences: 1500, uniqueWays: 1500 } },
+    expected: { m11: { occurrences: 1501, uniqueWays: 1500 }, m4: { occurrences: 1500, uniqueWays: 1500 } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,169 @@
+{
+  "caseId": "pair-m12-ckad-domodedovo-to-arzamas",
+  "mode": "live",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "Valhalla",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 491116,
+      "seconds": 23380
+    },
+    {
+      "name": "OSRM",
+      "meters": 464654,
+      "seconds": 23782
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 491116,
+  "routeSeconds": 23380,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 37.766,
+          "lat": 55.436
+        },
+        {
+          "lng": 43.84,
+          "lat": 55.394
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "m12",
+      "ckad"
+    ],
+    "provenRoads": [
+      "m12"
+    ],
+    "missingExpectedRoads": [
+      "ckad"
+    ],
+    "status": "expected-road-not-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "1189855268",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    },
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "916593991",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    },
+    {
+      "road": "m12",
+      "kind": "selected-paid-edge",
+      "wayId": "1092379412",
+      "names": [
+        "М-12",
+        "«Восток»"
+      ]
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "m12": {
+      "occurrences": 236,
+      "uniqueWays": 161
+    }
+  },
+  "replayIntegrity": null,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m12-ckad-domodedovo-to-arzamas/2026-10-16T01-36-02-089Z-capture.json.gz",
+  "captureSha256": "4a4010becad92e7b9e83530c602678d3b98ef9bb0e540e61c91ded03aa1c21c3",
+  "detectedRoadComponents": [
+    {
+      "id": "m12",
+      "amount": null,
+      "reason": "m12_current_operator_pair_not_bound"
+    },
+    {
+      "id": "ckad",
+      "amount": null,
+      "reason": "ckad_east_arc_not_proven"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "А-113",
+    "Центральная кольцевая автомобильная дорога",
+    "М-12",
+    "«Восток»"
+  ],
+  "tollNodeIds": [],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": {
+    "beginKm": 104.536,
+    "endKm": 475.565
+  },
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m12, ckad",
+      "m12: m12_current_operator_pair_not_bound",
+      "ckad: ckad_east_arc_not_proven"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [],
+    "missing": [
+      "m12",
+      "ckad"
+    ],
+    "components": [
+      {
+        "id": "m12",
+        "detected": true,
+        "tolls": null,
+        "reason": "m12_current_operator_pair_not_bound"
+      },
+      {
+        "id": "ckad",
+        "detected": true,
+        "tolls": null,
+        "reason": "ckad_east_arc_not_proven"
+      }
+    ]
+  }
+}

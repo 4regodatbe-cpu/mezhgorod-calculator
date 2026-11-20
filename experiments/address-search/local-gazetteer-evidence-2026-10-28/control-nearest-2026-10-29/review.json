@@ -1,0 +1,413 @@
+{
+  "scope": "15control nearest-road checks only, no route/toll audit",
+  "source": "https://router.project-osrm.org",
+  "maxRequests": 15,
+  "results": [
+    {
+      "id": 524901,
+      "name": "Москва",
+      "position": {
+        "lat": 55.75204,
+        "lng": 37.61781
+      },
+      "url": "https://router.project-osrm.org/nearest/v1/driving/37.61781,55.75204?number=1",
+      "status": "NEAREST_AVAILABLE_NOT_CITY_ACCURACY_CERTIFICATE",
+      "httpStatus": 200,
+      "curlExit": 0,
+      "sha256": "f1a3efb9c524f85fe796b0ac97ba3027864058aeacd79d8c23373058d11af1c1",
+      "providerCode": "Ok",
+      "waypoint": {
+        "nodes": [
+          11251397850,
+          11251397850
+        ],
+        "hint": "82WVkvpllZIPAAAAAgAAAFEAAAAAAAAAB87PQLsIyT77WAZCAAAAAA8AAAACAAAAUQAAAAAAAADLKQEAXAE-AsGzUgOSAD4CaLVSAwYAvwQAAAAA",
+        "location": [
+          37.618012,
+          55.751617
+        ],
+        "name": "",
+        "distance": 48.77204978
+      }
+    },
+    {
+      "id": 498817,
+      "name": "Санкт-Петербург",
+      "position": {
+        "lat": 59.93863,
+        "lng": 30.31413
+      },
+      "url": "https://router.project-osrm.org/nearest/v1/driving/30.31413,59.93863?number=1",
+      "status": "NEAREST_AVAILABLE_NOT_CITY_ACCURACY_CERTIFICATE",
+      "httpStatus": 200,
+      "curlExit": 0,
+      "sha256": "89882e07a908ef175d698dbfaad9dddefc1d072895dff872cbcc69e33f5a2015",
+      "providerCode": "Ok",
+      "waypoint": {
+        "nodes": [
+          1573813702,
+          1573813668
+        ],
+        "hint": "6wfIg_AHyIMZAAAAagAAAGwAAAAAAAAAaMQ1QWF5O0J-HUBCAAAAABkAAABqAAAAbAAAAAAAAADLKQEAuI7OAVSXkgOSjs4BRpeSAwQATxQAAAAA",
+        "location": [
+          30.314168,
+          59.938644
+        ],
+        "name": "Дворцовая площадь",
+        "distance": 2.636152105
+      }
+    },
+    {
+      "id": 542420,
+      "name": "Краснодар",
+      "position": {
+        "lat": 45.04534,
+        "lng": 38.98178
+      },
+      "url": "https://router.project-osrm.org/nearest/v1/driving/38.98178,45.04534?number=1",
+      "status": "NEAREST_AVAILABLE_NOT_CITY_ACCURACY_CERTIFICATE",
+      "httpStatus": 200,
+      "curlExit": 0,
+      "sha256": "e8e8103be2916eab2239bde025d91778242a98233535d58f602cecd6b158e4aa",
+      "providerCode": "Ok",
+      "waypoint": {
+        "nodes": [
+          471809946,
+          295168651
+        ],
+        "hint": "hyHOgBfng4EHAAAADAAAAAAAAAAAAAAA4FAjQZ9tdEEAAAAAAAAAAAcAAAAMAAAAAAAAAAAAAADLKQEAqNBSAlhWrwKU0FICXFavAgAALwwAAAAA",
+        "location": [
+          38.9818,
+          45.045336
+        ],
+        "name": "улица Коммунаров",
+        "distance": 1.637733999
+      }
+    },
+    {
+      "id": 694423,
+      "name": "Севастополь",
+      "position": {
+        "lat": 44.60795,
+        "lng": 33.52134
+      },
+      "url": "https://router.project-osrm.org/nearest/v1/driving/33.52134,44.60795?number=1",
+      "status": "NEAREST_AVAILABLE_NOT_CITY_ACCURACY_CERTIFICATE",
+      "httpStatus": 200,
+      "curlExit": 0,
+      "sha256": "a50ecbce02b52e33cacc57ca7faf7e714231801ae31dc9c3571e70260f918287",
+      "providerCode": "Ok",
+      "waypoint": {
+        "nodes": [
+          0,
+          1782675983
+        ],
+        "hint": "Up9ShP___38gAAAAMwAAAAAAAAAWAAAAgTwvQm2kwUEAAAAARDbpQSAAAAAzAAAAAAAAABYAAADLKQEA2H7_AdOpqAK8fv8BzqmoAgAATwoAAAAA",
+        "location": [
+          33.521368,
+          44.607955
+        ],
+        "name": "Большая Морская улица",
+        "distance": 2.290477489
+      }
+    },
+    {
+      "id": 693805,
+      "name": "Симферополь",
+      "position": {
+        "lat": 44.95719,
+        "lng": 34.11079
+      },
+      "url": "https://router.project-osrm.org/nearest/v1/driving/34.11079,44.95719?number=1",
+      "status": "NEAREST_AVAILABLE_NOT_CITY_ACCURACY_CERTIFICATE",
+      "httpStatus": 200,
+      "curlExit": 0,
+      "sha256": "0c87798fb9cdaeef0e08f0ebd180201d9c8af76ccbdab9bccab6d0410ae22853",
+      "providerCode": "Ok",
+      "waypoint": {
+        "nodes": [
+          7359263725,
+          7359263718
+        ],
+        "hint": "0Z4rjdWeK41PAAAAFwAAAAAAAAAAAAAAODUEQjGzFUEAAAAAAAAAAE8AAAAXAAAAAAAAAAAAAADLKQEA93wIAsT9rQJGfQgCBv6tAgAAbxMAAAAA",
+        "location": [
+          34.110711,
+          44.957124
+        ],
+        "name": "",
+        "distance": 9.624461094
+      }
+    },
+    {
+      "id": 712451,
+      "name": "Бердянск",
+      "position": {
+        "lat": 46.75578,
+        "lng": 36.78815
+      },
+      "url": "https://router.project-osrm.org/nearest/v1/driving/36.78815,46.75578?number=1",
+      "status": "NEAREST_AVAILABLE_NOT_CITY_ACCURACY_CERTIFICATE",
+      "httpStatus": 200,
+      "curlExit": 0,
+      "sha256": "38066feeaa6ee12bfbacabdaa189583d750487c1cc8812120cc06e85347e3712",
+      "providerCode": "Ok",
+      "waypoint": {
+        "nodes": [
+          4721911157,
+          4721911156
+        ],
+        "hint": "SxiQiU0YkIlHAAAALwAAAAAAAABbAAAAjFrvQWhhm0EAAAAATcUXQkcAAAAvAAAAAAAAAFsAAADLKQEA7lYxAtFvyQK2VzECxG_JAgAAXwAAAAAA",
+        "location": [
+          36.78795,
+          46.755793
+        ],
+        "name": "",
+        "distance": 15.34314955
+      }
+    },
+    {
+      "id": 701404,
+      "name": "Мелитополь",
+      "position": {
+        "lat": 46.84735,
+        "lng": 35.38196
+      },
+      "url": "https://router.project-osrm.org/nearest/v1/driving/35.38196,46.84735?number=1",
+      "status": "NEAREST_AVAILABLE_NOT_CITY_ACCURACY_CERTIFICATE",
+      "httpStatus": 200,
+      "curlExit": 0,
+      "sha256": "f81df1cf26dee40870240852188e9c88d76a82def91855b6780a8cf49bae8820",
+      "providerCode": "Ok",
+      "waypoint": {
+        "nodes": [
+          1273044288,
+          1536328813
+        ],
+        "hint": "ELsXgxW7F4NaAAAAYQAAAJcAAAAAAAAAzix8QltshUJ5-9FCAAAAAFoAAABhAAAAlwAAAAAAAADLKQEANeIbAnTVygLI4hsCdtXKAgIAbxYAAAAA",
+        "location": [
+          35.381813,
+          46.847348
+        ],
+        "name": "Михайла Грушевського вулиця",
+        "distance": 11.21888736
+      }
+    },
+    {
+      "id": 701822,
+      "name": "Мариуполь",
+      "position": {
+        "lat": 47.09514,
+        "lng": 37.54131
+      },
+      "url": "https://router.project-osrm.org/nearest/v1/driving/37.54131,47.09514?number=1",
+      "status": "NEAREST_AVAILABLE_NOT_CITY_ACCURACY_CERTIFICATE",
+      "httpStatus": 200,
+      "curlExit": 0,
+      "sha256": "943eea7df9e64819855bb36e6dc928612314f8f98f3564e23fb12f718b6acc39",
+      "providerCode": "Ok",
+      "waypoint": {
+        "nodes": [
+          9457829596,
+          3106619052
+        ],
+        "hint": "h49Gh640oZAAAAAAngAAAAAAAAAAAAAAaoubPaVEA0IAAAAAAAAAAAAAAABPAAAAAAAAAAAAAADLKQEA2dU8AiCezgK-1TwCZJ3OAgAAPxEAAAAA",
+        "location": [
+          37.541337,
+          47.095328
+        ],
+        "name": "",
+        "distance": 21.00075111
+      }
+    },
+    {
+      "id": 709717,
+      "name": "Донецк",
+      "position": {
+        "lat": 48.023,
+        "lng": 37.80224
+      },
+      "url": "https://router.project-osrm.org/nearest/v1/driving/37.80224,48.023?number=1",
+      "status": "NEAREST_AVAILABLE_NOT_CITY_ACCURACY_CERTIFICATE",
+      "httpStatus": 200,
+      "curlExit": 0,
+      "sha256": "bdc72fdabbadf7cfaf5f6af9dd5ef39051e7027f0f86eac8fe0170ecdf5cec65",
+      "providerCode": "Ok",
+      "waypoint": {
+        "nodes": [
+          8251380771,
+          8251380772
+        ],
+        "hint": "cMyZg2nViY4aAAAAJAAAAJwAAABGAAAAtc8tQX_WbkH-cYFCp3vpQRoAAAAkAAAAnAAAAEYAAADLKQEADtVAAufG3AIA0UAC2MXcAgYA7wkAAAAA",
+        "location": [
+          37.803278,
+          48.023271
+        ],
+        "name": "",
+        "distance": 83.08072691
+      }
+    },
+    {
+      "id": 565348,
+      "name": "Донецк",
+      "position": {
+        "lat": 48.33711,
+        "lng": 39.95229
+      },
+      "url": "https://router.project-osrm.org/nearest/v1/driving/39.95229,48.33711?number=1",
+      "status": "NEAREST_AVAILABLE_NOT_CITY_ACCURACY_CERTIFICATE",
+      "httpStatus": 200,
+      "curlExit": 0,
+      "sha256": "e989c71f46db9b4e556a1c18f83c2be2dc1b72292a80ccbd34676fca93561338",
+      "providerCode": "Ok",
+      "waypoint": {
+        "nodes": [
+          1476399757,
+          13919667660
+        ],
+        "hint": "DLCYg-1pmYMFAAAABgAAAFABAAAAAAAANZtmQGkegEDcMGlDAAAAAAUAAAAGAAAAUAEAAAAAAADLKQEAxp9hAuiQ4QKin2EC1pDhAgIA_wgAAAAA",
+        "location": [
+          39.952326,
+          48.337128
+        ],
+        "name": "переулок Осипенко",
+        "distance": 3.336600409
+      }
+    },
+    {
+      "id": 688533,
+      "name": "Ялта",
+      "position": {
+        "lat": 44.50218,
+        "lng": 34.16624
+      },
+      "url": "https://router.project-osrm.org/nearest/v1/driving/34.16624,44.50218?number=1",
+      "status": "NEAREST_AVAILABLE_NOT_CITY_ACCURACY_CERTIFICATE",
+      "httpStatus": 200,
+      "curlExit": 0,
+      "sha256": "76c14788fdb00667e922873f065e3587eaf9a2d93562ae210d722b6ed352c52a",
+      "providerCode": "Ok",
+      "waypoint": {
+        "nodes": [
+          10680950340,
+          12331653090
+        ],
+        "hint": "wivbhVybA5INAAAAAAAAAJQAAAAAAAAAx9ELQQAAAAA84M1CAAAAAA0AAAAAAAAAlAAAAAAAAADLKQEA-VQJAqwMpwLgVQkCpAynAgYAzwoAAAAA",
+        "location": [
+          34.166009,
+          44.502188
+        ],
+        "name": "переулок Карла Либкнехта",
+        "distance": 18.38498191
+      }
+    },
+    {
+      "id": 702658,
+      "name": "Луганск",
+      "position": {
+        "lat": 48.56814,
+        "lng": 39.30553
+      },
+      "url": "https://router.project-osrm.org/nearest/v1/driving/39.30553,48.56814?number=1",
+      "status": "NEAREST_AVAILABLE_NOT_CITY_ACCURACY_CERTIFICATE",
+      "httpStatus": 200,
+      "curlExit": 0,
+      "sha256": "bbc82ac9a303282d85c693e9121b86b70cf33da2183cae37d1c5289d4db752f4",
+      "providerCode": "Ok",
+      "waypoint": {
+        "nodes": [
+          0,
+          257522621
+        ],
+        "hint": "xAKBgP___38CAAAAkAAAAAAAAAAAAAAAIxgTQBhGHUMAAAAAAAAAAAIAAACQAAAAAAAAAAAAAADLKQEANsFXAmgX5QI6wVcCTBflAgAAjxAAAAAA",
+        "location": [
+          39.305526,
+          48.568168
+        ],
+        "name": "Совєтська вулиця",
+        "distance": 3.127601434
+      }
+    },
+    {
+      "id": 706524,
+      "name": "Керчь",
+      "position": {
+        "lat": 45.35675,
+        "lng": 36.47542
+      },
+      "url": "https://router.project-osrm.org/nearest/v1/driving/36.47542,45.35675?number=1",
+      "status": "NEAREST_AVAILABLE_NOT_CITY_ACCURACY_CERTIFICATE",
+      "httpStatus": 200,
+      "curlExit": 0,
+      "sha256": "1e5474947dce2a20482db86fbb47220ca2953d6bf49379a7c77d0ee7e5eb58eb",
+      "providerCode": "Ok",
+      "waypoint": {
+        "nodes": [
+          880355487,
+          6264822824
+        ],
+        "hint": "trhEgsS4RIIGAAAAAwAAAGoAAAAAAAAAOeX1QKGEbEBUDA1DAAAAAAYAAAADAAAAagAAAAAAAADLKQEAL5IsAvEWtAIckiwCzha0AgoA7wYAAAAA",
+        "location": [
+          36.475439,
+          45.356785
+        ],
+        "name": "улица Карла Маркса",
+        "distance": 4.164861649
+      }
+    },
+    {
+      "id": 708878,
+      "name": "Геническ",
+      "position": {
+        "lat": 46.16824,
+        "lng": 34.80861
+      },
+      "url": "https://router.project-osrm.org/nearest/v1/driving/34.80861,46.16824?number=1",
+      "status": "NEAREST_AVAILABLE_NOT_CITY_ACCURACY_CERTIFICATE",
+      "httpStatus": 200,
+      "curlExit": 0,
+      "sha256": "507e11c8f259194f645e9a41a25dfa173f75f569ef84be9dc2bc0469da541435",
+      "providerCode": "Ok",
+      "waypoint": {
+        "nodes": [
+          2718643546,
+          1308889241
+        ],
+        "hint": "--8ug9DgqYY2AAAAIAAAAAAAAAAAAAAAVzdzQmHWCUIAAAAAAAAAADYAAAAgAAAAAAAAAAAAAADLKQEAViITArF4wAIiIxMCsHjAAgAATwsAAAAA",
+        "location": [
+          34.808406,
+          46.168241
+        ],
+        "name": "Міська вулиця",
+        "distance": 15.7530121
+      }
+    },
+    {
+      "id": 689198,
+      "name": "Волноваха",
+      "position": {
+        "lat": 47.6008,
+        "lng": 37.49358
+      },
+      "url": "https://router.project-osrm.org/nearest/v1/driving/37.49358,47.6008?number=1",
+      "status": "NEAREST_AVAILABLE_NOT_CITY_ACCURACY_CERTIFICATE",
+      "httpStatus": 200,
+      "curlExit": 0,
+      "sha256": "86e057dddc579820e0b2e74822c224f5bcda6079e0d6e74bf2f1fa0529b259f1",
+      "providerCode": "Ok",
+      "waypoint": {
+        "nodes": [
+          2290216148,
+          9587466999
+        ],
+        "hint": "MB6yhTMesoUIAAAABgAAAF8AAAAAAAAArFLFQGw6X0AkCYVCAAAAAAgAAAAGAAAAXwAAAAAAAADLKQEATxs8Ap1U1gJMGzwCoFTWAgQAnwMAAAAA",
+        "location": [
+          37.493583,
+          47.600797
+        ],
+        "name": "",
+        "distance": 0.4026193911
+      }
+    }
+  ],
+  "stopped": false
+}

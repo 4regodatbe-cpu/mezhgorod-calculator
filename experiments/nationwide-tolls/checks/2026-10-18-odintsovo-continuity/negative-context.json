@@ -1,0 +1,27 @@
+{
+  "variants": [
+    "missing context",
+    "partial",
+    "failed chunk",
+    "missing chunks",
+    "partial booth coverage",
+    "second block",
+    "reentry flag",
+    "route starts in block",
+    "route ends in block",
+    "unknown link",
+    "missing node",
+    "duplicate node",
+    "repeat way",
+    "unknown payment event",
+    "wrong plaza way",
+    "wrong plaza node",
+    "wrong booth context",
+    "booth order",
+    "repeated booth",
+    "no paid evidence"
+  ],
+  "ownCases": 2,
+  "assertions": 40,
+  "status": "PASS"
+}

@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "finding": "m11_partial_head_entry_boundary_unresolved",
+  "caseId": "max-chain-m12-ckad-m11-zsd-cheboksary-to-prim",
+  "reviewStatus": "blocked_by_missing_reliable_data_no_material_m11_boundary_exception",
+  "reviewedAtUtc": "2026-10-16T20:39:00Z",
+  "reviewedAtMsk": "2026-10-16T23:39:00+03:00",
+  "sourceCommit": "0d7a57a2a02e5334e9215480800cac293190c239",
+  "sourceTree": "615a2975a5417f65daa9db213cfffcc54b8ade8b",
+  "capture": {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/2026-10-16T01-21-31-631Z-capture.json.gz",
+    "gitBlobSha1": "fa8c1b70d52138c59fcc5d8055d09e3eb020a297",
+    "sha256": "ce2577c835f8a5321dcff6be9717084452234bc4512683fd59fb7085b1f6fdcf",
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "routeMeters": 1380434,
+    "routeSeconds": 53656,
+    "traceComplete": true,
+    "checkedChunks": 10,
+    "totalChunks": 10,
+    "failedChunks": 0,
+    "checkedEdges": 2766,
+    "provider": "Valhalla",
+    "providerCandidates": [
+      {
+        "name": "Valhalla",
+        "meters": 1380434,
+        "seconds": 53656
+      },
+      {
+        "name": "OSRM",
+        "meters": 1386192,
+        "seconds": 64253
+      }
+    ],
+    "routeSelectionRule": "fastest-route-only"
+  },
+  "profiles": [
+    {
+      "mode": "live",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/live-2026-10-15T09-00-00-03-00-2026-10-16T01-21-31-708Z.json",
+      "gitBlobSha1": "7a019685707f7f789acca8472c9ae31aa8aa4307",
+      "routeMeters": 1380434,
+      "routeSeconds": 53656,
+      "captureSha256": "ce2577c835f8a5321dcff6be9717084452234bc4512683fd59fb7085b1f6fdcf",
+      "expectedRoads": [
+        "m12",
+        "ckad",
+        "m11",
+        "zsd"
+      ],
+      "provenRoads": [
+        "m11",
+        "zsd",
+        "ckad"
+      ],
+      "missingExpectedRoads": [
+        "m12"
+      ],
+      "unknownPaidRoad": true
+    },
+    {
+      "mode": "offline-recorded-response-replay",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T01-21-32-206Z.json",
+      "gitBlobSha1": "8ad67f5cf8a37dc3b00bec4da988fa451399c160",
+      "routeMeters": 1380434,
+      "routeSeconds": 53656,
+      "replayComplete": true,
+      "missingResponses": [],
+      "captureSha256": "ce2577c835f8a5321dcff6be9717084452234bc4512683fd59fb7085b1f6fdcf",
+      "unknownPaidRoad": true,
+      "expectedRoadMissing": "m12"
+    },
+    {
+      "mode": "offline-recorded-response-replay",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T01-21-32-676Z.json",
+      "gitBlobSha1": "57074148ac617faa3b97bdcf9a0c6e3576d513d5",
+      "routeMeters": 1380434,
+      "routeSeconds": 53656,
+      "replayComplete": true,
+      "missingResponses": [],
+      "captureSha256": "ce2577c835f8a5321dcff6be9717084452234bc4512683fd59fb7085b1f6fdcf",
+      "unknownPaidRoad": true,
+      "expectedRoadMissing": "m12"
+    },
+    {
+      "mode": "offline-recorded-response-replay",
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/replay-2026-10-15T09-00-00-03-00-2026-10-16T14-54-09-046Z.json",
+      "gitBlobSha1": "98d498df86f12588b02d04ab0103ae7eccd1bfe0",
+      "routeMeters": 1380434,
+      "routeSeconds": 53656,
+      "replayComplete": true,
+      "missingResponses": [],
+      "captureSha256": "ce2577c835f8a5321dcff6be9717084452234bc4512683fd59fb7085b1f6fdcf",
+      "newPassageEvidence": {
+        "road": "zsd",
+        "kind": "selected-trace-exact-node",
+        "osmNodeId": "1766158781"
+      },
+      "unknownPaidRoad": false,
+      "expectedRoadMissing": "m12"
+    },
+    {
+      "mode": "offline-recorded-response-replay",
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-cheboksary-to-prim/replay-2026-10-17T09-00-00-03-00-2026-10-16T14-54-09-443Z.json",
+      "gitBlobSha1": "b669d3a13601046d97a17f0c3de5ad0a72618617",
+      "routeMeters": 1380434,
+      "routeSeconds": 53656,
+      "replayComplete": true,
+      "missingResponses": [],
+      "captureSha256": "ce2577c835f8a5321dcff6be9717084452234bc4512683fd59fb7085b1f6fdcf",
+      "newPassageEvidence": {
+        "road": "zsd",
+        "kind": "selected-trace-exact-node",
+        "osmNodeId": "1766158781"
+      },
+      "unknownPaidRoad": false,
+      "expectedRoadMissing": "m12"
+    }
+  ],
+  "boundaryCheck": {
+    "source": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-15-mmk-bindings/directed-mmk-north-gates.json",
+    "directedGateWayIds": [
+      "795569815",
+      "795569816"
+    ],
+    "directedGateWaysInSelectedTrace": [
+      false,
+      false
+    ],
+    "gateNodeIds": [
+      "3499155981",
+      "3499155978"
+    ],
+    "approxNearestPolylineDistanceMeters": [
+      26.47,
+      41.76
+    ],
+    "thresholdMeters": 25,
+    "pvp21SpatialAnchor": "unresolved"
+  },
+  "causeOutcomes": [
+    {
+      "cause": "m11_partial_head_entry_boundary_unresolved",
+      "status": "blocked_by_missing_reliable_data",
+      "userImpact": "M11 head toll cannot be completed from the saved trace; whole route amount remains unknown."
+    },
+    {
+      "cause": "zsd_booth_identity_missing_from_register",
+      "status": "fixed_and_verified",
+      "verification": "later same-capture replay includes exact selected-trace ZSD node 1766158781; see referenced identity-proof and corrected-replay checkpoints",
+      "limit": "ZSD zone/fare remains unresolved."
+    }
+  ],
+  "otherUnresolved": [
+    "M12 expected traversal not proven",
+    "CKAD east arc not proven",
+    "ZSD extends outside reviewed zone1"
+  ],
+  "tollState": {
+    "m11Head": "unknown",
+    "ckad": "unknown",
+    "zsd": "unknown",
+    "m12ExpectedRoad": "not_proven",
+    "routeAmountRub": null,
+    "pricingStatus": "unknown",
+    "priceConfirmation": "unconfirmed"
+  },
+  "decision": "No material exception to the M11 boundary cause. The earlier unknown-paid-road label is absent in later same-capture replays after exact ZSD node evidence is included; this corrects classification only and does not establish ZSD fare. M12, CKAD and ZSD scopes keep the route total unknown.",
+  "newLiveRequests": 0,
+  "codeChanged": false,
+  "testsRun": [],
+  "tariffConfirmed": false,
+  "nextCase": "max-chain-m12-ckad-m11-zsd-vladimir-to-sest"
+}

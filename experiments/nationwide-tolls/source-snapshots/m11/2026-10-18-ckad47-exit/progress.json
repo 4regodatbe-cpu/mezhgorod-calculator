@@ -1,0 +1,42 @@
+[
+  {
+    "url": "https://api.openstreetmap.org/api/0.6/way/1148492112/full",
+    "durableStartedCommit": "98c3869fb7a7eeaf8c66076864ca37e7f8ea39c1",
+    "atUtc": "2026-10-18T13:30:21.365817+00:00",
+    "status": 200,
+    "bodyFile": "1148492112.osm",
+    "bytes": 1449,
+    "sha256": "a088eb154929a068aaf664dbae2e6cbed50648736e7fafe6d76a2d2203d4d0b6",
+    "elapsedMs": 4628
+  },
+  {
+    "url": "https://api.openstreetmap.org/api/0.6/way/1148492111/full",
+    "durableStartedCommit": "98c3869fb7a7eeaf8c66076864ca37e7f8ea39c1",
+    "atUtc": "2026-10-18T13:30:25.994616+00:00",
+    "status": 200,
+    "bodyFile": "1148492111.osm",
+    "bytes": 1417,
+    "sha256": "b35459c8e0d788ba89736620d885bc260c648b1b61723d2fccf3f04f5163901e",
+    "elapsedMs": 4441
+  },
+  {
+    "url": "https://api.openstreetmap.org/api/0.6/way/791520971/full",
+    "durableStartedCommit": "98c3869fb7a7eeaf8c66076864ca37e7f8ea39c1",
+    "atUtc": "2026-10-18T13:30:30.435585+00:00",
+    "status": 200,
+    "bodyFile": "791520971.osm",
+    "bytes": 2336,
+    "sha256": "d179d319980af6c442b3be93aecca63a7c48b67554a0acf2658cc2c33a95559c",
+    "elapsedMs": 4541
+  },
+  {
+    "url": "https://api.openstreetmap.org/api/0.6/way/620063414/full",
+    "durableStartedCommit": "98c3869fb7a7eeaf8c66076864ca37e7f8ea39c1",
+    "atUtc": "2026-10-18T13:30:34.977040+00:00",
+    "status": 200,
+    "bodyFile": "620063414.osm",
+    "bytes": 1356,
+    "sha256": "6e90de609b9b6051e3f7fa4e1571c8f6681f46b357154ddbb2a25cfc125170a7",
+    "elapsedMs": 4477
+  }
+]

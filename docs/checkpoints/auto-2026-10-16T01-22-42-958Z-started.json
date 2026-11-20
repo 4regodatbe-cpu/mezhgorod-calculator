@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:22:42.958Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 66,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 14,
+    "spec": {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+      "kind": "road",
+      "group": "max-chain-m12-ckad-m11-zsd"
+    }
+  },
+  "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-22-42-958Z-part14",
+  "parent": "b1e11616d9964edf6894962c583d3fdcd2dd965a"
+}

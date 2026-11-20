@@ -1,5 +1,5 @@
 export type RegionalTollProductId = "ufa-east" | "tolyatti" | "odintsovo" | "bagration" | "msd" | "zsd" | "shmsd" | "voznesensky" | "udmurt-bridges" | "khabarovsk" | "mytishchi" | "ryazan" | "amur-bridge" | "pskov-unresolved" | "unknown-paid-road";
-export type RouteTollComponentId = "m4_a289" | "m4" | "a289" | "krasnodar-west-bypass" | "m11" | "m11-15-58" | "m11-58-679" | "m11-679-684" | "m12" | "ckad" | "m1" | "m3" | "ckad-small-vyazemy" | "regional" | RegionalTollProductId;
+export type RouteTollComponentId = "m4_a289" | "m4" | "m4-545" | "a289" | "krasnodar-west-bypass" | "m11" | "m11-15-58" | "m11-58-679" | "m11-679-684" | "m12" | "ckad" | "m1" | "m3" | "ckad-small-vyazemy" | "regional" | RegionalTollProductId;
 
 export type RouteTollValue = {
   amount: number;

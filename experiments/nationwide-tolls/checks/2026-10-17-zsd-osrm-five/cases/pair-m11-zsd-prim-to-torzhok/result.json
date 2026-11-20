@@ -1,0 +1,130 @@
+{
+  "core": {
+    "caseId": "pair-m11-zsd-prim-to-torzhok",
+    "sourceCapture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-zsd-prim-to-torzhok/2026-10-16T01-32-28-268Z-capture.json.gz",
+    "sourceSha256": "73413ec362a4f55a1219e5c0b2011f464e446d595af37d852434beb76d6df15e",
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "selectedProvider": "OSRM",
+    "routeSha256": "e933912e4b6f074670459f2cfc14a2a44163f141479f19540e3d1111cf54ffa6",
+    "geometrySha256": "3edb9264591acfccdf372b7ffe604901ec314ece9087b74fa561afc67696e1ff",
+    "routeMeters": 478358,
+    "routeSeconds": 21098,
+    "candidates": [
+      {
+        "provider": "Valhalla",
+        "admitted": false,
+        "seconds": 16578
+      },
+      {
+        "provider": "OSRM",
+        "admitted": true,
+        "seconds": 21098
+      },
+      {
+        "provider": "BRouter",
+        "admitted": false,
+        "seconds": 20967
+      }
+    ],
+    "projectedBrouterAlsoReentry": true,
+    "validation": {
+      "complete": true,
+      "boothEventCoverage": "complete",
+      "chunks": 4,
+      "checked": 4,
+      "failed": 0
+    },
+    "zsdComponent": {
+      "reason": "zsd_zone1_complete_directed_base_tariff",
+      "tolls": {
+        "amount": 300,
+        "weekdayAmount": 300,
+        "weekendAmount": 300,
+        "period": "все дни, без транспондера",
+        "confidence": "matched",
+        "segments": [
+          "ЗСД: тарифная зона 1 · 300 ₽"
+        ]
+      }
+    },
+    "componentAudit": {
+      "status": "unknown",
+      "priced": [
+        "zsd"
+      ],
+      "missing": [
+        "m11-58-679",
+        "unknown-paid-road"
+      ],
+      "components": [
+        {
+          "id": "m11-58-679",
+          "detected": true,
+          "tolls": null,
+          "reason": "only_one_verified_boundary_crossing"
+        },
+        {
+          "id": "zsd",
+          "detected": true,
+          "reason": "zsd_zone1_complete_directed_base_tariff",
+          "tolls": {
+            "amount": 300,
+            "weekdayAmount": 300,
+            "weekendAmount": 300,
+            "period": "все дни, без транспондера",
+            "confidence": "matched",
+            "segments": [
+              "ЗСД: тарифная зона 1 · 300 ₽"
+            ]
+          }
+        },
+        {
+          "id": "unknown-paid-road",
+          "detected": true,
+          "tolls": null,
+          "reason": "unmapped_selected_route_paid_booth"
+        }
+      ]
+    },
+    "apiTolls": {
+      "amount": null,
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "period": "понедельник–четверг",
+      "segments": [
+        "Обнаружены, но не полностью оценены платные системы: m11-58-679, unknown-paid-road",
+        "m11-58-679: only_one_verified_boundary_crossing",
+        "unknown-paid-road: unmapped_selected_route_paid_booth"
+      ],
+      "confidence": "none",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "unknown"
+    },
+    "priceConfirmation": "unconfirmed",
+    "negativeChecks": [
+      {
+        "name": "incomplete_trace",
+        "reason": "zsd_complete_selected_trace_missing",
+        "status": "PASS"
+      },
+      {
+        "name": "outside_zone1_way",
+        "reason": "zsd_trip_extends_outside_reviewed_zone1",
+        "status": "PASS"
+      },
+      {
+        "name": "reversed_geometry",
+        "reason": "zsd_zone1_directional_geometry_unresolved",
+        "status": "PASS"
+      }
+    ],
+    "pricedComponents": 1,
+    "pricedZsdComponents": 1,
+    "confirmedFullTripFares": 0
+  },
+  "outcome": "fixed_and_verified",
+  "traceRequestOccurrences": 4,
+  "networkRequestsThisCase": 1,
+  "reusedResponseOccurrences": 3
+}

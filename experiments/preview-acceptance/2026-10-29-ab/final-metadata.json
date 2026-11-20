@@ -1,0 +1,774 @@
+{
+  "pr": {
+    "number": 14,
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head": "fix/v3-missing-route-prices-2026-10-15",
+    "head_sha": "c2f52ee93cd98a81ecd05efa0358fb38c6704124"
+  },
+  "production": {
+    "result": {
+      "deployments": {
+        "pagination": {
+          "count": 1,
+          "next": 1793188839463,
+          "prev": 1793188839463
+        },
+        "deployments": [
+          {
+            "id": "dpl_6XMRbMu5V5vqWTzf684oPTMyubju",
+            "name": "mezhgorod-calculator",
+            "url": "mezhgorod-calculator-64to0gsdk-4regodatbe-5310.vercel.app",
+            "created": 1793188839463,
+            "state": "READY",
+            "target": "production",
+            "creator": {
+              "uid": "kzdYyk5M2pQj46AFBwI7ZyTb",
+              "username": "4regodatbe-5310"
+            },
+            "meta": {
+              "githubCommitRef": "fix/v3-missing-route-prices-2026-10-15",
+              "githubCommitSha": "051d51ea4e4e40b21245af4f7e21b2fea4c4f00f",
+              "githubCommitMessage": "feat(b05): split accepted M4-545 products without double charge",
+              "githubRepo": "mezhgorod-calculator",
+              "githubOrg": "4regodatbe-cpu"
+            },
+            "inspectorUrl": "https://vercel.com/4regodatbe-5310/mezhgorod-calculator/6XMRbMu5V5vqWTzf684oPTMyubju",
+            "isRollbackCandidate": true
+          }
+        ]
+      }
+    }
+  },
+  "productionAliasInspection": {
+    "result": {
+      "aliases": [
+        {
+          "uid": "740ab5c6eeae2464ac6848485667e23146fa9abc9061d0b00ac37551e0a3c2d446afa76ca9ced6752c1d79101d2c4d94ef2e3295c857b184e70f17be3afeaef2",
+          "alias": "mezhgorod-calculator-4regodatbe-5310.vercel.app",
+          "created": "2026-09-21T22:51:29.477Z",
+          "redirect": null,
+          "protectionBypass": {}
+        },
+        {
+          "uid": "548db5f99fbc7214ea59f7475bee98b4df65b727e19cb4b178f8ae289b41dcdd89a215dd7bec0905780488b60658befad2a2538725d67cd77e2f1ba6f5aa90b9",
+          "alias": "mezhgorod-calculator.vercel.app",
+          "created": "2026-09-21T22:51:29.476Z",
+          "redirect": null,
+          "protectionBypass": {}
+        }
+      ]
+    }
+  },
+  "runs": {
+    "workflow_runs": [
+      {
+        "id": 40948474945,
+        "name": "B03 address UI browser scenarios",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 38,
+        "jobs_url": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40948474945/jobs",
+        "logs_url": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40948474945/logs",
+        "workflow_id": 397153378
+      },
+      {
+        "id": 40948475162,
+        "name": "Special territory geometry and pricing",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 1172,
+        "jobs_url": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40948475162/jobs",
+        "logs_url": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/actions/runs/40948475162/logs",
+        "workflow_id": 374393915
+      }
+    ]
+  },
+  "jobRuns": [
+    {
+      "id": 40948464866,
+      "jobs": [
+        {
+          "id": 123709926921,
+          "name": "route-quality",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40948464866,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run pnpm/action-setup@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Run pnpm install --frozen-lockfile",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Pure live-provider selection tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Corridor and segment tariff regressions",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Offline route benchmark integrity",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Keep benchmark data out of runtime routing",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Production build",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "V2 API request validation smoke",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 20
+            },
+            {
+              "name": "Post Run pnpm/action-setup@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 21
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 22
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40948475162,
+      "jobs": [
+        {
+          "id": 123709966532,
+          "name": "verify",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40948475162,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Run npm install --global pnpm@11.25.0",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Run pnpm install --frozen-lockfile",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Run node --import ./scripts/register-ts-paths.mjs --test scripts/*test.ts",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Run node scripts/special-territory-live-push-classifier.test.mjs",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Run node scripts/b11-exact-reuse-change.test.mjs",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete mandatory offline gate (no live providers)",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Run node scripts/v2-issue2-github-capture.test.mjs",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Run node node_modules/typescript/bin/tsc --noEmit",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Run node node_modules/next/dist/bin/next build",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 23
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 24
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 25
+            }
+          ]
+        },
+        {
+          "id": 123709967011,
+          "name": "classify_live_scope",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40948475162,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Compare this PR update with its previous checked head; uncertainty fails open",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        },
+        {
+          "id": 123710135093,
+          "name": "calculation_timing",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40948475162,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Run npm install --global pnpm@11.25.0",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Run pnpm install --frozen-lockfile",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Measure one special V3 handler with real routing sources",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Run actions/upload-artifact@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 14
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 15
+            }
+          ]
+        },
+        {
+          "id": 123710135484,
+          "name": "live_probe",
+          "status": "completed",
+          "conclusion": "failure",
+          "run_id": 40948475162,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Run npm install --global pnpm@11.25.0",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Run pnpm install --frozen-lockfile",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Probe live provider geometry and per-leg times",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Probe production address collector with bounded requests",
+              "status": "completed",
+              "conclusion": "failure",
+              "number": 7
+            },
+            {
+              "name": "Audit the fixed 50-settlement route corpus",
+              "status": "completed",
+              "conclusion": "skipped",
+              "number": 8
+            },
+            {
+              "name": "Compare six Yandex screenshot routes with live providers",
+              "status": "completed",
+              "conclusion": "skipped",
+              "number": 9
+            },
+            {
+              "name": "Run actions/upload-artifact@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "skipped",
+              "number": 19
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 20
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 21
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40948474945,
+      "jobs": [
+        {
+          "id": 123709964965,
+          "name": "address-ui",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40948474945,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run pnpm/action-setup@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Check the B03 workflow regression contract",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Run pnpm install --frozen-lockfile",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Install a pinned temporary Playwright runner",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Install the same Chrome version as the successful DOM smoke",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Validate snapshot freshness before starting the application",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Run legacy eight plus ten current UI regressions including swap and refocus",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Upload scenario results and browser evidence",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 20
+            },
+            {
+              "name": "Post Run pnpm/action-setup@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 21
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 22
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 23
+            }
+          ]
+        },
+        {
+          "id": 123709965360,
+          "name": "verify",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40948474945,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Run npm install --global pnpm@11.25.0",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Run pnpm install --frozen-lockfile",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Run node --import ./scripts/register-ts-paths.mjs --test scripts/*test.ts",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Run node scripts/special-territory-live-push-classifier.test.mjs",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Run node scripts/b03-browser-workflow.test.mjs",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Run node scripts/v2-issue2-github-capture.test.mjs",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Complete offline regression gate after the observed CI contract failure",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Run node node_modules/typescript/bin/tsc --noEmit",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Run node node_modules/next/dist/bin/next build",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 23
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 24
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 25
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 12931445202,
+      "name": "special-territory-live-probe-40948475162",
+      "size_in_bytes": 22002,
+      "url": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/actions/artifacts/12931445202",
+      "archive_download_url": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/actions/artifacts/12931445202/zip",
+      "expired": false,
+      "created_at": "2026-10-29T20:28:12Z",
+      "expires_at": "2027-01-27T20:22:41Z",
+      "updated_at": "2026-10-29T20:28:12Z",
+      "digest": "sha256:050b606409c506e181217463891fd8c1ca95194d09b7483bf2b2bbb6183d10c4",
+      "workflow_run": {
+        "id": 40948475162,
+        "repository_id": 1380572123,
+        "head_repository_id": 1380572123,
+        "head_branch": "fix/v3-missing-route-prices-2026-10-15",
+        "head_sha": "c2f52ee93cd98a81ecd05efa0358fb38c6704124"
+      }
+    },
+    {
+      "id": 12930785827,
+      "name": "calculation-runtime-probe-40948475162",
+      "size_in_bytes": 2850,
+      "url": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/actions/artifacts/12930785827",
+      "archive_download_url": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/actions/artifacts/12930785827/zip",
+      "expired": false,
+      "created_at": "2026-10-29T20:23:30Z",
+      "expires_at": "2027-01-27T20:22:41Z",
+      "updated_at": "2026-10-29T20:23:30Z",
+      "digest": "sha256:58240175dae152ce89564ea544825a3b98172695f442579174636979474596e5",
+      "workflow_run": {
+        "id": 40948475162,
+        "repository_id": 1380572123,
+        "head_repository_id": 1380572123,
+        "head_branch": "fix/v3-missing-route-prices-2026-10-15",
+        "head_sha": "c2f52ee93cd98a81ecd05efa0358fb38c6704124"
+      }
+    },
+    {
+      "id": 12930068474,
+      "name": "b03-address-ui-browser-40948474945",
+      "size_in_bytes": 293506,
+      "url": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/actions/artifacts/12930068474",
+      "archive_download_url": "https://api.github.com/repos/4regodatbe-cpu/mezhgorod-calculator/actions/artifacts/12930068474/zip",
+      "expired": false,
+      "created_at": "2026-10-29T20:24:15Z",
+      "expires_at": "2026-11-28T20:24:14Z",
+      "updated_at": "2026-10-29T20:24:15Z",
+      "digest": "sha256:2dfbaa8d80a7ba210cb7cde55f46f43eadf9b3aabc75981cba3d3ab21e1584f0",
+      "workflow_run": {
+        "id": 40948474945,
+        "repository_id": 1380572123,
+        "head_repository_id": 1380572123,
+        "head_branch": "fix/v3-missing-route-prices-2026-10-15",
+        "head_sha": "c2f52ee93cd98a81ecd05efa0358fb38c6704124"
+      }
+    }
+  ]
+}

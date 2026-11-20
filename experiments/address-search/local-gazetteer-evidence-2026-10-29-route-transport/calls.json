@@ -1,0 +1,48 @@
+[
+  {
+    "url": "https://valhalla1.openstreetmap.de/route?json=%7B%22locations%22%3A%5B%7B%22lat%22%3A55.75204%2C%22lon%22%3A37.61781%2C%22type%22%3A%22break%22%7D%2C%7B%22lat%22%3A59.93863%2C%22lon%22%3A30.31413%2C%22type%22%3A%22break%22%7D%5D%2C%22costing%22%3A%22auto%22%2C%22costing_options%22%3A%7B%22auto%22%3A%7B%22use_tolls%22%3A1%7D%7D%2C%22units%22%3A%22kilometers%22%2C%22shape_format%22%3A%22polyline6%22%2C%22directions_options%22%3A%7B%22language%22%3A%22ru-RU%22%2C%22units%22%3A%22kilometers%22%7D%7D",
+    "startedAt": "2026-10-29T04:33:03.832Z",
+    "error": {
+      "name": "TypeError",
+      "message": "fetch failed",
+      "cause": {
+        "name": "Error",
+        "code": "ECONNREFUSED",
+        "message": "connect ECONNREFUSED 162.55.103.19:443",
+        "address": "162.55.103.19",
+        "port": 443
+      }
+    },
+    "elapsedMs": 5573
+  },
+  {
+    "url": "https://router.project-osrm.org/route/v1/driving/37.61781,55.75204;30.31413,59.93863?overview=full&steps=true&geometries=geojson",
+    "startedAt": "2026-10-29T04:33:03.846Z",
+    "error": {
+      "name": "TypeError",
+      "message": "fetch failed",
+      "cause": {
+        "name": "AggregateError",
+        "code": "ECONNREFUSED",
+        "message": ""
+      }
+    },
+    "elapsedMs": 5468
+  },
+  {
+    "url": "https://brouter.de/brouter?lonlats=37.61781%2C55.75204%7C30.31413%2C59.93863&profile=car-vario&alternativeidx=0&format=geojson",
+    "startedAt": "2026-10-29T04:33:03.848Z",
+    "error": {
+      "name": "TypeError",
+      "message": "fetch failed",
+      "cause": {
+        "name": "Error",
+        "code": "ECONNREFUSED",
+        "message": "connect ECONNREFUSED 148.251.191.149:443",
+        "address": "148.251.191.149",
+        "port": 443
+      }
+    },
+    "elapsedMs": 5573
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "tsc-final": {
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "exitCode": 0
+  },
+  "eslint-final": {
+    "command": [
+      "node",
+      "node_modules/eslint/bin/eslint.js",
+      "lib/v3-calculation/m11-p214-entry-boundary.ts",
+      "lib/v3-calculation/m11-product-boundaries.ts",
+      "scripts/v3-m11-p214-boundary.test.ts"
+    ],
+    "exitCode": 0
+  },
+  "diff-check": {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exitCode": 0
+  }
+}

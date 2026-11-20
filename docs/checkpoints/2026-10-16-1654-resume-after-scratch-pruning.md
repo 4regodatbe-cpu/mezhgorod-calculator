@@ -1,0 +1,5 @@
+# Resume after scratch maintenance — recovery DONE / tooling restoration STARTED
+
+16.10.2026 MSK. Remote76f06b2207b2d73d95b865513a11cb32ed6e93e3/treee656aa3b9832883c9f25294bfb294d841e8493a4, draftPR14 open. Automated scratch maintenance removed the previous checkout and /tmp audit helpers; this was not user deletion or lost repository progress. Fresh singlebranch/depth1clone succeeded, exacthead/tree verified and worktree clean. LatestPR workflow38894199188 completed/success, no active writer observed. Read AGENTS/protocol/currentstate and relevant source. No route/code/test changes so far, no newtest/build claim.
+
+NEXT STARTED restore frozen dependencies and persist the single-case ZSD review utility inside repository (previous /tmp-only helper was lost). Preserve current26/76 evaluations; nextcase27 pair-m11-zsd-moscow-to-prim. Utility must not auto-loop across an unpersisted step or modify live prices; replay+evidence only, remote commit/head/tree remains caller responsibility. Required focused/full checks after utility change. Plan90%18/20 remains, part19inprogress/20planned. No main/merge/Production/Android/messages.

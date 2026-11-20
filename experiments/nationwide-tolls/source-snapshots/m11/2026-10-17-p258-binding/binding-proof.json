@@ -1,0 +1,309 @@
+{
+  "sourceHead": "5281fa019eda95128035be5a0a1d2d1d95f34425",
+  "operatorPoint": {
+    "id": "p258",
+    "pvpKm": 258,
+    "corridorLabel": "д. Будово",
+    "source": "data/tolls/m11/2026-10-01-58-679-category1-a1-current.json"
+  },
+  "operatorIdentityPdf": "experiments/nationwide-tolls/source-snapshots/m11/2026-09-04-avtodor-order274-current.pdf",
+  "operatorPdfSha256": "6b52ca130ee7e8a7948c2b39982c00d82174e4e45ec5dcd3983355238c403b91",
+  "osmNamedFacility": {
+    "wayId": "547089857",
+    "tags": {
+      "barrier": "toll_booth",
+      "building": "yes",
+      "name": "ПВП «Торжок» - 258 км"
+    }
+  },
+  "observedGate": {
+    "nodeId": "3183012434",
+    "tags": {
+      "barrier": "toll_booth",
+      "comment": "Пункт \"ТОРЖОК - ПВП8\"",
+      "payment:cash": "yes",
+      "payment:mastercard": "yes",
+      "payment:visa": "yes",
+      "ref": "ПВП8"
+    }
+  },
+  "bindingBasis": "Official258/Budovo point plus primary OSM named PVP Torzhok258km facility in the same plaza complex, gate comment TORZHOK-PVP8, directed connected paid links from named M11. The named building is nearby in the complex, not claimed to contain the gate. This is source-derived physical binding, not an operator OD receipt.",
+  "directedTopology": [
+    {
+      "wayId": "1167593038",
+      "tags": {
+        "highway": "motorway",
+        "highway:category": "ru:IА",
+        "lanes": "3",
+        "lit": "yes",
+        "maxspeed": "RU:motorway",
+        "maxspeed:designed": "150",
+        "maxspeed:goods": "130",
+        "maxspeed:goods:conditional": "110 @ (Nov 15 - Apr 15)",
+        "maxspeed:motorcar": "130",
+        "maxspeed:motorcar:conditional": "110 @ (Nov 15 - Apr 15)",
+        "maxspeed:variable": "yes",
+        "name": "«Нева»",
+        "name:en": "Neva Motorway",
+        "name:ru": "«Нева»",
+        "name:uk": "«Нева»",
+        "old_name:2:ru": "скоростная платная автомобильная дорога Москва — Санкт-Петербург",
+        "old_name:en": "Moscow – Saint Petersburg Highway",
+        "old_name:ru": "Москва — Санкт-Петербург",
+        "oneway": "yes",
+        "ref": "М-11",
+        "short_name:ru": "СПАД",
+        "surface": "asphalt",
+        "toll": "yes",
+        "turn:lanes": "through|through|slight_right"
+      },
+      "nodes": [
+        "1935449442",
+        "3183012451"
+      ]
+    },
+    {
+      "wayId": "1272615100",
+      "tags": {
+        "destination": "Санкт-Петербург;Москва;Великий Новгород;Тверь",
+        "destination:int_ref": "E 105",
+        "destination:ref": "М-10",
+        "highway": "trunk_link",
+        "lanes": "1",
+        "lit": "yes",
+        "maxspeed": "70",
+        "oneway": "yes",
+        "surface": "asphalt",
+        "toll": "yes"
+      },
+      "nodes": [
+        "3183012451",
+        "6167081936",
+        "5159986847",
+        "6167081935",
+        "6167081934",
+        "6167081933",
+        "6167081932",
+        "3892556088",
+        "6167081931",
+        "6167081930",
+        "6167081929",
+        "3209305375",
+        "6167081928",
+        "6167081927",
+        "6167081926",
+        "3892556086",
+        "6167081925",
+        "6167081924",
+        "6167081923",
+        "3183012449",
+        "11817436369"
+      ]
+    },
+    {
+      "wayId": "1272615099",
+      "tags": {
+        "destination": "Санкт-Петербург;Москва;Великий Новгород;Тверь",
+        "destination:int_ref": "E 105",
+        "destination:ref": "М-10",
+        "highway": "trunk_link",
+        "lanes": "1",
+        "lit": "yes",
+        "maxspeed": "50",
+        "oneway": "yes",
+        "surface": "asphalt",
+        "toll": "yes"
+      },
+      "nodes": [
+        "11817436369",
+        "5159986632"
+      ]
+    },
+    {
+      "wayId": "1272615098",
+      "tags": {
+        "destination": "Санкт-Петербург;Москва;Великий Новгород;Тверь",
+        "destination:int_ref": "E 105",
+        "destination:ref": "М-10",
+        "highway": "trunk_link",
+        "lanes": "2",
+        "lit": "yes",
+        "maxspeed": "RU:rural",
+        "oneway": "yes",
+        "surface": "asphalt",
+        "toll": "yes"
+      },
+      "nodes": [
+        "5159986632",
+        "3183012447"
+      ]
+    },
+    {
+      "wayId": "312444697",
+      "tags": {
+        "destination": "Санкт-Петербург;Москва;Великий Новгород;Тверь",
+        "destination:int_ref": "E 105",
+        "destination:ref": "М-10",
+        "highway": "trunk_link",
+        "lanes": "2",
+        "lit": "yes",
+        "oneway": "yes",
+        "surface": "asphalt",
+        "toll": "yes"
+      },
+      "nodes": [
+        "3183012447",
+        "6167081907",
+        "6167081906",
+        "6167081905",
+        "6167081904",
+        "6167081903",
+        "3209305373",
+        "6167081902",
+        "6167081901",
+        "6167081900",
+        "3183012444",
+        "6167081899",
+        "6167081898",
+        "6167081897",
+        "6167081896",
+        "3209305371",
+        "6167081895",
+        "6167081894",
+        "6167081893",
+        "5159986860",
+        "6167081892",
+        "6167081891",
+        "3183012442",
+        "3183012440"
+      ]
+    },
+    {
+      "wayId": "312444614",
+      "tags": {
+        "bridge": "yes",
+        "destination": "Тверь;Москва",
+        "destination:int_ref": "E105",
+        "destination:ref": "M10",
+        "highway": "trunk_link",
+        "lanes": "2",
+        "layer": "1",
+        "lit": "yes",
+        "oneway": "yes",
+        "surface": "asphalt",
+        "toll": "yes"
+      },
+      "nodes": [
+        "3183012440",
+        "3183012438"
+      ]
+    },
+    {
+      "wayId": "312444682",
+      "tags": {
+        "destination": "Тверь;Москва",
+        "destination:int_ref": "E105",
+        "destination:ref": "M10",
+        "highway": "trunk_link",
+        "lanes": "2",
+        "lit": "yes",
+        "oneway": "yes",
+        "surface": "asphalt",
+        "toll": "yes"
+      },
+      "nodes": [
+        "3183012438",
+        "7438063578"
+      ]
+    },
+    {
+      "wayId": "795246101",
+      "tags": {
+        "destination": "Тверь;Москва",
+        "destination:int_ref": "E105",
+        "destination:ref": "M10",
+        "highway": "trunk_link",
+        "lanes": "4",
+        "lit": "yes",
+        "oneway": "yes",
+        "surface": "asphalt",
+        "toll": "yes"
+      },
+      "nodes": [
+        "7438063578",
+        "3214701836",
+        "3183012434"
+      ]
+    },
+    {
+      "wayId": "394573008",
+      "tags": {
+        "destination": "Тверь;Москва",
+        "destination:int_ref": "E105",
+        "destination:ref": "M10",
+        "highway": "trunk_link",
+        "lanes": "2",
+        "lit": "yes",
+        "oneway": "yes",
+        "surface": "asphalt"
+      },
+      "nodes": [
+        "3183012434",
+        "3214701835",
+        "3214701834"
+      ]
+    }
+  ],
+  "rawSources": [
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/795246101/full",
+      "sourceKind": "osm",
+      "startedAt": "2026-10-17T15:22:39.625Z",
+      "durableStartedCommit": "5b000b5ff6220ffab307b835feabb7764a661b89",
+      "state": "DONE",
+      "bodyFile": "44c1cc0ad3628ba3be8c.osm",
+      "status": 200,
+      "finalUrl": "https://api.openstreetmap.org/api/0.6/way/795246101/full",
+      "contentType": "application/xml; charset=utf-8",
+      "bytes": 1574,
+      "sha256": "c9491fdf1ed1ba896c49287f7156f5dbf2c5a3059d73505c80106c5857db1af6",
+      "elapsedMs": 366
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/node/3183012434",
+      "sourceKind": "osm",
+      "startedAt": "2026-10-17T15:22:33.705Z",
+      "durableStartedCommit": "5b000b5ff6220ffab307b835feabb7764a661b89",
+      "state": "DONE",
+      "bodyFile": "60784499e48465c1db45.osm",
+      "status": 200,
+      "finalUrl": "https://api.openstreetmap.org/api/0.6/node/3183012434",
+      "contentType": "application/xml; charset=utf-8",
+      "bytes": 714,
+      "sha256": "89d589e14441da2fb63a523d85c92bdf5c5274695273e2f8a5d5cb7207a86383",
+      "elapsedMs": 5914
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=34.905,57.219,34.923,57.237",
+      "sourceKind": "osm",
+      "startedAt": "2026-10-17T15:23:16.853Z",
+      "durableStartedCommit": "5b000b5ff6220ffab307b835feabb7764a661b89",
+      "state": "DONE",
+      "bodyFile": "e16194851d1c15e2611d.osm",
+      "status": 200,
+      "finalUrl": "https://api.openstreetmap.org/api/0.6/map?bbox=34.905,57.219,34.923,57.237",
+      "contentType": "application/xml; charset=utf-8",
+      "bytes": 1253349,
+      "sha256": "ccf9f1c7228bb0f01edc7e03e2afb7a86c6b56173d8ffd19ff5e6aac7d62ed86",
+      "elapsedMs": 6017
+    }
+  ],
+  "searchOutcome": "One bounded official-domain query pair returned no relevant operator identity page; unrelated results discarded. Saved primary operator PDF and OSM objects used, no wider search.",
+  "entryGateSource": {
+    "path": "experiments/nationwide-tolls/source-snapshots/m11/2026-10-14-osm-tail-corridor.osm.gz",
+    "archiveSha256": "cafaf34feca269290cde03d9ec0681c8609a46cdc88114393810044fd040ee51",
+    "rawSha256": "b5181ef4e570733c8801b851cc5e3e2f7bc21e17d860d568fac7485afa9008e1",
+    "gateNodeId": "2492861243",
+    "wayId": "1395997595"
+  }
+}

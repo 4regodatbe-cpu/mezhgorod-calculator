@@ -1,0 +1,249 @@
+{
+  "caseId": "max-chain-m4-ckad-m11-zsd-sest-to-rostov",
+  "fingerprint": "3404a9c7bbd60f8c3caa6644223c2434ee84611661181bab6b9c1cf626c57851",
+  "scopeReview": "КАД-север → КАД-юг, OSRM, другая полоса северного ПВП",
+  "atUtc": "2026-10-18T06:12:26.270619+00:00",
+  "sourceReport": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m4-ckad-m11-zsd-sest-to-rostov.json",
+  "sourceReportSha256": "14951ecea24f0f70043381abd735715fadc0b024adb099178060bacdb9f37d4a",
+  "mode": "own_saved_boundary_exception_review",
+  "newPricingCalls": 0,
+  "newRouteCalls": 0,
+  "newTraceCalls": 0,
+  "newFullRouteReplays": 0,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-sest-to-rostov/2026-10-16T00-02-55-469Z-capture.json.gz",
+  "captureSha256": "72cbd07bf21293d93a6ff42138e55ddd252aa4ee886fcbfc7ba22f0a948850b8",
+  "provider": "OSRM",
+  "selectedProviderGeometryIdentity": "exact",
+  "coordinateCount": 11005,
+  "routeMeters": 1824227,
+  "traceComplete": true,
+  "boothEventCoverage": "complete",
+  "traceChunks": 14,
+  "ownSelectedBoundarySteps": [
+    {
+      "name": "КАД",
+      "maneuver": {
+        "bearing_after": 81,
+        "bearing_before": 67,
+        "location": [
+          29.99857,
+          60.038911
+        ],
+        "modifier": "slight left",
+        "type": "merge"
+      },
+      "distance": 7517.2
+    },
+    {
+      "name": "",
+      "destinations": "ЗСД, Левашовское шоссе",
+      "maneuver": {
+        "bearing_after": 80,
+        "bearing_before": 73,
+        "location": [
+          30.128665,
+          60.056654
+        ],
+        "modifier": "slight right",
+        "type": "off ramp"
+      },
+      "distance": 328.9
+    },
+    {
+      "name": "",
+      "destinations": "ЗСД",
+      "maneuver": {
+        "bearing_after": 80,
+        "bearing_before": 74,
+        "location": [
+          30.134457,
+          60.057181
+        ],
+        "modifier": "slight right",
+        "type": "fork"
+      },
+      "distance": 778.5
+    },
+    {
+      "name": "ЗСД",
+      "maneuver": {
+        "bearing_after": 161,
+        "bearing_before": 160,
+        "location": [
+          30.145561,
+          60.055287
+        ],
+        "modifier": "slight left",
+        "type": "merge"
+      },
+      "distance": 503.4
+    },
+    {
+      "name": "ЗСД",
+      "maneuver": {
+        "bearing_after": 158,
+        "bearing_before": 163,
+        "location": [
+          30.148253,
+          60.050974
+        ],
+        "modifier": "slight left",
+        "type": "turn"
+      },
+      "distance": 29954.4
+    },
+    {
+      "name": "",
+      "destinations": "КАД, Пулковское ш.",
+      "maneuver": {
+        "bearing_after": 189,
+        "bearing_before": 191,
+        "location": [
+          30.280144,
+          59.835919
+        ],
+        "modifier": "slight left",
+        "type": "fork"
+      },
+      "distance": 791.1
+    }
+  ],
+  "zsdWays": [
+    "1053072562",
+    "1090759975",
+    "1120339785",
+    "119176958",
+    "123232667",
+    "123232674",
+    "1257246768",
+    "1257246769",
+    "1257246773",
+    "1257246774",
+    "129780705",
+    "130062824",
+    "130068395",
+    "139658546",
+    "147598441",
+    "165031077",
+    "165035750",
+    "172999960",
+    "183912265",
+    "183912266",
+    "183912269",
+    "183921952",
+    "183921953",
+    "189271976",
+    "222395953",
+    "224933657",
+    "224933659",
+    "224933661",
+    "224933663",
+    "224933667",
+    "224933670",
+    "224933671",
+    "233006897",
+    "27462206",
+    "350477987",
+    "351741888",
+    "375574640",
+    "375646973",
+    "396293723",
+    "396293725",
+    "397223750",
+    "400111352",
+    "400111353",
+    "46948905",
+    "589047640",
+    "589047641",
+    "589047643",
+    "589047648",
+    "605825360",
+    "668264030",
+    "668264032",
+    "688149996",
+    "721628539",
+    "721628542",
+    "721628545",
+    "736306923",
+    "736881674",
+    "776695124",
+    "776695125",
+    "776695126",
+    "776695127",
+    "776695128",
+    "776695129",
+    "80056721",
+    "80056729",
+    "80056747",
+    "81348980"
+  ],
+  "zsdBooths": [
+    {
+      "osmNodeId": "5745105499",
+      "wayId": "605825360",
+      "edgeToll": true
+    },
+    {
+      "osmNodeId": "933975069",
+      "wayId": "375574640",
+      "edgeToll": true
+    }
+  ],
+  "rawTraceBoothOrder": [
+    [
+      "5745105499",
+      "605825360",
+      true
+    ],
+    [
+      "933975069",
+      "375574640",
+      true
+    ]
+  ],
+  "sameWaySetAndBoothsAsRepresentative": true,
+  "referenceEntryExitSignatures": [
+    [
+      "",
+      "ЗСД, Левашовское шоссе",
+      "off ramp",
+      "slight right",
+      [
+        30.128665,
+        60.056654
+      ]
+    ],
+    [
+      "",
+      "КАД, Пулковское ш.",
+      "fork",
+      "slight left",
+      [
+        30.280144,
+        59.835919
+      ]
+    ]
+  ],
+  "entryExitSignaturesMatchInOrder": true,
+  "materialException": false,
+  "priorProfilesReferenced": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1",
+      "componentResult": "unknown",
+      "segments": []
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1",
+      "componentResult": "unknown",
+      "segments": []
+    }
+  ],
+  "outcome": "blocked_by_same_missing_directed_owner_collection_scope",
+  "readyTariffRub": null,
+  "traceIndexLimit": "No trace end_shape_index used on selected/provider input shape. Provider geometry compared independently; raw gate IDs checked directly.",
+  "elapsedSeconds": 0.055
+}

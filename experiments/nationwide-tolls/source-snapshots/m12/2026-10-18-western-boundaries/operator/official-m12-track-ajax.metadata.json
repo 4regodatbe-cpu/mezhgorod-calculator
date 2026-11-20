@@ -1,0 +1,21 @@
+{
+  "url": "https://russianhighways.ru/ajax/gettrack.php?track=86127&site=",
+  "startedAt": "2026-10-17T21:18:20.474Z",
+  "purpose": "One bounded corrected AJAX-form read of the same observed map endpoint after normal GET redirected to a generic HTML shell",
+  "maxCorrectiveReads": 1,
+  "headersUsed": [
+    "X-Requested-With: XMLHttpRequest",
+    "Referer: https://russianhighways.ru/for_drivers/?tab=6"
+  ],
+  "timeoutMs": 15000,
+  "status": 200,
+  "finalUrl": "https://russianhighways.ru/ajax/gettrack.php?track=86127&site=",
+  "contentType": "text/html; charset=UTF-8",
+  "bytes": 21163,
+  "sha256": "d9ae60e029def6fc2349b735dee2cf0e9799e7afe8cae38f54025cb8b0e964fb",
+  "bodyFile": "official-m12-track-ajax.response.gz",
+  "bodyCompression": "gzip",
+  "storedSha256": "9af0e07126ef7a453a5d1e210a036c87ee4d53ec25ad569fe0b7e916802a7ef0",
+  "storedBytes": 2991,
+  "operatorBindingsConfirmed": 0
+}

@@ -1,0 +1,70 @@
+{
+  "startedAt": "2026-10-16T01:58:54.046Z",
+  "scope": {
+    "region": null,
+    "group": "single-m12",
+    "caseId": "single-m12-kazan-to-murom",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "single-m12-kazan-to-murom",
+      "startedAt": "2026-10-16T01:58:54.049Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-kazan-to-murom/live-2026-10-15T09-00-00-03-00-2026-10-16T01-58-57-115Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-kazan-to-murom/2026-10-16T01-58-57-085Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T01-58-57-528Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T01-58-57-919Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "m12"
+        ],
+        "provenRoads": [
+          "m12"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "weekday": {
+        "amount": 2621,
+        "weekdayAmount": 2621,
+        "weekendAmount": 2621,
+        "period": "все дни",
+        "segments": [
+          "М-12: ivanovskoe_p241 → murom · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 2621,
+        "weekdayAmount": 2621,
+        "weekendAmount": 2621,
+        "period": "все дни",
+        "segments": [
+          "М-12: ivanovskoe_p241 → murom · Стоимость не подтверждена"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "m12",
+          "amount": 2621,
+          "reason": "matrix dated selected-route M12 directed endpoint pair"
+        }
+      ],
+      "finishedAt": "2026-10-16T01:58:57.935Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T01:58:57.940Z"
+}

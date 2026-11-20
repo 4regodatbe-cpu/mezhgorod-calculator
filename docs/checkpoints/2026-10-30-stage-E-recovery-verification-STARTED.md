@@ -1,0 +1,9 @@
+# E practical recovery — final verification STARTED LOCAL
+
+30.10.2026 МСК. Parent30eba6dd, permitted branch lineage/PR14Draft, remote c2f52ee9 unchanged, no push. Independent source review/Arzamas partial/one Torzhok full shadow estimate saved in separate local commits. No app/lib/data/geometry changes. Two final offline guards pin the late review to the same capture and discharge ONLY the known unmapped-booth residual; exact CKAD source hash/effective date pinned. No new pricing behavior.
+
+Run all39 prototype/recovery tests once together, scopedtsc/lint, required projecttsc; then **one existing offline unit gate** (`npm run test:audit`) per AGENTS after code changes and one explicitly requested direct `node node_modules/next/dist/bin/next build --webpack`. Clarification of earlier no-repeat wording: no mass road/route source audit/capture/replay/livejobs; the mandatory unit regression gate is not that audit. No previously completed geo/road audit, network provider calls or 32point review.
+
+Before each command, record command/source/version in metadata; redirect full stdout/stderr to separate logs; immediately write shell `$?` to that command's `.exit` file BEFORE JSON postprocessing. `production-build.exit` is the authoritative actual build exit. Preserve prior missing-exit metadata/logs unchanged. Use Node24 and existing dependency directory symlink, no install/security workaround. Continue only on inspected real results; errors remain FAILED/BLOCKED and are not fabricated PASS.
+
+After completion: final result/checkpoint/WORK_STATE and localcommit, source/evidence hashes and portable local bundle. App/strict600/unknown/null/matrix/routing/tariff calendars unchanged; no UI integration, push, CI or Production. New full estimated routes1 (5904/6084), primary Arzamas savedcase stillfullnull; endpoint isSPb Primorskyave, notPrimorsk.

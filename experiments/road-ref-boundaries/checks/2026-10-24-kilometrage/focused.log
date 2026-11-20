@@ -1,0 +1,26 @@
+✔ kilometrage exact directed identities, increasing and decreasing selected traversal (2.115224ms)
+✔ transition-specific row never leaks to another approach on same node (0.291271ms)
+✔ calibrated local projection uses actual access refs and supports reversed scale (1.185701ms)
+✔ nearby branches / duplicate anchors / overlapping km ranges are not guessed (0.552086ms)
+✔ different branches, scales and partial trace cannot establish direction (0.290529ms)
+✔ missing geometry, wrong target road and out-of-section coordinates stay unknown (0.300654ms)
+✔ unreviewed/bad rows log stops without blocking valid independent rows (1.090711ms)
+✔ registry and lookup budgets fail closed; no partial nearest choice (8.701504ms)
+✔ switch disables module, existing named PVP anchors work without network (0.665974ms)
+✔ real retained M4 transitions remain unknown kilometres without invented data (0.488992ms)
+✔ selected-route integration rejects foreign geometry before kilometrage and keeps price null (2.508735ms)
+✔ selected graph nodes and directed way pairs identify transitions without invented coordinates (1.629758ms)
+✔ a verified directed overlap joins M4 across trace chunks with different shape indices (0.374393ms)
+✔ an unproven join outside the target span does not erase an independently bound M4 transition (0.279203ms)
+✔ incomplete coverage, repeated target blocks and malformed shape order cannot authorize a vector (0.324529ms)
+✔ missing OSM node/way identity cannot be replaced by a nearest-booth or numeric ref guess (0.271421ms)
+✔ beginning on M4 is not a fabricated entry junction (0.24339ms)
+✔ BRouter-style route without instructions uses its own complete graph trace (3.748117ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 365.581647

@@ -1,0 +1,9 @@
+# V3 archive GitHub-hosted workflow — READY перед push
+
+31.10.2026 МСК. Предыдущий remote `c861bc13bf2c73769fb22174ae9a20efe5693bcc`, PR №14 OPEN/Draft. Новый файл `.github/workflows/v3-source-archive.yml` — единственное изменение CI; старые workflows и защитные правила не редактировались.
+
+Trigger: push только `fix/v3-missing-route-prices-2026-10-15` и только при изменении самого workflow. Job проверяет repository/ref, target source commit `cde74243c88cfab313913d8b0435e8d56fae372e` и tree `c3e6cc8a5a8931952f7a230cc8269d2d41f28bf2`; использует Node24, штатные Git/GitHub CLI, минимальные `contents:write`. Архив создаётся из точного Git commit; 14042 файла сравниваются по Git blob SHA и сохранённому per-file manifest. Asset `source.tar.gz` размещается в отдельном archival prerelease с новым тегом, без существующего Android Release и без `--clobber`. После загрузки — скачать и проверить cmp/size/SHA256; сохранить малые receipts artifact. Старый локальный архив остаётся без изменений.
+
+Проверки до публикации: YAML parse (BaseLoader), 4 bash -n PASS; `git merge-base --is-ancestor` target SHA PASS; target tag absent; compare previous successful special PR run 41227796326 head e3ca3783 → current c861bc13 `ahead`, 46 файлов; +workflow 47, `classifyChangedPaths` → `shouldRunLive:false/no-route-runtime-change-in-update`. Previous verify/classifier SUCCESS and PR14 linked. CI network failure может привести к fail-open live jobs; не считать моделирование фактическим результатом. Репозиторный Actions permissions API 403 для integration actor, поэтому реальная доступность `GITHUB_TOKEN contents:write` неизвестна до runner.
+
+Следующее: обычный non-force push, remote readback, дождаться фактического isolated workflow и special classifier; при отказе сохранить stdout/stderr/exit/status и перейти к независимому анализу безопасной очистки.

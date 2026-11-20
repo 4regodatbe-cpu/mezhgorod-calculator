@@ -1,0 +1,254 @@
+{
+  "recordedAtUtc": "2026-10-17T01:34:06Z",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "parentCommit": "2b61dad6560284da60d9ec2c49952ace3608ae13",
+  "parentTree": "8cd3f0857f8ccabc431a4898c98e090c367d6560",
+  "finding": {
+    "code": "m11_58_679_facility_sequence_incomplete",
+    "baselineCaseCount": 15,
+    "outcome": "blocked_by_missing_reliable_data"
+  },
+  "observed": {
+    "routeCases": 15,
+    "savedWeekdayWeekendProfiles": 30,
+    "completeTraceAndReplayIntegrityProfiles": 30,
+    "profilesReproducingCause": 30,
+    "unknownAmountProfiles": 30,
+    "unconfirmedProfiles": 30,
+    "selectedFastestProfiles": 30,
+    "newLiveCalls": 0,
+    "newReplays": 0,
+    "newBuilds": 0,
+    "newTests": 0
+  },
+  "assessment": "All 15 route cases have weekday 2026-10-15 and weekend 2026-10-17 replay profiles tied to the same capture SHA. Each profile has complete trace/replay integrity, reproduces the facility-sequence reason, selects the fastest recorded provider, and preserves amount null/unconfirmed. No code regression is established; reliable ordered spatial proof is missing.",
+  "caseEvidence": [
+    {
+      "caseId": "pair-m11-ckad-domodedovo-to-novgorod",
+      "weekdayProfileSha": "9df8b1a7d49ff86d1a714bdba78570ebb2803b41",
+      "weekendProfileSha": "c6f25449c6702d02042c22ed406962333acf501f",
+      "captureSha256": "c6d502f856ae39ea9f044c28e4a5731cf75e371fcfbbb56e445a2d6e2e88fd7d",
+      "selectedProvider": "Valhalla",
+      "fastestProvider": "Valhalla"
+    },
+    {
+      "caseId": "pair-m11-ckad-novgorod-to-domodedovo",
+      "weekdayProfileSha": "5a422ae219cd9ff686f2b46c5020d4d13624475c",
+      "weekendProfileSha": "37eae7089cae6fe0146fb19d3666e27b66269aca",
+      "captureSha256": "95e85d22d9154096958daa04a7f2fa19c3e0887cd4942436c58717c9d0af1564",
+      "selectedProvider": "Valhalla",
+      "fastestProvider": "Valhalla"
+    },
+    {
+      "caseId": "pair-m4-m11-krasnodar-to-torzhok",
+      "weekdayProfileSha": "23bccdb2e5de79179ad9bc083831c630ebd6cc89",
+      "weekendProfileSha": "30cc7e3132e15714c8c1073530f0d212743b3e20",
+      "captureSha256": "4a3d1ca1ee59891e94b12690f70046b4600bc59226be7b4b449968bdde5aa1da",
+      "selectedProvider": "Valhalla",
+      "fastestProvider": "Valhalla"
+    },
+    {
+      "caseId": "pair-m4-m11-rostov-to-tver",
+      "weekdayProfileSha": "9db49f3b29283ce1a8e1bdb3203e963448503ff8",
+      "weekendProfileSha": "b5151f0cf30bbd31da04d977da19ed6507b8457c",
+      "captureSha256": "6cccb320f5cc436c33eed7b2731396e427b410c7de519188221b88cda4f7ca82",
+      "selectedProvider": "Valhalla",
+      "fastestProvider": "Valhalla"
+    },
+    {
+      "caseId": "pair-m4-m11-torzhok-to-krasnodar",
+      "weekdayProfileSha": "04330572b7070dc43923b0a2b2dc056b27d6d807",
+      "weekendProfileSha": "364285db3247b221cfdd02d4242e1326733e12e2",
+      "captureSha256": "92790f5b131ecf57f859619ff98b272067ef469cbfb34b91efe6d9ba79e6f249",
+      "selectedProvider": "Valhalla",
+      "fastestProvider": "Valhalla"
+    },
+    {
+      "caseId": "pair-m4-m11-tver-to-rostov",
+      "weekdayProfileSha": "5ba30092fe4c9b4d62c49a6631b45660dbff7e01",
+      "weekendProfileSha": "17169e37e4e628080e11d00b8ba3918e83b139e6",
+      "captureSha256": "b3b5ddece93d90c7ac1b4e09555113867012fc084b640ca0458beb2c62a20574",
+      "selectedProvider": "Valhalla",
+      "fastestProvider": "Valhalla"
+    },
+    {
+      "caseId": "single-ckad-domodedovo-to-klin",
+      "weekdayProfileSha": "9ee982373f00943ece189b5e658f273f8c1be4a9",
+      "weekendProfileSha": "257a8678cda3e7617ce60685be670a71a39bf5b8",
+      "captureSha256": "3bc427f0942a9081dfb33a1a689ff83e980d17a4b2004cbceb4d0c98232101f7",
+      "selectedProvider": "OSRM",
+      "fastestProvider": "OSRM"
+    },
+    {
+      "caseId": "single-ckad-klin-to-domodedovo",
+      "weekdayProfileSha": "264ae7748628739088f9507dd58fcedbcf7f4efe",
+      "weekendProfileSha": "06752bbf07759f984f96c0723face1c52fc4ca16",
+      "captureSha256": "c43b8ffbe9e08bddae3f773cf030bb958b38fcd319a840dd748df2b6fff4dbc4",
+      "selectedProvider": "OSRM",
+      "fastestProvider": "OSRM"
+    },
+    {
+      "caseId": "single-ckad-klin-to-ramenskoe",
+      "weekdayProfileSha": "aa9444d7aa666f2a2e6b3aaf7c96cb1574acad5c",
+      "weekendProfileSha": "862ba13c8b4d3f3c50bfb622d98f7a9edaa09e18",
+      "captureSha256": "43a188c7e5d0d91462574e2f8407b152ed66be721ea1ec8f0d8b630336525f2c",
+      "selectedProvider": "OSRM",
+      "fastestProvider": "OSRM"
+    },
+    {
+      "caseId": "single-m11-moscow-to-novgorod",
+      "weekdayProfileSha": "98cd7a9de54d7c9bdff0153523222778efe61979",
+      "weekendProfileSha": "3dbb07287a2b66f5c2cd0ca6f150ca80cbb5a1db",
+      "captureSha256": "5e02fe73b6cf73be09885f8c27e6c64de2ee00f8443bb0286318cf4606cbe927",
+      "selectedProvider": "Valhalla",
+      "fastestProvider": "Valhalla"
+    },
+    {
+      "caseId": "single-m11-moscow-to-torzhok",
+      "weekdayProfileSha": "b74a990049058b70232eb048e6f7eb4555015b9b",
+      "weekendProfileSha": "e40cec40069a1271ded2024c0070fc00e099fec7",
+      "captureSha256": "6b667e386702b41fd3d6b3ba9433a0f12df846fa53727a76bca48aae9c695b17",
+      "selectedProvider": "Valhalla",
+      "fastestProvider": "Valhalla"
+    },
+    {
+      "caseId": "single-m11-moscow-to-tver",
+      "weekdayProfileSha": "016b9f1f563537e13851143b79e5b37b2e8e4c1b",
+      "weekendProfileSha": "01a9ae94deca5fb1bb1c381093cdbc91edab301d",
+      "captureSha256": "fdabe3231a0504f174a1b478b2eefbc1b940bb13ee74ed0bef163f0d447f3031",
+      "selectedProvider": "OSRM",
+      "fastestProvider": "OSRM"
+    },
+    {
+      "caseId": "single-m11-novgorod-to-moscow",
+      "weekdayProfileSha": "3526aa89a81a7f858b41213f5763497e77cd7115",
+      "weekendProfileSha": "aba1bd59a3469beac79cc76742e364b9f91a0c2c",
+      "captureSha256": "9e106677404d9fa490694cf63eb26db107ede81ce5ff9571e0d8d8beaae15402",
+      "selectedProvider": "Valhalla",
+      "fastestProvider": "Valhalla"
+    },
+    {
+      "caseId": "single-m11-torzhok-to-moscow",
+      "weekdayProfileSha": "268f2fb9158d76fbafbdab5a8a8c489eb8695ea8",
+      "weekendProfileSha": "e6f10e231a706a6e458bab5f38bfd3e2caa325b9",
+      "captureSha256": "11c1ccb92c498be357958138e293b7ed24f94a86e59bb7e1a366c9e67172b798",
+      "selectedProvider": "Valhalla",
+      "fastestProvider": "Valhalla"
+    },
+    {
+      "caseId": "single-m11-tver-to-moscow",
+      "weekdayProfileSha": "37c0c291b8958a98e8dda1cb1453a2a3b7c246b0",
+      "weekendProfileSha": "1b2e56a3f672303aad5fd09ac3da902acb0b7c83",
+      "captureSha256": "0c65966fffb33ef1e3afd404e485db07b11ccff9a06736c34db79525c20d1d52",
+      "selectedProvider": "OSRM",
+      "fastestProvider": "OSRM"
+    }
+  ],
+  "spatialSources": {
+    "officialInventory": {
+      "path": "data/tolls/m11/2026-03-02-58-679-facility-evidence.json",
+      "blobSha": "149779e4de5adb6196b5587795a7d78698c2b545",
+      "facilityCount": 21,
+      "facilityIds": [
+        "p58",
+        "p67",
+        "p89",
+        "p97",
+        "p124",
+        "p147",
+        "p159",
+        "p177",
+        "p209",
+        "p214",
+        "p258",
+        "p330",
+        "p348",
+        "p385",
+        "p402",
+        "p444",
+        "p524",
+        "p545",
+        "p647",
+        "p668",
+        "p679"
+      ],
+      "coordinatesPresent": 0,
+      "source": {
+        "kind": "official_operator_pdf",
+        "url": "https://avtodor-tr.ru/upload/iblock/402/k44r7q8jiukdw84ropm7pgd9khjh5o4h.pdf",
+        "approvedBy": "Государственная компания «Российские автомобильные дороги»",
+        "order": "Приказ от 27.02.2026 № 35",
+        "evidence": "Заголовки официальной тарифной матрицы прямо задают точки вида км маршрута / ПВП км; координаты документ не публикует"
+      }
+    },
+    "spatialAnchors": {
+      "path": "data/tolls/m11/2026-10-01-58-679-spatial-anchors.json",
+      "blobSha": "1e9e286bcfcfa866a75410efdf1001089d3247cd",
+      "anchoredTariffPointIds": [
+        "p58",
+        "p593",
+        "p679"
+      ],
+      "anchorCounts": [
+        {
+          "tariffPointId": "p58",
+          "anchors": 4
+        },
+        {
+          "tariffPointId": "p593",
+          "anchors": 2
+        },
+        {
+          "tariffPointId": "p679",
+          "anchors": 1
+        }
+      ]
+    },
+    "implementation": {
+      "path": "lib/toll-engine/m11-moscow-production.ts",
+      "blobSha": "8e602153411c7405c09a02e7880f1a8a6a5f758d",
+      "guard": "The engine fails closed if any p58/p593/p679 route segment is beyond FACILITY_MAX_DISTANCE_KM; it prices only after proving the directed entry → p58 → p593 → p679 sequence."
+    }
+  },
+  "overlap": {
+    "m11UnpricedBaselineCount": 41,
+    "facilitySequenceSubsetCount": 15,
+    "residualCount": 26,
+    "residualIds": [
+      "pair-m11-ckad-torzhok-to-ramenskoe",
+      "pair-m11-zsd-tver-to-sest",
+      "pair-m12-ckad-kazan-to-klin",
+      "pair-m12-ckad-klin-to-kazan",
+      "pair-m12-ckad-vladimir-to-klin",
+      "single-ckad-ramenskoe-to-klin",
+      "triple-m11-ckad-m12-kazan-to-torzhok",
+      "triple-m11-ckad-m12-torzhok-to-kazan",
+      "triple-m11-ckad-m12-tver-to-murom",
+      "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+      "pair-m11-ckad-noginsk-to-tver",
+      "pair-m11-ckad-ramenskoe-to-torzhok",
+      "pair-m11-ckad-tver-to-noginsk",
+      "pair-m11-zsd-novgorod-to-sest",
+      "pair-m11-zsd-prim-to-torzhok",
+      "pair-m11-zsd-sest-to-novgorod",
+      "pair-m11-zsd-sest-to-tver",
+      "pair-m11-zsd-torzhok-to-prim",
+      "pair-m12-ckad-klin-to-vladimir",
+      "pair-m4-m11-spb-to-voronezh",
+      "single-m11-spb-to-tver",
+      "single-m11-tver-to-spb",
+      "triple-m11-ckad-m12-murom-to-tver",
+      "triple-m11-ckad-m12-novgorod-to-vladimir",
+      "triple-m11-ckad-m12-vladimir-to-novgorod",
+      "triple-m4-m11-zsd-prim-to-voronezh"
+    ],
+    "next": "Review only residual cases in m11-58-679:unpriced; do not revisit the 15 facility-sequence cases."
+  },
+  "tariffStatus": "unconfirmed; amount null/unknown remains; no full trip total",
+  "workflow": {
+    "parentRun": "38985688974",
+    "parentCommit": "2b61dad6560284da60d9ec2c49952ace3608ae13",
+    "conclusion": "success",
+    "note": "Traceability only; no fresh validation was launched for this saved-data classification."
+  }
+}

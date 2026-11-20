@@ -1,0 +1,63 @@
+{
+  "caseId": "dnr-бахмут-saint-petersburg-center",
+  "status": "audited",
+  "commandExit": 0,
+  "stage1Completed": 12,
+  "stage1Planned": 155,
+  "next": {
+    "caseId": "dnr-волноваха-kazan-center",
+    "kind": "regional",
+    "region": "dnr"
+  },
+  "provider": "Valhalla",
+  "routeMeters": 1796886,
+  "traceComplete": true,
+  "weekday": null,
+  "weekend": null,
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "components": [
+    {
+      "id": "m4",
+      "amount": 3610,
+      "reason": "matrix exact selected-route M4 vector"
+    },
+    {
+      "id": "m11-15-58",
+      "amount": 1130,
+      "reason": "m11_head_ready_direct_pair_at_departure"
+    },
+    {
+      "id": "m11-58-679",
+      "amount": 3900,
+      "reason": "matrix dated selected-route M11 direct pair"
+    },
+    {
+      "id": "m11-679-684",
+      "amount": 94,
+      "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+    },
+    {
+      "id": "zsd",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1"
+    }
+  ],
+  "captureSha256": "a5a5c85437d22007c8b7e8e53ec40f6635ba524336cb6d4b5e637562f32c2906",
+  "parity": true,
+  "evidence": {
+    "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T22-25-37-913Z.json",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-бахмут-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-26-07-442Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-бахмут-saint-petersburg-center/2026-10-15T22-26-07-326Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T22-26-07-891Z.json",
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T22-26-08-354Z.json",
+    "sameDateParity": true
+  },
+  "commands": {
+    "inventory": 0,
+    "report": 0
+  },
+  "parentRemote": "7876cfa5d3d0ea20b6dcb98839bbaff737208ce4"
+}

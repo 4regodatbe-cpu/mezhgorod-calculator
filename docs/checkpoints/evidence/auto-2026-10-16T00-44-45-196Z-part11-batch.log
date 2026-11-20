@@ -1,0 +1,9 @@
+START 1/1 dnr-урзуф-kerch-center
+PHASE --live dnr-урзуф-kerch-center 2026-10-15T09:00:00+03:00
+{"caseId":"dnr-урзуф-kerch-center","mode":"live","provider":"OSRM","routeMeters":526087,"traceComplete":true,"tolls":{"amount":0,"weekdayAmount":0,"weekendAmount":0,"period":"понедельник–четверг","segments":[],"confidence":"none","priceConfirmation":"unconfirmed","displayLabel":null,"pricingStatus":"free"},"detectedRoadComponents":[]}
+PHASE --replay experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-kerch-center/2026-10-16T00-44-48-785Z-capture.json.gz 2026-10-15T09:00:00+03:00
+{"caseId":"dnr-урзуф-kerch-center","mode":"offline-recorded-response-replay","provider":"OSRM","routeMeters":526087,"traceComplete":true,"tolls":{"amount":0,"weekdayAmount":0,"weekendAmount":0,"period":"понедельник–четверг","segments":[],"confidence":"none","priceConfirmation":"unconfirmed","displayLabel":null,"pricingStatus":"free"},"detectedRoadComponents":[]}
+PHASE --replay experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-kerch-center/2026-10-16T00-44-48-785Z-capture.json.gz 2026-10-17T09:00:00+03:00
+{"caseId":"dnr-урзуф-kerch-center","mode":"offline-recorded-response-replay","provider":"OSRM","routeMeters":526087,"traceComplete":true,"tolls":{"amount":0,"weekdayAmount":0,"weekendAmount":0,"period":"пятница–воскресенье","segments":[],"confidence":"none","priceConfirmation":"unconfirmed","displayLabel":null,"pricingStatus":"free"},"detectedRoadComponents":[]}
+DONE dnr-урзуф-kerch-center audited parity=true
+{"batchPath":"experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T00-44-46-531Z.json","attempted":1,"audited":1,"stoppedReason":null}

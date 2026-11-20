@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-16T07:48:22.893Z",
+  "phase": "PART19_M4_POLICY_STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38869309675",
+  "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
+  "checked": 17,
+  "total": 25,
+  "next": "kherson-чулаковка-kazan-center",
+  "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
+  "caseId": "kherson-чулаковка-kazan-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-чулаковка-kazan-center/2026-10-15T12-09-56-015Z-capture.json.gz",
+  "captureSha256": "77a7e9dae5bdeb413c8393220ca8c3911929135161f714fb5f044a67a2e9eed6",
+  "dates": [
+    "2026-10-15T09:00:00+03:00",
+    "2026-10-17T09:00:00+03:00"
+  ],
+  "parent": "7b9a6ce14793c7849b1131f2d689e92e4de97bfa",
+  "logPrefix": "docs/checkpoints/evidence/policy-2026-10-16T07-48-22-893Z",
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-48-22-893Z-part19_m4_policy_started.json"
+}

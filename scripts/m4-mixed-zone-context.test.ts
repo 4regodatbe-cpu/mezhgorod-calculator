@@ -45,15 +45,15 @@ test("mixed M-4 zones are not charged from flanking open plazas when booth edges
 test("M-4 633-741 bills only the first actually traversed paid gate", () => {
   const northbound = priceM4RoutePlazaValidation(validation([803, 672, 636, 620]));
   assert.equal(northbound.status, "priced");
-  assert.equal(northbound.weekdayAmount, 440);
-  assert.equal(northbound.weekendAmount, 500);
+  assert.equal(northbound.weekdayAmount, 350);
+  assert.equal(northbound.weekendAmount, 440);
   assert.deepEqual(northbound.pricedPlazas.map((item) => item.km), [672]);
   assert.equal(northbound.pricedPlazas[0]?.exitKm, 636);
 
   const southbound = priceM4RoutePlazaValidation(validation([620, 636, 672, 803]));
   assert.equal(southbound.status, "priced");
-  assert.equal(southbound.weekdayAmount, 640);
-  assert.equal(southbound.weekendAmount, 770);
+  assert.equal(southbound.weekdayAmount, 570);
+  assert.equal(southbound.weekendAmount, 640);
   assert.deepEqual(southbound.pricedPlazas.map((item) => item.km), [636]);
   assert.equal(southbound.pricedPlazas[0]?.exitKm, 672);
 });
@@ -61,8 +61,8 @@ test("M-4 633-741 bills only the first actually traversed paid gate", () => {
 test("M-4 633-741 charges at exit only when estimated gate transit exceeds 120 minutes", () => {
   const slow = priceM4RoutePlazaValidation(validation([803, 672, 636, 620], undefined, 50_000));
   assert.equal(slow.status, "priced");
-  assert.equal(slow.weekdayAmount, 1_080);
-  assert.equal(slow.weekendAmount, 1_270);
+  assert.equal(slow.weekdayAmount, 920);
+  assert.equal(slow.weekendAmount, 1_080);
   assert.deepEqual(slow.pricedPlazas.map((item) => item.km), [636, 672]);
 });
 
@@ -78,11 +78,11 @@ test("paired mixed-zone gates remain unresolved without route ETA", () => {
 test("a single verified 633-741 gate resolves to its published gate tariff", () => {
   const at636 = priceM4RoutePlazaValidation(validation([636, 620]));
   assert.equal(at636.status, "priced");
-  assert.equal(at636.weekdayAmount, 640);
+  assert.equal(at636.weekdayAmount, 570);
 
   const at672 = priceM4RoutePlazaValidation(validation([803, 672]));
   assert.equal(at672.status, "priced");
-  assert.equal(at672.weekdayAmount, 440);
+  assert.equal(at672.weekdayAmount, 350);
 });
 
 test("the 401-464 mixed zone is not billed when the route only has flanking open-PVP evidence", () => {
@@ -94,20 +94,20 @@ test("the 401-464 mixed zone is not billed when the route only has flanking open
 test("the 401-464 mixed zone charges once when either paid gate is confirmed", () => {
   const oneGate = priceM4RoutePlazaValidation(validation([416]));
   assert.equal(oneGate.status, "priced");
-  assert.equal(oneGate.weekdayAmount, 360);
-  assert.equal(oneGate.weekendAmount, 480);
+  assert.equal(oneGate.weekdayAmount, 230);
+  assert.equal(oneGate.weekendAmount, 360);
 
   const bothGates = priceM4RoutePlazaValidation(validation([460, 416]));
   assert.equal(bothGates.status, "priced");
-  assert.equal(bothGates.weekdayAmount, 360);
-  assert.equal(bothGates.weekendAmount, 480);
+  assert.equal(bothGates.weekdayAmount, 230);
+  assert.equal(bothGates.weekendAmount, 360);
   assert.equal(bothGates.pricedPlazas.length, 1);
 });
 
 test("the 401-464 mixed zone adds an exit tariff when estimated transit exceeds 12 hours", () => {
   const result = priceM4RoutePlazaValidation(validation([460, 416], undefined, 50_000));
   assert.equal(result.status, "priced");
-  assert.equal(result.weekdayAmount, 720);
-  assert.equal(result.weekendAmount, 960);
+  assert.equal(result.weekdayAmount, 460);
+  assert.equal(result.weekendAmount, 720);
   assert.deepEqual(result.pricedPlazas.map((item) => item.km), [416, 460]);
 });

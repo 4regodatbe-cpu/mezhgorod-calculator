@@ -24,17 +24,21 @@ globalThis.fetch=async(input)=>{
  return response({},503);
 };
 const req=(body:unknown)=>new NextRequest('http://localhost/api/v3/calculate',{method:'POST',body:JSON.stringify(body)});
-test('V3 Anapa and Yalta requests expose numeric A289 estimate with warning',async()=>{
+test('V3 Anapa and Yalta requests expose numeric A289 price without confirmation labels',async()=>{
  for(const [from,minPrice] of [[anapa,620],[yalta,800]] as const){
   const result=await POST(req({from,to:krasnodar,departureAt:'2026-10-13T09:00:00+03:00'}));
   const body=await result.json();
   assert.equal(result.status,200,JSON.stringify(body));
+  assert.match(result.headers.get('Server-Timing') ?? '', /calc_total;dur=/);
+  assert.match(result.headers.get('Server-Timing') ?? '', /toll_matching;dur=/);
+  assert.match(result.headers.get('Server-Timing') ?? '', /response_pricing;dur=/);
   assert.equal(body.legs.length,1);
   const tolls=body.legs[0].fast.tolls;
   assert.equal(tolls.pricingStatus,'priced',JSON.stringify(tolls));
   assert.ok(tolls.amount===minPrice||tolls.amount===minPrice+410,JSON.stringify(tolls));
-  assert.equal(tolls.priceConfirmation,'unconfirmed');
-  assert.equal(tolls.displayLabel,'Стоимость не подтверждена');
+  assert.equal('priceConfirmation' in tolls,false);
+  assert.equal('displayLabel' in tolls,false);
+  assert.ok(tolls.segments.every((segment:string)=>!segment.includes('Стоимость не подтверждена')));
   assert.ok(body.legs[0].fast.pricingByVehicle.comfort.totalPrice>0);
  }
 });
@@ -52,6 +56,7 @@ test('invalid calendar and ambiguous dates fail before any external request',asy
   for(const departureAt of ['2026-02-30T09:00:00+03:00','2026-02-29','2026-04-31','10/13/2026','2026-10-13T09:00:00','2026-10-13T24:00:00Z']) {
    const result=await POST(req({from:anapa,to:krasnodar,departureAt}));
    assert.equal(result.status,400,departureAt);
+   assert.match(result.headers.get('Server-Timing') ?? '', /request_body;dur=/);
    assert.equal((await result.json()).error,'Некорректная дата поездки',departureAt);
   }
   assert.equal(requests,0);
@@ -62,5 +67,23 @@ test('valid leap day and explicit timezone dates remain accepted',async()=>{
   const result=await POST(req({from:anapa,to:krasnodar,departureAt}));
   assert.equal(result.status,200,departureAt+': '+JSON.stringify(await result.json()));
  }
+});
+test('F4 actual V3 POST keeps legacy body OFF/ON and production-denies the optional layer in standard/dual modes',async()=>{
+ const saved={flag:process.env.V3_TOLL_ESTIMATE,mode:process.env.NODE_ENV,vercel:process.env.VERCEL_ENV};
+ const strip=(value:unknown):unknown=>Array.isArray(value)?value.map(strip):value&&typeof value==='object'
+  ?Object.fromEntries(Object.entries(value).filter(([k])=>k!=='tollEstimate').map(([k,v])=>[k,strip(v)])):value;
+ try{
+  process.env.NODE_ENV='test';delete process.env.VERCEL_ENV;
+  for(const from of [anapa,yalta]){
+   const body={from,to:krasnodar,departureAt:'2026-10-13T09:00:00+03:00',includeTollEstimate:true};
+   delete process.env.V3_TOLL_ESTIMATE;const offResponse=await POST(req(body)),off=await offResponse.json();assert.equal(offResponse.status,200);
+   assert.equal('tollEstimate' in off.legs[0].fast,false,'request fields cannot enable the server switch');
+   process.env.V3_TOLL_ESTIMATE='1';const onResponse=await POST(req(body)),on=await onResponse.json();assert.equal(onResponse.status,200);
+   assert.ok(on.legs[0].fast.tollEstimate);assert.deepEqual(strip(on),off,'all strict/vehicle/territory fields remain identical');
+   if(on.options)assert.deepEqual(on.options[0].fast.tollEstimate,on.legs[0].fast.tollEstimate);
+   process.env.VERCEL_ENV='production';const protectedResponse=await POST(req(body)),protectedBody=await protectedResponse.json();assert.equal(protectedResponse.status,200);
+   assert.equal('tollEstimate' in protectedBody.legs[0].fast,false);delete process.env.VERCEL_ENV;
+  }
+ }finally{for(const [key,value] of [['V3_TOLL_ESTIMATE',saved.flag],['NODE_ENV',saved.mode],['VERCEL_ENV',saved.vercel]]){if(value===undefined)delete process.env[key!];else process.env[key!]=value;}}
 });
 test.after(()=>{globalThis.fetch=originalFetch;});

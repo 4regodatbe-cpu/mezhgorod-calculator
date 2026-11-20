@@ -1,0 +1,47 @@
+✔ M11 resolves the departure calendar at01:00; later holidays/profile changes do not reprice (7.690356ms)
+✔ M11 early Monday interval never uses a noon sample outside the journey (2.72309ms)
+✔ CKAD andM11 reject normalized impossible dates, absent timezone andnon-string times (0.685472ms)
+✔ native head money cannot substitute absent directed head boundaries (0.514748ms)
+✔ 17new date bounds block pre-tariff lookups and preserve current amounts (21.246516ms)
+✔ Ryazan night zero requires verified lane; MSDtransit requires eligibility context (0.475909ms)
+✔ M11 uses directed current OD even where the old native table is unknown (3.352508ms)
+✔ M11 local Moscow Friday profile, missing/expired/profile-transition/mixed are blocked (1.342582ms)
+✔ M11 geometry adapter prices both independent products from matrix, ignores native money (1.655749ms)
+✔ CKAD direct matrix uses actual direction and date, no guessed section sum (0.839532ms)
+✔ strict south vector uses finished matrix price (3.354241ms)
+✔ reverse south vector same fare (0.693765ms)
+✔ current candidate exact vector carries warning (0.436821ms)
+✔ partial gate evidence does not replace fare (0.141261ms)
+✔ missing departure date fails; Thursday fare remains fixed across Friday midnight (0.453946ms)
+✔ A289 component cannot vanish in M4 replacement (0.155952ms)
+✔ single confirmed M4 plaza uses its existing candidate fare (2.275383ms)
+✔ ordinary weekday midnight and weekend midnight retain an unchanged complete M4 fare (0.793122ms)
+✔ departure profile stays fixed across a weekend/year boundary; unknown departure year fails (1.11964ms)
+✔ new endpoint-only south lookup needs no intermediate plaza evidence (0.894623ms)
+✔ new endpoint-only lookup supports a single tariff section without native sums (0.525955ms)
+✔ mainline endpoints use the canonical chain excluding intermediate entry tariff (0.353938ms)
+✔ Yandex reviewed northbound cells replace all conflicting variants with one price per profile (1.150195ms)
+✔ reviewed northbound fare does not get mirrored; reverse uses its own canonical estimate (0.615307ms)
+✔ published355 northbound receipt pair is charged220 once in both profiles (0.74452ms)
+✔ 355 southward artificial fare boundaries stay unknown with a specific reason (3.330736ms)
+✔ all 210 head cells remain directed ready fares, including differing Friday reverse price (16.358408ms)
+✔ head uses its own night, next-day 01:00 and holiday calendar (0.380838ms)
+✔ head rejects invalid departure, missing boundaries and negative duration; later night does not reprice (0.446696ms)
+✔ V3 outer boundaries work both directions without intermediate p593 or native fare eligibility (2.300841ms)
+✔ north head fare uses departure despite the Friday exit and ignores old numeric fields (0.856757ms)
+✔ south head and mainline both retain Thursday departure despite a Friday payment window (0.461438ms)
+✔ upper V3 adds head and mainline once in both directions, never the old M11 aggregate (25.633596ms)
+✔ user-approved 94 RUB tail fare prices the continuation in both directions (15.537774ms)
+✔ a route without the Moscow head does not infer the missing mainline from the 94 RUB tail fare (6.121647ms)
+✔ primary owner HTML gives actual cash base fare and matches saved hashes (2.75672ms)
+✔ either actual directed zone1 plaza charges exactly300 without a transponder/night discount (2.4415ms)
+✔ another zone, missing IDs, repeated plazas and incomplete trace cannot turn zone1 into a complete ZSD total (0.419115ms)
+✔ recorded complete Krasnodar–Moscow–SPb geometry prices its actual ZSD zone1, not a named-road guess (31.586652ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 403.105504

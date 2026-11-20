@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:55:08.565Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 115,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 17,
+    "spec": {
+      "caseId": "single-m11-novgorod-to-moscow",
+      "kind": "road",
+      "group": "single-m11"
+    }
+  },
+  "caseId": "single-m11-novgorod-to-moscow",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-55-08-565Z-part17",
+  "parent": "9b0bfcaafd472359a3201491f4d03f7135fe2292"
+}

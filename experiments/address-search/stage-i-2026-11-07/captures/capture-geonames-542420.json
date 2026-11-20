@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "source": "GeoNames cities15000 daily export",
+  "sourceUrl": "https://download.geonames.org/export/dump/cities15000.zip",
+  "sourceArchivePath": "experiments/address-search/stage-i-2026-11-07/source/cities15000.zip",
+  "sourceArchiveSha256": "37d3b39e88167155539dc4aaf93886527c5037b6a822087e48fe530baf8436b7",
+  "retrievedAt": "2026-11-07T23:18:22.000Z",
+  "sourceLastModified": "2026-11-07T02:54:40Z",
+  "sourceCommit": "89eca232d8787788153daf5b2356f7f7fe76e822",
+  "rawRow": "542420\tKrasnodar\tKrasnodar\tEkaterinodar,KRR,Krasnodar,Krasnodara,Krasnotar,Novorosyisk,Yekaterinodar,ke la si nuo da er,keulaseunodaleu,kirasinodari,krasanodara,krasnodara,krasnwdar,kurasunodaru,qrsnwdr,Краснодар,Եկատերինոդար,Կրասնոտար,קרסנודר,كراسنودار,کراسنودار,क्रास्नोदर,ক্রাসনোদার,ਕ੍ਰਾਸਨੋਦਾਰ,ክራስኖዳር,クラスノダル,克拉斯诺达尔,크라스노다르\t45.04534\t38.98178\tP\tPPLA\tRU\t\t38\t\t\t\t899541\t\t36\tEurope/Moscow\t2026-08-30",
+  "rawRowSha256": "6da2f3167fcfc8734a6b020a1dfe329873490632a3bf7d4f14b0f89b5f46ca42",
+  "sourceRecord": {
+    "geonameId": 542420,
+    "name": "Krasnodar",
+    "asciiName": "Krasnodar",
+    "alternateNames": [
+      "Ekaterinodar",
+      "KRR",
+      "Krasnodar",
+      "Krasnodara",
+      "Krasnotar",
+      "Novorosyisk",
+      "Yekaterinodar",
+      "ke la si nuo da er",
+      "keulaseunodaleu",
+      "kirasinodari",
+      "krasanodara",
+      "krasnodara",
+      "krasnwdar",
+      "kurasunodaru",
+      "qrsnwdr",
+      "Краснодар",
+      "Եկատերինոդար",
+      "Կրասնոտար",
+      "קרסנודר",
+      "كراسنودار",
+      "کراسنودار",
+      "क्रास्नोदर",
+      "ক্রাসনোদার",
+      "ਕ੍ਰਾਸਨੋਦਾਰ",
+      "ክራስኖዳር",
+      "クラスノダル",
+      "克拉斯诺达尔",
+      "크라스노다르"
+    ],
+    "latitude": 45.04534,
+    "longitude": 38.98178,
+    "featureClass": "P",
+    "featureCode": "PPLA",
+    "countryCode": "RU",
+    "admin1Code": "38",
+    "admin2Code": "",
+    "population": 899541,
+    "modificationDate": "2026-08-30"
+  },
+  "displayNormalization": {
+    "title": "Краснодар",
+    "label": "Краснодар, городской округ Краснодар, Краснодарский край, Россия",
+    "region": "городской округ Краснодар, Краснодарский край, Россия",
+    "searchNames": [
+      "Краснодар"
+    ],
+    "rationale": "GeoNames country/admin1 code retained; display includes the established Russian region label."
+  },
+  "license": {
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "GeoNames geographical database; filtered and indexed by Mezhgorod Calculator"
+  }
+}

@@ -1,0 +1,7 @@
+# B5 — five bounded controls STARTED LOCAL
+
+29.10.2026 MSK; source180e7caa, current docs43a1e215. Moscow→SPb retained actual API result; Donetsk→Moscow complete current replay already done0misses; Krasnodar→SPb exact raw archive located. Yalta→SPb retained real502 lacks raw provider causes. The inspected Krasnodar→Domodedovo and reversed/multi-control archives are NOT substituted for Krasnodar→Moscow.
+
+Under Stage B owner's explicit permission for pinpoint new requests when retained evidence is insufficient, perform **one** current Krasnodar→Moscow real V3 handler calculation, not a route audit. Use admitted GeoNames positions from Stage A handler evidence, fixed Thursday departure15.10.2026 09:00MSK, standard process proxy opt-in/TLS unchanged. Capture all raw route/trace responses, statuses, timing and selected public body. Max20upstream requests, whole caller deadline35s; abort on excess, no retries beyond existing application logic, no second live calculation. This is diagnostic execution, not a change to runtime deadlines or route/toll policy; cancellation must not produce a partial complete fare.
+
+Then replay only exact retained Krasnodar→SPb source with strict endpoint/control matching, record mismatches/missing trace instead of manufacturing source. Assess all five with provider/geometry distance/time/calculation scope/toll status/error and source SHA. No new Yalta/Moscow/Donetsk network calls, no tariff audit/CI/Preview/push. Save final limits and local commits; no universal10s/Production claim.

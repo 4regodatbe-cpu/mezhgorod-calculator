@@ -1,0 +1,60 @@
+{
+  "atUtc": "2026-10-18T06:03:00.438675+00:00",
+  "startedHead": "1f5dbd9d398281ee76ab873b4f5bd97f4d107e00",
+  "sourceFingerprint": "258ee8abe7051eda2e4d11f093e10fa37184adc36cd3c3e12d67823afdd32f08",
+  "inputsSha256": "7dcca2a667bb864feab274c73f10f50f231a8374fbf253dca09f64f3f6202767",
+  "extractionMethodReference": "experiments/nationwide-tolls/scripts/review-zsd-remaining-scopes.py",
+  "extractionMethodReferenceSha256": "5f9fa2e9a436e86314a985153749e7858a18e3d4cd8a45f31135b5b03c8a82f5",
+  "processed": 6,
+  "expected": 6,
+  "reviewErrors": 0,
+  "materialExceptions": 0,
+  "newSiblingBoundaryChecks": 6,
+  "priorRepresentativeChecks": 1,
+  "groupSize": 7,
+  "newPricingCalls": 0,
+  "newRouteCalls": 0,
+  "newTraceCalls": 0,
+  "newFullRouteReplays": 0,
+  "newPricedComponents": 0,
+  "newConfirmedFullFares": 0,
+  "elapsedSeconds": 0.124,
+  "caseResults": [
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-murom-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-north-kad-six/cases/max-chain-m12-ckad-m11-zsd-murom-to-sest.json",
+      "sha256": "1157bab46c569246bd383a418815cefbafcb0a26a0c2a378c7954835aa523a1e",
+      "outcome": "blocked_by_same_missing_owner_collection_and_north_exit_tariff_binding"
+    },
+    {
+      "caseId": "pair-m11-zsd-moscow-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-north-kad-six/cases/pair-m11-zsd-moscow-to-sest.json",
+      "sha256": "d27d06c58847221e400cc2fc24807993403ca89137d351afd9e3bafe3f6b298b",
+      "outcome": "blocked_by_same_missing_owner_collection_and_north_exit_tariff_binding"
+    },
+    {
+      "caseId": "pair-m11-zsd-tver-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-north-kad-six/cases/pair-m11-zsd-tver-to-sest.json",
+      "sha256": "aa2034aa2c72aedef38e9b02993f2f11f8ff4a7fc3b25cde1782da56a09fb053",
+      "outcome": "blocked_by_same_missing_owner_collection_and_north_exit_tariff_binding"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-vladimir-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-north-kad-six/cases/max-chain-m12-ckad-m11-zsd-vladimir-to-sest.json",
+      "sha256": "f651dc5163b1e4040cd46ac91a99cfe6fa3f87d3f37539d4dfb21cd02e5f7cbd",
+      "outcome": "blocked_by_same_missing_owner_collection_and_north_exit_tariff_binding"
+    },
+    {
+      "caseId": "pair-m11-zsd-novgorod-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-north-kad-six/cases/pair-m11-zsd-novgorod-to-sest.json",
+      "sha256": "6b9671f8c9f0f96b99c6e00a1e24ff2edb5b26eb1da35f74c4c81baadeac6661",
+      "outcome": "blocked_by_same_missing_owner_collection_and_north_exit_tariff_binding"
+    },
+    {
+      "caseId": "triple-m4-m11-zsd-domodedovo-to-sest",
+      "path": "experiments/nationwide-tolls/checks/2026-10-18-zsd-north-kad-six/cases/triple-m4-m11-zsd-domodedovo-to-sest.json",
+      "sha256": "9e7577ec9ea9b1962a258c79eb103668aee903553123c14148af1976a816ce01",
+      "outcome": "blocked_by_same_missing_owner_collection_and_north_exit_tariff_binding"
+    }
+  ]
+}

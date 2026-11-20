@@ -1,0 +1,325 @@
+{
+  "source": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-krasnodar-to-spb/2026-10-16T00-11-59-083Z-capture.json.gz",
+  "sourceSha256": "0146e84b961b714fcc4e11dcb723285482127efb30bf417c5fc8ccf1215e41c8",
+  "sourceRuntimeCommit": "180e7caad4381a92057035827ba1be88113e2bc1",
+  "mode": "current V3 API against exact retained provider endpoints and trace shapes, all fetches intercepted; not live or tariff recertification",
+  "networkRequests": 0,
+  "status": "PASS",
+  "httpStatus": 200,
+  "elapsedMs": 775.5756849999999,
+  "calls": 19,
+  "misses": [],
+  "selectedProvider": [
+    "OSRM"
+  ],
+  "meters": 2061460,
+  "seconds": 94846,
+  "pricingStatus": "priced",
+  "body": {
+    "legs": [
+      {
+        "from": "Краснодар, центр",
+        "to": "Санкт-Петербург, центр",
+        "fast": {
+          "m4RoadBoundaries": {
+            "provider": "osrm",
+            "targetRef": "М-4",
+            "routeSignature": "c0507836382807f591a84b7bad8f228fc07164a9c872c880a88f9da1707a7f74",
+            "precision": "route-maneuver",
+            "status": "unknown",
+            "reason": "multiple_road_traversals",
+            "entry": null,
+            "exit": null
+          },
+          "m12EndpointSpan": null,
+          "m12StrictSpan": null,
+          "m12Candidate": false,
+          "m12SpanReason": null,
+          "m11RoadEvidence": {
+            "provider": "osrm",
+            "strictBlocks": [
+              {
+                "provider": "osrm",
+                "legIndex": 0,
+                "sourceStartIndex": 82,
+                "sourceEndIndex": 83,
+                "beginKm": 1373.443,
+                "endKm": 2040.158,
+                "lengthKm": 666.715,
+                "beginCoordinate": [
+                  37.467541,
+                  55.883302
+                ],
+                "endCoordinate": [
+                  30.361203,
+                  59.773923
+                ],
+                "labels": [
+                  "М-11"
+                ]
+              },
+              {
+                "provider": "osrm",
+                "legIndex": 0,
+                "sourceStartIndex": 85,
+                "sourceEndIndex": 86,
+                "beginKm": 2040.459,
+                "endKm": 2045.786,
+                "lengthKm": 5.327,
+                "beginCoordinate": [
+                  30.358981,
+                  59.776376
+                ],
+                "endCoordinate": [
+                  30.312274,
+                  59.81611
+                ],
+                "labels": [
+                  "«Нева»",
+                  "М-11"
+                ]
+              }
+            ],
+            "candidateClues": [],
+            "malformedStrictCount": 0
+          },
+          "meters": 2061460,
+          "seconds": 94846,
+          "quality": {
+            "status": "single",
+            "providers": [
+              "OSRM"
+            ],
+            "distanceSpreadPercent": null,
+            "timeSpreadPercent": null,
+            "goldenDistanceDeviationPercent": null,
+            "message": "Выбран маршрут с минимальным временем"
+          },
+          "tolls": {
+            "amount": 10464,
+            "weekdayAmount": 10464,
+            "weekendAmount": 12334,
+            "period": "понедельник–четверг",
+            "segments": [
+              "М-4: m4-1223 → m4-71",
+              "М-11 15–58: moscow → solnechnogorsk: 1130 ₽",
+              "М-11: p58 → p679",
+              "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽",
+              "ЗСД: тарифная зона 1 · 300 ₽"
+            ],
+            "confidence": "matched",
+            "pricingStatus": "priced"
+          },
+          "tollValidation": {
+            "status": "toll",
+            "source": "Route toll composition",
+            "tollEdgeCount": 5,
+            "checkedEdgeCount": 5,
+            "wayIds": [],
+            "roadNames": [
+              "m4",
+              "m11-15-58",
+              "m11-58-679",
+              "m11-679-684",
+              "zsd"
+            ],
+            "message": "Полный итог составлен из дорожных систем: m4, m11-15-58, m11-58-679, m11-679-684, zsd",
+            "complete": true
+          },
+          "m4PvpPreview": {
+            "status": "boundaries_resolved",
+            "reason": null,
+            "roadBoundaries": {
+              "provider": "valhalla-trace",
+              "targetRef": "М-4",
+              "routeSignature": "c0507836382807f591a84b7bad8f228fc07164a9c872c880a88f9da1707a7f74",
+              "precision": "matched-road-edge",
+              "status": "unknown",
+              "reason": "road_trace_multiple_or_discontinuous_traversals",
+              "entry": null,
+              "exit": null
+            },
+            "roadKilometrage": {
+              "status": "unknown",
+              "direction": "unknown",
+              "diagnosticOnly": true,
+              "entry": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "exit": {
+                "status": "unknown",
+                "reason": "km_boundary_evidence_missing",
+                "position": null
+              },
+              "stops": [
+                "km_boundary_evidence_unresolved"
+              ]
+            },
+            "priceRub": null,
+            "verifiedPriceCells": 0,
+            "candidateCount": 3,
+            "confirmedPvps": [
+              "m4-1223",
+              "m4-71"
+            ],
+            "diagnosticOnly": true,
+            "tariffVector": {
+              "from": "m4-1223",
+              "to": "m4-71",
+              "profile": "monThu",
+              "selectionBasis": "confirmed-payment-boundaries",
+              "priceStatus": "known"
+            }
+          },
+          "nationalTollCoverage": {
+            "catalogNetworkCount": 22,
+            "candidateNetworks": [
+              {
+                "id": "m4",
+                "name": "М-4 «Дон»",
+                "status": "strict_pvp_found_full_price_unverified",
+                "hasReferenceFare": false,
+                "operator": "Автодор"
+              },
+              {
+                "id": "m11",
+                "name": "М-11 «Нева» (участки 58–679 км)",
+                "status": "candidate_unverified",
+                "hasReferenceFare": false,
+                "operator": "Автодор"
+              }
+            ],
+            "catalogWithReferenceFares": 8,
+            "exactCrossingVerified": false,
+            "newFareApplied": false,
+            "reason": "geometry_candidate_is_not_map_matched_paid_passage",
+            "m1m3GateAudit": {
+              "status": "candidate_needs_osm_operator_node_mapping",
+              "reason": "no_verifiable_m1_m3_booths",
+              "routeId": "selected-fast-route",
+              "candidateRoads": [],
+              "verifiedGates": [],
+              "unmappedPaidNodes": [],
+              "strictPriceAllowed": false
+            },
+            "m3Shadow": {
+              "status": "unknown",
+              "reason": "m3_full_three_gate_proof_incomplete",
+              "amountRub": null,
+              "diagnosticOnly": true,
+              "roadId": "m3"
+            },
+            "m1Shadow": {
+              "status": "unknown",
+              "reason": "m1_exact_gate_proof_not_verified",
+              "amountRub": null,
+              "roadId": "m1",
+              "diagnosticOnly": true
+            }
+          },
+          "pricingByVehicle": {
+            "standard": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 2061.46,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Краснодар, центр",
+                  "to": "Санкт-Петербург, центр",
+                  "ratePerKm": 30,
+                  "amount": 61844,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 61844,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 2061.46,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Краснодар, центр",
+                  "to": "Санкт-Петербург, центр",
+                  "ratePerKm": 32.5,
+                  "amount": 66997,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 66997,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "comfort_plus": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 2061.46,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Краснодар, центр",
+                  "to": "Санкт-Петербург, центр",
+                  "ratePerKm": 35,
+                  "amount": 72151,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 72151,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            },
+            "minivan": {
+              "corridor": {
+                "id": "geometry"
+              },
+              "dualTariff": false,
+              "pricingSegments": [
+                {
+                  "distanceKm": 2061.46,
+                  "tariffType": "normal",
+                  "type": "normal",
+                  "from": "Краснодар, центр",
+                  "to": "Санкт-Петербург, центр",
+                  "ratePerKm": 45,
+                  "amount": 92766,
+                  "reason": "Обычный тариф",
+                  "reviewRequired": false
+                }
+              ],
+              "totalPrice": 92766,
+              "reviewRequired": false,
+              "requiresSplit": false,
+              "multiplier": 1
+            }
+          }
+        },
+        "free": null,
+        "freeCandidate": null
+      }
+    ],
+    "mode": "standard",
+    "automaticMode": "standard",
+    "specialEndpoint": false
+  }
+}

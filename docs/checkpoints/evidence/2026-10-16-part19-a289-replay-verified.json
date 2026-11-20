@@ -1,0 +1,52 @@
+[
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-kazan-center/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-34-51-223Z.json",
+    "sha256": "aadbfb9b80638fb79069aa4fa6b077141043c39adeec5bb85a372571c9aa9deb",
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "tolls": {
+      "amount": 3640,
+      "weekdayAmount": 3640,
+      "weekendAmount": 3970,
+      "period": "понедельник–четверг",
+      "segments": [
+        "М-4: m4-1223 → m4-803 · Стоимость не подтверждена",
+        "А-289: РВП 103 → РВП 82 → РВП 23: 800 ₽",
+        "М-12: shumerlya → ivanovskoe_p241 · Стоимость не подтверждена"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "integrity": {
+      "complete": true,
+      "missingResponses": []
+    },
+    "captureSha256": "8a1ae06d65a40852688c50e3f866ec0266960bd61c78461eb52126fa5271c668"
+  },
+  {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/kherson-аскания-нова-kazan-center/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-34-51-716Z.json",
+    "sha256": "33d4037fa4a7f6b86a60a08e3348a533df31a0de15527987923e462192d8144a",
+    "departureAt": "2026-10-17T09:00:00+03:00",
+    "tolls": {
+      "amount": 3970,
+      "weekdayAmount": 3640,
+      "weekendAmount": 3970,
+      "period": "пятница–воскресенье",
+      "segments": [
+        "М-4: m4-1223 → m4-803 · Стоимость не подтверждена",
+        "А-289: РВП 103 → РВП 82 → РВП 23: 800 ₽",
+        "М-12: shumerlya → ivanovskoe_p241 · Стоимость не подтверждена"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "integrity": {
+      "complete": true,
+      "missingResponses": []
+    },
+    "captureSha256": "8a1ae06d65a40852688c50e3f866ec0266960bd61c78461eb52126fa5271c668"
+  }
+]

@@ -1,0 +1,20 @@
+import {readFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+import test from 'node:test';
+const root=new URL('../../',import.meta.url);
+const load=p=>JSON.parse(readFileSync(new URL(p,root)));
+test('supplied M7 exit chain must not be relabelled R158/Arzamas',()=>{
+ const proof=load('experiments/nationwide-tolls/checks/2026-10-18-m12-western-boundaries/physical-proof.json');
+ const first=proof.cases.find(c=>c.primaryExitWayIds.includes('1550135076'));
+ const second=proof.cases.find(c=>c.primaryExitWayIds.includes('972809728'));
+ assert.deepEqual(first.primaryExitWayIds,['1550135076','1550561305','1206479738']);
+ assert.equal(first.exitRoadRef,'22Н-0239');
+ assert.equal(first.operatorPointBindingProven,false);
+ assert.deepEqual(second.primaryExitWayIds,['972809728','972809720','292501171']);
+ assert.equal(second.exitRoadRef,'М-7');
+ assert.notEqual(second.exitRoadRef,'Р-158');
+ assert.equal(second.operatorPointBindingProven,false);
+ const matrix=load('experiments/nationwide-tolls/source-snapshots/m12-order302-2026-10-08-category1-direct-pair-matrix.json');
+ assert.ok(matrix.pointOrder.includes('arzamas_p158'));
+ assert.ok(!matrix.pointOrder.some(p=>p.includes('0239')));
+});

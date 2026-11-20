@@ -58,12 +58,14 @@ test('mandatory paid trace cannot be disabled by diagnostics on ordinary or spec
  }
 });
 
-test('complete paid traces preserve the actual A289 matrix price and its visible warning',async()=>{
+test('complete paid traces preserve the actual A289 price without confirmation labels',async()=>{
  for(const [special,amount]of [[false,620],[true,800]] as const){
   const result=await request('a289',false,special);
   assert.ok(result.traceShapes.some(shape=>shape.some(p=>Math.abs(p.lon-38.5327744)<0.00001)));
   assert.equal(result.body.legs[0].fast.tolls.amount,amount);
-  assert.equal(result.body.legs[0].fast.tolls.displayLabel,'Стоимость не подтверждена');
+  assert.equal('displayLabel' in result.body.legs[0].fast.tolls,false);
+  assert.equal('priceConfirmation' in result.body.legs[0].fast.tolls,false);
+  assert.ok(result.body.legs[0].fast.tolls.segments.every((segment:string)=>!segment.includes('Стоимость не подтверждена')));
   assert.equal(result.body.legs.length,1);assert.equal(result.body.legs[0].free,null);
  }
 });
@@ -83,7 +85,7 @@ test('a fully checked two-point free route retains explicit zero',async()=>{
  assert.ok(result.traceShapes.length>0);
  const toll=result.body.legs[0].fast.tolls;
  assert.equal(toll.pricingStatus,'free');assert.equal(toll.amount,0);
- assert.equal(toll.priceConfirmation,'confirmed');assert.equal(toll.displayLabel,null);
+ assert.equal('priceConfirmation' in toll,false);assert.equal('displayLabel' in toll,false);
 });
 
 test('V3 response guard rejects multiple routes and mismatched duplicate special options',async()=>{

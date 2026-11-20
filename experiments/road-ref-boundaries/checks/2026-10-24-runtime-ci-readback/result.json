@@ -1,0 +1,78 @@
+{
+  "sourceCommit": "e0295e44a60c215ca945b4c8e54aac2f84d95b57",
+  "runId": 40078223671,
+  "overall": "success",
+  "verify": "success",
+  "geometry": "success",
+  "runtimeAddressProbe": "failure",
+  "settlements": "skipped",
+  "yandex": "skipped",
+  "records": [
+    {
+      "timestamp": "2026-10-24T08:34:02.9728561Z",
+      "data": {
+        "query": "Ростов",
+        "status": "PASS",
+        "elapsedMs": 1217,
+        "sourceCount": 7,
+        "failures": {
+          "http_503": 1
+        },
+        "featureCount": 103,
+        "checks": {
+          "rostovOnDonWithinFirstEight": true
+        }
+      }
+    },
+    {
+      "timestamp": "2026-10-24T08:34:03.7014222Z",
+      "data": {
+        "query": "Красн",
+        "status": "PASS",
+        "elapsedMs": 727,
+        "sourceCount": 7,
+        "failures": {
+          "http_503": 2,
+          "source_cooldown": 4
+        },
+        "featureCount": 20,
+        "checks": {
+          "krasnodarFirst": true
+        }
+      }
+    },
+    {
+      "timestamp": "2026-10-24T08:34:03.9778078Z",
+      "data": {
+        "query": "Донецк",
+        "status": "SOURCE_UNAVAILABLE",
+        "elapsedMs": 274,
+        "sourceCount": 7,
+        "failures": {
+          "http_503": 4,
+          "source_cooldown": 3
+        },
+        "featureCount": 0,
+        "checks": {
+          "donetskDnrFirst": false,
+          "donetskRostovSecond": false
+        }
+      }
+    },
+    {
+      "timestamp": "2026-10-24T08:34:03.9811458Z",
+      "data": {
+        "type": "address-runtime-probe-summary",
+        "mode": "production-address-collector",
+        "status": "SOURCE_UNAVAILABLE",
+        "completed": 3,
+        "planned": 3,
+        "remainingQueries": [],
+        "elapsedMs": 2225,
+        "perQueryBudgetMs": 20000,
+        "totalBudgetMs": 60000
+      }
+    }
+  ],
+  "newLiveRequests": 0
+}

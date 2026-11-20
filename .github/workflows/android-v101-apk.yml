@@ -1,0 +1,65 @@
+name: Android V1.01 APK
+
+on:
+  push:
+    branches:
+      - fix/v3-missing-route-prices-2026-10-15
+    paths:
+      - "android-app/**"
+      - ".github/workflows/android-v101-apk.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-v101-working-branch
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Set up Gradle 8.9
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.9"
+      - name: Verify V1.01 wrapper source
+        shell: bash
+        run: |
+          grep -Fq 'https://mezhgorod-calculator.vercel.app/v3' android-app/app/src/main/java/ru/mezhgorod/calculator/MainActivity.kt
+          grep -Fq 'versionCode = 5' android-app/app/build.gradle.kts
+          grep -Fq 'versionName = "1.01"' android-app/app/build.gradle.kts
+          test "$(grep -c 'applicationId = "ru.mezhgorod.calculator"' android-app/app/build.gradle.kts)" = 1
+      - name: Build V1.01 APK
+        working-directory: android-app
+        run: gradle assembleDebug --no-daemon --stacktrace
+      - name: Validate APK and prepare artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          cp android-app/app/build/outputs/apk/debug/app-debug.apk dist/Iz-A-v-B-V1.01-debug.apk
+          unzip -tq dist/Iz-A-v-B-V1.01-debug.apk
+          AAPT=$(find "$ANDROID_HOME/build-tools" -type f -name aapt | sort -V | tail -1)
+          test -n "$AAPT"
+          "$AAPT" dump badging dist/Iz-A-v-B-V1.01-debug.apk | tee dist/apk-badging.txt
+          grep -Fq "package: name='ru.mezhgorod.calculator' versionCode='5' versionName='1.01'" dist/apk-badging.txt
+          sha256sum dist/Iz-A-v-B-V1.01-debug.apk > dist/Iz-A-v-B-V1.01-debug.sha256
+      - name: Upload Android V1.01 APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Iz-A-v-B-V1.01-APK
+          path: |
+            dist/Iz-A-v-B-V1.01-debug.apk
+            dist/Iz-A-v-B-V1.01-debug.sha256
+            dist/apk-badging.txt
+          if-no-files-found: error
+          retention-days: 30

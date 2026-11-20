@@ -1,0 +1,1 @@
+Restored plan DONE. Parent adb7c1a9; PR14 Draft, current HEAD runs empty. Original24 definitions preserved, status2/24 credited from existing evidence (1,17); crosswalk B01–B12 recorded. git diff --check PASS; runtime unchanged. Next block12 geocode deadline, independent of data blockers.

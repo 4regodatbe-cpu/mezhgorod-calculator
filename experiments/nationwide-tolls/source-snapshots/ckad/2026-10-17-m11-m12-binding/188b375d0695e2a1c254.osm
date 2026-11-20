@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1320 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="8513080306" visible="true" version="5" changeset="161496397" timestamp="2025-01-18T15:45:46Z" user="flierfy" uid="445671" lat="55.8132463" lon="38.5565434"/>
+ <node id="8513080324" visible="true" version="5" changeset="161496397" timestamp="2025-01-18T15:45:46Z" user="flierfy" uid="445671" lat="55.8133347" lon="38.5574280"/>
+ <node id="8513080514" visible="true" version="4" changeset="152716019" timestamp="2024-06-15T11:01:33Z" user="literan" uid="830106" lat="55.8135748" lon="38.5589540"/>
+ <node id="8513080526" visible="true" version="7" changeset="185007417" timestamp="2026-07-02T23:37:29Z" user="neo-plan" uid="363136" lat="55.8129703" lon="38.5537676"/>
+ <node id="11982687016" visible="true" version="1" changeset="152716019" timestamp="2024-06-15T11:01:33Z" user="literan" uid="830106" lat="55.8134301" lon="38.5581145"/>
+ <way id="916593983" visible="true" version="23" changeset="187908409" timestamp="2026-08-23T20:52:10Z" user="Nine-tailed" uid="2006945">
+  <nd ref="8513080514"/>
+  <nd ref="11982687016"/>
+  <nd ref="8513080324"/>
+  <nd ref="8513080306"/>
+  <nd ref="8513080526"/>
+  <tag k="highway" v="trunk_link"/>
+  <tag k="lanes" v="4"/>
+  <tag k="lit" v="yes"/>
+  <tag k="motorroad" v="yes"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+</osm>

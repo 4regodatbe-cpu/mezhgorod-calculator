@@ -1,0 +1,63 @@
+{
+  "caseId": "dnr-донецк-saint-petersburg-center",
+  "status": "audited",
+  "commandExit": 0,
+  "stage1Completed": 20,
+  "stage1Planned": 155,
+  "next": {
+    "caseId": "dnr-краматорск-kazan-center",
+    "kind": "regional",
+    "region": "dnr"
+  },
+  "provider": "Valhalla",
+  "routeMeters": 1930307,
+  "traceComplete": true,
+  "weekday": null,
+  "weekend": null,
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "components": [
+    {
+      "id": "m4",
+      "amount": 3810,
+      "reason": "matrix exact selected-route M4 vector"
+    },
+    {
+      "id": "m11-15-58",
+      "amount": 1130,
+      "reason": "m11_head_ready_direct_pair_at_departure"
+    },
+    {
+      "id": "m11-58-679",
+      "amount": 3900,
+      "reason": "matrix dated selected-route M11 direct pair"
+    },
+    {
+      "id": "m11-679-684",
+      "amount": 94,
+      "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+    },
+    {
+      "id": "zsd",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1"
+    }
+  ],
+  "captureSha256": "e46d6bee84222d17700ed46e0f6233f99170f83090ea1f070446e9445979d5ec",
+  "parity": true,
+  "evidence": {
+    "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T22-34-38-555Z.json",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-saint-petersburg-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-35-07-784Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-донецк-saint-petersburg-center/2026-10-15T22-35-07-667Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T22-35-08-301Z.json",
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T22-35-08-858Z.json",
+    "sameDateParity": true
+  },
+  "commands": {
+    "inventory": 0,
+    "report": 0
+  },
+  "parentRemote": "1a6ebc99c3afdb68f36956ec684df3d64bdd08cb"
+}

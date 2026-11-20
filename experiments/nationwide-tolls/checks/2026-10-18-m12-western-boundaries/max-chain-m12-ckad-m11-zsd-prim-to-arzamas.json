@@ -1,0 +1,23 @@
+{
+  "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+  "causeReviewStatus": "blocked_by_missing_reliable_data",
+  "primaryExitWayIds": [
+    "1550135076",
+    "1550561305",
+    "1206479738"
+  ],
+  "sharedJunctionNodeIds": [
+    "14102954884",
+    "10090995838"
+  ],
+  "physicalExitChainVerified": true,
+  "exitRoadRef": "22Н-0239",
+  "candidateOperatorPoint": "arzamas_p158",
+  "unappliedCandidateRub": 2952,
+  "operatorPointBindingProven": false,
+  "existingSubtotalRub": 5475,
+  "fullTripRub": null,
+  "newPricedComponents": 0,
+  "confirmedFullTripFares": 0,
+  "missing": "Official coordinate/object-to-operator charged-boundary crosswalk; gantry identity tags absent; exit relation to tariff point not established"
+}

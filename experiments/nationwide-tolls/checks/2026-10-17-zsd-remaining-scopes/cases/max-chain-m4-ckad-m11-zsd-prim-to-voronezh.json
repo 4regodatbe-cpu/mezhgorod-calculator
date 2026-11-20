@@ -1,0 +1,337 @@
+{
+  "caseId": "max-chain-m4-ckad-m11-zsd-prim-to-voronezh",
+  "sourceHead": "97d165fe4d071e68d2a30b341babc16fb1c2af56",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-prim-to-voronezh/2026-10-16T01-27-29-307Z-capture.json.gz",
+  "captureSha256": "df4379076a11666c8c30ea95f4068f86304d1477638f7a71e18d3b02e6e1751d",
+  "priorResultPath": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/max-chain-m4-ckad-m11-zsd-prim-to-voronezh.json",
+  "priorResultSha256": "b3e3f0fd1e25908ca0908afbffe6813e1b98d9c1c2b45d1fd08cfb80559cd140",
+  "fingerprint": "5733fbb44c1c68eac1b81aa40e7e08b59201621562b0c133671ae51437d09a34",
+  "selectedProvider": "Valhalla",
+  "selectedProviderGeometryIdentity": "exact",
+  "coordinateCount": 7704,
+  "selectedProviderSteps": [
+    {
+      "instruction": "Развернитесь налево на E 18/AH8.",
+      "begin_shape_index": 77,
+      "end_shape_index": 144,
+      "length": 2.967
+    },
+    {
+      "instruction": "Сверните на въезд к ЗСД/Богатырский проспект.",
+      "begin_shape_index": 144,
+      "end_shape_index": 165,
+      "length": 1.452
+    },
+    {
+      "instruction": "Сверните на съезде на Богатырский проспект.",
+      "begin_shape_index": 165,
+      "end_shape_index": 177,
+      "length": 0.556
+    },
+    {
+      "instruction": "Держитесь левее, чтобы свернуть на Богатырский проспект.",
+      "begin_shape_index": 177,
+      "end_shape_index": 180,
+      "length": 0.081
+    },
+    {
+      "instruction": "Держитесь левее, чтобы свернуть на ЗСД.",
+      "begin_shape_index": 180,
+      "end_shape_index": 257,
+      "length": 4.9
+    },
+    {
+      "instruction": "Держитесь левее, чтобы остаться на ЗСД к набережная Обводного канала/Благодатная улица.",
+      "begin_shape_index": 257,
+      "end_shape_index": 488,
+      "length": 17.353
+    },
+    {
+      "instruction": "Держитесь левее, чтобы свернуть на А-118/КАД/Кольцевая автомобильная дорога вокруг г. Санкт-Петербурга к КАД/Пулковское ш..",
+      "begin_shape_index": 488,
+      "end_shape_index": 547,
+      "length": 3.469
+    }
+  ],
+  "traceComplete": true,
+  "boothCoverage": "complete",
+  "recordedZsdBooths": [
+    {
+      "osmNodeId": "1766158781",
+      "wayId": "355755817",
+      "edgeToll": true
+    },
+    {
+      "osmNodeId": "933975069",
+      "wayId": "375574640",
+      "edgeToll": true
+    }
+  ],
+  "scopeReview": "Приморский → съезд Богатырский/Планерная → городской разворот → ЗСД на юг → КАД-юг",
+  "ownerZoneCandidateOnly": "multiple-traversals",
+  "outcome": "deferred_route_policy_fix",
+  "readyTariffRub": null,
+  "newPricedComponents": 0,
+  "priorComponentProfiles": [
+    {
+      "departureAt": "2026-10-15T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1",
+      "componentResult": "unknown",
+      "segments": []
+    },
+    {
+      "departureAt": "2026-10-17T09:00:00+03:00",
+      "amount": null,
+      "reason": "zsd_trip_extends_outside_reviewed_zone1",
+      "componentResult": "unknown",
+      "segments": []
+    }
+  ],
+  "newComponentDateChecks": 0,
+  "newLiveRouteRequests": 0,
+  "newFullRouteReplays": 0,
+  "reentryProof": [
+    {
+      "captureCallIndex": 3,
+      "edges": [
+        {
+          "way_id": 944399839,
+          "toll": true,
+          "end_shape_index": 158,
+          "begin_shape_index": 157,
+          "names": [
+            "ЗСД"
+          ],
+          "end_node": {
+            "node_id": 3764976731,
+            "type": "street_intersection"
+          }
+        },
+        {
+          "way_id": 493643653,
+          "toll": true,
+          "end_shape_index": 163,
+          "begin_shape_index": 158,
+          "names": [
+            "ЗСД"
+          ],
+          "end_node": {
+            "node_id": 6771351212,
+            "type": "street_intersection"
+          }
+        },
+        {
+          "way_id": 721839717,
+          "toll": true,
+          "end_shape_index": 165,
+          "begin_shape_index": 163,
+          "names": [
+            "ЗСД"
+          ],
+          "end_node": {
+            "intersecting_edges": [
+              {}
+            ],
+            "node_id": 1375515657,
+            "type": "street_intersection"
+          }
+        },
+        {
+          "way_id": 165031082,
+          "toll": true,
+          "end_shape_index": 168,
+          "begin_shape_index": 165,
+          "sign": {},
+          "end_node": {
+            "node_id": 2027026364,
+            "type": "street_intersection"
+          }
+        },
+        {
+          "way_id": 252148968,
+          "toll": true,
+          "end_shape_index": 170,
+          "begin_shape_index": 168,
+          "end_node": {
+            "node_id": 3612944330,
+            "type": "street_intersection"
+          }
+        },
+        {
+          "way_id": 355755817,
+          "toll": true,
+          "end_shape_index": 171,
+          "begin_shape_index": 170,
+          "end_node": {
+            "node_id": 1766158781,
+            "type": "toll_booth"
+          }
+        },
+        {
+          "way_id": 151490266,
+          "toll": false,
+          "end_shape_index": 172,
+          "begin_shape_index": 171,
+          "end_node": {
+            "node_id": 3612944336,
+            "type": "street_intersection"
+          }
+        },
+        {
+          "way_id": 355755820,
+          "toll": false,
+          "end_shape_index": 174,
+          "begin_shape_index": 172,
+          "end_node": {
+            "intersecting_edges": [
+              {}
+            ],
+            "node_id": 2027026381,
+            "type": "street_intersection"
+          }
+        },
+        {
+          "way_id": 192140964,
+          "toll": false,
+          "end_shape_index": 177,
+          "begin_shape_index": 175,
+          "end_node": {
+            "intersecting_edges": [
+              {}
+            ],
+            "node_id": 1643042606,
+            "type": "street_intersection"
+          }
+        },
+        {
+          "way_id": 784207300,
+          "toll": false,
+          "end_shape_index": 179,
+          "begin_shape_index": 177,
+          "sign": {},
+          "end_node": {
+            "node_id": 3990924928,
+            "type": "street_intersection"
+          }
+        },
+        {
+          "way_id": 784207299,
+          "toll": false,
+          "end_shape_index": 180,
+          "begin_shape_index": 179,
+          "end_node": {
+            "intersecting_edges": [
+              {}
+            ],
+            "node_id": 3612944341,
+            "type": "street_intersection"
+          }
+        },
+        {
+          "way_id": 355755821,
+          "toll": false,
+          "end_shape_index": 184,
+          "begin_shape_index": 180,
+          "end_node": {
+            "intersecting_edges": [
+              {}
+            ],
+            "node_id": 3612944340,
+            "type": "street_intersection"
+          }
+        },
+        {
+          "way_id": 312063993,
+          "toll": true,
+          "end_shape_index": 185,
+          "begin_shape_index": 184,
+          "sign": {},
+          "end_node": {
+            "node_id": 2023081034,
+            "type": "street_intersection"
+          }
+        },
+        {
+          "way_id": 192140957,
+          "toll": true,
+          "end_shape_index": 188,
+          "begin_shape_index": 185,
+          "end_node": {
+            "node_id": 3612944337,
+            "type": "street_intersection"
+          }
+        },
+        {
+          "way_id": 355755818,
+          "toll": true,
+          "end_shape_index": 189,
+          "begin_shape_index": 188,
+          "end_node": {
+            "node_id": 1766158787,
+            "type": "toll_booth"
+          }
+        },
+        {
+          "way_id": 191727240,
+          "toll": true,
+          "end_shape_index": 190,
+          "begin_shape_index": 189,
+          "end_node": {
+            "node_id": 3612944331,
+            "type": "street_intersection"
+          }
+        },
+        {
+          "way_id": 355755819,
+          "toll": true,
+          "end_shape_index": 192,
+          "begin_shape_index": 190,
+          "end_node": {
+            "node_id": 2027026366,
+            "type": "street_intersection"
+          }
+        },
+        {
+          "way_id": 721839718,
+          "toll": true,
+          "end_shape_index": 193,
+          "begin_shape_index": 192,
+          "end_node": {
+            "node_id": 6771351213,
+            "type": "street_intersection"
+          }
+        },
+        {
+          "way_id": 252148969,
+          "toll": true,
+          "end_shape_index": 195,
+          "begin_shape_index": 193,
+          "end_node": {
+            "intersecting_edges": [
+              {}
+            ],
+            "node_id": 1766158776,
+            "type": "street_intersection"
+          }
+        },
+        {
+          "way_id": 233006897,
+          "toll": true,
+          "end_shape_index": 204,
+          "begin_shape_index": 195,
+          "names": [
+            "ЗСД"
+          ],
+          "end_node": {
+            "node_id": 1374949775,
+            "type": "street_intersection"
+          }
+        }
+      ]
+    }
+  ],
+  "separateInterchangeGantryEvidence": [],
+  "traceIndexLimit": "Do not apply trace end_shape_index to input shape: matched trace indices differ. No such coordinate mapping used.",
+  "missing": "Route selection must enforce the no-reentry policy before any finished-vector binding; current amount remains unknown."
+}

@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "reviewedAtUtc": "2026-10-17T07:41:10Z",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "pr": 14,
+  "sourceHead": "bdf620e441d2cbe287a348bd388d28e188106341",
+  "sourceTree": "2deefbad4cf1b3038576cabbbe77745643f2a818",
+  "observedVerification": {
+    "runId": 39010035622,
+    "status": "completed",
+    "conclusion": "success",
+    "headSha": "bdf620e441d2cbe287a348bd388d28e188106341"
+  },
+  "sourceReport": {
+    "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/REPORT.json",
+    "blobSha": "528163f94cf0092bf58ad5b0be200059d61baff9",
+    "sha256": "cf72f0f4084236e3acb442a961bae5a9c79f49980566b6d784bd8b73642d765e"
+  },
+  "finding": {
+    "code": "odintsovo:unpriced",
+    "baselineCaseCount": 2,
+    "status": "blocked_by_missing_reliable_data",
+    "cause": "Saved selected-route traces prove Northern Odintsovo Bypass traversal but do not establish the exact directed operator PVP boundary vector for either route. An official category-I base-fare candidate table exists, but route-to-vector binding remains under audit and the tariff selection report says runtimeApproved=false. M1 and an unmapped paid-booth component also remain unknown.",
+    "userImpact": "A confirmed complete toll total cannot be shown for either route; the calculator correctly leaves it unknown/null.",
+    "overlap": {
+      "engine_not_yet_composed": 2,
+      "expected_road_not_proven": 0,
+      "caseIds": [
+        "single-odintsovo-golitsyno-to-rublevo",
+        "single-odintsovo-rublevo-to-golitsyno"
+      ]
+    }
+  },
+  "counts": {
+    "routeCasesChecked": 2,
+    "uniqueRouteDateProfilesChecked": 4,
+    "evidenceOccurrences": 6,
+    "evidenceFilesPresent": 6,
+    "newLiveRouteRuns": 0,
+    "newReplays": 0,
+    "tests": 0,
+    "builds": 0,
+    "tariffsConfirmed": 0
+  },
+  "tariffSources": [
+    {
+      "path": "experiments/nationwide-tolls/TARIFF_MATRIX_CANDIDATES_2026-10-12.json",
+      "blobSha": "c17e3ee0e183d4d646648a627803f385c21718a1",
+      "entryId": "odintsovo-bypass-category1-base",
+      "effectiveFrom": "2026-01-15",
+      "sourceReviewedAt": "2026-10-12",
+      "note": "Official category-I base-fare table transcribed with direction/time bands and representative PVP vectors; exact route vectors remain unbound."
+    },
+    {
+      "path": "experiments/nationwide-tolls/TARIFF_SELECTION_REPORT.json",
+      "blobSha": "ffa63408f8e3f559066bd1e42e67bfc956f08b3e",
+      "status": "current candidates; integration pending",
+      "runtimeApproved": false,
+      "odintsovoCandidateRows": 96
+    },
+    {
+      "path": "experiments/nationwide-tolls/tariff-products.json",
+      "blobSha": "b49f5fdd639bf7439e312804bc390dad3020c011",
+      "productId": "odintsovo",
+      "boundary": "Proven northern Odintsovo bypass entry and exit",
+      "matrix": "Operator direction/time pair to audit",
+      "overlap": "Separate from M-1."
+    }
+  ],
+  "cases": [
+    {
+      "caseId": "single-odintsovo-golitsyno-to-rublevo",
+      "routeMeters": 46386,
+      "routeSeconds": 2811,
+      "weekdayAt": "2026-10-15T09:00:00+03:00",
+      "weekendAt": "2026-10-17T09:00:00+03:00",
+      "traceComplete": true,
+      "sameDateParity": true,
+      "odintsovoTraversal": "proven",
+      "paidEdges": {
+        "occurrences": 46,
+        "uniqueWays": 45
+      },
+      "namedBoothNode": "3109177688",
+      "tollNodeIds": [
+        "3109177688",
+        "3783549013"
+      ],
+      "components": {
+        "m1": null,
+        "odintsovo": null,
+        "unknownPaidRoad": null
+      },
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "priceConfirmation": "unconfirmed",
+      "captureSha256": "6b774aae7ccc059e02ce7b6b16d9e336c73a635fb3add1f3a0b58949487c64b8"
+    },
+    {
+      "caseId": "single-odintsovo-rublevo-to-golitsyno",
+      "routeMeters": 43941,
+      "routeSeconds": 2638,
+      "weekdayAt": "2026-10-15T09:00:00+03:00",
+      "weekendAt": "2026-10-17T09:00:00+03:00",
+      "traceComplete": true,
+      "sameDateParity": true,
+      "odintsovoTraversal": "proven",
+      "paidEdges": {
+        "occurrences": 41,
+        "uniqueWays": 40
+      },
+      "namedBoothNode": "3109177690",
+      "tollNodeIds": [
+        "3783549015",
+        "3109177690"
+      ],
+      "components": {
+        "m1": null,
+        "odintsovo": null,
+        "unknownPaidRoad": null
+      },
+      "weekdayAmount": null,
+      "weekendAmount": null,
+      "priceConfirmation": "unconfirmed",
+      "captureSha256": "14ff3bd2aa0daa55de044e69757be17b2632559411ebad074b8b9a4098981522"
+    }
+  ],
+  "evidenceOccurrences": [
+    {
+      "kind": "weekday_live",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/live-2026-10-15T09-00-00-03-00-2026-10-16T02-07-00-759Z.json",
+      "blobSha": "0d5afc24abe4041046b70fc44cadeda211c1ed33"
+    },
+    {
+      "kind": "weekday_same_date_replay",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-07-01-099Z.json",
+      "blobSha": "8594bf39002a14a012880f542c1c9ff0d388ffea"
+    },
+    {
+      "kind": "weekend_replay",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-07-01-434Z.json",
+      "blobSha": "4d1429992236276254f01be4bce064d916d4014c"
+    },
+    {
+      "kind": "weekday_live",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/live-2026-10-15T09-00-00-03-00-2026-10-16T02-09-24-629Z.json",
+      "blobSha": "c70949de22cd0e47a2e9010044547246e0e73369"
+    },
+    {
+      "kind": "weekday_same_date_replay",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/replay-2026-10-15T09-00-00-03-00-2026-10-16T02-09-24-973Z.json",
+      "blobSha": "a5bf1cc6500eca903c0e525feb98b698971190b5"
+    },
+    {
+      "kind": "weekend_replay",
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-rublevo-to-golitsyno/replay-2026-10-17T09-00-00-03-00-2026-10-16T02-09-25-301Z.json",
+      "blobSha": "bbf04b11459402f3883e5e97e6f970d0809843cd"
+    }
+  ],
+  "constraints": {
+    "fastestRouteOnly": true,
+    "vehicle": "passenger car",
+    "transponder": false,
+    "unknownIsNotZero": true,
+    "wholeTripPricingByDeparture": true
+  }
+}

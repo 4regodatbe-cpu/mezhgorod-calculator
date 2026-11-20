@@ -1,0 +1,84 @@
+▲ Next.js 16.3.4
+- Local:         http://127.0.0.1:3193
+- Network:       http://127.0.0.1:3193
+✓ Ready in 124ms
+✓ Running next.config.ts took 53ms
+calculation_timing {
+  status: 200,
+  handlerElapsedMs: 4085.855,
+  targetMs: 10000,
+  overTarget: false,
+  stages: [
+    {
+      stage: 'request_body',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.462,
+      maxMs: 0.462
+    },
+    {
+      stage: 'geocoding',
+      calls: 1,
+      errors: 0,
+      totalMs: 0.099,
+      maxMs: 0.099
+    },
+    {
+      stage: 'route_leg',
+      calls: 1,
+      errors: 0,
+      totalMs: 4068.522,
+      maxMs: 4068.522
+    },
+    {
+      stage: 'routing',
+      calls: 1,
+      errors: 0,
+      totalMs: 2064.693,
+      maxMs: 2064.693
+    },
+    {
+      stage: 'provider_valhalla',
+      calls: 1,
+      errors: 0,
+      totalMs: 2064.61,
+      maxMs: 2064.61
+    },
+    {
+      stage: 'provider_osrm',
+      calls: 1,
+      errors: 0,
+      totalMs: 1371.615,
+      maxMs: 1371.615
+    },
+    {
+      stage: 'provider_brouter',
+      calls: 1,
+      errors: 1,
+      totalMs: 895.285,
+      maxMs: 895.285
+    },
+    {
+      stage: 'toll_matching',
+      calls: 1,
+      errors: 0,
+      totalMs: 1830.996,
+      maxMs: 1830.996
+    },
+    {
+      stage: 'toll_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 119.838,
+      maxMs: 119.838
+    },
+    {
+      stage: 'response_pricing',
+      calls: 1,
+      errors: 0,
+      totalMs: 15.394,
+      maxMs: 15.394
+    }
+  ],
+  stops: []
+}

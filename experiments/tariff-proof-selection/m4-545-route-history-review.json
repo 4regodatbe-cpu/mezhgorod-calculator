@@ -1,0 +1,320 @@
+{
+  "experiment": 9,
+  "caseId": "pair-m4-a289-taman-to-voronezh",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-a289-taman-to-voronezh/2026-10-16T00-10-53-930Z-capture.json.gz",
+  "captureSha256": "db7ce8f0d256d7e2583644611c3a00adae58c5367735a146a4f9005867b9404a",
+  "provider": "OSRM",
+  "meters": 1026560,
+  "routeCoordinateCount": 6540,
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "traceValidation": {
+    "complete": true,
+    "chunkCount": 8,
+    "checkedChunkCount": 8,
+    "failedChunkCount": 0,
+    "boothEventCoverage": "complete"
+  },
+  "savedTraceResponses": [
+    {
+      "callIndex": 3,
+      "status": 200,
+      "sha256": "dce3f4774895288444f7e7c8a9ac34d1deea2a318020f8a87c96baf12ac10865",
+      "edgeCount": 189
+    },
+    {
+      "callIndex": 4,
+      "status": 200,
+      "sha256": "a1de1264b163d668abd3eeb644b6cf32d7c147b4798062420c38fec979a1017e",
+      "edgeCount": 247
+    },
+    {
+      "callIndex": 5,
+      "status": 200,
+      "sha256": "3234873b2338ac097e6091c79aeada3437a3344855ecf8129490c275c43f121d",
+      "edgeCount": 327
+    },
+    {
+      "callIndex": 6,
+      "status": 200,
+      "sha256": "0a5329e088540aafaf7046784f90877a036970b296f59ff0205acd1bb0ef02d8",
+      "edgeCount": 254
+    },
+    {
+      "callIndex": 7,
+      "status": 200,
+      "sha256": "b3877fd2df94d442cde593d2e079921b9385e0e90139dffc7bce094ca6882c81",
+      "edgeCount": 219
+    },
+    {
+      "callIndex": 8,
+      "status": 200,
+      "sha256": "e0e9c9c136565f39458db93a828e38ae1588d235d9990d5b314a1e5d01ad2bce",
+      "edgeCount": 202
+    },
+    {
+      "callIndex": 9,
+      "status": 200,
+      "sha256": "2ccf9ad1f282854cb92660ae2a73e0d9f177cfe946064da480a47beff2bbfab5",
+      "edgeCount": 236
+    },
+    {
+      "callIndex": 10,
+      "status": 200,
+      "sha256": "0647bcf5a54402b2aa7949454307129aa5c024b5da532423c6885905f499f42f",
+      "edgeCount": 181
+    }
+  ],
+  "localHistory": {
+    "historyStatus": "observed_reviewed_case",
+    "predecessor": "northbound_M4_to_fork_4522140254",
+    "cashBranch": "southern_northbound_5818209495",
+    "successor": "bypass_side_M4_then_connector_301694367_to_R298",
+    "traceCallIndex": 10,
+    "gateEdgeIndex": 38,
+    "connectorEdgeIndex": 70,
+    "observedGateCount": 1,
+    "candidateProducts": [
+      "517-544",
+      "544-589"
+    ],
+    "confirmedProducts": [],
+    "pricingStatus": "unknown",
+    "rub": null,
+    "missingProof": [
+      "dated_operator_route_product_rule",
+      "certified_product_boundary_crossings",
+      "applicable_fare_and_no_double_payment"
+    ]
+  },
+  "reviewedFinalChunk": {
+    "callIndex": 10,
+    "edgeCount": 181,
+    "gate": {
+      "edgeIndex": 38,
+      "wayId": "615270691",
+      "nodeId": "5818209495"
+    },
+    "contiguousEdgeShapeIndices": true,
+    "firstR298EdgeIndex": 71,
+    "gatePathEdges": [
+      {
+        "way_id": 1043769291,
+        "toll": true,
+        "end_shape_index": 104,
+        "begin_shape_index": 102,
+        "names": [
+          "М-4",
+          "E 115",
+          "«Дон»"
+        ],
+        "end_node": {
+          "intersecting_edges": [
+            {},
+            {},
+            {}
+          ],
+          "node_id": 4522140254,
+          "type": "street_intersection"
+        }
+      },
+      {
+        "way_id": 799492317,
+        "toll": true,
+        "end_shape_index": 105,
+        "begin_shape_index": 104,
+        "end_node": {
+          "node_id": 2350820444,
+          "type": "street_intersection"
+        }
+      },
+      {
+        "way_id": 615270676,
+        "toll": true,
+        "end_shape_index": 106,
+        "begin_shape_index": 105,
+        "end_node": {
+          "node_id": 5818209500,
+          "type": "street_intersection"
+        }
+      },
+      {
+        "way_id": 615270691,
+        "toll": true,
+        "end_shape_index": 107,
+        "begin_shape_index": 106,
+        "end_node": {
+          "node_id": 5818209495,
+          "type": "toll_booth"
+        }
+      },
+      {
+        "way_id": 615270691,
+        "toll": true,
+        "end_shape_index": 108,
+        "begin_shape_index": 107,
+        "sign": {},
+        "end_node": {
+          "node_id": 5818209499,
+          "type": "street_intersection"
+        }
+      },
+      {
+        "way_id": 615270694,
+        "toll": true,
+        "end_shape_index": 109,
+        "begin_shape_index": 108,
+        "end_node": {
+          "node_id": 9605783251,
+          "type": "street_intersection"
+        }
+      },
+      {
+        "way_id": 1043769287,
+        "toll": true,
+        "end_shape_index": 112,
+        "begin_shape_index": 109,
+        "end_node": {
+          "node_id": 5818209497,
+          "type": "street_intersection"
+        }
+      },
+      {
+        "way_id": 799492323,
+        "toll": true,
+        "end_shape_index": 123,
+        "begin_shape_index": 112,
+        "end_node": {
+          "intersecting_edges": [
+            {}
+          ],
+          "node_id": 4513805004,
+          "type": "street_intersection"
+        }
+      }
+    ],
+    "onwardWayAndEndNodes": [
+      {
+        "wayId": "702218808",
+        "endNodeId": "3504913992"
+      },
+      {
+        "wayId": "433128212",
+        "endNodeId": "3504913991"
+      },
+      {
+        "wayId": "455836734",
+        "endNodeId": "11071854764"
+      },
+      {
+        "wayId": "799492327",
+        "endNodeId": "4522140268"
+      },
+      {
+        "wayId": "455836733",
+        "endNodeId": "4522140267"
+      },
+      {
+        "wayId": "499441803",
+        "endNodeId": "4513804873"
+      },
+      {
+        "wayId": "455836738",
+        "endNodeId": "4904703560"
+      },
+      {
+        "wayId": "499441802",
+        "endNodeId": "4522140270"
+      },
+      {
+        "wayId": "455836737",
+        "endNodeId": "4522140273"
+      },
+      {
+        "wayId": "454892385",
+        "endNodeId": "6955740858"
+      },
+      {
+        "wayId": "743103710",
+        "endNodeId": "4904703618"
+      },
+      {
+        "wayId": "743103711",
+        "endNodeId": "5127092327"
+      },
+      {
+        "wayId": "743103712",
+        "endNodeId": "6955740857"
+      },
+      {
+        "wayId": "1044709398",
+        "endNodeId": "9612743505"
+      },
+      {
+        "wayId": "1044709397",
+        "endNodeId": "9612743504"
+      },
+      {
+        "wayId": "1044709396",
+        "endNodeId": "4975866638"
+      },
+      {
+        "wayId": "1044709394",
+        "endNodeId": "4904703727"
+      },
+      {
+        "wayId": "1044709393",
+        "endNodeId": "9612743482"
+      },
+      {
+        "wayId": "743103709",
+        "endNodeId": "6788667380"
+      },
+      {
+        "wayId": "723824074",
+        "endNodeId": "11071950213"
+      },
+      {
+        "wayId": "1192745821",
+        "endNodeId": "11071950212"
+      },
+      {
+        "wayId": "1192745820",
+        "endNodeId": "4904703890"
+      },
+      {
+        "wayId": "1192744596",
+        "endNodeId": "11071960450"
+      },
+      {
+        "wayId": "723824073",
+        "endNodeId": "2938423267"
+      },
+      {
+        "wayId": "290284958",
+        "endNodeId": "3057885083"
+      },
+      {
+        "wayId": "604693287",
+        "endNodeId": "4513804998"
+      },
+      {
+        "wayId": "1044709392",
+        "endNodeId": "3057885096"
+      },
+      {
+        "wayId": "301694367",
+        "endNodeId": "3057885104"
+      },
+      {
+        "wayId": "705714822",
+        "endNodeId": "318331760"
+      }
+    ]
+  },
+  "limitations": [
+    "shape indices address matched trace geometry, not OSRM coordinate indices",
+    "filtered responses lack full matched shape and explicit directed start nodes",
+    "complete trace and OSM toll flags do not certify operator product endpoints",
+    "no governing October2026collection rule/additivity/valid fare admitted"
+  ]
+}

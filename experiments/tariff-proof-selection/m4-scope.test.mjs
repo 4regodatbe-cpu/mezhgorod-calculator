@@ -1,0 +1,31 @@
+import {readFileSync} from 'node:fs';
+import {gunzipSync} from 'node:zlib';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+import test from 'node:test';
+const root=new URL('../../',import.meta.url);
+const load=p=>JSON.parse(readFileSync(new URL(p,root)));
+test('exact saved pending-vector geometry excludes retained1093 booths, without claiming free',()=>{
+  const pending=load('experiments/nationwide-tolls/M4_GRAPH_ENDPOINT_REGISTER.json').pending[0];
+  const source=pending.topologySources[0],bytes=readFileSync(new URL(source.capture,root));
+  assert.equal(createHash('sha256').update(bytes).digest('hex'),source.sha256);
+  const coordinates=JSON.parse(gunzipSync(bytes)).record.route.coordinates;
+  const identity=load('experiments/road-ref-boundaries/checks/2026-10-24-b04-osm-coordinate-intake/reviewed-identity.json');
+  const indices=identity.boundaries.map(b=>{
+    const {lat,lon}=b.coordinates;
+    const found=coordinates.flatMap((p,i)=>p[0].toFixed(6)===lon.toFixed(6)&&p[1].toFixed(6)===lat.toFixed(6)?[i]:[]);
+    assert.equal(found.length,1,'no nearest matching or ambiguous route occurrence');
+    return found[0];
+  });
+  assert.deepEqual(indices,[1877,2328]);
+  const segment=coordinates.slice(indices[0],indices[1]+1);
+  assert.equal(segment.length,452);
+  const minLat=Math.min(...segment.map(p=>p[1]));
+  assert.equal(minLat,47.510556);
+  assert.equal(Math.max(...segment.map(p=>p[1])),48.186303);
+  const plaza=load('data/m4-pvp-osm-partial.json').verifiedNamedPlazas.find(p=>p.km===1093);
+  assert.equal(plaza.laneNodes.length,2);
+  assert.ok(plaza.laneNodes.every(n=>n.lat<minLat-0.49));
+  assert.equal(pending.rub,null);
+  assert.equal(pending.runtimeEligible,false);
+});

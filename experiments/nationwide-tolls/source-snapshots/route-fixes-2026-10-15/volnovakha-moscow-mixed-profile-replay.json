@@ -1,0 +1,18 @@
+{
+  "scope": "Offline replay of captured route and complete live trace; payment profile changes during trip, so unknown remains required",
+  "result": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m4",
+      "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": "Стоимость не подтверждена",
+    "pricingStatus": "unknown"
+  },
+  "departureAt": "2026-10-15T12:00:00+03:00"
+}

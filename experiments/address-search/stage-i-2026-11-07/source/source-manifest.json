@@ -1,0 +1,22 @@
+{
+  "source": "GeoNames cities15000 daily export",
+  "url": "https://download.geonames.org/export/dump/cities15000.zip",
+  "license": {
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "GeoNames geographical database; filtered and indexed by Mezhgorod Calculator"
+  },
+  "http": {
+    "status": 200,
+    "date": "2026-11-07T23:18:22Z",
+    "lastModified": "2026-11-07T02:54:40Z",
+    "etag": "\"335ce4-65fa6d9a37351\"",
+    "contentLength": 3366116,
+    "contentType": "application/zip"
+  },
+  "artifact": {
+    "path": "cities15000.zip",
+    "sha256": "37d3b39e88167155539dc4aaf93886527c5037b6a822087e48fe530baf8436b7"
+  },
+  "note": "GeoNames row modificationDate is retained per city; the archive retrieval date is not substituted for that field. The archive snapshot is kept to verify the four selected rows and their original IDs/names/coordinates."
+}

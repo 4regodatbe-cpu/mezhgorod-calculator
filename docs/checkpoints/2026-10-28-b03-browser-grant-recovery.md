@@ -1,0 +1,7 @@
+# B03 browser permission recovery DONE —28.10.2026 МСК
+
+Parentremoteb7154177f818d59e632e6a9bbbf599b7d1064bed/tree266821e4659e9f5d056d82772545875fd930008e. Default sandboxpreflightfailed once, preserved unchanged. New condition: standard exec_command per-command networkgrant. Same Chromium154.0.8037.57/Playwright1.57/Node24.19.0, one launch under new condition PASS; newPage/setContent/DOMtextPASS; browserclosed. No external requests or app startup. [Machine evidence](../../experiments/road-ref-boundaries/checks/2026-10-28-b03-runtime/browser-grant-recovery.json).
+
+This does not bypass proxy/auth or change app for sandbox: cloud-runtime's ordinary command permission changes the available network system calls. No repeat under unchanged conditions. Original default-condition failure stays historical; current browser is usable with grant. No UI tests claimed yet. Next after durable save: localNext/targeted new10scenario runner with mocked/routedAPI, not oldeightfallbacksuite.
+
+Independent publication constraint found in existing `scripts/classify-special-territory-live-push.mjs`: all app/v2/ and lib/paths trigger broadlive_probe. Do not publish runtime fixes until owner permits a safe focused CI path or associated broadrun; no CIpolicy silently weakened. Test-only diagnostics/docs can proceed. No tariff changes; carry-forwardpolicy retained. JSONparse/diff--check; publication after currentCIcompletion with normalexpected-parent/tree/file readback.

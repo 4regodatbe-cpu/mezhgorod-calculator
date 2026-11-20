@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T02:03:13.269Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 128,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 17,
+    "spec": {
+      "caseId": "single-m3-obninsk-to-kaluga",
+      "kind": "road",
+      "group": "single-m3"
+    }
+  },
+  "caseId": "single-m3-obninsk-to-kaluga",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T02-03-13-269Z-part17",
+  "parent": "fd03059a138674e575112cc86a32d4e9aa5f56a4"
+}

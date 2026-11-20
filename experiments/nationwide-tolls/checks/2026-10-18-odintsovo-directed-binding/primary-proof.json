@@ -1,0 +1,310 @@
+{
+  "status": "PRIMARY_LANES_PROVEN",
+  "sourceHead": "56e3fa884fd95248c542e6ccbc647a935e0869e7",
+  "primaryRequests": 4,
+  "newRouting": 0,
+  "newTrace": 0,
+  "newPrices": 0,
+  "confirmedFullTripFares": 0,
+  "bindings": [
+    {
+      "caseId": "single-odintsovo-golitsyno-to-rublevo",
+      "nodeId": "3109177688",
+      "wayId": "1067836106",
+      "plazaName": "ПВП 17,7 км",
+      "operator": "АО «Новое качество дорог»",
+      "oneway": true,
+      "sourceFile": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-directed-binding/1067836106.osm.xml",
+      "sourceSha256": "896d898d5651728dd3fef071cb5e8272338584d17605ce2a273b90d1a108cbaa",
+      "orderedLaneWitnesses": [
+        {
+          "nodeId": "9803415303",
+          "coordinate": [
+            37.178037,
+            55.6417153
+          ],
+          "routeIndex": 438.00323349168195,
+          "distanceMeters": 0.0030566100593724032
+        },
+        {
+          "nodeId": "3109177688",
+          "coordinate": [
+            37.1780521,
+            55.6418071
+          ],
+          "routeIndex": 439.00144979059473,
+          "distanceMeters": 0.005206563664597973
+        }
+      ],
+      "ownLaneDirectionProven": true
+    },
+    {
+      "caseId": "single-odintsovo-golitsyno-to-rublevo",
+      "nodeId": "3783549013",
+      "wayId": "374972862",
+      "plazaName": "ПВП 6,9 км",
+      "operator": "АО «Новое качество дорог»",
+      "oneway": true,
+      "sourceFile": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-directed-binding/374972862.osm.xml",
+      "sourceSha256": "4cd154f387f8e8d3b72efbb8a3c6c7513a689cb57f83b18cfb511897c50d70c3",
+      "orderedLaneWitnesses": [
+        {
+          "nodeId": "3783548605",
+          "coordinate": [
+            37.2913688,
+            55.6967811
+          ],
+          "routeIndex": 628.9997801848649,
+          "distanceMeters": 0.01571988762238113
+        },
+        {
+          "nodeId": "3783548642",
+          "coordinate": [
+            37.2919645,
+            55.6969923
+          ],
+          "routeIndex": 629.9998007648366,
+          "distanceMeters": 0.04491466113889967
+        },
+        {
+          "nodeId": "3783548660",
+          "coordinate": [
+            37.2924463,
+            55.697155
+          ],
+          "routeIndex": 631.0002469249372,
+          "distanceMeters": 0.010031755905699765
+        },
+        {
+          "nodeId": "3783548709",
+          "coordinate": [
+            37.2933146,
+            55.6974636
+          ],
+          "routeIndex": 631.9993021676053,
+          "distanceMeters": 0.02424064974638683
+        },
+        {
+          "nodeId": "3783548728",
+          "coordinate": [
+            37.2936582,
+            55.6975895
+          ],
+          "routeIndex": 632.9992259299105,
+          "distanceMeters": 0.05342021204448534
+        },
+        {
+          "nodeId": "3783549013",
+          "coordinate": [
+            37.294105,
+            55.697749
+          ],
+          "routeIndex": 634,
+          "distanceMeters": 0.0
+        },
+        {
+          "nodeId": "3783548858",
+          "coordinate": [
+            37.2943773,
+            55.6978462
+          ],
+          "routeIndex": 635.0009961077872,
+          "distanceMeters": 0.008969021120479011
+        },
+        {
+          "nodeId": "3783548873",
+          "coordinate": [
+            37.2947542,
+            55.6979775
+          ],
+          "routeIndex": 635.9993278276705,
+          "distanceMeters": 0.05383912881615252
+        },
+        {
+          "nodeId": "3783548900",
+          "coordinate": [
+            37.2953786,
+            55.6982224
+          ],
+          "routeIndex": 637.0001050988609,
+          "distanceMeters": 0.050488375103189605
+        },
+        {
+          "nodeId": "3783548947",
+          "coordinate": [
+            37.2962871,
+            55.6986214
+          ],
+          "routeIndex": 638.0004257925352,
+          "distanceMeters": 0.03161011715340407
+        },
+        {
+          "nodeId": "920071130",
+          "coordinate": [
+            37.2972387,
+            55.6990292
+          ],
+          "routeIndex": 638.9999799683272,
+          "distanceMeters": 0.02908119628182958
+        }
+      ],
+      "ownLaneDirectionProven": true
+    },
+    {
+      "caseId": "single-odintsovo-rublevo-to-golitsyno",
+      "nodeId": "3783549015",
+      "wayId": "374972870",
+      "plazaName": "ПВП 6,9 км",
+      "operator": "АО «Новое качество дорог»",
+      "oneway": true,
+      "sourceFile": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-directed-binding/374972870.osm.xml",
+      "sourceSha256": "9d8f83e52801b89f65194a0b3bf47a3cb3f28be3d511fc39904a1d3f76f3eb1b",
+      "orderedLaneWitnesses": [
+        {
+          "nodeId": "920071228",
+          "coordinate": [
+            37.2970345,
+            55.6991906
+          ],
+          "routeIndex": 246.00068540929027,
+          "distanceMeters": 0.01704498922487145
+        },
+        {
+          "nodeId": "3783548956",
+          "coordinate": [
+            37.2960687,
+            55.6987867
+          ],
+          "routeIndex": 247.00048573418644,
+          "distanceMeters": 0.015882384802045096
+        },
+        {
+          "nodeId": "3783548925",
+          "coordinate": [
+            37.2951444,
+            55.6984071
+          ],
+          "routeIndex": 247.9996263061964,
+          "distanceMeters": 0.0057798479627125445
+        },
+        {
+          "nodeId": "3783548895",
+          "coordinate": [
+            37.2945409,
+            55.6981643
+          ],
+          "routeIndex": 248.9996920310525,
+          "distanceMeters": 0.030779696045171504
+        },
+        {
+          "nodeId": "3783548879",
+          "coordinate": [
+            37.2941755,
+            55.6980258
+          ],
+          "routeIndex": 250.00114877871326,
+          "distanceMeters": 0.001981802042729973
+        },
+        {
+          "nodeId": "3783549015",
+          "coordinate": [
+            37.2937257,
+            55.6978652
+          ],
+          "routeIndex": 251.00020159244957,
+          "distanceMeters": 0.02883966518959729
+        },
+        {
+          "nodeId": "3783548750",
+          "coordinate": [
+            37.2934563,
+            55.6977691
+          ],
+          "routeIndex": 251.99890866095106,
+          "distanceMeters": 0.0006269496871837797
+        },
+        {
+          "nodeId": "3783548736",
+          "coordinate": [
+            37.2931169,
+            55.697645
+          ],
+          "routeIndex": 253.00008169733263,
+          "distanceMeters": 0.0034686659351447326
+        },
+        {
+          "nodeId": "3783548695",
+          "coordinate": [
+            37.2922675,
+            55.6973267
+          ],
+          "routeIndex": 254.00127223638023,
+          "distanceMeters": 0.010782948559455776
+        },
+        {
+          "nodeId": "3783548659",
+          "coordinate": [
+            37.2918007,
+            55.6971545
+          ],
+          "routeIndex": 255.00104431073007,
+          "distanceMeters": 0.036933481747393734
+        },
+        {
+          "nodeId": "3783548626",
+          "coordinate": [
+            37.2912118,
+            55.6969445
+          ],
+          "routeIndex": 256.0008418438009,
+          "distanceMeters": 0.041312376296501946
+        },
+        {
+          "nodeId": "920071189",
+          "coordinate": [
+            37.290573,
+            55.6967297
+          ],
+          "routeIndex": 257.00037395519644,
+          "distanceMeters": 0.029355108231498037
+        }
+      ],
+      "ownLaneDirectionProven": true
+    },
+    {
+      "caseId": "single-odintsovo-rublevo-to-golitsyno",
+      "nodeId": "3109177690",
+      "wayId": "1067836109",
+      "plazaName": "ПВП 17,7 км",
+      "operator": "АО «Новое качество дорог»",
+      "oneway": true,
+      "sourceFile": "experiments/nationwide-tolls/checks/2026-10-18-odintsovo-directed-binding/1067836109.osm.xml",
+      "sourceSha256": "b3d9458ad972ab01d6dfa89b097a7529cbdd477aa8bf40a8d2ec9b2792dd5a02",
+      "orderedLaneWitnesses": [
+        {
+          "nodeId": "9803415306",
+          "coordinate": [
+            37.1774519,
+            55.6417936
+          ],
+          "routeIndex": 447.0053563887395,
+          "distanceMeters": 0.004262967766172952
+        },
+        {
+          "nodeId": "3109177690",
+          "coordinate": [
+            37.1774461,
+            55.6417186
+          ],
+          "routeIndex": 448.004790622652,
+          "distanceMeters": 0.007783132388103232
+        }
+      ],
+      "ownLaneDirectionProven": true
+    }
+  ],
+  "limitations": [
+    "OSM named plaza/operator identity plus retained operator route examples is a source-derived association, not an official OSM-ID crosswalk or receipt.",
+    "Whole-route tariff still blocked; M1 false alias/unnamed lane classification and strict product scope need separate code review."
+  ]
+}

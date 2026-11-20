@@ -1,0 +1,87 @@
+{
+  "fullRepositoryLint": "FAIL",
+  "errors": 19,
+  "warnings": 5,
+  "allReportedFilesUnchangedAtModuleStartedHead": true,
+  "configUnchanged": true,
+  "files": [
+    {
+      "path": "app/v2/components/use-v2-calculation.ts",
+      "headBlob": "38cc70357a93269aca452be1fd9ede1932122e93",
+      "worktreeBlob": "38cc70357a93269aca452be1fd9ede1932122e93",
+      "unchanged": true
+    },
+    {
+      "path": "experiments/nationwide-tolls/engine/api-adapter.cjs",
+      "headBlob": "28b2ab181acdd51c88abf52ea15e1b7c61887d60",
+      "worktreeBlob": "28b2ab181acdd51c88abf52ea15e1b7c61887d60",
+      "unchanged": true
+    },
+    {
+      "path": "experiments/nationwide-tolls/scripts/audit-matrix-provenance.cjs",
+      "headBlob": "7dba42bcb55199bf16852494dac7d233762811bd",
+      "worktreeBlob": "7dba42bcb55199bf16852494dac7d233762811bd",
+      "unchanged": true
+    },
+    {
+      "path": "experiments/nationwide-tolls/scripts/build-m4-endpoint-register.cjs",
+      "headBlob": "8746352e72047213a4744681e8ed31dbddd1b7fe",
+      "worktreeBlob": "8746352e72047213a4744681e8ed31dbddd1b7fe",
+      "unchanged": true
+    },
+    {
+      "path": "experiments/nationwide-tolls/scripts/build-release-register.cjs",
+      "headBlob": "0f2b85e6a2301da8292e98b5abc27047e2a77a08",
+      "worktreeBlob": "0f2b85e6a2301da8292e98b5abc27047e2a77a08",
+      "unchanged": true
+    },
+    {
+      "path": "experiments/nationwide-tolls/scripts/build-vector-matrix.cjs",
+      "headBlob": "a0c061042767ea1a617a6fe140aa154615f97655",
+      "worktreeBlob": "a0c061042767ea1a617a6fe140aa154615f97655",
+      "unchanged": true
+    },
+    {
+      "path": "experiments/nationwide-tolls/scripts/quote.test.cjs",
+      "headBlob": "3c52c3ba83ce08fc63a0b8fa4f7d8683afbebf32",
+      "worktreeBlob": "3c52c3ba83ce08fc63a0b8fa4f7d8683afbebf32",
+      "unchanged": true
+    },
+    {
+      "path": "experiments/nationwide-tolls/scripts/validate-vector-matrix.cjs",
+      "headBlob": "531919b049eafaed9b5d642265e4ff18cb608818",
+      "worktreeBlob": "531919b049eafaed9b5d642265e4ff18cb608818",
+      "unchanged": true
+    },
+    {
+      "path": "experiments/toll-od-matrix/m4-pvp-compiler.test.mjs",
+      "headBlob": "bca667f1e47efd15d81a947a3785bb775ae94bfb",
+      "worktreeBlob": "bca667f1e47efd15d81a947a3785bb775ae94bfb",
+      "unchanged": true
+    },
+    {
+      "path": "lib/photon-address-search.ts",
+      "headBlob": "11a13cf6b53dce6c3e47bc702bf6e6cdb4a99cc6",
+      "worktreeBlob": "11a13cf6b53dce6c3e47bc702bf6e6cdb4a99cc6",
+      "unchanged": true
+    },
+    {
+      "path": "lib/toll-engine/m12-route-evidence.ts",
+      "headBlob": "6ad511a4b301307e4f23ae724ac7aa985f45b204",
+      "worktreeBlob": "6ad511a4b301307e4f23ae724ac7aa985f45b204",
+      "unchanged": true
+    },
+    {
+      "path": "lib/v2-calculation/route-leg.ts",
+      "headBlob": "4a261dcba3e8ddff31f365609e640a54e4bc99f9",
+      "worktreeBlob": "4a261dcba3e8ddff31f365609e640a54e4bc99f9",
+      "unchanged": true
+    },
+    {
+      "path": "lib/v2-calculation/special-options.ts",
+      "headBlob": "2598019a0e596f83c7df989d1c9f2a5e95feda32",
+      "worktreeBlob": "2598019a0e596f83c7df989d1c9f2a5e95feda32",
+      "unchanged": true
+    }
+  ]
+}

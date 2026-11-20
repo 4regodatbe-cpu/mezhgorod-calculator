@@ -1,0 +1,49 @@
+{
+  "sourceCommit": "50d36ae2b8a7ac7dc38600fac23323530250702d",
+  "status": "module-done-data-partial",
+  "fullTests": {
+    "tests": 851,
+    "pass": 851,
+    "fail": 0,
+    "skipped": 0
+  },
+  "focusedInitialTests": 18,
+  "quoteApiContracts": "PASS",
+  "eslintExit": 0,
+  "webpackBuildExit": 0,
+  "typeScript": "PASS",
+  "staticPages": "16/16",
+  "actualNamedGroups": 14,
+  "actualNamedNodes": 81,
+  "reviewedAdditionalAnchors": 0,
+  "reviewedSections": 0,
+  "pendingTransitions": 2,
+  "newLiveRequests": 0,
+  "endToEnd10seconds": "UNVERIFIED",
+  "parentCI": {
+    "run": 40068908259,
+    "overall": "success",
+    "verify": "success",
+    "liveProbe": "failure",
+    "geometry": "success",
+    "photon": "failure",
+    "settlements": "skipped",
+    "yandex": "skipped"
+  },
+  "sha256": {
+    "lib/toll-engine/road-kilometrage.ts": "3d46ae6bc27c806715cc0e5ac7eee985e24a7c91f8452e7b48cba61e8449fcb1",
+    "lib/toll-engine/optional-road-kilometrage.ts": "30b4da1d0be83b8f9fc1e8aff78d83a2b002194b262de6301081cf216b08b45d",
+    "lib/toll-engine/m4-production.ts": "fcba8e189b1fcb8d425844d97154cf4966faec25476799214514ab3e7d0b69db",
+    "data/road-kilometrage.json": "dbc8a18c0ae693e16bb8c1ff1d26236aa29fe0e11b1b4cf13fa06a656e5811fd",
+    "data/toll-feature-switches.json": "b9cabc10b11f03fcf8dad4a5315f95b4203d21119941f2e36622592864cbd4ae",
+    "data/m4-pvp-osm-partial.json": "0a3ffad2ed62edcf1b44482a6b61abb6b89be4be41ff048614cd155e4a0176b9",
+    "scripts/road-kilometrage.test.ts": "553ef61638a1d7e041188b175f4e3f6c3045ab19b01e69857dd55c77a49d1d6e",
+    "scripts/road-boundaries-v3-replay.test.ts": "82c12f65340a106af3d9c46781eb8899830d9735491f6b5962ccc13844ea386a",
+    "scripts/road-kilometrage-benchmark.mjs": "dec031a657fb9e67edb46072a0006ad4e17ec536efa1840b942c00c3b7e0b873",
+    "experiments/road-ref-boundaries/checks/2026-10-24-kilometrage/build.log": "dd5b843e5ad2995335563d7ee160bde04ed853f3478307e36afd773960d23c1e",
+    "experiments/road-ref-boundaries/checks/2026-10-24-kilometrage/eslint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experiments/road-ref-boundaries/checks/2026-10-24-kilometrage/focused.log": "f1c962c83d872cec11e02827e8fc11dc792bc5a45fc14127d73f219fdb5acb06",
+    "experiments/road-ref-boundaries/checks/2026-10-24-kilometrage/full-audit.log": "0301a4be0112a54f88d9475a91d16a81b0e8d200c4db53619fe55e8c595191cc",
+    "experiments/road-ref-boundaries/checks/2026-10-24-kilometrage/performance.json": "88060d759793d789693894b299fbe43b0e497d85a03c218a43385f1802f0fa2c"
+  }
+}

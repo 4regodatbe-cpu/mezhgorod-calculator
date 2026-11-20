@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T00:29:34.228Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 138,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 0,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 10,
+    "spec": {
+      "caseId": "single-odintsovo-moscow-to-zvenigorod",
+      "kind": "road",
+      "group": "single-odintsovo"
+    }
+  },
+  "caseId": "single-odintsovo-moscow-to-zvenigorod",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T00-29-34-228Z-part10",
+  "parent": "bb53201206d1d77c43d6ea9db4c673945e731ff5"
+}

@@ -1,0 +1,13 @@
+# A+B — one authorized fast-forward publication / readback PASS
+
+29.10.2026 MSK. ONE normal `git push origin HEAD:refs/heads/fix/v3-missing-route-prices-2026-10-15` exit0. Remote advanced a1c169d3c7dce49b7d1d3747b9698e7aee4b581a → **c2f52ee93cd98a81ecd05efa0358fb38c6704124**:20prepared commits plus one preflight/checkpoint commit;135changed files total. All A+B checkpoints/history/evidence retained, no squash/rebase/force or other branch writes.
+
+Exact remote `git ls-remote` matches. GitHub Git commit API readback returns tree **81b4edaee4ffb6a17c3c93308b87ec52fe08d054**, exactly the published local tree; parent eea9351234e2f5b9d3f506b53a4e46bfd4bfd746. Whole-tree identity binds every path/blob, including the131preflight-listed files and4new publication metadata files. [Remote commit response](../../experiments/preview-acceptance/2026-10-29-ab/remote-commit.json). Preflight and previous checks are in the published commit, not only this local follow-up.
+
+Automatic PR runs: **40948475162** Special territory geometry/pricing; **40948474945** B03 browser scenarios. Classifier PASS `route-runtime-changed`, correctly launches existing live_probe/calculation_timing. No workflow edit/manual rerun or live dispatch. Initial observed verify/UI/live active; timing job completed SUCCESS. Final conclusions pending, not certified yet. Workflow verify includes TypeScript/build/offline gate; scoped ESLint retained from unchanged local source, not falsely reported as a configured hosted step.
+
+Exact new Preview **dpl_HbLBjiztL9wCe4xn22gTho3V2Y4k**, `https://mezhgorod-calculator-f0h1q39tw-4regodatbe-5310.vercel.app/v3`, correct branch/source c2f52ee9, target null (=Preview), initially BUILDING. No old-source acceptance substitution. Production baseline source051d51ea/dpl_6XMRbMu5V5vqWTzf684oPTMyubju unchanged at publication inspection; final recheck pending.
+
+Existing CLI65.7.0 `whoami --format json --non-interactive` exit1, loggedInfalse/linkedProjectnull. No login flow, token extraction, env/protection/share change. Connected management MCP can inspect deployments, but web_fetch_vercel_url explicitly creates/reuses temporary share access and is NOT permitted by this request. Browser currently has an old Vercel login page; check exactnewREADY origin once using existing session, not a login loop. Real acceptance remains pending/auth-conditional.
+
+This checkpoint and later evidence updates are **LOCAL ONLY**, following explicit owner instruction not to use a second push merely for reports. Remaining work: final automatic CI/artifacts, exactnewPreview READY/access, Production recheck and honest bounded acceptance or BLOCKED_AUTH.

@@ -1,0 +1,23 @@
+{
+  "status": "DONE_NOT_PROVEN",
+  "query": "\"ЦКАД\" \"Егорьевское шоссе\" \"А-107\" (site:russianhighways.ru OR site:tskad.ru OR site:avtodor-tr.ru)",
+  "queryCount": 1,
+  "eligibleOperatorHits": 0,
+  "searchResultIssue": "Returned nonoperator results despite site syntax; no returned thirdparty content is accepted as billingpoint proof. This is not proof that an operator source does not exist.",
+  "ownerReads": [
+    {
+      "url": "https://tskad.ru/",
+      "status": 502,
+      "rawMetadata": "tskad-root.metadata.json"
+    },
+    {
+      "url": "https://avtodor-tr.ru/ru/ckad/",
+      "status": 403,
+      "toolRef": "turn1view0",
+      "outcome": "Failed to fetch; no permission bypass/retry"
+    }
+  ],
+  "billingPoint": null,
+  "runtimeChanged": false,
+  "newPricedComponents": 0
+}

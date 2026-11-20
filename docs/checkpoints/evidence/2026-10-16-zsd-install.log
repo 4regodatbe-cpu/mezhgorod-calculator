@@ -1,0 +1,92 @@
+? Verifying lockfile against supply-chain policies (504 entries)...
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +429
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 429, reused 0, downloaded 0, added 0
+
+   ╭──────────────────────────────────────────────────────────────────────╮
+   │                                                                      │
+   │                 Update available! 11.25.0 → 12.11.2.                 │
+   │                 Changelog: https://pnpm.io/v/12.11.2                 │
+   │   To update, run: curl -fsSL https://get.pnpm.io/install.sh | sh -   │
+   │                                                                      │
+   ╰──────────────────────────────────────────────────────────────────────╯
+
+[WARN] Request took 10363ms: https://registry.npmjs.org/@humanfs%2Ftypes
+[WARN] Request took 10363ms: https://registry.npmjs.org/@img%2Fsharp-libvips-linux-ppc64
+Progress: resolved 429, reused 0, downloaded 1, added 0
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: /root/.local/share/pnpm/store/v11
+  Virtual store is at:             node_modules/.pnpm
+[WARN] Request took 10652ms: https://registry.npmjs.org/@babel%2Ftraverse
+Progress: resolved 429, reused 0, downloaded 6, added 6
+[WARN] Request took 11479ms: https://registry.npmjs.org/@img%2Fsharp-libvips-linux-riscv64
+[WARN] Request took 11479ms: https://registry.npmjs.org/@img%2Fsharp-libvips-linux-arm
+[WARN] Request took 11487ms: https://registry.npmjs.org/@humanfs%2Fnode
+[WARN] Request took 12344ms: https://registry.npmjs.org/@babel%2Ftemplate
+[WARN] Request took 12332ms: https://registry.npmjs.org/@img%2Fsharp-libvips-linux-arm64
+Progress: resolved 429, reused 0, downloaded 18, added 18
+[WARN] Request took 12633ms: https://registry.npmjs.org/@babel%2Fcore
+[WARN] Request took 13081ms: https://registry.npmjs.org/@emnapi%2Fwasi-threads
+[WARN] Request took 13069ms: https://registry.npmjs.org/@img%2Fsharp-libvips-darwin-x64
+[WARN] Request took 13072ms: https://registry.npmjs.org/@img%2Fcolour
+Progress: resolved 429, reused 0, downloaded 33, added 33
+[WARN] Request took 13779ms: https://registry.npmjs.org/@emnapi%2Fruntime
+[WARN] Request took 13770ms: https://registry.npmjs.org/@img%2Fsharp-libvips-darwin-arm64
+[WARN] Request took 13772ms: https://registry.npmjs.org/@humanwhocodes%2Fmodule-importer
+[WARN] Request took 14384ms: https://registry.npmjs.org/@alloc%2Fquick-lru
+[WARN] Request took 14358ms: https://registry.npmjs.org/@img%2Fsharp-libvips-linux-s390x
+Progress: resolved 429, reused 0, downloaded 56, added 56
+[WARN] Request took 14905ms: https://registry.npmjs.org/@babel%2Fgenerator
+[WARN] Request took 15201ms: https://registry.npmjs.org/@img%2Fsharp-freebsd-wasm32
+[WARN] Request took 15210ms: https://registry.npmjs.org/@eslint%2Fcore
+[WARN] Request took 15214ms: https://registry.npmjs.org/@eslint-community%2Fregexpp
+Progress: resolved 429, reused 0, downloaded 62, added 62
+[WARN] Request took 15760ms: https://registry.npmjs.org/@babel%2Fcode-frame
+[WARN] Request took 15748ms: https://registry.npmjs.org/@eslint%2Fjs
+[WARN] Request took 15749ms: https://registry.npmjs.org/@eslint%2Feslintrc
+[WARN] Request took 16504ms: https://registry.npmjs.org/@babel%2Fhelper-compilation-targets
+Progress: resolved 429, reused 0, downloaded 63, added 62
+[WARN] Request took 16696ms: https://registry.npmjs.org/@eslint%2Fconfig-helpers
+[WARN] Request took 16722ms: https://registry.npmjs.org/@babel%2Fhelper-globals
+[WARN] Request took 16811ms: https://registry.npmjs.org/@eslint-community%2Feslint-utils
+[WARN] Request took 16895ms: https://registry.npmjs.org/@eslint%2Fobject-schema
+[WARN] Request took 16933ms: https://registry.npmjs.org/@babel%2Fhelper-module-imports
+[WARN] Request took 16948ms: https://registry.npmjs.org/@babel%2Fhelper-module-transforms
+[WARN] Request took 17182ms: https://registry.npmjs.org/@babel%2Fcompat-data
+[WARN] Request took 17264ms: https://registry.npmjs.org/@humanwhocodes%2Fretry
+[WARN] Request took 17287ms: https://registry.npmjs.org/@eslint%2Fconfig-array
+Progress: resolved 429, reused 0, downloaded 127, added 127
+Progress: resolved 429, reused 0, downloaded 192, added 192
+Progress: resolved 429, reused 0, downloaded 249, added 249
+Progress: resolved 429, reused 0, downloaded 325, added 325
+Progress: resolved 429, reused 0, downloaded 426, added 426
+Progress: resolved 429, reused 0, downloaded 428, added 428
+✓ Lockfile passes supply-chain policies (504 entries in 23.4s)
+Progress: resolved 429, reused 0, downloaded 429, added 429, done
+.../node_modules/unrs-resolver postinstall$ napi-postinstall unrs-resolver 1.11.1 check
+.../node_modules/unrs-resolver postinstall: Done
+
+dependencies:
++ class-variance-authority 0.7.1
++ clsx 2.1.1
++ lucide-react 1.31.0
++ next 16.3.4
++ radix-ui 1.6.7
++ react 19.2.6
++ react-dom 19.2.6
++ tailwind-merge 3.6.0
++ tw-animate-css 1.4.0
+
+devDependencies:
++ @tailwindcss/postcss 4.2.1
++ @types/node 22.19.19
++ @types/react 19.2.14
++ @types/react-dom 19.2.3
++ eslint 9.39.4
++ eslint-config-next 16.3.4
++ tailwindcss 4.2.1
++ typescript 5.9.3
+
+Done in 24.2s using pnpm v11.25.0

@@ -1,0 +1,52 @@
+[
+  {
+    "name": "audit",
+    "command": [
+      "npm",
+      "run",
+      "test:audit"
+    ],
+    "timeoutSeconds": 90,
+    "exitCode": 0,
+    "elapsedSeconds": 11.581,
+    "log": "audit.log.gz"
+  },
+  {
+    "name": "tsc",
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "timeoutSeconds": 60,
+    "exitCode": 0,
+    "elapsedSeconds": 5.84,
+    "log": "tsc.log.gz"
+  },
+  {
+    "name": "eslint",
+    "command": [
+      "node",
+      "node_modules/eslint/bin/eslint.js",
+      "scripts/address-search-live-probe.mjs",
+      "scripts/bounded-json-fetch.mjs",
+      "scripts/address-probe-timeout.test.ts"
+    ],
+    "timeoutSeconds": 30,
+    "exitCode": 0,
+    "elapsedSeconds": 1.85,
+    "log": "eslint.log.gz"
+  },
+  {
+    "name": "build",
+    "command": [
+      "node",
+      "node_modules/next/dist/bin/next",
+      "build"
+    ],
+    "timeoutSeconds": 90,
+    "exitCode": 1,
+    "elapsedSeconds": 1.764,
+    "log": "build.log.gz"
+  }
+]

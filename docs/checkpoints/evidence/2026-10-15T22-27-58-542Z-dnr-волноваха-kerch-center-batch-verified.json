@@ -1,0 +1,48 @@
+{
+  "caseId": "dnr-волноваха-kerch-center",
+  "status": "audited",
+  "commandExit": 0,
+  "stage1Completed": 14,
+  "stage1Planned": 155,
+  "next": {
+    "caseId": "dnr-волноваха-moscow-center",
+    "kind": "regional",
+    "region": "dnr"
+  },
+  "provider": "OSRM",
+  "routeMeters": 793904,
+  "traceComplete": true,
+  "weekday": 1650,
+  "weekend": 1800,
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "components": [
+    {
+      "id": "m4",
+      "amount": 850,
+      "reason": "matrix exact selected-route M4 vector"
+    },
+    {
+      "id": "a289",
+      "amount": 800,
+      "reason": "A-289 selected-route OD vector"
+    }
+  ],
+  "captureSha256": "075de45bcfd95b5e28ead0686979937bd025eace6e584c0fb42378bf1f78bd38",
+  "parity": true,
+  "evidence": {
+    "batch": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-15T22-27-58-766Z.json",
+    "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-kerch-center/live-2026-10-15T09-00-00-03-00-2026-10-15T22-28-26-608Z.json",
+    "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-волноваха-kerch-center/2026-10-15T22-28-26-541Z-capture.json.gz",
+    "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-15T22-28-26-965Z.json",
+    "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-15T22-28-27-326Z.json",
+    "sameDateParity": true
+  },
+  "commands": {
+    "inventory": 0,
+    "report": 0
+  },
+  "parentRemote": "d2265abf18de1130978be8189c547d383418a7e8"
+}

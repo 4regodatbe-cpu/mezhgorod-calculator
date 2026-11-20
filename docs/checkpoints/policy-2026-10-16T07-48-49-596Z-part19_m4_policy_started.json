@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-16T07:48:49.596Z",
+  "phase": "PART19_M4_POLICY_STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38869309675",
+  "scope": "Historical M4 profile finding only; current-engine offline, not live or tariff confirmation",
+  "checked": 21,
+  "total": 25,
+  "next": "dnr-урзуф-saint-petersburg-center",
+  "validation": "Preceding workflow pnpm build is required; runtime fare logic unchanged",
+  "caseId": "dnr-урзуф-saint-petersburg-center",
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-урзуф-saint-petersburg-center/2026-10-15T12-15-30-557Z-capture.json.gz",
+  "captureSha256": "07a4aa99f441c97af0cf4a1e776a5e89e1586c75caa8e96536aee59ba3c952a1",
+  "dates": [
+    "2026-10-15T09:00:00+03:00",
+    "2026-10-17T09:00:00+03:00"
+  ],
+  "parent": "e962f24ac8fd1baa2aaeb72be9a86f1fec5fd57f",
+  "logPrefix": "docs/checkpoints/evidence/policy-2026-10-16T07-48-49-596Z",
+  "checkpointPath": "docs/checkpoints/policy-2026-10-16T07-48-49-596Z-part19_m4_policy_started.json"
+}

@@ -1,0 +1,143 @@
+{
+  "date": "2026-10-29",
+  "remote": {
+    "head": "fix/v3-missing-route-prices-2026-10-15",
+    "head_sha": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+    "draft": true,
+    "state": "open",
+    "merged": false
+  },
+  "persistence": "LOCAL ONLY, no push permitted",
+  "runtimeReference": "c2f52ee93cd98a81ecd05efa0358fb38c6704124",
+  "productionRuntimeDataCIChanges": 0,
+  "newRuntimeDefectsFixed": 0,
+  "newTests": 8,
+  "blocks": {
+    "C1": "DONE: bounded current-state inventory",
+    "C2": "PARTIAL: directed M4 graph/OSM coordinate proof; operator crosswalk/km/fare blocked",
+    "C3": "DONE_SCOPED:8selected-boundary regressions, existing matcher unchanged",
+    "C4": "PARTIAL:5retainedrecords/4roads; one existing ZSDproduct retained, material bindings blocked",
+    "C5": "DONE_SCOPED:two selected combinations/uniqueproducts/geometry/unknown guards",
+    "C6": "DONE_SCOPED:local gates, not a certificate of all operator coverage"
+  },
+  "checks": {
+    "node": "24.19.0",
+    "next": "16.3.4",
+    "offlineAudit": {
+      "pass": 1039,
+      "fail": 0,
+      "skip": 1,
+      "testSourceSha256": "ddd9dad3f06f112fdd56e90e8f69d5154b9e43f3d9ec10a9222f9c59b49cce5d"
+    },
+    "finalEightTests": {
+      "pass": 8,
+      "fail": 0,
+      "testSourceSha256": "a515e3de7416dfd09bd55f063574eec8063f1e708887037fd8574010c2fa4869",
+      "changeAfterFullGate": "added explicit non-null assertions for strict standalone test typing; same existing price/status/direction assertions retained; final8/type/lint rerun, no needless second full gate/build"
+    },
+    "typeScriptExit": 0,
+    "newTestStrictTypeScriptExit": 0,
+    "portableNewTestConfigExit": 0,
+    "scopedESLintExit": 0,
+    "directWebpackBuildExit": 0,
+    "buildWarning": "existing preferredRegion deprecation",
+    "newLiveRequests": 0,
+    "newCaptures": 0,
+    "fullProviderOrAPIReplays": 0,
+    "positiveCompositionStoredTraceAndLocalMatchingResponses": 16,
+    "wholeStageC": "NOT_DONE: substantive operator boundaries still unconfirmed",
+    "performance": "runtime/source unchanged; no new critical-path work/fetch; user/cloudE2E not measured,10sSLA not claimed"
+  },
+  "sourceCaptures": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-kazan-center/2026-10-15T12-00-00-440Z-capture.json.gz",
+      "sha256": "5c49cbd71433f7200538a5a4526d81f009375d49fce4445546151a8152cb19b9"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-noginsk-to-tver/2026-10-16T01-29-30-153Z-capture.json.gz",
+      "sha256": "3235c04e3f0d95c30df518d159c3e47bce988a0c4a0b1b5700b5ee9e206f61b1"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m12-moscow-to-arzamas/2026-10-16T01-59-35-968Z-capture.json.gz",
+      "sha256": "5f4671a2236dcd45e4c49a8f6c9ca260e8f9aefaa92c9c33901c2f6535348aec"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-golitsyno-to-rublevo/2026-10-16T02-07-00-749Z-capture.json.gz",
+      "sha256": "6b774aae7ccc059e02ce7b6b16d9e336c73a635fb3add1f3a0b58949487c64b8"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/2026-10-15T11-56-56-059Z-capture.json.gz",
+      "sha256": "0493305d255cfc779f4d2b7f15e5c4fb7161b80857f3af75a4c57567a6df3cb1"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/2026-10-15T23-58-33-171Z-capture.json.gz",
+      "sha256": "e8b5d42fb9b737227c04d195271c4cb4dde444a66f85aa579d238a0cd2769ed0"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-krasnodar-to-spb/2026-10-16T00-11-59-083Z-capture.json.gz",
+      "sha256": "0146e84b961b714fcc4e11dcb723285482127efb30bf417c5fc8ccf1215e41c8"
+    }
+  ],
+  "runtimeFiles": [
+    {
+      "path": "app/api/v3/calculate/route.ts",
+      "sha256": "916d4945e62f9fc9a8bf89884f44dbb688dbd7808ead1838ea632ce640f6b9aa"
+    },
+    {
+      "path": "lib/toll-validator.ts",
+      "sha256": "15d73a4dfd61c19611c74220db619c8d783738fc6e8487abbdbe52b3ad1c7f70"
+    },
+    {
+      "path": "lib/toll-engine/road-trace-boundaries.ts",
+      "sha256": "1138172eb706e53ff4fa58bb40a33189274638c58fb7e73f8ffd3e69cd31673f"
+    },
+    {
+      "path": "lib/toll-engine/road-boundaries.ts",
+      "sha256": "c8a0c7e03b1ebd47cc7674d1c8388f3b225c78792cdac6916313c5c54289090e"
+    },
+    {
+      "path": "lib/toll-engine/m4-production.ts",
+      "sha256": "fcba8e189b1fcb8d425844d97154cf4966faec25476799214514ab3e7d0b69db"
+    },
+    {
+      "path": "lib/toll-engine/road-kilometrage.ts",
+      "sha256": "3d46ae6bc27c806715cc0e5ac7eee985e24a7c91f8452e7b48cba61e8449fcb1"
+    },
+    {
+      "path": "lib/v3-calculation/m11-product-boundaries.ts",
+      "sha256": "a104b2a27ecfa3552329c0f61ef925a8885fb610c75815b81c4615cd774c2da9"
+    },
+    {
+      "path": "lib/v3-calculation/m12-product-boundaries.ts",
+      "sha256": "ce84e329d833a6cea3f148c8f6624441762ebc865abc06c49961e3c9c3db2207"
+    },
+    {
+      "path": "lib/v3-calculation/ckad-product-boundaries.ts",
+      "sha256": "3b869119627ec486087af56cb6dc584c566935a350f3b2f42c7aff5adae7accf"
+    },
+    {
+      "path": "lib/v3-calculation/zsd-cash-card-component.ts",
+      "sha256": "068551e6e57d75092447e7cdbec07bcaa3aeea30d1458355acad8730a2c94f9c"
+    },
+    {
+      "path": "lib/toll-engine/route-toll-composition.ts",
+      "sha256": "083e8bac7e2b64e5b28316bdb2005a5fad596b076531abde2a102fb72904981d"
+    },
+    {
+      "path": "lib/v3-calculation/route-leg-pricing.ts",
+      "sha256": "1092779870f24acce300e7968d996b2be38c3e9181e74f7f1b2e16d7dfe57850"
+    },
+    {
+      "path": "experiments/nationwide-tolls/M4_GRAPH_ENDPOINT_REGISTER.json",
+      "sha256": "7bc7ba2e35b3c2e228b2e77d15925b68765deee1bfd667446650ba82afa52ea2"
+    }
+  ],
+  "openEvidence": [
+    "M4 exactgraph→operatorcharge/product/officialkm mapping",
+    "M11 actualCKADapproach→virtual58 interface/productdivision",
+    "M12 actualentry/exit/operatorregistration mapping; reverse1713isexistingmodeloutput,notnewcrosswalkcertificate",
+    "CKADGolitsyno exactway→officialPK5freeboundary orpayablepair",
+    "ZSDlargerPlanernaya/RVP64cashcard productbundle; no physicalgate assumption"
+  ],
+  "next": "Separate publication approval for test/evidence/documents if desired; further operator binding requires identified primary source or materially new evidence. No automatic repeated source queries, Preview/auth or tariff/route audit."
+}

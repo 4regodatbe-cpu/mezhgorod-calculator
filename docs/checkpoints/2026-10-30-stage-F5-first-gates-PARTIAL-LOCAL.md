@@ -1,0 +1,11 @@
+# F5 first gates — PARTIAL LOCAL, exact failed cause retained
+
+30.10.2026 МСК, source48d685a767010aa9011fc27f03f2e0736fcb973a, permitted branch lineage/no push/PR14Draft. Immediate exits and separate stdout/stderr/commands/timestamps/sourceSHA/tree/node saved under `experiments/toll-estimates/checks/2026-10-30-integration/f5-*`.
+
+Actual: combinedfocused **53PASS/0FAIL**, projectTypeScript exit0; whole `npm run lint` exit0/**0errors,7warnings** (not zero warnings); direct Next16.3.4 productionbuild onNode24.19.0 **actualexit0**. Complete compile/TypeScript/static/traces/routes log retained. No pnpm build wrapper, liveaudit/networkprovider/capture/deploy/push.
+
+Mandatory `npm run test:audit` **exit1**,1043PASS/10FAIL/1SKIP. Do not mark gate/F5 DONE. All10 failures share newly exercised test infrastructure: custom CJS/VM loaders in `v2-unknown-result-render.test.mjs`, `v3-result-render-audit.test.mjs`, and `v3-hook-race-audit.test.mjs` lack the existing @/alias handling for the new real `lib/toll-estimate-view` import; native app/ReactSSR/Nextbuild resolve it correctly. Two files fail at module loading, eight hook tests fail before assertions. This is not EPERM or a tariff/provider defect. Existing shared helpers/load-ts already demonstrates the proper alias branch; do not change application imports, security policy or assertions to hide the failures.
+
+Next bounded F5 repair: add the same real-source @/ resolution to those three custom test loaders, keep every existing assertion, add labelled supplementary clipboard regression. Run the three affected files; save result, then ONE justified fullofflinegate retry. App code is unchanged by this repair; preserve/reuse successful build via exact application-tree comparison, not another build of a different app SHA. Recheck finallint for test changes. Never promote initial failed gate to PASS or claim Preview acceptance.
+
+Independent address follow-ups remain separate: D1 Donetsk/DNR street-context fix is LOCAL-PASS/not yet verified in protectedPreview; broader live street/Photon availability and prior mobile-timeout cause remain not confirmed. See D1street-context-LOCAL-PASS and stage-A-street-acceptance-LOCAL-PARTIAL checkpoints. No address code/tests/data are being repaired in F.

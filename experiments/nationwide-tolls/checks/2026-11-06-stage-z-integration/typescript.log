@@ -1,0 +1,3 @@
+Command: ./node_modules/.bin/tsc --noEmit
+Result: PASS, exit 0.
+Dependency tree: temporary symlink to /workspace/mezhgorod-reorganization/node_modules; package.json and pnpm-lock.yaml SHA256 matched the candidate.

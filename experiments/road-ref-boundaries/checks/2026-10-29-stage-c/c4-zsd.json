@@ -1,0 +1,104 @@
+{
+  "road": "zsd",
+  "date": "2026-10-15T09:00:00+03:00",
+  "source": "current pure boundary/quote adapters on1–2retainedrecords; not provider/trace/API replay or a mass route audit",
+  "externalRequests": 0,
+  "pricePolicy": "latest retained official price/rule until replaced; neither document age nor an optional lane certificate is a standalone blocker; geometry/product conflicts remain material",
+  "results": [
+    {
+      "caseId": "dnr-гранитное-saint-petersburg-center",
+      "capture": {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/dnr-гранитное-saint-petersburg-center/2026-10-15T11-56-56-059Z-capture.json.gz",
+        "sha256": "0493305d255cfc779f4d2b7f15e5c4fb7161b80857f3af75a4c57567a6df3cb1",
+        "expectedShaPreviouslyPinned": true
+      },
+      "provider": "Valhalla",
+      "meters": 1972786,
+      "seconds": 81745,
+      "selectedTraceComplete": true,
+      "physical": {
+        "from": "КАД (юг)",
+        "entryWay": "1122966006",
+        "paymentNode": "933974870",
+        "paymentWay": "381576632",
+        "to": "Екатерингофка",
+        "exitWay": "183902370",
+        "operatorVector": "kad-south→ekateringofka"
+      },
+      "boundary": {
+        "completeSelectedTrace": true,
+        "scope": "reviewed_finished_vector"
+      },
+      "quote": {
+        "reason": "zsd_kad_south_ekateringofka_owner_zone_vector",
+        "tolls": {
+          "amount": 600,
+          "weekdayAmount": 600,
+          "weekendAmount": 600,
+          "period": "все дни, без транспондера",
+          "confidence": "matched",
+          "segments": [
+            "ЗСД: КАД (юг) → наб. р. Екатерингофки · 600 ₽ (зоны 1–2)"
+          ]
+        }
+      },
+      "coverage": {
+        "core": [
+          "m4",
+          "m11"
+        ],
+        "regional": [
+          {
+            "id": "zsd",
+            "reason": "ЗСД"
+          }
+        ]
+      },
+      "status": "EXISTING_BOUND_PRODUCT_PRICE_RETAINED",
+      "missingEvidence": []
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-arzamas-to-prim",
+      "capture": {
+        "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m12-ckad-m11-zsd-arzamas-to-prim/2026-10-15T23-58-33-171Z-capture.json.gz",
+        "sha256": "e8b5d42fb9b737227c04d195271c4cb4dde444a66f85aa579d238a0cd2769ed0",
+        "expectedShaPreviouslyPinned": true
+      },
+      "provider": "Valhalla",
+      "meters": 1158570,
+      "seconds": 43654,
+      "selectedTraceComplete": true,
+      "physical": {
+        "observedPlaza": "1766158781",
+        "plazaWay": "355755817",
+        "scope": "Planernaya; larger than reviewed zone1/finished Ekateringofka vector"
+      },
+      "boundary": {
+        "completeSelectedTrace": true,
+        "scope": "other_recorded_vector"
+      },
+      "quote": {
+        "tolls": null,
+        "reason": "zsd_finished_vector_scope_not_reviewed"
+      },
+      "coverage": {
+        "core": [
+          "ckad",
+          "m11",
+          "m12"
+        ],
+        "regional": [
+          {
+            "id": "zsd",
+            "reason": "ЗСД; saved_selected_route_zsd_booth:1766158781"
+          }
+        ]
+      },
+      "status": "BLOCKED_BY_DATA",
+      "missingEvidence": [
+        "operator cash/card product scope for the actual Planernaya entry/exit, not borrowed zone1 or Ekateringofka price",
+        "any applicable receipt-linked/multiple-payment rule for THIS directed passage"
+      ]
+    }
+  ]
+}

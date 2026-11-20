@@ -1,0 +1,29 @@
+$ eslint . --ignore-pattern .next
+
+/workspace/stage-ad-reliability/app/v2/components/use-v2-calculation.ts
+  25:141  warning  'analyticsVersion' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/stage-ad-reliability/experiments/road-ref-boundaries/scripts/b03-current-input-flow.mjs
+  7:7  warning  'root' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/stage-ad-reliability/experiments/toll-od-matrix/m4-pvp-compiler.test.mjs
+  9:7  warning  'clone' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/stage-ad-reliability/lib/photon-address-search.ts
+  441:16  warning  'key' is defined but never used  @typescript-eslint/no-unused-vars
+
+/workspace/stage-ad-reliability/lib/toll-engine/m12-route-evidence.ts
+  16:7  warning  'amountByMarker' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/stage-ad-reliability/lib/v2-calculation/special-options.ts
+  71:20  warning  'index' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/workspace/stage-ad-reliability/scripts/v2-issue2-github-capture.mjs
+  94:34  warning  'responseText' is defined but never used  @typescript-eslint/no-unused-vars
+
+/workspace/stage-ad-reliability/scripts/v3-live-browser-acceptance.mjs
+  397:84  warning  'responseRead' is defined but never used  @typescript-eslint/no-unused-vars
+  397:97  warning  'startedAt' is defined but never used     @typescript-eslint/no-unused-vars
+
+✖ 9 problems (0 errors, 9 warnings)
+

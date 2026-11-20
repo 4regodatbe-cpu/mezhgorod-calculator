@@ -1,0 +1,70 @@
+{
+  "startedAt": "2026-10-16T00:15:48.783Z",
+  "scope": {
+    "region": null,
+    "group": "single-a289",
+    "caseId": "single-a289-krasnodar-to-temryuk",
+    "limit": 1,
+    "departureAt": "2026-10-15T09:00:00+03:00",
+    "weekendAt": "2026-10-17T09:00:00+03:00"
+  },
+  "cases": [
+    {
+      "caseId": "single-a289-krasnodar-to-temryuk",
+      "startedAt": "2026-10-16T00:15:48.785Z",
+      "status": "audited",
+      "live": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-krasnodar-to-temryuk/live-2026-10-15T09-00-00-03-00-2026-10-16T00-15-50-792Z.json",
+      "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-a289-krasnodar-to-temryuk/2026-10-16T00-15-50-775Z-capture.json.gz",
+      "sameDateReplay": "replay-2026-10-15T09-00-00-03-00-2026-10-16T00-15-51-155Z.json",
+      "sameDateParity": true,
+      "weekendReplay": "replay-2026-10-17T09-00-00-03-00-2026-10-16T00-15-51-513Z.json",
+      "replayErrors": [],
+      "traceComplete": true,
+      "roadCoverage": {
+        "expectedRoads": [
+          "a289"
+        ],
+        "provenRoads": [
+          "a289"
+        ],
+        "missingExpectedRoads": [],
+        "status": "traversal-proven"
+      },
+      "weekday": {
+        "amount": 620,
+        "weekdayAmount": 620,
+        "weekendAmount": 620,
+        "period": "все дни",
+        "segments": [
+          "А-289: Maryanskaya → Temryuk: 620 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "weekend": {
+        "amount": 620,
+        "weekdayAmount": 620,
+        "weekendAmount": 620,
+        "period": "все дни",
+        "segments": [
+          "А-289: Maryanskaya → Temryuk: 620 ₽"
+        ],
+        "confidence": "matched",
+        "priceConfirmation": "unconfirmed",
+        "displayLabel": null,
+        "pricingStatus": "priced"
+      },
+      "components": [
+        {
+          "id": "a289",
+          "amount": 620,
+          "reason": "A-289 Temryuk two-frame city estimate; exit binding unverified"
+        }
+      ],
+      "finishedAt": "2026-10-16T00:15:51.528Z"
+    }
+  ],
+  "finishedAt": "2026-10-16T00:15:51.530Z"
+}

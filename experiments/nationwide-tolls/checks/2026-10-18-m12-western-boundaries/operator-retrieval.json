@@ -1,0 +1,172 @@
+{
+  "plannedQueries": 2,
+  "completedQueries": 2,
+  "pageReadsUsed": 4,
+  "scope": "No new search/opens beyond this saved bounded pass",
+  "searchToolTextSha256": "a6eabf847462158c959d586a9c7fadf194d5dae836e5bcf45de5ceaecec73b1c",
+  "searchResultMetadata": [
+    {
+      "title": "О компании",
+      "url": "https://russianhighways.ru/about/",
+      "ref": "turn1search0",
+      "usedAsBoundaryProof": false
+    },
+    {
+      "title": "Listen to 12 - Album by Ryuichi Sakamoto",
+      "url": "https://open.spotify.com/album/0kvmLk15RUoNqsn8acxqf4",
+      "ref": "turn1search1",
+      "usedAsBoundaryProof": false
+    },
+    {
+      "title": "Инновации",
+      "url": "https://russianhighways.ru/innovations/",
+      "ref": "turn1search2",
+      "usedAsBoundaryProof": false
+    },
+    {
+      "title": "Article 12 EU General Data Protection Regulation (EU-GDPR ...",
+      "url": "https://www.privacy-regulation.eu/en/article-12-transparent-information-communication-and-modalities-for-the-exercise-of-the-rights-of-the-data-subject-GDPR.htm",
+      "ref": "turn1search3",
+      "usedAsBoundaryProof": false
+    },
+    {
+      "title": "Новости",
+      "url": "https://russianhighways.ru/press/news/",
+      "ref": "turn1search4",
+      "usedAsBoundaryProof": false
+    },
+    {
+      "title": "Goal 12 | Department of Economic and Social Affairs",
+      "url": "https://sdgs.un.org/goals/goal12",
+      "ref": "turn1search5",
+      "usedAsBoundaryProof": false
+    },
+    {
+      "title": "Отпуск!",
+      "url": "https://otpusk.avtodor-tr.ru/",
+      "ref": "turn1search6",
+      "usedAsBoundaryProof": false
+    },
+    {
+      "title": "Mening van het kind - Artikel 12 Kinderrechtenverdrag",
+      "url": "https://www.kinderrechten.nl/kinderrechten-vw/artikel-12-betrekken-kind/",
+      "ref": "turn1search7",
+      "usedAsBoundaryProof": false
+    },
+    {
+      "title": "Деятельность компании",
+      "url": "https://russianhighways.ru/about/activity/",
+      "ref": "turn1search8",
+      "usedAsBoundaryProof": false
+    },
+    {
+      "title": "Goal 12: Responsible Consumption and Production",
+      "url": "https://www.un.org/sustainabledevelopment/sustainable-consumption-production/",
+      "ref": "turn1search9",
+      "usedAsBoundaryProof": false
+    },
+    {
+      "title": "СТО «Автодор» - сеть автосервисов в Самаре",
+      "url": "https://www.avto-dor.ru/",
+      "ref": "turn1search10",
+      "usedAsBoundaryProof": false
+    },
+    {
+      "title": "Klacht niet vervolging (art.12 Sv)",
+      "url": "https://www.om.nl/onderwerpen/k/klachten/art-12",
+      "ref": "turn1search11",
+      "usedAsBoundaryProof": false
+    },
+    {
+      "title": "Услуги эвакутора в Самаре в СТО Автодор",
+      "url": "https://avto-dor.ru/evakuator/",
+      "ref": "turn1search12",
+      "usedAsBoundaryProof": false
+    },
+    {
+      "title": "12 Verantwoorde consumptie en productie",
+      "url": "https://www.sdgnederland.nl/SDG/12-verantwoorde-consumptie-en-productie/",
+      "ref": "turn1search13",
+      "usedAsBoundaryProof": false
+    },
+    {
+      "title": "Телефоны и адреса автосервиса - Самара - Автодор",
+      "url": "https://avto-dor.ru/contacts/",
+      "ref": "turn1search14",
+      "usedAsBoundaryProof": false
+    },
+    {
+      "title": "Apple Watch Series 12",
+      "url": "https://www.apple.com/nl/apple-watch-series-12/",
+      "ref": "turn1search15",
+      "usedAsBoundaryProof": false
+    },
+    {
+      "title": "«Атлас дорог. Россия со вкусом». Выиграй путешествие на ...",
+      "url": "https://atlas.avtodor-tr.ru/",
+      "ref": "turn1search16",
+      "usedAsBoundaryProof": false
+    },
+    {
+      "title": "Магазин и запчасти - Автодор",
+      "url": "https://avto-dor.ru/shop/",
+      "ref": "turn1search17",
+      "usedAsBoundaryProof": false
+    },
+    {
+      "title": "О компании",
+      "url": "https://russianhighways.ru/about/",
+      "ref": "turn2view0",
+      "usedAsBoundaryProof": false
+    },
+    {
+      "title": "Пользователям автодорог",
+      "url": "https://russianhighways.ru/for_drivers/?tab=6",
+      "ref": "turn3view0",
+      "usedAsBoundaryProof": false
+    }
+  ],
+  "coverage": "Two bounded official-filter queries returned no usable exact crosswalk; irrelevant numeric12 results are not evidence of an operator inventory being absent.",
+  "excludedDomain": "avto-dor.ru is an unrelated Samara service network; not an authoritative highway source and not used as evidence",
+  "operatorPages": [
+    {
+      "ref": "turn2view0",
+      "url": "https://russianhighways.ru/about/",
+      "role": "Navigation only, not boundary proof"
+    },
+    {
+      "ref": "turn2view1",
+      "url": "https://avtodor-tr.ru/road/m12/",
+      "result": "Not accessible through retrieval tool, not evidence of actual operator data absence"
+    },
+    {
+      "ref": "turn3view0",
+      "url": "https://russianhighways.ru/for_drivers/?tab=6",
+      "result": "Rendered general road network shell; no usable boundary identities"
+    },
+    {
+      "url": "https://russianhighways.ru/for_drivers/?tab=6",
+      "result": "Fourth read: rawHTML HTTP200; none of the exact nodeIDs, R158 or Vladimir labels present;421 occurs inSVG path, not roadchainage",
+      "metadata": "source-snapshots/m12/2026-10-18-western-boundaries/operator/operator-m12-page.metadata.json"
+    }
+  ],
+  "operatorBindingsConfirmed": 0,
+  "nextRequestBudgetRemaining": 0,
+  "supplementalLinkedDataReads": {
+    "count": 2,
+    "originalPlanPageReads": 4,
+    "reason": "Saved official HTML exposed one exact M12 gettrack link. First GET redirected to a generic HTML shell; one corrected AJAX-header request returned the M12 info fragment. This is a bounded source-specific extension, not another search or repeated OSM capture.",
+    "normalGet": "source-snapshots/m12/2026-10-18-western-boundaries/operator/official-m12-track.metadata.json",
+    "correctedAjaxGet": "source-snapshots/m12/2026-10-18-western-boundaries/operator/official-m12-track-ajax.metadata.json",
+    "result": "M12 information fragment, no exact operator gantry/charged-boundary identity established",
+    "redirectedHtmlDocumentReads": 1,
+    "newSearchQueries": 0,
+    "newRoutingOrTrace": 0
+  },
+  "nextObservedOfficialLink": {
+    "url": "https://russianhighways.ru/for_drivers/m-12-vostok/",
+    "source": "official-m12-track-ajax.response",
+    "status": "OBSERVED_NOT_FETCHED",
+    "condition": "One future bounded source-specific review; do not repeat current OSM objects or prior searches"
+  }
+}

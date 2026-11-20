@@ -1,0 +1,47 @@
+{
+  "status": "DONE",
+  "outcome": "fixed_and_verified",
+  "sourceCommit": "e3c07ac3e09e8be1bbecd482b70974c691681f2b",
+  "durableStartedCommit": "925c8c4d172268bada71a0fef5bfbaa75843f94c",
+  "sourceCI": {
+    "id": 39067254489,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "requestAndBodyTimeoutMs": 10000,
+  "totalProbeBudgetMs": 90000,
+  "focusedTests": {
+    "passed": 8,
+    "failed": 0
+  },
+  "auditTests": {
+    "passed": 744,
+    "failed": 0
+  },
+  "quoteAPI": "PASS",
+  "tsc": "PASS",
+  "eslint": "PASS",
+  "build": "PASS16/16",
+  "newLocalLiveAudits": 0,
+  "newRoutingOrTraceCaptures": 0,
+  "newPrimaryGets": 0,
+  "newTestsUseOnlyInjectedSources": true,
+  "httpFailureAndPartialSourceResultsRemainExplicit": true,
+  "originalReportArrayContractPreserved": true,
+  "incrementalProgress": true,
+  "onBudgetExhaustion": "BUDGET_EXHAUSTED and CLI exit1; remaining queries explicit; never report full success",
+  "sourceHashes": {
+    "scripts/address-search-live-probe.mjs": "0ccfd62983e71c5b3fa035df5d2b774c16ebd3fc87f9866bc968d7791b91a4e0",
+    "scripts/bounded-json-fetch.mjs": "e31238ec03cc6a7886069a2774cfe2f9f5ae6b458ecc5c812e192b8fe178d463",
+    "scripts/address-probe-timeout.test.ts": "adea283c19a8d292cd5052482d5e803916fcca7ed927a5c97b22c6bcdf63a5fc",
+    ".github/workflows/special-territory-policy.yml": "811eafbb86db3eef4700c0377b2152b19f426eb3f95ac93155ea25a57a9e30a6"
+  },
+  "initialFailures": [
+    "Focused initial comparison expected undefined object properties to survive JSON; corrected test serialization and provided Moscow feature for its ranking assertion; runtime ranking unchanged",
+    "Next build initially rejected external node_modules symlink; dependencies copied locally and only failed build repeated successfully",
+    "Immediate STARTED PR readback mismatched; second PR plus six exact path reads matched without a second branch write"
+  ],
+  "nextAction": "Inspect new code CI. Then resume saved western M12 frame and distinct exit mapping; do not repeat CKAD/74/76/309.",
+  "initialFocusedFullRawRetained": false,
+  "initialFocusedObservation": "initial-observations.json"
+}

@@ -1,0 +1,181 @@
+{
+  "caseId": "triple-m4-m11-zsd-sest-to-domodedovo",
+  "atUtc": "2026-10-18T06:08:58.400944+00:00",
+  "sourceReport": "experiments/nationwide-tolls/checks/2026-10-17-zsd-batch74/cases/triple-m4-m11-zsd-sest-to-domodedovo.json",
+  "sourceReportSha256": "58a81ce4ae927218c2f8973013fab9ad2c9a0edc3585a22a4548d56eb9d607e3",
+  "mode": "own_saved_capture_exit_trace_exception_review",
+  "newRouteCalls": 0,
+  "newTraceCalls": 0,
+  "newPricingCalls": 0,
+  "newComponentProfiles": 0,
+  "newFullRouteReplays": 0,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-domodedovo/2026-10-16T02-19-47-235Z-capture.json.gz",
+  "captureSha256": "a2173d14fed6e04452f39096e87344095c47341c926639d241c1136cc8e63571",
+  "provider": "Valhalla",
+  "coordinateCount": 4431,
+  "routeMeters": 791471,
+  "selectedProviderGeometryIdentity": "exact",
+  "traceComplete": true,
+  "boothEventCoverage": "complete",
+  "traceChunks": 6,
+  "rawTraceBoothOrder": [
+    [
+      "1766158804",
+      "458501127",
+      true
+    ],
+    [
+      "933975069",
+      "375574640",
+      true
+    ]
+  ],
+  "successfulTraceCalls": 6,
+  "zsdWays": [
+    "1053072562",
+    "1090759975",
+    "1120339785",
+    "119176958",
+    "123232667",
+    "123232674",
+    "1257246768",
+    "1257246769",
+    "1257246773",
+    "1257246774",
+    "129037579",
+    "129780705",
+    "130062824",
+    "130068395",
+    "139658546",
+    "147598441",
+    "165031077",
+    "165035750",
+    "172999960",
+    "183912265",
+    "183912266",
+    "183912269",
+    "183921952",
+    "183921953",
+    "189271976",
+    "222395953",
+    "224933657",
+    "224933659",
+    "224933661",
+    "224933663",
+    "224933667",
+    "224933670",
+    "224933671",
+    "233006897",
+    "27462206",
+    "350477987",
+    "351741888",
+    "375574640",
+    "375646973",
+    "396293723",
+    "396293725",
+    "397223750",
+    "400111352",
+    "400111353",
+    "458501123",
+    "458501127",
+    "46948905",
+    "589047640",
+    "589047641",
+    "589047643",
+    "589047648",
+    "688149996",
+    "721628539",
+    "721628542",
+    "721628545",
+    "736306923",
+    "736881674",
+    "776695124",
+    "776695125",
+    "776695126",
+    "776695127",
+    "776695128",
+    "776695129",
+    "80056721",
+    "80056729",
+    "80056747",
+    "81348980"
+  ],
+  "zsdBooths": [
+    {
+      "osmNodeId": "1766158804",
+      "wayId": "458501127",
+      "edgeToll": true
+    },
+    {
+      "osmNodeId": "933975069",
+      "wayId": "375574640",
+      "edgeToll": true
+    }
+  ],
+  "sameWaySetAndBoothsAsRepresentative": true,
+  "ownExitSteps": [
+    {
+      "instruction": "Держитесь левее, чтобы остаться на ЗСД к набережная Обводного канала/Благодатная улица.",
+      "begin_shape_index": 402,
+      "end_shape_index": 633,
+      "length": 17.353
+    },
+    {
+      "instruction": "Держитесь левее, чтобы свернуть на А-118/КАД/Кольцевая автомобильная дорога вокруг г. Санкт-Петербурга к КАД/Пулковское ш..",
+      "begin_shape_index": 633,
+      "end_shape_index": 692,
+      "length": 3.469
+    },
+    {
+      "instruction": "Держитесь правее, чтобы свернуть на М-11 к Москва.",
+      "begin_shape_index": 692,
+      "end_shape_index": 1640,
+      "length": 241.349
+    },
+    {
+      "instruction": "Сверните на съезде к Окуловка/Крестцы.",
+      "begin_shape_index": 1640,
+      "end_shape_index": 1686,
+      "length": 1.242
+    },
+    {
+      "instruction": "На кольцевой развязке сверните на третьем съезде на М-11.",
+      "begin_shape_index": 1686,
+      "end_shape_index": 1702,
+      "length": 0.171
+    }
+  ],
+  "southKadExitConfirmedByOwnInstructions": true,
+  "ownEntrySteps": [
+    {
+      "instruction": "Поверните направо к КАД/Выборгское ш./Мурманское ш..",
+      "begin_shape_index": 184,
+      "end_shape_index": 232,
+      "length": 9.123
+    },
+    {
+      "instruction": "Сверните на съезде к ЗСД.",
+      "begin_shape_index": 232,
+      "end_shape_index": 239,
+      "length": 0.328
+    },
+    {
+      "instruction": "Держитесь правее, чтобы свернуть на Богатырский проспект к ЗСД.",
+      "begin_shape_index": 239,
+      "end_shape_index": 402,
+      "length": 13.841
+    },
+    {
+      "instruction": "Держитесь левее, чтобы остаться на ЗСД к набережная Обводного канала/Благодатная улица.",
+      "begin_shape_index": 402,
+      "end_shape_index": 633,
+      "length": 17.353
+    }
+  ],
+  "northKadEntryInstructionsMatchRepresentative": true,
+  "materialException": false,
+  "outcome": "blocked_by_same_missing_owner_collection_and_north_south_tariff_binding",
+  "readyTariffRub": null,
+  "traceIndexLimit": "Only selected-provider route maneuver indices refer to decoded selected shape. No trace output-shape index used on input/selected coordinates.",
+  "elapsedSeconds": 0.022
+}

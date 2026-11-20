@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { ShieldCheck } from "lucide-react";
 import Image from "next/image";
+import { Download } from "lucide-react";
 import { FeedbackForm } from "../v2/components/feedback-form";
 import { DonationCard } from "../v2/components/donation-card";
 import { CalculatorForm } from "../v2/components/calculator-form";
@@ -23,11 +23,25 @@ import type { Place } from "../v2/components/types";
 function storedNumber(key: string, min: number, max: number, fallback: number) { if (typeof window === "undefined") return fallback; try {const saved = localStorage.getItem(key); return saved === null ? fallback : clampNumber(Number(saved), min, max, fallback);}catch{return fallback;} }
 
 export default function V3Page() {
+  const [isAndroidApp, setIsAndroidApp] = useState(false);
+  useEffect(() => { setIsAndroidApp(navigator.userAgent.includes("MezhgorodAndroid")); }, []);
   const resultRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLDivElement>(null);
   const [tollPeriod, setTollPeriod] = useState<TollPeriod>("weekday");
   const [from,setFrom]=useState<Place>({label:""});
   const [to,setTo]=useState<Place>({label:""});
   const {mode,setMode,requestMode,onServerMode}=useTariffMode(from,to);
+  const previousModeRef = useRef(mode);
+  useEffect(() => {
+    const wasDual = previousModeRef.current === "dual";
+    previousModeRef.current = mode;
+    if (wasDual || mode !== "dual") return;
+    const frame = requestAnimationFrame(() => {
+      if (document.activeElement instanceof HTMLInputElement) return;
+      formRef.current?.scrollIntoView({behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"});
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [mode]);
   const [rates,setRates]=useState(defaults);
   const [specialRates,setSpecialRates]=useState({standard:70,comfort:80,comfortPlus:90,minivan:110});
   const [ratesLoaded,setRatesLoaded]=useState(false);
@@ -43,7 +57,7 @@ export default function V3Page() {
   useEffect(() => { setTollPeriod(currentTollPeriod()); }, []);
   useEffect(() => { try {let visitorId = localStorage.getItem("mezhgorod-anonymous-visitor-id"); if (!visitorId) { visitorId = crypto.randomUUID(); localStorage.setItem("mezhgorod-anonymous-visitor-id", visitorId); } if (sessionStorage.getItem("mezhgorod-visit-sent")) return; void fetch("/api/collect", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ type: "visit", visitorId, version: "3.0" }) }).then((response) => { if (response.ok) sessionStorage.setItem("mezhgorod-visit-sent", "1"); }).catch(() => undefined);}catch{} }, []);
   const multiplier = urgent ? 1 + Math.max(0, urgentPercent) / 100 : 1;
-  const { result, error, loading, deepTollDiagnostics, setDeepTollDiagnostics, manualToll, setManualToll, copiedKey, clearResult, calculate, copyStandard } = useV3Calculation({ from, to, rates, specialRates, requestMode, onServerMode, multiplier, apiEndpoint: "/api/v3/calculate", analyticsVersion: "3.0" });
+  const { result, error, loading, manualToll, setManualToll, copiedKey, clearResult, calculate, copyStandard } = useV3Calculation({ from, to, rates, specialRates, requestMode, onServerMode, multiplier, apiEndpoint: "/api/v3/calculate", analyticsVersion: "3.0" });
   useEffect(() => {
     if (!result) return;
     const frame = requestAnimationFrame(() => resultRef.current?.scrollIntoView({
@@ -57,14 +71,19 @@ export default function V3Page() {
   const standardOptimal = standardLeg ? pickOptimal(standardLeg.fast, standardLeg.free) : null;
   return <main translate="no" className="notranslate calculator-modern min-h-screen bg-brand-page pb-[env(safe-area-inset-bottom)] text-brand-text">
     <div className="v2-page-inset mx-auto w-full max-w-3xl px-3 sm:px-6">
-      <header className="mb-4 flex items-center justify-between gap-2">
-        <div className="flex min-w-0 items-center gap-2.5">
-          <a href="/v3" aria-label="из А в Б — калькулятор" className="shrink-0 rounded-xl bg-[#F7F4EE] p-1"><Image src="/izavb-approved-logo.svg" alt="из А в Б" width={136} height={60} priority /></a>
-          <div className="min-w-0"><h1 className="sr-only">из А в Б — калькулятор поездок</h1><p className="text-xs font-semibold text-brand-muted">Калькулятор поездок · один самый быстрый маршрут</p><a href="/v2" className="mt-0.5 block text-[11px] font-semibold text-brand-muted underline underline-offset-2">Версия 2</a><a href="/v3" className="mt-0.5 block text-[11px] font-semibold text-brand-action underline underline-offset-2">V3 · один самый быстрый</a><a href="/v2/toll-roads" className="mt-0.5 block text-[11px] font-semibold text-brand-action underline underline-offset-2">Платные дороги России</a></div>
+      <header className="mb-1 flex items-start justify-between gap-2">
+        <div className="flex min-w-0 items-center">
+          <a href="/v3" aria-label="из А в Б — калькулятор" className="shrink-0 rounded-xl p-1"><Image src="/izavb-approved-logo.svg" alt="из А в Б" width={136} height={60} priority className="dark:invert" /></a>
         </div>
-        <div className="flex shrink-0 items-center gap-1.5"><ThemeToggle /></div>
+        <h1 className="sr-only">из А в Б — калькулятор поездок</h1>
+        <div className="flex shrink-0 flex-col items-end">
+          {!isAndroidApp && <a href="/downloads/Iz-A-v-B-V1.01-debug.apk" download="Iz-A-v-B-V1.01-debug.apk" aria-label="Скачать для Android" className="inline-flex min-h-11 items-center rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-action"><span className="inline-flex min-h-7 items-center gap-1 rounded-lg bg-brand-action px-2 text-[11px] font-bold text-brand-action-foreground transition hover:brightness-110"><Download className="h-3.5 w-3.5 shrink-0" aria-hidden="true"/>Скачать для Android</span></a>}
+          <ThemeToggle />
+        </div>
       </header>
-      <CalculatorForm
+      <div ref={formRef} className="scroll-mt-2"><CalculatorForm
+        releaseCopy
+        specialOnly={result?.specialOnly === true}
         mode={mode}
         onModeChange={setMode}
         onResetResult={clearResult}
@@ -84,15 +103,16 @@ export default function V3Page() {
         loading={loading}
         hasResult={Boolean(result)}
         error={error}
-        deepTollDiagnostics={deepTollDiagnostics}
-        onDeepTollDiagnosticsChange={(enabled) => { setDeepTollDiagnostics(enabled); clearResult(); }}
         onCalculate={calculate}
-      />
+      /></div>
       <div ref={resultRef} className="scroll-mt-3">
         <ResultPanels result={result} standardLeg={standardLeg} standardHasTolls={standardHasTolls} standardOptimal={standardOptimal} manualToll={manualToll} onManualToll={setManualToll} copiedKey={copiedKey} copyStandard={copyStandard} tollPeriod={tollPeriod} onTollPeriodChange={setTollPeriod} fastestOnly/>
+        {result && mode === "dual" && !result.specialOnly && <p className="mt-3 rounded-xl border border-brand-route/40 bg-brand-route/5 px-3 py-2 text-sm font-semibold leading-relaxed text-brand-text">Границы участков с обычной и специальной тарификацией определяются автоматически по построенному маршруту.</p>}
+        {result && <p role="note" className="mt-3 rounded-xl border border-brand-border bg-brand-surface px-3 py-2 text-sm font-semibold leading-relaxed text-brand-text">Расчёт носит справочный характер. Фактический маршрут, время в пути и стоимость проезда по платным дорогам могут отличаться от указанных.</p>}
       </div>
-      <div className="mt-4 grid gap-3 md:grid-cols-2"><FeedbackForm/><DonationCard/></div>
-      <footer className="mx-auto mt-6 max-w-3xl pb-5 text-center text-xs leading-relaxed text-brand-muted"><p className="flex items-center justify-center gap-1.5"><ShieldCheck className="h-4 w-4"/>Расчёт справочный. Фактический маршрут и тарифы операторов дорог могут измениться.</p></footer>
+      <div className="mt-4 grid gap-3 md:grid-cols-2"><FeedbackForm/><DonationCard releaseCopy/></div>
+      <footer className="mx-auto mt-3 max-w-3xl pb-3 text-center text-[11px] leading-relaxed text-brand-muted">Данные населённых пунктов: <a href="https://www.geonames.org/" className="underline underline-offset-2">GeoNames</a> · <a href="https://creativecommons.org/licenses/by/4.0/" className="underline underline-offset-2">CC BY 4.0</a>.</footer>
+      <div aria-hidden="true" className="h-20 md:hidden" />
     </div>
   </main>;
 }

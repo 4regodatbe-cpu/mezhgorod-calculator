@@ -1,4 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
+import { classifyCalculateApiError } from "@/lib/calculate-api-error";
+import { readLimitedJsonObject, RequestBodyError } from "@/lib/limited-json-body";
+import { validPoint } from "@/lib/route-input-validation";
 import { geocode, type Point } from "@/lib/route-providers";
 import { calculateLeg } from "@/lib/v2-calculation/route-leg";
 import { calculateRoutePricing, type PricingVehicle } from "@/lib/route-pricing-integration";
@@ -11,12 +14,6 @@ import type { Coordinate } from "@/lib/tolls";
 type UserRates = { standard: number; comfort: number; comfortPlus: number; minivan: number };
 const VEHICLES: PricingVehicle[] = ["standard", "comfort", "comfort_plus", "minivan"];
 
-function validPoint(point: Point | undefined): point is Point {
-  if (!point || typeof point.label !== "string" || !point.label.trim()) return false;
-  if (!point.position) return true;
-  const { lat, lng } = point.position;
-  return Number.isFinite(lat) && Number.isFinite(lng) && lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180;
-}
 function validRate(value: unknown): value is number {
   return typeof value === "number" && Number.isFinite(value) && value >= 1 && value <= 10000;
 }
@@ -25,12 +22,23 @@ function validUserRates(value: unknown): value is UserRates {
   const rates = value as Partial<UserRates>;
   return validRate(rates.standard) && validRate(rates.comfort) && validRate(rates.comfortPlus) && validRate(rates.minivan);
 }
+// Match the V3 calendar contract: reject normalized impossible dates and
+// require an explicit timezone whenever a time is supplied.
+function validDepartureAt(value: unknown): value is string {
+  if (typeof value !== "string") return false;
+  const match = /^(\d{4})-(\d{2})-(\d{2})(?:T(?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d(?:\.\d{1,3})?)?(?:Z|[+-](?:[01]\d|2[0-3]):[0-5]\d))?$/.exec(value);
+  if (!match) return false;
+  const calendar = new Date(`${match[1]}-${match[2]}-${match[3]}T00:00:00Z`);
+  return Number.isFinite(calendar.getTime())
+    && calendar.toISOString().slice(0, 10) === value.slice(0, 10)
+    && Number.isFinite(new Date(value).getTime());
+}
 
 export const maxDuration = 120;
 
 export async function POST(request: NextRequest) {
   try {
-    const body = (await request.json()) as {
+    const body = (await readLimitedJsonObject(request)) as {
       from?: Point;
       via?: Point;
       to?: Point;
@@ -45,7 +53,7 @@ export async function POST(request: NextRequest) {
       multiplier?: number;
     };
     if (body.mode !== undefined && body.mode !== "standard" && body.mode !== "dual") return NextResponse.json({ error: "Некорректный режим расчёта" }, { status: 400 });
-    if (body.departureAt !== undefined && (typeof body.departureAt !== "string" || Number.isNaN(new Date(body.departureAt).getTime()))) return NextResponse.json({ error: "Некорректная дата поездки" }, { status: 400 });
+    if (body.departureAt !== undefined && !validDepartureAt(body.departureAt)) return NextResponse.json({ error: "Некорректная дата поездки" }, { status: 400 });
     if (body.vehicle !== undefined && !VEHICLES.includes(body.vehicle)) return NextResponse.json({ error: "Некорректный класс автомобиля" }, { status: 400 });
     if (body.modeOverride !== undefined && typeof body.modeOverride !== "boolean") return NextResponse.json({error:"Некорректный режим"},{status:400});
     if (body.specialRates !== undefined && !validUserRates(body.specialRates)) return NextResponse.json({error:"Некорректные особые тарифы"},{status:400});
@@ -85,15 +93,8 @@ export async function POST(request: NextRequest) {
     const priced={...leg,fast:attachPricing(leg.fast),free:attachAlternative(leg.free),freeCandidate:attachAlternative(leg.freeCandidate)};
     return NextResponse.json({legs:[priced],mode,automaticMode,specialEndpoint:false});
   } catch (error) {
-    const code = error instanceof Error ? error.message : "UNKNOWN";
-    const messages: Record<string, string> = {
-      PREFERRED_ROUTE_UNAVAILABLE: "Не удалось построить маршрут выбранного направления. Попробуйте позже.",
-      SPECIAL_TRANSIT_EXCLUDED: "Маршрут проходит через особую тарифную зону и исключён.",
-      ADDRESS_NOT_FOUND: "Адрес не найден. Уточните город или населённый пункт.",
-      GEOCODE_UNAVAILABLE: "Поиск адресов временно недоступен.",
-      ROUTE_NOT_FOUND: "Не удалось построить автомобильный маршрут.",
-      ROUTE_UNAVAILABLE: "Сервис маршрутов временно недоступен. Попробуйте позже.",
-    };
-    return NextResponse.json({ error: messages[code] ?? "Не удалось выполнить расчёт." }, { status: code.endsWith("UNAVAILABLE") ? 502 : 400 });
+    if (error instanceof RequestBodyError) return NextResponse.json({ error: error.message }, { status: error.status });
+    const failure = classifyCalculateApiError(error);
+    return NextResponse.json({ error: failure.message }, { status: failure.status });
   }
 }

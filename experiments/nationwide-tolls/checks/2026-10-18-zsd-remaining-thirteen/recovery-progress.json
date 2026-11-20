@@ -1,0 +1,86 @@
+{
+  "restoredFromLocalGit": [
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-rostov-to-sest/2026-10-16T00-01-40-957Z-capture.json.gz",
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-pushkin-to-sest/2026-10-16T00-31-32-110Z-capture.json.gz",
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-sest/2026-10-16T00-35-08-826Z-capture.json.gz",
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-rostov-to-sest/2026-10-16T00-35-48-639Z-capture.json.gz",
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-sest-to-rostov/2026-10-16T00-02-55-469Z-capture.json.gz",
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-krasnodar/2026-10-16T00-36-30-643Z-capture.json.gz",
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-rostov/2026-10-16T00-37-10-139Z-capture.json.gz",
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/2026-10-16T00-04-54-634Z-capture.json.gz",
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-moscow/2026-10-16T00-21-30-804Z-capture.json.gz",
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-spb-to-kazan/2026-10-16T00-33-32-062Z-capture.json.gz",
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-voronezh/2026-10-16T01-43-03-406Z-capture.json.gz",
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-tver/2026-10-16T01-55-49-922Z-capture.json.gz",
+    "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-spb-to-arzamas/2026-10-16T02-15-10-048Z-capture.json.gz"
+  ],
+  "lazyFetchDisabled": true,
+  "networkRequests": 0,
+  "verifiedCaptureBlobs": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-rostov-to-sest/2026-10-16T00-01-40-957Z-capture.json.gz",
+      "gitBlobSha": "73aba4af28c9cc182d8c5393a1dcb787afeeaf4b",
+      "sha256": "74733c833d428ab1d61023bbbe4566e425336fd6994234c5f66d7b612a69f95c"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-pushkin-to-sest/2026-10-16T00-31-32-110Z-capture.json.gz",
+      "gitBlobSha": "704485f7c7fad8363261667cbe96e26acaa7c5f3",
+      "sha256": "a961c7c83a363ea8ac664a3084ab66137fdcba30f3b52114ad0e4f851c6486b0"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-krasnodar-to-sest/2026-10-16T00-35-08-826Z-capture.json.gz",
+      "gitBlobSha": "6002b3cc05a13fd7b1b7dbd589829973000d0ee3",
+      "sha256": "db8d46c55c2901add588de7c0f8cb727e2122411a8ea092f8ebcb600f272fd8b"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-rostov-to-sest/2026-10-16T00-35-48-639Z-capture.json.gz",
+      "gitBlobSha": "b4def09f3a007bb853e19c89eef393786164328f",
+      "sha256": "035e17e6313a038ac2e41da041d91f3a98ffe284c779f78ae1714e70add2eee3"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/max-chain-m4-ckad-m11-zsd-sest-to-rostov/2026-10-16T00-02-55-469Z-capture.json.gz",
+      "gitBlobSha": "c521c6a48fec988738eda58b3dd7fa8c3d1abf0a",
+      "sha256": "72cbd07bf21293d93a6ff42138e55ddd252aa4ee886fcbfc7ba22f0a948850b8"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-krasnodar/2026-10-16T00-36-30-643Z-capture.json.gz",
+      "gitBlobSha": "cb73d6ae303ee123ff5c73a76dcf31fe0f5bc7f1",
+      "sha256": "a7dbc2feb0e4868f85b22bb790d11468b6eb3a275bf2d485b71d828aa4a1af65"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m4-m11-zsd-sest-to-rostov/2026-10-16T00-37-10-139Z-capture.json.gz",
+      "gitBlobSha": "38bee5a20644ef35e72455825b0c80563031a80a",
+      "sha256": "92155c45aeafc0cffbaaa5a90b8206cfeb013075449bde8aba63fd2473b758b8"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m11-ckad-spb-to-noginsk/2026-10-16T00-04-54-634Z-capture.json.gz",
+      "gitBlobSha": "06f4da6b5a83bdf4592b879bcee24ce697aad204",
+      "sha256": "9fa98f4f93639f6c2d7de6dbb8d6529c6e2a889e0a4d53456c93aceae5633eaa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-moscow/2026-10-16T00-21-30-804Z-capture.json.gz",
+      "gitBlobSha": "2fafd29c611ab761e535e1de562c19a030552c38",
+      "sha256": "4c46688a3500002398c580012b3f0c5b1f397decc49c01c9237e60fce2ef3094"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-spb-to-kazan/2026-10-16T00-33-32-062Z-capture.json.gz",
+      "gitBlobSha": "01ae687159eea97d52e69948f346bf5ba52184ad",
+      "sha256": "5803bd2fa0a447847d6ffdb78eb58fbf7828fbb77fde1a9f5c4414fbeaff77cb"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/pair-m4-m11-spb-to-voronezh/2026-10-16T01-43-03-406Z-capture.json.gz",
+      "gitBlobSha": "d5399278bbc75a9384c4db93fecf4a52acc5cd1b",
+      "sha256": "4d3c6d232c73eab5c662c3532fb85931d3083bfb43f4c5184dfe1b285abebc57"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-m11-spb-to-tver/2026-10-16T01-55-49-922Z-capture.json.gz",
+      "gitBlobSha": "be7f2600fe4958b2bec78d1f90f78c4fa223191d",
+      "sha256": "dbe832b30cefdedaeca8e818eece65af91461febd941b579cbc2032a94d6db94"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/triple-m11-ckad-m12-spb-to-arzamas/2026-10-16T02-15-10-048Z-capture.json.gz",
+      "gitBlobSha": "d6a66fc022e87fe2f4c5a8b5eaa23b0f6d98f22c",
+      "sha256": "51d960752775c382ff16f6e76431a7389010f71fd6bc85103ad722368954467a"
+    }
+  ]
+}

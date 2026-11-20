@@ -1,0 +1,29 @@
+# 2026-11-05 — V3 production browser acceptance workflow (LOCAL)
+
+Owner requested a real GitHub Actions browser test against published V3, with no changes to Production and no TinyFish. The prepared archive was available and ZIP integrity passed. PR #14/remote head was confirmed as open Draft at `a6bea89dd4b481a1352dc492969004e6cd1e6e38`; the current local development branch has 91 unpushed commits, so the acceptance-only candidate is based on `a6bea89…` in an isolated worktree to avoid bundling unrelated local changes into its one later fast-forward push.
+
+Reviewed all three supplied files against the actual V3 page/API and `RouteCard`. The supplied result selector incorrectly expected “Самый быстрый маршрут”, while the real component renders `Выбран маршрут с минимальным временем` or special-territory variants. The clear flow reused the invalid selector, weakening its stale-result check. Corrected both to use the real heading variants and added assertions that rendered distance and duration match the real `/api/v3/calculate` response.
+
+Also ensured the workflow runs the static contract test and triggers when that test changes. Confirmed the only network interception is `/api/collect` abort (`blockedbyclient`) before sending, while `/r` and `/api/v3/calculate` are not mocked. `/api/version` is requested first, and unidentified SHA remains a failed/partial result. Existing B03 workflow was not changed.
+
+Checks: runner syntax PASS; static contract file PASS (exit 0); PyYAML structural validation PASS; `git diff --check` PASS. No live browser or Actions run was started because push is explicitly not authorized in this task. No app runtime, tariffs, Production, Android or 2GIS were touched. Detailed checkpoint: `docs/checkpoints/2026-11-05-2322-v3-live-browser-acceptance-LOCAL.md`.
+
+## 2026-11-06 — Stage S harness repair (LOCAL)
+
+Owner requested correct automatic evidence for the prior production browser attempt before another push. Examined Actions `42106439910`, result artifact `13451892536` and its four screenshots. Prior #05–07 screenshots show results, while the harness marked them FAIL due to an anchored regex applied to the full `article` text. The API status/metrics were omitted when later DOM lookup threw; Yalta #01 had no `/r` telemetry, and #02–04 were skipped. No runtime cause is inferred from those omissions.
+
+Fixed the browser-only runner to locate `h3` by role/level and inspect its nearest `article`; independently asserts heading, shown distance, shown duration and state-matching tariff evidence. Saves an API summary synchronously before DOM checks (HTTP status, latency, valid JSON, distance/time, toll status, pricing table, deployed SHA) and retains a separate DOM status/classification. Any independently valid distance/time remains recorded even if HTTP/toll validation fails. Adds sanitized `/r` request/response telemetry, request-failure code, visible search state and JS errors without retaining raw response/geometry. Keeps the existing 30s suggestion limit. Analytics #08 now requires observed interception, successful abort of every intercepted request, zero abort errors, and same-context API+DOM PASS, otherwise NOT_VERIFIED. Adds helper contract and seven direct regression checks; workflow triggers when helper changes.
+
+Checks: runner/helper syntax PASS; direct `node scripts/v3-live-browser-workflow.test.mjs` 7/7 PASS; `node --test ...` exit 0; YAML parse/timeout contract PASS; `git diff --check` PASS. No new live requests/Actions/build and no push. Exact changes and next step: [Stage S checkpoint](../../docs/checkpoints/2026-11-06-0035-stage-s-harness-diagnostics-LOCAL.md). Candidate source is remote/PR #14 head `700b3ce5…`; PR remains Draft. Main worktree/91 local-only commits untouched. No Production/main/Android/tariff/address/2GIS edits.
+
+### Post-push validation — 2026-11-05 21:52 UTC
+
+Owner authorized one ordinary FF push. Preflight GitHub PR head matched `700b3ce5…`; pushed candidate `7d5caee6602ae0431906566ab2ec074fd89b8540`. GitHub commit/file readback confirmed the new runner/helper/workflow; PR #14 stayed Draft. No second push.
+
+Live run `42116523393` completed with failure at the live-acceptance step; syntax/static tests and artifact upload passed. Artifact `13456406844`, sha256 `111e7de41e63894bcf0184bea8821ac16363c188a11322262c053671d85f380c`. Production version remained `a6bea89dd4b481a1352dc492969004e6cd1e6e38` (version endpoint HTTP 200).
+
+Outcomes: 3 PASS (`05`, `07`, derived analytics `08`); 2 FAIL (`01`, `06`); 3 BLOCKED (`02`–`04`). Scenario 05 returned API 200/3599 ms, 58.301 km, 4325 s, `free`; DOM matched 58.3 km / 1 h 12 min and showed the four fare totals. Scenario 07 mobile returned API 200/3511 ms, 273.894 km, 14627 s, `priced`; DOM matched 273.9 km / 4 h 4 min and showed 1,000 ₽ tolls; no page errors. Scenario 08 observed 1 `/api/collect` request, aborted 1, no abort errors, and relied on scenario 07's API+DOM pass.
+
+Yalta #01 and Donetsk→Melitopol #06 each timed out at 30s waiting for suggestions. Both diagnostics say `/r` request not observed; HTTP/status/items are null; UI status region is absent; JS errors are empty; screenshots show empty input. Therefore this is not an HTTP failure, empty provider result, or proven slow response: the query did not reach an observed `/r` request. The input/control may be losing a pre-hydration automation fill; that is a hypothesis, not a proven product cause. Minimal next diagnostic: record actual input value after fill and after a brief stability check, wait for client readiness, and rerun only after separate push authorization. Do not alter runtime/search providers without clearer evidence.
+
+No separate screenshots exist for blocked #02–04 or derived #08; all four available screenshots were inspected. No second push, Production change, tariff/address/2GIS edit, or modification of the 91-commit primary worktree.

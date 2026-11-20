@@ -1,0 +1,162 @@
+{
+  "caseId": "single-zsd-prim-to-peterhof",
+  "mode": "offline-recorded-response-replay",
+  "departureAt": "2026-10-17T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-17T09:00:00+03:00"
+  },
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 73308,
+      "seconds": 4176
+    },
+    {
+      "name": "OSRM",
+      "meters": 49531,
+      "seconds": 3399
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 49531,
+  "routeSeconds": 3399,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 30.24,
+          "lat": 59.982
+        },
+        {
+          "lng": 29.906,
+          "lat": 59.883
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "zsd"
+    ],
+    "provenRoads": [
+      "zsd"
+    ],
+    "missingExpectedRoads": [],
+    "status": "traversal-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "zsd",
+      "kind": "selected-paid-edge",
+      "wayId": "81348980",
+      "names": [
+        "ЗСД"
+      ]
+    },
+    {
+      "road": "zsd",
+      "kind": "selected-paid-edge",
+      "wayId": "721628539",
+      "names": [
+        "ЗСД"
+      ]
+    },
+    {
+      "road": "zsd",
+      "kind": "selected-paid-edge",
+      "wayId": "1090759975",
+      "names": [
+        "ЗСД"
+      ]
+    },
+    {
+      "road": "zsd",
+      "kind": "selected-trace-exact-node",
+      "osmNodeId": "318102347"
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "zsd": {
+      "occurrences": 10,
+      "uniqueWays": 10
+    }
+  },
+  "replayIntegrity": {
+    "complete": true,
+    "missingResponses": []
+  },
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-zsd-prim-to-peterhof/2026-10-16T02-11-13-953Z-capture.json.gz",
+  "captureSha256": "ac4e6eefc011ac49edd11fbd1115e17eca6c1845138c71c6302a0c6593363a80",
+  "detectedRoadComponents": [
+    {
+      "id": "zsd",
+      "amount": 300,
+      "reason": "zsd_zone1_complete_directed_base_tariff"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "ЗСД"
+  ],
+  "tollNodeIds": [
+    "318102347"
+  ],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": 300,
+    "weekdayAmount": 300,
+    "weekendAmount": 300,
+    "period": "все дни, без транспондера",
+    "segments": [
+      "ЗСД: тарифная зона 1 · 300 ₽"
+    ],
+    "confidence": "matched",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "priced"
+  },
+  "audit": {
+    "status": "priced",
+    "priced": [
+      "zsd"
+    ],
+    "missing": [],
+    "components": [
+      {
+        "id": "zsd",
+        "detected": true,
+        "reason": "zsd_zone1_complete_directed_base_tariff",
+        "tolls": {
+          "amount": 300,
+          "weekdayAmount": 300,
+          "weekendAmount": 300,
+          "period": "все дни, без транспондера",
+          "confidence": "matched",
+          "segments": [
+            "ЗСД: тарифная зона 1 · 300 ₽"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T01:45:46.512Z",
+  "phase": "STARTED",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "workflowRun": "38824450386",
+  "stageCounts": [
+    {
+      "stage": 1,
+      "done": 155,
+      "total": 155
+    },
+    {
+      "stage": 2,
+      "done": 100,
+      "total": 154
+    }
+  ],
+  "next": {
+    "part": 16,
+    "spec": {
+      "caseId": "single-a289-krasnodar-to-anapa",
+      "kind": "road",
+      "group": "single-a289"
+    }
+  },
+  "caseId": "single-a289-krasnodar-to-anapa",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "weekendAt": "2026-10-17T09:00:00+03:00",
+  "logPrefix": "docs/checkpoints/evidence/auto-2026-10-16T01-45-46-511Z-part16",
+  "parent": "3c74502e56a1fa26e2ccf028515f62446e62efd5"
+}

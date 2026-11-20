@@ -1,0 +1,13 @@
+# B03 swap/focus defect REPRODUCED —28.10.2026 МСК
+
+Parentremotecd5880ea8ac1f8ab6717d6ff3c134898eea49edc/tree681b2c9a946672082850ec3aa0306ba5508571d5; unchanged runtime source75d55b8a. Chromium154/Playwright1.57/Node24.19.0, localNext16.3.4webpack, commandnetworkgrant, controlled/routedAPI, no externalservice requests. PreviousCI40589384427completedSUCCESS.
+
+New runner `experiments/road-ref-boundaries/scripts/b03-current-input-flow.mjs` (not oldeightfallbacksuite) executed real UIclicks. [Baseline](../../experiments/road-ref-boundaries/checks/2026-10-28-b03-runtime/baseline.json):6PASS,1FAIL,3NOT_RUN, stopped at first appfailure. SourcecomponentSHA2561ad0808c05368c7962a911dec2607f48170f1795e4ef5209371e8f3d8d0285cd.
+
+Confirmed defect: selectAKrasnodar/BAnapa, swap, focusB. Bvalue/coordinates correctly becomeKrasnodar but oldAnapa dropdown remains selectable (1item expected0). `AddressField` retains items on selection; effect's selected-position branch only sets idle and returns, never clearing items/open. This is NOT proof of the externalB-only incident. ActualAnapa→clear→Donetsk, exact positions/clear, fasttyping, delayedoldresponse, pendingclear/abort and same-name choice passed with mockedAPI.
+
+Initial harness attempt3PASS/1FAIL was a test-event timing race: waitForRequest resolved before routecallback recorded request. Moved record to page requestevent before waiter. [Attempt evidence](../../experiments/road-ref-boundaries/checks/2026-10-28-b03-runtime/harnessAttempt.json) retained; not counted as appfailure. Corrected baseline actually reached swapcase. Snapshotrecordhash/freshness checked; Anapa is explicitly QAfixture, no newruntimecoordinates. Request abort events observed, livePhoton not checked.
+
+Screenshot local `/tmp/b03-current-baseline/07-swap-and-refocus-failure.png`,210109bytes/SHA2562c56c7fd8a76f8f84a3ff2119d6eaeeefab6c6b72ddcbcde16a0ddabd1289d83; not uploaded as artifact in this unit. JSON+script are reproducible persistent evidence, do not claim tempimage durable.
+
+CIpublication simulation via existing classifyChangedPaths: diagnostic script/docs→shouldRunLivefalse; app/v2/components/address-field.tsx→true; lib/photon-request-pool.ts→true. Existing special-territory workflow then runs50settlement/Yandex/providerjobs. User prohibits broadaudit, so **runtime fix publication requires a narrowly approved CI policy decision**, not silently weakenedchecks. This unit saves only diagnosis/test/evidence. Next after readback: minimal localfix+browserregression, retain portablepatch rather than accidentally trigger forbiddenremotejobs; then independentB01offline. Permissionrequest must name exact scope before runtimepublication.

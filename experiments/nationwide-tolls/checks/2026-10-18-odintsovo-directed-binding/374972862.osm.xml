@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1298 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="920071130" visible="true" version="4" changeset="155036801" timestamp="2024-08-09T18:59:22Z" user="Vas111" uid="16951803" lat="55.6990292" lon="37.2972387">
+  <tag k="maxspeed" v="implicit"/>
+  <tag k="traffic_sign" v="maxspeed"/>
+ </node>
+ <node id="3783548605" visible="true" version="1" changeset="34595182" timestamp="2015-10-12T17:21:51Z" user="Felis Pimeja" uid="260756" lat="55.6967811" lon="37.2913688"/>
+ <node id="3783548642" visible="true" version="1" changeset="34595182" timestamp="2015-10-12T17:21:52Z" user="Felis Pimeja" uid="260756" lat="55.6969923" lon="37.2919645"/>
+ <node id="3783548660" visible="true" version="1" changeset="34595182" timestamp="2015-10-12T17:21:52Z" user="Felis Pimeja" uid="260756" lat="55.6971550" lon="37.2924463"/>
+ <node id="3783548709" visible="true" version="1" changeset="34595182" timestamp="2015-10-12T17:21:53Z" user="Felis Pimeja" uid="260756" lat="55.6974636" lon="37.2933146"/>
+ <node id="3783548728" visible="true" version="1" changeset="34595182" timestamp="2015-10-12T17:21:53Z" user="Felis Pimeja" uid="260756" lat="55.6975895" lon="37.2936582"/>
+ <node id="3783548858" visible="true" version="1" changeset="34595182" timestamp="2015-10-12T17:21:54Z" user="Felis Pimeja" uid="260756" lat="55.6978462" lon="37.2943773"/>
+ <node id="3783548873" visible="true" version="1" changeset="34595182" timestamp="2015-10-12T17:21:54Z" user="Felis Pimeja" uid="260756" lat="55.6979775" lon="37.2947542"/>
+ <node id="3783548900" visible="true" version="1" changeset="34595182" timestamp="2015-10-12T17:21:55Z" user="Felis Pimeja" uid="260756" lat="55.6982224" lon="37.2953786"/>
+ <node id="3783548947" visible="true" version="1" changeset="34595182" timestamp="2015-10-12T17:21:56Z" user="Felis Pimeja" uid="260756" lat="55.6986214" lon="37.2962871"/>
+ <node id="3783549013" visible="true" version="2" changeset="122072699" timestamp="2022-06-07T13:19:35Z" user="ZinaidaZ" uid="9465790" lat="55.6977490" lon="37.2941050">
+  <tag k="barrier" v="toll_booth"/>
+  <tag k="name" v="ПВП 6,9 км"/>
+  <tag k="operator" v="АО «Новое качество дорог»"/>
+  <tag k="phone" v="+7 800 3335454;+7 495 5942990"/>
+  <tag k="website" v="https://www.m-road.ru/"/>
+ </node>
+ <way id="374972862" visible="true" version="5" changeset="155036801" timestamp="2024-08-09T18:59:22Z" user="Vas111" uid="16951803">
+  <nd ref="3783548605"/>
+  <nd ref="3783548642"/>
+  <nd ref="3783548660"/>
+  <nd ref="3783548709"/>
+  <nd ref="3783548728"/>
+  <nd ref="3783549013"/>
+  <nd ref="3783548858"/>
+  <nd ref="3783548873"/>
+  <nd ref="3783548900"/>
+  <nd ref="3783548947"/>
+  <nd ref="920071130"/>
+  <tag k="highway" v="service"/>
+  <tag k="lanes" v="1"/>
+  <tag k="lit" v="yes"/>
+  <tag k="maxspeed" v="30"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+</osm>

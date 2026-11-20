@@ -1,0 +1,128 @@
+{
+  "capturedAt": "2026-10-15T10:15:00+03:00",
+  "method": "Local V3 POST handler called with the saved Yandex endpoints and departureAt 2026-10-15T10:15:00+03:00; external routing and toll trace were live. This is a route-metric comparison, not a Yandex geometry capture.",
+  "yandexDistanceConversion": "Displayed whole miles converted using 1 mi = 1.609344 km; Yandex UI rounds these distances, so converted km are approximate.",
+  "routes": [
+    {
+      "id": "zsd-blagodatnaya-to-primorsky",
+      "yandex": {
+        "distanceKmApprox": 22.531,
+        "durationMinutes": 26,
+        "tollRubApprox": 600
+      },
+      "v3": {
+        "distanceKm": 22.6,
+        "durationMinutes": 22,
+        "tollRub": null,
+        "pricingStatus": "unknown",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: unknown-paid-road, zsd",
+          "unknown-paid-road: unmapped_selected_route_paid_booth",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ]
+      },
+      "comparison": "Endpoints are exact saved coordinates and distance is close. V3 sees ZSD, but Yandex trace/gate geometry is absent; route-level amount is accepted and is not yet attached to the V3 result."
+    },
+    {
+      "id": "zsd-primorsky-to-blagodatnaya",
+      "yandex": {
+        "distanceKmApprox": 23.496,
+        "durationMinutes": 24,
+        "tollRubApprox": 900
+      },
+      "v3": {
+        "distanceKm": 22.9,
+        "durationMinutes": 22,
+        "tollRub": null,
+        "pricingStatus": "unknown",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: unknown-paid-road, zsd",
+          "unknown-paid-road: unmapped_selected_route_paid_booth",
+          "zsd: zsd_trip_extends_outside_reviewed_zone1"
+        ]
+      },
+      "comparison": "Endpoints are exact saved coordinates; map describes a turnaround-loop route with different geometry. V3 also detects ZSD, but route equivalence is not proven."
+    },
+    {
+      "id": "kazan-to-moscow-city-centres",
+      "yandex": {
+        "distanceKmApprox": 853.95,
+        "durationMinutes": 579,
+        "tollRubApprox": 4400,
+        "displayedDistance": "530 mi"
+      },
+      "v3": {
+        "distanceKm": 821.4,
+        "durationMinutes": 689,
+        "tollRub": 3513,
+        "pricingStatus": "priced",
+        "segments": [
+          "М-12: ivanovskoe_p241 → vladimir"
+        ]
+      },
+      "comparison": "Yandex details start on M-7 and later show AH9; V3 selects a shorter/slower M-12 route and prices one M-12 product. Do not substitute either whole-route sum for the other route."
+    },
+    {
+      "id": "moscow-to-kazan-city-centres",
+      "yandex": {
+        "distanceKmApprox": 820.76,
+        "durationMinutes": 529,
+        "tollRub": null,
+        "displayedDistance": "510 mi"
+      },
+      "v3": {
+        "distanceKm": 820.2,
+        "durationMinutes": 688,
+        "tollRub": 3513,
+        "pricingStatus": "priced",
+        "segments": [
+          "М-12: vladimir → ivanovskoe_p241"
+        ]
+      },
+      "comparison": "Route lengths are close but time differs substantially; Yandex showed no sum. Keep the existing V3 M-12 price for its detected product and do not infer the map total."
+    },
+    {
+      "id": "spb-to-krasnodar",
+      "endpoints": "Approximate city-centre coordinates used because the Yandex capture did not retain exact city point coordinates.",
+      "yandex": {
+        "distanceKmApprox": 2076.05,
+        "durationMinutes": 1415,
+        "tollRubApprox": 11363,
+        "displayedDistance": "1,290 mi"
+      },
+      "v3": {
+        "distanceKm": 2061.1,
+        "durationMinutes": 1582,
+        "tollRub": null,
+        "pricingStatus": "unknown",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        ]
+      },
+      "comparison": "Distance is within 1%, but time and captured road scope differ; city-point coordinates and Yandex trace are not exact. No runtime substitution."
+    },
+    {
+      "id": "krasnodar-to-spb",
+      "endpoints": "Approximate city-centre coordinates used because the Yandex capture did not retain exact city point coordinates.",
+      "yandex": {
+        "distanceKmApprox": 2076.05,
+        "durationMinutes": 1457,
+        "tollRubApprox": 10910,
+        "displayedDistance": "1,290 mi"
+      },
+      "v3": {
+        "distanceKm": 2061.5,
+        "durationMinutes": 1581,
+        "tollRub": null,
+        "pricingStatus": "unknown",
+        "segments": [
+          "Обнаружены, но не полностью оценены платные системы: m4",
+          "m4: M-4 selected traversal is not completely priced; A-289 cannot replace it: m4_crossing_profile_changes"
+        ]
+      },
+      "comparison": "Distance is within 1%, but time and captured road scope differ; city-point coordinates and Yandex trace are not exact. No runtime substitution."
+    }
+  ],
+  "decision": "All visible Yandex sums remain accepted for their recorded map routes. This live comparison does not establish identical route traces for V3; retain accepted map controls and continue route/gate matching. No displayed sum is labeled as receipt-unconfirmed."
+}

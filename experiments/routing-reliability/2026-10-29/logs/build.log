@@ -1,0 +1,41 @@
+▲ Next.js 16.3.4 (webpack)
+✓ Running next.config.ts took 30ms
+- Experiments (use with caution):
+  ⨯ useTypeScriptCli
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 13.4s
+  Running TypeScript ...
+  Finished TypeScript in 14.4s ...
+  Collecting page data using 2 workers ...
+⚠ The "preferredRegion" route segment config is deprecated. Learn more: https://nextjs.org/docs/messages/preferred-region-deprecated
+  Generating static pages using 2 workers (0/16) ...
+  Generating static pages using 2 workers (4/16) 
+  Generating static pages using 2 workers (8/16) 
+  Generating static pages using 2 workers (12/16) 
+✓ Generating static pages using 2 workers (16/16) in 893ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/calculate
+├ ƒ /api/collect
+├ ƒ /api/suggest
+├ ƒ /api/v2/calculate
+├ ƒ /api/v2/classify
+├ ƒ /api/v2/debug-m4
+├ ƒ /api/v2/debug-pvp-node
+├ ƒ /api/v2/debug-route
+├ ƒ /api/v3/calculate
+├ ƒ /api/version
+├ ƒ /r
+├ ○ /v2
+├ ○ /v2/toll-roads
+└ ○ /v3
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

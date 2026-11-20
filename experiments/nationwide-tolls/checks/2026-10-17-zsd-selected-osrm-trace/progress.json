@@ -1,0 +1,16 @@
+{
+  "phase": "DONE",
+  "at": "2026-10-17T14:23:55.104Z",
+  "counts": {
+    "checkedCases": 1,
+    "newRoutingRequests": 0,
+    "selectedGeometryTraceRuns": 1,
+    "attemptedNetworkRequests": 6,
+    "pricedComponents": 4,
+    "pricedZsdComponents": 1,
+    "confirmedFullTripFares": 0
+  },
+  "completedCalls": 6,
+  "terminalBlock": null,
+  "resultSha256": "9303b7fe53a835d6d06ac5028a6d2519ac6ddfddecee1a07f0d1218e97a100c4"
+}

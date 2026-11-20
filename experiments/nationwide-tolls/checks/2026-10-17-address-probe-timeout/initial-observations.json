@@ -1,0 +1,31 @@
+{
+  "status": "INITIAL_FAILURE_RECORDED_FULL_RAW_UNAVAILABLE",
+  "initialFocused": {
+    "command": [
+      "node",
+      "--import",
+      "./scripts/register-ts-paths.mjs",
+      "--test",
+      "scripts/address-probe-timeout.test.ts"
+    ],
+    "observedExitCode": 1,
+    "observedAssertion": "deepStrictEqual compared serialized saved report against an in-memory object containing undefined rankingChecks properties; tool output showed AssertionError and the differing undefined fields",
+    "evidenceBasis": "observed initial tool output tail; not a recovered full raw log",
+    "currentOriginalLogBytes": 0,
+    "fullRawRetained": false,
+    "emptyLogCause": "not established; do not present empty gzip as full failure output",
+    "testOnlyCorrection": "Compare JSON-normalized objects and provide a valid Moscow feature for the ranking assertion; source ranking unchanged"
+  },
+  "initialBuild": {
+    "exitCode": 1,
+    "fullRawRetained": true,
+    "log": "build.log.gz",
+    "cause": "external node_modules symlink rejected by Turbopack"
+  },
+  "finalFocused": {
+    "exitCode": 0,
+    "passed": 8,
+    "failed": 0,
+    "log": "focused.log.gz"
+  }
+}

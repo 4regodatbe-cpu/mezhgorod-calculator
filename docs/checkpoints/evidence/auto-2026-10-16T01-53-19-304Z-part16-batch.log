@@ -1,0 +1,9 @@
+START 1/1 single-khabarovsk-vyazemsky-to-berezovka
+PHASE --live single-khabarovsk-vyazemsky-to-berezovka 2026-10-15T09:00:00+03:00
+{"caseId":"single-khabarovsk-vyazemsky-to-berezovka","mode":"live","provider":"OSRM","routeMeters":143066,"traceComplete":true,"tolls":{"amount":0,"weekdayAmount":0,"weekendAmount":0,"period":"понедельник–четверг","segments":[],"confidence":"none","priceConfirmation":"unconfirmed","displayLabel":null,"pricingStatus":"free"},"detectedRoadComponents":[]}
+PHASE --replay experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-vyazemsky-to-berezovka/2026-10-16T01-53-22-245Z-capture.json.gz 2026-10-15T09:00:00+03:00
+{"caseId":"single-khabarovsk-vyazemsky-to-berezovka","mode":"offline-recorded-response-replay","provider":"OSRM","routeMeters":143066,"traceComplete":true,"tolls":{"amount":0,"weekdayAmount":0,"weekendAmount":0,"period":"понедельник–четверг","segments":[],"confidence":"none","priceConfirmation":"unconfirmed","displayLabel":null,"pricingStatus":"free"},"detectedRoadComponents":[]}
+PHASE --replay experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-khabarovsk-vyazemsky-to-berezovka/2026-10-16T01-53-22-245Z-capture.json.gz 2026-10-17T09:00:00+03:00
+{"caseId":"single-khabarovsk-vyazemsky-to-berezovka","mode":"offline-recorded-response-replay","provider":"OSRM","routeMeters":143066,"traceComplete":true,"tolls":{"amount":0,"weekdayAmount":0,"weekendAmount":0,"period":"пятница–воскресенье","segments":[],"confidence":"none","priceConfirmation":"unconfirmed","displayLabel":null,"pricingStatus":"free"},"detectedRoadComponents":[]}
+DONE single-khabarovsk-vyazemsky-to-berezovka audited parity=true
+{"batchPath":"experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/batch-2026-10-16T01-53-20-711Z.json","attempted":1,"audited":1,"stoppedReason":null}

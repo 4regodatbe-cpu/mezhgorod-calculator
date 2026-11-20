@@ -1,0 +1,525 @@
+{
+  "schemaVersion": 1,
+  "gate": {
+    "osmNodeId": "5286168661",
+    "wayId": "766468434",
+    "coordinate": [
+      35.4302054,
+      56.9836706
+    ]
+  },
+  "strictJunction": {
+    "osmNodeId": "4886068970",
+    "coordinate": [
+      35.4261467,
+      56.9830808
+    ]
+  },
+  "orderedWayIds": [
+    "766468434",
+    "766468433",
+    "547081894",
+    "496959520",
+    "1205158257"
+  ],
+  "sourceCorridor": [
+    {
+      "osmNodeId": "7153719524",
+      "coordinate": [
+        35.4303854,
+        56.9836953
+      ]
+    },
+    {
+      "osmNodeId": "5286168661",
+      "coordinate": [
+        35.4302054,
+        56.9836706
+      ]
+    },
+    {
+      "osmNodeId": "7153719525",
+      "coordinate": [
+        35.4300285,
+        56.9836454
+      ]
+    },
+    {
+      "osmNodeId": "5286168671",
+      "coordinate": [
+        35.4282745,
+        56.9833953
+      ]
+    },
+    {
+      "osmNodeId": "4886068970",
+      "coordinate": [
+        35.4261467,
+        56.9830808
+      ]
+    },
+    {
+      "osmNodeId": "5286018018",
+      "coordinate": [
+        35.4217138,
+        56.9823816
+      ]
+    },
+    {
+      "osmNodeId": "4886068969",
+      "coordinate": [
+        35.4200104,
+        56.9821211
+      ]
+    },
+    {
+      "osmNodeId": "7153719560",
+      "coordinate": [
+        35.419621,
+        56.9820579
+      ]
+    },
+    {
+      "osmNodeId": "7153719547",
+      "coordinate": [
+        35.4195447,
+        56.9820391
+      ]
+    },
+    {
+      "osmNodeId": "6490783287",
+      "coordinate": [
+        35.4194711,
+        56.9820173
+      ]
+    },
+    {
+      "osmNodeId": "7153719548",
+      "coordinate": [
+        35.4194006,
+        56.9819927
+      ]
+    },
+    {
+      "osmNodeId": "7153719561",
+      "coordinate": [
+        35.4193337,
+        56.9819653
+      ]
+    },
+    {
+      "osmNodeId": "7153719549",
+      "coordinate": [
+        35.4192706,
+        56.9819353
+      ]
+    },
+    {
+      "osmNodeId": "5286168666",
+      "coordinate": [
+        35.4192118,
+        56.9819028
+      ]
+    },
+    {
+      "osmNodeId": "7153719550",
+      "coordinate": [
+        35.4191575,
+        56.9818681
+      ]
+    },
+    {
+      "osmNodeId": "7153719562",
+      "coordinate": [
+        35.419108,
+        56.9818313
+      ]
+    },
+    {
+      "osmNodeId": "7153719551",
+      "coordinate": [
+        35.4190636,
+        56.9817926
+      ]
+    },
+    {
+      "osmNodeId": "7153719563",
+      "coordinate": [
+        35.4190245,
+        56.9817523
+      ]
+    },
+    {
+      "osmNodeId": "7153719552",
+      "coordinate": [
+        35.418991,
+        56.9817105
+      ]
+    },
+    {
+      "osmNodeId": "6490783289",
+      "coordinate": [
+        35.4189632,
+        56.9816674
+      ]
+    },
+    {
+      "osmNodeId": "7153719540",
+      "coordinate": [
+        35.4189413,
+        56.9816234
+      ]
+    },
+    {
+      "osmNodeId": "7153719553",
+      "coordinate": [
+        35.4189254,
+        56.9815786
+      ]
+    },
+    {
+      "osmNodeId": "4886068968",
+      "coordinate": [
+        35.4189156,
+        56.9815333
+      ]
+    },
+    {
+      "osmNodeId": "7153719554",
+      "coordinate": [
+        35.4189119,
+        56.9814877
+      ]
+    },
+    {
+      "osmNodeId": "7153719564",
+      "coordinate": [
+        35.4189143,
+        56.9814421
+      ]
+    },
+    {
+      "osmNodeId": "7153719555",
+      "coordinate": [
+        35.4189229,
+        56.9813967
+      ]
+    },
+    {
+      "osmNodeId": "7153719539",
+      "coordinate": [
+        35.4189376,
+        56.9813518
+      ]
+    },
+    {
+      "osmNodeId": "7153719565",
+      "coordinate": [
+        35.4189583,
+        56.9813076
+      ]
+    },
+    {
+      "osmNodeId": "7153719556",
+      "coordinate": [
+        35.4189849,
+        56.9812643
+      ]
+    },
+    {
+      "osmNodeId": "7153719566",
+      "coordinate": [
+        35.4190173,
+        56.9812223
+      ]
+    },
+    {
+      "osmNodeId": "7153719557",
+      "coordinate": [
+        35.4190552,
+        56.9811816
+      ]
+    },
+    {
+      "osmNodeId": "7153719567",
+      "coordinate": [
+        35.4190985,
+        56.9811426
+      ]
+    },
+    {
+      "osmNodeId": "7153719558",
+      "coordinate": [
+        35.419147,
+        56.9811054
+      ]
+    },
+    {
+      "osmNodeId": "4886068967",
+      "coordinate": [
+        35.4192004,
+        56.9810702
+      ]
+    },
+    {
+      "osmNodeId": "7153719538",
+      "coordinate": [
+        35.4192583,
+        56.9810373
+      ]
+    },
+    {
+      "osmNodeId": "7153719559",
+      "coordinate": [
+        35.4193206,
+        56.9810068
+      ]
+    },
+    {
+      "osmNodeId": "5286168665",
+      "coordinate": [
+        35.4193867,
+        56.9809788
+      ]
+    },
+    {
+      "osmNodeId": "4886068966",
+      "coordinate": [
+        35.4199725,
+        56.9807577
+      ]
+    },
+    {
+      "osmNodeId": "7153719602",
+      "coordinate": [
+        35.420099,
+        56.980714
+      ]
+    },
+    {
+      "osmNodeId": "7153719607",
+      "coordinate": [
+        35.4202334,
+        56.9806779
+      ]
+    },
+    {
+      "osmNodeId": "5286168669",
+      "coordinate": [
+        35.420374,
+        56.9806498
+      ]
+    },
+    {
+      "osmNodeId": "7153719606",
+      "coordinate": [
+        35.4205193,
+        56.98063
+      ]
+    },
+    {
+      "osmNodeId": "7153719609",
+      "coordinate": [
+        35.4206677,
+        56.9806188
+      ]
+    },
+    {
+      "osmNodeId": "7153719605",
+      "coordinate": [
+        35.4208174,
+        56.9806162
+      ]
+    },
+    {
+      "osmNodeId": "7153719608",
+      "coordinate": [
+        35.4209668,
+        56.9806223
+      ]
+    },
+    {
+      "osmNodeId": "7153719604",
+      "coordinate": [
+        35.4211141,
+        56.980637
+      ]
+    },
+    {
+      "osmNodeId": "7153719603",
+      "coordinate": [
+        35.4212577,
+        56.9806602
+      ]
+    },
+    {
+      "osmNodeId": "4886068965",
+      "coordinate": [
+        35.421396,
+        56.9806915
+      ]
+    },
+    {
+      "osmNodeId": "7153719618",
+      "coordinate": [
+        35.4224739,
+        56.9809881
+      ]
+    },
+    {
+      "osmNodeId": "7153719617",
+      "coordinate": [
+        35.422623,
+        56.9810262
+      ]
+    },
+    {
+      "osmNodeId": "7153719610",
+      "coordinate": [
+        35.4227775,
+        56.9810573
+      ]
+    },
+    {
+      "osmNodeId": "5286018016",
+      "coordinate": [
+        35.4229362,
+        56.9810811
+      ]
+    },
+    {
+      "osmNodeId": "7153719616",
+      "coordinate": [
+        35.4230981,
+        56.9810975
+      ]
+    },
+    {
+      "osmNodeId": "7153719615",
+      "coordinate": [
+        35.4232619,
+        56.9811063
+      ]
+    },
+    {
+      "osmNodeId": "7153719611",
+      "coordinate": [
+        35.4234266,
+        56.9811076
+      ]
+    },
+    {
+      "osmNodeId": "5286018015",
+      "coordinate": [
+        35.4235908,
+        56.9811012
+      ]
+    },
+    {
+      "osmNodeId": "7153719614",
+      "coordinate": [
+        35.4237535,
+        56.9810872
+      ]
+    },
+    {
+      "osmNodeId": "7153719612",
+      "coordinate": [
+        35.4239134,
+        56.9810658
+      ]
+    },
+    {
+      "osmNodeId": "7153719613",
+      "coordinate": [
+        35.4243323,
+        56.9809611
+      ]
+    },
+    {
+      "osmNodeId": "5286018481",
+      "coordinate": [
+        35.4254277,
+        56.9807355
+      ]
+    },
+    {
+      "osmNodeId": "11169124033",
+      "coordinate": [
+        35.4298758,
+        56.9793749
+      ]
+    }
+  ],
+  "orderedWays": [
+    {
+      "wayId": "766468434",
+      "tags": {
+        "covered": "yes",
+        "destination": "Москва",
+        "destination:ref": "М-11",
+        "highway": "primary_link",
+        "oneway": "yes"
+      }
+    },
+    {
+      "wayId": "766468433",
+      "tags": {
+        "destination": "Москва",
+        "destination:ref": "М-11",
+        "highway": "primary_link",
+        "oneway": "yes",
+        "toll": "yes"
+      }
+    },
+    {
+      "wayId": "547081894",
+      "tags": {
+        "bridge": "yes",
+        "highway": "primary_link",
+        "layer": "1",
+        "oneway": "yes"
+      }
+    },
+    {
+      "wayId": "496959520",
+      "tags": {
+        "destination": "Москва",
+        "destination:ref": "М-11",
+        "highway": "primary_link",
+        "oneway": "yes"
+      }
+    },
+    {
+      "wayId": "1205158257",
+      "tags": {
+        "highway": "motorway",
+        "highway:category": "ru:IА",
+        "lanes": "3",
+        "lit": "yes",
+        "maxspeed": "RU:motorway",
+        "maxspeed:designed": "150",
+        "maxspeed:goods": "130",
+        "maxspeed:goods:conditional": "110 @ (Nov 15 - Apr 15)",
+        "maxspeed:motorcar": "130",
+        "maxspeed:motorcar:conditional": "110 @ (Nov 15 - Apr 15)",
+        "maxspeed:variable": "yes",
+        "name": "«Нева»",
+        "name:en": "Neva Motorway",
+        "name:ru": "«Нева»",
+        "name:uk": "«Нева»",
+        "old_name:2:ru": "скоростная платная автомобильная дорога Москва — Санкт-Петербург",
+        "old_name:en": "Moscow – Saint Petersburg Highway",
+        "old_name:ru": "Москва — Санкт-Петербург",
+        "oneway": "yes",
+        "ref": "М-11",
+        "short_name:ru": "СПАД",
+        "surface": "asphalt",
+        "toll": "yes",
+        "turn:lanes": "none|none|merge_to_left"
+      }
+    }
+  ],
+  "tariffPointCandidate": "p214",
+  "scope": "Physical southbound access only; tariff binding and integration require separate review. Gate building is a neighboring complex label, not proof of containment."
+}

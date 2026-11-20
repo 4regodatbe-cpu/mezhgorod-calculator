@@ -1,0 +1,11 @@
+# М11 → ЦКАД47: source DONE / CODE STARTED
+
+18.10.2026. Parent98c3869fb7a7eeaf8c66076864ca37e7f8ea39c1/treeaae470f86c06a8b560be5fa0c9e74c0adb41d2a5, STARTEDremote/head/tree/PR14draftсовпали. ЧетыреexactGET200 завершены,каждый4.4–4.6s;rawmetadata/SHA/progressсохранены сразу. Старуюкарту/источники не запрашивали. Routing/trace0.
+
+Sourceproof `source-snapshots/m11/2026-10-18-ckad47-exit`: новые4ways соединены с6retainedways;10/10oneway и общиеfirst/lastnodeIDs согласованы. Independentstrictjunction9556466755 совпал сownstrictend в0.0000128км (~1.3см). Все48orderedcorridorpoints совпали сownРаменское вмаксимум0.0000544км (~5.4см), p58индекс963.431доexitfirst1035.9999; exactgate8087316064/1270188041 найден1раз. Это полный направленный южный съезд того же PVP18ЦКАД47 комплекса; source-derivedоператорскаяпривязка по сохранённомуpage5+раздельнымполосам, неофициальныйoperatorlane-crosswalk/ODчек. Северный8087316065не переносился. Raw/sourceproof и ownbenchmarkразделены, runtimeне менялся, новыхpricedcomponents0.
+
+Retaineddirectpair solnechnogorsk→tskad: night50/MonThu200/Fri220/Sat240/Sun320. Она опубликована отдельно отобратнойпары. CODE STARTED: отдельный inspectM11CkadHeadExit, completechunks/oneM11strictblock/uniqueexactgateway/strictend25мsourcejunction/p58beforeexit/48orderedpoints25м/fullcorridor/density. Non-tollaccesswaysне требовать вpaid-onlywayIds: ихowncontinuityдоказананезависимойполнойгеометрией. Только существующийprovedp214fallback; Москва иnorthCKADentryне меняются. PhysicalJSONне содержитprices/caseID/time/benchmark.
+
+Цель ownРаменское: head200/240, М11subtotal1450/1630; wholequoteостаётсяunknownиз-заЦКАД. НедопустимоheadподменятьCKADfareилиобнулятьCKAD. Проверитьownheadcomponent/unknownquote иguardsmissing/wrong/duplicategate/coverage/chunks/reverse/parallel/sparse/detour/strictend; пятьdepartureprofilesиThu23:59. RegressionМоскванеполучаетtskadhead. Длядругихownp214exitsссовпадающимкоридором — явныеownboundary/componentcontrols; невыдаватьихавтоматическиза wholefare.
+
+Лимитfocused60s/fullbuild300s, TS/ESLint/diff, полныелогивchecks/2026-10-18-m11-ckad47-exit. ПослеDONEcommit/readback/codeCI. Еслиостановка — делитьостаток; не повторять4GET/48sourcepoints/готовыеp214prefixes. Main/merge/Production/Androidне менять.

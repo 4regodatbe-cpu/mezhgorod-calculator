@@ -1,0 +1,100 @@
+{
+  "head": "d497df67738696dbe9c11e4dc14e617717ea1a2a",
+  "tree": "8e50f77a553ace772f0f1ccb39722baa5627062b",
+  "draft": true,
+  "files": [
+    {
+      "path": ".github/workflows/special-territory-policy.yml",
+      "sha": "0439338aaf8e97ae2e29e5c43bf4aa05d4c52bcb"
+    },
+    {
+      "path": "docs/WORK_STATE.md",
+      "sha": "a1152c62dbfc25158bef61441fe90db6ade24ece"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-17-2350-address-probe-timeout-DONE.md",
+      "sha": "287bd22c4a6a4644475277b24e85bf12d11a9b4b"
+    },
+    {
+      "path": "experiments/nationwide-tolls/NEXT_STEPS.md",
+      "sha": "83c4d4d437c5fabe5cca74c24ce6cb0fe26df0f8"
+    },
+    {
+      "path": "experiments/nationwide-tolls/WORK_LOG.md",
+      "sha": "87f0fbfbbd79615c904b8ae1993e5318aed2d984"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-address-probe-timeout/README.md",
+      "sha": "ed30578c6986daaed3efc0a33626fa7d4e65d732"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-address-probe-timeout/audit.log.gz",
+      "sha": "56e6c710943d5a09ed0e0b9e680690c74c429e3f"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-address-probe-timeout/build-retry.log.gz",
+      "sha": "6d3a24358e650cedf7a1d906d2eab6252e25e2eb"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-address-probe-timeout/build.log.gz",
+      "sha": "bd4c097af6ff2669593a1e6cf635c14478edb31e"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-address-probe-timeout/eslint.log.gz",
+      "sha": "d4b9926df0b7defceb6caf0b474c4a190c5ca8f0"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-address-probe-timeout/focused-initial.log.gz",
+      "sha": "d4b9926df0b7defceb6caf0b474c4a190c5ca8f0"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-address-probe-timeout/focused.log.gz",
+      "sha": "052f0d2dd7d6247081338af3db33cc98a151d275"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-address-probe-timeout/initial-observations.json",
+      "sha": "823dba0d5da8aebe0a7c6a06415132e2804176d0"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-address-probe-timeout/required-checks-initial.json",
+      "sha": "2a599a2e4a50c8aa6ea127dc5b3b2784cfc60759"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-address-probe-timeout/required-checks.json",
+      "sha": "a1a6358a4e054dd4c772cccec37a0f18d90339f9"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-address-probe-timeout/summary.json",
+      "sha": "3b3ab75a8f731aaa4bcbbc1c4bd48950f93c4054"
+    },
+    {
+      "path": "experiments/nationwide-tolls/checks/2026-10-17-address-probe-timeout/tsc.log.gz",
+      "sha": "d4b9926df0b7defceb6caf0b474c4a190c5ca8f0"
+    },
+    {
+      "path": "scripts/address-probe-timeout.test.ts",
+      "sha": "887b21c5d2f896eb3ccbf0a2ed85dff451a00958"
+    },
+    {
+      "path": "scripts/address-search-live-probe.mjs",
+      "sha": "d091d915733527396e3c9822f5da3e5e00ab13fe"
+    },
+    {
+      "path": "scripts/bounded-json-fetch.mjs",
+      "sha": "7f02fa450002fa7e6e2e9e560345987a34c7ea5c"
+    }
+  ],
+  "codeCI": {
+    "id": 39068966825,
+    "verify": "completed/success",
+    "live_probe": "in_progress"
+  },
+  "localGate": {
+    "focusedPass": 8,
+    "auditPass": 744,
+    "quoteAPI": "PASS",
+    "tsc": "PASS",
+    "eslint": "PASS",
+    "build": "PASS16/16"
+  }
+}

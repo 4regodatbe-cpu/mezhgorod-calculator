@@ -1,0 +1,57 @@
+{
+  "sourceCommit": "479f9dc636c5330d48a9750eef8c8fca20b682c0",
+  "scope": "deterministic Next endpoint/proxy with Photon mocks; not live/browser/mobile",
+  "liveRequests": 0,
+  "peakUpstream": 2,
+  "mockFetches": 40,
+  "evidence": [
+    {
+      "step": "sequential-replacement",
+      "query": "Анапа",
+      "status": 200,
+      "first": "Анапа, Краснодарский край, Россия"
+    },
+    {
+      "step": "sequential-replacement",
+      "query": "Краснодар",
+      "status": 200,
+      "first": "Краснодар, Краснодарский край, Россия"
+    },
+    {
+      "step": "sequential-replacement",
+      "query": "Ростов",
+      "status": 200,
+      "first": "Ростов-на-Дону, Ростовская область, Россия"
+    },
+    {
+      "step": "clear-old-prefix-then-donetsk",
+      "status": 200,
+      "abandonedFetches": 2,
+      "labels": [
+        "Донецк — ДНР",
+        "Донецк, Ростовская область, Россия"
+      ]
+    },
+    {
+      "step": "same-query-through-GET-cache",
+      "extraFetches": 0
+    },
+    {
+      "step": "two-fields-same-query-cancel-A",
+      "statusA": 502,
+      "statusB": 200,
+      "upstreamFetches": 7
+    },
+    {
+      "step": "partial-503-then-origin-cooldown",
+      "positiveStatus": 200,
+      "newQueryStatus": 502,
+      "retryExtraFetches": 0,
+      "cachedDonetskStatus": 200
+    }
+  ],
+  "diagnosticCodes": [
+    "address_search_partial",
+    "address_search_unavailable"
+  ]
+}

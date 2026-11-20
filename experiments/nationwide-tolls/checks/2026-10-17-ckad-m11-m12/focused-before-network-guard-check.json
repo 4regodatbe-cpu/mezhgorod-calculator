@@ -1,0 +1,11 @@
+{
+  "command": [
+    "node",
+    "--import",
+    "./scripts/register-ts-paths.mjs",
+    "--test",
+    "scripts/v3-ckad-m11-m12-boundary.test.ts"
+  ],
+  "exitCode": 0,
+  "elapsedSeconds": 8.895
+}

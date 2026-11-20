@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1295 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="3183012434" visible="true" version="6" changeset="52809395" timestamp="2017-10-11T00:34:48Z" user="AlexTheTux" uid="367643" lat="57.2256978" lon="34.9162673">
+  <tag k="barrier" v="toll_booth"/>
+  <tag k="comment" v="Пункт &quot;ТОРЖОК - ПВП8&quot;"/>
+  <tag k="payment:cash" v="yes"/>
+  <tag k="payment:mastercard" v="yes"/>
+  <tag k="payment:visa" v="yes"/>
+  <tag k="ref" v="ПВП8"/>
+ </node>
+</osm>

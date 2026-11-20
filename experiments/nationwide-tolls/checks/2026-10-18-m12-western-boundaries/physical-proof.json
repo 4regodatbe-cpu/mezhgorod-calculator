@@ -1,0 +1,131 @@
+{
+  "status": "PASS_PHYSICAL_ONLY",
+  "gantries": [
+    {
+      "nodeId": "10782165529",
+      "coordinate": [
+        38.7402523,
+        55.8259863
+      ],
+      "tags": {
+        "highway": "toll_gantry"
+      },
+      "operatorIdentityFields": {},
+      "physicalLocationVerified": true,
+      "operatorMarkerBindingProven": false
+    },
+    {
+      "nodeId": "11214930528",
+      "coordinate": [
+        39.2843314,
+        55.9090383
+      ],
+      "tags": {
+        "highway": "toll_gantry"
+      },
+      "operatorIdentityFields": {},
+      "physicalLocationVerified": true,
+      "operatorMarkerBindingProven": false
+    },
+    {
+      "nodeId": "11157985901",
+      "coordinate": [
+        40.084432,
+        56.0659396
+      ],
+      "tags": {
+        "highway": "toll_gantry"
+      },
+      "operatorIdentityFields": {},
+      "physicalLocationVerified": true,
+      "operatorMarkerBindingProven": false
+    }
+  ],
+  "cases": [
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-arzamas",
+      "causeReviewStatus": "blocked_by_missing_reliable_data",
+      "primaryExitWayIds": [
+        "1550135076",
+        "1550561305",
+        "1206479738"
+      ],
+      "sharedJunctionNodeIds": [
+        "14102954884",
+        "10090995838"
+      ],
+      "physicalExitChainVerified": true,
+      "exitRoadRef": "22Н-0239",
+      "candidateOperatorPoint": "arzamas_p158",
+      "unappliedCandidateRub": 2952,
+      "operatorPointBindingProven": false,
+      "existingSubtotalRub": 5475,
+      "fullTripRub": null,
+      "newPricedComponents": 0,
+      "confirmedFullTripFares": 0,
+      "missing": "Official coordinate/object-to-operator charged-boundary crosswalk; gantry identity tags absent; exit relation to tariff point not established"
+    },
+    {
+      "caseId": "max-chain-m12-ckad-m11-zsd-prim-to-cheboksary",
+      "causeReviewStatus": "blocked_by_missing_reliable_data",
+      "primaryExitWayIds": [
+        "972809728",
+        "972809720",
+        "292501171"
+      ],
+      "sharedJunctionNodeIds": [
+        "10026978937",
+        "14216395535"
+      ],
+      "physicalExitChainVerified": true,
+      "exitRoadRef": "М-7",
+      "candidateOperatorPoint": "vladimir",
+      "unappliedCandidateRub": 1239,
+      "operatorPointBindingProven": false,
+      "existingSubtotalRub": 5475,
+      "fullTripRub": null,
+      "newPricedComponents": 0,
+      "confirmedFullTripFares": 0,
+      "missing": "Official coordinate/object-to-operator charged-boundary crosswalk; gantry identity tags absent; exit relation to tariff point not established"
+    }
+  ],
+  "rawHashes": [
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/039cfde37fa14ee9ffff.osm",
+      "sha256": "3a9a9c9d9d6c2e4ee4c89dca2cd9f69939f07757512959310f822883b4f91a9f"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/104baff22d6d3ddb49d9.osm",
+      "sha256": "debeb14033e8bc35c50d61d6c3e365d913a456d9e13b53e7a33722db93937c04"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/e421784129ac6308b39c.osm",
+      "sha256": "3beb713b329037747d6ef97cd5e223109ae6d486849f075926ed55b737edc1aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/2aa50600164a08549851.osm",
+      "sha256": "5fd35082ff16b56af5eb277cf19cbf7114b0d683f32f2d746fbd191025c467d6"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/1f1c1ebc00b9a06c10ea.osm",
+      "sha256": "0dfcc097adb908628bcd7e7a0ee0d72823317ff318a853006c31477de035bf4b"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/54c63c7e7f4a37584cf7.osm",
+      "sha256": "55404c659b09bf902620e5205d5a05199c736b27e90b98b44dcbfa7c5e2ea5aa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/c0ab136d60afb7d92ae6.osm",
+      "sha256": "8137333900213085db615cafc7e9a1ebb1eb6da4a0a15b37535528c58acda5fa"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/2fc5f3d1aa94bda63cfe.osm",
+      "sha256": "bdbe040b13f8012b95f18902c225ed9f7bb6d736f0ce078eb389faaec5d1afbe"
+    },
+    {
+      "path": "experiments/nationwide-tolls/source-snapshots/m12/2026-10-18-western-boundaries/63df72f8e9d8a1276153.osm",
+      "sha256": "95cb5c5e99b24b95e05006d08b750e76f848025b94d69ec58ad823460c1e0a6f"
+    }
+  ],
+  "warning": "OSM topology and matching coordinates do not establish operator tariff identities."
+}

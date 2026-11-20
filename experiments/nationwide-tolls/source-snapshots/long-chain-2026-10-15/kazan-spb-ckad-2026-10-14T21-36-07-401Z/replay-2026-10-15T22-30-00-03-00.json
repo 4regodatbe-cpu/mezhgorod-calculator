@@ -1,0 +1,130 @@
+{
+  "name": "kazan-spb-ckad",
+  "mode": "offline-recorded-response-replay",
+  "provider": "Valhalla",
+  "departureAt": "2026-10-15T22:30:00+03:00",
+  "meters": 1663348,
+  "seconds": 80354,
+  "traceComplete": true,
+  "expected": [
+    "m12",
+    "ckad",
+    "m11"
+  ],
+  "missingExpected": [],
+  "pricingElapsedMs": 212,
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m11-15-58, m11-679-684, m12, ckad, zsd",
+      "m11-15-58: m11_partial_head_entry_boundary_unresolved",
+      "m11-679-684: m11_679_684_continuation_not_priced",
+      "m12: m12_current_operator_pair_not_bound",
+      "ckad: ckad_east_arc_not_proven",
+      "zsd: ЗСД"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": "Стоимость не подтверждена",
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [
+      "m11-58-679"
+    ],
+    "missing": [
+      "m11-15-58",
+      "m11-679-684",
+      "m12",
+      "ckad",
+      "zsd"
+    ],
+    "components": [
+      {
+        "id": "m11-15-58",
+        "detected": true,
+        "tolls": null,
+        "reason": "m11_partial_head_entry_boundary_unresolved"
+      },
+      {
+        "id": "m11-58-679",
+        "detected": true,
+        "tolls": {
+          "amount": 4200,
+          "weekdayAmount": 3900,
+          "weekendAmount": 4200,
+          "period": "пятница–воскресенье",
+          "segments": [
+            "М-11: p58 → p679 · Стоимость не подтверждена"
+          ],
+          "confidence": "matched"
+        },
+        "reason": "matrix dated selected-route M11 direct pair"
+      },
+      {
+        "id": "m11-679-684",
+        "detected": true,
+        "tolls": null,
+        "reason": "m11_679_684_continuation_not_priced"
+      },
+      {
+        "id": "m12",
+        "detected": true,
+        "tolls": null,
+        "reason": "m12_current_operator_pair_not_bound"
+      },
+      {
+        "id": "ckad",
+        "detected": true,
+        "tolls": null,
+        "reason": "ckad_east_arc_not_proven"
+      },
+      {
+        "id": "zsd",
+        "detected": true,
+        "tolls": null,
+        "reason": "ЗСД"
+      }
+    ]
+  },
+  "booths": [
+    {
+      "osmNodeId": "3499155981",
+      "wayId": "795569815",
+      "roadNames": [
+        "М-11"
+      ],
+      "edgeIndex": 0,
+      "edgeToll": true,
+      "beginShapeIndex": 347,
+      "endShapeIndex": 348
+    },
+    {
+      "osmNodeId": "2492861246",
+      "wayId": "1395997597",
+      "roadNames": [
+        "М-11",
+        "«Нева»"
+      ],
+      "edgeIndex": 1,
+      "edgeToll": true,
+      "beginShapeIndex": 467,
+      "endShapeIndex": 469
+    },
+    {
+      "osmNodeId": "933974870",
+      "wayId": "381576632",
+      "roadNames": [
+        "ЗСД"
+      ],
+      "edgeIndex": 2,
+      "edgeToll": true,
+      "beginShapeIndex": 657,
+      "endShapeIndex": 658
+    }
+  ]
+}

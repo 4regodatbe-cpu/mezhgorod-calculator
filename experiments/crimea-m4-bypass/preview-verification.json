@@ -1,0 +1,20 @@
+{
+  "source": "0f568c57384907b8fc5f2a08412f0e3687c22cb0",
+  "tree": "3960de5e2038f1607e4f744aa05b5dbce234149c",
+  "deployment": "dpl_2M44uZUARGfqjU7ZwxFkySrA3SpU",
+  "url": "https://mezhgorod-calculator-1rcqv4m14-4regodatbe-5310.vercel.app/",
+  "state": "READY",
+  "status": "success",
+  "standardVercelBuild": {
+    "tests": 817,
+    "pass": 817,
+    "fail": 0,
+    "compile": "success",
+    "static": "16/16",
+    "quote": "PASS",
+    "apiAdapter": "PASS"
+  },
+  "pageHttp": 200,
+  "previewUiPostTested": false,
+  "productionRoutingChangePublished": false
+}

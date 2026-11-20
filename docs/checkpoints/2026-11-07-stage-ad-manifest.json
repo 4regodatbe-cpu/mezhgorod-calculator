@@ -1,0 +1,43 @@
+{
+  "stage": "AD",
+  "status": "DONE_LOCAL_RELEASE_BLOCKED",
+  "base": "2400f76001de9d88b0117b21aa7d91a6e63b7da3",
+  "testedRuntime": "e4e070c8fb24b6e415029c31f4e4b2827ef010d0",
+  "offline": {
+    "pass": 1157,
+    "fail": 0,
+    "skip": 1
+  },
+  "browser": {
+    "desktopPass": 14,
+    "mobilePass": 14,
+    "mode": "LOCAL_BUILT_UI_CONTROLLED_API"
+  },
+  "standardTurbopack": "PASS",
+  "apiSmoke": "16/16 PASS",
+  "strictFreshness": "BLOCKED: 2 stale; unchanged gate",
+  "push": false,
+  "sha256": {
+    "lib/routing-attempt.ts": "1414d49bc94ab65ed50d9e25dd2608e0160c840ba59cb8ca18518ffd533e97e5",
+    "lib/routing-deadline.ts": "244e6daf2741e96dbd9995172b776c6fe7d8974a8b5eafe758f22680452c3e6e",
+    "lib/route-providers.ts": "dc7c4b065bc2757db8d5c2a28fbae95b787627028b1bc3b6527817890315f864",
+    "lib/v3-calculation/route-leg.ts": "a01f88f216237d19e8d65c47b48623025b96a07ed97ab27a8cc92a85237b4292",
+    "app/api/v3/calculate/route.ts": "17bec720dafd5aef22928f197bf671eef2c6a9cb9a45b339b660bcd508604d43",
+    "docs/checkpoints/evidence/stage-ad/desktop.png": "13b70e12dbdbe595b16c8a229b82db11efd5c821ead1b3f79dd84526f6a66fea",
+    "docs/checkpoints/evidence/stage-ad/mobile.png": "a068d11c0b879c674cc25d622cec7b7c9c9278bce951704ce93750058ed2828c",
+    "docs/checkpoints/evidence/stage-ad/results.json": "ffe6507671c1c9b5c7f53ca558158fb620293002d44843008cbf7614a9496ff5",
+    "docs/checkpoints/evidence/stage-ad/stage-ad-browser-first-results.json": "5795d4008e727640078e1896044712c25e837bf7f2ae909f7f2c10b83fad8131",
+    "docs/checkpoints/evidence/stage-ad/stage-ad-final-benchmark.log": "9764dbb9cac12bfb5e4dd42b41ff9bc059c87625da5fa98cbce57b74f037ccf6",
+    "docs/checkpoints/evidence/stage-ad/stage-ad-final-contract.log": "b615c6e554971794c6327090b664fa0c396bba051da60a920f591a68c30d7d86",
+    "docs/checkpoints/evidence/stage-ad/stage-ad-freshness.log": "d262930c9a4b3a7416e79ea912aeaa3e639bd8d0fad028e2e745f89bfae5738f",
+    "docs/checkpoints/evidence/stage-ad/stage-ad-install-authorized.log": "975aece5c93d447067d8233a8f7fabd0d44e6b419c1303f11bd1391f79164992",
+    "docs/checkpoints/evidence/stage-ad/stage-ad-live-diagnostics.json": "780b5ef152de4fd7519f8216a6a1a37618343a31ecbb9be8e7361d3ad12bf3eb",
+    "docs/checkpoints/evidence/stage-ad/stage-ad-release-browser.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/checkpoints/evidence/stage-ad/stage-ad-release-build.log": "3f9271197b89ec8ef3fa242aede3e5ced905559d34056bb77b4138f4f12bdcec",
+    "docs/checkpoints/evidence/stage-ad/stage-ad-release-lint.log": "3df9fee36d5db4c6e561210d52e3a6f3d2f2f937af2631a61a755401fa6fcf2e",
+    "docs/checkpoints/evidence/stage-ad/stage-ad-release-smoke.log": "cf5d175e7e98ce69a8362e458a50a8f992bf908ce829eda51dea66cc57e31eec",
+    "docs/checkpoints/evidence/stage-ad/stage-ad-release-tsc.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/checkpoints/evidence/stage-ad/stage-ad-server.log": "3385d81504caae4752b2e5d21873a6ba2999d7dc4cbb987276ff7ad9e0420615",
+    "docs/checkpoints/evidence/stage-ad/stage-ad-temporal-api-final.log": "e528acfad98e65ed31f4ea3799ca1fa909ba5af561be1714101286bb27943cb9"
+  }
+}

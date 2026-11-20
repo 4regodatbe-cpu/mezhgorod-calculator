@@ -127,3 +127,37 @@ test('references and product names on one booth are aliases, never a second char
  const bypass=unpricedRoadCoverage({...blank,validation:{...trace(['М-4','Дальний западный обход Краснодара']),roadNames:['М-4','Дальний западный обход Краснодара']}});
  assert.deepEqual(bypass.matchedCoreProducts,['krasnodar-west-bypass']);
 });
+
+
+test('unnamed selected-route M4 booths resolve by exact saved node identity',()=>{
+ for(const osmNodeId of ['5818209495','3717382721','5061777372']){
+  const validation={...trace([]),tollBooths:[{...trace([]).tollBooths![0],osmNodeId}]};
+  const result=unpricedRoadCoverage({...blank,validation});
+  assert.deepEqual(result.matchedCoreProducts,['m4']);
+  assert.deepEqual(result.regionalProducts,[]);
+ }
+});
+test('node identity cannot suppress an unknown booth, incomplete trace or a distinct named product',()=>{
+ const unknown=unpricedRoadCoverage({...blank,validation:trace([])});
+ assert.deepEqual(unknown.regionalProducts.map(p=>p.id),['unknown-paid-road']);
+ const validation={...trace([]),complete:false,tollBooths:[{...trace([]).tollBooths![0],osmNodeId:'5818209495'}]};
+ assert.deepEqual(unpricedRoadCoverage({...blank,validation}).regionalProducts.map(p=>p.id),['unknown-paid-road']);
+ const other={...validation,complete:true,tollBooths:[{...validation.tollBooths[0],roadNames:['ЗСД']}]};
+ const result=unpricedRoadCoverage({...blank,validation:other});
+ assert.deepEqual(result.regionalProducts.map(p=>p.id),['zsd']);
+ assert.deepEqual(result.matchedCoreProducts,[]);
+});
+
+
+test('component audit separates known road prices from the product blocking the complete total',async()=>{
+ const result=await upper(trace(['ЗСД']));
+ assert.equal(result.componentAudit.status,'unknown');
+ assert.ok(result.componentAudit.priced.includes('a289'));
+ assert.ok(result.componentAudit.missing.includes('zsd'));
+ const known=result.componentAudit.components.find(c=>c.id==='a289')!;
+ assert.equal(known.tolls?.amount,620);
+ assert.equal(result.componentAudit.components.find(c=>c.id==='zsd')?.tolls,null);
+ assert.equal(tollsForApi(result.tolls,result.fastValidation).amount,null);
+ known.tolls!.amount=999999;
+ assert.equal(result.tolls.amount,0,'audit cannot authorize a partial complete total');
+});

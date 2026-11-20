@@ -1,0 +1,33 @@
+{
+  "sourceBaseCommit": "5d7043a14bab604aae46dcc131990790683159f6",
+  "focusedPass": 31,
+  "fullPass": 875,
+  "fail": 0,
+  "skip": 0,
+  "quoteApi": "PASS",
+  "eslintExit": 0,
+  "webpackTypeScriptExit": 0,
+  "static": "16/16",
+  "newLiveRequests": 0,
+  "runtimeProbeDefaultPath": "production collectAddressFeatures/pool + rankPhotonFeatures",
+  "limits": {
+    "queries": 3,
+    "perQueryMs": 20000,
+    "totalNetworkBudgetMs": 60000,
+    "rawFeatureCap": 500
+  },
+  "offlineDefaultPipeline": {
+    "mockFetches": 21,
+    "peak": 2
+  },
+  "appLibDataUnchangedSinceFix": true,
+  "sha256": {
+    "scripts/address-search-runtime-probe.mjs": "2c3bddd6a12dd83b5578cf5c063be77c10e1f402d5712793740a5321cd9ae677",
+    "scripts/address-runtime-probe.test.ts": "702bc996d968dfa1c441be6b1792c360242405523b346b762093201e0924cb1e",
+    ".github/workflows/special-territory-policy.yml": "c0d3626e2097958b35b13cbb0ecddc1a57d19379b2c0b62fe33024d187e7cc28",
+    "experiments/road-ref-boundaries/checks/2026-10-24-runtime-address-probe/full-audit.log": "16840e6e87f5e73b013d043930c97e51713ef1053e6a202e501f59b74cca4bd3",
+    "experiments/road-ref-boundaries/checks/2026-10-24-runtime-address-probe/build.log": "55a754afa6a350e9d4d6e426848cc60100138ff19a1211008beb7e6bd80c1db5",
+    "experiments/road-ref-boundaries/checks/2026-10-24-runtime-address-probe/focused.log": "cb1d6331f91bbc058c4632009a351fe2b1228fd3642de044af1b6f134b19c04c",
+    "experiments/road-ref-boundaries/checks/2026-10-24-runtime-address-probe/eslint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

@@ -1,7 +1,7 @@
 name: Calculator final gate
 on:
   pull_request:
-    branches: [main]
+    branches: [main, audit/v3-matrix-provenance-2026-10-14]
     paths:
       - .env.example
       - app/page.tsx
@@ -19,7 +19,22 @@ on:
       - vercel.json
       - .github/workflows/android-apk.yml
       - .github/workflows/calculator-final-gate.yml
-  workflow_dispatch:
+  push:
+    branches: [fix/v3-missing-route-prices-2026-10-15]
+    paths:
+      - .env.example
+      - app/page.tsx
+      - app/api/v2/**
+      - app/api/v3/**
+      - app/api/collect/**
+      - app/api/suggest/**
+      - app/v2/**
+      - app/v3/**
+      - lib/**
+      - data/**
+      - scripts/**
+      - vercel.json
+      - .github/workflows/calculator-final-gate.yml
 permissions:
   contents: read
 concurrency:
@@ -36,8 +51,10 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: '24.x', cache: pnpm }
       - run: pnpm install --frozen-lockfile
-      - name: Static production-readiness truth gates
+      - name: Legacy V2 safety and shared tariff truth gates
         run: node scripts/segment10-production-readiness.mjs
+      - name: Current V3 production-readiness truth gates
+        run: node scripts/v3-production-readiness.mjs
       - name: Static civilian corridor policy
         run: node --experimental-strip-types scripts/route-corridor-policy-test.ts
       - name: Route pricing integration regressions
@@ -46,17 +63,10 @@ jobs:
         run: node scripts/segment9-regression.mjs
       - name: Route-quality corpus
         run: node --experimental-strip-types scripts/segment8-route-quality-test.ts
-      - name: Golden route corpus integrity
-        run: node --experimental-strip-types scripts/segment8-golden-corpus-test.ts
-      - name: Verified route database integrity
-        run: node scripts/v3-verified-route-integrity.mjs
-      - name: Verified route freshness contract
-        run: node scripts/v3-freshness-contract.mjs
-      - name: Tariff freshness
-        env:
-          TARIFF_AS_OF: '2026-10-02'
-          TARIFF_STALE_STRICT: '1'
-        run: node scripts/check-tariff-freshness.mjs
+      - name: Offline Yandex benchmark corpus integrity
+        run: pnpm test:route-benchmark
+      - name: V3 API, toll composition, and unknown-price integrity suites
+        run: node --import ./scripts/register-ts-paths.mjs --test scripts/v3-pipeline-integrity.test.ts scripts/v3-final-price-integrity.test.ts scripts/v3-unpriced-coverage-audit.test.ts scripts/v3-all-routing-providers-unavailable.test.ts
       - name: M12 recovery replay
         run: node scripts/segment5a1-m12-recovery-replay.mjs
       - name: Systemic composition regression
@@ -72,30 +82,62 @@ jobs:
       - run: pnpm lint
       - run: pnpm build
       - name: Start production server
+        env:
+          GITHUB_SHA: ${{ github.sha }}
         run: |
           pnpm start > /tmp/mezhgorod-next.log 2>&1 &
           echo $! > /tmp/mezhgorod-next.pid
-          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:3000/v2 >/dev/null && exit 0; sleep 1; done
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:3000/v3 >/dev/null && exit 0; sleep 1; done
           cat /tmp/mezhgorod-next.log
           exit 1
-      - name: Canonical root redirects to V2
+      - name: Canonical root redirects to V3; legacy V2 remains available
         run: |
           test "$(curl -sS -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/)" = "307"
-          curl -sSI http://127.0.0.1:3000/ | grep -qi '^location: /v2'
+          curl -sSI http://127.0.0.1:3000/ | grep -qi '^location: /v3'
+          test "$(curl -sS -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/v2)" = "200"
+          test "$(curl -sS -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/api/version)" = "200"
       - name: API contract smoke
         env:
           CALCULATOR_URL: http://127.0.0.1:3000
         run: node scripts/api-contract-smoke.mjs
-      - name: Free-route truth live regression
-        run: node scripts/segment3-free-truth.mjs
-      - name: Full live user-route audit
+      - name: Current V3 live route audit
+        id: v3_live
+        continue-on-error: true
         env:
           CALCULATOR_URL: http://127.0.0.1:3000
-        run: node scripts/live-user-route-audit.mjs
-      - name: Daily route monitor contract
+          EXPECTED_COMMIT: ${{ github.sha }}
+          V3_LIVE_ROUTE_REPORT: /tmp/v3-live-route-results.json
+        run: node scripts/v3-live-route-audit.mjs
+      - name: Upload sanitized V3 route diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v3-live-route-diagnostics-${{ github.sha }}
+          path: /tmp/v3-live-route-results.json
+          if-no-files-found: ignore
+      - name: Tariff freshness
+        id: tariff_freshness
+        continue-on-error: true
         env:
-          CALCULATOR_URL: http://127.0.0.1:3000
-        run: node scripts/route-monitor.mjs
+          TARIFF_STALE_STRICT: '1'
+          TARIFF_PRODUCT_EVIDENCE: experiments/tariff-gate-proposal/stage-ah-product-evidence-2026-11-07.json
+        run: node scripts/check-tariff-freshness.mjs
+      - name: Final aggregate gate
+        if: always()
+        env:
+          LIVE_OUTCOME: ${{ steps.v3_live.outcome }}
+          FRESHNESS_OUTCOME: ${{ steps.tariff_freshness.outcome }}
+          PREVIOUS_JOB_STATUS: ${{ job.status }}
+        run: |
+          if [ "$LIVE_OUTCOME" = "failure" ] || [ "$FRESHNESS_OUTCOME" = "failure" ] || [ "$PREVIOUS_JOB_STATUS" = "failure" ]; then
+            echo "Final gate failed: inspect the live V3 route report, tariff freshness, and failed steps above."
+            exit 1
+          fi
+          if [ "$LIVE_OUTCOME" != "success" ] || [ "$FRESHNESS_OUTCOME" != "success" ]; then
+            echo "Final gate incomplete: live V3 or strict tariff freshness was skipped."
+            exit 1
+          fi
+          echo "Final gate passed: offline, build, V3 smoke, live route audit, and strict freshness all succeeded."
       - name: Stop server
         if: always()
         run: test ! -f /tmp/mezhgorod-next.pid || kill $(cat /tmp/mezhgorod-next.pid) || true

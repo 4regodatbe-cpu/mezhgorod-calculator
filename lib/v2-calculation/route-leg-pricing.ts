@@ -27,6 +27,13 @@ type LegTollInput = {
   diagnosticFastValidation: TollValidation | null;
 };
 
+type CorridorRecoveryDiagnostic = {
+  source: "corridor-recovery";
+  status: "diagnostic-only";
+  traceComplete: boolean;
+  subtotal: NonNullable<ReturnType<typeof recoverCorridorTolls>>;
+};
+
 export async function calculateLegTolls({
   routeGeometry,
   routeSeconds,
@@ -36,7 +43,7 @@ export async function calculateLegTolls({
   valhallaEvidence,
   confirmedFreeRoute,
   diagnosticFastValidation,
-}: LegTollInput): Promise<{ tolls: TollEstimate; fastValidation: TollValidation; m4PvpPreview?: ProductionM4Result["m4PvpPreview"]; nationalTollCoverage: ReturnType<typeof inspectNationwideCandidates> & { m1m3GateAudit: ReturnType<typeof auditM1M3SelectedRoute>; m3Shadow: ReturnType<typeof quoteM3ThreeGateShadow>; m1Shadow: ReturnType<typeof quoteM1SingleGateShadow> } }> {
+}: LegTollInput): Promise<{ tolls: TollEstimate; fastValidation: TollValidation; corridorRecoveryDiagnostic: CorridorRecoveryDiagnostic | null; m4PvpPreview?: ProductionM4Result["m4PvpPreview"]; nationalTollCoverage: ReturnType<typeof inspectNationwideCandidates> & { m1m3GateAudit: ReturnType<typeof auditM1M3SelectedRoute>; m3Shadow: ReturnType<typeof quoteM3ThreeGateShadow>; m1Shadow: ReturnType<typeof quoteM1SingleGateShadow> } }> {
   const confirmedFree = confirmedFreeRoute ? { route: confirmedFreeRoute } : null;
   const differenceEvidence = confirmedFree ? routeDifferenceEvidence(selectedFastRoute, confirmedFree.route) : false;
 
@@ -107,6 +114,7 @@ export async function calculateLegTolls({
   let pricedTolls: TollEstimate;
   let fastValidation: TollValidation;
   let routeCompositionBlocked = false;
+  let corridorRecoveryDiagnostic: CorridorRecoveryDiagnostic | null = null;
 
   if (composition.status === "priced" && composition.tolls) {
     pricedTolls = composition.tolls;
@@ -138,18 +146,42 @@ export async function calculateLegTolls({
   if (!routeCompositionBlocked && pricedTolls.amount <= 0) {
     const conservativeValidation = unknownValidation("Локальный коридорный fallback без доверия к удалённому map matching");
     const localRecovery = recoverCorridorTolls(routeGeometry, conservativeValidation, departureAt, differenceEvidence);
-    if (localRecovery) pricedTolls = localRecovery;
+    if (localRecovery) {
+      corridorRecoveryDiagnostic = {
+        source: "corridor-recovery",
+        status: "diagnostic-only",
+        traceComplete: false,
+        subtotal: localRecovery,
+      };
+      pricedTolls = zeroUnknownTolls(geometricTolls, [
+        "Коридорный subtotal сохранён только в tollDiagnostics; полная стоимость маршрута не подтверждена",
+        ...localRecovery.segments,
+      ]);
+    }
   }
 
   if (!routeCompositionBlocked && pricedTolls.amount <= 0 && routeGeometry.length > 2) {
     if (!diagnosticFastValidation) fastValidation = await validateTollEdges(routeGeometry);
     const matchedTolls = mapMatchedTollFallback(pricedTolls, fastValidation);
     const remoteRecovery = recoverCorridorTolls(routeGeometry, fastValidation, departureAt, differenceEvidence);
-    pricedTolls = remoteRecovery ?? matchedTolls;
+    if (remoteRecovery) {
+      corridorRecoveryDiagnostic = {
+        source: "corridor-recovery",
+        status: "diagnostic-only",
+        traceComplete: fastValidation.complete === true && fastValidation.boothEventCoverage === "complete",
+        subtotal: remoteRecovery,
+      };
+      pricedTolls = zeroUnknownTolls(geometricTolls, [
+        "Приближённый corridor-recovery subtotal — диагностика, не полная стоимость маршрута",
+        ...remoteRecovery.segments,
+      ]);
+    } else {
+      pricedTolls = matchedTolls;
+    }
   }
 
   const tolls = confirmedFree && !routeCompositionBlocked
     ? routingDifferenceTollFallback(selectedFastRoute, confirmedFree.route, pricedTolls)
     : pricedTolls;
-  return { tolls, fastValidation, m4PvpPreview: productionM4.m4PvpPreview, nationalTollCoverage: {...nationalTollCoverage, m1m3GateAudit, m3Shadow, m1Shadow} };
+  return { tolls, fastValidation, corridorRecoveryDiagnostic, m4PvpPreview: productionM4.m4PvpPreview, nationalTollCoverage: {...nationalTollCoverage, m1m3GateAudit, m3Shadow, m1Shadow} };
 }

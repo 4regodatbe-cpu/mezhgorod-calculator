@@ -1,0 +1,120 @@
+{
+  "caseId": "pair-m11-zsd-prim-to-torzhok",
+  "mode": "own_saved_osrm_and_exact_trace_replay_current_code",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "sourceHead": "5281fa019eda95128035be5a0a1d2d1d95f34425",
+  "startedCommit": "5b000b5ff6220ffab307b835feabb7764a661b89",
+  "selectedProvider": "OSRM",
+  "routeMeters": 478358,
+  "routeSeconds": 21098,
+  "routeSha256": "e933912e4b6f074670459f2cfc14a2a44163f141479f19540e3d1111cf54ffa6",
+  "geometrySha256": "3edb9264591acfccdf372b7ffe604901ec314ece9087b74fa561afc67696e1ff",
+  "traceReplay": {
+    "complete": true,
+    "chunks": 4,
+    "matchedRequests": 4,
+    "misses": 0,
+    "unused": 0,
+    "newNetwork": 0
+  },
+  "before": {
+    "apiAmount": null,
+    "knownPricedComponents": 1,
+    "missing": [
+      "m11-58-679",
+      "unknown-paid-road"
+    ]
+  },
+  "after": {
+    "apiTolls": {
+      "amount": 2794,
+      "weekdayAmount": 2794,
+      "weekendAmount": 2884,
+      "period": "понедельник–четверг",
+      "segments": [
+        "М-11: p679 → p258 · Стоимость не подтверждена",
+        "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽",
+        "ЗСД: тарифная зона 1 · 300 ₽"
+      ],
+      "confidence": "matched",
+      "priceConfirmation": "unconfirmed",
+      "displayLabel": null,
+      "pricingStatus": "priced"
+    },
+    "componentAudit": {
+      "status": "priced",
+      "priced": [
+        "m11-58-679",
+        "m11-679-684",
+        "zsd"
+      ],
+      "missing": [],
+      "components": [
+        {
+          "id": "m11-58-679",
+          "detected": true,
+          "tolls": {
+            "amount": 2400,
+            "weekdayAmount": 2400,
+            "weekendAmount": 2490,
+            "period": "понедельник–четверг",
+            "segments": [
+              "М-11: p679 → p258 · Стоимость не подтверждена"
+            ],
+            "confidence": "matched"
+          },
+          "reason": "matrix dated selected-route M11 direct pair"
+        },
+        {
+          "id": "m11-679-684",
+          "detected": true,
+          "tolls": {
+            "amount": 94,
+            "weekdayAmount": 94,
+            "weekendAmount": 94,
+            "period": "пн–вс, приказ №274 с 04.09.2026",
+            "segments": [
+              "М-11: продолжение за ПВП 679, хвост 679–684 · выбранный тариф 94 ₽"
+            ],
+            "confidence": "matched"
+          },
+          "reason": "user_approved_m11_tail_94_rub_for_both_directions"
+        },
+        {
+          "id": "zsd",
+          "detected": true,
+          "reason": "zsd_zone1_complete_directed_base_tariff",
+          "tolls": {
+            "amount": 300,
+            "weekdayAmount": 300,
+            "weekendAmount": 300,
+            "period": "все дни, без транспондера",
+            "confidence": "matched",
+            "segments": [
+              "ЗСД: тарифная зона 1 · 300 ₽"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "runtimeSha256": {
+    "lib/v3-calculation/m11-p258-exit-boundary.ts": "6d8acc7cc6509c01c72bb6ab21f12b24fd8dc52416ec543e3f3e3a3b49663c83",
+    "lib/v3-calculation/m11-product-boundaries.ts": "cc9e78683c54a6ca278a7d7b32397988229e02d039f27ab095365d5c21458678",
+    "lib/v3-calculation/route-leg-pricing.ts": "2b8c640e740ffdc24958d9ffa63c21cab2835ebdc756d4c65f1b2cf44f4a7eaf",
+    "lib/v3-calculation/unpriced-road-coverage.ts": "dff894a7edf3e95096dc0b962434df41841a878c2939fc80c48570b1642a747b"
+  },
+  "counts": {
+    "targetCases": 1,
+    "independentThroughControls": 1,
+    "pricedComponents": 3,
+    "newPricedComponents": 2,
+    "calculatedCompleteTripCases": 1,
+    "confirmedFullTripFares": 0,
+    "newRoutingRequests": 0,
+    "newTraceRequests": 0,
+    "primaryOsmGets": 3
+  },
+  "outcome": "fixed_and_verified",
+  "confirmation": "source-derived directed physical binding and existing ready matrix rows; full tariff remains unconfirmed; public API omits internal confirmation fields under existing policy"
+}

@@ -1,0 +1,11 @@
+# B05.7/B05.8 — review prototype prepared, real fallback BLOCKED
+
+28.10.2026 MSK. Remote fc83523d, PR14Draft. Local e231637 preserved; no publication, CI/deployment, account/service/secret changes or new Photon requests.
+
+Implemented independent review-only helpers/tests in experiments/address-search/fallback-admission-review.{mjs,test.mjs}; no runtime imports/integration/switch changes. Existing Geoapify adapter reused rather than another provider survey. Existing ranker/polygons maintain Donetsk DNR→Rostov ordering in synthetic tests; IDs explicitly geoapify-*, candidate authenticity/admin consistency remain unverified. Plan reserves2s within20s only when enabled/key available; otherwise original primary budget remains. Runner max4attempts, stops429, labels injected primary outage, refuses public admission.
+
+6/6 targeted tests PASS after implementation and bounded-input refinement; scoped ESLintPASS. Actual uncredentialed dry run returned BLOCKED_NO_CREDENTIALS/reviewAttempts0/rows[]; no Geoapify network requests. No old audit/client test repetitions or new full build required for these isolated nonruntime files. Detailed commands, real4-query Preview matrix, exact missing credentials/admission gates and safe budget/capture behavior: experiments/address-search/B05_SERVER_FAILOVER_ACCEPTANCE.md.
+
+B05.5 mechanism established (one origin/cooldown/budget→502), but specific infrastructure rejection cause is PARTIAL: provider request traces/resolved addresses/phase data absent; no proof of Vercel block or Photon ban. B05.6 operational fallback BLOCKED_BY_CREDENTIALS_AND_DATA. B05.7 prototype only, not a confirmed runtime solution. B05.8 real source/failover test BLOCKED until key/usage approval and separately authorized Preview code publication. Six mocks are not real regional/provider acceptance.
+
+Local original e231637 remains ancestor; prepared code/checkpoints/WORK_STATE saved locally with portable handoff. No claim of remote persistence of this block. Next: owner provisions a scoped Preview key normally and approves the small provider-source review; then source capture/admission before runtime integration. Do not paste keys, buy services, reuse revoked share access or weaken CI.

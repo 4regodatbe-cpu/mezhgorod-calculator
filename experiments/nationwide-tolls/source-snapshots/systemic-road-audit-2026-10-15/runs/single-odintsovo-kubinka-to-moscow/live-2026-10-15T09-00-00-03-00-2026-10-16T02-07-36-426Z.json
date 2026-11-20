@@ -1,0 +1,165 @@
+{
+  "caseId": "single-odintsovo-kubinka-to-moscow",
+  "mode": "live",
+  "departureAt": "2026-10-15T09:00:00+03:00",
+  "tariffPolicy": {
+    "id": "trip-departure-v1",
+    "basisAt": "2026-10-15T09:00:00+03:00"
+  },
+  "provider": "OSRM",
+  "providerCandidates": [
+    {
+      "name": "Valhalla",
+      "meters": 68138,
+      "seconds": 5643
+    },
+    {
+      "name": "OSRM",
+      "meters": 68300,
+      "seconds": 4149
+    }
+  ],
+  "rejectedProviders": [
+    {
+      "provider": "BRouter",
+      "error": "Error: route_quality_rejected"
+    }
+  ],
+  "routeMeters": 68300,
+  "routeSeconds": 4149,
+  "controls": [
+    {
+      "corridor": "mainland",
+      "positions": [
+        {
+          "lng": 36.689,
+          "lat": 55.577
+        },
+        {
+          "lng": 37.6173,
+          "lat": 55.7558
+        }
+      ]
+    }
+  ],
+  "traceComplete": true,
+  "roadCoverage": {
+    "expectedRoads": [
+      "odintsovo"
+    ],
+    "provenRoads": [
+      "m1"
+    ],
+    "missingExpectedRoads": [
+      "odintsovo"
+    ],
+    "status": "expected-road-not-proven"
+  },
+  "passageEvidence": [
+    {
+      "road": "m1",
+      "kind": "selected-paid-edge",
+      "wayId": "1187848378",
+      "names": [
+        "М-1",
+        "E 30",
+        "AH6",
+        "Минское шоссе"
+      ]
+    },
+    {
+      "road": "m1",
+      "kind": "selected-paid-edge",
+      "wayId": "820932389",
+      "names": [
+        "М-1",
+        "E 30",
+        "AH6",
+        "Минское шоссе"
+      ]
+    },
+    {
+      "road": "m1",
+      "kind": "selected-paid-edge",
+      "wayId": "820227330",
+      "names": [
+        "М-1",
+        "E 30",
+        "AH6",
+        "Минское шоссе"
+      ]
+    },
+    {
+      "road": "m1",
+      "kind": "selected-booth-name",
+      "osmNodeId": "361416763"
+    }
+  ],
+  "passageEvidenceSummaryVersion": 1,
+  "passageEvidenceScope": "Up to three paid-way examples per road plus every exact-node/frame proof. Full selected paid-edge ledger is retained in the SHA-linked compressed capture.",
+  "paidEdgeEvidenceCounts": {
+    "m1": {
+      "occurrences": 14,
+      "uniqueWays": 14
+    }
+  },
+  "replayIntegrity": null,
+  "capture": "experiments/nationwide-tolls/source-snapshots/systemic-road-audit-2026-10-15/runs/single-odintsovo-kubinka-to-moscow/2026-10-16T02-07-36-416Z-capture.json.gz",
+  "captureSha256": "673cb348ac8d2c8a48a0930a4e694efa483967f28cfa538e35c87619633c4a07",
+  "detectedRoadComponents": [
+    {
+      "id": "m1",
+      "amount": null,
+      "reason": "m1_engine_not_yet_composed"
+    }
+  ],
+  "paidRoadEdgeNames": [
+    "М-1",
+    "E 30",
+    "AH6",
+    "Минское шоссе"
+  ],
+  "tollNodeIds": [
+    "361416763"
+  ],
+  "m4PvpPreview": {
+    "status": "unknown",
+    "reason": "Геометрия маршрута не входит в 1,5-км зоны известных ПВП М-4.",
+    "priceRub": null,
+    "verifiedPriceCells": 0,
+    "candidateCount": 0,
+    "confirmedPvps": [],
+    "diagnosticOnly": true
+  },
+  "selectedM12Span": null,
+  "a289CrossedFrames": [],
+  "tolls": {
+    "amount": null,
+    "weekdayAmount": null,
+    "weekendAmount": null,
+    "period": "понедельник–четверг",
+    "segments": [
+      "Обнаружены, но не полностью оценены платные системы: m1",
+      "m1: m1_engine_not_yet_composed"
+    ],
+    "confidence": "none",
+    "priceConfirmation": "unconfirmed",
+    "displayLabel": null,
+    "pricingStatus": "unknown"
+  },
+  "audit": {
+    "status": "unknown",
+    "priced": [],
+    "missing": [
+      "m1"
+    ],
+    "components": [
+      {
+        "id": "m1",
+        "detected": true,
+        "tolls": null,
+        "reason": "m1_engine_not_yet_composed"
+      }
+    ]
+  }
+}

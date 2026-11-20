@@ -1,0 +1,7 @@
+import type {Sample} from './saved-samples.ts';
+import {tollEstimateView} from './presentation.ts';
+const escape=(text:string)=>text.replace(/[&<>"']/gu,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
+export function renderTollDemo(samples:readonly Sample[]):string {
+ const cards=samples.map(s=>{const view=tollEstimateView(s.result);return `<article><h2>${escape(s.caseId)}</h2><p>${escape(s.departureAt)}</p><p role="status" class="${view.status}">${escape(view.label??'Оценочный модуль выключен')}</p>${view.secondary?`<p>${escape(view.secondary)}</p>`:''}</article>`;}).join('\n');
+ return `<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Этап E — локальный прототип</title><style>body{font:16px system-ui;margin:0 auto;padding:1.2rem;max-width:60rem;background:#f7f8fa;color:#172337}article{background:white;border:1px solid #ccd3df;border-radius:.6rem;padding:1rem;margin:1rem 0;overflow-wrap:anywhere}h2{font-size:1rem}.estimated{color:#715100}.insufficient{color:#8b3030}.confirmed{color:#116245}</style></head><body><h1>Стоимость платных дорог</h1><p>Локальный прототип. В приложении выключен, не опубликован. Ориентировочность относится только к платным дорогам, не к базовой стоимости трансфера.</p>${cards}<footer>Сохранённая геометрия и текущие локальные тарифные источники. Расчётная модель, не платёжный чек.</footer></body></html>`;
+}

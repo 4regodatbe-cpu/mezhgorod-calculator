@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (3488633 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="8513080479" visible="true" version="8" changeset="185007417" timestamp="2026-07-02T23:37:29Z" user="neo-plan" uid="363136" lat="55.8153139" lon="38.5518791"/>
+ <node id="8513080480" visible="true" version="5" changeset="152708539" timestamp="2024-06-15T07:20:22Z" user="Dmitriy Nikolin" uid="20137446" lat="55.8144460" lon="38.5487519">
+  <tag k="highway" v="give_way"/>
+ </node>
+ <node id="8513080481" visible="true" version="4" changeset="152708539" timestamp="2024-06-15T07:20:22Z" user="Dmitriy Nikolin" uid="20137446" lat="55.8142740" lon="38.5484745"/>
+ <node id="8513080482" visible="true" version="4" changeset="152708539" timestamp="2024-06-15T07:20:22Z" user="Dmitriy Nikolin" uid="20137446" lat="55.8140510" lon="38.5482062"/>
+ <node id="8513080483" visible="true" version="4" changeset="152708539" timestamp="2024-06-15T07:20:22Z" user="Dmitriy Nikolin" uid="20137446" lat="55.8138271" lon="38.5481209"/>
+ <node id="8513080485" visible="true" version="4" changeset="152708539" timestamp="2024-06-15T07:20:22Z" user="Dmitriy Nikolin" uid="20137446" lat="55.8135501" lon="38.5481292"/>
+ <node id="8513080526" visible="true" version="7" changeset="185007417" timestamp="2026-07-02T23:37:29Z" user="neo-plan" uid="363136" lat="55.8129703" lon="38.5537676"/>
+ <node id="10734605205" visible="true" version="5" changeset="185007417" timestamp="2026-07-02T23:37:29Z" user="neo-plan" uid="363136" lat="55.8128710" lon="38.5489963"/>
+ <node id="10734605206" visible="true" version="5" changeset="185007417" timestamp="2026-07-02T23:37:29Z" user="neo-plan" uid="363136" lat="55.8129920" lon="38.5486671"/>
+ <node id="10734605207" visible="true" version="4" changeset="152708539" timestamp="2024-06-15T07:20:22Z" user="Dmitriy Nikolin" uid="20137446" lat="55.8131589" lon="38.5484306"/>
+ <node id="10734605208" visible="true" version="3" changeset="152708539" timestamp="2024-06-15T07:20:22Z" user="Dmitriy Nikolin" uid="20137446" lat="55.8133602" lon="38.5482204"/>
+ <node id="10734605209" visible="true" version="4" changeset="185007417" timestamp="2026-07-02T23:37:29Z" user="neo-plan" uid="363136" lat="55.8127409" lon="38.5498101"/>
+ <node id="10734605210" visible="true" version="4" changeset="185007417" timestamp="2026-07-02T23:37:29Z" user="neo-plan" uid="363136" lat="55.8127725" lon="38.5494059"/>
+ <node id="11982461622" visible="true" version="2" changeset="185007417" timestamp="2026-07-02T23:37:29Z" user="neo-plan" uid="363136" lat="55.8146626" lon="38.5494857"/>
+ <node id="11982461624" visible="true" version="2" changeset="185007417" timestamp="2026-07-02T23:37:29Z" user="neo-plan" uid="363136" lat="55.8127395" lon="38.5503575"/>
+ <node id="13984339241" visible="true" version="1" changeset="185007417" timestamp="2026-07-02T23:37:29Z" user="neo-plan" uid="363136" lat="55.8151208" lon="38.5514994"/>
+ <node id="13984339242" visible="true" version="1" changeset="185007417" timestamp="2026-07-02T23:37:29Z" user="neo-plan" uid="363136" lat="55.8145694" lon="38.5491262"/>
+ <node id="13984339244" visible="true" version="1" changeset="185007417" timestamp="2026-07-02T23:37:29Z" user="neo-plan" uid="363136" lat="55.8129755" lon="38.5532229"/>
+ <node id="13984339245" visible="true" version="1" changeset="185007417" timestamp="2026-07-02T23:37:29Z" user="neo-plan" uid="363136" lat="55.8127712" lon="38.5510027"/>
+ <way id="916593976" visible="true" version="19" changeset="187908409" timestamp="2026-08-23T20:52:10Z" user="Nine-tailed" uid="2006945">
+  <nd ref="8513080526"/>
+  <nd ref="13984339244"/>
+  <nd ref="13984339245"/>
+  <nd ref="11982461624"/>
+  <nd ref="10734605209"/>
+  <nd ref="10734605210"/>
+  <nd ref="10734605205"/>
+  <nd ref="10734605206"/>
+  <nd ref="10734605207"/>
+  <nd ref="10734605208"/>
+  <nd ref="8513080485"/>
+  <nd ref="8513080483"/>
+  <nd ref="8513080482"/>
+  <nd ref="8513080481"/>
+  <nd ref="8513080480"/>
+  <nd ref="13984339242"/>
+  <nd ref="11982461622"/>
+  <nd ref="13984339241"/>
+  <nd ref="8513080479"/>
+  <tag k="highway" v="trunk_link"/>
+  <tag k="lanes" v="2"/>
+  <tag k="lit" v="yes"/>
+  <tag k="motorroad" v="yes"/>
+  <tag k="oneway" v="yes"/>
+  <tag k="surface" v="asphalt"/>
+ </way>
+</osm>

@@ -22,8 +22,14 @@ test("a free booth edge at a second plaza cannot inflate an otherwise paid route
     { osmNodeId: "4341143825", wayId: null, roadNames: [], edgeIndex: 1, edgeToll: false },
   ], "2026-10-08T10:00:00+03:00");
   assert.equal(amount.status, "priced");
-  assert.equal(amount.amount, 400, "only the traversed paid PVP 71 is charged, not free PVP 133");
+  assert.equal(amount.amount, 310, "only the traversed paid PVP 71 is charged, not free PVP 133");
   assert.deepEqual(amount.pricedPlazas.map((item) => item.km), [71]);
+});
+
+test("Order 58 category-I PVP 71 selects weekday vs weekend columns", () => {
+  const pvp71 = [{ osmNodeId: "3036681112", wayId: "523826063", roadNames: ["М-4"], edgeIndex: 0, edgeToll: true }];
+  assert.equal(priceM4TollEvents(pvp71, "2026-10-08T10:00:00+03:00").amount, 310);
+  assert.equal(priceM4TollEvents(pvp71, "2026-10-09T10:00:00+03:00").amount, 400);
 });
 
 test("a toll-tagged edge at the expected booth remains chargeable", () => {

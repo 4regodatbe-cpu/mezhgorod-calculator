@@ -1,0 +1,37 @@
+{
+  "status": "STARTED",
+  "atMsk": "2026-10-18T12:07:52.076798+03:00",
+  "sourceHead": "ca58a6ebd603aec149103a3e1c2e3f3fa5f392ec",
+  "branch": "fix/v3-missing-route-prices-2026-10-15",
+  "pr": 14,
+  "prDraft": true,
+  "scope": "One captured northbound CKAD47 entry to M11 head; no wider inventory/audit.",
+  "sources": [
+    {
+      "name": "node8087316065.osm",
+      "url": "https://api.openstreetmap.org/api/0.6/node/8087316065"
+    },
+    {
+      "name": "way1270188032.osm",
+      "url": "https://api.openstreetmap.org/api/0.6/way/1270188032/full"
+    },
+    {
+      "name": "entry-local-map.osm",
+      "urlRule": "One OSM map bbox centered at exact captured gate coordinate from first response; radius at most0.01deg each axis, clamp only if required by new map size."
+    }
+  ],
+  "retainedOperatorPdf": "experiments/nationwide-tolls/source-documents/m11-head-passage-rules-retrieved-2026-10-14.pdf",
+  "retainedOperatorPdfSha256": "c4c86c9fd92faddaaa4ab4628542185f48e6ea25ed2dff460960650ab48b9f5a",
+  "retainedOperatorRelevantPage": 5,
+  "limits": {
+    "primaryGets": 3,
+    "maxSecondsPerGet": 20,
+    "maxBytesPerGet": 12000000,
+    "newSearchQueries": 0,
+    "newRouteRequests": 0,
+    "newTraceRequests": 0,
+    "replays": 0
+  },
+  "acceptance": "Exact captured gate and connected one-way ramp into selected M11 paid way, consistent with distinct official CKAD47/PVP18 identity. No geometry threshold widening, no raw old-source replacement, no matrix price chosen from MMK instead of CKAD.",
+  "recovery": "Save each raw/hash/URL/status immediately. Skip completed matching sources after interruption; continue only unfinished topology and operator-page proof. Save source proof before separate runtime implementation/focused/full gate."
+}

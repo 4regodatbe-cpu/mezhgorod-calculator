@@ -1,0 +1,5 @@
+# E5 prototype regressions verified / mandatory gates next
+
+30.10.2026 MSK; parent239eb7bb. First combined **28PASS/0FAIL**; strictTS caught a test-side union-narrowing issue on existing departureTariffContext begin. Error retained. Added explicit resolved-status/in-object assertion before property access, strengthening the test rather than changing code/calendar or weakeningchecks. Final28regressions/scopedstrictTS/lint verified before this local save. Runtime/prototype module behavior unchanged by this test typing fix.
+
+Next ONE `npm run test:audit` offline, projecttsc, directwebpackbuild; execute each once and preserve individual exits/logs even if another check fails. This is new-calculation-code mandatory regression/build verification, not repeating source/route/atlas audits. No pnpm build/doubleaudit, live providers, CI workflow dispatch/changes or publication. Save finalstatus only afteractualoutputs, keep sourceHEAD for reproducibility. E1mapblocked remains separate; real3route classification1confirmed/1estimated/1unknown unchanged. Local-only, no app/lib/data changes or push.

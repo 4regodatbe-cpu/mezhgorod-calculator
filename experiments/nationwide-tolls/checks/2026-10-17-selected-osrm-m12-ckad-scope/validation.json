@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "sourceHashes": 45,
+  "ownTraceOccurrences": 19,
+  "distinctRawResponses": 13,
+  "queueHistoryAndOtherFindingsPreserved": true,
+  "newDocsLinks": "PASS",
+  "audit": {
+    "passed": 728,
+    "failed": 0,
+    "quoteApi": "PASS"
+  },
+  "tsc": "PASS",
+  "eslint": "PASS",
+  "build": "PASS16/16",
+  "runtimeAndTariffsChanged": false
+}
