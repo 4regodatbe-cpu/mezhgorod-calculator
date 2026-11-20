@@ -29,20 +29,19 @@ test('clipboard failure is handled and never reports success',async()=>{
  const d=data('A'),leg=d.legs[0];await h.hook.copyStandard('k','title',leg,leg.fast,toll,undefined,'actual');
  assert.equal(h.states[4],'');assert.match(h.states[1],/буферу обмена/);h.cleanup();
 });
-test('clipboard contains the same actual toll and warning as the displayed quote',async()=>{
+test('clipboard shows actual toll separately from rounded fare',async()=>{
  let copied='';const h=harness(async()=>Response.json({}),{writeText:async text=>{copied=text;}});
  const d=data('A'),leg=d.legs[0];await h.hook.copyStandard('k','title',leg,leg.fast,toll,undefined,'actual');
- assert.match(copied,/880/);assert.match(copied,/980/);assert.doesNotMatch(copied,/1130|1650/);assert.doesNotMatch(copied,/Стоимость не подтверждена|квитанц|провайдером/);h.cleanup();
+ assert.match(copied,/880/);assert.match(copied,/оплачиваются отдельно/);assert.doesNotMatch(copied,/980/);assert.doesNotMatch(copied,/1130|1650/);assert.doesNotMatch(copied,/Стоимость не подтверждена|квитанц|провайдером/);h.cleanup();
 });
-test('F5 clipboard appends a labelled estimate without substituting the strict transfer total',async()=>{
+test('clipboard uses selected actual toll and does not mix in a separate estimate',async()=>{
  let copied='';const h=harness(async()=>Response.json({}),{writeText:async text=>{copied=text;}});
  const d=data('A'),leg=d.legs[0];
  // CONTROLLED presentation fixture, not a second real tariff for this route.
  leg.fast.tollEstimate={version:1,status:'estimated',totalRub:5904,knownPartRub:5904,confirmedPartRub:1250,warnings:['М-12: регистрационные границы не подтверждены'],reasons:[]};
  await h.hook.copyStandard('k','title',leg,leg.fast,toll,undefined,'actual');
- assert.match(copied,/Дополнительная оценка дорог \(не меняет строгий итог\)/u);
- assert.match(copied,/5\s904 ₽ \(ориентировочно\)/u);assert.match(copied,/регистрационные границы/u);
- assert.match(copied,/980/u);assert.doesNotMatch(copied,/6\s004/u);h.cleanup();
+ assert.match(copied,/880 ₽/u);assert.match(copied,/оплачиваются отдельно/u);
+ assert.doesNotMatch(copied,/5\s904|980|6\s004/u);h.cleanup();
 });
 
 test('a late clipboard completion cannot mark a reset quote copied',async()=>{
@@ -59,9 +58,9 @@ test('unknown road charge preserves a calculated special fare in copied text',as
  const unknown={...toll,amount:null,weekdayAmount:null,weekendAmount:null,pricingStatus:'unknown',priceConfirmation:'unknown'};
  for(const vehicle of Object.keys(leg.fast.pricingByVehicle))leg.fast.pricingByVehicle[vehicle]={...fare,totalPrice:55299,dualTariff:true};
  await h.hook.copyStandard('k','title',leg,leg.fast,unknown,undefined,'actual');
- assert.match(copied,/55[\s\u00a0\u202f]?299 ₽ без платных дорог/);
+ assert.match(copied,/55[\s\u00a0\u202f]?500 ₽/);
  assert.doesNotMatch(copied,/итого не рассчитано|= 0/);
- assert.match(copied,/Стоимость платных дорог неизвестна/);h.cleanup();
+ assert.match(copied,/Платные дороги оплачиваются отдельно/);h.cleanup();
 });
 
 test('V3 preserves safe HTTP errors, hides unexpected network details, and permits retry',async()=>{

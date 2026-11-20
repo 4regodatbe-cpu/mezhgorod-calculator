@@ -3,12 +3,11 @@ import { validV3Response } from "./response-validation";
 
 import { useEffect, useRef, useState } from "react";
 import { pickOptimal } from "../../v2/components/route-utils";
-import { distance, durationWithDays as duration, money } from "../../v2/components/format";
-import { defaults, tariffNames } from "../../v2/components/pricing-data";
-import { buildAlternativeFareCopy, resolveTollAmount, shortPlaceName, totalWithToll, type TollPeriod } from "../../v2/components/quote-presentation";
+import { buildV3Copy } from "./v3-copy";
+import { defaults } from "../../v2/components/pricing-data";
+import { type TollPeriod } from "../../v2/components/quote-presentation";
 import { UserFacingCalculationError, userFacingCalculationErrorMessage } from "../../v2/components/request-errors";
 import type { Place, Result, Leg, Trip, TollView } from "../../v2/components/types";
-import { tollEstimateText } from "@/lib/toll-estimate-view";
 
 type CalculatorMode = "standard" | "dual";
 type CalculationInput = {
@@ -22,7 +21,6 @@ type CalculationInput = {
   apiEndpoint?: string;
   analyticsVersion?: string;
 };
-const vehicleForRate = { standard: "standard", comfort: "comfort", comfortPlus: "comfort_plus", minivan: "minivan" } as const;
 
 export function useV3Calculation({ from, to, rates, specialRates, requestMode, onServerMode, multiplier, apiEndpoint = "/api/v3/calculate", analyticsVersion = "3.0" }: CalculationInput) {
   const pending=useRef<AbortController|null>(null);
@@ -118,41 +116,8 @@ export function useV3Calculation({ from, to, rates, specialRates, requestMode, o
     const copyRequest=pending.current;
     try {
     void title;
-    if (fareOnly) {
-      await navigator.clipboard.writeText(buildAlternativeFareCopy(leg.from, leg.to, trip));
-      if(pending.current!==copyRequest||copyRequest?.signal.aborted)return;
-      setCopiedKey(key);
-      if(copiedTimer.current)clearTimeout(copiedTimer.current);
-      copiedTimer.current=setTimeout(() => setCopiedKey(""), 1800);
-      return;
-    }
-    const tollPrice = resolveTollAmount(toll, tollPeriod, manualTollOverride);
-    const periodLabel = tollPeriod === "actual" ? (toll?.period ?? "дата расчёта") : tollPeriod === "weekday" ? "будни, Пн–Чт" : "выходные, Пт–Вс";
-    const lines = ["из А в Б", `${shortPlaceName(leg.from)} → ${shortPlaceName(leg.to)}`, `${distance(trip.meters)} · ${duration(trip.seconds)}`, `День поездки: ${periodLabel}`];
-    if (Object.values(trip.pricingByVehicle ?? {}).length===4 &&
-      Object.values(trip.pricingByVehicle ?? {}).every(price=>price.pricingSegments.length===1 && price.pricingSegments[0].tariffType==="special"))
-      lines.push("Тариф: Особые тарифные зоны");
-    if (manualTollOverride?.trim()) lines.push("Сумма платных дорог указана вручную.");
-    else if (tollPrice.amount === null) lines.push("Стоимость платных дорог неизвестна.");
-    for (const rate of Object.keys(defaults) as Array<keyof typeof defaults>) {
-      const vehicle = vehicleForRate[rate];
-      const baseFare = trip.pricingByVehicle?.[vehicle]?.requiresSplit ? null : trip.pricingByVehicle?.[vehicle]?.totalPrice;
-      const total = totalWithToll(baseFare, tollPrice);
-      const addition = tollPrice.amount === null ? "платные дороги: сумма неизвестна" : `+ ${money(tollPrice.amount)} ${tollPrice.status === "manual" ? "дороги вручную" : "платные дороги"}`;
-      if (baseFare != null && tollPrice.amount === null) {
-        lines.push(`${tariffNames[rate]}: ${money(baseFare)} без платных дорог`);
-      } else {
-        lines.push(`${tariffNames[rate]}: ${baseFare == null ? "тариф не рассчитан" : money(baseFare)} ${addition} = ${total === null ? "итого не рассчитано" : money(total)}`);
-      }
-    }
-    if (warning) lines.push(`Важно: ${warning}`);
-    if (trip.tollEstimate) {
-      const view = tollEstimateText(trip.tollEstimate);
-      lines.push("Дополнительная оценка дорог (не меняет строгий итог):", view.label);
-      if (view.partial) lines.push(view.partial);
-      lines.push(...trip.tollEstimate.warnings);
-    }
-    await navigator.clipboard.writeText(lines.join("\n"));
+    void warning;
+    await navigator.clipboard.writeText(buildV3Copy(leg, trip, fareOnly ? undefined : toll, tollPeriod, manualTollOverride, fareOnly));
     if(pending.current!==copyRequest||copyRequest?.signal.aborted)return;
     setCopiedKey(key);
     if(copiedTimer.current)clearTimeout(copiedTimer.current);
